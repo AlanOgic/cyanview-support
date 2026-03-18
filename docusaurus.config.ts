@@ -11,14 +11,20 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://support.cyanview.com',
+  // TEST MODE — do not index
+  noIndex: true,
+  url: 'https://support.cyanview.cloud',
   baseUrl: '/',
 
   organizationName: 'cyanview',
   projectName: 'cyanview-support',
 
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   i18n: {
     defaultLocale: 'en',
@@ -101,12 +107,12 @@ const config: Config = {
         crossorigin: 'anonymous',
       },
     },
-    // Inter font
+    // Plus Jakarta Sans + JetBrains Mono
     {
       tagName: 'link',
       attributes: {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap',
       },
     },
   ],
@@ -127,10 +133,10 @@ const config: Config = {
           {from: '/docs/Manuals/CI0/CI0Manual', to: '/docs/products/ci0'},
           {from: '/docs/Configuration/ConfIP', to: '/docs/guides/networking/ip-configuration'},
           {from: '/docs/Configuration/REMI', to: '/docs/guides/networking/remi'},
-          {from: '/docs/Configuration/Tally', to: '/docs/guides/tally'},
-          {from: '/docs/Configuration/Preview', to: '/docs/guides/preview'},
+          {from: '/docs/Configuration/Tally', to: '/docs/guides/tally/tally'},
+          {from: '/docs/Configuration/Preview', to: '/docs/guides/preview/preview'},
           {from: '/docs/Troubleshooting/FAQ', to: '/docs/reference/faq'},
-          {from: '/docs/Troubleshooting/Troubleshooting', to: '/docs/reference/troubleshooting'},
+          {from: '/docs/Troubleshooting/Troubleshooting', to: '/docs/reference/troubleshooting/troubleshooting'},
           {from: '/docs/Maintenance/ReleaseNotes', to: '/docs/reference/release-notes'},
           {from: '/docs/Accessories/CableCatalog', to: '/docs/resources/cable-catalog'},
           {from: '/docs/DrawIOSymbols', to: '/docs/resources/draw-io-symbols'},
@@ -222,7 +228,7 @@ const config: Config = {
         },
         {
           label: 'Support',
-          to: '/docs/reference/troubleshooting',
+          to: '/docs/reference/troubleshooting/troubleshooting',
           position: 'left',
         },
         {

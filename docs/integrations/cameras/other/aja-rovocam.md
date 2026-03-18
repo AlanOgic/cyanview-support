@@ -13,14 +13,14 @@ slug: /integrations/cameras/other/aja-rovocam
 
 <img src="/img/Integrations/AJA/AJARovocam-wiring.png" width="800" />
 
-Cable needed: <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-aja-01">cy-cbl-6p-aja-01</a>
+Cable needed: <a href="/docs/resources/cable-catalog#cy-cbl-6p-aja-01">cy-cbl-6p-aja-01</a>
 
 :::note
-* Compatible with CI0/RIO/RIO-live
-* The camera is powered by the CI0/RIO/RIO-live (data + control, single cable)
-* If you need to control it wirelessly, you need to use the RIO/RIO-live
-* You can plug a camera per CI0/RIO/RIO-live port
-* You can chain them on a single CI0/RIO/RIO-live port, on a bus, as every camera has a unique ID
+* Compatible with CI0/RIO/RIO +LAN
+* The camera is powered by the CI0/RIO/RIO +LAN (data + control, single cable)
+* If you need to control it wirelessly, you need to use the RIO/RIO +LAN
+* You can plug a camera per CI0/RIO/RIO +LAN port
+* You can chain them on a single CI0/RIO/RIO +LAN port, on a bus, as every camera has a unique ID
 :::
 
 # Camera control
@@ -33,8 +33,8 @@ Cable needed: <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-aja-01">cy-cbl-6
 **Other control** (Master gamma, saturation, detail)|✔
 **Exposure** (Iris, Gain, Shutter)|✔
 **Camera Menu Control**|✔
-**Lens** <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">(zoom, focus)</a>|✔
-**Scene file** : <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">save/recall</a>|✔
+**Lens** <a href="/docs/reference/manuals/rcp/ui/scene">(zoom, focus)</a>|✔
+**Scene file** : <a href="/docs/reference/manuals/rcp/ui/scene">save/recall</a>|✔
 
 
 # Setup
@@ -43,7 +43,7 @@ Before starting, ensure to setup/know your camera ID using the AJA RovoCam app
 
 ## VISCA BUS
 
-Access the <a href="/docs/Manuals/RCP/ConfWebUI">RCP Configuration UI</a>.
+Access the <a href="/docs/reference/manuals/rcp/web-ui">RCP Configuration UI</a>.
 
 Create a new `Sony VISCA` BUS:
 - In `Feature` block, click on `+`
@@ -68,7 +68,7 @@ The setup should look like this:
 
 ## Camera
 
-Access the <a href="/docs/Manuals/RCP/ConfWebUI">RCP Configuration UI</a>.
+Access the <a href="/docs/reference/manuals/rcp/web-ui">RCP Configuration UI</a>.
 
 Create a new camera:
 - In the Camera sectionlick on `+`

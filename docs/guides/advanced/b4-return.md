@@ -24,7 +24,7 @@ Here, I created a Dreamchip AtomOne with a Canon B4 lens:
 
 You can find more information:
 * on Dreamchip camera setup <a href="/docs/Integrations/Dreamchip">here</a>.
-* on B4 lens set up <a href="/docs/Integrations/Lens/B4Lens">here</a>.
+* on B4 lens set up <a href="/docs/integrations/lenses/b4-lens">here</a>.
 
 <img src="/img/Configuration/advanced/B4Ret/B4-ret-block.png" width="300"/>
 
@@ -34,7 +34,7 @@ The second step is to configure the switcher and link my camera (configured abov
 
 Here, I created an ATEM switcher and linked my camera `DC` to the `input 1`.
 
-You can find more information on various switcher/router integration <a href="/docs/Integrations/Lens/B4Lens">here</a>.
+You can find more information on various switcher/router integration <a href="/docs/integrations/lenses/b4-lens">here</a>.
 
 <img src="/img/Configuration/advanced/B4Ret/B4-ret-ATEM-setup.png" width="300"/>
 

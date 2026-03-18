@@ -39,9 +39,9 @@ The laptop is optional and only requires for:
 
 ## Setup
 
-The setup is similar to any <a href="/docs/Integrations/Generic/ColorCorrector">Color Corrector integration</a>.
+The setup is similar to any <a href="/docs/integrations/generic/color-corrector">Color Corrector integration</a>.
 
-Navigate to your <a href="/docs/Manuals/RCP/ConfWebUI">RCP Configuration UI</a>.
+Navigate to your <a href="/docs/reference/manuals/rcp/web-ui">RCP Configuration UI</a>.
 
 In the `Configuration` tab, in the `Components` section, click on `+`.
 
@@ -76,7 +76,7 @@ We could combine camera control (a FX9, etc.) with my BoxIO control.
 
 ## Usage
 
-For RCP operation of CC and combined cam+CC, you can refer to this <a href="/docs/Integrations/Generic/ColorCorrector#rcp-operation">generic guide</a>.
+For RCP operation of CC and combined cam+CC, you can refer to this <a href="/docs/integrations/generic/color-corrector#rcp-operation">generic guide</a>.
 
 I'll show here the integration with `Davinci Resolve`, but the workflow is similar with any grading software.
 

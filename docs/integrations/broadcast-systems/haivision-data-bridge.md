@@ -30,7 +30,7 @@ In some workflows, internet access is provided through a separate port on the St
 ![Haivision DataBridge setup](/img/Integrations/Haivision/Haivision-Databridge-diagram_2.png)
 
 :::note
-Read this _[Primer on IP networking](/docs/Troubleshooting/IP_Primer)_ if you don't fully understand the notation above and how to configure routing between separate networks
+Read this _[Primer on IP networking](/docs/reference/troubleshooting/ip-primer)_ if you don't fully understand the notation above and how to configure routing between separate networks
 :::
 
 ## Configuration of the Haivision DataBridge
@@ -162,7 +162,7 @@ These settings will let your computer connect directly to devices on the same ne
 **Step 2: Test the connections**
 
 :::tip ping
-Help on using **ping** can be found in the [IP Primer](/docs/Troubleshooting/IP_Primer#checking-connectivity-using-ping)
+Help on using **ping** can be found in the [IP Primer](/docs/reference/troubleshooting/ip-primer#checking-connectivity-using-ping)
 :::
 
 1. **Ping the StreamHub:**

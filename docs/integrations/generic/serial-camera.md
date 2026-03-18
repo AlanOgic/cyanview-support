@@ -18,7 +18,7 @@ The CI0 interface is used to control serial cameras over IP networks from your R
 
 * **PoE Network Switch**: both CI0 and RCP are PoE compatible and the easiest way to get started is to use a PoE switch. Inexpensive models from Netgear, Ubiquity, TPC Link, etc. are perfectly fine. Without a PoE switch, 12V power supplies with locking plugs can be ordered separately (they are not included in the default package). Regular DC 12V power adapters can also be used.
 
-* **Camera Cable**: we provide various cables to connect any of the supported cameras to your CI0. All pinouts are published if you prefer to make your own cables: [CI0 cable pinouts](/docs/Accessories/CableCatalog)
+* **Camera Cable**: we provide various cables to connect any of the supported cameras to your CI0. All pinouts are published if you prefer to make your own cables: [CI0 cable pinouts](/docs/resources/cable-catalog)
 
 * **Computer**: required to access the web configuration of the RCP.
 
@@ -40,7 +40,7 @@ The CI0 interface is used to control serial cameras over IP networks from your R
 
 ## RCP configuration
 
-[ 1] Access the RCP [Configuration Web UI](/docs/Configuration/ConfIP#lan-web-ui-access).
+[ 1] Access the RCP [Configuration Web UI](/docs/guides/networking/ip-configuration#lan-web-ui-access).
 
 The following diagram shows a static configuration for an RCP with serial `CY-RCP-18-34`.
 
@@ -97,4 +97,4 @@ Once the RCP has internet access, it will list the available releases in the `Ad
 
 <img alt="cyanview-support-camera-configuration-RCP-Web-GUI-release-list" src="/img/productGfx/config/cyanview-support-camera-configuration-RCP-Web-GUI-release-list.png" width="600" />
 
-This does update the software running on the RCP but doesn't update the full system. Refer to the [Update Manual](/docs/Manuals/RCP/ProductUpdate) for more information on keeping the full system up to date.
+This does update the software running on the RCP but doesn't update the full system. Refer to the [Update Manual](/docs/reference/product-update) for more information on keeping the full system up to date.

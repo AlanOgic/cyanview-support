@@ -22,7 +22,7 @@ These camera can be controlled directly from a **CI0** (local) or via a **RIO** 
 
 ## Connection
 
-Connect the **Remote connector** terminal on the camera to the **CI0** / **RIO** with a [CY-CBL-6P-SONY-8-03](/docs/Accessories/CableCatalog#cy-cbl-sony-8p-03).
+Connect the **Remote connector** terminal on the camera to the **CI0** / **RIO** with a [CY-CBL-6P-SONY-8-03](/docs/resources/cable-catalog#cy-cbl-sony-8p-03).
 
 The **RIO** can be powered by the camera using this cable.
 
@@ -44,9 +44,9 @@ When a CY-CBL-6P-SONY-8-02 is used, there's no bootloop conditions.
 
 ## Setup
 
-- **Connect** the camera to the **CI0** / **RIO** with a **[CY-CBL-6P-SONY-8-01](/docs/Accessories/CableCatalog#cy-cbl-sony-8p-03)** cable.
+- **Connect** the camera to the **CI0** / **RIO** with a **[CY-CBL-6P-SONY-8-01](/docs/resources/cable-catalog#cy-cbl-sony-8p-03)** cable.
 - **Power ON** the camera.
-- **Add the Camera** to the RCP configuration via the [RCP Configuration UI](/docs/Manuals/RCP/ConfWebUI).
+- **Add the Camera** to the RCP configuration via the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui).
    - Select **Sony** brand.
    - Select **Legacy** model.
    - Select the **CI0** / **RIO** and port on which the camera is connected to.

@@ -19,7 +19,7 @@ The status of this connection can be verified in the RCP's screen and in the RCP
 
 ### RCP Screen 
 
-To verify the **Remote support** status on the RCP screen, see [RCP Network Status](/docs/Manuals/RCP/RCPControls#network) on RCP screen.
+To verify the **Remote support** status on the RCP screen, see [RCP Network Status](/docs/reference/manuals/rcp/controls#network) on RCP screen.
 
      Remote support       Available
 
@@ -27,8 +27,8 @@ If the status is *Not Available*, proceed to the RCP's *Admin* page.
 
 ### RCP Admin page
 
-Access the RCP [Configuration Web UI](/docs/Configuration/ConfIP#lan-web-ui-access).
-Open [Admin](/docs/Manuals/RCP/ConfWebUI#admin) page in your browser.
+Access the RCP [Configuration Web UI](/docs/guides/networking/ip-configuration#lan-web-ui-access).
+Open [Admin](/docs/reference/manuals/rcp/web-ui#admin) page in your browser.
 
 <img alt="cyanview-support-RCP-remote-connection-status" src="/img/productGfx/RCP/cyanview-support-RCP-remote-connection-status.png" width="400" />
 

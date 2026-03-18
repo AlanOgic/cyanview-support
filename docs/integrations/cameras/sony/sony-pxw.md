@@ -20,7 +20,7 @@ The new Sony SDK (Released 2025) enables remote control support of:
 :::danger New Integration
 Please note, the update to Sony SDK, (released in 2025) is only supported from `25.10.1Beta2`
 
-Ensure the RCP and RIO is updated to this version or later. See here: [Software update](/docs/Configuration/RelDownload)
+Ensure the RCP and RIO is updated to this version or later. See here: [Software update](/docs/reference/firmware-download)
 :::
 
 ## Supported control

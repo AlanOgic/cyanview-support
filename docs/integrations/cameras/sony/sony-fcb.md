@@ -35,19 +35,19 @@ If your model is different, as they're often similar and just different capabili
 **Lens** (Zoom/focus in speed/position)|✔
 **Menus** (I_lens, I_cam, ICRon, ICRoff, FlipOn, FlipOff)|✔
 **Other** (AWB/ATW, Auto Focus, Auto Gain/Shutter/Iris (and EV comp))|✔
-**Scene file** : <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">save/recall</a>|✔
+**Scene file** : <a href="/docs/reference/manuals/rcp/ui/scene">save/recall</a>|✔
 
 ## Wiring
 
 <img src="/img/Integrations/Sony/Sony-FCB/Sony-FCB-wiring.png" width="900" />
 
-* The camera is connected to the CI0 using the cable <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-fan">CY-CBL-6P-FAN</a>:
+* The camera is connected to the CI0 using the cable <a href="/docs/resources/cable-catalog#cy-cbl-6p-fan">CY-CBL-6P-FAN</a>:
     - GND / PWR to the camera power input (the CI0 can be powered by PoE or 12V and will power the camera + control it over serial)
     - GND / Tx / Rx to the VISCA/RS232 port of the camera
 * The RCP is connected to the CI0 using Ethernet
 
 :::note
-For remote/wireless/RF applications, you can use a RIO with a <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-fan">CY-CBL-6P-FAN</a> cable to connect to the camera.
+For remote/wireless/RF applications, you can use a RIO with a <a href="/docs/resources/cable-catalog#cy-cbl-6p-fan">CY-CBL-6P-FAN</a> cable to connect to the camera.
 :::
 
 ## Setup
@@ -56,7 +56,7 @@ For remote/wireless/RF applications, you can use a RIO with a <a href="/docs/Acc
 
 This camera is controlled using the VISCA protocol over serial.
 
-You need to add the BUS to the RCP configuration via the <a src="/docs/Manuals/RCP/ConfWebUI">RCP Configuration UI</a>.
+You need to add the BUS to the RCP configuration via the <a src="/docs/reference/manuals/rcp/web-ui">RCP Configuration UI</a>.
 
 In Features:
 * click on `+`
@@ -81,7 +81,7 @@ This bus has no status (red/green), as it only makes sense when linked to a came
 
 ## Camera
 
-You can now create a camera in the RCP configuration via the <a src="/docs/Manuals/RCP/ConfWebUI">RCP Configuration UI</a>, and link it to the VISCA bus.
+You can now create a camera in the RCP configuration via the <a src="/docs/reference/manuals/rcp/web-ui">RCP Configuration UI</a>, and link it to the VISCA bus.
 
 In Camera:
 * Click on `+`

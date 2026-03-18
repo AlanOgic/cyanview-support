@@ -26,7 +26,7 @@ In case both ports of the RIO are used (a serial camera and a serial robotic hea
 
 ## Motor control
 
-To configure the motors, a camera must be created. To create a camera, refers to the [RCP Configuration](/docs/Integrations/Generic/SerialCamera#rcp-configuration).
+To configure the motors, a camera must be created. To create a camera, refers to the [RCP Configuration](/docs/integrations/generic/serial-camera#rcp-configuration).
 
 Once the camera is created, configure a "Tilta Lens" control 
 

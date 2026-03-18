@@ -59,13 +59,13 @@ software from Dreamchip is a good way to discover the capabilities of these came
 
 #### Cables Required
 
-- [**CY-CBL-DREAMCHIP-01**](/docs/Accessories/CableCatalog#cy-cbl-dreamchip-01-default) - CI0 / RIO adapter cable
--  [**CY-CBL-6P-EXT-***](/docs/Accessories/CableCatalog#cy-cbl-6p-ext50-cy-cbl-6p-ext100-cy-cbl-6p-ext300-cy-cbl-6p-ext500) - CI0 / RIO extension cable (Where * = length) 
+- [**CY-CBL-DREAMCHIP-01**](/docs/resources/cable-catalog#cy-cbl-dreamchip-01-default) - CI0 / RIO adapter cable
+-  [**CY-CBL-6P-EXT-***](/docs/resources/cable-catalog#cy-cbl-6p-ext50-cy-cbl-6p-ext100-cy-cbl-6p-ext300-cy-cbl-6p-ext500) - CI0 / RIO extension cable (Where * = length) 
 
 ## Configuration
 #### Setup
 
-- Please use our [Serial Camera Setup Guide](/docs/Integrations/Generic/SerialCamera) to perform the installation.
+- Please use our [Serial Camera Setup Guide](/docs/integrations/generic/serial-camera) to perform the installation.
 
 ### Power-up defaults
 The camera doesn't save the current settings automatically. Dreamchip offers a feature called "auto_save," but it significantly reduces the camera's responsiveness, so we don't recommend using it. As a result, the camera powers up with pre-defined settings, including video format, frame rate, genlock settings, and all paint settings. When the RCP detects the camera, all paint settings are restored based on the RCP's values. Therefore, if you power cycle the camera, all the last values will be restored automatically.

@@ -15,7 +15,7 @@ The advanced mode allow you to setup advanced parameters for your serial cameras
 
 [Advanced mode toggle](/img/Configuration/advanced/advanced-toggle.png)
 
-- [step 0] In the [RCP Configuration UI](/docs/Manuals/RCP/ConfWebUI), click on your camera
+- [step 0] In the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui), click on your camera
 - [step 1] In the top right corner, click on the dots `...`
 - [step 2] Then click on the popup message to toggle (the actual status is displayed, here : `OFF`)
 

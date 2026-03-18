@@ -9,7 +9,7 @@ slug: /reference/faq
 
 ## Can the CIO power a camera from PoE only?
 
-Yes, the CI0 can typically power and control one mini-camera on each port. The CI0 is not meant to power larger camcorders that typically run on batteries or supply and in this case the control cable will not include power. For some camcorders like Sony ENG cameras, the CI0 will be powered from the camera in which case power doesn't have to be provided by PoE or external (the right cable is necessary for this). You can find more information on power here in the [CI0 Manual](/docs/Manuals/CI0/CI0Manual).
+Yes, the CI0 can typically power and control one mini-camera on each port. The CI0 is not meant to power larger camcorders that typically run on batteries or supply and in this case the control cable will not include power. For some camcorders like Sony ENG cameras, the CI0 will be powered from the camera in which case power doesn't have to be provided by PoE or external (the right cable is necessary for this). You can find more information on power here in the [CI0 Manual](/docs/reference/manuals/ci0/ci0-manual).
 
 ## How many CIO's can one RCP control?
 
@@ -23,7 +23,7 @@ If one camera has to be controlled from multiple RCPs, we have multi-operator wo
 
 ## I would like to set my own IP addresses, is this possible?
 
-The RCP, GWY and RIO can be configured with multiple IP addresses and the default route for internet access can be changed as from releases 21. Typically multiple IPs are useful to reach a range of IP cameras (typically PTZ), a technical network, change the internet access from DHCP to static or add special routes for VPNs or vlans. See [IP Configuration](/docs/Configuration/ConfIP).
+The RCP, GWY and RIO can be configured with multiple IP addresses and the default route for internet access can be changed as from releases 21. Typically multiple IPs are useful to reach a range of IP cameras (typically PTZ), a technical network, change the internet access from DHCP to static or add special routes for VPNs or vlans. See [IP Configuration](/docs/guides/networking/ip-configuration).
 You can't remove the factory IP though as it is used to control devices on the local network like a CI0. The CI0 IP can't be changed at this stage, we have plans to allow that in the future but in all cases a CI0 is not the right device to go over latency networks such as VPNs. A RIO is typically used in these cases.
 
 

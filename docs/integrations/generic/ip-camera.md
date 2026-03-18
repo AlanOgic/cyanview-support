@@ -29,7 +29,7 @@ The RCP provides direct control of cameras over IP networks.
 
 ## RCP configuration
 
-[step 1] Access the RCP [Configuration Web UI](/docs/Configuration/ConfIP#lan-web-ui-access).
+[step 1] Access the RCP [Configuration Web UI](/docs/guides/networking/ip-configuration#lan-web-ui-access).
 
 The following diagram shows a static configuration for an RCP with serial `CY-RCP-18-34`.
 
@@ -99,4 +99,4 @@ Once the RCP has internet access, it will list the available releases in the `Ad
 
 <img alt="cyanview-support-camera-configuration-RCP-Web-GUI-release-list" src="/img/productGfx/config/cyanview-support-camera-configuration-RCP-Web-GUI-release-list.png" width="600" />
 
-This does update the software running on the RCP but doesn't update the full system. Refer to the [Update Manual](/docs/Manuals/RCP/ProductUpdate) for more information on keeping the full system up to date.
+This does update the software running on the RCP but doesn't update the full system. Refer to the [Update Manual](/docs/reference/product-update) for more information on keeping the full system up to date.

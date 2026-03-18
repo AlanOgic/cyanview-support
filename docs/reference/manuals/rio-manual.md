@@ -15,7 +15,7 @@ slug: /reference/manuals/rio-manual
 
 Pronounce \[rɪəʊ\].
 
-The RIO is a [RIO Live](/docs/Manuals/RIOLiveManual) with:
+The RIO is a [RIO Live](/docs/reference/manuals/rio-live-manual) with:
 * Unlimited number of camera (RIO Live is limited to a single camera)
 * Unlimited/Free cloud access for remote production and remote control (4G, etc.)
 
@@ -23,19 +23,19 @@ You can upgrade a RIO Live to a RIO, it is just a licence, one time fee.
 
 ## Setup/Wiring
 
-The setup is exactly the same as the [RIO Live](/docs/Manuals/RIOLiveManual).
+The setup is exactly the same as the [RIO Live](/docs/reference/manuals/rio-live-manual).
 
 Except that the RCP/RIO link will work on LAN and WAN (through cloud) without any change in the configuration.
 
 To setup RIO with a RCP:
-* Setup the camera on your [RIO web UI](/docs/Manuals/RCP/ConfWebUI)
+* Setup the camera on your [RIO web UI](/docs/reference/manuals/rcp/web-ui)
 * Setup a tag/group in your RIO
 * Setup the same tag/group in your RCP
 * Import the camera from your RIO in your RCP
 
 From there, you will have control of the camera from your RCP.
 
-You can find more information about this pairing on [this page](/docs/Configuration/REMI).
+You can find more information about this pairing on [this page](/docs/guides/networking/remi).
 
 The REMI is the way RCP/RIO Live are paired and work together.
 

@@ -41,7 +41,7 @@ All devices support the same set of primary corrections. These corrections funct
 
 [Step 2] : Connect the RCP to the V__pro8
 
-* In the [RCP Configuration UI](/docs/Manuals/RCP/ConfWebUI), in `Components` block, click on `+`
+* In the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui), in `Components` block, click on `+`
 * Select `Video Processor > Lawo: V__pro8`
 * Enter the IP of your V__pro8
 
@@ -61,7 +61,7 @@ If you have more than one V__pro8, simply repeat the operation and make sure to 
 
 [Step 3] : Control the desired channels
 
-* In the [RCP Configuration UI](/docs/Manuals/RCP/ConfWebUI), in `Camera` block, click on `+`
+* In the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui), in `Camera` block, click on `+`
 * In the `General` section, give it a number and a name
 * In the `Camera Head` section, select **Not controlled** brand
 * In the `Video Processor`, select your V__pro8 and video channel (format : `VPRO8_NAME : VPRO8_CHANNEL`)

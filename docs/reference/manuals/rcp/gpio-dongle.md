@@ -16,7 +16,7 @@ The **CY-CBL-JACK-GPIO8** is an extension dongle that plugs at the back of the R
 - The 3.5mm jack connects to the back of the RCP.
 - GPIO are accessible on the DB9 connector.
 
-The dongle can be used to acquire tally inputs or can output preview/touchdown signals. Each GPIO are independent and can be configured as input or output from the [GPIO page](/docs/Manuals/RCP/ConfWebUI#gpio) of the configuration web interface.
+The dongle can be used to acquire tally inputs or can output preview/touchdown signals. Each GPIO are independent and can be configured as input or output from the [GPIO page](/docs/reference/manuals/rcp/web-ui#gpio) of the configuration web interface.
 
 ### pinout
 
@@ -66,7 +66,7 @@ The GPIO dongle can be monitored from the RCP screen by using the **Menu** butto
 
 ### Configuration
 
-The configuration is done via the [GPIO](/docs/Manuals/RCP/ConfWebUI#gpio) page of the **RCP Configuration Web UI**. For tally, more information is available here: [Tally configuration](/docs/Configuration/Tally/).
+The configuration is done via the [GPIO](/docs/reference/manuals/rcp/web-ui#gpio) page of the **RCP Configuration Web UI**. For tally, more information is available here: [Tally configuration](/docs/guides/tally/tally/).
 
 ### Fanout cable for tally and touchdown
 

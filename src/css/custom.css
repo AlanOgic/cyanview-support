@@ -34,11 +34,12 @@
   --ifm-color-primary-lighter: #26b8ee;
   --ifm-color-primary-lightest: #4dc7f1;
 
-  --ifm-font-family-base: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --ifm-heading-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --ifm-font-family-base: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --ifm-heading-font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
   --ifm-font-size-base: 16px;
-  --ifm-code-font-size: 90%;
-  --ifm-line-height-base: 1.65;
+  --ifm-code-font-size: 85%;
+  --ifm-line-height-base: 1.7;
 
   --ifm-heading-font-weight: 600;
   --ifm-font-weight-semibold: 600;
@@ -463,18 +464,24 @@ h2 {
   padding: 1rem 0;
 }
 
-.logos-grid img {
-  height: 32px;
-  opacity: 0.6;
-  filter: grayscale(100%);
-  transition: all 0.2s ease;
-  box-shadow: none !important;
-  border-radius: 0 !important;
+.manufacturer-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--cy-gray-500);
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
 }
 
-.logos-grid img:hover {
-  opacity: 1;
-  filter: grayscale(0%);
+.manufacturer-name:hover {
+  color: var(--cy-cyan);
+}
+
+[data-theme='dark'] .manufacturer-name {
+  color: var(--cy-gray-300);
+}
+
+[data-theme='dark'] .manufacturer-name:hover {
+  color: var(--cy-cyan-light);
 }
 
 /* Final CTA section */

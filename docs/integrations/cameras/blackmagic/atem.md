@@ -13,7 +13,7 @@ slug: /integrations/cameras/blackmagic/atem
 The *Blackmagic ATEM* integration provides the following features:
  - Synchronize RCP preview switching with the ATEM monitoring output.
  - Receive tally states from the Atem. It is possible to get tally from another M/E.
- - Control cameras through the ATEM (See [Blackmagic Cameras](/docs/Integrations/Blackmagic/blackmagiccameracontrol) for this feature).
+ - Control cameras through the ATEM (See [Blackmagic Cameras](/docs/integrations/cameras/blackmagic/blackmagic-camera-control) for this feature).
 
 
 ## Configuration

@@ -40,7 +40,7 @@ To configure the camera:
 
 ### Network configuration
 
-If the RCP doesn't have an IP address in the same range as the camera IP, you should add one in the LAN section by following this [guide](/docs/Configuration/ConfIP).
+If the RCP doesn't have an IP address in the same range as the camera IP, you should add one in the LAN section by following this [guide](/docs/guides/networking/ip-configuration).
 
 ### Adding the camera
 

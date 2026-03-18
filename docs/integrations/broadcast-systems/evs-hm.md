@@ -33,7 +33,7 @@ For extended information about the EVS configuration and operation, please refer
 
 <img alt="cyanview-support-integration-evs-Hypermotion-configuration-server-gui-IP-details" src="/img/Integrations/EVS/cyanview-support-integration-evs-Hypermotion-configuration-server-gui-IP-details.png"  width="500" />
 
-[step 3] Access the [Configuration page](/docs/Manuals/RCP/ConfWebUI#configuration) of the RCP [Configuration Web UI](/docs/Configuration/ConfIP#lan-web-ui-access).
+[step 3] Access the [Configuration page](/docs/reference/manuals/rcp/web-ui#configuration) of the RCP [Configuration Web UI](/docs/guides/networking/ip-configuration#lan-web-ui-access).
 
 [step 4] Click the IP Connection panel
 

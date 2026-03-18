@@ -142,4 +142,4 @@ Each field accepts one or more router outputs:
 * `1` – a single output.
 * `1,2,3` – a list of outputs, useful when you run multiple productions in parallel. Tally states from all listed outputs are combined to compute the final tally status sent to the cameras.
 
-For ATEM, M/E program outputs use specific names such as `Prg2`, `Prg3`, etc. Refer to the [ATEM integration](/docs/Integrations/Blackmagic/atem) for the exact labels.
+For ATEM, M/E program outputs use specific names such as `Prg2`, `Prg3`, etc. Refer to the [ATEM integration](/docs/integrations/cameras/blackmagic/atem) for the exact labels.

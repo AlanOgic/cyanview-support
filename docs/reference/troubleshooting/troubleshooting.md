@@ -18,7 +18,7 @@ slug: /reference/troubleshooting/troubleshooting
   - If device is powered via **PoE**, try to connect a **Power Supply**.
   - If device is powered via **Power Supply**, try to connect a **PoE** network cable.
 
-- If no activity on network port after switching power source, please contact <a href="mailto:support@cyanview.com">support@cyanview.com</a> or send the device back to Cyanview via the [RMA procedure](/docs/RMAProcedure).
+- If no activity on network port after switching power source, please contact <a href="mailto:support@cyanview.com">support@cyanview.com</a> or send the device back to Cyanview via the [RMA procedure](/docs/reference/rma-procedure).
 
 - If there is activity on network port and the device's screen does not turn on, check your network configuration <!--link to P manual when available-->, then verify the device is available on the network.
 
@@ -29,12 +29,12 @@ slug: /reference/troubleshooting/troubleshooting
 
  | Device        | Recovery          | Procedure     |
  | ------------- | ----------------- | ------------- |
- | CI0           | Whole Device.     | See [Force a firmware update](/docs/Manuals/CI0/CI0Manual#force-a-firmware-update) procedure in CI0 manual.           |
- | RIO           | Port management.  | Same principle as CI0, See [Force a firmware update](/docs/Manuals/CI0/CI0Manual#force-a-firmware-update) procedure in CI0 manual. |
+ | CI0           | Whole Device.     | See [Force a firmware update](/docs/reference/manuals/ci0/ci0-manual#force-a-firmware-update) procedure in CI0 manual.           |
+ | RIO           | Port management.  | Same principle as CI0, See [Force a firmware update](/docs/reference/manuals/ci0/ci0-manual#force-a-firmware-update) procedure in CI0 manual. |
  | GWY           | na                | na |
  | NIO           | na                | na |
 
-- If your issue is not fixed, contact <a href="mailto:support@cyanview.com">support@cyanview.com</a> or send the device back to Cyanview via the [RMA procedure](/docs/RMAProcedure).
+- If your issue is not fixed, contact <a href="mailto:support@cyanview.com">support@cyanview.com</a> or send the device back to Cyanview via the [RMA procedure](/docs/reference/rma-procedure).
 
 ## Network Issue
 
@@ -75,7 +75,7 @@ Issue is "random" depending on the Netgear answering before the device or not.
 CI0 can't communicate with RCP over the network.
 
 - Verify network connectivity: check activity on the green and yellow LED of ethernet port.
-- Check if CI0 is listed in discovery page of your RCP. See [What is discovery](/docs/Troubleshooting/FAQ#what-is-discovery).
-- Perform a Firmware recovery. See [Force a firmware Update](/docs/Manuals/CI0/CI0Manual#force-a-firmware-update)).
+- Check if CI0 is listed in discovery page of your RCP. See [What is discovery](/docs/reference/faq#what-is-discovery).
+- Perform a Firmware recovery. See [Force a firmware Update](/docs/reference/manuals/ci0/ci0-manual#force-a-firmware-update)).
 - For unix users, perform an ARP ping to your device.
 - Check known limitation of [Cisco](#cisco-portfast) and [Netgear](#netgear-router) devices.

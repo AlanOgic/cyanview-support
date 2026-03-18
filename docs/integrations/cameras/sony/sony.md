@@ -32,8 +32,8 @@ Typical use case:
 
 <img src="/img/Integrations/Sony/SonyFR7-wiring-simple.png"/>
 
-* <a href="/docs/Integrations/Sony/SonyFR7">FR7 PTZ</a>
-* <a href="/docs/Integrations/Sony/SonyPTZ">BRC PTZ : X1000, X400, H900, H800 over IP</a>
+* <a href="/docs/integrations/cameras/sony/sony-fr7">FR7 PTZ</a>
+* <a href="/docs/integrations/cameras/sony/sony-ptz">BRC PTZ : X1000, X400, H900, H800 over IP</a>
 
 :::info
 Typical use case: you already have a PTZ panel and are looking for a RCP for shading your all your PTZ's.
@@ -43,12 +43,12 @@ Typical use case: you already have a PTZ panel and are looking for a RCP for sha
 
 <img src="/img/Integrations/Sony/Sony-Burano/Burano-wiring.png"/>
 
-* [Sony FX3/FX30 (and other mirrorless like A7S, A1, etc.)](/docs/Integrations/Sony/SonyAlpha) : controlled over USB
-* [Sony FX6](/docs/Integrations/Sony/SonyFX6) : controlled over IP
-* [Sony FX9](/docs/Integrations/Sony/SonyFX9) : controlled over IP
-* [Sony Burano](/docs/Integrations/Sony/SonyBurano) : controlled over IP
-* [Sony Venice](/docs/Integrations/Sony/Sony8Pin) : controlled over 8 Pin remote connector (requires a CI0/RIO)
-* [Sony FR7](/docs/Integrations/Sony/SonyFR7) : controlled over IP
+* [Sony FX3/FX30 (and other mirrorless like A7S, A1, etc.)](/docs/integrations/cameras/sony/sony-alpha) : controlled over USB
+* [Sony FX6](/docs/integrations/cameras/sony/sony-fx6) : controlled over IP
+* [Sony FX9](/docs/integrations/cameras/sony/sony-fx9) : controlled over IP
+* [Sony Burano](/docs/integrations/cameras/sony/sony-burano) : controlled over IP
+* [Sony Venice](/docs/integrations/cameras/sony/sony-8pin) : controlled over 8 Pin remote connector (requires a CI0/RIO)
+* [Sony FR7](/docs/integrations/cameras/sony/sony-fr7) : controlled over IP
 
 If you're using Sony E-mount lenses, nothing else to add.
 
@@ -56,10 +56,10 @@ If you're looking for Fujinon or Canon motorized lenses, we can control:
 * The camera
 * The lens in parallel
 
-See <a href="/docs/Integrations/Lens/CineLens">this guide for more infos</a>
+See <a href="/docs/integrations/lenses/cine-lens">this guide for more infos</a>
 
 If your lens is not motorized, you can add:
-* <a href="/docs/Integrations/Lens/Tilta">Tilta motors</a>
+* <a href="/docs/integrations/lenses/tilta">Tilta motors</a>
 * <a href="#">ARRI C-Force</a>
 
 ### Sony Alpha's
@@ -68,7 +68,7 @@ If your lens is not motorized, you can add:
 <img src="/img/Integrations/camera/Sony/Sony-DSLR/SONY-DSLR-RIO-RCP-Local@2x-8.png"/>
 <img src="/img/Integrations/camera/Sony/Sony-DSLR/SONY-DSLR-RIO-4G@2x-8.png"/>
 
-* [Sony Alpha](/docs/Integrations/Sony/SonyAlpha) : controlled over USB, or IP using RIO/RIO-live
+* [Sony Alpha](/docs/integrations/cameras/sony/sony-alpha) : controlled over USB, or IP using RIO/RIO +LAN
 
 :::info
 Typical use case: gimbal as light steadicam
@@ -78,5 +78,5 @@ Typical use case: gimbal as light steadicam
 
 <img src="/img/Integrations/Sony/Sony-FCB/Sony-FCB-wiring.png"/>
 
-* [PXX](/docs/Integrations/Sony/Sony8Pin) : controlled over 8 Pin remote connector (requires a CI0/RIO)
+* [PXX](/docs/integrations/cameras/sony/sony-8pin) : controlled over 8 Pin remote connector (requires a CI0/RIO)
 * FCBXX : controlled over serial connector (requires a CI0/RIO)

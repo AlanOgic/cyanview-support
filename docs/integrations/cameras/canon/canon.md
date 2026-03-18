@@ -39,7 +39,7 @@ The Cyanview RCP controls all the Canon cameras which support the XC protocol
 * C80
 * C300 Mk3
 * C500 Mk2
-* <a href="/docs/Integrations/Canon/CanonXF605">XF605</a>
+* <a href="/docs/integrations/cameras/canon/canon-xf605">XF605</a>
 * C70 (needs a firmware update)
 
 

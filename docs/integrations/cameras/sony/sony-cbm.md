@@ -62,7 +62,7 @@ Same with the `Access Point` mode. Don't forget to activate `Camera Remote Contr
 
 ## RCP/RIO configuration
 
-Setup a new camera via the [RCP Configuration UI](/docs/Manuals/RCP/ConfWebUI):
+Setup a new camera via the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui):
 - Enter a custom number, name, etc.
 - Select **Sony** brand
 - Select **Sony CBM** for the protocol

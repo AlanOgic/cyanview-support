@@ -20,10 +20,10 @@ We support all the compatible models through the `XC` control (IP):
 * C300mk3
 * C400
 * C500mk2
-* <a href="/docs/Integrations/Canon/CanonXF605">XF605</a>
+* <a href="/docs/integrations/cameras/canon/canon-xf605">XF605</a>
 
 :::note
-For other models, you can use the `Remote A` control (2.1 mm jack), see <a href="/docs/Integrations/Canon/CanonRemoteA">Canon Remote A</a>
+For other models, you can use the `Remote A` control (2.1 mm jack), see <a href="/docs/integrations/cameras/canon/canon-remote-a">Canon Remote A</a>
 :::
 
 ## Wiring
@@ -40,8 +40,8 @@ For other models, you can use the `Remote A` control (2.1 mm jack), see <a href=
 **Other settings** (saturation, knee, detail, denoise)|✔
 **Tally**|✔
 **OSD/Menu**|✔
-**Lens** <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">(zoom, focus)</a>|✔
-**Scene file** : <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">save/recall</a>|✔
+**Lens** <a href="/docs/reference/manuals/rcp/ui/scene">(zoom, focus)</a>|✔
+**Scene file** : <a href="/docs/reference/manuals/rcp/ui/scene">save/recall</a>|✔
 
 ## Camera Configuration
 
@@ -76,7 +76,7 @@ You can follow the wizard in the menu ´Network Settings > New Conn. Settings (W
 
 <img src="/img/Integrations/Canon/XC/XC-wizard-step5.jpg" width="300"/>
 
-If your camera IP is not in the range `10.192.0.0/16`, you can follow this [guide](/docs/Configuration/ConfIP#lan-configuration)
+If your camera IP is not in the range `10.192.0.0/16`, you can follow this [guide](/docs/guides/networking/ip-configuration#lan-configuration)
 
 For the control:
 * In the menu `Custom Picture`, Seletect `UserXX`
@@ -86,7 +86,7 @@ For the control:
 
 ## RCP/RIO configuration
 
-Setup a new camera via the [RCP Configuration UI](/docs/Manuals/RCP/ConfWebUI):
+Setup a new camera via the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui):
 - Enter a custom number, name, etc.
 - Select **Canon** brand
 - Select **XC** for the protocol

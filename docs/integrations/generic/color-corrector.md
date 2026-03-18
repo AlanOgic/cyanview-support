@@ -37,9 +37,9 @@ Connects your RCP to the same network.
 
 ## Setup
 
-Navigate to your [RCP Configuration UI](/docs/Manuals/RCP/ConfWebUI).
+Navigate to your [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui).
 
-If your color corrector is not in the default range `10.192.0.0/16`, check [this guide](/docs/Configuration/ConfIP) to ensure your RCP can communicate with it.
+If your color corrector is not in the default range `10.192.0.0/16`, check [this guide](/docs/guides/networking/ip-configuration) to ensure your RCP can communicate with it.
 
 In the `Configuration` tab, in the `Components` section, click on `+`.
 

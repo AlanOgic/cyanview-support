@@ -26,7 +26,7 @@ slug: /integrations/cameras/other/bolin-r9
   - **Color** : Saturation, Hue
   <!-- - **Look** -->
   <!-- - **Denoise** -->
-- [**Lens/PTZF**](/docs/Manuals/RCP/RCPUI/RCPUILens.md)
+- [**Lens/PTZF**](/docs/reference/manuals/rcp/ui/lens.md)
   - **Iris**
   - **Pan/tilt** : Status, Speed/Position Control
   - **Zoom/Focus** : Status, Speed/Position Control
@@ -54,12 +54,12 @@ Some of the other features of the camera will be availble in an upcoming softwar
 
 ## Configuration
 
-The camera can be configured using the [Generic PTZ Guide](/docs/Integrations/Generic/PTZ)
+The camera can be configured using the [Generic PTZ Guide](/docs/integrations/generic/ptz)
 
-Bolin provides a discovery tool to help setup the camera. Make sure that the ip address of the camera is reachable by the RCP, see [this page](/docs/Configuration/ConfIP?_highlight=ip#lan-configuration) for more information about ip configuration.
+Bolin provides a discovery tool to help setup the camera. Make sure that the ip address of the camera is reachable by the RCP, see [this page](/docs/guides/networking/ip-configuration?_highlight=ip#lan-configuration) for more information about ip configuration.
 
 ## Workflow
 
-The [Anxinshi joystick](/docs/Integrations/Accessories/AnxinshiPTZUSBJoystick) can provide a more convenient user interface than the RCP touchscreen for pan, tilt, zoom and presets.
+The [Anxinshi joystick](/docs/integrations/accessories/anxinshi-ptz-usb-joystick) can provide a more convenient user interface than the RCP touchscreen for pan, tilt, zoom and presets.
 
-The [Elgato Stream Deck](/docs/Integrations/Accessories/ElgatoStreamDeck) can be used to recall the PTZ presets.
+The [Elgato Stream Deck](/docs/integrations/accessories/elgato-stream-deck) can be used to recall the PTZ presets.

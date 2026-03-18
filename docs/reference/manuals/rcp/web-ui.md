@@ -10,17 +10,17 @@ slug: /reference/manuals/rcp/web-ui
 > The **Configuration Web UI** is where most of the RCP configuration and management is done.
 > The Cyanview GWY also uses this **Configuration Web UI**.
 
-To open the UI, see [Access RCP Configuration Web UI](/docs/Configuration/ConfIP#find-devices-ip) in the **IP configuration** manual.
+To open the UI, see [Access RCP Configuration Web UI](/docs/guides/networking/ip-configuration#find-devices-ip) in the **IP configuration** manual.
 
 The **Configuration Web UI** is divided into the following sections:
 
 <img alt="cyanview-support-manual-configuration-web-ui-gui-tab-sections" src="/img/productGfx/config/WebUI/cyanview-support-manual-configuration-web-ui-gui-tab-sections@2x-8.png"  width="500"/>
 
-- **[Configuration](/docs/Manuals/RCP/ConfWebUI#configuration)** add and configure camera, devices, controls,...
-- **[GPIO](/docs/Manuals/RCP/ConfWebUI#gpio)** operate Tally, video router.
-- **[Switcher](/docs/Manuals/RCP/ConfWebUI#switcher)** virtual video switcher.
-- **[Admin](/docs/Manuals/RCP/ConfWebUI#admin)** device updates and statuses.
-- **[File](/docs/Manuals/RCP/ConfWebUI#file)** configuration Snapshot.
+- **[Configuration](/docs/reference/manuals/rcp/web-ui#configuration)** add and configure camera, devices, controls,...
+- **[GPIO](/docs/reference/manuals/rcp/web-ui#gpio)** operate Tally, video router.
+- **[Switcher](/docs/reference/manuals/rcp/web-ui#switcher)** virtual video switcher.
+- **[Admin](/docs/reference/manuals/rcp/web-ui#admin)** device updates and statuses.
+- **[File](/docs/reference/manuals/rcp/web-ui#file)** configuration Snapshot.
 
 ## Configuration
 
@@ -54,7 +54,7 @@ The **GPIO** provides an overview and allows to set the values of the different 
     <source src="/img/productGfx/config/WebUI/cy-UI-GPIO.mp4"/>
 </video>
 
-For Tally configuration, please refer to the [Tally configuration](/docs/Configuration/Tally/) of the **RCP Manual**.
+For Tally configuration, please refer to the [Tally configuration](/docs/guides/tally/tally/) of the **RCP Manual**.
 
 ## Switcher
 
@@ -68,7 +68,7 @@ Select the active camera on the corresponding monitor.
 
 <img alt="cyanview-support-manual-configuration-web-ui-gui-admin-update-log" src="/img/productGfx/config/WebUI/cyanview-support-manual-configuration-web-ui-gui-admin-update-log@2x-8.png" width="600"/>
 
-The **Releases** section lists available application releases you can run on your device see [device update manual](/docs/Manuals/RCP/ProductUpdate).
+The **Releases** section lists available application releases you can run on your device see [device update manual](/docs/reference/product-update).
 
 The **Remote support** is OK when the RCP is reachable by Cyanview Support server.
 Support server is used to deal with specific advanced setup.
@@ -83,7 +83,7 @@ RCP **Logs** can be downloaded for extended consultation.
 
 **File** page allows to manage configuration *Snapshots*.
 
-*Snapshots* contains complete device configuration as well as camera configuration including [scene](/docs/Manuals/RCP/RCPUI/RCPUIScene) and [lens](/docs/Manuals/RCP/RCPUI/RCPUIScene) settings.
+*Snapshots* contains complete device configuration as well as camera configuration including [scene](/docs/reference/manuals/rcp/ui/scene) and [lens](/docs/reference/manuals/rcp/ui/scene) settings.
 
 *Snapshots* can be either **stored locally** on the RCP (use "Take snapshot" button) or **downloaded to a PC** (use "Download to computer" button).
 
@@ -93,7 +93,7 @@ Downloaded *Snapshots* can be uploaded to an other device with same application 
 
 <img alt="cyanview-support-manual-configuration-web-ui-gui-files-backup-snapshot" src="/img/productGfx/config/WebUI/cyanview-support-manual-configuration-web-ui-gui-files-backup-snapshot@2x-8.png" width="400" />
 
-**Note:** A backup is taken when updating device. See [Product Update](/docs/Manuals/RCP/ProductUpdate).
+**Note:** A backup is taken when updating device. See [Product Update](/docs/reference/product-update).
 
 ## Other RCP UI
 
@@ -101,7 +101,7 @@ RCP has several other **Web UI** for specific use only.
 
 | UI | URL | Desrciption |
 | -- | --- | ----------- |
-| **System Update** | *IP*:8080 | see [Product Update](/docs/Manuals/RCP/ProductUpdate) page. |
+| **System Update** | *IP*:8080 | see [Product Update](/docs/reference/product-update) page. |
 | **Discovery page** | *IP*/dev/discovery.html | Lists devices that can be seen on the network. |
 | **Advanced UI** | *IP*/dev/app.html | Advanced Configuration UI. |
 | **RCP Dashboard** | *IP*:5000 | Presents extended RCP statuses. |

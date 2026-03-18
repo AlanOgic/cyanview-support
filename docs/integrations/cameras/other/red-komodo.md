@@ -140,7 +140,7 @@ Path : `MENU > PAINT > LOOK`
 <img width="480px" src="/img/Manual/RCP/RCP-encoders-1-right.png"/>
 
 :::note
-You can upload LUTs on the RCP, see <a href="/docs/Integrations/Generic/3DLUTProcessor#3d-lut-importexport-in-rcp">here</a>.
+You can upload LUTs on the RCP, see <a href="/docs/integrations/generic/3d-lut-processor#3d-lut-importexport-in-rcp">here</a>.
 And you can then navigate through the LUT list.
 
 Clear will set the LUT to `None` in the camera.
@@ -178,13 +178,13 @@ You can then see in the next tab a list of all:
 
 - **Connect** camera and your RCP/RIO on the same network
 - Enter a custom number, name, etc.
-- **Add the Camera** to the RCP configuration via the [RCP Configuration UI](/docs/Manuals/RCP/ConfWebUI).
+- **Add the Camera** to the RCP configuration via the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui).
    - Select **Red** brand.
    - Select **Komodo** or **V-Raptor** model.
    - Enter the IP of your camera
 
 :::note
-If your camera is in a different range than your RIO/RCP. Follow [this guide](/docs/Configuration/ConfIP)
+If your camera is in a different range than your RIO/RCP. Follow [this guide](/docs/guides/networking/ip-configuration)
 :::
 
 This should looks like this:

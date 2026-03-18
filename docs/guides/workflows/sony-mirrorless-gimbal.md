@@ -27,7 +27,7 @@ This is the typical setup:
 
 On camera side, the RIO is connected to the camera via USB-C.
 
-You can find more information on the Sony mirrorless control <a href="/docs/Integrations/Sony/SonyAlpha">here</a>.
+You can find more information on the Sony mirrorless control <a href="/docs/integrations/cameras/sony/sony-alpha">here</a>.
 
 While we support a lot of models, FX3 is the most popular as it's compact, active cooling, no viewfinder and 10-bit HDMI full size. FX30 is also a great option (cheaper, S35 sensor). A7S3 is the second most popular we see on the field.
 But the control is the same on all models, so the choice is more on the size/weight/features/price.
@@ -83,21 +83,21 @@ VP4 will compensate the lack of control of the camera:
 
 ## Tally
 
-A complete tally overview can be found <a href="/docs/Configuration/Tally">here</a>
+A complete tally overview can be found <a href="/docs/guides/tally/tally">here</a>
 
 The tally input can be IP (ATEM, TSL, etc.) or GPIO.
 
 But usually, as this kit is brought alongside the Steadicam operator, they prefer the GPI for tally input as it's easier to set up (no IP setting, nothing to configure, easy to test a contact, etc.)
 
-The tally output is usually propagated to the camera through the camera protocol. But mirrorless cameras don't have any tally, so you can use an external tally box connected to the RIO. Visible <a href="/docs/Manuals/TallyLightManual">here</a>
+The tally output is usually propagated to the camera through the camera protocol. But mirrorless cameras don't have any tally, so you can use an external tally box connected to the RIO. Visible <a href="/docs/reference/manuals/tally-light-manual">here</a>
 
 ## Setup
 
-1. Set up your 4G dongles : buy a SIM, configure it and check your laptop has internet with it. Follow <a href="/docs/Configuration/Cellular">this guide</a>
-2. Set up your RIO/RCP with REMI/cloud : follow <a href="/docs/Configuration/REMI">this guide</a>
-3. Set up your camera on RIO/RCP : follow <a href="/docs/Integrations/Sony/SonyAlpha">this guide</a>
-4. Import your camera from RIO on your RCP : follow <a href="/docs/Configuration/REMI">this guide</a>
-5. Configure your VP4 : format and genlock : follow <a href="/docs/Manuals/VP4Manual">this guide</a>
+1. Set up your 4G dongles : buy a SIM, configure it and check your laptop has internet with it. Follow <a href="/docs/guides/networking/cellular">this guide</a>
+2. Set up your RIO/RCP with REMI/cloud : follow <a href="/docs/guides/networking/remi">this guide</a>
+3. Set up your camera on RIO/RCP : follow <a href="/docs/integrations/cameras/sony/sony-alpha">this guide</a>
+4. Import your camera from RIO on your RCP : follow <a href="/docs/guides/networking/remi">this guide</a>
+5. Configure your VP4 : format and genlock : follow <a href="/docs/reference/manuals/vp4-manual">this guide</a>
 6. Add the VP4 channel to your imported camera (on RCP)
 
 ## From the field

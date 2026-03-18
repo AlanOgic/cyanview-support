@@ -50,11 +50,11 @@ You need:
 
 And the correct cable, you have 2 different connectors:
 
-If your camera has this kind of connector on the back, then you need the cable <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-pfan">cy-cbl-6p-pfan</a>.
+If your camera has this kind of connector on the back, then you need the cable <a href="/docs/resources/cable-catalog#cy-cbl-6p-pfan">cy-cbl-6p-pfan</a>.
 
 <img src="/img/Integrations/Marshall/marshall-connector1.jpg" width="300"/>
 
-If your camera has this kind of connector on the back, then you need the cable <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-mars-01-new">cy-cbl-6p-mars-01</a>.
+If your camera has this kind of connector on the back, then you need the cable <a href="/docs/resources/cable-catalog#cy-cbl-6p-mars-01-new">cy-cbl-6p-mars-01</a>.
 
 <img src="/img/Integrations/Marshall/marshall-connector2.png" width="300"/>
 
@@ -248,13 +248,13 @@ VISCA allows up to 8 cameras to be connected to an RS485 bus. When a VISCA bus i
 ### 1. The Camera Is Not Detected
 
 - **Verify camera communication settings**: Ensure the baud rate is set to _9600_ and the camera ID is _1_, unless you are using a VISCA control bus with multiple cameras.
-- **Check the cable and pinout**: If you made your own cable, refer to our [cable diagram](/docs/Accessories/CableCatalog#marshall-cable) to confirm the wiring is correct.
+- **Check the cable and pinout**: If you made your own cable, refer to our [cable diagram](/docs/resources/cable-catalog#marshall-cable) to confirm the wiring is correct.
 - **Test for hardware issues**: It’s not uncommon for some cameras to have a defective RS485 interface. To confirm, compare behavior with another unit of the same model or test the camera using Marshall’s control software with a USB-to-RS485 adapter. You should be able ton control the camera using the Marsdhall software.
 - **Old firmware limitations**: Some older camera models or firmware versions do not acknowledge commands or send return data. In such cases, the camera may not be "detected" but can still respond to control commands.
 
 To test command reception without relying on feedback:
 1. Select the **Marshall Generic** model from the dropdown list.
-2. Disable [bidirectional communication](/docs/Integrations/Marshall/MarshallMinicam.md#configuration-in-unidirectional-mode).
+2. Disable [bidirectional communication](#configuration-in-unidirectional-mode).
 3. Use the `Camera > Menu` button on the RCP — all Marshall cameras share the same command for opening the on-screen menu, which can help confirm control is working.
 
 ### 2. The camera is in black and white

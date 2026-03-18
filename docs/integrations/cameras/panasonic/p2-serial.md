@@ -46,7 +46,7 @@ All AJ-HPX cameras with the Hirose 10p connector are supported. Simply select `G
 
 The camera is controlled over a serial link and requires a CY-CIO or CY-RIO interface.
 
-The appropriate cable is [CY-CBL-6P-PAN-10P](/docs/Accessories/CableCatalog#cy-cbl-6p-pan-10p).
+The appropriate cable is [CY-CBL-6P-PAN-10P](/docs/resources/cable-catalog#cy-cbl-6p-pan-10p).
 
 <img src="/img/Integrations/Panasonic/Panasonic-P2serial-connect.png" width="900" />
 

@@ -80,7 +80,7 @@ For a more detailed list, check if your model has its own integration guide.
 
 Compatible Cyanview device: RCP, RIO, RIO Live
 
-If the RCP/RIO doesn't have an IP address in the same range as the camera IP, you should add one in the LAN section by following this <a href="/docs/Configuration/ConfIP">guide</a>.
+If the RCP/RIO doesn't have an IP address in the same range as the camera IP, you should add one in the LAN section by following this <a href="/docs/guides/networking/ip-configuration">guide</a>.
 
 <img src="/img/Integrations/Generic/ptz-wiring.png" width="900"/>
 
@@ -107,13 +107,13 @@ If everything went well, it should go green:
 
 Once the camera is configured, you can have:
 * Cyanview RCP (shading) and Sony joystick panel (`rm-ip500`)
-* Cyanview RCP (shading + pan/tilt/zoom/focus) from touchscreen, more information <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">here</a>
-* Cyanview RCP (shading + pan/tilt/zoom/focus) from USB joystick, more information <a href="/docs/Integrations/Accessories/AnxinshiPTZUSBJoystick">here</a>
+* Cyanview RCP (shading + pan/tilt/zoom/focus) from touchscreen, more information <a href="/docs/reference/manuals/rcp/ui/scene">here</a>
+* Cyanview RCP (shading + pan/tilt/zoom/focus) from USB joystick, more information <a href="/docs/integrations/accessories/anxinshi-ptz-usb-joystick">here</a>
 
 ## Remote control / Remote production
 
-Even if the PTZ control is IP, it can be interesting to combine a PTZ with a <a href="/docs/Manuals/RIOManual">RIO</a> (with AVIWEST for example).
+Even if the PTZ control is IP, it can be interesting to combine a PTZ with a <a href="/docs/reference/manuals/rio-manual">RIO</a> (with AVIWEST for example).
 
 Or combine local shading with RCP with remote shading from anywhere in the world using a second RCP.
 
-For more information, take a look at <a href="/docs/Configuration/REMI">REMI page</a>
+For more information, take a look at <a href="/docs/guides/networking/remi">REMI page</a>

@@ -67,7 +67,7 @@ Most of the paint settings are managed through the camera's Picture Profile. Ens
 **REC** | REC on/off and status | ✔ | ✔
 
 
-**Tally** is not present on the camera, but it can be added by via a RIO port as Tally output using a <a src="/docs/Accessories/CableCatalog#cy-cbl-6p-pwr">cy-cbl-6p-pwr</a>. See <a href="/docs/Configuration/Tally">Tally</a> configuration page.
+**Tally** is not present on the camera, but it can be added by via a RIO port as Tally output using a <a src="/docs/resources/cable-catalog#cy-cbl-6p-pwr">cy-cbl-6p-pwr</a>. See <a href="/docs/guides/tally/tally">Tally</a> configuration page.
 
 
 <img src="/img/Integrations/Sony/Alpha/A7CR/A7CR.gif"/>
@@ -82,7 +82,7 @@ Also ensure your RCP/RIO are also updated to the latest version (should be `24.2
 **Connect** camera to RIO or RCP using the USB cable.
 
 
-**Add the Camera** to the RCP configuration via the <a src="/docs/Manuals/RCP/ConfWebUI">RCP Configuration UI</a>.
+**Add the Camera** to the RCP configuration via the <a src="/docs/reference/manuals/rcp/web-ui">RCP Configuration UI</a>.
 - Select **Sony** brand.
 - Select **Alpha** model.
 
@@ -132,7 +132,7 @@ Change mode (to M, S&Q, etc.) or check next point.
 * Only one device is able to control a Sony Alpha:
     - check that you don't use the micro USB with a DJI gimbals or similar
     - Ensure to disable Wi-Fi control
-* Ensure to upgrade your RIO/RCP to the latest version <a href="/docs/Manuals/RCP/ProductUpdate#system-update">using a SWU</a> (not only an app upgrade from admin page) as the Sony protocol for alpha is at OS level.
+* Ensure to upgrade your RIO/RCP to the latest version <a href="/docs/reference/product-update#system-update">using a SWU</a> (not only an app upgrade from admin page) as the Sony protocol for alpha is at OS level.
 
 ## From the field
 

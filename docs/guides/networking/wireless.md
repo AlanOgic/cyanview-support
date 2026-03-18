@@ -47,7 +47,7 @@ Our control architecture being IP based, most of these solutions are around IP t
 
 ## Wi-Fi Halow (UHF unlicensed)
 
-  * Guide for [Wi-Fi Halow](/docs/Configuration/Halow)
+  * Guide for [Wi-Fi Halow](/docs/guides/networking/halow)
 
   Although certified by the Wi-Fi Alliance, the Halow technology is not a regular consumer Wi-Fi but has been designed for the internet of things with longer range and lower bitrates. Like the previous solutions, this consists of nodes which will link all devices to an IP network. The frequencies are legal in the following countries:
   * 915 MHz (US)
@@ -68,7 +68,7 @@ Our control architecture being IP based, most of these solutions are around IP t
 
 ## Cellular 4G, 5G, private 5G
 
-  * Guide for using [Cellular modems and routers](/docs/Configuration/Cellular)
+  * Guide for using [Cellular modems and routers](/docs/guides/networking/cellular)
 
   The cellular network can be used for wireless remote control. The latency for control is not an issue for most situations, it is much lower than the latency you might have in mind for video. A RIO on the camera side and a Cyanview cloud relay will handle the link over the internet to the control room. The solution uses 4G USB dongles on a RIO for the connectivity, but these are now replaced by cellular access points which can now handle 5G and can be used on private 5G networks as well.
 
@@ -85,8 +85,8 @@ Our control architecture being IP based, most of these solutions are around IP t
 
 ## Regular Wi-Fi
 
-  * Guide for [USB Wi-Fi dongles on a RIO or RCP](/docs/Configuration/WiFiUSB)
-  * Guide for [Wi-Fi clients used with wired ethernet devices](/docs/Configuration/WiFi)
+  * Guide for [USB Wi-Fi dongles on a RIO or RCP](/docs/guides/networking/wifi-usb)
+  * Guide for [Wi-Fi clients used with wired ethernet devices](/docs/guides/networking/wifi)
 
   Wi-Fi can be used in controlled environments like studios but is known to be very unreliable during public events and as such, this is rarely used. A typical use case is to control IP cameras directly over Wi-Fi, each camera will connect to a Wi-Fi router and be visible to the RCP like if they were wired. This workflow is easy and reliable if the Wi-Fi network itself is reliable.
 
@@ -115,7 +115,7 @@ Other possibilities exist based on serial links, which, while not ideal, may be 
 
   We developed a serial bridge for some specialty and RF vendors to integrate with their system. This isn't ideal as the connection status of the camera isn't consistent and reliable. But it has been useful to many people as it allows to use RF modems on licensed frequencies like the Satel modems.
 
-  This might be integrated to the main configuration GUI at some point but for now it is using the development interface. There's a guide which documents the process [here](/docs/restricted/configuration/RFBridge).
+  This might be integrated to the main configuration GUI at some point but for now it is using the development interface. There's a guide which documents the process [here](#).
 
 ### Serial data for mini-cams
 

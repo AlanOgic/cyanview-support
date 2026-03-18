@@ -7,7 +7,7 @@ keywords: [RMA, return, repair, replacement, warranty]
 slug: /reference/rma-procedure
 ---
 
-Cyanview devices are designed and produced with deep care and cautiously tested. However, a defect may appear. The return of the product is covered by our [Warranty and Return Policy](/docs/RMAProcedure#cyanview-warranty-and-return-policy). 
+Cyanview devices are designed and produced with deep care and cautiously tested. However, a defect may appear. The return of the product is covered by our [Warranty and Return Policy](/docs/reference/rma-procedure#cyanview-warranty-and-return-policy). 
 
 ## Return procedure
 
@@ -17,10 +17,10 @@ The return process is the following:
  2. If the defect persists [download the RMA Request Form](/img/files/RMA-Request-Form-v0.1.pdf), fill it completely and send it to support@cyanview.com.
  3. Cyanview support will send you back an email.
     - Either with a RMA document with Identifier and detailed instructions to return the device
-    - Either with some more questions about the device defect and environment. [Remote access](/docs/Configuration/RemoteSupport) to your device could be requested before sending the RMA document.
+    - Either with some more questions about the device defect and environment. [Remote access](/docs/guides/remote-support) to your device could be requested before sending the RMA document.
  4. Adapt the RMA document if needed, sign it and email it to support@cyanview.com.
  5. Ship the device as described in the shipping instructions section of the RMA document.
- 6. If the defect is out of the [warranty](/docs/RMAProcedure#cyanview-warranty-and-return-policy) scope, Cyanview will send you a quotation for repair or replacement..
+ 6. If the defect is out of the [warranty](/docs/reference/rma-procedure#cyanview-warranty-and-return-policy) scope, Cyanview will send you a quotation for repair or replacement..
  7. Cyanview will ship you back a working device.
 
 <img alt="cyanview-support-RMA-Process" src="/img/diagrams/20210325-RMA-process-ext.png" width="800" />
@@ -57,6 +57,6 @@ If a return product is out of warranty because the defect appears too late after
 
 The Cyanview warranty only covers manufacturer’s defects for one (1) year from date of purchase. The warranty does NOT cover damage caused by user error (see statement above).
 
-Cyanview will NOT accept returns of Cyanview Products that do not have the [latest firmware installed](/docs/Manuals/RCP/ProductUpdate).
+Cyanview will NOT accept returns of Cyanview Products that do not have the [latest firmware installed](/docs/reference/product-update).
 
 Cyanview will NOT accept return for products with water damage unless a Cyanview Technical Support Representative has determined that a warranty claim is valid. 

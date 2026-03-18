@@ -26,7 +26,7 @@ slug: /integrations/cameras/other/zcam-p2r1
   - **Color** : Saturation, Hue
   <!-- - **Look** -->
   <!-- - **Denoise** -->
-- [**Lens/PTZF**](/docs/Manuals/RCP/RCPUI/RCPUILens.md)
+- [**Lens/PTZF**](/docs/reference/manuals/rcp/ui/lens.md)
   - **Iris**
   - **Pan/tilt** : Status, Speed Control
   - **Zoom/Focus** : Status, Speed Control, Digital Zoom
@@ -52,12 +52,12 @@ slug: /integrations/cameras/other/zcam-p2r1
 
 ## Configuration
 
-The camera can be configured using the [Generic PTZ Guide](/docs/Integrations/Generic/PTZ)
+The camera can be configured using the [Generic PTZ Guide](/docs/integrations/generic/ptz)
 
-By default, the Z CAM has the ip address `10.98.32.1`. Make sure that the address is reachable by the RCP, see [this page](/docs/Configuration/ConfIP?_highlight=ip#lan-configuration) for more information about ip configuration.
+By default, the Z CAM has the ip address `10.98.32.1`. Make sure that the address is reachable by the RCP, see [this page](/docs/guides/networking/ip-configuration?_highlight=ip#lan-configuration) for more information about ip configuration.
 
 ## Workflow
 
-The [Anxinshi joystick](/docs/Integrations/Accessories/AnxinshiPTZUSBJoystick) can provide a more convenient user interface than the RCP touchscreen for pan, tilt, zoom and presets.
+The [Anxinshi joystick](/docs/integrations/accessories/anxinshi-ptz-usb-joystick) can provide a more convenient user interface than the RCP touchscreen for pan, tilt, zoom and presets.
 
-The [Elgato Stream Deck](/docs/Integrations/Accessories/ElgatoStreamDeck) can be used to recall the PTZ presets.
+The [Elgato Stream Deck](/docs/integrations/accessories/elgato-stream-deck) can be used to recall the PTZ presets.

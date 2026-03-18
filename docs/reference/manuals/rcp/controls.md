@@ -73,7 +73,7 @@ The GPIO presents a status of the 8 port of each GPIO is represented by 1 or 0.
 
 <img alt="cyanview-support-RCP-manual-touchscreen-menu-io-gpio-info-status" src="/img/productGfx/RCP/cyanview-support-RCP-manual-touchscreen-menu-io-gpio-info-status.png" width="400"/>
 
-See [GPIO](/docs/Manuals/RCP/GPIODongle) page for more information about GPIO possibilities.
+See [GPIO](/docs/reference/manuals/rcp/gpio-dongle) page for more information about GPIO possibilities.
 
 ## Exposure Control
 
@@ -165,10 +165,10 @@ Values represented by '--' are functions not supported by that camera model.
 
 Change the active camera by pressing the left or right buttons.
 
-If a [router integration](/docs/Integrations/Generic/routers) has been configured, switching camera on the RCP will also switch the router to the same camera.
+If a [router integration](/docs/integrations/generic/routers) has been configured, switching camera on the RCP will also switch the router to the same camera.
 
 <img alt="cyanview-support-RCP-manual-command-panel-preview-switcher" src="/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-preview-switcher@2x-8.png" width="300" />
 
 ### GPIO
 
-The PREVIEW button can a preview/touch-down signal via the RCP [GPIO](/docs/Manuals/RCP/GPIODongle) or recalls the selected camera on the router.
+The PREVIEW button can a preview/touch-down signal via the RCP [GPIO](/docs/reference/manuals/rcp/gpio-dongle) or recalls the selected camera on the router.

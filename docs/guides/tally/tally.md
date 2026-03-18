@@ -15,15 +15,15 @@ Tally data follows the same routing as camera control signals — whether transm
 
 There are different ways to ingest tally:
 * [TSL](#tsl)
-* [GPI](/docs/Configuration/Tally#gpi) (RCP/NIO)
-* [ATEM, VMix, Tricaster](/docs/Configuration/Tally#atem)
-* [Pro-Bel SW-P-08 (VSM, etc.)](/docs/Configuration/Tally#pro-bel-sw-p-08)
+* [GPI](/docs/guides/tally/tally#gpi) (RCP/NIO)
+* [ATEM, VMix, Tricaster](/docs/guides/tally/tally#atem)
+* [Pro-Bel SW-P-08 (VSM, etc.)](/docs/guides/tally/tally#pro-bel-sw-p-08)
 
 Tally can be output with the following methods:
-* [Camera protocol](/docs/Configuration/Tally#camera-protocol) if supported (Panasonic UE150, Sony PMW-500, etc.)
-* [GPO](/docs/Configuration/Tally#gpo) (RCP/NIO)
-* [Embedded LED](/docs/Configuration/Tally#ci0rio-embedded-led) (CI0/RIO)
-* [External LED](/docs/Configuration/Tally#ci0rio-external-led) (CI0/RIO)
+* [Camera protocol](/docs/guides/tally/tally#camera-protocol) if supported (Panasonic UE150, Sony PMW-500, etc.)
+* [GPO](/docs/guides/tally/tally#gpo) (RCP/NIO)
+* [Embedded LED](/docs/guides/tally/tally#ci0rio-embedded-led) (CI0/RIO)
+* [External LED](/docs/guides/tally/tally#ci0rio-external-led) (CI0/RIO)
 
 <!-- TODO
 - A few diagrams of typical use cases
@@ -69,11 +69,11 @@ If TSL 5.0 doesn't seem to be working, check that the tally information is prope
 ### GPI
 
 Two use cases:
-* If your GPIs are close to the RCP, you can connect [CY-CBL-JACK-GPIO8](/docs/Manuals/RCP/GPIODongle) on your RCP
+* If your GPIs are close to the RCP, you can connect [CY-CBL-JACK-GPIO8](/docs/reference/manuals/rcp/gpio-dongle) on your RCP
 * If you want GPIO over ethernet/WiFi/4G, you can use a NIO
 
 To setup:
-- Open the [GPIO](/docs/Manuals/RCP/ConfWebUI) page of the RCP.
+- Open the [GPIO](/docs/reference/manuals/rcp/web-ui) page of the RCP.
 
 - Associate the GPIO Inputs with your camera. Select **Red Tally** and click the cell at the intersection of the **GPI** row and **CAMERA** column.
 
@@ -92,7 +92,7 @@ You can also control the input polarity:
 <img alt="cyanview-support-Tally-Polarity-GPIO" src="/img/productGfx/RCP/RCP-Tally-Polarity-GPIO@2x-8.png" width="200" />
 
 :::note
-The [CY-CBL-JACK-GPIO8](/docs/Manuals/RCP/GPIODongle) pins are default high.
+The [CY-CBL-JACK-GPIO8](/docs/reference/manuals/rcp/gpio-dongle) pins are default high.
 Select (**L**) to activate Tally at low polarity, and (**H**) for high polarity.
 :::
 
@@ -107,13 +107,13 @@ In this example:
 
 ### ATEM
 
-First, configure your ATEM properly following [this guide](/docs/Integrations/Blackmagic/atem)
+First, configure your ATEM properly following [this guide](/docs/integrations/cameras/blackmagic/atem)
 
 Same concept as Pro-Bel/VSM setup [described below](#pro-bel-sw-p-08)
 
 ### Pro-Bel SW-P-08
 
-If you're using VSM, first configure it properly following [this guide](/docs/Integrations/Lawo/VSM)
+If you're using VSM, first configure it properly following [this guide](/docs/integrations/broadcast-systems/lawo-vsm)
 
 * Link your camera to corresponding `inputs`
 * Optional: link your RCP to an auxiliary `output`
@@ -169,7 +169,7 @@ The tally behavior depends on the camera's implementation - some cameras display
 ### GPO
 
 Two use cases:
-* If your GPIs are close to the RCP, you can connect [CY-CBL-JACK-GPIO8](/docs/Manuals/RCP/GPIODongle) on your RCP
+* If your GPIs are close to the RCP, you can connect [CY-CBL-JACK-GPIO8](/docs/reference/manuals/rcp/gpio-dongle) on your RCP
 * If you want GPO over ethernet/WiFi/4G, you can use a NIO
 
 In any case, each pin can either be used as GPI or GPO.
@@ -186,7 +186,7 @@ They have one LED per port, **1:LED** for the LED of port 1, **2:LED** for the L
 
 If you have one camera on port 1, you can use the second port as an external tally output (12V).
 
-Use the [CY-CBL-6P-PWR](/docs/Accessories/CableCatalog#cy-cbl-6p-pwr) cable to drive a Tally signal.
+Use the [CY-CBL-6P-PWR](/docs/resources/cable-catalog#cy-cbl-6p-pwr) cable to drive a Tally signal.
 
 <img alt="cyanview-support-CI0-GPIO-PWR-Cable-LED" src="/img/productGfx/CI0/CI0-CY_CBL_6P_PWR_LED@2x-8.png" width="600" />
 
@@ -221,7 +221,7 @@ Connect on the same LAN your RCP's and your NIO's.
 
 
 :::note
-Instead of a NIO, you can use <a href="/docs/Manuals/RCP/GPIODongle">GPIO dongles</a> plugged directly in the RCP
+Instead of a NIO, you can use <a href="/docs/reference/manuals/rcp/gpio-dongle">GPIO dongles</a> plugged directly in the RCP
 :::
 
 ### Setup

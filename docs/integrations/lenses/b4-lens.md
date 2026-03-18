@@ -25,7 +25,7 @@ Works with ENG lens, box lens, etc. from Canon and Fujinon.
 
 ## Wiring
 
-Required cable : [CY-CBL-6P-B4-01](/docs/Accessories/CableCatalog#cy-cbl-6p-b4-01-default).
+Required cable : [CY-CBL-6P-B4-01](/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default).
 
 <img src="/img/Integrations/Lens/B4-ENG.png" width="800" />
 
@@ -58,8 +58,8 @@ Overview:
 * My B4 lens plugged on port 2 of the same CI0.
 
 Setup:
-- Navigate to [`configuration`](/docs/Manuals/RCP/ConfWebUI) tab, create a new cam or edit an existing one
-- Setup your camera as usual following one of the guide available (<a href="/docs/Integrations/Generic/SerialCamera"> serial camera</a>, <a href="/docs/Integrations/Generic/IPCamera">IP camera</a>)
+- Navigate to [`configuration`](/docs/reference/manuals/rcp/web-ui) tab, create a new cam or edit an existing one
+- Setup your camera as usual following one of the guide available (<a href="/docs/integrations/generic/serial-camera"> serial camera</a>, <a href="/docs/integrations/generic/ip-camera">IP camera</a>)
 
    * Set up `number` and `name`:
    

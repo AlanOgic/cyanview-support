@@ -21,7 +21,7 @@ These are different options to configure camera touchdown:
 
 For GPIO, 2 solutions are available:
 
-1. **[CY-CBL-JACK-GPIO8 GPIO dongle](/docs/Manuals/RCP/GPIODongle)** that plugs at the back of the RCP and provides 8x GPIO that handles input and output at the same time. 2 units can be combined to provide 16x GPIO. See the link for the pinout. If only one camera is used, it uses the same pins as a Sony RCP on the DB9 connector so it can be plugged directly to the pre-wired installations in the desk where the RCP is installed.
+1. **[CY-CBL-JACK-GPIO8 GPIO dongle](/docs/reference/manuals/rcp/gpio-dongle)** that plugs at the back of the RCP and provides 8x GPIO that handles input and output at the same time. 2 units can be combined to provide 16x GPIO. See the link for the pinout. If only one camera is used, it uses the same pins as a Sony RCP on the DB9 connector so it can be plugged directly to the pre-wired installations in the desk where the RCP is installed.
 
 [<img alt="CY-CBL-JACK-GPIO8" src="/img/productGfx/cables/CY-CBL-JACK-GPIO8.png" width="300"/>](/img/productGfx/cables/CY-CBL-JACK-GPIO8.png)
 
@@ -63,7 +63,7 @@ There are two ways to use the RCP with a system that handles Joystick Override, 
 
 **Joystick override using a router integration**
 
-This setup is described in our [router integration section](/docs/Integrations/Generic/routers#joystick-override-configuration)
+This setup is described in our [router integration section](/docs/integrations/generic/routers#joystick-override-configuration)
 
 **Joystick override using GPIO**
 

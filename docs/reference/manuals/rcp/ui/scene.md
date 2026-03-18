@@ -56,7 +56,7 @@ Pay attention that:
 This is the main view and allow to quickly:
 * load a scene file
 * save scene file
-* load/save but on a whole <a href="/docs/Configuration/advanced/CameraGroups">camera group</a>
+* load/save but on a whole <a href="/docs/guides/advanced/camera-groups">camera group</a>
 
 <table>
     <tr>
@@ -83,7 +83,7 @@ To load : simply click on a slot
 
 ### Groups
 
-For more information on <a href="/docs/Configuration/advanced/CameraGroups">group setup</a>.
+For more information on <a href="/docs/guides/advanced/camera-groups">group setup</a>.
 
 In this setup, I have my BirdDog P200 camera that is in multiple groups: `All`, `PTZ`, `Birddog`.
 

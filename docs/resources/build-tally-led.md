@@ -13,7 +13,7 @@ This guide provides an example of solderless tally assembly for RIO / CI0 device
 
 * [Wired 12V Red Led](https://www.amazon.com/s?k=3mm+12V+Prewired+red+LED&ref=nb_sb_noss)
 * [Toolless Tyumen Wire Plug](https://www.amazon.com/s?k=Pluggable+LED+Wire+Connector&ref=nb_sb_noss_1)
-* [CY-CBL-6P-PWR](/docs/Accessories/CableCatalog#cy-cbl-6p-pwr)
+* [CY-CBL-6P-PWR](/docs/resources/cable-catalog#cy-cbl-6p-pwr)
 
 <img alt="cyanview-CI0-CY-CBL-6P-PWR-LED-Parts-Overview" src="/img/productGfx/cables/BuildCI0TallyLED/CY-CBL-6P-PWR-Plug-LED-Parts-Oveview.png" width="400" />
 

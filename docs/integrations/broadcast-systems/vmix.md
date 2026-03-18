@@ -26,14 +26,14 @@ Connect the RCP and the VMix on the same network.
 ## Setup
 
 Ensure your RCP has a matching IP with your VMix computer.
-You can setup a new IP in the RCP [here](/docs/Configuration/ConfIP#lan-configuration).
+You can setup a new IP in the RCP [here](/docs/guides/networking/ip-configuration#lan-configuration).
 
 ### Router
 
 <img src="/img/Integrations/VMIX/vmix-router-setup.png" width="200"/>
 
 - [step 1] : setup a name (optional)
-- [step 2] : setup the IP of your VMix computer, ensure the RCP can reach the computer ( [IP guide](/docs/Configuration/ConfIP#lan-configuration) )
+- [step 2] : setup the IP of your VMix computer, ensure the RCP can reach the computer ( [IP guide](/docs/guides/networking/ip-configuration#lan-configuration) )
 - [step 3] : link your cameras to the matching VMix input
 - [step 4] : link your RCP with an auxiliary output
 
@@ -57,7 +57,7 @@ This will give you a **green tally** for the `preview` and **red tally** for the
 
 If you have a different setup, instead of `AUTO`, you can enter any of the VMix output name: `Output`, `Preview`, `1`, `2`, etc.
 
-If you need more tally output, you can check [this page](/docs/Configuration/Tally)
+If you need more tally output, you can check [this page](/docs/guides/tally/tally)
 
 ### Color correction
 

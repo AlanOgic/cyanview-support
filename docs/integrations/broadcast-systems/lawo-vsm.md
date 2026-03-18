@@ -35,9 +35,9 @@ attached device is a control system” in order to enable bi-directional control
 
 ## RCP / GWY Configuration
 
-- [step 1] If a different network is used for VSM, [add an IP address](/docs/Configuration/ConfIP#lan-configuration) to the RCP.
+- [step 1] If a different network is used for VSM, [add an IP address](/docs/guides/networking/ip-configuration#lan-configuration) to the RCP.
 
-- [step 2] Add a [pro-bel Router](/docs/Integrations/Generic/routers) module from the Components section .
+- [step 2] Add a [pro-bel Router](/docs/integrations/generic/routers) module from the Components section .
 
  <img alt="cyanview-support-RCP-VSM-Add-Probel" src="/img/Integrations/VSM/RCP-VSM-Add-Probel.png"  width="500"/>
 

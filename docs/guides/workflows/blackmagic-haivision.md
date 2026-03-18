@@ -57,7 +57,7 @@ And my RCP:
 <img src="/img/Workflows/RCP-24.7.1.png"/>
 
 :::info
-You can update through the admin page (online, through internet) or you can find update files for offline usage <a href="/docs/Configuration/RelDownload">here</a> to download on your computer
+You can update through the admin page (online, through internet) or you can find update files for offline usage <a href="/docs/reference/firmware-download">here</a> to download on your computer
 * online update consists of clicking on a new version, the RIO/RCP downloads and install it
 * offlie update starts by downloading the file on a computer, and then you drag and drop the file on the webpage of your device
 :::
@@ -102,8 +102,8 @@ So always check from RCP, change anything like tally or iris to see it works.
 
 :::tip
 Note that you could go for Blackmagic IP and add an external tally light:
-* <a href="/docs/Manuals/TallyLightManual">tally box</a>, to put on top of camera
-* <a href="/docs/Accessories/BuildTallyLED">tally LED</a>, to add inside the viewfinder
+* <a href="/docs/reference/manuals/tally-light-manual">tally box</a>, to put on top of camera
+* <a href="/docs/resources/build-tally-led">tally LED</a>, to add inside the viewfinder
 :::
 
 :::info
@@ -163,7 +163,7 @@ But it more or less look like this in our setup:
 
 ## Tally input from ATEM
 
-You can find more infos on this  <a href="/docs/Integrations/Generic/routers">guide</a>
+You can find more infos on this  <a href="/docs/integrations/generic/routers">guide</a>
 
 You can see:
 * I added my ATEM in the component section

@@ -42,7 +42,7 @@ All controls will be forwarded to the camera except tally. The only options to r
 ## Setup
 
 On your RCP/RIO:
-- Setup a new camera via the [RCP Configuration UI](/docs/Manuals/RCP/ConfWebUI):
+- Setup a new camera via the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui):
     * Select **Panasonic** brand
     * Select **Studio** model
     * Add the IP address of the CCU or without CCU, the IP of the camera head

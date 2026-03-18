@@ -2,133 +2,125 @@
 id: sony-fx6
 title: "Sony FX6 integration"
 sidebar_label: "Sony FX6"
-description: "Connect and control the Sony FX6 with Cyanview. Requires a USB-C to Ethernet adapter for IP-based camera control."
-keywords: [Sony FX6, USB-C adapter, cinema, paint control]
+description: "Control the Sony FX6 with Cyanview over IP or LANC. White balance, iris, variable ND, gain, shutter, and recording — with smooth ND joystick control."
+keywords: [Sony FX6, USB-C adapter, cinema, paint control, LANC, tally, Cyanview]
 slug: /integrations/cameras/sony/sony-fx6
 ---
 
-<img src="/img/Integrations/Sony/Sony-FX6/FX6.png" width="400" />
+The Sony FX6 connects to your Cyanview RCP over IP or LANC, giving you remote control of white balance, iris, variable ND, gain, shutter, and recording. You can assign the variable ND to the iris joystick for smooth, precise control while keeping iris on the exposure knob.
 
-## Camera control
+<img src="/img/Integrations/Sony/Sony-FX6/FX6.png" width="400" alt="Sony FX6 camera" />
 
-|Control| Notes|IP|LANC
-:-----|:-----|:-----|:-----|
-**White balance** | Color temperature and tint, no R/B gains |✔|
-**Iris** | Manual and AUTO iris |✔|✔
-**Variable ND** | Clear, variable and AUTO |✔|
-**Gain/EI** | Gain in dB or ISO, or exposure index (EI) in Cine EI mode |✔|
-**Shutter** | Manual, AUTO, ECS, OFF |✔|
-**Record** | ON/OFF + status) |✔|
-**Tally** | Red/Green tally, only available through LANC | |✔
-**Menu navigation** | Only available from LANC | |✔
+## Supported controls
+
+| Control | Notes | IP | LANC |
+|:--------|:------|:--:|:----:|
+| **White balance** | Color temperature and tint (no R/B gains) | ✔ | |
+| **Iris** | Manual and AUTO iris | ✔ | ✔ |
+| **Variable ND** | Clear, variable, and AUTO | ✔ | |
+| **Gain / EI** | Gain in dB or ISO, or exposure index (EI) in Cine EI mode | ✔ | |
+| **Shutter** | Manual, AUTO, ECS, OFF | ✔ | |
+| **Record** | ON/OFF + status | ✔ | |
+| **Tally** | Red/green tally — LANC only | | ✔ |
+| **Menu navigation** | LANC only | | ✔ |
 
 :::tip
-**Variable ND** can be assigned to the **iris joystick** and provides a very smooth control, while iris can still be accessed from the exposure knob
+Assign **Variable ND** to the **iris joystick** for smooth, precise control. Iris remains accessible from the exposure knob.
 :::
 
-:::info Limited control
-Sony has announced that there will be no further firmware releases for the FX6, except for a planned update in 2026. However, this update will **not** add any new paint controls. As a result, functions such as master black, black balance, gamma or saturation will likely never be available for remote control on the FX6.
+:::info Limited paint control
+Sony has announced no further firmware releases for the FX6 beyond a planned 2026 update, which will **not** add new paint controls. Master black, black balance, gamma, and saturation will likely never be available for remote control on the FX6.
 :::
 
-## Camera wiring
+## Connection options
 
-The FX6 is controlled over IP or LANC.
-* IP control works over LAN or Wi-Fi. LAN requires a compatible USB to ethernet dongle. Most USB-C dongles will not work so make sure to check the [USB-Ethernet compatibility](#usb-ethernet-compatibility)
-* LANC can be useful to add tally and menu navigation to IP control. See [Sony LANC](/docs/Integrations/Sony/SonyLanc) for this.
+The FX6 supports two control methods:
 
+- **IP control** — Over LAN (requires a [compatible USB-Ethernet dongle](#usb-ethernet-compatibility)) or Wi-Fi
+- **LANC** — Adds tally and menu navigation to IP control. See the [Sony LANC integration guide](/docs/integrations/cameras/sony/sony-lanc)
 
-<img src="/img/Integrations/Sony/Sony-FX6/FX6-wiring.png" width="600" />
+<img src="/img/Integrations/Sony/Sony-FX6/FX6-wiring.png" width="600" alt="Sony FX6 wiring diagram" />
 
+## Video walkthrough
 
-## FX6 hands-on
+<iframe width="800" height="400" src="https://www.youtube.com/embed/5VeY0ZTr-gg?si=qsNNIWV6OpgB3gwd" title="Cyanview FX6 hands-on" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<iframe width="800" height="400" src="https://www.youtube.com/embed/5VeY0ZTr-gg?si=qsNNIWV6OpgB3gwd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-
-*Watch on [YouTube](https://www.youtube.com/watch?v=5VeY0ZTr-gg) to get chapters*
-<br/>
-<br/>
+*Watch on [YouTube](https://www.youtube.com/watch?v=5VeY0ZTr-gg) for chapter navigation*
 
 ## Camera configuration
 
-### Firmware Versions:
- * The camera needs to be at firmware v4 or higher
- * The RCP/RIO require release 24.1 or above
+### Firmware requirements
 
-### LAN
+- Camera firmware **v4 or higher**
+- RCP/RIO release **24.1 or above**
 
-Authentication has to be enabled for IP control, you will need the login and password for the configuration in the RCP.
+### LAN setup
 
-When using **LAN**:
+IP control requires authentication. You need the camera's login and password for the RCP configuration.
 
-In `menu > Network > Wired LAN`
+In **Menu > Network > Wired LAN**:
+1. Enable `Camera Remote Control`
+2. Check your IP address in `Detail Settings`
 
-- Enable `Camera Remote Control`
-- Check your IP address in `Detail Settings`
+<img src="/img/Integrations/Sony/Sony-FX6/FX6-setup-lan1.png" width="400" alt="FX6 Wired LAN menu" />
 
-<img src="/img/Integrations/Sony/Sony-FX6/FX6-setup-lan1.png" width="400"/>
+### Wi-Fi setup
 
-### Wi-Fi
+In **Menu > Network > ST Mode Settings**:
+1. Enable `Camera Remote Control`
+2. Your IP address is displayed under `Connected Network` once connected
 
-**Wi-Fi** requires a different option. When Wi-Fi is set to Station Mode:
-
-In `menu > Network > ST Mode Settings`
-- Enable `Camera Remote Control`
-- Once connected, your IP address is displayed in `Connected Network`
-
-<img src="/img/Integrations/Sony/Sony-FX6/FX6-setup-wifi2.png" width="400"/>
-
+<img src="/img/Integrations/Sony/Sony-FX6/FX6-setup-wifi2.png" width="400" alt="FX6 Wi-Fi Station Mode settings" />
 
 ## RCP configuration
 
-Set up a new camera via the [RCP Configuration UI](/docs/Manuals/RCP/ConfWebUI):
-- Enter a custom number, name, etc.
-- Select **Sony** for the brand
-- Select **Sony FX6** for the model
-- Enter the IP of the camera
-- Enter the login/password
+Add the FX6 in the [RCP web UI](/docs/reference/manuals/rcp/web-ui):
+
+1. Click **+** to add a new camera
+2. Enter a camera number and name
+3. Select **Sony** as the brand
+4. Select **Sony FX6** as the model
+5. Enter the camera's IP address
+6. Enter the login and password
 
 :::important
-
-Make sure the RCP has an IP address in the same range as the camera, follow [this guide](/docs/Configuration/ConfIP) to add a new IP to the RCP.
+Ensure the RCP has an IP address on the same subnet as the camera. See the [IP configuration guide](/docs/guides/networking/ip-configuration) to add a new IP to the RCP.
 :::
 
-<img src="/img/Integrations/Sony/Sony-FX6/FX6-setup.png" width="300" />
+<img src="/img/Integrations/Sony/Sony-FX6/FX6-setup.png" width="300" alt="FX6 RCP configuration" />
 
-Once correctly connected, the camera icon should turn green:
+Once connected, the camera icon turns green:
 
-<img src="/img/Integrations/Sony/Sony-FX6/FX6-block.png" width="300" />
-
+<img src="/img/Integrations/Sony/Sony-FX6/FX6-block.png" width="300" alt="FX6 connected status" />
 
 ## Troubleshooting
 
-### Camera doesn't turn green
+### Camera status does not turn green
 
-Check the following:
-* **Ping the camera from a computer**
-  * Set the computer in the same IP range as the camera
-  * Checks the ethernet dongle and camera IP configuration if that part doesn't work
-  * If you have the caemra configured as DHCP but don't know if you have a DHCP server, consider configuring static IPs instead
-* **Ping the RCP from the computer**
-  * Ping the IP address of the RCP which is in the same range as the camera
-  * This will validate that the RCP and the camera are in the same network/mask.
-  * Make sure you [assigned an IP address on the RCP](/docs/Configuration/ConfIP) if this step doesn't work
-* **Disable and re-enable remote control** from the network settings
-  * The camera is sometimes stuck in uncontrolled mode and doing this change properly re-enables control
-* **Power cycle the camera**, if necessary remove the battery or PSU
+1. **Ping the camera from a computer** — Set the computer to the same IP range as the camera. If the ping fails, check the Ethernet dongle and camera IP configuration. If the camera is set to DHCP and you do not have a DHCP server, switch to static IP.
 
-### Iris or other lens controls don't work
-* Multiple issues can happen when using Metabones Canon EF Lens to Sony E Mount adapters or the Chrosziel Mount Adapter E-to-PL. If control of other parameters are working fine, it's not likely that the RCP or RIO could be the problem here. The best way to check the camera is to use the CBM or Monitor Sony Mobile apps and test iris, zoom and focus from the app. The RCP uses the same API so should work in a similar way.
-* Using a RIO, it is possible to directly control Servo lenses (B4 or PL) or even motors like Arri CForce (coming) or Tilta. Beside being a proper solution on its own, it can also be a good backup solution when lens control fails from the camera itself
+2. **Ping the RCP from the computer** — Use the RCP's IP address that is on the same subnet as the camera. This verifies the RCP and camera are on the same network. If the ping fails, [add an IP address to the RCP](/docs/guides/networking/ip-configuration).
 
-### USB-Ethernet compatibility
+3. **Disable and re-enable remote control** in the camera's network settings. The camera can get stuck in an uncontrolled state, and toggling this setting resets it.
 
-The FX6 only supports USB-Ethernet dongles with older chipsets, and finding compatible ones these days is becoming increasingly difficult. Here’s what we know so far:
+4. **Power cycle the camera** — Remove the battery or PSU if a soft restart does not help.
 
-- Dongles with the **ASIX AX88179** chipset work. However, the newer AX88179A and AX88179B versions do not.
+### Iris or lens controls do not work
 
-- Some dongles using the **Realtek RTL8153** chipset are compatible, but not all — it’s hit or miss.
+- **Lens adapter issues** — Metabones Canon EF to Sony E mount adapters and the Chrosziel E-to-PL adapter can cause lens control problems. If other parameters (gain, shutter, etc.) work correctly, the issue is likely with the adapter, not the RCP. Test iris, zoom, and focus using the Sony CBM or Monitor mobile app — the RCP uses the same API.
 
-If you plug in an incompatible dongle, the FX6 can crash and might not even power down when you turn it off. So between each test, make sure to **remove the USB-Ethernet adapter and fully power cycle the camera before trying a new one**. Otherwise, you could end up testing a compatible dongle while the camera is still in a bad state, and it won’t work anyway.
+- **Direct lens control via RIO** — As an alternative, you can control servo lenses (B4 or PL) or motors (Tilta, ARRI cforce) directly through a [RIO](/docs/products/rio). This works as a standalone solution or as a backup when camera-based lens control fails.
 
-Most USB-C Ethernet dongles won’t work, since they tend to use newer chipsets. You’ll have better luck testing older USB-A dongles (if you have any), even if that means using a USB-A to USB-C adapter — not ideal for the connection, but more likely to be compatible.
+### USB-Ethernet compatibility {#usb-ethernet-compatibility}
+
+The FX6 only supports USB-Ethernet dongles with specific older chipsets. Compatible dongles are increasingly difficult to find.
+
+**Compatible chipsets:**
+- **ASIX AX88179** — Works. The newer AX88179A and AX88179B versions do **not** work.
+- **Realtek RTL8153** — Some work, some do not. Results vary by dongle manufacturer.
+
+:::warning
+An incompatible dongle can crash the FX6 and prevent it from powering off. Between each test, **remove the USB-Ethernet adapter and fully power cycle the camera** before trying a new dongle. Otherwise, a compatible dongle may fail because the camera is still in a bad state.
+:::
+
+Most USB-C Ethernet dongles use newer chipsets and will not work. You will have better results with older USB-A dongles (using a USB-A to USB-C adapter if needed).

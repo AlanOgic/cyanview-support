@@ -35,7 +35,7 @@ Then in your RCP, you should see your NIO appear in light grey
 
 <img src="/img/Manual/NIO/NIO-setup2.png" width="200"/>
 
-You can then configure it as [usual](/docs/Configuration/Tally#gpi)
+You can then configure it as [usual](/docs/guides/tally/tally#gpi)
 
 :::note
 For GPI, if not using a short contact, ensure to use < 5V
@@ -45,7 +45,7 @@ For GPI, if not using a short contact, ensure to use < 5V
 
 <img src="/img/Manual/NIO/NIO-setup.png" width="500"/>
 
-You can then configure it as [usual](/docs/Configuration/Tally#gpo)
+You can then configure it as [usual](/docs/guides/tally/tally#gpo)
 
 :::note
 When GPO is LOW, output voltage is 0V.

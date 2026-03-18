@@ -26,7 +26,7 @@ If you have a:
 * C300mk3
 * C500mk2
 
-Remote-A is supported, but prefer the <a href="/docs/Integrations/Canon/CanonXC">Canon XC</a> protocol, it is IP, faster and bidirectional.
+Remote-A is supported, but prefer the <a href="/docs/integrations/cameras/canon/canon-xc">Canon XC</a> protocol, it is IP, faster and bidirectional.
 :::
 
 
@@ -35,7 +35,7 @@ Remote-A is supported, but prefer the <a href="/docs/Integrations/Canon/CanonXC"
 <img src="/img/Integrations/Canon/canon-LANC-wiring.png"/>
 
 
-* Plug the cable [CY-CBL-6P-LANC-03](/docs/Accessories/CableCatalog#cy-cbl-6p-lanc-03) in your camera
+* Plug the cable [CY-CBL-6P-LANC-03](/docs/resources/cable-catalog#cy-cbl-6p-lanc-03) in your camera
 * Plug the other side on the CI0 port 2 (port 1 is not compatible with `Remote A`)
 
 ## Controls
@@ -47,8 +47,8 @@ Remote-A is supported, but prefer the <a href="/docs/Integrations/Canon/CanonXC"
 **Black balance** (R/B, master black and black gamma)|✔
 **Other settings** (knee, detail)|✔
 **OSD/Menu**|✔
-**Lens** <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">(zoom, focus)</a>|✔
-**Scene file** : <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">save/recall</a>|✔
+**Lens** <a href="/docs/reference/manuals/rcp/ui/scene">(zoom, focus)</a>|✔
+**Scene file** : <a href="/docs/reference/manuals/rcp/ui/scene">save/recall</a>|✔
 
 :::note
 The protocol Remote-A is unidirection (no feedback from camera) and limited. We try to display the most accurate values, but we receive no feedback from the camera so this is always an approximation. Ensure to precisely follow the camera setup guide below to ensure the best match between RCP values and camera values.

@@ -51,7 +51,7 @@ What we will describe here:
 
 On these shows, they used mainly the FX9 and some GoPro's.
 
-You can find a full integration guide [here](/docs/Integrations/Sony/SonyFX9)
+You can find a full integration guide [here](/docs/integrations/cameras/sony/sony-fx9)
 
 But the main points are:
 * We can control the FX9 over Ethernet (with XDCA accessory) or Wi-Fi (RIO acts as an access point).
@@ -64,7 +64,7 @@ But the main points are:
 <img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-network-staticIP.jpg" width="300"/>
 
 :::note
-You can find more about the RIO Wi-Fi possibilities <a href="/docs/Configuration/WiFiUSB">here</a>
+You can find more about the RIO Wi-Fi possibilities <a href="/docs/guides/networking/wifi-usb">here</a>
 :::
 
 :::note
@@ -73,9 +73,9 @@ Each camera IP was in the range `192.168.10.X/16` with X the ID of the camera
 
 ## Set up the lens
 
-You can find a full integration guide for B4 lenses [here](/docs/Integrations/Lens/B4Lens)
+You can find a full integration guide for B4 lenses [here](/docs/integrations/lenses/b4-lens)
 
-If you need to motorize a lens (prime lens, photo lens or robotic applications), we used Tilta motors, the full integration guide is available [here](/docs/Integrations/Lens/Tilta)
+If you need to motorize a lens (prime lens, photo lens or robotic applications), we used Tilta motors, the full integration guide is available [here](/docs/integrations/lenses/tilta)
 
 <img src="https://www.cyanview.com/wp-content/uploads/2022/08/CyanView-FX9-Agito-1.jpg" width="400"/>
 
@@ -87,9 +87,9 @@ We had a big variety of lenses on this show:
 * Canon Prime 14 mm f/2.8L II USM (EF)
 * Canon 11-24 mm f/4L USM (EF)
 
-We can control Canon (using our cable <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-b4-01">CY-CBL-B4-6P</a>) and Fujinon lenses (using our cable <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-fuji">CY-CBL-6P-FUJI</a>) with their own connectors.
+We can control Canon (using our cable <a href="/docs/resources/cable-catalog#cy-cbl-6p-b4-01">CY-CBL-B4-6P</a>) and Fujinon lenses (using our cable <a href="/docs/resources/cable-catalog#cy-cbl-6p-fuji">CY-CBL-6P-FUJI</a>) with their own connectors.
 
-PlaniPresse decided to use a Fujinon accessory to have a standard control over B4 (12pin) on all lenses to use only a single cable : <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-b4-01">CY-CBL-B4-6P</a>
+PlaniPresse decided to use a Fujinon accessory to have a standard control over B4 (12pin) on all lenses to use only a single cable : <a href="/docs/resources/cable-catalog#cy-cbl-6p-b4-01">CY-CBL-B4-6P</a>
 
 It makes the wiring and setup easier, but both solutions works.
 
@@ -223,7 +223,7 @@ They first convert the HDMI to SDI using a Decimator
 
 <img src="/img/blog/decimator.jpg" width="200"/>
 
-You can get a full integration guide for the VP4 [here](/docs/Manuals/VP4Manual)
+You can get a full integration guide for the VP4 [here](/docs/reference/manuals/vp4-manual)
 
 The only setup in the VP4 is the format and genlock options:
 
@@ -263,7 +263,7 @@ And it will appear like that in your RCP configuration:
 
 ### Tally
 
-The tally input was done using the ATEM, you can find a generic integration guide [here](/docs/Integrations/Generic/routers).
+The tally input was done using the ATEM, you can find a generic integration guide [here](/docs/integrations/generic/routers).
 
 As the ATEM is limited to 12 simultaneous connections, we tried to limit as much as possible the number of device connecting to it, so instead of having each RCP connecting to the ATEM to have the tally input.
 
@@ -280,7 +280,7 @@ This way, tally input is routed correctly to each camera:
 
 For the vision, we use an AJA KUMO, this is one of the few switchers that supports as many inputs/outputs and have a clean switch.
 
-You can find a generic integration guide [here](/docs/Integrations/Generic/routers).
+You can find a generic integration guide [here](/docs/integrations/generic/routers).
 
 Each RCP as a preview button that allows to call the camera on a switcher.
 
@@ -311,9 +311,9 @@ Ensuring that all cameras are recording is really important and is painful:
 * Click on REC
 
 As we have:
-* 1 RCP with all the cameras imported for the tally [here](./FashionShow#tally)
+* 1 RCP with all the cameras imported for the tally [here](#tally)
 * As we control the REC trigger of the camera in the protocol
-* We can use the group control feature (described <a href="/docs/Configuration/advanced/CameraGroups">here</a>) to trig REC on all cameras at the same time
+* We can use the group control feature (described <a href="/docs/guides/advanced/camera-groups">here</a>) to trig REC on all cameras at the same time
 
 You simply put the RCP in "group control" mode and navigate to `Camera > OSD` menu in the RCP and click on `REC`.
 

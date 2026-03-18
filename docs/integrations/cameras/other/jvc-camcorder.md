@@ -43,9 +43,9 @@ You can also use a RIO on the camera side, combined with a RCP if you need remot
 <img src="/img/Integrations/JVC/JVC-camera-block.png" width="450" />
 
 :::note
-If your camera is not in the default Cyanview range (10.192.0.0/16), you can either change your camera IP, or add a [new IP range inside the RCP](/docs/Configuration/ConfIP#lan-configuration)
+If your camera is not in the default Cyanview range (10.192.0.0/16), you can either change your camera IP, or add a [new IP range inside the RCP](/docs/guides/networking/ip-configuration#lan-configuration)
 :::
 
 :::note
-If you need advanced shading, you can combine camera control with a [VP4](/docs/Manuals/VP4Manual)
+If you need advanced shading, you can combine camera control with a [VP4](/docs/reference/manuals/vp4-manual)
 :::

@@ -11,7 +11,7 @@ slug: /integrations/cameras/panasonic/p2hd
 
 ## Supported Models
 
-These are the newer P2HD models with **control over IP** (RJ45 connector at the back). For older models, see [P2 serial](/docs/Integrations/Panasonic/P2-serial).
+These are the newer P2HD models with **control over IP** (RJ45 connector at the back). For older models, see [P2 serial](/docs/integrations/cameras/panasonic/p2-serial).
 
 * AJ-PX270
 * AJ-PX380

@@ -13,16 +13,16 @@ slug: /reference/manuals/tally-light-manual
 
 # Introduction
 
-Our RCP can route your tally from [various inputs](/docs/Configuration/Tally) to your camera.
+Our RCP can route your tally from [various inputs](/docs/guides/tally/tally) to your camera.
 If your camera has tally (Panasonic PTZ, Sony ENG, etc.), we will trigger it alongside the shading control.
 
-If your camera doesn't have one (mini camera, camcorder, etc.), the CI0/RIO has embedded LEDs, that are configured for tally by default. [One for each port](/docs/Manuals/CI0/CI0Manual#a-camera-on-each-port).
+If your camera doesn't have one (mini camera, camcorder, etc.), the CI0/RIO has embedded LEDs, that are configured for tally by default. [One for each port](/docs/reference/manuals/ci0/ci0-manual#a-camera-on-each-port).
 
 But this is sometimes not enough and you need a more visible tally light.
 
 # Solutions and use case
 
-If you need a tally in the viewfinder or want to design/integrate your own tally box, we have a [DIY kit](/docs/Configuration/Tally#ci0rio-external-led) and an [assembly guide](/docs/Accessories/BuildTallyLED).
+If you need a tally in the viewfinder or want to design/integrate your own tally box, we have a [DIY kit](/docs/guides/tally/tally#ci0rio-external-led) and an [assembly guide](/docs/resources/build-tally-led).
 
 If you need a plug and play solution to integrate with your camcorder or mirrorless camera, we designed this box:
 
@@ -34,7 +34,7 @@ Features:
 * 12V DC
 * Front and rear separate on/off buttons
 * Front and rear separate dimming
-* Shoe lock mounting (camcorder, [mirrorless](/docs/Integrations/Sony/SonyAlpha), etc.)
+* Shoe lock mounting (camcorder, [mirrorless](/docs/integrations/cameras/sony/sony-alpha), etc.)
 * Screw mounting
 
 # Wiring:
@@ -62,4 +62,4 @@ In the RCP web UI:
     - `camera` (line, left column)
     - `GPO` (column, top line), select `1:PWR` or `2:PWR` depending on the port you plugged the tally light
 
-You can have more information on the tally output <a href="/docs/Configuration/Tally#tally-output">here</a>
+You can have more information on the tally output <a href="/docs/guides/tally/tally#tally-output">here</a>

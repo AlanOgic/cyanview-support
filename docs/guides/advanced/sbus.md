@@ -74,7 +74,7 @@ The pinout is :
 - HR10A pin 4: SBUS
 - HR10A pin 5: Ground
 
-Cable [CY-CBL-6P-FAN](/docs/Accessories/CableCatalog#cy-cbl-6p-fan) can be used to connect a S.BUS device to a CI0.
+Cable [CY-CBL-6P-FAN](/docs/resources/cable-catalog#cy-cbl-6p-fan) can be used to connect a S.BUS device to a CI0.
 
 ## Example with a DJI Ronin-S gimbal
 

@@ -33,8 +33,8 @@ optional:
 
 On an existing camera, scroll to `Lens - External control override` section:
 * `Model` : select `cmotion - cGate`
-* [Toggle Advanced Mode](/docs/Configuration/advanced/SerialCam#toggle-advanced-mode)
-* `Advanced` : put the ip address of the cgate. When done, the `Interface` should update to the ip address. Make sure that the ip address of the cgate is reachable by the RCP, see [this page](/docs/Configuration/ConfIP?_highlight=ip#lan-configuration) for more information about ip configuration.
+* [Toggle Advanced Mode](/docs/guides/advanced/serial-camera#toggle-advanced-mode)
+* `Advanced` : put the ip address of the cgate. When done, the `Interface` should update to the ip address. Make sure that the ip address of the cgate is reachable by the RCP, see [this page](/docs/guides/networking/ip-configuration?_highlight=ip#lan-configuration) for more information about ip configuration.
 
 If everything is properly configured, the `lens` block should turn green:
 <img src="/img/Integrations/cmotion/config_base_cam_400x307.png"/>

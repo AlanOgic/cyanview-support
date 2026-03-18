@@ -30,8 +30,8 @@ Any lens from Canon (12P digital) or Fujinon (12P or 20P digital) that is motori
 Any lens with cmotion motorization.
 
 If you have a non motorized lens or a prime lens, we can also drive external motors:
-* <a href="/docs/Integrations/Generic/Lens">this generic guide</a>
-* <a href="/docs/Integrations/Lens/Tilta">Tilta motors</a>
+* <a href="/docs/integrations/generic/lens">this generic guide</a>
+* <a href="/docs/integrations/lenses/tilta">Tilta motors</a>
 
 :::note
 Example: Canon 18-80 mm photo lens.
@@ -42,8 +42,8 @@ It doesn't have any 12P port, only the 20P port (analog) that only allows to plu
 ## Wiring
 
 Required cable:
-* Canon Cine-Servo, C-Motion : <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a>
-* Fujinon Cabrio : <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-fuji-02-default">CY-CBL-6P-FUJI-02</a> combined with <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a>
+* Canon Cine-Servo, C-Motion : <a href="/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a>
+* Fujinon Cabrio : <a href="/docs/resources/cable-catalog#cy-cbl-6p-fuji-02-default">CY-CBL-6P-FUJI-02</a> combined with <a href="/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a>
 
 <img src="/img/Integrations/Lens/B4-cabrio.png" width="800" />
 
@@ -83,8 +83,8 @@ If you only need the Iris control and let zoom/focus controlled by the cameraman
 
 ## Setup RCP/RIO
 
-- Set up your camera as usual following one of the guide available (here, I will show the setup with an <a href="/docs/Integrations/Sony/SonyFX9">FX9</a>)
-- In the <a href="/docs/Manuals/RCP/ConfWebUI">`configuration`</a> tab, click on your camera
+- Set up your camera as usual following one of the guide available (here, I will show the setup with an <a href="/docs/integrations/cameras/sony/sony-fx9">FX9</a>)
+- In the <a href="/docs/reference/manuals/rcp/web-ui">`configuration`</a> tab, click on your camera
 - In the right tab, scroll down to `Lens` block:
    - Select **B4 Generic**
    - Select your CI0/RIO and the port on which the lens is plugged (here, my lens is on : `RIO-15-215` on `port 1`)
@@ -102,8 +102,8 @@ And once correctly connected, it should be green:
 ### Iris is not displayed on the RCP
 
 * Check your wiring:
-   - <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a> for Canon
-   -  <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a> and <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-fuji-02-default">CY-CBL-6P-FUJI-02</a> for Fujinon
+   - <a href="/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a> for Canon
+   -  <a href="/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a> and <a href="/docs/resources/cable-catalog#cy-cbl-6p-fuji-02-default">CY-CBL-6P-FUJI-02</a> for Fujinon
    - Check connectors on lens and RIO, ensure they are properly plugged
    - Check that the port on RIO match your configuration (port 1 or 2)
 * Check in your web UI that the lens block is green (connection OK)

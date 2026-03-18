@@ -16,7 +16,7 @@ The camera is compatible with XC protocol.
 <img src="/img/Integrations/Canon/XF605/XF605.png" width="400"/>
 
 :::note
-While you can follow this <a href="/docs/Integrations/Canon/CanonXC">generic guide</a>, prefer this one as all the ranges (lens, etc.) are correctly adapted.
+While you can follow this <a href="/docs/integrations/cameras/canon/canon-xc">generic guide</a>, prefer this one as all the ranges (lens, etc.) are correctly adapted.
 :::
 
 ## Wiring
@@ -35,8 +35,8 @@ The control is done over Ethernet.
 **Other settings** (saturation, knee, detail, denoise)|✔
 **Tally**|✔
 **OSD/Menu**|✔
-**Lens** <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">(zoom, focus)</a>|✔
-**Scene file** : <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">save/recall</a>|✔
+**Lens** <a href="/docs/reference/manuals/rcp/ui/scene">(zoom, focus)</a>|✔
+**Scene file** : <a href="/docs/reference/manuals/rcp/ui/scene">save/recall</a>|✔
 
 ## Camera Configuration
 
@@ -44,7 +44,7 @@ You need to:
 * Configure Ethernet static IP
 * Enable XC protocol
 
-You can follow this <a href="/docs/Integrations/Canon/CanonXC#camera-configuration">generic guide</a> to set up XC protocol on your XF605 camera.
+You can follow this <a href="/docs/integrations/cameras/canon/canon-xc#camera-configuration">generic guide</a> to set up XC protocol on your XF605 camera.
 
 ### Camera setup
 
@@ -139,4 +139,4 @@ And on your RCP:
 
 ## Troubleshooting
 
-See the generic XC protocol <a href="/docs/Integrations/Canon/CanonXC#troubleshooting">troubleshooting guide</a>
+See the generic XC protocol <a href="/docs/integrations/cameras/canon/canon-xc#troubleshooting">troubleshooting guide</a>

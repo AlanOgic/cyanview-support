@@ -35,7 +35,7 @@ Start here if your camera or device is not listed by brand, or if you want to un
 
 ### Other manufacturers
 
-AJA, Birddog, Bolin, BRRemote, Dreamchip, EVS, Grass Valley, Haivision, Ikegami, JVC, LanSee, Lawo, Marshall, Proton, RED, vMix, Zcam — see the [Other cameras](/docs/category/other-cameras) section.
+AJA, Birddog, Bolin, BRRemote, Dreamchip, EVS, Grass Valley, Haivision, Ikegami, JVC, LanSee, Lawo, Marshall, Proton, RED, vMix, Zcam — see the [Other cameras](/docs/integrations/cameras/other/aja-rovocam) section.
 
 ## Lenses
 

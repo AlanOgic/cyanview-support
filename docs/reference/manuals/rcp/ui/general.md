@@ -21,7 +21,7 @@ There are two main ways to access the menu system:
 
 - **MENU Button**: Located at the top right corner of the device, this button opens the main menu.
 
-- **Blue and White Buttons**: Positioned just above the screen, these buttons act as shortcuts to specific menu sections. These shortcuts can be customized by the user to suit their workflow. (see [RCP UI - Assignables](/docs/Manuals/RCP/RCPUI/RCPUIAssignables))
+- **Blue and White Buttons**: Positioned just above the screen, these buttons act as shortcuts to specific menu sections. These shortcuts can be customized by the user to suit their workflow. (see [RCP UI - Assignables](/docs/reference/manuals/rcp/ui/assignables))
 
   ![Assignables](/img/Manual/RCP/RCP-buttons.png)
 
@@ -54,7 +54,7 @@ At the top of the screen, the white button functions are displayed.
 The default display mode for assignable buttons can be configured permanently via the **Settings** menu:
 
 - Navigate to **SETTINGS > RCP Settings**.
-- For more details, see the [RCP Settings documentation](/docs/Manuals/RCP/RCPUI/RCPUISettings).
+- For more details, see the [RCP Settings documentation](/docs/reference/manuals/rcp/ui/settings).
 
 #### Temporary Display Toggle
 
@@ -82,7 +82,7 @@ By default, the RCP interface displays only the **red** and **blue** channel con
 The **green channel** controls can be enabled via the settings menu:
 
 - Navigate to **SETTINGS > RCP Settings**.
-- For more information, see the [RCP Settings documentation](/docs/Manuals/RCP/RCPUI/RCPUISettings).
+- For more information, see the [RCP Settings documentation](/docs/reference/manuals/rcp/ui/settings).
 
 Once enabled, the green gain and black levels will be displayed alongside red and blue on the main screen.
 

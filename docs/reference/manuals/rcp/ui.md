@@ -28,10 +28,10 @@ One in a sub-menu/leaf, you can:
 ### Menu tree
 
 * MENU
-    * <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">SCENE</a>:
+    * <a href="/docs/reference/manuals/rcp/ui/scene">SCENE</a>:
 
-        * S. FILES : <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene#quick-scene-files">Quick</a>, <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene#files">Files</a>, <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene#presets">Presets</a>
-        * S. CONFIG : <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene#folders">Folders</a>, <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene#filters">Filters</a>
+        * S. FILES : <a href="/docs/reference/manuals/rcp/ui/scene#quick-scene-files">Quick</a>, <a href="/docs/reference/manuals/rcp/ui/scene#files">Files</a>, <a href="/docs/reference/manuals/rcp/ui/scene#presets">Presets</a>
+        * S. CONFIG : <a href="/docs/reference/manuals/rcp/ui/scene#folders">Folders</a>, <a href="/docs/reference/manuals/rcp/ui/scene#filters">Filters</a>
     * PAINT
         * FILTERS
         * WHITE
@@ -85,37 +85,37 @@ Click on the breadcrumb path (blue links) or the screenshot to jump to the relat
     <tr>
         <td><img src="/img/Manual/RCP/RCP-menu-root.BMP"/></td>
     </tr>
-    <tr><td>MENU ></td><td><a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">SCENE</a></td><td></td></tr>
+    <tr><td>MENU ></td><td><a href="/docs/reference/manuals/rcp/ui/scene">SCENE</a></td><td></td></tr>
     <tr>
         <td></td>
         <td><img src="/img/Manual/RCP/RCP-menu-scene.BMP"/></td>
     </tr>
-    <tr><td>MENU ></td><td><a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">SCENE</a> ></td><td>S.FILES</td></tr>
+    <tr><td>MENU ></td><td><a href="/docs/reference/manuals/rcp/ui/scene">SCENE</a> ></td><td>S.FILES</td></tr>
     <tr>
         <td/>
         <td/>
-        <td><a href="/docs/Manuals/RCP/RCPUI/RCPUIScene#quick-scene-files"><img src="/img/Manual/RCP/RCP-menu-scene-1_1_2.BMP"/></a></td>
+        <td><a href="/docs/reference/manuals/rcp/ui/scene#quick-scene-files"><img src="/img/Manual/RCP/RCP-menu-scene-1_1_2.BMP"/></a></td>
     </tr>
     <tr>
         <td/>
         <td/>
-        <td><a href="/docs/Manuals/RCP/RCPUI/RCPUIScene#files"><img src="/img/Manual/RCP/RCP-menu-scene-1_2_2.BMP"/></a></td>
+        <td><a href="/docs/reference/manuals/rcp/ui/scene#files"><img src="/img/Manual/RCP/RCP-menu-scene-1_2_2.BMP"/></a></td>
     </tr>
     <tr>
         <td/>
         <td/>
-        <td><a href="/docs/Manuals/RCP/RCPUI/RCPUIScene#presets"><img src="/img/Manual/RCP/RCP-menu-scene-1_3_2.BMP"/></a></td>
+        <td><a href="/docs/reference/manuals/rcp/ui/scene#presets"><img src="/img/Manual/RCP/RCP-menu-scene-1_3_2.BMP"/></a></td>
     </tr>
-    <tr><td>MENU ></td><td><a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">SCENE</a> ></td><td>S.CONFIG</td></tr>
+    <tr><td>MENU ></td><td><a href="/docs/reference/manuals/rcp/ui/scene">SCENE</a> ></td><td>S.CONFIG</td></tr>
     <tr>
         <td/>
         <td/>
-        <td><a href="/docs/Manuals/RCP/RCPUI/RCPUIScene#folders"><img src="/img/Manual/RCP/RCP-menu-scene-2_1_2.BMP"/></a></td>
+        <td><a href="/docs/reference/manuals/rcp/ui/scene#folders"><img src="/img/Manual/RCP/RCP-menu-scene-2_1_2.BMP"/></a></td>
     </tr>
     <tr>
         <td/>
         <td></td>
-        <td><a href="/docs/Manuals/RCP/RCPUI/RCPUIScene#filters"><img src="/img/Manual/RCP/RCP-menu-scene-2_2_2.BMP"/></a></td>
+        <td><a href="/docs/reference/manuals/rcp/ui/scene#filters"><img src="/img/Manual/RCP/RCP-menu-scene-2_2_2.BMP"/></a></td>
     </tr>
     <tr><td>MENU ></td><td>PAINT</td><td></td></tr>
     <tr>

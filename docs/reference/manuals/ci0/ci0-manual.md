@@ -21,7 +21,7 @@ Serial ports connector refererence: Hirose HR10A-7R-6S(73)
 
 Mating plug for cables: HR10A-7P-6P(73)
 
-Cyanview provides a range of cables to interface most cameras. Please refer to our [cable page](/docs/Accessories/CableCatalog).
+Cyanview provides a range of cables to interface most cameras. Please refer to our [cable page](/docs/resources/cable-catalog).
 
 The *Integration* manuals also provide information on what cable to use for what camera.
 
@@ -153,7 +153,7 @@ Mandatory ports:
 
 
 By using a TPLink nano router, you can control your camera over WiFi.
-You can follow this [guide](/docs/Configuration/WiFi) to guide you through the setup.
+You can follow this [guide](/docs/guides/networking/wifi) to guide you through the setup.
 
 
 ### Power Connection
@@ -203,7 +203,7 @@ CI0 is updated automatically by the RCP or GWY when the software version changes
 
 ## Troubleshooting
 
-You can find typical issues and solution in this dedicated [section](Troubleshooting/Troubleshooting.md)
+You can find typical issues and solution in this dedicated [section](/docs/reference/troubleshooting/troubleshooting)
 
 ### CI0 doesn't start
 
@@ -255,5 +255,5 @@ CI0 can't communicate with RCP/RIO over the network.
 
 This is a bug on old CI0 with software 21.10
 
-1. [Upgrade](/docs/Manuals/RCP/ProductUpdate) your RCP/GWY to 21.11.1 or later (to have the bug fix)
-2. Force a firmware update on your CI0 by following this [guide](/docs/Manuals/CI0/CI0Manual#force-a-firmware-update)
+1. [Upgrade](/docs/reference/product-update) your RCP/GWY to 21.11.1 or later (to have the bug fix)
+2. Force a firmware update on your CI0 by following this [guide](/docs/reference/manuals/ci0/ci0-manual#force-a-firmware-update)

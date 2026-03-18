@@ -47,9 +47,9 @@ The Burano is restricted to allow only one control protocol at a time. If you en
 <img alt="Cyanview RCP Sony Burano" src="/img/Integrations/Sony/Sony-Burano/Burano-wiring-wifi.png" width="800" />
 
 :::info
-If you need to use non Sony lenses, you would need a RIO/RIO-live with a cable:
-* <a href="/docs/Integrations/Lens/CineLens">Canon/Fuji motorised lenses</a>
-* <a href="/docs/Integrations/Lens/Tilta">Tilta motors</a>
+If you need to use non Sony lenses, you would need a RIO/RIO +LAN with a cable:
+* <a href="/docs/integrations/lenses/cine-lens">Canon/Fuji motorised lenses</a>
+* <a href="/docs/integrations/lenses/tilta">Tilta motors</a>
 * ARRI C-Force
 :::
 
@@ -64,7 +64,7 @@ In short, from the camera menus:
 
 ## RCP Configuration
 
-Set up a new camera via the [RCP Configuration UI](/docs/Manuals/RCP/ConfWebUI):
+Set up a new camera via the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui):
 - Enter a custom number, name, etc.
 - Select **Sony** for the brand
 - Select **Burano** for the model

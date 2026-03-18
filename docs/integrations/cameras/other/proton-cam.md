@@ -65,7 +65,7 @@ No specific cable needed, the camera plugs directly in CI0 serial port. CI0 prov
 
 ## Setup
 
-Set up a new camera via the <a href="/docs/Manuals/RCP/ConfWebUI">RCP Configuration UI</a>:
+Set up a new camera via the <a href="/docs/reference/manuals/rcp/web-ui">RCP Configuration UI</a>:
 
 - Enter a custom number and a name
 - Select **Proton** brand

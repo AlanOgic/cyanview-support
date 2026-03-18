@@ -41,8 +41,8 @@ We have 2 protocols:
 **REC** (start/stop)|✔|✔|
 **Other controls** (ISO base[^6], APR, pattern, flip horizontal/vertical, replay[^7], User Keys[^8], TC)|✔|
 **Tally**||✔[^9]
-**Lens** <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">(zoom, focus)</a>[^10]|✔|
-**Scene file** : <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">save/recall</a>|✔|✔
+**Lens** <a href="/docs/reference/manuals/rcp/ui/scene">(zoom, focus)</a>[^10]|✔|
+**Scene file** : <a href="/docs/reference/manuals/rcp/ui/scene">save/recall</a>|✔|✔
 
 [^1]: Venice IP : gain is expressed in ISO, only affects SDI output. Base ISO (800 or 3200) affects the ISO range and the (fixed) REC ISO.
 
@@ -95,16 +95,16 @@ Can work through simple Ethernet switch or fiber like Ereca CAM Racer, etc.
 <img src="/img/Integrations/Sony/Sony-Venice/Sony-Venice-8P-LAN-wiring.png" width="900" />
 
 * RCP powered by PoE or 12V PSU
-* CI0 or RIO/RIO-live powered by camera using the cable (no D-TAP required)
+* CI0 or RIO/RIO +LAN powered by camera using the cable (no D-TAP required)
 * cable : CY-CBL-6P-SONY-8P-03 (controls the camera and power the CI0/RIO)
 
 :::note
 Can work through simple Ethernet switch or fiber like Ereca CAM Racer, etc.
 
-Some people prefer to keep the CI0/RIO-live on camera side and then it's simply ethernet between the RCP and CI0/RIO-live.
+Some people prefer to keep the CI0/RIO +LAN on camera side and then it's simply ethernet between the RCP and CI0/RIO +LAN.
 
 
-Some people will prefer to keep the CI0/RIO-live on the RCP side and connect the serial through Ereca (pro: clean setup on camera side, cons: you lose the flexibility of the RIO-live with external motors/lens control, etc.)
+Some people will prefer to keep the CI0/RIO +LAN on the RCP side and connect the serial through Ereca (pro: clean setup on camera side, cons: you lose the flexibility of the RIO +LAN with external motors/lens control, etc.)
 :::
 
 ### Sony Venice IP (Wireless)
@@ -153,7 +153,7 @@ In `Technical > Special Configuration`: set `RM / RCP Paint Con` to `On`
 
 ## RCP setup
 
-Set up a new camera via the <a href="/docs/Manuals/RCP/ConfWebUI">RCP Configuration UI</a>:
+Set up a new camera via the <a href="/docs/reference/manuals/rcp/web-ui">RCP Configuration UI</a>:
 
 ### Venice IP
 

@@ -50,7 +50,7 @@ Path : `MENU > LENS`
 
 <img src="/img/Manual/RCP/Lens/F2.BMP"/>
 
-This page only works for external lens (i.e. Canon PL lens on FX9 controlled with RIO-live):
+This page only works for external lens (i.e. Canon PL lens on FX9 controlled with RIO +LAN):
 * control is exclusive : if RIO takes control, cameraman lose control
 * Iris : usually enabled as it's the main usage for RCP
 * Zoom : usually disable to let the cameraman zoom in/out. Used for robotic application or beauty shot (then RCP or any cyanview device can operate the zoom/focus)
@@ -58,7 +58,7 @@ This page only works for external lens (i.e. Canon PL lens on FX9 controlled wit
 
 <img src="/img/Manual/RCP/Lens/F3.BMP"/>
 
-If using external lens (Canon PL lens on FX9 controlled with RIO-live), you can check here if the communication is established as the lens model will be displayed.
+If using external lens (Canon PL lens on FX9 controlled with RIO +LAN), you can check here if the communication is established as the lens model will be displayed.
 
 <img src="/img/Manual/RCP/Lens/F4.BMP"/>
 

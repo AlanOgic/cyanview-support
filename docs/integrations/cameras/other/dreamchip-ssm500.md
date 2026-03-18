@@ -58,9 +58,9 @@ To control the SSM500 using a Cyanview RCP, all that is required is a IP connect
 
 #### Standalone Mode
 
- - In **standalone** mode, *replay* and *trigger* is done via [Stream Deck](/docs/Integrations/Accessories/ElgatoStreamDeck) or [shuttle](https://www.contourdesign.com/product/shuttle/) connected to the RCP. Replays are then stored in the camera's internal storage.
+ - In **standalone** mode, *replay* and *trigger* is done via [Stream Deck](/docs/integrations/accessories/elgato-stream-deck) or [shuttle](https://www.contourdesign.com/product/shuttle/) connected to the RCP. Replays are then stored in the camera's internal storage.
 
-This mode allows to operate slow motion and replays directly from the Cyanview RCP via a [Streamdeck](/docs/Integrations/Accessories/ElgatoStreamDeck) and a [Shuttle Pro](https://www.contourdesign.com/product/shuttle/).
+This mode allows to operate slow motion and replays directly from the Cyanview RCP via a [Streamdeck](/docs/integrations/accessories/elgato-stream-deck) and a [Shuttle Pro](https://www.contourdesign.com/product/shuttle/).
 
 <img alt="cyanview-support-SSM500-Dreamchip-CI0-RCP-Standalone" src="/img/Integrations/Dreamchip/Dreamchip_SSM500_Standalone_Workflow.png" width="700" />
 
@@ -112,9 +112,9 @@ You will now be able to control the **External Lens**
 
 ### Standalone Mode Setup
 
-- In **standalone** mode, *replay* and *trigger* is done via [Stream Deck](/docs/Integrations/Accessories/ElgatoStreamDeck) or [shuttle](https://www.contourdesign.com/product/shuttle/) connected to the RCP. Replays are then stored in the camera's internal storage.
+- In **standalone** mode, *replay* and *trigger* is done via [Stream Deck](/docs/integrations/accessories/elgato-stream-deck) or [shuttle](https://www.contourdesign.com/product/shuttle/) connected to the RCP. Replays are then stored in the camera's internal storage.
 
-- Add your SSM500 camera to the RCP like described in the [IP Camera Configuration](/docs/Integrations/Generic/IPCamera) guide.
+- Add your SSM500 camera to the RCP like described in the [IP Camera Configuration](/docs/integrations/generic/ip-camera) guide.
 
 - Connect the Streamdeck and Shuttle Pro to the USB connector of the RCP 
 
@@ -124,7 +124,7 @@ You will now be able to control the **External Lens**
 
 ### EVS Mode Setup
 
-Please refer to the [EVS hypermotion](/docs/Integrations/EVS/EVSHM) page for EVS configuration.
+Please refer to the [EVS hypermotion](/docs/integrations/broadcast-systems/evs-hm) page for EVS configuration.
 
 ## Troubleshooting
 

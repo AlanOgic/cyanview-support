@@ -2,8 +2,8 @@
 id: rio-live-manual
 title: "RIO +LAN manual"
 sidebar_label: "RIO +LAN manual"
-description: "Manual for the Cyanview RIO +LAN (formerly RIO-Live). Local production companion for up to 2 cameras."
-keywords: [RIO +LAN, RIO-Live, manual, local, LAN only]
+description: "Manual for the Cyanview RIO +LAN (formerly RIO +LAN). Local production companion for up to 2 cameras."
+keywords: [RIO +LAN, RIO +LAN, manual, local, LAN only]
 slug: /reference/manuals/rio-live-manual
 ---
 
@@ -15,7 +15,7 @@ slug: /reference/manuals/rio-live-manual
 
 Pronounce \[rɪəʊ lɪv\].
 
-The RIO live is a mix between:
+The RIO +LAN is a mix between:
 * A CI0 : it has the serial ports, display and buttons
 * A RCP : it has all the protocols inside, same web UI
 
@@ -56,9 +56,9 @@ The RIO and RCP will communicate together over IP.
 
 The RIO Live camera configuration is exactly the same as RCP.
 
-You can access your RIO Live configuration page following [this guide](/docs/Configuration/ConfIP#find-devices-ip).
+You can access your RIO Live configuration page following [this guide](/docs/guides/networking/ip-configuration#find-devices-ip).
 
-Once there, the setup is similar to the [RCP web UI](/docs/Manuals/RCP/ConfWebUI)
+Once there, the setup is similar to the [RCP web UI](/docs/reference/manuals/rcp/web-ui)
 
 And you can follow any integration guide from this website, it applies to RCP as well as RIO.
 
@@ -72,7 +72,7 @@ To setup RIO with a RCP:
 
 From there, you will have control of the camera from your RCP.
 
-You can find more information about this pairing on [this page](/docs/Configuration/REMI).
+You can find more information about this pairing on [this page](/docs/guides/networking/remi).
 
 The REMI is the way RCP/RIO Live are paired and work together.
 

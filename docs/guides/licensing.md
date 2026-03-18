@@ -134,7 +134,7 @@ Control cameras **locally and remotely** via cloud.
 :::info How cloud connectivity works
 The Cyanview cloud acts as a rendezvous server—both RCP and RIO make outgoing connections, so no firewall configuration is required. Devices find each other using shared REMI tags.
 
-See the [REMI configuration guide](/docs/Configuration/REMI) for setup instructions.
+See the [REMI configuration guide](/docs/guides/networking/remi) for setup instructions.
 :::
 
 ### Upgrading from +LAN to +WAN

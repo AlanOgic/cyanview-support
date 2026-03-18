@@ -39,9 +39,9 @@ The RCP can be used to control nearly every settings of the cameras as the XC pr
 **OETF and color space selection**|✔|✔|✔
 **Red and green tally**|✔|✔|✔
 **OSD/Menu**|✔|✔|✔
-**Pan/Tilt** (<a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">from RCP touchscreen</a> or <a href="/docs/Integrations/Accessories/AnxinshiPTZUSBJoystick">USB joystick</a>)|✔|✔|✔
-**Lens** <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">(zoom, focus)</a>|✔|✔|✔
-**Scene files** : <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">save/recall</a>|✔|✔|✔
+**Pan/Tilt** (<a href="/docs/reference/manuals/rcp/ui/scene">from RCP touchscreen</a> or <a href="/docs/integrations/accessories/anxinshi-ptz-usb-joystick">USB joystick</a>)|✔|✔|✔
+**Lens** <a href="/docs/reference/manuals/rcp/ui/scene">(zoom, focus)</a>|✔|✔|✔
+**Scene files** : <a href="/docs/reference/manuals/rcp/ui/scene">save/recall</a>|✔|✔|✔
 
 ## Camera Configuration
 
@@ -67,7 +67,7 @@ Or you can set up a static IP:
 
 <img src="/img/Integrations/Canon/CRN500/Canon-CRN500-exposure.png" width="900"/>
 
-If your camera IP is not in the range `10.192.0.0/16`, you can follow this <a href="/docs/Configuration/ConfIP#lan-configuration">guide</a> to set up the RCP to be able to reach the camera.
+If your camera IP is not in the range `10.192.0.0/16`, you can follow this <a href="/docs/guides/networking/ip-configuration#lan-configuration">guide</a> to set up the RCP to be able to reach the camera.
 
 :::note
 If you have anything in the camera web interface set up in `Auto` (AWB, Auto Iris, etc.), the RCP will be unable to control it. Ensure to set up the desired parameters to Manual to be controlled by the RCP.
@@ -78,7 +78,7 @@ If you have anything in the camera web interface set up in `Auto` (AWB, Auto Iri
 
 While Canon CR-N300 and CR-N500 are both using XC protocol, but they have different lenses, etc. So ensure to select the correct model in the RCP to have the adequate control range.
 
-You can follow the generic guide <a href="/docs/Integrations/Generic/PTZ">here</a>
+You can follow the generic guide <a href="/docs/integrations/generic/ptz">here</a>
 
 ### Canon CR-N300
 
@@ -102,6 +102,6 @@ If everything is set up correctly, you should see the following:
 
 Check the following:
 * Ensure to set up the camera to `Manual` mode
-* Ensure the camera IP is static and in the range of the RCP (see <a href="/docs/Configuration/ConfIP#lan-configuration">guide</a>)
+* Ensure the camera IP is static and in the range of the RCP (see <a href="/docs/guides/networking/ip-configuration#lan-configuration">guide</a>)
 * Check wiring, cables, etc.
 * Check from your computer if you can reach the PTZ web UI and the RCP web UI.

@@ -50,7 +50,7 @@ Cable suitable for the CY-RSBM module.
 
 CY-CI0/CY-RIO power cable for low consumption Devices
 
-Use for Tally LED for instance (see [LED Assembly Guide](/docs/Accessories/BuildTallyLED)).
+Use for Tally LED for instance (see [LED Assembly Guide](/docs/resources/build-tally-led)).
 
 <img alt="cyanview-support-cable-CY-CBL-6P-PWR" src="/img/productGfx/cables/CY-CBL-6P-PWR.svg"  width="500"/>
 
@@ -163,7 +163,7 @@ Discontinued to to bug in lens when used with handels. Requires a lens firmware 
 
 ### CY-CBL-6P-FUJI-02 (default)
 
-Use this cable for all Fujinon lenses (B4 and Cabrio), in conjonction with this cable: <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-b4-01-default">`CY-CBL-6P-B4-01`</a>
+Use this cable for all Fujinon lenses (B4 and Cabrio), in conjonction with this cable: <a href="/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default">`CY-CBL-6P-B4-01`</a>
 
 <img alt="cyanview-support-cable-CY_CBL-6P-FUJI-02" src="/img/productGfx/cables/CY-CBL-6P-FUJI-02.svg"  width="500"/>
 
@@ -185,7 +185,7 @@ The connector is pricey and difficult to find. We recommend you build your own c
 
 This adapter cable provides power and control over Ikegami professional cameras through the 8 pins remote interface.
 
-This cable has to be built from a Cyanview multipurpose [CY-CBL-6P-FAN](/docs/Accessories/CableCatalog#cy-cbl-6p-fan) cable and a **Tajimi Male Plug 8 pins PRC05-PB8M connector**.
+This cable has to be built from a Cyanview multipurpose [CY-CBL-6P-FAN](/docs/resources/cable-catalog#cy-cbl-6p-fan) cable and a **Tajimi Male Plug 8 pins PRC05-PB8M connector**.
 
 Refer to **Pin Assignment** table in the document below for cable soldering.
 
@@ -312,6 +312,6 @@ Cable for Toshiba camera and any RS232 device.
 
 ### CY-CBL-6P-PFAN → VISCA4, VISCA5, VISCA9
 
-CY-CI0/CY-RIO adapter cable with power for VISCA camera using RS422 can be constructed from [CY-CBL-6P-PFAN](/docs/Accessories/CableCatalog#cy-cbl-6p-pfan) and a 4, 5 or 9 pin 3.5 mm pitch Phoenix connector.
+CY-CI0/CY-RIO adapter cable with power for VISCA camera using RS422 can be constructed from [CY-CBL-6P-PFAN](/docs/resources/cable-catalog#cy-cbl-6p-pfan) and a 4, 5 or 9 pin 3.5 mm pitch Phoenix connector.
 
 <img alt="cyanview-support-cable-CY_CBL-6P-PFAN-VISCA" src="/img/productGfx/cables/CY-CBL-6P-PFAN-VISCA.svg"  width="500"/>

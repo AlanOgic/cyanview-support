@@ -38,8 +38,8 @@ Here, I describe the use case with a FX9 and a Canon PL lens, but it's the same 
 
 On camera side:
 * RIO is connected to:
-    - FX9 XDCA RJ45 port (could be Wi-Fi using a <a href="/docs/Configuration/WiFiUSB">dongle</a> on the RIO)
-    - Canon Lens using <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a> cable
+    - FX9 XDCA RJ45 port (could be Wi-Fi using a <a href="/docs/guides/networking/wifi-usb">dongle</a> on the RIO)
+    - Canon Lens using <a href="/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a> cable
     - Ereca CAM RACER using a USB-Ethernet dongle (because RIO has only one RJ45 port)
 * CAM RACER:
     - SDI in comes from the FX9 SDI out
@@ -77,9 +77,9 @@ And don't forget your REMI tag:
 <img alt="Setup RIO REMI" src="/img/Workflows/LensVideoReturn-RIO-remi.png" width="400" />
 
 To get further, you can take a look at the dedicated guides:
-* For <a href="/docs/Integrations/Sony/SonyFX9">FX9</a>
-* For <a href="/docs/Integrations/Lens/CineLens">Cine Lens</a>
-* For <a href="/docs/Configuration/REMI">REMI</a>
+* For <a href="/docs/integrations/cameras/sony/sony-fx9">FX9</a>
+* For <a href="/docs/integrations/lenses/cine-lens">Cine Lens</a>
+* For <a href="/docs/guides/networking/remi">REMI</a>
 
 ### RCP side
 
@@ -147,6 +147,6 @@ You could decide to map different buttons to different input to have:
 :::
 
 To get further, you can take a look at the dedicated guides:
-* For <a href="/docs/Configuration/REMI">REMI</a>
-* For <a href="/docs/Integrations/Generic/routers">Router/Switcher</a>
-* For <a href="/docs/Configuration/advanced/B4Ret">Video return</a>
+* For <a href="/docs/guides/networking/remi">REMI</a>
+* For <a href="/docs/integrations/generic/routers">Router/Switcher</a>
+* For <a href="/docs/guides/advanced/b4-return">Video return</a>

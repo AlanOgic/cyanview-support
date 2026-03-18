@@ -29,7 +29,7 @@ The RIO is a hardware gateway that connects cameras and lenses to the Cyanview e
 | **RIO** (hardware) | — | — | Generic reference for physical specs |
 
 :::info
-RIO +LAN was formerly known as "RIO-Live". All references to RIO-Live, RIO Live, or RIOLive refer to the RIO +LAN.
+RIO +LAN was formerly known as "RIO +LAN". All references to RIO +LAN, RIO Live, or RIO +LAN refer to the RIO +LAN.
 :::
 
 ## When to use the RIO

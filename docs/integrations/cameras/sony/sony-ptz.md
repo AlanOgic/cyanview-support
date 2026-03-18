@@ -54,4 +54,4 @@ Here is a detail list:
 
 ## Setup
 
-You can follow the generic guide <a href="/docs/Integrations/Generic/PTZ">here</a>
+You can follow the generic guide <a href="/docs/integrations/generic/ptz">here</a>

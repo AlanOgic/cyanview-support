@@ -51,7 +51,7 @@ const features = [
   {
     icon: '\u{1F39B}',
     title: 'Remote camera control',
-    text: 'Control paint, iris, gain, shutter, color matrix, and more from any location \u2014 studio, OB van, or across the globe with REMI.',
+    text: 'Control paint, iris, gain, shutter, color matrix, and more from any location — studio, OB van, or across the globe with REMI.',
   },
   {
     icon: '\u{1F517}',
@@ -79,7 +79,7 @@ const useCases = [
   {
     tag: 'REMI',
     title: 'Remote production',
-    text: 'Place a RIO on-site and control cameras from headquarters. Full camera paint over standard internet \u2014 no dedicated fiber needed.',
+    text: 'Place a RIO on-site and control cameras from headquarters. Full camera paint over standard internet — no dedicated fiber needed.',
   },
   {
     tag: 'Live event',
@@ -89,11 +89,8 @@ const useCases = [
 ];
 
 const manufacturers = [
-  {name: 'Sony', logo: '/img/3Parties/sony.png'},
-  {name: 'Canon', logo: '/img/3Parties/canon.png'},
-  {name: 'Panasonic', logo: '/img/3Parties/panasonic.png'},
-  {name: 'Blackmagic', logo: '/img/3Parties/blackmagic.png'},
-  {name: 'ARRI', logo: '/img/3Parties/arri.png'},
+  'Sony', 'Canon', 'Panasonic', 'Blackmagic Design', 'ARRI',
+  'JVC', 'RED', 'Marshall', 'BirdDog', 'Haivision',
 ];
 
 export default function Home(): React.JSX.Element {
@@ -126,7 +123,7 @@ export default function Home(): React.JSX.Element {
           <h2>The Cyanview ecosystem</h2>
           <p className="section-subtitle">
             Hardware and software that work together to give you full camera
-            control \u2014 locally or remotely.
+            control — locally or remotely.
           </p>
           <div className="products-grid">
             {products.map((product) => (
@@ -183,7 +180,7 @@ export default function Home(): React.JSX.Element {
           </p>
           <div className="logos-grid">
             {manufacturers.map((m) => (
-              <img key={m.name} src={m.logo} alt={`${m.name} logo`} loading="lazy" />
+              <span key={m} className="manufacturer-name">{m}</span>
             ))}
           </div>
         </section>

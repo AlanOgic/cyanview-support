@@ -22,7 +22,7 @@ The R5-C is not suitable for video applications. Unlike the R5, it features a ne
 :-----|:-----|
 **Exposure** (Iris, Gain, Shutter)|✔
 **White balance** (R/B and Color temp)|✔
-**Scene file** : <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">save/recall</a>|✔
+**Scene file** : <a href="/docs/reference/manuals/rcp/ui/scene">save/recall</a>|✔
 
 
 ## Wiring

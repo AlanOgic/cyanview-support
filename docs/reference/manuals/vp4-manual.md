@@ -136,7 +136,7 @@ Vectors are identified by a number from **1** to **16**.
 ## Genlock settings
 
 You can configure the genlock parameters on the VP4 web interface.
-You can find it based on [your device serial](/docs/Configuration/ConfIP#find-devices-ip)
+You can find it based on [your device serial](/docs/guides/networking/ip-configuration#find-devices-ip)
 
 <img src="/img/Manual/VP4/VP4-settings.png" width="500" />
 
@@ -150,7 +150,7 @@ It is disabled by default (freerun) and you can:
 The **VP4** *color correction* and *color matching* are operated via a **Multi Matrix** on the **RCP**.
 
 To access the RCP Multi Matrix screen, Click on *Paint1*, then push the same button again to see *Paint2* using the *blue buttons*.
-Then click on **M-Matrix** in *paint2* menu using the *white buttons*. (see [RCP Screens Overview/Navigation](/docs/Manuals/RCP/RCPControls#rcp-screen))
+Then click on **M-Matrix** in *paint2* menu using the *white buttons*. (see [RCP Screens Overview/Navigation](/docs/reference/manuals/rcp/controls#rcp-screen))
 
 Color correction is done by selecting a **color vector** and the changing his **hue** and **saturation**.
 

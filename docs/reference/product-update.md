@@ -22,13 +22,13 @@ The CI0 and the first generation of RCP (serials CY-RCP-11-xx) are not updated "
 
 ## Backup your configuration
 
-It is always a good idea to do a backup of your setup following this [guide](/docs/Manuals/RCP/ConfWebUI#file). It will allows you to get back your configuration later if needed.
+It is always a good idea to do a backup of your setup following this [guide](/docs/reference/manuals/rcp/web-ui#file). It will allows you to get back your configuration later if needed.
 
 
 ## Application update
 
-1. Make sure the device has **internet** access. Check the [Connectivity check block](/docs/Manuals/RCP/ConfWebUI#admin), everything should be green
-2. Access your device [web interface](/docs/Configuration/ConfIP#find-devices-ip)
+1. Make sure the device has **internet** access. Check the [Connectivity check block](/docs/reference/manuals/rcp/web-ui#admin), everything should be green
+2. Access your device [web interface](/docs/guides/networking/ip-configuration#find-devices-ip)
 3. Click the **Admin** TAB wait until the list of available version are displayed.
 4. Click `Select and start` button of the release you want to upgrade to, wait a couple of minutes
 
@@ -56,9 +56,9 @@ The **System Update** can be performed from a separate web interface
 
 ### System Update from the web interface
 
-1. Download the latest system update from the [Release Download](/docs/Configuration/RelDownload) page.
+1. Download the latest system update from the [Release Download](/docs/reference/firmware-download) page.
 2. Open the update UI :
-    * [Find your device IP](/docs/Configuration/ConfIP#find-devices-ip)
+    * [Find your device IP](/docs/guides/networking/ip-configuration#find-devices-ip)
     * Base on previous link, navigate to http://10.192.XX.YY:8080 (pay attention to port 8080)
     <img alt="cyanview-swupdate-page" src="/img/productGfx/RCP/cyanview-swupdate-page.png" width="600" />
     * You can see on this page some usefull informations:
@@ -81,7 +81,7 @@ This requires a base system with minimum **21.10.3**
 :::
 
 1. Format a USB key in FAT (instructions for [Windows](https://www.windowscentral.com/how-format-usb-flash-drive-windows-10) and [Mac OS X](https://www.techsolutions.support.com/how-to/how-to-format-a-usb-drive-on-a-mac-12899) )
-2. Download the **SWU** file for your device [here](/docs/Configuration/RelDownload).
+2. Download the **SWU** file for your device [here](/docs/reference/firmware-download).
 3. Put the file on your USB key
 4. Insert the USB key in your device (RCP, RIO, VP4) and wait 15 minutes until your device reboots in the new version.
 

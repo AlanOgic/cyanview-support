@@ -33,7 +33,7 @@ We don't support any of the 55 (hdk-55, FA-55, etc.). The 55 was an entry level 
 **Black balance** (R/B)|✔
 **Other** (Master Gamma, Knee and Detail)|✔
 **Exposure** (Iris, Gain, Shutter and ND filter)|✔
-**Scene file** : <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">save/recall</a>|✔
+**Scene file** : <a href="/docs/reference/manuals/rcp/ui/scene">save/recall</a>|✔
 **Auto** (Auto Iris, Auto White Balance, Auto Black Balance)|✔
 ## Camera wiring
 
@@ -42,11 +42,11 @@ We don't support any of the 55 (hdk-55, FA-55, etc.). The 55 was an entry level 
 You will need:
 * RCP
 * CI0
-* <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-fan">CY-CBL-6P-FAN</a>
-* <a href="/docs/Accessories/CableCatalog#ikegami">Tajimi Male Plug 8 pins PRC05-PB8M connector</a>
+* <a href="/docs/resources/cable-catalog#cy-cbl-6p-fan">CY-CBL-6P-FAN</a>
+* <a href="/docs/resources/cable-catalog#ikegami">Tajimi Male Plug 8 pins PRC05-PB8M connector</a>
 
 The connector is pricey, difficult to find, so we don't sell it.
-You can follow <a href="/docs/Accessories/CableCatalog#ikegami">this wiring guide</a> to combine our `CY-CBL-6P-FAN` and the connector to make your own cable.
+You can follow <a href="/docs/resources/cable-catalog#ikegami">this wiring guide</a> to combine our `CY-CBL-6P-FAN` and the connector to make your own cable.
 
 ## Camera configuration
 
@@ -55,7 +55,7 @@ Configure the camera in RS422, with one-way remote control data (U4) with 38400 
 
 ## RCP configuration
 
-Set up a new camera via the <a href="/docs/Manuals/RCP/ConfWebUI">RCP Configuration UI</a>:
+Set up a new camera via the <a href="/docs/reference/manuals/rcp/web-ui">RCP Configuration UI</a>:
 - Enter a custom number, name, etc.
 - Select **Ikegami** brand
 - Select **ICPP** for the model

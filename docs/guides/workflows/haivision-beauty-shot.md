@@ -18,7 +18,7 @@ The RIO is connected to:
 * Panasonic Varicam using a USB-Ethernet dongle plugged on RIO USB port (because RIO has only one RJ45 port)
 
 Then RIO/RCP communicates using:
-* <a href="/docs/Configuration/REMI">REMI</a>
+* <a href="/docs/guides/networking/remi">REMI</a>
 * Through the <a href="/docs/Integrations/Haivision">Haivision data bridge</a>
 
 <img alt="Haivision Aviwest Wiring Cyanview RCP RIO Panasonic Varicam" src="/img/Workflows/Haivision-Panasonic-Varicam-wiring.png" width="1000" />
@@ -141,7 +141,7 @@ To distinguish between the two, in REMI, you can see the status of the RIO/RCP l
 ### Tips
 * once your imported your camera on your RCP (from your RIO), you can freely change camera name/number
 * you can also update your cam on RIO side (name, number, model, etc.). The link is done and will stay until you remove the camera on one side or the other.
-* once the data bridge is enabled, RIO/RCP static WAN IP is setup, you can access the RIO web UI from the RCP web UI. It's useful as you can just link the RIO/RCP properly and then configure your camera in a second step remotely. More info on this <a href="/docs/Configuration/REMI#navigate-to-the-remote-gui">here</a>
+* once the data bridge is enabled, RIO/RCP static WAN IP is setup, you can access the RIO web UI from the RCP web UI. It's useful as you can just link the RIO/RCP properly and then configure your camera in a second step remotely. More info on this <a href="/docs/guides/networking/remi#navigate-to-the-remote-gui">here</a>
 
 
 

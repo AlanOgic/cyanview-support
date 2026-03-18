@@ -13,9 +13,9 @@ This feature allows to create camera groups, with the ability to control each ca
 
 ## Group configuration
 
-Groups are configured directly in the [Configuration Web UI](/docs/Manuals/RCP/ConfWebUI). Once all the cameras are configured, groups can be added on the `Tags` field.
+Groups are configured directly in the [Configuration Web UI](/docs/reference/manuals/rcp/web-ui). Once all the cameras are configured, groups can be added on the `Tags` field.
 
-1. First, create your camera configuration. In this example, the configuration contains two cameras in a stadium on each goal, and two [VP4](/docs/Manuals/VP4Manual) channels
+1. First, create your camera configuration. In this example, the configuration contains two cameras in a stadium on each goal, and two [VP4](/docs/reference/manuals/vp4-manual) channels
 
 <img src="/img/Configuration/GROUP-camera-config.png" width="800" />
 

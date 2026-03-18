@@ -9,7 +9,7 @@ slug: /reference/firmware-download
 
 The following downloads are available for the full system update of CY-RCP, CY-RIO, CY-NIO and CY-VP4. The incremental application updates are currently only available through the web interface by connecting the unit to the internet.
 
-Refer to the [Product Update](/docs/Manuals/RCP/ProductUpdate) page for device update guidance.
+Refer to the [Product Update](/docs/reference/product-update) page for device update guidance.
 
 ## Latest Releases
 

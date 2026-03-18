@@ -24,7 +24,7 @@ It allows you to control any lens that Cyanview is able to control:
 * motors (tilta, etc.)
 
 And thanks to our IP architecture, the handles can be placed:
-* on the camera with a RIO/RIO-live (cameraman, polecam operator, etc.)
+* on the camera with a RIO/RIO +LAN (cameraman, polecam operator, etc.)
 * in a remote location with a NIO (cable cam, etc.)
 
 This gives you more flexibility (various lens, even the ones that can't support handles like prime lens or E-mount, various workflow and setup thanks to IP) while keeping the same control that you are used to with typical handles plugged directly on the lens (fujinon/canon handles).
@@ -69,7 +69,7 @@ You first need to setup your:
 * handles
 * switcher/router
 
-Then you can follow <a href="/docs/Configuration/advanced/B4Ret">this guide</a> to link the handles buttons to the switcher/router desired inputs/output.
+Then you can follow <a href="/docs/guides/advanced/b4-return">this guide</a> to link the handles buttons to the switcher/router desired inputs/output.
 
 ## Buttons mapping
 
@@ -106,11 +106,11 @@ If the Zoom is drifting, the calibration must be done by long-pressing the butto
 
 * RCP
 * RIO[^1]
-* 1 x <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a>[^2]
+* 1 x <a href="/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a>[^2]
 * BM zoom and focus handles
 
 <img src="/img/Workflows/BM-handles-Komodo-Canon.png" width="400"/>
 
 [^1]: RIO is powered by D-DTAP, connected to the cam using USB Ethernet dongle. And to the RCP using the onboard Ethernet (no need for an additional switch, we can bridge both networks).
 
-[^2]: <a href="/docs/Accessories/CableCatalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a> is used to connect the RIO to the lens (Canon Cine Servo) using the 12pin port (data + power). Here, RIO takes control of zoom, focus and iris. BM handles can then act on zoom and focus, while RCP can paint and control the iris.
+[^2]: <a href="/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a> is used to connect the RIO to the lens (Canon Cine Servo) using the 12pin port (data + power). Here, RIO takes control of zoom, focus and iris. BM handles can then act on zoom and focus, while RCP can paint and control the iris.

@@ -26,7 +26,7 @@ Anxinshi joystick is to be found [here](https://www.aliexpress.com/item/32825990
 
 <img alt="cyanview-support-RCP-Port-USB-PTZ-Joystick-Controller" src="/img/Integrations/Accessories/PTZUSBJoystick/RCP-USB-Anxinshi-Joystick.png" width="200" />
 
-[3] Configure the PTZ USB Joystick in the [Configuration page](/docs/Manuals/RCP/ConfWebUI#configuration) of the RCP [Configuration Web UI](/docs/Configuration/ConfIP#lan-web-ui-access)..
+[3] Configure the PTZ USB Joystick in the [Configuration page](/docs/reference/manuals/rcp/web-ui#configuration) of the RCP [Configuration Web UI](/docs/guides/networking/ip-configuration#lan-web-ui-access)..
 
 <video poster="/img/Integrations/Accessories/PTZUSBJoystick/Add-PTZ-USB-Joystick-to-RCP.png" muted controls>
     <source src="/img/Integrations/Accessories/PTZUSBJoystick/Add-PTZ-USB-Joystick-to-RCP.mp4"/>
@@ -42,7 +42,7 @@ Anxinshi joystick is to be found [here](https://www.aliexpress.com/item/32825990
 
 - **Short push** will move the PTZ to the previously saved position.
 
-Positions can be Saved/Loaded from either the Anxinshi joystick, the RCP LENS menu, and the [Elagato Stream Deck](/docs/Integrations/Accessories/ElgatoStreamDeck).
+Positions can be Saved/Loaded from either the Anxinshi joystick, the RCP LENS menu, and the [Elagato Stream Deck](/docs/integrations/accessories/elgato-stream-deck).
 
 
 

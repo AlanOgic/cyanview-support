@@ -10,7 +10,7 @@ slug: /guides/networking/wifi-usb
 <img src="/img/Configuration/wifi/wifi-overview.png"/>
 
 This guide is intended to provide a Wi-Fi connectivity to Cyanview devices:
-* RIO/RIO-live
+* RIO/RIO +LAN
 * RCP
 
 Use cases:

@@ -51,13 +51,13 @@ The RCP can be powered from **PoE** or using an external **12V power supply**.
 
 ## RCP UI
 
-RCP is *configured* and *managed* via a **[Configuration Web UI](/docs/Manuals/RCP/ConfWebUI)**.
+RCP is *configured* and *managed* via a **[Configuration Web UI](/docs/reference/manuals/rcp/web-ui)**.
 
 ## RCP Update
 
 Make sure your RCP runs our latest releases.
 
-Please refer to the [update manual](/docs/Manuals/RCP/ProductUpdate).
+Please refer to the [update manual](/docs/reference/product-update).
 
 ## Troubleshooting
 

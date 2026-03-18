@@ -11,7 +11,7 @@ slug: /integrations/cameras/panasonic/varicam
 
 ## Controls
 
-- [tally (red, green, call)](/docs/Configuration/Tally/)
+- [tally (red, green, call)](/docs/guides/tally/tally/)
 - OSD/Menu
 - Lens
 - Iris
@@ -38,8 +38,8 @@ On camera side:
 - Ensure to have a **user/password** : **guest/p2guest**
 
 On RCP side:
-- Ensure to be be on your camera network with [a compatible IP](/docs/Configuration/ConfIP#lan-configuration)
-- Setup a new camera via the [RCP Configuration UI](/docs/Manuals/RCP/ConfWebUI):
+- Ensure to be be on your camera network with [a compatible IP](/docs/guides/networking/ip-configuration#lan-configuration)
+- Setup a new camera via the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui):
     * Select **Panasonic** brand
     * Select **Varicam** model
     * Enter the IP of your camera

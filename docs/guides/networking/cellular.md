@@ -110,6 +110,6 @@ Now that your modem is correctly configured, check that you have internet:
 
 2. USB extension may be required as some 4G USB modems are too large to fit there.
 
-3. You can check that the RCP is correctly connected to internet by checking this [page](/docs/Manuals/RCP/ConfWebUI#admin) on your RCP.
+3. You can check that the RCP is correctly connected to internet by checking this [page](/docs/reference/manuals/rcp/web-ui#admin) on your RCP.
 
 For all other devices (RIO, NIO, etc.), any USB port will work.

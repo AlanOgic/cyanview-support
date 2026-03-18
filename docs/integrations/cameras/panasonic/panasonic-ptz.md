@@ -2,86 +2,75 @@
 id: panasonic-ptz
 title: "Panasonic PTZ cameras"
 sidebar_label: "Panasonic PTZ"
-description: "Control Panasonic PTZ cameras with Cyanview over IP. Paint, pan, tilt, and zoom from your RCP."
-keywords: [Panasonic PTZ, IP control, pan tilt zoom, RCP]
+description: "Control Panasonic PTZ cameras with Cyanview over IP. Full paint, pan, tilt, zoom, and focus from your RCP — alongside the native Panasonic controller."
+keywords: [Panasonic PTZ, AW-UE150, AW-UE100, IP control, pan tilt zoom, RCP, broadcast]
 slug: /integrations/cameras/panasonic/panasonic-ptz
 ---
 
-# Panasonic PTZ
+Control your Panasonic PTZ cameras directly from the Cyanview RCP over IP. You get full paint control — exposure, white balance, black balance, matrix, knee, detail — plus pan, tilt, zoom, and focus. Your RCP works alongside the native Panasonic controller without conflict, since all Panasonic PTZ cameras accept multiple simultaneous connections.
 
-This guide describe how to configure Panasonic PTZ cameras
+<img src="/img/Integrations/Panasonic/AW-UE150.png" width="300" alt="Panasonic AW-UE150 PTZ camera" />
 
-<img src="/img/Integrations/Panasonic/AW-UE150.png" width="300"/>
+## Supported models
 
+**AW-HE series:**
+- AW-HE40, AW-HE42, AW-HE50, AW-HE60, AW-HE70, AW-HE120, AW-HE130
 
-## Supported Models
+**AW-UE series:**
+- AW-UE70, AW-UE100, AW-UE150, AW-UE160
 
-AW-HE:
-* AW-HE40
-* AW-HE42
-* AW-HE50
-* AW-HE60
-* AW-HE70
-* AW-HE120
-* AW-HE130
+**AW-HR/UR series:**
+- AW-UR100 — select *AW-UE100* in the RCP configuration
+- AW-HR140 — select *AW-HE130* in the RCP configuration
 
-AW-UE:
-* AW-UE70
-* AW-UE100
-* AW-UE150
-* AW-UE160
+If your model is not listed, try selecting a similar model. The core control commands are typically the same across models in the same series.
 
-AW-HR/UR:
-* AW-UR100 (select *AW-UE100* instead)
-* AW-HR140 (select *AW-HE130* instead)
+:::warning Unsupported models
 
-If you are looking for a new model not yet listed, you can try selecting a similar model, as the most important commands are typically the same.
+- **AW-UE20**
+- **AW-UE4**
 
-:::warning **Unuspported models**:
-
-* AW-UE20
-* AW-UE4
-
-These models use ProAV-style controls such as brightness and contrast instead of traditional broadcast parameters like black level and gain, which are not currently supported.
+These models use ProAV-style controls (brightness, contrast) instead of traditional broadcast parameters (black level, gain), which Cyanview does not currently support.
 :::
 
+## Supported controls
 
-## Supported Control
+| Control | Notes |
+|:--------|:------|
+| **Exposure** — Iris, Gain, Shutter, ND filter | |
+| **White balance** — R, G, B gains, Color temperature | |
+| **Black balance** — R, G, B, master | |
+| **Matrix** | Only *User* mode allows manual matrix parameters. Activating Multi-Matrix or User Matrix automatically switches from `Normal/EBU/NTSC` to `User`. |
+| **Multi-matrix** | |
+| **Knee** | |
+| **White clip** | |
+| **Detail** | |
+| **Denoise** | |
+| **Red/green tally** | |
+| **Camera menu control** | |
+| **PTZ** — Pan, Tilt, Zoom, Focus | |
 
-|Control|Notes|
-|:-----|:-----|
-**Exposure** — Iris, Gain, Shutter, ND filter|
-**White balance** — R,G,B gains, Color Temperature|
-**Black balance** — R,G,B, master |
-**Matrix**|Only the *User* mode allows to define manual matrix parameters or use the multi-matrix. The Matrix will be automatically changed from `Normal/EBU/NTSC` to `User` when you activate the Multi-Matrix or User Matrix.
-**Multi-Matrix**|
-**Knee**|
-**White Clip**|
-**Detail**|
-**Denoise**|
-**Red/Green Tally**|
-**Camera Menu Control**|
-**PTZ** — Pan, Tilt, Zoom, Focus|
+Nearly all paint parameters available on the camera are now accessible from the RCP.
 
-Note: there are now more controls than this list, we have to update it. Nearly all paint settings from the cameras are now available on the RCP
-<!--TODO: complete this list -->
+## Typical workflow
 
-## Workflow
+A typical setup connects multiple Panasonic PTZ cameras to a single RCP over an IP network. Since Panasonic PTZ cameras accept multiple simultaneous connections, you can use the Cyanview RCP at the same time as the native Panasonic PTZ controller panel.
 
-A typical setup involves multiple cameras controlled by a single RCP on an IP network. All Panasonic PTZ cameras accept multiple connections simultaneously, so the RCP can be used at the same time as the Panasonic PTZ controller panel.
-
-<img src="/img/Integrations/Panasonic/Panasonic-PTZ-connect.png" width="600"/>
-
+<img src="/img/Integrations/Panasonic/Panasonic-PTZ-connect.png" width="600" alt="Panasonic PTZ network diagram with Cyanview RCP" />
 
 ## Configuration
 
-The communication is over IP so the configuration only involves adding an IP camera.
+All communication happens over IP, so configuration is straightforward — you add each camera as an IP camera in the RCP web UI.
 
 :::warning
-Avoid configuring multiple RCPs to control the same camera. If you need to control the same camera from multiple RCPs, configure the camera on one RCP and use REMI mode to control the camera from other devices. This minimizes the number of connections to a camera, which can slow down camera operations, especially on older models like the AW-HE120.
+Avoid configuring multiple RCPs to control the same camera directly. If you need control from multiple locations, configure the camera on one RCP and use [REMI](/docs/guides/networking/remi) to share it with other devices. This minimizes connections to the camera, which can slow down operations on older models like the AW-HE120.
 :::
 
-You can follow the generic guide <a href="/docs/Integrations/Generic/PTZ">here</a> for more details.
-<!--TODO: section on adding caemras over IP, point there-->
+Follow the [PTZ integration guide](/docs/integrations/generic/ptz) for step-by-step instructions on adding IP cameras to your RCP.
 
-<!--TODO: add notes on settings to set in the camera to not recall video settings with position settings-->
+## Getting started
+
+1. Connect your Panasonic PTZ camera and RCP to the same IP network
+2. Configure the camera's IP address (DHCP or static) through the camera's web interface
+3. [Add the camera in the RCP web UI](/docs/reference/manuals/rcp/web-ui) — select **Panasonic** as the brand and your specific model
+4. Ensure the RCP has an IP address on the same subnet as the camera (see the [IP configuration guide](/docs/guides/networking/ip-configuration))

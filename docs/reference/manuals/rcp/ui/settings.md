@@ -24,7 +24,7 @@ You can access this menu with : `MENU > SYSTEM > SETTINGS`
 | Disable Prev / Next keys        | ON/OFF | Disbale the prev/next keys, so the RCP can't change its active camera using the buttons.|
 | Access all cameras              | ON/OFF | When OFF, the camera list of this RCP follows the setting `camera_list` (defined in `/dev/app.html` in RCP block of the web UI)|
 | Show menus when Preview pressed | ON/OFF | When ON, display the preview menu (Camera list, keypad, List, groups).|
-| Display all assignable buttons | ON/OFF | When ON, the functions / views assigned to the blue buttons are also displayed in the main view.<br />*See [RCP UI - Assignables](/docs/Manuals/RCP/RCPUI/RCPUIAssignables) view for more info* |
+| Display all assignable buttons | ON/OFF | When ON, the functions / views assigned to the blue buttons are also displayed in the main view.<br />*See [RCP UI - Assignables](/docs/reference/manuals/rcp/ui/assignables) view for more info* |
 | Display GREEN values on main view | ON/OFF | When ON, the green gain and green pedestal values are displayed in the main view |
 
 ## Units

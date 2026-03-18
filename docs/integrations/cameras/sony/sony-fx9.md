@@ -3,154 +3,144 @@ id: sony-fx9
 title: "Sony FX9 integration"
 sidebar_label: "Sony FX9"
 description: "Control the Sony FX9 with Cyanview over IP or serial. Optional XDCA-FX9 extension unit enables direct Ethernet connection."
-keywords: [Sony FX9, XDCA, cinema camera, IP, serial]
+keywords: [Sony FX9, XDCA, cinema camera, IP, serial, paint control, Cyanview]
 slug: /integrations/cameras/sony/sony-fx9
 ---
 
-<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9.png" width="600" />
+The Sony FX9 gives you full remote paint control from your Cyanview RCP — iris, gain, shutter, white balance, black balance, detail, multi matrix, and more. You can connect over Ethernet (with the XDCA extension) or Wi-Fi, and choose between the `FX9` protocol (maximum control) or `CBM` protocol (unrestricted ND and gain) depending on your production needs.
 
-## Camera wiring
+<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9.png" width="600" alt="Sony FX9 camera" />
 
-## Ethernet
+## Connection options
 
-<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-ethernet.png" width="900" />
+### Ethernet connection
 
-:::note
-Pay attention that if you want to control your FX9 over ethernet directly (without a RIO/RIO-live), you need the `Sony XDCA` extension.
-:::
-
-## Wi-Fi
-
-<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-wifi.png" width="900" />
-
-
-Or
-
-<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-RCP-wifi.png" width="900" />
-
-You can refer to <a href="/docs/Configuration/WiFi">this guide</a> to set up the RCP/RIO/RIO-live Wi-Fi.
-
-## Camera control
-
-
-|Control|FX9|CBM
-:-----|:-----|:-----|
-**Exposure** (Iris, Gain[^1], Shutter, ND filter[^2])|✔|✔
-**White balance** (R/B and Color temp)|✔|✔
-**Black balance** (R/B and master black)|✔|
-**Other controls** (Detail, Multi Matrix, ISO base)|✔|
-**Menu Navigation**|✔|✔
-**Tally**|✔|
-**Camera Menu Control (OSD)**|✔|✔
-**Lens** <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">(iris, zoom, focus)</a>[^3]|✔|✔
-**Scene file** : <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">save/recall</a>|✔|✔
-
+<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-ethernet.png" width="900" alt="FX9 Ethernet wiring diagram" />
 
 :::note
-[^1]: Gain steps is 3dB in `FX9`, 1dB in `CBM` only.
-
-
-[^2]: The ND filter is only preset in `FX9` while variable in `CBM` only.
-
-
-[^3]: Lens is controls through the camera if compatible. If not compatible (PL lens, etc.), follow <a href="/docs/Integrations/Lens/CineLens">this guide</a>
-
-The difference in term of control between `FX9` and `CBM` is due to the fact that that the `FX9` combines `S700` and `CBM` protocols to control the camera. But due to that, the camera is in a `RCP mode` and you lose variable ND filter and fine gain control.
-
-While when you use the `CBM` model in the RCP configuration, the camera control is limited because you lose the `S700` controls (blacks, multi matrix, etc.), but the camera stays `unrestricted` (gain steps and ND filter)
+To control your FX9 over Ethernet directly (without a RIO +WAN or RIO +LAN), you need the **Sony XDCA-FX9** extension unit.
 :::
 
-As a rule of thumb, when your camera is in SLog, prefer `CBM` mode (instead of `FX9`) as it will give you more control over the camera.
+### Wi-Fi connection
+
+<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-wifi.png" width="900" alt="FX9 Wi-Fi wiring with RIO" />
+
+Or connect Wi-Fi directly to the RCP:
+
+<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-RCP-wifi.png" width="900" alt="FX9 Wi-Fi wiring with RCP" />
+
+See the [Wi-Fi networking guide](/docs/guides/networking/wifi) to configure Wi-Fi on your RCP or RIO.
+
+## Supported controls
+
+| Control | FX9 mode | CBM mode |
+|:--------|:--------:|:--------:|
+| **Exposure** (Iris, Gain[^1], Shutter, ND filter[^2]) | ✔ | ✔ |
+| **White balance** (R/B and Color temp) | ✔ | ✔ |
+| **Black balance** (R/B and master black) | ✔ | |
+| **Other controls** (Detail, Multi Matrix, ISO base) | ✔ | |
+| **Menu navigation** | ✔ | ✔ |
+| **Tally** | ✔ | |
+| **Camera menu control (OSD)** | ✔ | ✔ |
+| **Lens** ([iris, zoom, focus](/docs/reference/manuals/rcp/ui/scene))[^3] | ✔ | ✔ |
+| **Scene files** ([save/recall](/docs/reference/manuals/rcp/ui/scene)) | ✔ | ✔ |
+
+[^1]: Gain steps are 3 dB in `FX9` mode, 1 dB in `CBM` mode.
+
+[^2]: The ND filter is preset-only in `FX9` mode, but variable in `CBM` mode.
+
+[^3]: Lens control works through the camera if the lens is compatible. For incompatible lenses (PL mount, etc.), see the [cine lens integration guide](/docs/integrations/lenses/cine-lens).
+
+### Choosing between FX9 and CBM modes
+
+The `FX9` protocol combines Sony's `S700` and `CBM` protocols for maximum control, but puts the camera in RCP mode — which disables variable ND filter and fine gain control.
+
+The `CBM` protocol gives you fewer paint parameters (no blacks, multi matrix, etc.) but keeps the camera unrestricted, with 1 dB gain steps and variable ND.
+
+**Rule of thumb:** When shooting in S-Log, use `CBM` mode for more flexible exposure control. For standard broadcast workflows where you need full paint access, use `FX9` mode.
+
+See the [CBM integration guide](/docs/integrations/cameras/sony/sony-cbm) for details.
 
 ## Camera configuration
 
-### Color temp and Master black
+### Set up color temperature and master black access
 
-Ensure to turn the WB button on the left side of the camera to `Preset`. Otherwise you will not have color temp or master black controls.
+Set the **WB button** on the left side of the camera to `Preset`. Without this, color temperature and master black controls are unavailable.
 
 :::info
-No idea why there is a link between this button and master black control.
+This is a known Sony firmware behavior — the WB physical switch state affects master black accessibility even though the two features are unrelated.
 :::
 
-### Remote control
+### Enable remote control
 
-Navigate to `Menu > Technical > RCP` and ensure to set:
-* `CNS mode` to `Bridge`
+Navigate to **Menu > Technical > RCP** and set:
+- `CNS mode` to `Bridge`
 
-<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-technical-RCP.jpg" width="900" />
+<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-technical-RCP.jpg" width="900" alt="FX9 Technical RCP menu" />
 
+### Configure tally
 
-### Tally
+Navigate to **Menu > Technical > Tally** and set:
+- `Tally Control` to `RCP`
 
-Navigate to `Menu > Technical > Tally` and ensure to set:
-* `Tally Control` to `RCP`
+<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-technical-tally.jpg" width="900" alt="FX9 Tally menu" />
 
-<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-technical-tally.jpg" width="900" />
+### Configure Ethernet
 
-### Ethernet
+Navigate to **Menu > Network > Wired LAN** and set:
+- `Setting` to `On`
+- `Camera Remote Control` to `Enable`
+- `Detail Settings` according to your network (DHCP or static IP)
 
-For Ethernet control:
-Navigate to `Menu > Network > Wired LAN` and ensure to set:
-* `Setting` to `On`
-* `Camera Remote Control` to `Enable`
-* `Detail Settings` according to your network setup (DHCP or static)
+<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-network-LAN.jpg" width="900" alt="FX9 Wired LAN menu" />
 
-<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-network-LAN.jpg" width="900" />
+Example static IP configuration in **Menu > Network > Wired LAN > Detail Settings**:
 
-Here is an example of static IP setup (`Menu > Network > Wired LAN > Detail Settings`):
+<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-network-staticIP.jpg" width="900" alt="FX9 static IP configuration" />
 
-<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-network-staticIP.jpg" width="900" />
+### Configure Wi-Fi
 
-### Wi-Fi
+To connect your camera to an existing Wi-Fi network, navigate to **Menu > Network > Wireless LAN** and set:
+- `Setting` to `Station`
 
-To connect your camera to an existing Wi-Fi:
-Navigate to `Menu > Network > Wireless LAN` and ensure to set:
-* `Setting` to `Station`
+<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-network-Wireless.jpg" width="900" alt="FX9 Wireless LAN menu" />
 
-<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-network-Wireless.jpg" width="900" />
+Then navigate to **Menu > Network > ST Mode Settings** and set:
+- `Camera Remote Control` to `Enable`
+- `Connected Network` — enter your Wi-Fi SSID, password, and IP settings
 
-Navigate to `Menu > Network > ST Mode Settings` and ensure to set:
-* `Camera Remote Control` to `Enable`
-* `Connected Network` to enter your Wi-Fi SSID/password and static/DHCP
-
-<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-network-STmode.jpg" width="900" />
+<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-network-STmode.jpg" width="900" alt="FX9 ST Mode settings" />
 
 :::note
-Same with the `Access Point` mode. Don't forget to activate `Camera Remote Control`
+If you use **Access Point** mode instead of Station mode, you must also enable `Camera Remote Control`.
 :::
 
-## RCP/RIO configuration
+## RCP and RIO configuration
 
-Set up a new camera via the <a href="/docs/Manuals/RCP/ConfWebUI">RCP Configuration UI</a>:
-- Enter a custom number, name, etc.
-- Select **Sony** brand
-- Select **Sony FX9** for the protocol
-- Enter the IP of your camera
+Add the FX9 in the [RCP web UI](/docs/reference/manuals/rcp/web-ui):
+
+1. Click **+** to add a new camera
+2. Enter a camera number and name
+3. Select **Sony** as the brand
+4. Select **Sony FX9** as the protocol
+5. Enter the IP address of your camera
 
 :::note
-If your camera is in a different range than your RCP. Follow <a href="/docs/Configuration/ConfIP">this guide</a>
+If your camera is on a different subnet than your RCP, add a matching IP address to the RCP first. See the [IP configuration guide](/docs/guides/networking/ip-configuration).
 :::
 
-This should look like this:
+The camera block should look like this:
 
-<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-config-block.png" width="300" />
+<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-config-block.png" width="300" alt="FX9 configuration block" />
 
-And once correctly connected, it should be green:
+Once connected, the status indicator turns green:
 
-<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-config-setup.png" width="300" />
+<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-config-setup.png" width="300" alt="FX9 connected status" />
 
-:::note
-In this mode `FX9`, we combine 2 protocols to control the camera. But due to that, the camera is in a `RCP mode` and you lose variable ND filter and fine gain control.
-
-If you want:
-* gain step : 1dB
-* ND filter : variable
-
-Chose `CBM` model instead of `FX9` (may require a camera reboot to work properly)
-
-You can have a look at the dedicated <a href="/docs/Integrations/Sony/SonyCBM">CBM integration guide</a>
+:::tip
+The `FX9` protocol combines two Sony protocols, which puts the camera in RCP mode and disables variable ND and fine gain. If you need 1 dB gain steps or variable ND, select `CBM` as the model instead of `FX9` (you may need to reboot the camera after switching). See the [CBM integration guide](/docs/integrations/cameras/sony/sony-cbm) for details.
 :::
 
-## B4 lens
+## B4 lens support
 
-If you want to add a Canon CINE-SERVO, Fujinon Cabrio or any B4 lens to your FX9, you can find more information <a href="/docs/Integrations/Lens/B4Lens">here</a>
+To control a Canon CINE-SERVO, Fujinon Cabrio, or any B4 lens on your FX9, see the [B4 lens integration guide](/docs/integrations/lenses/b4-lens).

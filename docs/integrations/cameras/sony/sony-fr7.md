@@ -24,9 +24,9 @@ The FR7 control integration combines settings available from the [Web app GUI](h
 **Knee** |✔
 **Green and Red Tally**|✔
 **Camera Menu Navigation**|✔
-**Lens** <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">(zoom, focus)</a>|✔
-**Pan/Tilt** (<a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">from RCP touchscreen</a> or <a href="/docs/Integrations/Accessories/AnxinshiPTZUSBJoystick">USB joystick</a>)|✔
-**Presets/Positions** : <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene#saveload">save/recall</a>|✔
+**Lens** <a href="/docs/reference/manuals/rcp/ui/scene">(zoom, focus)</a>|✔
+**Pan/Tilt** (<a href="/docs/reference/manuals/rcp/ui/scene">from RCP touchscreen</a> or <a href="/docs/integrations/accessories/anxinshi-ptz-usb-joystick">USB joystick</a>)|✔
+**Presets/Positions** : <a href="/docs/reference/manuals/rcp/ui/scene#saveload">save/recall</a>|✔
 
 Note that when the camera is set to SLOG-3 or CineEI, most paint controls are disabled by the camera.
 
@@ -60,7 +60,7 @@ The Tablet can control the auto focus in parallel with the PTZ panel.
 
 :::note
 * RCP : for shading, tally, camera menu control
-* <a href="/docs/Integrations/Accessories/AnxinshiPTZUSBJoystick">USB joystick</a> : for pan, tilt and zoom
+* <a href="/docs/integrations/accessories/anxinshi-ptz-usb-joystick">USB joystick</a> : for pan, tilt and zoom
 * Tablet (optional ): for auto focus
 :::
 
@@ -101,7 +101,7 @@ If the `Brute Force Attack Protection` was active and you just disabled it. Ensu
 :::
 ## RCP configuration
 
-Set up a new camera via the <a href="/docs/Manuals/RCP/ConfWebUI">RCP Configuration UI</a>:
+Set up a new camera via the <a href="/docs/reference/manuals/rcp/web-ui">RCP Configuration UI</a>:
 - Enter a custom number, name, etc.
 - Select **Sony** brand
 - Select **Sony FR7** for the model
@@ -109,7 +109,7 @@ Set up a new camera via the <a href="/docs/Manuals/RCP/ConfWebUI">RCP Configurat
 - Enter your login/password
 
 :::note
-If your camera is in a different range than your RCP (i.e. not 10.192.0.0/16), follow <a href="/docs/Configuration/ConfIP">this guide</a> to add a new IP to the RCP.
+If your camera is in a different range than your RCP (i.e. not 10.192.0.0/16), follow <a href="/docs/guides/networking/ip-configuration">this guide</a> to add a new IP to the RCP.
 :::
 
 This should look like this:

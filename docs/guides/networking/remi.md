@@ -1,207 +1,168 @@
 ---
 id: remi
-title: "REMI remote production setup"
+title: "REMI remote production"
 sidebar_label: "REMI"
-description: "Set up REMI remote production with Cyanview. Control cameras from anywhere over the internet using RIO +WAN gateways."
-keywords: [REMI, remote production, cloud, RIO +WAN, internet]
+description: "Set up REMI remote production with Cyanview. Control cameras from anywhere over the internet using RIO +WAN gateways and the Cyanview cloud."
+keywords: [REMI, remote production, cloud, RIO +WAN, internet, camera control, Cyanview]
 slug: /guides/networking/remi
 ---
 
-# REMI
+REMI (Remote Integration Model) lets you control and share cameras between Cyanview devices from any location — on the same LAN or across the internet. With REMI, a camera configured on one device (RCP or RIO) becomes available to other devices in the same group.
 
-## Introduction
+This is how you:
+- Import a camera from a **RIO +WAN** into your **RCP** over the internet
+- Share cameras between multiple **RCPs** on a local network
+- Control cameras from a **RIO +LAN** on your **RCP** over LAN
 
-Cyanview remote control solution.
+## How REMI works
 
-This applies for:
-* RCP
-* RIO
-* RIO-live (LAN only)
+REMI uses **tags** (shared group names) to connect devices. Any device with the same tag can see and import cameras from other devices in that group.
 
-This will allow you to control and share a camera from any location.
+**Example:** You have a main RCP (`cy-rcp-25-165`) with several cameras, and you want to control one of them from a second RCP-J (`cy-rcp-18-80`). You set the same REMI tag on both devices, then import the camera on the second RCP.
 
-## Overview
-
-Here I have a main RCP (cy-rcp-25-165, IP 10.192.25.165) with multiple cameras and I want to control my main camera (XF605) from my other RCP-J (cy-rcp-18-80, IP 10.192.18.80). So I will `export` my camera from my main RCP to my other RCP-J using the REMI (local):
-* First I need my camera configured
-* Then I need the same REMI tag on both devices
-* And finally, I can import my camera from my main RCP to my other RCP-J
-
-Same applies for a RCP importing a camera from a RIO.
-
-Also note that you can have multiple devices importing the same camera from the same device (for example : multiple RCP importing the same camera from a RIO).
+The same principle applies when importing cameras from a RIO +WAN or RIO +LAN into an RCP. Multiple devices can import the same camera simultaneously.
 
 <video poster="/img/Configuration/REMI/RCP-REMI.png" muted controls>
     <source src="/img/Configuration/REMI/RCP-REMI.mp4"/>
 </video>
 
-## Cloud
+## Cloud connectivity
 
-The cloud only applies for WAN. So only with compatible devices: RCP and RIO.
-If you have a RIO-live and wants to have WAN control of your camera, you can purchase a license to upgrade to a full RIO.
+Cloud REMI is available on **RCP** and **RIO +WAN** devices. It is included, unlimited, and free of charge.
 
-If you have an RCP or a RIO, the cloud control is included, unlimited and free of charge.
-
-It provides : remote camera control over internet and allows you to remote access web UI from any location
+The Cyanview cloud acts as a rendezvous server — all devices open outgoing connections, so you do not need to configure firewalls or port forwarding.
 
 :::note
-The goal of the cloud is to avoid any firewall setup as all units will open OUTGOING connections. It will act as a rendezvous server.
-
-If you still need to open ports:
-* DNS (dynamic) : remi.cyanview.com
-* DNS (Europe) : 1-eu-west-3.remi.cyanview.com
-* DNS (US) : 1-us-west-2.remi.cyanview.com
-* port : 7887
+If your network requires explicit firewall rules:
+- **DNS (dynamic):** remi.cyanview.com
+- **DNS (Europe):** 1-eu-west-3.remi.cyanview.com
+- **DNS (US):** 1-us-west-2.remi.cyanview.com
+- **Port:** 7887
 :::
 
-## Wiring
+**RIO +LAN** devices do not have cloud access. They can only share cameras on the local network. To upgrade a RIO +LAN to full RIO +WAN with cloud access, purchase a license upgrade.
 
-### RIO-live workflow
+## Wiring diagrams
 
-<img src="/img/Configuration/REMI/remi-rio-live.png" width="600"/>
+### RIO +LAN workflow
 
-Typical use cases:
-* Lens control
-* Wi-Fi control
-* USB control
-* Polecam
+<img src="/img/Configuration/REMI/remi-rio-live.png" width="600" alt="RIO +LAN REMI wiring diagram" />
+
+Use a RIO +LAN for:
+- Lens control on a local network
+- Wi-Fi camera control
+- USB camera control
+- Polecam setups
 
 :::note
-This is like a CI0, but with all the protocols included (like an RCP).
-
-Limited to 1 camera and no cloud access (only LAN control).
+The RIO +LAN works like a CI0 but supports all protocols (serial, USB, IP — like an RCP). It is limited to 1–2 cameras and LAN-only control (no cloud).
 :::
 
-### RIO workflow
+### RIO +WAN workflow
 
-<img src="/img/Configuration/REMI/remi-rio.png" width="600"/>
+<img src="/img/Configuration/REMI/remi-rio.png" width="600" alt="RIO +WAN REMI wiring diagram" />
 
-Typical use cases:
-* Beauty shot
-* Gimbals/Steadicam
+Use a RIO +WAN for:
+- Beauty shots with remote control
+- Gimbals and Steadicam setups
+- Any remote production scenario
 
 :::note
-This is like a CI0, but with all the protocols included (like an RCP).
-
-Unlimited number of cam and unlimited access to cloud (free of charge).
+The RIO +WAN supports unlimited cameras and includes cloud access for control from any location.
 :::
 
-### RCP workflow
+### RCP-to-RCP workflow
 
-<img src="/img/Configuration/REMI/remi-rcp.png" width="600"/>
+<img src="/img/Configuration/REMI/remi-rcp.png" width="600" alt="RCP-to-RCP REMI wiring diagram" />
 
-Typical use cases:
-* Controlling the same camera from multiple location (LAN, from the truck and another desk)
-* Controlling different cameras from different venues (WAN)
+Use RCP-to-RCP sharing for:
+- Controlling the same camera from multiple locations (LAN — from the truck and another desk)
+- Controlling cameras across different venues (WAN — over the internet)
 
 ## Configuration
 
-### Configure your groups
+### Step 1: Set up REMI tags
 
-On each device (RCP, RIO, RIO-live), navigate to the `REMI` tab:
+On each device (RCP, RIO +WAN, or RIO +LAN), open the **REMI** tab:
 
-<img src="/img/Configuration/REMI-tab.png" width="300"/>
+<img src="/img/Configuration/REMI-tab.png" width="300" alt="REMI tab in web UI" />
 
-And in the right panel, inside the `Shared Camera Control`, enter your `tags`
-* Enter a tag name in the text box
-* Click on `+`
+In the right panel, under **Shared Camera Control**:
+1. Enter a tag name in the text box
+2. Click **+** to add it
 
-<img src="/img/Configuration/REMI/remi-cloud-status.png" width="300"/>
+<img src="/img/Configuration/REMI/remi-cloud-status.png" width="300" alt="REMI cloud status and tags" />
 
-You see here:
-* `Cloud` : icon is green, means I'm connected to internet and Cyanview cloud
-* `Tags` : list of tags in which my device is
-* `Remote GUI` : on by default, allows people to access the configuration of your device remotely
+The status panel shows:
+- **Cloud** — Green icon means your device is connected to the Cyanview cloud
+- **Tags** — The list of groups your device belongs to
+- **Remote GUI** — Enabled by default, allows remote access to the device's web UI
 
-This tag acts like a password. Everybody that knows it can connect to your group.
-
-:::note
-One device can be associated to multiple groups.
-:::
-
-Once setup on all devices, you can now see status of all the devices in your "groups":
-
-<img src="/img/Configuration/REMI/remi-webpage.png" width="600"/>
-
-I see here two icons:
-* Cloud : means this device can be reached by the cloud
-* Ethernet : means this device can be reached using a local link
-
-And a list of camera `exported` by this device
-
-:::note
-
-Pay attention that group names could be guessable and act as a password. So try to make them as secure as possible and not share with anybody that shouldn't access your cameras.
-:::
-
-### Navigate to the remote GUI
-
-Once RIO's and RCP's are in the same group, you can access the webpage from anywhere.
-
-
-
-If you click on the `cloud` or `10.192.15.4` link next to `cy-rio-15-4`, it will open a new page with your RIO configuration.
-
-### Set up a camera
-
-Here we describe a camera `exported` by a RIO to an RCP.
-
-Create your camera on your RIO like you would do on an RCP.
-
-<img src="/img/Configuration/REMI/remi-rio-cam.png" width="400"/>
-
-On your RCP, cross the checkbox next to your camera you created on your RIO.
-
-<img src="/img/Configuration/REMI/remi-remi-imported.png" width="600"/>
-
-Now your camera is imported from your RIO on your RCP, visible in your RCP configuration:
-
-<img src="/img/Configuration/REMI/remi-configuration-imported.png" width="400"/>
-
-By default, the camera is imported on the RCP with the same `number` and `name` as your RIO.
-
-You can change:
-* on your RIO:
-    - camera number
-    - camera name
-    - camera brand/model
-* on your RCP:
-    - camera number
-    - camera name
-
-The link will persist.
-
-:::note
-If the camera is `exported` by an RCP to another RCP, the setup is the same
+:::warning
+Tags act as passwords. Anyone who knows a tag can connect to your group. Use secure, non-guessable tag names and do not share them with unauthorized users.
 :::
 
 :::note
-You can do the setup on LAN/Ethernet, then move to 4G or Wi-Fi, the config will be the same
+One device can belong to multiple groups simultaneously.
 :::
 
-## Advanced
+### Step 2: Verify group connectivity
 
-### REMI mode
+Once all devices share the same tag, you can see the status of every device in your group:
 
-This is mainly for RIO and RIO-live.
+<img src="/img/Configuration/REMI/remi-webpage.png" width="600" alt="REMI group status page" />
 
-By default, RIO and RIO-live are meant to only "export" cameras to allow remote control.
+The icons indicate:
+- **Cloud icon** — Device is reachable via the Cyanview cloud (internet)
+- **Ethernet icon** — Device is reachable on the local network
 
-But in some situation, you would like to import a camera on your RIO or RIO-live.
+You also see the list of cameras exported by each device.
 
-To do so:
-* Check your RIO serial number (mine is `cy-rio-29-108`)
-* Connect to your RIO web UI (mine is at http://10.192.29.108) to check that everything is working
-* Add `/dev/app.html` to the URL (mine is http://10.192.29.108/dev/app.html)
-* Search for `Cloud` block and click on it:
+### Step 3: Access the remote web UI
 
-<img src="/img/Configuration/REMI/REMI-advanced-block.png" width="400"/>
+Click the **cloud** or **IP address** link next to any device to open its web UI remotely.
 
-* On the right panel, edit the `direction` field
+### Step 4: Import a camera
 
-<img src="/img/Configuration/REMI/REMI-advanced-setup.png" width="400"/>
+To import a camera from a RIO into your RCP:
 
-* 3 possible values:
-    - `exporter` : you can only export your cameras (default on RIO)
-    - `importer` : you can only import cameras
-    - `both` : you can both export and import cameras (default on RCP)
+1. Create and configure the camera on your RIO as you would on an RCP:
+
+<img src="/img/Configuration/REMI/remi-rio-cam.png" width="400" alt="Camera configured on RIO" />
+
+2. On your RCP, check the checkbox next to the camera you want to import:
+
+<img src="/img/Configuration/REMI/remi-remi-imported.png" width="600" alt="Import camera checkbox" />
+
+3. The camera now appears in your RCP configuration:
+
+<img src="/img/Configuration/REMI/remi-configuration-imported.png" width="400" alt="Imported camera in RCP" />
+
+By default, the camera keeps the same number and name as on the source device. You can change the number and name on either device — the link persists.
+
+:::note
+The same process applies when importing from one RCP to another RCP.
+:::
+
+:::tip
+You can configure REMI on a LAN/Ethernet connection, then switch to 4G or Wi-Fi — the configuration carries over automatically.
+:::
+
+## Advanced: change RIO import/export direction
+
+By default, RIO +WAN and RIO +LAN devices only **export** cameras (making them available to other devices). To also **import** cameras on a RIO:
+
+1. Open the RIO web UI (e.g., `http://10.192.29.108`)
+2. Navigate to `/dev/app.html` (e.g., `http://10.192.29.108/dev/app.html`)
+3. Find the **Cloud** block and click it:
+
+<img src="/img/Configuration/REMI/REMI-advanced-block.png" width="400" alt="REMI advanced Cloud block" />
+
+4. Edit the **direction** field in the right panel:
+
+<img src="/img/Configuration/REMI/REMI-advanced-setup.png" width="400" alt="REMI direction configuration" />
+
+Available values:
+- `exporter` — Export cameras only (default on RIO)
+- `importer` — Import cameras only
+- `both` — Export and import cameras (default on RCP)

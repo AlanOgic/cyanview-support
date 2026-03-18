@@ -136,7 +136,7 @@ This page is accessible on port 5000 of an RCP or RIO: simply add `:5000` to the
 <img src="/img/Configuration/RFUHF/Cyanview-dashboard.png" width="300"/>
 
 :::warning
-If you don't see `Alfa actions` and `Alfa config` at the bottom of the page, you have to update your RCP or RIO by downloading the latest release [here](/docs/Configuration/RelDownload)
+If you don't see `Alfa actions` and `Alfa config` at the bottom of the page, you have to update your RCP or RIO by downloading the latest release [here](/docs/reference/firmware-download)
 :::
 
 Each script or action works similarly: input the IP address of the radio in the top field and run the selected action.
@@ -252,7 +252,7 @@ As soon as the RIO will be on the network, it should appear on the left section 
 gear needed:
 
 - 1 x RCP
-- 1 x RIO (or RIO-live)
+- 1 x RIO (or RIO +LAN)
 - 1 x Tube-AH
 - 1 x Halow-U
 - 1 x FX3
@@ -264,7 +264,7 @@ wiring:
 - RIO powers the Halow-U through USB
 - RIO communicates with FX3 through USB
 
-More info on FX3 setup <a href="/docs/Integrations/Sony/SonyAlpha">here</a>
+More info on FX3 setup <a href="/docs/integrations/cameras/sony/sony-alpha">here</a>
 
 ### Wireless FX6
 
@@ -273,7 +273,7 @@ More info on FX3 setup <a href="/docs/Integrations/Sony/SonyAlpha">here</a>
 gear needed:
 
 - 1 x RCP
-- 1 x RIO (or RIO-live)
+- 1 x RIO (or RIO +LAN)
 - 1 x Tube-AH
 - 1 x Halow-U
 - 1 x FX6
@@ -287,7 +287,7 @@ wiring:
 - And RIO uses its onboard Ethernet to go in the FX6 Ethernet dongle.
 - FX6 IP is in the range `10.192.0.0/16` so RIO can talk directly to it
 
-More info on FX6 setup <a href="/docs/Integrations/Sony/SonyFX6">here</a>
+More info on FX6 setup <a href="/docs/integrations/cameras/sony/sony-fx6">here</a>
 
 ### Mesh
 

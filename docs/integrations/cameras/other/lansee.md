@@ -47,14 +47,14 @@ And this setup will show the integration with the router/switcher and Cyanview e
 
 I'm not covering:
 * Dreamchip SSM500 integration, check <a href="/docs/Integrations/Dreamchip/ssm500">here</a>
-* B4 Lens integration, check <a href="/docs/Integrations/Lens/B4Lens">here</a>
+* B4 Lens integration, check <a href="/docs/integrations/lenses/b4-lens">here</a>
 
 But this setup will work with any camera/lens combination.
 
 In addition to your existing camera/lens configuration, create 3 additional "not controlled" cameras.
 This will serve as a "virtual" camera to control the LanSee inputs.
 
-In the `Components` section of the RCP <a href="/docs/Manuals/RCP/ConfWebUI">web UI</a>:
+In the `Components` section of the RCP <a href="/docs/reference/manuals/rcp/web-ui">web UI</a>:
 * Click on `+`
 * Select `Router/Switcher`
 
@@ -78,6 +78,6 @@ It should looks like this:
 <img src="/img/Integrations/LanSee/LanSee-setup-overview.png" width="600"/>
 
 
-You can now follow this <a href="/docs/Configuration/advanced/B4Ret">guide</a> to configure the B4 lens buttons mapping.
+You can now follow this <a href="/docs/guides/advanced/b4-return">guide</a> to configure the B4 lens buttons mapping.
 
 You should now be able to press your lens buttons and toggle the video signal on the LanSee.

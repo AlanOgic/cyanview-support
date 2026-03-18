@@ -15,7 +15,7 @@ slug: /integrations/cameras/arri/arri-cap
 * ARRI Alexa mini LF
 * ARRI Alexa 35
 
-For Amira and SSCP, check our <a href="/docs/Integrations/ARRI/ARRISSCP">ARRI SSCP guide</a>.
+For Amira and SSCP, check our <a href="/docs/integrations/cameras/arri/arri-sscp">ARRI SSCP guide</a>.
 
 ## Controls
 
@@ -26,7 +26,7 @@ For Amira and SSCP, check our <a href="/docs/Integrations/ARRI/ARRISSCP">ARRI SS
 **Black balance** (R/B)|✔
 **REC** (start/stop and status)|✔
 **Other** (Multi matrix, Black Gamma, Knee, Test/Bars)|✔
-**Scene file** : <a href="/docs/Manuals/RCP/RCPUI/RCPUIScene">save/recall</a>|✔
+**Scene file** : <a href="/docs/reference/manuals/rcp/ui/scene">save/recall</a>|✔
 
 <img src="/img/Integrations/ARRI/RCP-alexa35/RCP-alexa35.gif"/>
 
@@ -55,7 +55,7 @@ In `System > Network/WiFi`, setup:
 <img src="/img/Integrations/camera/ARRI/ARRI-CAP-IP.png" width="500"/>
 
 :::note
-If the RCP doesn't have an IP address in the same range as the camera IP, you should add one in the LAN section by following this [guide](/docs/Configuration/ConfIP).
+If the RCP doesn't have an IP address in the same range as the camera IP, you should add one in the LAN section by following this [guide](/docs/guides/networking/ip-configuration).
 
 In this setup, my camera IP is `10.0.2.6/16` and my RCP IP is `10.0.3.10/16`
 :::
@@ -100,14 +100,14 @@ If everything is properly configured, it should go green:
 ### External Lens Control (RIO)
 
 But you can control the iris with the `Lens` block:
-* You have a Fuji or Canon motorised lens, follow this <a href="/docs/Integrations/Lens/CineLens">guide</a>
-* You have a non motorised lens, you can integrate <a href="/docs/Integrations/Lens/Tilta">tilta motors</a>
+* You have a Fuji or Canon motorised lens, follow this <a href="/docs/integrations/lenses/cine-lens">guide</a>
+* You have a non motorised lens, you can integrate <a href="/docs/integrations/lenses/tilta">tilta motors</a>
 
 ### More shading control
 
 CAP protocol is limited to the controls listed above.
-If you need more control you, you can combine it with a <a href="/docs/Integrations/Generic/3DLUTProcessor">LUT processor</a>.
-Check our VP4 <a href="/docs/Manuals/VP4Manual">manual</a> for more information.
+If you need more control you, you can combine it with a <a href="/docs/integrations/generic/3d-lut-processor">LUT processor</a>.
+Check our VP4 <a href="/docs/reference/manuals/vp4-manual">manual</a> for more information.
 
 ## Troubleshooting
 
@@ -154,4 +154,4 @@ But not the whites/blacks, etc.
 
 Your look is probably locked.
 
-Ensure to unlock it by following <a href="/docs/Integrations/ARRI/ARRICAP#look-unlocking">this procedure</a>.
+Ensure to unlock it by following <a href="/docs/integrations/cameras/arri/arri-cap#look-unlocking">this procedure</a>.

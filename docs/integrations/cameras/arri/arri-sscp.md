@@ -23,7 +23,7 @@ Setup:
 * **LAN static subnet** to desired cam subnet (here `255.255.255.0`)
 
 :::note
-If the RCP doesn't have an IP address in the same range as the camera IP, you should add one in the LAN section by following this [guide](/docs/Configuration/ConfIP).
+If the RCP doesn't have an IP address in the same range as the camera IP, you should add one in the LAN section by following this [guide](/docs/guides/networking/ip-configuration).
 
 In this setup, my camera IP is `192.168.2.101/24` and my RCP IP is `192.168.2.10/24`
 :::

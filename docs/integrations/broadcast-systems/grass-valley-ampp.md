@@ -41,9 +41,9 @@ This allows you to output GPIO from GV AMPP using the NIO 16 built-in GPIO's.
 
 ### RCP/NIO setup
 
-Navigate to your <a src="/docs/Manuals/RCP/ConfWebUI">RCP/NIO Configuration UI</a>.
+Navigate to your <a src="/docs/reference/manuals/rcp/web-ui">RCP/NIO Configuration UI</a>.
 
-If your GV AMPP app is not in the range `10.192.0.0/16`, check <a href="/docs/Configuration/ConfIP">this guide</a> to ensure your RCP/NIO can communicate with your computer.
+If your GV AMPP app is not in the range `10.192.0.0/16`, check <a href="/docs/guides/networking/ip-configuration">this guide</a> to ensure your RCP/NIO can communicate with your computer.
 
 <img src="/img/Integrations/TSL/TSL-block.png" width="450" />
 
@@ -51,7 +51,7 @@ Change the TSL parameters to:
 
 <img src="/img/Integrations/GrassValley/GVAMPP-setup-TSL.png" width="300"/>
 
-More info <a href="/docs/Configuration/Tally#tsl">here</a>
+More info <a href="/docs/guides/tally/tally#tsl">here</a>
 
 ### GV AMPP app setup
 
@@ -94,7 +94,7 @@ Here on my NIO configuration I used `not controlled` cams, but if I change the m
 
 ### NIO : TSL input, GPO output
 
-Navigate to your <a src="/docs/Manuals/RCP/ConfWebUI">RCP/NIO Configuration UI</a>.
+Navigate to your <a src="/docs/reference/manuals/rcp/web-ui">RCP/NIO Configuration UI</a>.
 
 In the GPIO tab, you find the 4 cams we created above (with matching IDs).
 
@@ -113,6 +113,6 @@ And in the configuration, it should look like this:
 ### Going further
 
 Check:
-* Various Tally setup : <a src="/docs/Configuration/Tally">Tally configuration</a>
-* Remote prod : <a src="/docs/Configuration/REMI">REMI</a>
+* Various Tally setup : <a src="/docs/guides/tally/tally">Tally configuration</a>
+* Remote prod : <a src="/docs/guides/networking/remi">REMI</a>
 * Use case on remote prod golf : <a src="/blog-draft/2022/10/24/GVAMPP-REMI">blog</a>

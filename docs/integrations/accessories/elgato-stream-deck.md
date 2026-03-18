@@ -44,7 +44,7 @@ To avoid this, you can use a self-powered USB hub between the RCP/RIO and the St
 
 <img alt="cyanview-support-RCP-Port-USB-PTZ-Joystick-Controller" src="/img/Integrations/Accessories/PTZUSBJoystick/RCP-USB-Anxinshi-Joystick.png" width="200" />
 
-[2] In the [Configuration page](/docs/Manuals/RCP/ConfWebUI#configuration) of the RCP Click on the monitor (`RCP` by default) in the `Controllers` section
+[2] In the [Configuration page](/docs/reference/manuals/rcp/web-ui#configuration) of the RCP Click on the monitor (`RCP` by default) in the `Controllers` section
 
 <img src="/img/Integrations/Accessories/ElgatoStreamDeck/RCP-Monitor.png" width="300" />
 
