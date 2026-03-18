@@ -1,0 +1,56 @@
+---
+id: rio
+title: "RIO — Remote I/O Gateway"
+sidebar_label: RIO
+description: "The Cyanview RIO is a hardware gateway for remote camera and lens control. It maintains autonomous operation even on unreliable networks."
+keywords: [RIO, remote I/O, gateway, REMI, lens control, autonomous, camera control]
+slug: /products/rio
+---
+
+# RIO — Remote I/O Gateway
+
+The RIO is a hardware gateway that connects cameras and lenses to the Cyanview ecosystem. Unlike the CI0, the RIO maintains autonomous camera and lens control — if the network drops between the RCP and the RIO, the RIO keeps controlling your cameras independently.
+
+## Key features
+
+- **Autonomous operation** — Maintains camera and lens connections even when the network to the RCP is interrupted
+- **Protocol translation** — Converts between serial, USB, and IP protocols
+- **REMI-ready** — Cloud-connected remote production with RIO +WAN
+- **2 serial ports** — Connect serial cameras and lenses simultaneously
+- **USB port** — Support for Sony Alpha, Canon R5, and other USB-controlled cameras
+- **Lens motor control** — Direct connection to B4, cine servo, and motorized lenses
+
+## Variants
+
+| Model | Connectivity | Cameras | Key capability |
+|---|---|---|---|
+| **RIO +WAN** | LAN and WAN | 1–128 | Full license: Cyanview cloud, REMI, internet access |
+| **RIO +LAN** | LAN only | 1–2 | Local production companion, no cloud or REMI |
+| **RIO** (hardware) | — | — | Generic reference for physical specs |
+
+:::info
+RIO +LAN was formerly known as "RIO-Live". All references to RIO-Live, RIO Live, or RIOLive refer to the RIO +LAN.
+:::
+
+## When to use the RIO
+
+Choose the RIO over the [CI0](/docs/products/ci0) when you need:
+
+- **Lens motor control** — The RIO maintains lens connections independently
+- **USB camera support** — CI0 does not have USB
+- **Reliable operation on lossy networks** — The RIO continues controlling cameras if the network drops
+- **REMI / remote production** — At least one RIO +WAN is required as a cloud gateway
+
+| Scenario | Recommended |
+|---|---|
+| Budget-conscious local production | [CI0](/docs/products/ci0) |
+| Mission-critical broadcast | RIO |
+| Remote production (REMI) | RIO +WAN |
+| Local LAN, 1–2 cameras | RIO +LAN |
+
+## Getting started
+
+- [RIO manual](/docs/reference/manuals/rio-manual)
+- [RIO +LAN manual](/docs/reference/manuals/rio-live-manual)
+- [REMI configuration](/docs/guides/networking/remi)
+- [Quick start guide](/docs/getting-started/quickstart)
