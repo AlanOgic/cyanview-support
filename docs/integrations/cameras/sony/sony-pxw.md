@@ -7,84 +7,73 @@ keywords: [Sony PXW, camcorder, professional, broadcast]
 slug: /integrations/cameras/sony/sony-pxw
 ---
 
-<img src="/img/Integrations/Sony/Sony-PXW/PXW-Z200.png" width="500" />
+![Sony PXW-Z200 camcorder](/img/Integrations/Sony/Sony-PXW/PXW-Z200.png)
 
-## Supported Models
+Control Sony PXW camcorders from your Cyanview RCP over a direct LAN connection. The integration uses the Sony SDK released in 2025.
 
-The new Sony SDK (Released 2025) enables remote control support of:
+## Supported models
 
 - PXW-Z200
 - PXW-Z300
 - HXR-NX800
 
-:::danger New Integration
-Please note, the update to Sony SDK, (released in 2025) is only supported from `25.10.1Beta2`
-
-Ensure the RCP and RIO is updated to this version or later. See here: [Software update](/docs/reference/firmware-download)
+:::danger Minimum firmware required
+This integration requires RCP and RIO firmware **25.10.1Beta2 or later**. Update your devices before proceeding — see [Software update](/docs/reference/firmware-download).
 :::
 
-## Supported control
+## Supported controls
 
-:::info Note
-In the current beta, the supported control is limited. Later releases will enable more control
+:::info
+Control is limited in the current beta release. Future releases will expand the available parameters.
 :::
 
-|Control|Notes|
-|:-----|:-----|
-|**Exposure** - Iris, Gain, Shutter|
-|**ND**|
-|**Colour Temperature & Tint**|
+| Control | Notes |
+|:--------|:------|
+| **Exposure** — Iris, Gain, Shutter | |
+| **ND** | |
+| **Colour temperature and tint** | |
 
 ## Workflow
 
-The RCP connects to the camcorders directly to the LAN port. All over IP
+The RCP connects directly to the camcorder's LAN port — no additional hardware required.
 
-<img class="diagram" alt="Sony_IP_Camcorder" src="/img/Integrations/Sony/Sony-PXW/Sony_IP_Camcorder.png" width="500" />
+![Sony IP camcorder workflow diagram](/img/Integrations/Sony/Sony-PXW/Sony_IP_Camcorder.png)
 
 ## Configuration
 
-### Camera Setup
+### Camera setup
 
-- Set a `Username` and `Password` on the camcorder
+1. Set a `Username` and `Password` on the camcorder — you will need these when adding the camera to the RCP.
+2. Go to `Network > Wired LAN`:
+   - Enable `Camera Remote Control`.
+   - Set the camera's `IP Address` and other network settings.
+3. Set the switch on the camera body to **Manual**.
 
-:::info Note
-Make a note of this, you will need to add it to the RCP
-:::
+![Camera body Manual switch position](/img/Integrations/Sony/Sony-PXW/Sony_PXW_Manaul_Switch.png)
 
-- Go to `Network` -> `Wired LAN`
-    - Enable `Camera Remote Control`
-    - Setup the camera's `IP Address` and remaining `Network Settings`
+### RCP/RIO setup
 
-- **Important Step** - Ensure the switch is set to 'Manual' on the camera's body
+Open the RCP web UI and go to **Quick Start Guide — RCP Start**.
 
-![Camera_Body](/img/Integrations/Sony/Sony-PXW/Sony_PXW_Manaul_Switch.png)
+1. In the Camera section, click `+` to add a new camera.
 
-### RCP/RIO Setup
+   ![Quick Start — add camera button](/img/Configuration/Quick_Start/Quick_Start_Addcamera.png)
 
-Access the RCP's UI -> 'Quick Start Guide - RCP Start'
+2. In **General**, enter a camera `number` and `name`.
 
-- In the Camera section click on `+` to add a new camera
+   ![Quick Start — general camera name field](/img/Configuration/Quick_Start/Quick_Start_GeneralName.png)
 
-![Quick Start Add Camera](/img/Configuration/Quick_Start/Quick_Start_Addcamera.png)
+3. Select brand: **Sony**.
+4. Select model: **FX6**.
 
-- In `General` add a camera `number` and `name`. This is anything related to your workflow.
+   :::info
+   Until the UI is updated to reflect these models, use **FX6** as the model for PXW-Z200, PXW-Z300, and HXR-NX800.
+   :::
 
-![Quick Start General Add Name](/img/Configuration/Quick_Start/Quick_Start_GeneralName.png)
+5. Enter the `Login` and `Password` you set on the camera.
 
-- Select brand: Sony
-- Select model: `FX6`
+   ![Sony FX6 login and password setup form](/img/Integrations/Sony/Sony-FX6/FX6-setup.png)
 
-:::info Note - Setup
-Currently, the only way to setup these cameras is to use the `FX6` model
+When configured correctly, the camera block turns green.
 
-There will be an update where the UI is related to the model
-:::
-
-- Add the `Login` and `Password`
-
-![Sony FX6 Setup](/img/Integrations/Sony/Sony-FX6/FX6-setup.png)
-
-If all correctly setup, the status will go green
-
-![Sony FX6 Block](/img/Integrations/Sony/Sony-FX6/FX6-block.png)
-
+![Sony FX6 camera block showing green connected status](/img/Integrations/Sony/Sony-FX6/FX6-block.png)

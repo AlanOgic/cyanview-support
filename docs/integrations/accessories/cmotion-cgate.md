@@ -1,121 +1,119 @@
 ---
 id: cmotion-cgate
-title: "cmotion Cgate integration"
+title: "cmotion cGate integration"
 sidebar_label: "cmotion Cgate"
 description: "Connect cmotion Cgate wireless lens controllers with Cyanview for remote focus and iris control on cinema setups."
 keywords: [cmotion, Cgate, wireless, lens control, cinema]
 slug: /integrations/accessories/cmotion-cgate
 ---
 
-# cmotion cGate
+The cmotion cGate connects to Cyanview for iris, zoom, and focus motor control. The cGate must run **firmware v2.0.0 or above** for Cyanview compatibility.
 
-## Overview
-
-<img src="/img/Integrations/cmotion/cgate_left.png" width="250"/>
-<img src="/img/Integrations/cmotion/cgate_front.avif" width="250"/>
-<img src="/img/Integrations/cmotion/cgate_right.png" width="250"/>
-
-The cgate needs to have a Cyanview compatible firmware (v2.0.0 or above)
+![cmotion cGate lens controller — left side view](/img/Integrations/cmotion/cgate_left.png)
+![cmotion cGate lens controller — front view](/img/Integrations/cmotion/cgate_front.avif)
+![cmotion cGate lens controller — right side view](/img/Integrations/cmotion/cgate_right.png)
 
 ## Wiring
 
-<img src="/img/Integrations/cmotion/cgate_wiring.png" width="750"/>
+![cmotion cGate wiring diagram showing Ethernet and LBUS motor connections](/img/Integrations/cmotion/cgate_wiring.png)
 
-* Connect the cgate ethernet to the same network as the RCP/RIO.
-* The wiring of the motor(s) on the LBUS side of cgate is as in the cForce.
-* Up to 3 motors connected to the cGate
-* Provide power through for the cGate and motors the LBUS
+- Connect the cGate Ethernet port to the same network as the RCP/RIO.
+- Wire motors on the LBUS side of the cGate as you would for a cForce.
+- Connect up to 3 motors to the cGate.
+- Power the cGate and motors through the LBUS.
 
-optional:
-* add blackmagic handles (so iris is done on RCP and zoom/focus with the blackmagic handles)
+Optional: add Blackmagic handles so iris is controlled from the RCP and zoom/focus from the handles.
 
 ## Setup
 
-On an existing camera, scroll to `Lens - External control override` section:
-* `Model` : select `cmotion - cGate`
-* [Toggle Advanced Mode](/docs/guides/advanced/serial-camera#toggle-advanced-mode)
-* `Advanced` : put the ip address of the cgate. When done, the `Interface` should update to the ip address. Make sure that the ip address of the cgate is reachable by the RCP, see [this page](/docs/guides/networking/ip-configuration?_highlight=ip#lan-configuration) for more information about ip configuration.
+On an existing camera, scroll to the `Lens — External control override` section:
+1. Set `Model` to `cmotion - cGate`.
+2. [Toggle Advanced Mode](/docs/guides/advanced/serial-camera#toggle-advanced-mode).
+3. In `Advanced`, enter the cGate IP address. The `Interface` field updates to show the IP when the address is accepted.
 
-If everything is properly configured, the `lens` block should turn green:
-<img src="/img/Integrations/cmotion/config_base_cam_400x307.png"/>
-<img src="/img/Integrations/cmotion/config_base_lens_390x307.png"/>
+Make sure the cGate IP is reachable from the RCP — see the [IP configuration guide](/docs/guides/networking/ip-configuration?_highlight=ip#lan-configuration).
+
+When correctly configured, the `lens` block turns green:
+
+![Camera configuration block showing green lens status](/img/Integrations/cmotion/config_base_cam_400x307.png)
+
+![Lens block configuration showing green connected status](/img/Integrations/cmotion/config_base_lens_390x307.png)
+
 :::info
-Here the camera head is "Not controlled", so I just have read/write of iris/zoom/focus. But I could combine it with any camera control.
+If the camera head is "Not controlled", you still have full read/write access to iris, zoom, and focus. You can combine cGate with any camera control.
 :::
 
-The default setup provides iris control with the following parameters : 
-* iris values from `1.6` to `32`
-* Torque setting `2`
-* Motor direction `left`
+The default setup controls iris with these parameters:
+- Iris range: `1.6` to `32`
+- Torque: `2`
+- Motor direction: `left`
 
-All motors are automatically discovered.
-
-Follow the [Advanced setup](#advanced-setup) section to add other axis or change parameters.
+All motors are automatically discovered. Follow the [advanced setup](#advanced-setup) section to change parameters or add axes.
 
 ## Advanced setup
 
-By default:
-* iris + zoom + focus are controlled
-* iris 1.6 to 32 with torque 2, direction left
-* zoom torque 2, direction left
-* focus torque 2, direction left
+Default parameters:
+- Iris, zoom, and focus are controlled.
+- Iris: 1.6 to 32, torque 2, direction left.
+- Zoom: torque 2, direction left.
+- Focus: torque 2, direction left.
 
-You can alter the configuration, especially to adapt the iris range:
-* come back to your lens setup, in the `Advanced` field
-* `zoom|iris|focus` config separated by `,` (each block should be fully configured: range if applicable, function, torque and direction). If you just configure iris, default focus and default zoom are still applied. To leave a setting unchange you can use "_".
-* formats:
-  * iris : `IRIS_MIN:IRIS_MAX:iris:IRIS_TORQUE:IRIS_DIRECTION`
-    * `IRIS_MIN` is the minimum iris value
-    * `IRIS_MAX` is the maximum iris value
-    * `IRIS_TORQUE` is the torque of the iris motor (1, 2, 3 or 4)
-    * `IRIS_DIRECTION` is the direction of the iris motor (left or right)
-  * zoom: `zoom:ZOOM_TORQUE:ZOOM_DIRECTION`
-    * `ZOOM_TORQUE` is the torque of the zoom motor (1, 2, 3 or 4)
-    * `ZOOM_DIRECTION` is the direction of the zoom motor
-  * focus: `focus:FOCUS_TORQUE:ZOOM_DIRECTION`
-    * `FOCUS_TORQUE` is the torque of the focus motor (1, 2, 3 or 4)
-    * `FOCUS_DIRECTION` is the direction of the focus motor (left or right)
-  * examples:
-    * `2:8:iris:2:left` : iris from 2 to 8, torque is 2, direction is left
-    * `2:32:iris:2:right` : iris from 2 to 32, torque is 2, direction is right
-    * `1.6:32:iris:_:left,zoom:4:_` : iris from 1.6 to 32, direction is left and torque is unchanged. Zoom with torque 4 and direction is unchanged. No focus.
-    * `1.6:32:iris:2:left,zoom:4:right,focus:2:left` : iris and focus with torque 2 and direction left. Zoom with torque 4 and direction right.
+To customize, return to the lens `Advanced` field and enter axis configurations separated by commas. Each block must be fully specified. Use `_` to leave a value unchanged.
 
-<img src="/img/Integrations/cmotion/config_iris_zoom_392x307.png"/>
+**Formats:**
 
-If everything is properly configured and wired, the `lens` block should appear green.
+- **Iris:** `IRIS_MIN:IRIS_MAX:iris:IRIS_TORQUE:IRIS_DIRECTION`
+  - `IRIS_MIN` — minimum iris value
+  - `IRIS_MAX` — maximum iris value
+  - `IRIS_TORQUE` — motor torque (1–4)
+  - `IRIS_DIRECTION` — motor direction (`left` or `right`)
 
-:::warning The config for an axis needs to be complete.
-If you only need to set the iris direction, you still have to set the torque. The only exception is the iris min and max that can be set without torque and direction.
+- **Zoom:** `zoom:ZOOM_TORQUE:ZOOM_DIRECTION`
+  - `ZOOM_TORQUE` — motor torque (1–4)
+  - `ZOOM_DIRECTION` — motor direction
+
+- **Focus:** `focus:FOCUS_TORQUE:FOCUS_DIRECTION`
+  - `FOCUS_TORQUE` — motor torque (1–4)
+  - `FOCUS_DIRECTION` — motor direction (`left` or `right`)
+
+**Examples:**
+- `2:8:iris:2:left` — iris from 2 to 8, torque 2, direction left
+- `2:32:iris:2:right` — iris from 2 to 32, torque 2, direction right
+- `1.6:32:iris:_:left,zoom:4:_` — iris 1.6–32, direction left, torque unchanged; zoom torque 4, direction unchanged; no focus
+- `1.6:32:iris:2:left,zoom:4:right,focus:2:left` — all axes configured explicitly
+
+![cGate iris and zoom advanced configuration screen](/img/Integrations/cmotion/config_iris_zoom_392x307.png)
+
+:::warning
+Each axis configuration must be complete. If you only need to set direction, you must still specify torque. The exception is iris min/max, which can be set without torque and direction.
 :::
 
 :::note
-The motor direction is internal the RCP. It will not change the direction setting of the motor itself. That way, you can invert the direction even if you are using the motor on a 3D setup with motors on each side. It is the controller direction and not the motor direction.
+Motor direction is set in the RCP controller, not on the motor itself. This lets you invert direction for 3D rigs where motors are mounted on opposing sides.
 :::
 
 ## Calibration
 
-You can run the motor calibration from the RCP:
+Run motor calibration from the RCP via `MENU > LENS > LENS > ACTION`, then click `Calibrate`.
 
+Use a powerful enough power supply — calibrating all motors simultaneously requires significant current.
 
-This menu is available in `MENU > LENS > LENS > ACTION`, click on `Calibrate`
-
-Make sure to have a powerful enough power supply as calibration all the motors at the same time requires a lot of current. 
-
-<img src="/img/Integrations/ARRI/cforce/RCP-UI/calibration.gif" width="400"/>
+![cGate motor calibration animation in RCP menu](/img/Integrations/ARRI/cforce/RCP-UI/calibration.gif)
 
 ## cGate with RCP and HandUnit
 
-If the RCP and a cmotion Hand Unit both try to control the cgate, the RCP will win by default. In order to give control to the Hand Unit, you can release the cgate from the RCP for specific axis from the menu 'Lens>Lens>Control' and toggle the switches.
+If both the RCP and a cmotion HandUnit try to control the cGate simultaneously, the RCP takes precedence by default. To hand control to the HandUnit for specific axes, go to `Lens > Lens > Control` on the RCP and toggle the switches for the axes you want to release.
 
-<img src="/img/Manual/RCP/RCP-menu-lens-1_1_2.BMP"/>
+![RCP lens control menu showing axis release toggles](/img/Manual/RCP/RCP-menu-lens-1_1_2.BMP)
 
 ## Troubleshooting
 
-### Lens is green, but nothing happens
-There can be several causes : 
-- Motor not calibrated : inspected the motor led button, it should be green. If it's not the case, perform a calibration either by long pressing the motor button or though the [RCP Lens action](#calibration).
-- Wrong advanced setup : if there is a syntax error in the parameters of the motor it can cause an issue. Make sure to follow the exact syntax described in the [Advanced setup](#advanced-setup).
+### Lens is green but nothing happens
 
-### The iris value on the RCP does not match the lens on the camera
-The RCP does not know the iris range of the lens. To match the iris value to the lens on the camera follow the [Advanced setup](#advanced-setup)
+Possible causes:
+- **Motor not calibrated** — Check the motor LED button. If it is not green, calibrate by long-pressing the motor button or using the [RCP Lens action](#calibration).
+- **Invalid advanced setup** — A syntax error in the parameter string can prevent control. Verify your configuration against the [advanced setup](#advanced-setup) syntax.
+
+### Iris value on the RCP does not match the lens
+
+The RCP does not know the iris range of your lens. Use the [advanced setup](#advanced-setup) to enter the correct iris min and max values.

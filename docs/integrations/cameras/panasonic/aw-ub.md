@@ -7,52 +7,45 @@ keywords: [Panasonic, AW-UB, box camera, IP control]
 slug: /integrations/cameras/panasonic/aw-ub
 ---
 
-# Panasonic AW-UB10 and AW-UB50
+The Panasonic AW-UB10 and AW-UB50 box cameras connect to Cyanview over IP using the same protocol as Panasonic controllers such as the RP150.
 
-<img src="/img/Integrations/Panasonic/PanaUB50.jpg" width="400"/>
+![Panasonic AW-UB50 box camera](/img/Integrations/Panasonic/PanaUB50.jpg)
 
+## Supported models
 
-## Supported Models
+The control protocol and feature set are identical across all models:
+- AW-UB10
+- AW-UB50
 
-The control protocol and features are the same for all models.
+## Supported controls
 
-* AW-UB10
-* AW-UB50
-
-
-## Supported Control
-
-|Control | Notes | All models |
-:-----|:-----|:-----|
-**Exposure** — Iris, Gain, Shutter | |✔|
-**Auto Exposure** — Iris, Gain, Shutter | |✔|
-**Syncro Scan** | |✔|
-**White balance** — R/B and Color temperature| |✔|
-**ATW / Manual**| |✔|
-**Black level and balance** (R/B/Master) | |✔|
-**Detail** | |✔|
-**Skin Detail** | |✔|
-**Knee** — Point, Slope | |✔|
-**User Matrix** | 6 values user matrix |✔|
-**Multi Matrix** | 16 vectors |✔|
-**Menu Navigation** | |✔|
-**Lens control** — Zoom, Focus, auto-focus** | |✔|
-**Digital zoom** | |✔|
-**Tally** |Red only |✔|
-**Bars** | |✔|
-
+| Control | Notes | All models |
+|:--------|:------|:----------:|
+| **Exposure** — Iris, Gain, Shutter | | ✔ |
+| **Auto exposure** — Iris, Gain, Shutter | | ✔ |
+| **Syncro Scan** | | ✔ |
+| **White balance** — R/B and color temperature | | ✔ |
+| **ATW / Manual** | | ✔ |
+| **Black level and balance** (R/B/Master) | | ✔ |
+| **Detail** | | ✔ |
+| **Skin detail** | | ✔ |
+| **Knee** — Point, Slope | | ✔ |
+| **User matrix** | 6-value user matrix | ✔ |
+| **Multi matrix** | 16 vectors | ✔ |
+| **Menu navigation** | | ✔ |
+| **Lens control** — Zoom, Focus, auto-focus | | ✔ |
+| **Digital zoom** | | ✔ |
+| **Tally** | Red only | ✔ |
+| **Bars** | | ✔ |
 
 ## Workflow
 
-The camera is controlled over IP using the same protocol as Panasonic controllers, such as the RP150. For details, refer to the 'Remote Operations > Controlling with Controller' section in the camera manual.
-
-The camera is equipped with a standard RJ45 connector, so no special setup is required in this regard.
-
+The camera connects over IP using the same protocol as Panasonic controllers. Refer to the *Remote Operations > Controlling with Controller* section of the camera manual for details. The camera uses a standard RJ45 connector — no special hardware setup is required.
 
 ## Configuration
 
 :::warning
-Use credentials assigned by 'EasyIP SetupTool' and not the login and password from the camera
+Use the credentials assigned by **EasyIP SetupTool** — not the login and password configured directly on the camera, which are for Lumix Tether.
 :::
 
-The camera requires login credentials that differ from those configurable directly on the camera, which are for Lumix Tether. To set these credentials, you must use either the 'EasyIP SetupTool Plus' or the 'Media Production Suite'.
+Set the camera credentials using either **EasyIP SetupTool Plus** or **Media Production Suite**, then enter those same credentials in the RCP configuration.

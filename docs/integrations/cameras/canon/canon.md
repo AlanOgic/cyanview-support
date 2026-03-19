@@ -7,73 +7,66 @@ keywords: [Canon, cinema camera, broadcast, C300, C500]
 slug: /integrations/cameras/canon/canon
 ---
 
-# Canon
+Cyanview RCPs control Canon cameras over IP, Remote-A, or USB — depending on the model.
 
-The Cyanview RCP allows you to control all types of Canon cameras.
+## Connection methods
 
-## Overview
-
-The Cyanview RCP can **control Canon camera** over
-* **IP** — using the XC protocol
-* **Remote-A 2.5mm TRS** — most older cameras support the Remote A protocol
-* **USB** — Canon R5 only
+| Method | Protocol | Use case |
+|---|---|---|
+| IP | XC Protocol | PTZ cameras and cine cameras |
+| Remote-A 2.5mm TRS | Remote A | Older EOS Cinema cameras |
+| USB | — | Canon R5 only |
 
 :::note
-Remote B is not supported as these cameras also have the Remote-A connector and the functions are identical.
+Remote B is not supported. Cameras with a Remote B connector also have a Remote A connector, and the functions are identical.
 :::
 
-## IP control : PTZ
+## IP control: PTZ cameras
 
-All Canon PTZ cameras except the CR-X500 are controlled over IP using the XC protocol. The Canon PTZ controller can be used at the same time as Cyanview-s RCPs
+All Canon PTZ cameras except the CR-X500 are controlled over IP using the XC protocol. You can use a Canon PTZ controller alongside a Cyanview RCP simultaneously.
 
-<img alt="Canon CR-N500 remote control with Cyanview RCP" src="/img/Integrations/Canon/CRN500/CRN500-wiring.png" width="600"/>
+![Canon CR-N500 wiring diagram for Cyanview RCP](/img/Integrations/Canon/CRN500/CRN500-wiring.png)
 
+## IP control: cine cameras
 
-## IP control : cine cameras
+The Cyanview RCP controls all Canon cameras that support the XC protocol.
 
-<img alt="Canon XC remote control with Cyanview RCP" src="/img/Integrations/Canon/XC/XC-wiring.png" width="600"/>
+![Canon XC protocol wiring diagram for Cyanview RCP](/img/Integrations/Canon/XC/XC-wiring.png)
 
-The Cyanview RCP controls all the Canon cameras which support the XC protocol
+Supported models:
 
-* C400
-* C80
-* C300 Mk3
-* C500 Mk2
-* <a href="/docs/integrations/cameras/canon/canon-xf605">XF605</a>
-* C70 (needs a firmware update)
+- C400
+- C80
+- C300 Mk3
+- C500 Mk2
+- [XF605](/docs/integrations/cameras/canon/canon-xf605)
+- C70 — requires a firmware update
 
+## Remote-A 2.5mm TRS
 
+The Cyanview RCP controls all Canon cameras that support the Remote A protocol.
 
-## Remote-A 2.5mm TRS jack
+![Canon Remote A wiring diagram for Cyanview RCP](/img/Integrations/Canon/canon-LANC-wiring.png)
 
-<img alt="Canon Remote A control with Cyanview RCP" src="/img/Integrations/Canon/canon-LANC-wiring.png" width="600"/>
+Supported models include:
 
-**The Cyanview RCP controls all the Canon cameras that support the Remote A protocol**
+- C100
+- C200
+- C300 Mk2
+- C500 Mk1
 
-* C100
-* C200
-* C300 Mk2
-* C500 Mk1
-* etc.
+To check whether your camera supports Remote A, visit the Canon website, open the **Specifications** tab, and look for **Remote A** under the connectivity section.
 
-This list is not exhaustive
+:::tip
+If your camera is compatible with the Canon RCV-100, it is compatible with the Cyanview RCP.
+:::
 
-To check if your camera is compatible:
-* Navigate to Canon website
-* Click on `Specifications`
-* Scroll to `IP Streaming & Control`
-* Search for `Canon XC Protocol supported` in this block
+The example below shows the Remote A compatibility block on the C200 specifications page.
 
-If your camera is compatible with a RCV-100, it is compatible with the Cyanview RCP.
-Except that Cyanview RCP controls the cameras over IP and can control multiple cameras at the same time.
+![Canon Remote A compatibility block in C200 specifications](/img/Integrations/Canon/Canon-Remote-A.png)
 
-Example for the C200, on this <a href="">link</a>, you find this block:
+## USB: mirrorless
 
-<img alt="Canon camera remote A control with Cyanview RCP" style={{border: "5px solid #555"}} src="/img/Integrations/Canon/Canon-Remote-A.png" width="600"/>
+USB control applies to the Canon R5 only.
 
-
-## USB : Mirrorless
-
-<img alt="Canon R5 remote control with Cyanview RCP" src="/img/Integrations/Canon/canon-DSLR-RCP.png"/>
-
-This applies to the Canon R5 model only
+![Canon R5 connected to Cyanview RCP via USB](/img/Integrations/Canon/canon-DSLR-RCP.png)

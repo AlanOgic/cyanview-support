@@ -7,43 +7,31 @@ keywords: [PTZ, USB joystick, Anxinshi, speed curves, control]
 slug: /integrations/accessories/anxinshi-ptz-usb-joystick
 ---
 
-## Overview
+![Anxinshi PTZ USB joystick connected to an RCP](/img/Integrations/Accessories/PTZUSBJoystick/Anxinshi-PTZ-Joystick-RCP.png)
 
-<img alt="cyanview-support-RCP-ANY-PTZ-Joystick-Controller" src="/img/Integrations/Accessories/PTZUSBJoystick/Anxinshi-PTZ-Joystick-RCP.png" width="500" />
-
-
-Anxinshi joystick allows control of any PTZ supported by Cyanview RCP.
-
-The RCP allows to control all PTZ configured with a single joystick.
-
-Anxinshi joystick is to be found [here](https://www.aliexpress.com/item/32825990133.html) or [here](https://www.aliexpress.com/item/1005006023355662.html).
+The Anxinshi USB joystick lets you control any PTZ camera supported by the Cyanview RCP. A single joystick controls all PTZ cameras configured on the RCP. You can find the joystick on AliExpress: [option 1](https://www.aliexpress.com/item/32825990133.html) or [option 2](https://www.aliexpress.com/item/1005006023355662.html).
 
 ## Configuration
 
-[1] If not done yet, Configure your PTZ in the RCP.
+1. If you haven't already, configure your PTZ cameras in the RCP.
 
-[2] Connect PTZ USB Joystick to the RCP.
+2. Connect the PTZ USB joystick to the RCP.
 
-<img alt="cyanview-support-RCP-Port-USB-PTZ-Joystick-Controller" src="/img/Integrations/Accessories/PTZUSBJoystick/RCP-USB-Anxinshi-Joystick.png" width="200" />
+   ![PTZ USB joystick connected to the RCP USB port](/img/Integrations/Accessories/PTZUSBJoystick/RCP-USB-Anxinshi-Joystick.png)
 
-[3] Configure the PTZ USB Joystick in the [Configuration page](/docs/reference/manuals/rcp/web-ui#configuration) of the RCP [Configuration Web UI](/docs/guides/networking/ip-configuration#lan-web-ui-access)..
+3. Configure the joystick in the [RCP Configuration Web UI](/docs/guides/networking/ip-configuration#lan-web-ui-access) on the [Configuration page](/docs/reference/manuals/rcp/web-ui#configuration).
 
-<video poster="/img/Integrations/Accessories/PTZUSBJoystick/Add-PTZ-USB-Joystick-to-RCP.png" muted controls>
-    <source src="/img/Integrations/Accessories/PTZUSBJoystick/Add-PTZ-USB-Joystick-to-RCP.mp4"/>
-</video>
+   <video poster="/img/Integrations/Accessories/PTZUSBJoystick/Add-PTZ-USB-Joystick-to-RCP.png" muted controls>
+     <source src="/img/Integrations/Accessories/PTZUSBJoystick/Add-PTZ-USB-Joystick-to-RCP.mp4"/>
+   </video>
 
-[4] PTZ USB Joystick now controls your PTZ cameras via the Cyanview RCP.
+4. The joystick now controls your PTZ cameras through the RCP.
 
 ## Operation
 
-### Load/Save Positions
+### Save and load positions
 
-- **Long push** on a button will **save** the PTZ position.
+- **Long press** a button to **save** the current PTZ position.
+- **Short press** a button to **move** to the previously saved position.
 
-- **Short push** will move the PTZ to the previously saved position.
-
-Positions can be Saved/Loaded from either the Anxinshi joystick, the RCP LENS menu, and the [Elagato Stream Deck](/docs/integrations/accessories/elgato-stream-deck).
-
-
-
-
+You can save and load positions from the Anxinshi joystick, the RCP LENS menu, or the [Elgato Stream Deck](/docs/integrations/accessories/elgato-stream-deck).

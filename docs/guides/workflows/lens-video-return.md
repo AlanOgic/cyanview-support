@@ -7,146 +7,135 @@ keywords: [lens control, video return, monitoring, workflow]
 slug: /guides/workflows/lens-video-return
 ---
 
-# Fujinon/Canon Lens video return
+Fujinon and Canon lenses have buttons (RET1, etc.) that you can map to router or switcher commands on the RCP. This lets the camera operator switch their video return source from the lens handle — for example, toggling between a LOG signal, the program feed, or the main camera output — without touching anything at the CCU.
 
-This guide walks through the different steps to integrate a Fujinon/Canon lens with video return action.
+The result: one clean output signal from the camera, and one video return path from the switcher. The lens buttons control which source appears on the cameraman's display.
 
-On a lens, you have buttons (RET1, etc.) that we can use to trigger actions on the RCP.
-Typically, you can map a RET1 to a router/switcher command to change the video return source based on button press.
-
-Typically: switch between your camera video return (you could have LOG or LUT switch), the program, the main camera, etc.
-
-It allows you to have one video out (clean signal), and one video return from the switcher/router and based on the buttons, select which video return you want to see on your cameraman display.
-
-<img alt="Cyanview RCP RIO FX9 Canon Cine Servo 25-250mm" src="/img/Workflows/LensVideoReturn-FX9-Canon-25-250.jpeg" width="800" />
+![Cyanview RCP RIO FX9 Canon Cine Servo 25-250 mm](/img/Workflows/LensVideoReturn-FX9-Canon-25-250.jpeg)
 
 :::note
+This works with any lens that has a RET1 button (Canon, Fujinon, etc.) that the RIO controls directly.
 
-It works with any lens with a RET1 button (Canon, Fujinon, etc.) that we control directly.
-
-If your lens doesn't have buttons, or digital control or is not controlled by a CI0/RIO, it will not be possible.
-
-So if you have a Sony Venice and the lens (iris) is controlled through the camera protocol (8-Pin), it will not be possible. To make it work, you would need a RIO that will control the camera and the lens directly.
+If your lens has no buttons, no digital control connector, or is not controlled by a CI0/RIO, this is not possible. If you have a Sony Venice with iris controlled through the camera protocol (8-pin), it's also not possible. To make it work in that case, you'd need a RIO controlling both the camera and the lens directly.
 :::
 
 ## Wiring
 
-Here, I describe the use case with a FX9 and a Canon PL lens, but it's the same for any lens and any camera that we can control.
+The example below uses an FX9 and a Canon PL lens. The principle is the same for any supported lens and camera.
 
-<img alt="Wiring Canon Cine Servo 25-250mm FX9 Ereca Blackmagic VideoHub Cyanview RCP" src="/img/Workflows/LensVideoReturn-wiring.png" width="800" />
+![Wiring diagram: Canon Cine Servo 25-250 mm, FX9, Ereca, Blackmagic VideoHub, Cyanview RCP](/img/Workflows/LensVideoReturn-wiring.png)
 
+On the camera side, the RIO connects to:
+- The FX9 XDCA RJ45 port (or via Wi-Fi using a [USB dongle](/docs/guides/networking/wifi-usb) on the RIO)
+- The Canon lens using cable [CY-CBL-6P-B4-01](/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default)
+- The Ereca CAM RACER using a USB-Ethernet dongle (the RIO has only one onboard RJ45 port)
 
-On camera side:
-* RIO is connected to:
-    - FX9 XDCA RJ45 port (could be Wi-Fi using a <a href="/docs/guides/networking/wifi-usb">dongle</a> on the RIO)
-    - Canon Lens using <a href="/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a> cable
-    - Ereca CAM RACER using a USB-Ethernet dongle (because RIO has only one RJ45 port)
-* CAM RACER:
-    - SDI in comes from the FX9 SDI out
-    - SDI out goes into external display
+The CAM RACER receives SDI from the FX9 SDI output, and its SDI output goes to the external display.
 
 :::note
-RIO has one RJ45 onboard. But has 2 USB that you can use to extend connectivity (4G dongles, Wi-Fi dongles, RJ45 dongles, etc.). So you can have 2 RJ45 on the RIO.
-
-In this case, RIO is configured in bridge mode, so both RJ45 are not physically separated anymore, RIO acts like a switch. It allows you to get your FX9 webpage from the CCU room without adding a switch.
+The RIO has one onboard RJ45 port and two USB ports you can use for dongles (4G, Wi-Fi, RJ45, etc.), giving you up to two RJ45 interfaces. In bridge mode, both RJ45 interfaces merge into a single network — the RIO acts as a switch, letting you access the FX9 web interface from the CCU room without adding a separate switch.
 :::
 
 ## Setup
 
-### RIO/Camera side
+### RIO and camera side
 
-Here, you need to configure:
-* RIO Ethernet in `auto bridge` mode:
-    - click on `IP Connections`
-    - scroll to the bottom of the page, `Bridge` section
-    - click on `Auto Bridge USB Interfaces`
-* Your camera as usual, here a FX9
-* Your lens as usual, here a Canon PL lens (model `B4 generic`)
-* Your REMI tag as usual
+Configure the following:
 
-It should look like this:
+**RIO bridge mode:**
+1. Click `IP Connections`
+2. Scroll to the `Bridge` section
+3. Enable `Auto Bridge USB Interfaces`
 
-<img alt="Setup RIO FX9 Canon Cine Servo" src="/img/Workflows/LensVideoReturn-RIO-config.png" width="400" />
+**Camera:** configure your FX9 as usual.
 
-And like this for the bridge:
+**Lens:** configure your Canon PL lens (model `B4 generic`) as usual.
 
-<img alt="Setup RIO REMI" src="/img/Workflows/LensVideoReturn-RIO-bridge.png" width="400" />
+**REMI:** set your REMI tag as usual.
 
-And don't forget your REMI tag:
+Your configuration should look like this:
 
-<img alt="Setup RIO REMI" src="/img/Workflows/LensVideoReturn-RIO-remi.png" width="400" />
+![RIO FX9 Canon Cine Servo setup](/img/Workflows/LensVideoReturn-RIO-config.png)
 
-To get further, you can take a look at the dedicated guides:
-* For <a href="/docs/integrations/cameras/sony/sony-fx9">FX9</a>
-* For <a href="/docs/integrations/lenses/cine-lens">Cine Lens</a>
-* For <a href="/docs/guides/networking/remi">REMI</a>
+Bridge configuration:
+
+![RIO Ethernet bridge setup](/img/Workflows/LensVideoReturn-RIO-bridge.png)
+
+REMI tag:
+
+![RIO REMI tag setup](/img/Workflows/LensVideoReturn-RIO-remi.png)
+
+For detailed steps, see:
+- [FX9 integration guide](/docs/integrations/cameras/sony/sony-fx9)
+- [Cine lens integration guide](/docs/integrations/lenses/cine-lens)
+- [REMI guide](/docs/guides/networking/remi)
 
 ### RCP side
 
-On the RCP, you need to:
-* Import the camera from your RIO:
-    - click on `REMI`
-    - setup the same tag you added in your RIO (you can have multiple tags, but at least one in common for RIO/RCP)
-    - click on the checkbox next to your RIO/Camera
-* Create your router/switcher, here a Blackmagic Videohub:
-    - Enter a name, whatever you want
-    - Enter the IP address of your router/switcher
-    - Configure the input range (you should ensure to have at least: your camera and all the input you want to feed in the video return)
-    - Link your camera to the router input (this will allow us to map the RET1 button to the router input and correct camera)
-    - Configure your output range (you should ensure to have at least the output that will be your video return in the Ereca)
+On the RCP:
 
-It should look like this:
+**Import the camera from your RIO:**
+1. Click `REMI`
+2. Set the same tag you added in the RIO (RIO and RCP need at least one tag in common)
+3. Check the box next to your RIO/camera
 
-<img alt="Setup RIO REMI" src="/img/Workflows/LensVideoReturn-RCP-remi.png" width="800" />
+**Create your router/switcher** (here a Blackmagic Videohub):
+1. Enter a name
+2. Enter the IP address of your router/switcher
+3. Configure the input range — include at least your camera and every source you want available as a video return
+4. Link your camera to the router input (this maps the RET1 button to the correct input and camera)
+5. Configure the output range — include at least the output feeding your video return into the Ereca
 
-<br/>
+Your REMI setup should look like this:
 
-<img alt="Setup RIO REMI" src="/img/Workflows/LensVideoReturn-RCP-config.png" width="400" />
+![RCP REMI camera import](/img/Workflows/LensVideoReturn-RCP-remi.png)
 
-:::note
-When you click on the checkbox of your camera to be imported in REMI, it automatically creates a camera in the `Camera` section with the same name and number as in the RIO. After this automatic import, you can change the name and number on the RIO and RCP independently without having to "relink" them.
-:::
+Camera configuration:
 
-And the router/switcher setup:
-
-<img alt="Setup RIO REMI" src="/img/Workflows/LensVideoReturn-RCP-router-config.png" width="400" />
-
-<br/>
-
-<img alt="Setup RIO REMI" src="/img/Workflows/LensVideoReturn-RCP-router.png" width="400" />
+![RCP camera configuration](/img/Workflows/LensVideoReturn-RCP-config.png)
 
 :::note
-Input 11 will be my FX9 clean signal (coming from the Ereca and injected back in my Videohub SDI input 11).
-
-Input 21 will be my program (coming from the Videohub SDI input 21). To help you remember which input is which, you could create a `not controlled` camera (empty camera model/brand), name it `PGM` and link it to the input 21, but that's not mandatory, so here I don't do it.
-
-But having both input (11 and 21) in my case is mandatory, or I will not be able to "use" this later on
-
-Output 1 is my video return signal going, to the Ereca, back to the cameraman display. To help you remember which output is which, you could create a monitor, rename it and link it to the output 1, but that's not mandatory, so here I don't do it.
+When you check a camera in the REMI tab, the RCP automatically creates a matching camera entry with the same name and number as on the RIO. After that, you can rename or renumber independently on either side without relinking.
 :::
 
-Now navigate to `/dev/app.html` and look for your router/switcher and click on it:
+Router/switcher setup:
 
-<img alt="Setup RIO REMI" src="/img/Workflows/LensVideoReturn-RCP-devapp-router.png" width="400" />
+![RCP router configuration](/img/Workflows/LensVideoReturn-RCP-router-config.png)
 
-On the right side, you should see your router/switcher advanced configuration:
+![RCP router block](/img/Workflows/LensVideoReturn-RCP-router.png)
 
-<img alt="Setup RIO REMI" src="/img/Workflows/LensVideoReturn-RCP-devapp-router-config.png" width="400" />
+:::note
+In this example:
+- Input 11 is the FX9 clean signal (coming from the Ereca, looped back into Videohub SDI input 11)
+- Input 21 is the program feed (Videohub SDI input 21)
+
+You can create a `not controlled` camera entry named `PGM` and link it to input 21 to label it — but it's optional.
+
+Output 1 is the video return signal going to the Ereca, back to the cameraman's display. You can create a named monitor and link it to output 1 for labeling, but that's also optional.
+
+Both inputs (11 and 21) must be in your configured range, or you won't be able to use them later.
+:::
+
+Now navigate to `/dev/app.html`, find your router/switcher, and click it:
+
+![RCP dev app router view](/img/Workflows/LensVideoReturn-RCP-devapp-router.png)
+
+In the advanced configuration panel on the right:
+
+![RCP dev app router advanced config](/img/Workflows/LensVideoReturn-RCP-devapp-router-config.png)
 
 Edit `video_return` to `1:11,21,21,21` and click `OK` to save.
 
-Done.
-
 :::note
-Here, when the cameraman will press any button on the lens, it will show the PGM on the video return (input 21 mapped to output 1). When released, it will show the clean signal (input 11 mapped to output 1).
+With this configuration, pressing any lens button switches the video return to the program feed (input 21 → output 1). Releasing the button returns to the clean signal (input 11 → output 1).
 
-You could decide to map different buttons to different input to have:
-* RET1 for the LOG signal
-* RET2 for the main camera
-* etc.
+You can map different buttons to different inputs:
+- RET1 → LOG signal
+- RET2 → main camera
+- etc.
 :::
 
-To get further, you can take a look at the dedicated guides:
-* For <a href="/docs/guides/networking/remi">REMI</a>
-* For <a href="/docs/integrations/generic/routers">Router/Switcher</a>
-* For <a href="/docs/guides/advanced/b4-return">Video return</a>
+For deeper reference, see:
+- [REMI guide](/docs/guides/networking/remi)
+- [Router/Switcher integration guide](/docs/integrations/generic/routers)
+- [Video return guide](/docs/guides/advanced/b4-return)

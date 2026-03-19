@@ -7,182 +7,158 @@ keywords: [Blackmagic, Haivision, REMI, remote production]
 slug: /guides/workflows/blackmagic-haivision
 ---
 
-# Blackmagic remote control
+This guide covers remote control of a wireless Blackmagic URSA G2, used here during an event produced by [AVEO](https://aveo-groupe.fr/), [APR](https://www.apr.org/) and [LENI](https://www.leni.fr/) (France). You'll learn how to configure camera control over SDI, set up the Haivision DataBridge tunnel for REMI, and route tally from an ATEM to the remote camera.
 
-<img src="/img/Workflows/Blackmagic-backpack-track.jpeg" width="600"/>
+Topics covered:
+- Blackmagic URSA G2 camera control
+- Haivision integration through their [DataBridge](https://www.haivision.com/glossary/databridge/)
+- RIO with RSBM (Blackmagic SDI interface)
+- RCP
+- Tally input from an ATEM, routed to the remote camera through RCP and RIO
 
-This article will describe a typical use case `Remote control of a wireless camera`, here on a `Blackmagic URSA G2`.
+## Backpack setup
 
-This event was covered by <a href="https://aveo-groupe.fr/">AVEO</a>, <a href="https://www.apr.org/">APR</a> and <a href="https://www.leni.fr/">LENI</a> (France).
+![Blackmagic backpack field setup](/img/Workflows/Blackmagic-backpack.jpeg)
 
-We will cover:
-* Blackmagic URSA G2 camera control
-* Haivision integration trough their <a href="https://www.haivision.com/glossary/databridge/">DataBridge</a>
-* RIO with RSBM (Blackmagic SDI interface)
-* RCP
-* Tally input from an ATEM and routing to the remote camera through RCP and RIO
-
-
-## Backpack setup:
-
-<img src="/img/Workflows/Blackmagic-backpack.jpeg" width="600" />
-
-You can see:
-* The RIO and the RSBM (blue boxes), providing camera control and tally output
-* The Haivision encoding video and providing the DataBridge to link RCP/RIO through Haivision tunnel.
-* The camera wired to the backpack:
-   - power supply to a hotswap battery system
-   - SDI out, going to the Haivision encoder
-   - SDI in, comming from RIO/RSBM providing control of the camera and tally
+The backpack contains:
+- The RIO and RSBM (blue boxes), providing camera control and tally output
+- The Haivision encoder, encoding video and providing the DataBridge to link RCP/RIO through the Haivision tunnel
+- The camera wired to the backpack:
+  - Power supply to a hot-swap battery system
+  - SDI out, going to the Haivision encoder
+  - SDI in, coming from RIO/RSBM to provide camera control and tally
 
 :::info
-The Blackmagic URSA G2 could be controlled through IP with the latest camera update. But unfortunately, there is no tally in the IP protocol of the camera. So if you need tally, the only possibility is through SDI (input on the camera). And this requires a RSBM to provide a SDI to your RIO.
+The Blackmagic URSA G2 supports IP control with the latest firmware, but the IP protocol has no tally support. If you need tally, you must use SDI (camera SDI input), which requires an RSBM to provide SDI from your RIO.
 :::
 
 ## RIO setup
 
+### Checking for updates
 
-### Checking for update
+Before a new season, check for firmware updates when you have time. You get all new features and bug fixes — and you help the Cyanview community identify new ones.
 
-It's always a good idea before a new season, if you have time to check for new updates.
+Update your RIO:
 
-You have all the new features and bugfixes. But it also helps find and fix the new ones. So you're helping the Cyanview community!
+![RIO firmware version 24.7.1](/img/Workflows/RIO-24.7.1.png)
 
-I updated my RIO:
+And your RCP:
 
-<img src="/img/Workflows/RIO-24.7.1.png"/>
-
-And my RCP:
-
-<img src="/img/Workflows/RCP-24.7.1.png"/>
+![RCP firmware version 24.7.1](/img/Workflows/RCP-24.7.1.png)
 
 :::info
-You can update through the admin page (online, through internet) or you can find update files for offline usage <a href="/docs/reference/firmware-download">here</a> to download on your computer
-* online update consists of clicking on a new version, the RIO/RCP downloads and install it
-* offlie update starts by downloading the file on a computer, and then you drag and drop the file on the webpage of your device
+You can update through the admin page (online, via internet) or download offline update files [here](/docs/reference/firmware-download).
+
+- Online update: click on a new version — the RIO/RCP downloads and installs it automatically.
+- Offline update: download the file to your computer, then drag and drop it onto your device's webpage.
 :::
 
-### RIO : Camera configuration
+### Camera configuration
 
-You can find more info <a href="/docs/Integrations/Blackmagic/CameraSDI">here</a>
+See the [Blackmagic SDI integration guide](/docs/integrations/cameras/blackmagic/blackmagic-camera-control) for full details.
 
-But basically, I started with creating a blackmagic bus:
+Start by creating a Blackmagic bus:
 
-<img src="/img/Workflows/blackmagic-bus.png" width="200"/>
+![Blackmagic bus creation](/img/Workflows/blackmagic-bus.png)
 
 :::info
-If our camera ID was 1 (the default), this "blackmagic bus" could've been skipped. But this step allows us to select later on the correct camera ID.
+If your camera ID is 1 (the default), you can skip the Blackmagic bus step. Creating a bus lets you select a specific camera ID later.
 :::
 
-<img src="/img/Workflows/blackmagic-bus-config.png" width="200"/>
+![Blackmagic bus configuration](/img/Workflows/blackmagic-bus-config.png)
 
-* In `Interface : Port`, i selected my RIO (`50-82`) and on which port it's plugged (here, port `1`, leaving my second port free)
-* In `IDs`, I ensure to select a range big enough to contain my camera ID (my cam is ID `10`, so `1-12` fits perfectly)
+- In `Interface : Port`, select your RIO (`50-82`) and the port it uses (here port `1`, leaving port 2 free).
+- In `IDs`, select a range that includes your camera ID (camera is ID `10`, so `1-12` works).
 
-Now I can create my camera:
+Now create your camera:
 
+![Blackmagic camera setup block](/img/Workflows/blackmagic-cam-setup.png)
+![Blackmagic camera configuration](/img/Workflows/blackmagic-cam.png)
 
-<img src="/img/Workflows/blackmagic-cam-setup.png" width="200"/>
-<img src="/img/Workflows/blackmagic-cam.png" width="200"/>
+- Camera name (`CAM1`) and number (`1`) to identify it clearly.
+- Brand and model: `Blackmagic` and `SDI`.
+- Interface: the Blackmagic bus you created, with camera ID `10`.
 
-I have:
-* a cam name (`CAM1`) and a cam number (`1`) to distinguish them properly
-* a brand/model matching my camera (`Blackmagic` and `SDI`)
-* and the interface here is the blackmagic bus i created earlier, and i selected my cam ID (`10`)
-
-This is green, so it's properly configured.
+When the block turns green, the camera is properly configured — RIO and RSBM are working.
 
 :::warning
-Note that in IP, the control is bidirectional. But here, we chosed SDI for the tally capability that is missing from IP. And in SDI, the control is unidirectional. So "green", it just means that the camera is properly configured, that RIO and RSBM are working. But not that we have camera control:
-* if your SDI cable is broken
-* if your camera ID is not ID 10 (like we configured)
-* if your lens is not properly configured ("iris auto", for remote control, servo active, etc.)
-So always check from RCP, change anything like tally or iris to see it works.
+In IP mode, control is bidirectional. In SDI mode, control is unidirectional, so a green status means the configuration is correct, not that camera control is working. Always verify from RCP: change tally or iris and confirm you see a response. Check for broken SDI cables, wrong camera IDs, and lens settings (iris auto, remote control active, servo enabled).
 :::
 
 :::tip
-Note that you could go for Blackmagic IP and add an external tally light:
-* <a href="/docs/reference/manuals/tally-light-manual">tally box</a>, to put on top of camera
-* <a href="/docs/resources/build-tally-led">tally LED</a>, to add inside the viewfinder
+Alternatively, use Blackmagic IP control and add an external tally light:
+- [Tally box](/docs/reference/manuals/tally-light-manual) — mounts on top of the camera
+- [Tally LED](/docs/resources/build-tally-led) — fits inside the viewfinder
 :::
 
 :::info
-Note that we didn't setup anything about
-* tally, as it's handled by the camera itself in this case (through SDI)
-* external lens, as the iris/lens is controlled through the camera (SDI).
+You don't need to configure tally or external lens separately in this setup. Tally is handled by the camera through SDI, and iris/lens control is also through SDI.
 :::
 
-# RIO/RCP REMI setup
+## RIO/RCP REMI setup
 
-The REMI is the protocol used between RCP and RIO.
+REMI is the protocol used between RCP and RIO. It works over:
+- LAN (Ethernet, fiber, Wi-Fi)
+- Internet (Ethernet, 4G, etc.)
+- RF
+- In this case: through the Haivision DataBridge
 
-It works:
-* in LAN (Ethernet, Fiber, Wi-Fi)
-* through Internet (Ethernet, 4G, etc.)
-* RF
-
-And in our case here: through the Haivision DataBridge.
-
-The advantage of the databridge in our case is that:
-* Video and telemetry are "linked" (you don't have situation where you have video, but no telemetry)
-* No hassle with 4G modems and SIM as you're using the Haivision data plan
+The DataBridge offers two key advantages:
+- Video and telemetry travel together — you won't have video without telemetry.
+- No 4G modem or SIM to manage — you use the Haivision data plan.
 
 :::tip
-RCP/RIO allows you to control serial/SDI cameras through an IP tunnel remotely. But it's also interesting for IP camera as our REMI is optimised for remote control: low bandwidth, reduce latency, etc. Camera protocols are rarely designed to work remotely with latency and packet drops. Adding a RIO on camera side helps in these situations (PTZ, etc.)
+REMI is optimized for remote control: low bandwidth, reduced latency. This matters even for IP cameras, since most camera protocols aren't designed to tolerate network latency or packet drops. Adding a RIO on the camera side helps in these situations (PTZ, etc.).
 :::
 
-We add a REMI tag (mix between a group and a password) in our RIO:
+Add a REMI tag in your RIO:
 
-<img src="/img/Workflows/rio-remi.png" width="200"/>
+![RIO REMI tag configuration](/img/Workflows/rio-remi.png)
 
-I add the same tag in my rcp:
+Add the same tag in your RCP:
 
-<img src="/img/Workflows/rcp-remi.png" width="200"/>
+![RCP REMI tag configuration](/img/Workflows/rcp-remi.png)
 
-And now the RCP automatically discover and list RIO's, RCP's and shared cameras:
+The RCP now automatically discovers and lists RIOs, RCPs, and shared cameras:
 
-<img src="/img/Workflows/rcp-remi-list.png" width="200"/>
+![RCP REMI device list](/img/Workflows/rcp-remi-list.png)
 
-And once the cam selected, it's imported in my RCP and I can control it:
+Select a camera to import it into your RCP and start controlling it:
 
-<img src="/img/Workflows/rcp-remi-cam.png" width="200"/>
+![RCP REMI imported camera](/img/Workflows/rcp-remi-cam.png)
 
 :::note
-You see that in RCP, it's an `Imported` camera. It's because the camera is really controlled by the RIO. The RCP is just sending/receiving infos through REMI, but the camera control with the camera protocol is done on RIO side. Reducing latency and improving stability.
+The camera shows as `Imported` in the RCP because the RIO handles actual camera control. The RCP sends and receives information through REMI, but the camera protocol runs on the RIO side — reducing latency and improving stability.
 :::
 
 ## Haivision DataBridge
 
-This is not covered here as it's really too specific to your kit and setup.
+DataBridge configuration is specific to your kit and setup and is not covered in full here. See the [Haivision integration guide](/docs/integrations/broadcast-systems/haivision-data-bridge) for details.
 
-But you can find more information on this integration <a href="/docs/Integrations/Haivision">guide</a>
+The wiring looks like this:
 
-But it more or less look like this in our setup:
-
-<img src="/img/Integrations/Haivision/Haivision-wiring.png" width="200"/>
+![Haivision DataBridge wiring diagram](/img/Integrations/Haivision/Haivision-wiring.png)
 
 ## Tally input from ATEM
 
-You can find more infos on this  <a href="/docs/integrations/generic/routers">guide</a>
+See the [router/switcher integration guide](/docs/integrations/generic/routers) for full details.
 
-You can see:
-* I added my ATEM in the component section
-* I setup a name (`ATEM`, could be whatever you want)
-* The IP (`192.168.88.1`) of my ATEM, ensure it match your RCP network
-* I link my camera 1 to the input 1, this will allows us to properly route tally
-* I setup tally red and green to "AUTO" to receive tally from ATEM
+In the RCP configuration:
+- Add your ATEM in the component section.
+- Set a name (`ATEM`, or anything you prefer).
+- Enter the IP address (`192.168.88.1`) — confirm it matches your RCP network.
+- Link camera 1 to input 1 to enable proper tally routing.
+- Set tally red and green to `AUTO` to receive tally from the ATEM.
 
-And that's all, RCP will now receive tally infos and route it to your camera.
+RCP now receives tally data and routes it to your camera automatically.
 
 :::note
-I don't link my rcp to any output as I just have 1 cam.
-But if you have more than one cam, you can preview your rcp cam selection on an aux output
+With only one camera, you don't need to link the RCP to any output. With multiple cameras, you can preview your current RCP camera selection on an aux output.
 :::
 
 :::tip
-I used "AUTO" here to use the tally from the ATEM. This supports picture in picture, etc.
-In more complex tally setup (like a music festival), you could configure multiple outputs (output 1 for giant screen, output 2 for instagram live, etc.) as tally and then the rcp will deduce tally itself.
+`AUTO` mode reads tally from the ATEM and supports picture-in-picture and similar features. For complex setups — like a music festival — you can configure multiple tally outputs (output 1 for the big screen, output 2 for Instagram live, etc.) and the RCP will derive tally from that.
 :::
 
-<img src="/img/Workflows/rcp-atem-conf.png" width="200"/>
-<img src="/img/Workflows/rcp-atem.png" width="200"/>
+![RCP ATEM tally configuration](/img/Workflows/rcp-atem-conf.png)
+![RCP ATEM tally active](/img/Workflows/rcp-atem.png)

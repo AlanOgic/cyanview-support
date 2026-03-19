@@ -7,6 +7,7 @@ const sidebars: SidebarsConfig = {
       label: 'Getting started',
       link: {type: 'doc', id: 'getting-started/index'},
       items: [
+        'getting-started/my-first-cyanview',
         'getting-started/quickstart',
         'getting-started/ip-configuration',
       ],

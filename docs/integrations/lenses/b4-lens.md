@@ -7,41 +7,30 @@ keywords: [B4 lens, broadcast, servo, zoom, focus, iris, RIO]
 slug: /integrations/lenses/b4-lens
 ---
 
-## Introduction
+Cyanview supports B4 lens control in parallel with camera control — useful for specialty and robotic applications, or when the camera cannot drive the lens directly (for example, a Dreamchip Atom One with a B4 ENG lens).
 
-The goal is to setup a lens control in parallel of the camera control.
+When you adjust iris, zoom, or focus on the RCP, the command goes to the lens. When you shade, it goes to the camera. The split is transparent to the vision engineer.
 
-Use case:
-* specialty/robotic applications
-* when the camera cannot control the lens (dreamchip atom one + B4 ENG lens)
-* the lens is not compatible with the camera
-
-When changing:
-* iris/zoom/focus, we will send it to the lens
-* shading, we will send it to the camera
-and it is transparent for the vision engineer on the RCP.
-
-Works with ENG lens, box lens, etc. from Canon and Fujinon.
+Works with ENG lenses and box lenses from Canon and Fujinon.
 
 ## Wiring
 
-Required cable : [CY-CBL-6P-B4-01](/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default).
+Required cable: [CY-CBL-6P-B4-01](/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default).
 
-<img src="/img/Integrations/Lens/B4-ENG.png" width="800" />
+![B4 ENG lens wiring diagram](/img/Integrations/Lens/B4-ENG.png)
 
-## Compatible Cyanview device
+## Compatible Cyanview devices
 
-- CI0/RIO live for local (LAN)
-- RIO for remote control (internet)
+| Device | Use case |
+|--------|----------|
+| CI0 | Local (LAN) |
+| RIO Live | Local (LAN) with resilient lens control |
+| RIO | Remote control (internet), multi-camera |
 
 :::note
-Advantage of each solution:
-
-* **CI0** is acting as a serial/IP converter. If the link between RCP/CI0 is broken or unstable, lens will not be controlled anymore and iris will close/reset.
-
-* **RIO Live** is a CI0, but with the brain of a RCP (all the protocol). If the link between RCP/RIO Live is broken or unstable, lens is still controlled by the RIO live.
-
-* **RIO** same as RIO Live, but can control multiple cameras and has cloud connectivity.
+* **CI0** acts as a serial/IP converter. If the link between RCP and CI0 is broken or unstable, the lens loses control and the iris closes or resets.
+* **RIO Live** runs all protocols onboard. If the link to the RCP drops, the lens remains controlled by the RIO Live.
+* **RIO** offers the same resilience as RIO Live, with added multi-camera support and cloud connectivity.
 :::
 
 ## Controls
@@ -50,46 +39,36 @@ Advantage of each solution:
 * Zoom
 * Focus
 
-## Setup RCP/RIO
+## Setup
 
-Overview:
-* I will have one `CI0` : `CI0-12-137`.
-* My Dreamchip AtomOne plugged on port 1.
-* My B4 lens plugged on port 2 of the same CI0.
+In this example:
+* CI0 unit: `CI0-12-137`
+* Dreamchip AtomOne connected to port 1
+* B4 lens connected to port 2
 
-Setup:
-- Navigate to [`configuration`](/docs/reference/manuals/rcp/web-ui) tab, create a new cam or edit an existing one
-- Setup your camera as usual following one of the guide available (<a href="/docs/integrations/generic/serial-camera"> serial camera</a>, <a href="/docs/integrations/generic/ip-camera">IP camera</a>)
+Steps:
 
-   * Set up `number` and `name`:
-   
+1. Open the [`Configuration`](/docs/reference/manuals/rcp/web-ui) tab and create a new camera or edit an existing one.
+2. Set up your camera following the [serial camera guide](/docs/integrations/generic/serial-camera) or [IP camera guide](/docs/integrations/generic/ip-camera).
+3. Set `Number` and `Name`:
 
-<img src="/img/Integrations/Lens/B4-setup-basic.png" width="300"/>
+![Camera basic setup — number and name](/img/Integrations/Lens/B4-setup-basic.png)
 
+4. Set `Brand` and `Model`:
 
-   * Set up `brand` and `model`:
-   
-<img src="/img/Integrations/Lens/B4-setup-camhead.png" width="300"/>
+![Camera setup — brand and model](/img/Integrations/Lens/B4-setup-camhead.png)
 
+5. In the `Lens` block, select **B4 Generic**, then select your CI0/RIO and the port the lens is connected to:
 
-- In `Lens` block:
-   - Select **B4 Generic**
-   - Select your CI0/RIO and the port on which the lens is plugged
+![B4 lens configuration block](/img/Integrations/Lens/B4-setup-lens.png)
 
-<img src="/img/Integrations/Lens/B4-setup-lens.png" width="300"/>
+When connected successfully, the block turns green:
 
-:::note
-If you only need the Iris control and let zoom/focus controlled by the cameraman, on your RCP:
-* Click on `Lens`, to open the lens menu
-* Click again on `Lens`, to open the second page of the lens menu (`Lens2`)
-* Click on `Z/F En` to disable it (only `Iris En` should be highlighted with white background)
+![B4 lens block — green](/img/Integrations/Lens/B4-block.png)
+
+:::tip
+If you only need iris control and want zoom/focus handled by the cameraman:
+1. On the RCP, press `Lens` to open the lens menu.
+2. Press `Lens` again to reach the second page (`Lens2`).
+3. Press `Z/F En` to disable zoom/focus control — only `Iris En` should be highlighted.
 :::
-
-
-Once correctly connected, it should be green:
-
-<img src="/img/Integrations/Lens/B4-block.png" width="300" />
-
-
-
-

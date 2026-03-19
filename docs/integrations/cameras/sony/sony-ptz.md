@@ -7,51 +7,40 @@ keywords: [Sony PTZ, VISCA IP, pan tilt zoom, remote]
 slug: /integrations/cameras/sony/sony-ptz
 ---
 
-# Sony PTZ
+![Sony BRC-X1000 PTZ camera](/img/Integrations/Sony/brc-x1000.png)
 
-This guide describe how to configure Sony PTZ cameras
+Control Sony PTZ cameras from your Cyanview RCP over VISCA IP, including full paint, PTZ, and focus control.
 
-<img src="/img/Integrations/Sony/brc-x1000.png" width="300"/>
+## Compatible models
 
-## Compatible PTZ
+- BRC-X1000
+- BRC-X400
+- BRC-H900
+- BRC-H800
 
-* BRC-X1000
-* BRC-X400
-* BRC-H900
-* BRC-H800
+## Supported controls
 
-## Controls
-
-You can control:
-* Exposure
-* White balance
-* Black balance
-* Pan/Tilt/Zoom/Focus
-
-Here is a detail list:
-
-|Control|BRC-X1000|BRC-X400|BRC-H900|BRC-H800|
-|:-------|:----:|:----:|:----:|:---:|
-|Tally              |✔|✔|✔|✔|
-|OSD              |✔|✔|✔|✔|
-|Shutter          |✔|✔|✔|✔|
-|Iris             |✔|✔|✔|✔|
-|Focus            |✔|✔|✔|✔|
-|Zoom             |✔|✔|✔|✔|
-|Pan/Tilt/Presets |✔|✔|✔|✔|
-|ND filter        |✔|✔|✔| |
-|ATW / AWB        |✔|✔|✔|✔|
-|Gains (M / R / B)|✔|✔|✔|✔|
-|Master gamma     |✔|✔|✔|✔|
-|Saturation       |✔|✔|✔|✔|
-|Master black     |✔|✔|✔|✔|
-|Black gamma      |✔|✔|✔|✔|
-|Matrix           |✔|✔| |✔|
-|Detail           |✔|✔|✔|✔|
-|Coring           |✔|✔|✔|✔|
-|Knee             |✔|✔|✔|✔|
-|Matrix           |✔|✔|✔|✔|
+| Control | BRC-X1000 | BRC-X400 | BRC-H900 | BRC-H800 |
+|:--------|:---------:|:--------:|:--------:|:--------:|
+| Tally | ✔ | ✔ | ✔ | ✔ |
+| OSD | ✔ | ✔ | ✔ | ✔ |
+| Shutter | ✔ | ✔ | ✔ | ✔ |
+| Iris | ✔ | ✔ | ✔ | ✔ |
+| Focus | ✔ | ✔ | ✔ | ✔ |
+| Zoom | ✔ | ✔ | ✔ | ✔ |
+| Pan/Tilt/Presets | ✔ | ✔ | ✔ | ✔ |
+| ND filter | ✔ | ✔ | ✔ | |
+| ATW / AWB | ✔ | ✔ | ✔ | ✔ |
+| Gains (M / R / B) | ✔ | ✔ | ✔ | ✔ |
+| Master gamma | ✔ | ✔ | ✔ | ✔ |
+| Saturation | ✔ | ✔ | ✔ | ✔ |
+| Master black | ✔ | ✔ | ✔ | ✔ |
+| Black gamma | ✔ | ✔ | ✔ | ✔ |
+| Matrix | ✔ | ✔ | | ✔ |
+| Detail | ✔ | ✔ | ✔ | ✔ |
+| Coring | ✔ | ✔ | ✔ | ✔ |
+| Knee | ✔ | ✔ | ✔ | ✔ |
 
 ## Setup
 
-You can follow the generic guide <a href="/docs/integrations/generic/ptz">here</a>
+Follow the [generic PTZ setup guide](/docs/integrations/generic/ptz).

@@ -7,56 +7,52 @@ keywords: [EVS, replay, highlight, broadcast, integration]
 slug: /integrations/broadcast-systems/evs-hm
 ---
 
-## Overview
+The RCP integrates with EVS as a Hypermotion camera, allowing it to perform protocol conversion and abstract camera origins from the EVS system.
 
 :::note
-This guide assumes that you have a compatible slow motion camera (Atom SSM500, Phantom, ...) already configured on your RCP.
-:::
-
-:::note
-For extended information about the EVS configuration and operation, please refer to the EVS documentation available [here](https://download-area.evs.com/en/download-area-version/3499).
+This guide assumes you already have a compatible slow-motion camera (Atom SSM500, Phantom, etc.) configured on your RCP. For extended EVS configuration details, refer to the [EVS documentation](https://download-area.evs.com/en/download-area-version/3499).
 :::
 
 ## Configuration
 
-> To integrate the EVS to the Cyanview RCP, the RCP will be configured as an hypermotion camera into the EVS.
-> That will allow the RCP to perform all the protocols conversion to abstract the camera origins and compatibility from the EVS.
+### Network setup
 
-> At first we need all the devices to connect to each other via the network.
-> to do so, we need to check the EVS IP and apply it to the Cyanview RCP.
+First, align the RCP's IP address with the EVS network.
 
-[step 1] Connect to the EVS Web UI and open the Server TAB. 
+1. Connect to the EVS Web UI and open the **Server** tab.
 
-<img alt="cyanview-support-integration-evs-Hypermotion-configuration-server-gui-IP" src="/img/Integrations/EVS/cyanview-support-integration-evs-Hypermotion-configuration-server-gui-IP.png"  width="700" />
+   ![EVS server GUI showing IP configuration](/img/Integrations/EVS/cyanview-support-integration-evs-Hypermotion-configuration-server-gui-IP.png)
 
-[step 2] Check the Configured PC LAN address.
+2. Note the **Configured PC LAN address**.
 
-<img alt="cyanview-support-integration-evs-Hypermotion-configuration-server-gui-IP-details" src="/img/Integrations/EVS/cyanview-support-integration-evs-Hypermotion-configuration-server-gui-IP-details.png"  width="500" />
+   ![EVS PC LAN IP address details](/img/Integrations/EVS/cyanview-support-integration-evs-Hypermotion-configuration-server-gui-IP-details.png)
 
-[step 3] Access the [Configuration page](/docs/reference/manuals/rcp/web-ui#configuration) of the RCP [Configuration Web UI](/docs/guides/networking/ip-configuration#lan-web-ui-access).
+3. Open the [Configuration page](/docs/reference/manuals/rcp/web-ui#configuration) of the RCP [Configuration Web UI](/docs/guides/networking/ip-configuration#lan-web-ui-access).
 
-[step 4] Click the IP Connection panel
+4. Click the **IP Connection** panel.
 
-[step 5] Add a new IP to the RCP interface.
+5. Click **+** to add a new IP address. Choose **Static** and enter the **IP Address** and **IP Mask** to match the EVS network.
 
-[step 6] Click the <strong>+</strong> (plus) button to add a new IP address.
-Chose <strong>Static</strong> and specify the <strong>IP Address</strong> and the <strong>IP Mask</strong>.
+   ![Adding a static IP to the RCP](/img/Integrations/EVS/EVS-Add-IP.png)
 
-<img alt="cyanview-support-integration-evs-Hypermotion-EVS-Add-IP" src="/img/Integrations/EVS/EVS-Add-IP.png"  width="400" />
+The RCP and EVS can now reach each other on the network.
 
-The devices can now "see" each other in the network. Configure the RCP as a Hypermotion Camera in the EVS.
+### Hypermotion camera setup
 
-[step 1] Connect to the EVS Web UI and open the Operator TAB.
-<img alt="cyanview-support-integration-evs-Hypermotion-Operation" src="/img/Integrations/EVS/cyanview-support-integration-evs-Hypermotion-Operation.png"  width="600" />
+Configure the RCP as a Hypermotion camera in the EVS.
 
-[step 2] Scroll to the Hypermotion Camera section.
+1. Connect to the EVS Web UI and open the **Operator** tab.
 
-[step 3] Set the following parameters:
+   ![EVS Operator tab](/img/Integrations/EVS/cyanview-support-integration-evs-Hypermotion-Operation.png)
 
-<img alt="cyanview-support-integration-evs-Hypermotion-Operation-control" src="/img/Integrations/EVS/cyanview-support-integration-evs-Hypermotion-Operation-control.png" width="600" />
+2. Scroll to the **Hypermotion Camera** section.
 
- - Port: should be the **Lan PC**
- - Protocol: **7115**
- - IP adress: **RCP's new IP**
+3. Set the following parameters:
 
-[step 4]  Click Apply
+   ![EVS Hypermotion camera control settings](/img/Integrations/EVS/cyanview-support-integration-evs-Hypermotion-Operation-control.png)
+
+   - **Port**: set to `Lan PC`
+   - **Protocol**: `7115`
+   - **IP address**: the new IP you assigned to the RCP
+
+4. Click **Apply**.

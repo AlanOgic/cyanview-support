@@ -7,89 +7,60 @@ keywords: [firmware, update, upgrade, latest version]
 slug: /reference/product-update
 ---
 
-Cyanview provides 2 types of updates: **Application updates** and **System Updates**.
+Cyanview provides two types of updates: **application updates** and **system updates**.
 
-- The **Application update** is a quick way to upgrade the main software only:
-    * The device has to be connected on the internet
-    * Your configuration is loaded back after the update
-    * This is only possible when the application can be updated without requiring update of the file system libraries. This option is disabled otherwise and a **system update** is required.
-- The **System update** is an update of the complete filesystem: OS, libraries and applications
-    * This can be applied offline
-    * It is slower and takes about 15 minutes
-    * The previous configuration is not loaded back but an automatic backup is made prior to the upgrade. The configuration can be restored manually from the "File" section of the web interface and is labeled "Snapshot @ SWUPDATE".
+- **Application update** — Upgrades the main software only. The device must have internet access. Your configuration is restored after the update. This option is unavailable when a system-level change is required; in that case, a system update is mandatory.
+- **System update** — Updates the complete filesystem including the OS, libraries, and applications. You can apply it offline. It takes about 15 minutes. Your previous configuration is not restored automatically, but a backup labeled "Snapshot @ SWUPDATE" is created before the upgrade. You can restore it manually from the **File** section of the web interface.
 
-The CI0 and the first generation of RCP (serials CY-RCP-11-xx) are not updated "manually", they will automatically get their firmware from the RCP, RIO or GWY that they are connected to.
+The CI0 and first-generation RCP (serials CY-RCP-11-xx) update automatically. They receive their firmware from the RCP, RIO, or GWY they are connected to.
 
-## Backup your configuration
+## Back up your configuration
 
-It is always a good idea to do a backup of your setup following this [guide](/docs/reference/manuals/rcp/web-ui#file). It will allows you to get back your configuration later if needed.
-
+Always back up your setup before updating. Follow the [backup guide](/docs/reference/manuals/rcp/web-ui#file) so you can restore your configuration if needed.
 
 ## Application update
 
-1. Make sure the device has **internet** access. Check the [Connectivity check block](/docs/reference/manuals/rcp/web-ui#admin), everything should be green
-2. Access your device [web interface](/docs/guides/networking/ip-configuration#find-devices-ip)
-3. Click the **Admin** TAB wait until the list of available version are displayed.
-4. Click `Select and start` button of the release you want to upgrade to, wait a couple of minutes
+1. Ensure the device has **internet** access. Check the [Connectivity check block](/docs/reference/manuals/rcp/web-ui#admin) — all items should be green.
+2. Open your device's [web interface](/docs/guides/networking/ip-configuration#find-your-devices-ip).
+3. Click the **Admin** tab and wait for the list of available versions to appear.
+4. Click `Select and start` next to the release you want, then wait a few minutes.
 
-<img alt="cyanview-support-manual-update-firmware-application-available-releases" src="/img/productGfx/RCP/cyanview-support-manual-update-firmware-application-available-releases.png" width="600"/>
+![Available firmware releases list in the Admin tab](/img/productGfx/RCP/cyanview-support-manual-update-firmware-application-available-releases.png)
 
-6. After a few seconds, the release you selected will turn green.
+5. The selected release turns green when the update completes.
 
-<img alt="cyanview-support-manual-update-firmware-application-running-executed-releases" src="/img/productGfx/RCP/cyanview-support-manual-update-firmware-application-running-executed-releases.png" width="600"/>
+![Firmware update completed — selected release shown in green](/img/productGfx/RCP/cyanview-support-manual-update-firmware-application-running-executed-releases.png)
 
-7. Your RCP Application is now updated
+Your RCP application is now updated.
 
-By default, only stable releases are displayed.
-If you want to test beta version, you need to enable it by clicking on the top right button in the admin tab ***Show dev releases**
+By default, only stable releases appear. To see beta versions, click **Show dev releases** in the top-right corner of the Admin tab.
 
-<img alt="cyanview-dev-button" src="/img/productGfx/RCP/cyanview-dev-button.png" width="600" />
-
-
-Once activated, you will see all releases (stable and beta).
+![Show dev releases toggle button in Admin tab](/img/productGfx/RCP/cyanview-dev-button.png)
 
 ## System update
 
+### System update from the web interface
 
-The **System Update** can be performed from a separate web interface
+1. Download the latest system update from the [Firmware download](/docs/reference/firmware-download) page.
+2. Open the update UI:
+   - [Find your device IP](/docs/guides/networking/ip-configuration#find-your-devices-ip).
+   - Navigate to `http://10.192.XX.YY:8080` (note port 8080).
 
+   ![SWUpdate page showing hardware type and current OS version](/img/productGfx/RCP/cyanview-swupdate-page.png)
 
-### System Update from the web interface
+   This page shows:
+   - **HW** — hardware type and revision (e.g., `cy-rcp`)
+   - **Operating System** — current firmware version (e.g., `21.5.1rc18`)
 
-1. Download the latest system update from the [Release Download](/docs/reference/firmware-download) page.
-2. Open the update UI :
-    * [Find your device IP](/docs/guides/networking/ip-configuration#find-devices-ip)
-    * Base on previous link, navigate to http://10.192.XX.YY:8080 (pay attention to port 8080)
-    <img alt="cyanview-swupdate-page" src="/img/productGfx/RCP/cyanview-swupdate-page.png" width="600" />
-    * You can see on this page some usefull informations:
-        - **HW** : this is the type of hardware and revision (here **cy-rcp**)
-        - **Operating System** : this is the actual version of your device (here **21.5.1rc18**)
-3. Drag and drop the downloaded .swu file into the Software Update section of the page.
-    <img alt="cyanview-swupdate-page" src="/img/productGfx/RCP/cyanview-swupdate-running.png" width="600" />
-4. Don't close this tab and wait (takes around 15 minutes).
-5. After the update is completed, the device will reboot
-    <img alt="cyanview-swupdate-page" src="/img/productGfx/RCP/cyanview-swupdate-done.png" width="600" />
-6. You can refresh the page if required and check **Operating System** value, it should be the same as the one in your SWU file name.
-7. Based on this example:
-    * I upgraded from 21.5.1rc18 to 21.5.1rc19
-    * I should see 21.5.1rc18 in step 1 and 21.5.1rc19 in step 6
+3. Drag and drop the downloaded `.swu` file into the Software Update section.
 
-<!-- ### System Update from USB key
+   ![SWUpdate page with firmware upload in progress](/img/productGfx/RCP/cyanview-swupdate-running.png)
 
-:::warning
-This requires a base system with minimum **21.10.3**
-:::
+4. Keep the tab open and wait — the process takes about 15 minutes.
+5. The device reboots when the update completes.
 
-1. Format a USB key in FAT (instructions for [Windows](https://www.windowscentral.com/how-format-usb-flash-drive-windows-10) and [Mac OS X](https://www.techsolutions.support.com/how-to/how-to-format-a-usb-drive-on-a-mac-12899) )
-2. Download the **SWU** file for your device [here](/docs/reference/firmware-download).
-3. Put the file on your USB key
-4. Insert the USB key in your device (RCP, RIO, VP4) and wait 15 minutes until your device reboots in the new version.
+   ![SWUpdate page showing update completed successfully](/img/productGfx/RCP/cyanview-swupdate-done.png)
 
-You can check that the update was successful by pluging the USB key back in your computer, you will find:
-* the **SWU** file you downloaded
-* the same filename (empty content) with a new extension : `YOUR-DEVICE-SERIAL.done`
-* `cmd_logs.YOUR-DEVICE-SERIAL.txt` with the update logs (the last line should contains `Update Successful`)
+6. Refresh the page and verify the **Operating System** value matches the version in your `.swu` filename.
 
-:::note
-You can reuse this USB on multiple devices (to update all your RCP with the same USB key).
-::: -->
+   For example: if you started at `21.5.1rc18` and upgraded to `21.5.1rc19`, you should see `21.5.1rc18` in step 2 and `21.5.1rc19` after the update.

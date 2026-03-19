@@ -7,107 +7,98 @@ keywords: [Canon XC, camcorder, IP control, remote]
 slug: /integrations/cameras/canon/canon-xc
 ---
 
-# Canon XC
-
-This allows to control your camera over ethernet as long as your camera is compatible with XC protocol.
-
+Cyanview controls Canon cinema cameras over Ethernet using the XC protocol — a bidirectional IP connection that gives you full paint, lens, and scene file control.
 
 ## Supported models
 
-We support all the compatible models through the `XC` control (IP):
-* C70
-* C80
-* C300mk3
-* C400
-* C500mk2
-* <a href="/docs/integrations/cameras/canon/canon-xf605">XF605</a>
+- C70
+- C80
+- C300 Mk III
+- C400
+- C500 Mk II
+- [XF605](/docs/integrations/cameras/canon/canon-xf605)
 
 :::note
-For other models, you can use the `Remote A` control (2.1 mm jack), see <a href="/docs/integrations/cameras/canon/canon-remote-a">Canon Remote A</a>
+For older models not listed here, use the Remote A protocol (2.1 mm jack). See [Canon Remote A](/docs/integrations/cameras/canon/canon-remote-a).
 :::
 
 ## Wiring
 
-<img src="/img/Integrations/Canon/XC/XC-wiring.png" width="900"/>
+![Canon XC wiring diagram](/img/Integrations/Canon/XC/XC-wiring.png)
 
 ## Camera control
 
-|Control|XC
-:-----|:----
-**Exposure** (Iris, Gain, Shutter, ND filter)|✔
-**White balance** (R/B, Color temp)|✔
-**Black balance** (R/B, master black and black gamma)|✔
-**Other settings** (saturation, knee, detail, denoise)|✔
-**Tally**|✔
-**OSD/Menu**|✔
-**Lens** <a href="/docs/reference/manuals/rcp/ui/scene">(zoom, focus)</a>|✔
-**Scene file** : <a href="/docs/reference/manuals/rcp/ui/scene">save/recall</a>|✔
+| Control | XC |
+| :--- | :--- |
+| **Exposure** (iris, gain, shutter, ND filter) | ✔ |
+| **White balance** (R/B, color temp) | ✔ |
+| **Black balance** (R/B, master black, black gamma) | ✔ |
+| **Other settings** (saturation, knee, detail, denoise) | ✔ |
+| **Tally** | ✔ |
+| **OSD/Menu** | ✔ |
+| **Lens** ([zoom, focus](/docs/reference/manuals/rcp/ui/scene)) | ✔ |
+| **Scene file** ([save/recall](/docs/reference/manuals/rcp/ui/scene)) | ✔ |
 
-## Camera Configuration
+## Camera configuration
 
 You need to:
-* Configure ethernet static IP
-* Enable XC protocol
+- Configure a static Ethernet IP
+- Enable the XC protocol
 
-You can follow the wizard in the menu ´Network Settings > New Conn. Settings (Wizard)`:
-<img src="/img/Integrations/Canon/XC/XC-wizard-step1.jpg" width="300"/>
+Open the wizard at `Network Settings > New Conn. Settings (Wizard)`:
 
-* For `Select Function` step, chose `XC Protocol`
+![XC wizard step 1](/img/Integrations/Canon/XC/XC-wizard-step1.jpg)
 
-<img src="/img/Integrations/Canon/XC/XC-wizard-step2.jpg" width="300"/>
+1. `Select Function` → `XC Protocol`
 
-* For `Communication Settings`, chose `Create New Comm. Setting`
+   ![XC wizard step 2](/img/Integrations/Canon/XC/XC-wizard-step2.jpg)
 
-* For `Network Type`, chose `Ethernet`
+2. `Communication Settings` → `Create New Comm. Setting`
+3. `Network Type` → `Ethernet`
+4. `Setting Method` → `Setup with Network Connection`
+5. `IP Address Settings (IPV4)` → `Manual Setting`
+6. Enter a valid static IP address.
 
-* For `Setting Method`, chose `Setup with Network Connection`
+   ![XC wizard step 3](/img/Integrations/Canon/XC/XC-wizard-step3.jpg)
 
-* For `IP Address Settings (IPV4)`, chose `Manual Setting`
+7. `XC Protocol` → `Create New Func. Setting`
 
-* Then enter a valid IP
+   ![XC wizard step 4](/img/Integrations/Canon/XC/XC-wizard-step4.jpg)
 
-<img src="/img/Integrations/Canon/XC/XC-wizard-step3.jpg" width="300"/>
+8. `Authentication Method` → `No Auth.`
 
-* For `XC Protocol`, chose `Create New Func. Setting`
+   ![XC wizard step 5](/img/Integrations/Canon/XC/XC-wizard-step5.jpg)
 
-<img src="/img/Integrations/Canon/XC/XC-wizard-step4.jpg" width="300"/>
+If your camera IP is outside the `10.192.0.0/16` range, follow the [LAN configuration guide](/docs/guides/networking/ip-configuration#lan-configuration) to adjust your RCP network settings.
 
-* For `Authentication Method`, chose `No Auth.`
+For full paint control, go to `Custom Picture`, select a `UserXX` profile, edit it, and set `Color Space` to `BT.709 Standard`. This unlocks advanced shading controls such as detail.
 
-<img src="/img/Integrations/Canon/XC/XC-wizard-step5.jpg" width="300"/>
-
-If your camera IP is not in the range `10.192.0.0/16`, you can follow this [guide](/docs/guides/networking/ip-configuration#lan-configuration)
-
-For the control:
-* In the menu `Custom Picture`, Seletect `UserXX`
-* Edit and ensure to setup `Color Space` to `BT.709 Standard` to access advanced shading (detail, etc.)
-
-<img src="/img/Integrations/Canon/XC/canon-profile.jpg" width="300"/>
+![Canon custom picture profile](/img/Integrations/Canon/XC/canon-profile.jpg)
 
 ## RCP/RIO configuration
 
-Setup a new camera via the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui):
-- Enter a custom number, name, etc.
-- Select **Canon** brand
-- Select **XC** for the protocol
-- Enter the IP of your camera
+Add a new camera in the [RCP configuration UI](/docs/reference/manuals/rcp/web-ui):
 
-This should looks like this:
+- Enter a custom number, name, and so on.
+- Select brand **Canon**.
+- Select protocol **XC**.
+- Enter the IP address of your camera.
 
-<img src="/img/Integrations/Canon/XC/Canon-XC-setup.png" width="300" />
+A correctly configured camera block looks like this:
 
-And once correctly connected, it should be green:
+![Canon XC setup view](/img/Integrations/Canon/XC/Canon-XC-setup.png)
 
-<img src="/img/Integrations/Canon/XC/Canon-XC-block.png" width="300" />
+Once connected, the block turns green:
+
+![Canon XC connected block](/img/Integrations/Canon/XC/Canon-XC-block.png)
 
 ## Troubleshooting
 
 ### No paint control
 
-Ensure your camera is not in `ATW`.
-
-Ensure your camera `Custom Picture` profile is `Unprotect`:
-* Open menu (can be done from RCP)
-* Navigate to `CP`
-* Click on `Edit CP File`
-* Ensure `Protect` is set to `Unprotect`
+- Check that your camera is not in `ATW` (auto white balance).
+- Verify that your `Custom Picture` profile is set to `Unprotect`:
+  1. Open the menu (you can do this from the RCP).
+  2. Navigate to `CP`.
+  3. Click `Edit CP File`.
+  4. Ensure `Protect` is set to `Unprotect`.

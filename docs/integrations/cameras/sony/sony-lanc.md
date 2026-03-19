@@ -7,85 +7,72 @@ keywords: [Sony, LANC, serial, CI0, RIO, camera control]
 slug: /integrations/cameras/sony/sony-lanc
 ---
 
-<img alt="cyanview-support-Sony-Lanc" src="/img/Integrations/camera/Sony/Sony-Lanc/Sony-Lanc-FS7m2@2x-8.png" width="900" />
+![Sony LANC camera — FS7 Mark II](/img/Integrations/camera/Sony/Sony-Lanc/Sony-Lanc-FS7m2@2x-8.png)
 
-## Supported Cameras
+## Supported cameras
 
-Any new Sony camera still has the LANC connector and is sometimes the only way to get access to menu navigation and tally like for the Sony ILME-FX6. So LANC is still in use today for these settings only, while other controls are handled using other protocols. A second camera is created on the RCP for the LANC controls only.
+LANC remains in use on current Sony cameras for menu navigation and tally — for example, on the Sony ILME-FX6 where other controls are handled over IP. In those cases, a second camera entry is created on the RCP for the LANC controls only.
 
-* All Sony camcorders with LANC connector: PXW-FS5, PXW-FS7, PXW-Z90, etc.
-* Sony FX6 (this camera can also be controlled via <a href="/docs/integrations/cameras/sony/sony-fx6">IP</a>)
+Supported cameras:
+- All Sony camcorders with a LANC connector: PXW-FS5, PXW-FS7, PXW-Z90, etc.
+- Sony FX6 (also controllable via [IP](/docs/integrations/cameras/sony/sony-fx6))
 
-A list of compatible older **Sony** cameras is available on Sony's website: [RM30BP compatibility](https://pro.sony/s3/2017/11/20131630/RM30BP_compatibility_Rev10_web.pdf).
-
+A compatibility list for older Sony models is available in the [RM30BP compatibility document](https://pro.sony/s3/2017/11/20131630/RM30BP_compatibility_Rev10_web.pdf).
 
 ## Controls
 
-|Control|Sony LANC
-:-----|:-----:|
-**Exposure** : Iris, Gain, Shutter and ND Filter|✔
-**White balance** : AWB/ATW|✔
-**Lens** : Zoom, Focus|✔
-**Record** : REC key press|✔
-**Menu Navigation** : menu and fn button key presses|✔
+| Control | Sony LANC |
+|:--------|:---------:|
+| **Exposure** — Iris, Gain, Shutter, ND filter | ✔ |
+| **White balance** — AWB/ATW | ✔ |
+| **Lens** — Zoom, Focus | ✔ |
+| **Record** — REC key press | ✔ |
+| **Menu navigation** — menu and fn button presses | ✔ |
 
 :::important
-The control is unidirectional, just sending key presses, and rather slow. So the RCP won't display any camera status.
+LANC control is unidirectional — it sends key presses only and is relatively slow. The RCP does not display any camera status over LANC.
 :::
-
 
 ## Wiring
 
-**Lanc camera** can be controlled directly via **port 2** of the **CI0/RIO +LAN** (local) or **RIO** (remote).
+Connect a LANC camera to **port 2** of the **CI0/RIO +LAN** (local) or **RIO** (remote) using a **[CY-CBL-6P-LANC-03](/docs/resources/cable-catalog#cy-cbl-6p-lanc-03)** cable.
 
-<img alt="cyanview-support-Sony-Lanc-CI0-RCP" src="/img/Integrations/camera/Sony/Sony-Lanc/Sony-Lanc-CI0@2x-8.png" width="900" />
+![Sony LANC wiring with CI0 and RCP](/img/Integrations/camera/Sony/Sony-Lanc/Sony-Lanc-CI0@2x-8.png)
 
-<img alt="cyanview-support-Sony-Lanc-RIO-RCP" src="/img/Integrations/camera/Sony/Sony-Lanc/Sony-Lanc-Rio-Internet@2x-8.png" width="900" />
+![Sony LANC wiring with RIO over internet](/img/Integrations/camera/Sony/Sony-Lanc/Sony-Lanc-Rio-Internet@2x-8.png)
 
-**Connection** is done with a **[CY-CBL-6P-LANC-03](/docs/resources/cable-catalog#cy-cbl-6p-lanc-03)** LANC cable.
+## Camera setup
 
+Map the `dial` to `gain` to allow gain control from the RCP.
 
-## Camera Setup
-
-Map the `dial` to `gain` to allow **gain** control from the RCP.
-
-<img alt="cyanview-support-Sony-Lanc-Assign-Buttons" src="/img/Integrations/camera/Sony/Sony-Lanc/image.png" width="500" />
+![Sony camera dial assignment menu showing gain mapping](/img/Integrations/camera/Sony/Sony-Lanc/image.png)
 
 :::note
-Both the Sony RM30BP and the Cyanview gain control acts on the dial mapped function.
-
-So if you mapped the dial to gain, the Cyanview gain control will act on the gain.
-If you mapped the dial to variable ND, the Cyanview gain control will act on the variable ND.
+Both the Sony RM30BP and the Cyanview gain control act on the dial-mapped function. If the dial is mapped to gain, the Cyanview control adjusts gain. If mapped to variable ND, it adjusts variable ND.
 :::
-
 
 ## RCP/RIO setup
 
-**Connect** the camera to the **port 2** of the **CI0** / **RIO** with a **<a href="/docs/resources/cable-catalog#cy-cbl-6p-lanc-03">CY-CBL-6P-LANC-03</a>** cable.
-- **Add the Camera** to the RCP configuration via the <a href="/docs/reference/manuals/rcp/web-ui">RCP Configuration UI</a>.
-   - Select **Sony** brand.
-   - Select **LANC** model.
-   - Select the **CI0** / **RIO** the camera is connected to (only **port 2** showing).
-
+1. Connect the camera to **port 2** of the CI0 or RIO using a **[CY-CBL-6P-LANC-03](/docs/resources/cable-catalog#cy-cbl-6p-lanc-03)** cable.
+2. Add the camera in the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui):
+   - Select **Sony** for brand.
+   - Select **LANC** for model.
+   - Select the CI0 or RIO the camera is connected to (only port 2 is shown).
 
 ## Going further
 
-### Advance shading
+### Advanced shading
 
-You can combine camera control with a <a href="/docs/integrations/generic/3d-lut-processor">LUT box / color corrector</a>.
-
-Coupling your setup with a <a href="/docs/reference/manuals/vp4-manual">VP4</a> would allow **multi-matrix** and **extended shading** capabilities compared to typical LUT box or color corrector (detail, coring, etc.).
+Combine LANC camera control with a [LUT box or color corrector](/docs/integrations/generic/3d-lut-processor). Pairing with a [VP4](/docs/reference/manuals/vp4-manual) adds multi-matrix and extended shading capabilities (detail, coring, etc.) beyond typical LUT boxes.
 
 ### Tally
 
-**Tally** is not present on all camera, some models supports tally (in the viewfinder), some don't.
+Not all cameras support tally. Check the [RM30BP compatibility document](https://pro.sony/s3/2017/11/20131630/RM30BP_compatibility_Rev10_web.pdf) for models that support tally in the viewfinder.
 
-Check <a href="https://pro.sony/s3/2017/11/20131630/RM30BP_compatibility_Rev10_web.pdf">RM30BP</a> for compatible models (Search for tally).
+For cameras without tally, an unused CI0 or RIO port can output a tally signal using a [CY-CBL-6P-PWR](/docs/resources/cable-catalog#cy-cbl-6p-pwr) cable driving a LED. See the [Tally configuration](/docs/guides/tally/tally/) page.
 
-For the camera that does not support **Tally**, **CI0** / **RIO** unused port can act as a **Tally** output using a <a href="/docs/resources/cable-catalog#cy-cbl-6p-pwr">cy-cbl-6p-pwr</a> driving a **LED**. See <a href="/docs/guides/tally/tally/">Tally</a> configuration page.
+### External lens control (RIO)
 
-### External Lens Control (RIO)
-
-But you can control the iris with the `Lens` block:
-* You have a Fuji or Canon motorised lens, follow this <a href="/docs/integrations/lenses/cine-lens">guide</a>
-* You have a non motorised lens, you can integrate <a href="/docs/integrations/lenses/tilta">Tilta motors</a>
+Control iris through the `Lens` block:
+- Fujinon or Canon motorized lens — see the [cine lens guide](/docs/integrations/lenses/cine-lens).
+- Non-motorized lens — integrate [Tilta motors](/docs/integrations/lenses/tilta).

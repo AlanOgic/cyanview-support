@@ -7,82 +7,66 @@ keywords: [AJA, RovoCam, compact camera, broadcast]
 slug: /integrations/cameras/other/aja-rovocam
 ---
 
-<img src="/img/Integrations/AJA/rovocam.png" width="300" />
+![AJA RovoCam compact camera](/img/Integrations/AJA/rovocam.png)
 
-# Camera wiring
+Cyanview controls the AJA RovoCam over a VISCA serial bus, giving you remote paint, exposure, and lens control from the RCP.
 
-<img src="/img/Integrations/AJA/AJARovocam-wiring.png" width="800" />
+## Camera wiring
 
-Cable needed: <a href="/docs/resources/cable-catalog#cy-cbl-6p-aja-01">cy-cbl-6p-aja-01</a>
+![AJA RovoCam wiring diagram](/img/Integrations/AJA/AJARovocam-wiring.png)
+
+Required cable: [CY-CBL-6P-AJA-01](/docs/resources/cable-catalog#cy-cbl-6p-aja-01)
 
 :::note
-* Compatible with CI0/RIO/RIO +LAN
-* The camera is powered by the CI0/RIO/RIO +LAN (data + control, single cable)
-* If you need to control it wirelessly, you need to use the RIO/RIO +LAN
-* You can plug a camera per CI0/RIO/RIO +LAN port
-* You can chain them on a single CI0/RIO/RIO +LAN port, on a bus, as every camera has a unique ID
+- Compatible with CI0, RIO, and RIO+LAN.
+- The camera is powered by the CI0/RIO/RIO+LAN (data + power over a single cable).
+- For wireless control, use a RIO or RIO+LAN.
+- One camera per CI0/RIO/RIO+LAN port, or chain multiple cameras on a single port — each camera has a unique ID.
 :::
 
-# Camera control
+## Camera control
 
+| Control | AJA RovoCam |
+|:--------|:-----------:|
+| **White balance** (R/B and color temp) | ✔ |
+| **Black balance** (R/B, master pedestal) | ✔ |
+| **Other** (Master gamma, saturation, detail) | ✔ |
+| **Exposure** (Iris, Gain, Shutter) | ✔ |
+| **Camera menu control** | ✔ |
+| **Lens** ([zoom, focus](/docs/reference/manuals/rcp/ui/scene)) | ✔ |
+| **Scene file** — [save/recall](/docs/reference/manuals/rcp/ui/scene) | ✔ |
 
-|Control|AJA RovoCam
-:-----|:-----|
-**White balance** (R/B and color temp)|✔
-**Black balance** (R/B, master pedestal)|✔
-**Other control** (Master gamma, saturation, detail)|✔
-**Exposure** (Iris, Gain, Shutter)|✔
-**Camera Menu Control**|✔
-**Lens** <a href="/docs/reference/manuals/rcp/ui/scene">(zoom, focus)</a>|✔
-**Scene file** : <a href="/docs/reference/manuals/rcp/ui/scene">save/recall</a>|✔
+## Setup
 
+Before starting, set up and note your camera ID using the AJA RovoCam app.
 
-# Setup
+### VISCA bus
 
-Before starting, ensure to setup/know your camera ID using the AJA RovoCam app
+Open the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui) and create a new Sony VISCA bus:
+- In the `Feature` block, click `+`.
+- Select `Sony: VISCA Bus`.
+- Set the bus ID range (0–7 by default).
+- Set the bus type to `RS232`.
+- Set the baudrate to `9600`.
+- Select your serial port (for example: `CI0-31-52:1`).
 
-## VISCA BUS
+![AJA RovoCam VISCA bus type selection](/img/Integrations/AJA/AJA-RovoCam-VISCABUS-select.png)
 
-Access the <a href="/docs/reference/manuals/rcp/web-ui">RCP Configuration UI</a>.
+![AJA RovoCam VISCA bus block](/img/Integrations/AJA/AJA-RovoCam-VISCABUS-block.png)
 
-Create a new `Sony VISCA` BUS:
-- In `Feature` block, click on `+`
-- Select `Sony: VISCA Bus`
-- Setup the bus ID range (0-7 by default)
-- Setup the bus type `RS232`
-- Setup the baudrate to `9600`
-- Setup your serial port (here: `CI0-31-52:1`), in my case CI0 `CI0-31-52` on port 1
+![AJA RovoCam VISCA bus settings](/img/Integrations/AJA/AJA-RovoCam-VISCABUS-setting.png)
 
-The Feature `+` button and list:
+### Camera
 
-<img alt="AJA RovoCam bus block" src="/img/Integrations/AJA/AJA-RovoCam-VISCABUS-select.png" width="300"/>
-
-
-The block:
-
-<img alt="AJA RovoCam bus block" src="/img/Integrations/AJA/AJA-RovoCam-VISCABUS-block.png" width="300"/>
-
-The setup should look like this:
-
-<img alt="AJA RovoCam bus setup" src="/img/Integrations/AJA/AJA-RovoCam-VISCABUS-setting.png" width="300"/>
-
-## Camera
-
-Access the <a href="/docs/reference/manuals/rcp/web-ui">RCP Configuration UI</a>.
-
-Create a new camera:
-- In the Camera sectionlick on `+`
+Open the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui) and create a new camera:
+- In the Camera section, click `+`.
 - Enter a custom number, name, etc.
-- Select **AJA** brand
-- Select **Rovocam** for the model
-- Select the camera bus and ID
+- Select **AJA** brand.
+- Select **Rovocam** for the model.
+- Select the camera bus and ID.
 
+![AJA RovoCam camera settings](/img/Integrations/AJA/AJA-RovoCam-setting.png)
 
-This should look like this:
+Once connected correctly, the status turns green:
 
-<img alt="AJA RovoCam bus setup" src="/img/Integrations/AJA/AJA-RovoCam-setting.png" width="300"/>
-
-
-And once correctly connected, it should be green:
-
-<img alt="AJA RovoCam bus setup" src="/img/Integrations/AJA/AJA-RovoCam-block.png" width="300"/>
+![AJA RovoCam camera connected green status](/img/Integrations/AJA/AJA-RovoCam-block.png)

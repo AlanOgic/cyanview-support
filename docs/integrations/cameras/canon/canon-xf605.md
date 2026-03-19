@@ -7,44 +7,38 @@ keywords: [Canon XF605, camcorder, IP, broadcast, remote]
 slug: /integrations/cameras/canon/canon-xf605
 ---
 
-# Canon XF605
+Cyanview controls the Canon XF605 over Ethernet using the XC protocol. This page has all settings and control ranges correctly adapted for the XF605.
 
-This guide covers the integration of Canon XF605 camera.
+![Canon XF605 camcorder](/img/Integrations/Canon/XF605/XF605.png)
 
-The camera is compatible with XC protocol.
-
-<img src="/img/Integrations/Canon/XF605/XF605.png" width="400"/>
-
-:::note
-While you can follow this <a href="/docs/integrations/cameras/canon/canon-xc">generic guide</a>, prefer this one as all the ranges (lens, etc.) are correctly adapted.
+:::tip
+Use this page instead of the [generic XC guide](/docs/integrations/cameras/canon/canon-xc) — lens ranges and other parameters are pre-configured for the XF605.
 :::
 
 ## Wiring
 
-<img src="/img/Integrations/Canon/XF605/XF605-wiring.png" width="700"/>
+![Canon XF605 wiring diagram](/img/Integrations/Canon/XF605/XF605-wiring.png)
 
-The control is done over Ethernet.
+Control runs over Ethernet.
 
 ## Camera control
 
-|Control|XF605
-:-----|:----
-**Exposure** (Iris, Gain, Shutter, ND filter)|✔
-**White balance** (R/B, Color temp)|✔
-**Black balance** (R/B, master black and black gamma)|✔
-**Other settings** (saturation, knee, detail, denoise)|✔
-**Tally**|✔
-**OSD/Menu**|✔
-**Lens** <a href="/docs/reference/manuals/rcp/ui/scene">(zoom, focus)</a>|✔
-**Scene file** : <a href="/docs/reference/manuals/rcp/ui/scene">save/recall</a>|✔
+| Control | XF605 |
+| :--- | :--- |
+| **Exposure** (iris, gain, shutter, ND filter) | ✔ |
+| **White balance** (R/B, color temp) | ✔ |
+| **Black balance** (R/B, master black, black gamma) | ✔ |
+| **Other settings** (saturation, knee, detail, denoise) | ✔ |
+| **Tally** | ✔ |
+| **OSD/Menu** | ✔ |
+| **Lens** ([zoom, focus](/docs/reference/manuals/rcp/ui/scene)) | ✔ |
+| **Scene file** ([save/recall](/docs/reference/manuals/rcp/ui/scene)) | ✔ |
 
-## Camera Configuration
+## Camera configuration
 
 You need to:
-* Configure Ethernet static IP
-* Enable XC protocol
-
-You can follow this <a href="/docs/integrations/cameras/canon/canon-xc#camera-configuration">generic guide</a> to set up XC protocol on your XF605 camera.
+- Configure a static Ethernet IP
+- Enable the XC protocol
 
 ### Camera setup
 
@@ -56,24 +50,20 @@ You can follow this <a href="/docs/integrations/cameras/canon/canon-xc#camera-co
 </video>
 </td>
 <td>
-<ul>
-    <li>In `Network Settings`, set `Network` to `Enable`</li>
-    <li>
-        Click on `New Conn. Setting (Wizard)`:
-        <ul>
-            <li>in `Select function`<br/>chose `XC Protocol`</li>
-            <li>in `Communication settings`<br/>click on `Create New Comm. Setting`</li>
-            <li>in `Network type`<br/>select `Ethernet`</li>
-            <li>in `Setting Methode`<br/>select `Setup with Network Connection`</li>
-            <li>in `IP Address Settings (IPV4)`<br/>select `Manual Setting`</li>
-            <li>in `IP Address Settings (IPV4)`<br/>fill in `IP Address`<br/>fill in`Subnet Mask`<br/>click `OK`</li>
-            <li>in `TCP/IPV6`<br/>select `Disable`</li>
-            <li>in `XC Protocol`<br/>select `Create New Func. Setting`</li>
-            <li>in `Authentication Method`<br/>select `No Auth. (general user)`</li>
-            <li>in `Conn. Setting Save Dest.`<br/>select a free spot (here `SET 1`)</li>
-        </ul>
-    </li>
-</ul>
+
+In `Network Settings`, set `Network` to `Enable`, then click `New Conn. Setting (Wizard)`:
+
+- `Select function` → `XC Protocol`
+- `Communication settings` → `Create New Comm. Setting`
+- `Network type` → `Ethernet`
+- `Setting Method` → `Setup with Network Connection`
+- `IP Address Settings (IPV4)` → `Manual Setting`
+- Fill in `IP Address` and `Subnet Mask`, then click `OK`
+- `TCP/IPV6` → `Disable`
+- `XC Protocol` → `Create New Func. Setting`
+- `Authentication Method` → `No Auth. (general user)`
+- `Conn. Setting Save Dest.` → select a free slot (e.g. `SET 1`)
+
 </td>
 </tr>
 </table>
@@ -88,28 +78,30 @@ You can follow this <a href="/docs/integrations/cameras/canon/canon-xc#camera-co
 </video>
 </td>
 <td>
-<ul>
-    <li>On your RCP/RIO web UI</li>
-    <li>In Configuration tab</li>
-    <li>Click on + to create a new camera</li>
-    <li>Enter a number and a name</li>
-    <li>Select the brand Canon and model XF605</li>
-    <li>Enter the IP of your camera</li>
-</ul>
+
+In the RCP/RIO web UI:
+
+1. Go to the **Configuration** tab.
+2. Click `+` to create a new camera.
+3. Enter a number and a name.
+4. Select brand `Canon` and model `XF605`.
+5. Enter the IP address of your camera.
+
 </td>
 </tr>
 </table>
 
+A camera block in setup state looks like this:
 
-<img src="/img/Integrations/Canon/XF605/XF605-setup.png" width="300" />
+![Canon XF605 setup view](/img/Integrations/Canon/XF605/XF605-setup.png)
 
-And once correctly connected, it should be green:
+Once connected, the block turns green:
 
-<img src="/img/Integrations/Canon/XF605/XF605-block.png" width="300" />
+![Canon XF605 connected block](/img/Integrations/Canon/XF605/XF605-block.png)
 
-And on your RCP:
+On your RCP:
 
-<img src="/img/Integrations/Canon/XF605/F1.BMP"/>
+![Canon XF605 on RCP display](/img/Integrations/Canon/XF605/F1.BMP)
 
 ### Tally integration with ATEM (optional)
 
@@ -121,22 +113,21 @@ And on your RCP:
 </video>
 </td>
 <td>
-<ul>
-    <li>On your RCP/RIO web UI</li>
-    <li>In Configuration tab</li>
-    <li>Click on + to create a new $Components`</li>
-    <li>Select `Router/Switcher`</li>
-    <li>Select `Blackmagic : ATEM`</li>
-    <li>Enter a name (optinal)</li>
-    <li>Enter an IP</li>
-    <li>In Inputs, link camera with a SDI input</li>
-    <li>In Outputs, link the RCP with a SDI output</li>
-    <li>In Red/Green tally, setup them as AUTO</li>
-</ul>
+
+In the RCP/RIO web UI:
+
+1. Go to the **Configuration** tab.
+2. Click `+` to create a new component.
+3. Select `Router/Switcher` → `Blackmagic : ATEM`.
+4. Enter a name (optional) and an IP address.
+5. In **Inputs**, link each camera to an SDI input.
+6. In **Outputs**, link the RCP to an SDI output.
+7. Set **Red tally** and **Green tally** to `AUTO`.
+
 </td>
 </tr>
 </table>
 
 ## Troubleshooting
 
-See the generic XC protocol <a href="/docs/integrations/cameras/canon/canon-xc#troubleshooting">troubleshooting guide</a>
+See the [generic XC protocol troubleshooting guide](/docs/integrations/cameras/canon/canon-xc#troubleshooting).

@@ -7,72 +7,58 @@ keywords: [Sony, CBM, camera back, broadcast]
 slug: /integrations/cameras/sony/sony-cbm
 ---
 
-# Sony CBM
+![Sony FX6 camera](/img/Integrations/camera/Sony/FX6.jpg)
 
-<img src="/img/Integrations/camera/Sony/FX6.jpg" width="400" />
+Control Sony CBM-compatible cameras over WiFi or wired Ethernet using your Cyanview RCP. Any camera that supports the Sony CBM protocol works with this integration.
 
-This allows to control your camera over WiFi.
-
-As long as your camera is compatible with the Sony CBM, you can control it using our RCP.
-
-Compatible models:
-* FX9
-* Z280
+**Compatible models:**
+- FX9
+- Z280
 
 ## Wiring
 
-
-<img src="/img/Integrations/camera/Sony/FX6-WiFi.png" width="900" />
-
+![Sony CBM WiFi wiring diagram](/img/Integrations/camera/Sony/FX6-WiFi.png)
 
 OR
 
+![Sony CBM WiFi with Ethernet wiring diagram](/img/Integrations/camera/Sony/FX6-WiFi-ethernet.png)
 
-<img src="/img/Integrations/camera/Sony/FX6-WiFi-ethernet.png" width="900" />
+## Camera control
 
-
-## Camera Control
-
-|Control|Notes|Control
-|:-----|:-----|:----:
+| Control | Notes | |
+|:--------|:------|:----:|
 | White balance | Color temp, Tint | ✔ |
-| Exposure | Iris, Gain, Shutter and ND | ✔ |
-| Lens | Zoom, Focus (position is display only, control is in speed) | ✔ |
-| Auto | Iris, Gain, Shutter, ND, ATW, AWB, Focus| ✔ |
+| Exposure | Iris, Gain, Shutter, ND | ✔ |
+| Lens | Zoom, Focus (position display only; control is speed-based) | ✔ |
+| Auto | Iris, Gain, Shutter, ND, ATW, AWB, Focus | ✔ |
 | Menu | Up/Down, Left/Right | ✔ |
 | OETF | HyperGamma, STD | ✔ |
 | Pattern | Bars | ✔ |
 
+## Camera configuration
 
-## Camera Configuration
+Set your camera login to `admin` and password to `Abcdef123`.
 
-Ensure to setup your login to `admin` and password to `Abcdef123`.
+Navigate to `Menu > Network > ST Mode Settings` and set:
+- `Camera Remote Control` — `Enable`
+- `Connected Network` — enter your WiFi SSID, password, and IP settings (static or DHCP)
 
-Ensure to activate the remote control on your WiFi interface.
-
-Navigate to `Menu > Network > ST Mode Settings` and ensure to set:
-* `Camera Remote Control` to `Enable`
-* `Connected Network` to enter your WiFi SSID/password and static/DHCP
-
-<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-network-STmode.jpg" width="900" />
+![FX9 network ST Mode settings menu](/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-network-STmode.jpg)
 
 :::note
-Same with the `Access Point` mode. Don't forget to activate `Camera Remote Control`
+The same applies in **Access Point** mode — make sure to enable `Camera Remote Control` there too.
 :::
 
 ## RCP/RIO configuration
 
-Setup a new camera via the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui):
-- Enter a custom number, name, etc.
-- Select **Sony** brand
-- Select **Sony CBM** for the protocol
-- Enter the IP of your camera
+Add the camera in the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui):
+- Enter a camera number and name.
+- Select **Sony** brand.
+- Select **Sony CBM** protocol.
+- Enter the camera IP address.
 
-This should looks like this:
+![Sony CBM camera setup form in RCP configuration UI](/img/Integrations/camera/Sony/FX6-config-block.png)
 
-<img src="/img/Integrations/camera/Sony/FX6-config-block.png" width="300" />
+When connected successfully, the camera block turns green.
 
-And once correctly connected, it should be green:
-
-<img src="/img/Integrations/camera/Sony/FX6-config-setup.png" width="300" />
-
+![Sony CBM camera block showing green connected status](/img/Integrations/camera/Sony/FX6-config-setup.png)

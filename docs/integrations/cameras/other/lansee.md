@@ -7,77 +7,49 @@ keywords: [LanSee, camera control, broadcast, integration]
 slug: /integrations/cameras/other/lansee
 ---
 
-# Overview
-
-LanSee propose a range of devices to transport video and IP over fiber.
-
-In this documentation, we show the integration of the SMPTE module with:
-* B4 Canon lens
-* a camera (here a DC SSM500)
-* Cyanview CI0 to control the camera and the lend
-* RCP to shade the camera (+ lens control)
-
-And this setup will show the integration with the router/switcher and Cyanview ecosystem:
-* Lansee ingest multiple video signal inputs
-* the cameraman push buttons on the lens
-* Cyanview RCP will switch the video signals directly inside LanSee
+LanSee offers a range of devices that transport video and IP over fiber. This guide shows you how to integrate the LanSee SMPTE module with a B4 Canon lens, a Dreamchip SSM500, and Cyanview to shade the camera and control the lens remotely. It also demonstrates how to use LanSee as a router/switcher within the Cyanview ecosystem, letting the cameraman switch video signals using the lens buttons.
 
 ## Wiring
 
-<img src="/img/Integrations/LanSee/LanSee-wiring.png" width="600"/>
-
+![LanSee full system wiring diagram](/img/Integrations/LanSee/LanSee-wiring.png)
 
 ### Camera side
 
-* CI0 is powered by PoE directly from LanSee, powering/controling the lens and camera
-* Dreamchip SSM500 depending on the mode will outputs:
-    * 2 x SDI : in trigger mode (replay is done internally on SSD), one live, one replay
-    * 4 x SDI : in SSM mode (EVS), 4 x phases for replay
-* LanSee will ingest all SDI and give one SDI out for the monitor
+- The CI0 is powered by PoE directly from LanSee, powering and controlling the lens and camera.
+- The Dreamchip SSM500 outputs video depending on the mode:
+  - **Trigger mode** (internal SSD replay) — 2 x SDI: one live, one replay
+  - **SSM mode** (EVS) — 4 x SDI: four phases for replay
+- LanSee ingests all SDI signals and provides one SDI output for the monitor.
 
 ### CCU side
 
-* LanSee:
-    - 1 x SDI input from switcher/router (program, preview, etc.)
-    - 2 x SDI (in trigger mode, live and replay) or 4 x SDI (in SSM mode with EVS, 4 phases for replay)
-    - 1 x Ethernet for the RCP link
-* RCP connects to CI0 and LanSee via Ethernet
+- LanSee accepts:
+  - 1 x SDI input from switcher/router (program, preview, etc.)
+  - 2 x SDI (trigger mode: live and replay) or 4 x SDI (SSM mode with EVS: four replay phases)
+  - 1 x Ethernet for the RCP link
+- The RCP connects to the CI0 and LanSee via Ethernet.
 
 ## Setup
 
-I'm not covering:
-* Dreamchip SSM500 integration, check <a href="/docs/Integrations/Dreamchip/ssm500">here</a>
-* B4 Lens integration, check <a href="/docs/integrations/lenses/b4-lens">here</a>
+This guide assumes you have already set up the [Dreamchip SSM500](/docs/integrations/cameras/other/dreamchip-ssm500) and the [B4 Lens](/docs/integrations/lenses/b4-lens). This setup works with any camera/lens combination.
 
-But this setup will work with any camera/lens combination.
+In addition to your existing camera/lens configuration, create three additional "not controlled" cameras to act as virtual inputs for the LanSee router.
 
-In addition to your existing camera/lens configuration, create 3 additional "not controlled" cameras.
-This will serve as a "virtual" camera to control the LanSee inputs.
+In the `Components` section of the RCP [web UI](/docs/reference/manuals/rcp/web-ui):
+1. Click `+` and select `Router/Switcher`.
 
-In the `Components` section of the RCP <a href="/docs/reference/manuals/rcp/web-ui">web UI</a>:
-* Click on `+`
-* Select `Router/Switcher`
+![LanSee router/switcher selection](/img/Integrations/LanSee/LanSee-setup1.png)
 
+2. Select `AVMatrix`.
 
-<img src="/img/Integrations/LanSee/LanSee-setup1.png" width="300"/>
+![LanSee AVMatrix selection](/img/Integrations/LanSee/LanSee-setup2.png)
 
+3. Complete the details (name, IP, linked cameras, etc.).
 
-* Select `AVMatrix`
+![LanSee router configuration form](/img/Integrations/LanSee/LanSee-setup3.png)
 
+The completed setup should look like this:
 
-<img src="/img/Integrations/LanSee/LanSee-setup2.png" width="300"/>
+![LanSee setup overview](/img/Integrations/LanSee/LanSee-setup-overview.png)
 
-
-* And complete the informations (name, IP, link cameras, etc.)
-
-
-<img src="/img/Integrations/LanSee/LanSee-setup3.png" width="300"/>
-
-It should looks like this:
-
-<img src="/img/Integrations/LanSee/LanSee-setup-overview.png" width="600"/>
-
-
-You can now follow this <a href="/docs/guides/advanced/b4-return">guide</a> to configure the B4 lens buttons mapping.
-
-You should now be able to press your lens buttons and toggle the video signal on the LanSee.
+Follow the [B4 lens button mapping guide](/docs/guides/advanced/b4-return) to configure the lens buttons. You will then be able to press the lens buttons to toggle video signals on LanSee.

@@ -7,59 +7,51 @@ keywords: [tally light, manual, wiring, mounting, LED]
 slug: /reference/manuals/tally-light-manual
 ---
 
-<img src="/img/blog/tally-light-off.JPG" width="600"/>
+The RCP routes tally from [various inputs](/docs/guides/tally/tally) to your camera. For cameras with built-in tally (Panasonic PTZ, Sony ENG, etc.), the RCP triggers it alongside shading control. For cameras without tally (mini cameras, camcorders, etc.), the CI0/RIO has embedded LEDs configured for tally by default — [one per port](/docs/reference/manuals/ci0/ci0-manual#one-camera-per-port). When you need something more visible, the Cyanview tally light is a ready-to-use solution.
+
+![Cyanview tally light off](/img/blog/tally-light-off.JPG)
 
 <!--truncate-->
 
-# Introduction
+## Solutions and use cases
 
-Our RCP can route your tally from [various inputs](/docs/guides/tally/tally) to your camera.
-If your camera has tally (Panasonic PTZ, Sony ENG, etc.), we will trigger it alongside the shading control.
+If you need a tally in the viewfinder or want to build your own tally box, use the [DIY kit](/docs/guides/tally/tally#ci0rio-external-led) and follow the [assembly guide](/docs/resources/build-tally-led).
 
-If your camera doesn't have one (mini camera, camcorder, etc.), the CI0/RIO has embedded LEDs, that are configured for tally by default. [One for each port](/docs/reference/manuals/ci0/ci0-manual#a-camera-on-each-port).
+For a plug-and-play solution with a camcorder or mirrorless camera, use the Cyanview tally light box:
 
-But this is sometimes not enough and you need a more visible tally light.
+![Cyanview tally light on](/img/blog/tally-light-on.JPG)
 
-# Solutions and use case
+## Features
 
-If you need a tally in the viewfinder or want to design/integrate your own tally box, we have a [DIY kit](/docs/guides/tally/tally#ci0rio-external-led) and an [assembly guide](/docs/resources/build-tally-led).
+- 12V DC power
+- Front and rear separate on/off buttons
+- Front and rear separate dimming
+- Shoe lock mounting (camcorder, [mirrorless](/docs/integrations/cameras/sony/sony-alpha), etc.)
+- Screw mounting
 
-If you need a plug and play solution to integrate with your camcorder or mirrorless camera, we designed this box:
+## Wiring
 
-<img src="/img/blog/tally-light-on.JPG" width="300"/>
+Plug the tally light into any unused port on your CI0 or RIO:
 
-# Features:
+![Tally light connected to CI0/RIO port](/img/blog/tally-light-wiring.JPG)
 
-Features:
-* 12V DC
-* Front and rear separate on/off buttons
-* Front and rear separate dimming
-* Shoe lock mounting (camcorder, [mirrorless](/docs/integrations/cameras/sony/sony-alpha), etc.)
-* Screw mounting
+## Mounting
 
-# Wiring:
+Mount on a magic arm or similar using the screw mount:
 
-You can simply plug it in your CI0 or RIO unused port:
-<img src="/img/blog/tally-light-wiring.JPG" width="300"/>
+![Tally light screw-mounted on magic arm](/img/blog/tally-light-screw.JPG)
 
-And then secure it, either:
+Or slide into the camera hot shoe using the shoe lock:
 
-On a magic arm, or similar, using as screw:
-<img src="/img/blog/tally-light-screw.JPG" width="300"/>
+![Tally light mounted in shoe lock](/img/blog/tally-light-shoe-lock.JPG)
 
-Or in the shoe lock:
-<img src="/img/blog/tally-light-shoe-lock.JPG" width="300"/>
+## Setup
 
+Plug the tally light into port 1 or 2 of your CI0/RIO. In the RCP web UI:
 
-# Setup
+1. Go to the **GPIO** page.
+2. Select the mode `Red Tally` (default).
+3. Click the intersection of `camera` (row, left column) and `GPO` (column, top row).
+4. Select `1:PWR` or `2:PWR` depending on which port you used.
 
-You can plug that on port 1 or 2 of your CI0/RIO.
-
-In the RCP web UI:
-* Go to the GPIO page
-* Select adequate mode: `Red Tally` (default)
-* click on the intersection of:
-    - `camera` (line, left column)
-    - `GPO` (column, top line), select `1:PWR` or `2:PWR` depending on the port you plugged the tally light
-
-You can have more information on the tally output <a href="/docs/guides/tally/tally#tally-output">here</a>
+For more detail on tally output configuration, see the [tally output guide](/docs/guides/tally/tally#tally-output).

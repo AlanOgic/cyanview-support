@@ -7,42 +7,34 @@ keywords: [RCP, controls, joystick, buttons, assignable]
 slug: /reference/manuals/rcp/controls
 ---
 
-<img alt="cyanview-support-RCP-manual-command-panel" src="/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel@2x-8.png" width="700"/>
+![RCP command panel overview](/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel@2x-8.png)
 
-## LOCK Button
+Use this reference to understand every physical control on the RCP: what each button does, how the encoders behave, and how the touchscreen screens are organized.
 
-- **lock/unlock**
+## LOCK button
 
-A 1 second press *locks/unlocks* the RCP panel. 
+**Lock/unlock:** Press and hold for 1 second to lock or unlock the RCP panel. When locked, the screen dims but continues updating with live information. Buttons and encoders have no effect.
 
-When the RCP is locked, the screen is dimmed, but is still refreshed with information. 
+**Power off:** Press and hold for 5 seconds then release to switch off RCP controls. Press the Power/Lock button again to switch back on.
 
-In this mode, the buttons and encoders have no effects.
+## MENU button
 
-- **Power ON/OFF**
-
-5 seconds press then release switches **OFF** the RCP controls. 
-
-Switched **ON** by pressing the *Power/Lock button* again.
-
-## MENU Button
-
-The RCP **MENU** shows information on IP addresses, software versions, GPIO status and other diagnostic information.
+Press **MENU** to display diagnostic information: IP addresses, software versions, GPIO status, and more.
 
 ### Network
 
-<img alt="cyanview-support-RCP-manual-touchscreen-menu-network-info" src="/img/productGfx/RCP/cyanview-support-RCP-manual-touchscreen-menu-network-info.png" width="400" />
+![RCP touchscreen network info screen](/img/productGfx/RCP/cyanview-support-RCP-manual-touchscreen-menu-network-info.png)
 
-- IP Address, your RCP's fixed ip, can be *ping* to verify the network access.
-- MAC Address, allows to setup your network component like firewall or switches.
-- DHCP Address, IP address received from the network DHCP server if available.
-- Remote support status: available or not.
+- **IP Address** — your RCP's fixed IP; ping it to verify network access.
+- **MAC Address** — use this to configure firewalls or managed switches.
+- **DHCP Address** — IP address assigned by the network DHCP server, if available.
+- **Remote support status** — shows whether remote support is available.
 
-### System Screen
+### System screen
 
-<img alt="cyanview-support-RCP-manual-touchscreen-menu-system-info" src="/img/productGfx/RCP/cyanview-support-RCP-manual-touchscreen-menu-system-info.png" width="400" />
+![RCP touchscreen system info screen](/img/productGfx/RCP/cyanview-support-RCP-manual-touchscreen-menu-system-info.png)
 
- Shows version of the different software components of the RCP.
+Shows the version of each RCP software component:
 
 - OS version
 - Application version
@@ -51,54 +43,51 @@ The RCP **MENU** shows information on IP addresses, software versions, GPIO stat
 
 ### Settings
 
-<img alt="cyanview-support-RCP-manual-touchscreen-menu-system-info" src="/img/productGfx/RCP/cyanview-support-RCP-manual-touchscreen-menu-settings.png" width="400" />
+![RCP touchscreen settings screen](/img/productGfx/RCP/cyanview-support-RCP-manual-touchscreen-menu-settings.png)
 
-This menu allows to set the preview behavior :
-- Follow router selection : When set to "Yes", the RCP will automatically display the camera selected by the router.
-- AUTO preview on camera change : When set to "Yes", a preview commands, able to control a router, is sent when the camera is changed on the RCP.
-- Disable Prev / Next keys : When set to "Yes", the Next / Prev buttons will acts like the Preview button. In this mode, it is not possible to change the camera with the Next / Prev buttons anymore. Usefull for single camera configuration.
-- Access all camera : When set to "No", only camera in a restricted list are accessible from the RCP. For future use. 
+Controls preview behavior:
 
+- **Follow router selection** — when set to Yes, the RCP automatically displays the camera selected by the router.
+- **AUTO preview on camera change** — when set to Yes, a preview command is sent to the router when you change the camera on the RCP.
+- **Disable Prev/Next keys** — when set to Yes, the Next/Prev buttons act as the Preview button. Use this for single-camera configurations where camera switching via Next/Prev is not needed.
+- **Access all cameras** — when set to No, only cameras in a restricted list are accessible from the RCP (reserved for future use).
 
 ### Display
 
-<img alt="cyanview-support-RCP-manual-touchscreen-menu-system-info" src="/img/productGfx/RCP/cyanview-support-RCP-manual-touchscreen-menu-display.png" width="400" />
+![RCP touchscreen display settings screen](/img/productGfx/RCP/cyanview-support-RCP-manual-touchscreen-menu-display.png)
 
-This menu allows to set the brightness settings of the RCP.
-
+Adjust the brightness settings for the RCP display.
 
 ### GPIO
 
-The GPIO presents a status of the 8 port of each GPIO is represented by 1 or 0. 
+The GPIO screen shows the status of each of the 8 ports, represented as 1 (active) or 0 (inactive).
 
-<img alt="cyanview-support-RCP-manual-touchscreen-menu-io-gpio-info-status" src="/img/productGfx/RCP/cyanview-support-RCP-manual-touchscreen-menu-io-gpio-info-status.png" width="400"/>
+![RCP touchscreen GPIO status screen](/img/productGfx/RCP/cyanview-support-RCP-manual-touchscreen-menu-io-gpio-info-status.png)
 
-See [GPIO](/docs/reference/manuals/rcp/gpio-dongle) page for more information about GPIO possibilities.
+See the [GPIO](/docs/reference/manuals/rcp/gpio-dongle) page for full details on GPIO capabilities.
 
-## Exposure Control
+## Exposure control
 
-*Rotate* the encoder to set the **Iris**, **Gain**, or **Shutter** exposure.
+Rotate the encoder to set **Iris**, **Gain**, or **Shutter** exposure. Press **MODE** to switch between the three exposure modes.
 
-*Press* the **MODE** button to *switch* between Iris, Gain, and Shutter exposure modes.
+When no mode is highlighted on the display, the default exposure mode is **Iris** if the camera supports it, otherwise **Gain**.
 
-When no active mode (no highlighted mode on display), *defaults* exposure mode will be **Iris** if available on the camera, otherwise it will be **Gain** mode.
+Press **AUTO** to toggle auto exposure for the active mode.
 
-*Press* the **AUTO** button to *Toggle* the Iris, Gain, or Shutter **auto exposure**.
+![RCP exposure controls — iris, gain, shutter](/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-exposure-iris-gain-shutter@2x-8.png)
 
-<img alt="cyanview-support-RCP-manual-command-panel-exposure-iris-gain-shutter" src="/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-exposure-iris-gain-shutter@2x-8.png" width="300"/>
+## RCP screen
 
-## RCP Screen
-
-### Screens Overview
+### Screens overview
 
 <table>
 <tr>
     <td>
-        <img alt="cyanview-support-RCP-manual-command-panel-touchscreen-menu" src="/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-touchscreen-menu.png" />
+        ![RCP main touchscreen](/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-touchscreen-menu.png)
         Main
     </td>
     <td>
-        <img alt="cyanview-support-RCP-manual-command-panel-touchscreen-menu-scene" src="/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-touchscreen-menu-scene.png" />
+        ![RCP scene touchscreen](/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-touchscreen-menu-scene.png)
         Scene
     </td>
     <td>
@@ -108,7 +97,7 @@ When no active mode (no highlighted mode on display), *defaults* exposure mode w
     <td>
     </td>
     <td>
-        <img alt="cyanview-support-RCP-manual-command-panel-touchscreen-menu-auto" src="/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-touchscreen-menu-auto.png" />
+        ![RCP auto touchscreen](/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-touchscreen-menu-auto.png)
         Auto
     </td>
     <td>
@@ -118,11 +107,11 @@ When no active mode (no highlighted mode on display), *defaults* exposure mode w
     <td>
     </td>
     <td>
-        <img alt="cyanview-support-RCP-manual-command-panel-touchscreen-menu-paint1" src="/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-touchscreen-menu-paint1.png"/>
+        ![RCP paint 1 touchscreen](/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-touchscreen-menu-paint1.png)
         Paint1
     </td>
     <td>
-        <img alt="cyanview-support-RCP-manual-command-panel-touchscreen-menu-paint2" src="/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-touchscreen-menu-paint2.png"/>
+        ![RCP paint 2 touchscreen](/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-touchscreen-menu-paint2.png)
         Paint2
     </td>
 </tr>
@@ -130,7 +119,7 @@ When no active mode (no highlighted mode on display), *defaults* exposure mode w
     <td>
     </td>
     <td>
-        <img alt="cyanview-support-RCP-manual-command-panel-touchscreen-menu-camera" src="/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-touchscreen-menu-camera.png"/>
+        ![RCP camera touchscreen](/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-touchscreen-menu-camera.png)
         Camera
     </td>
     <td>
@@ -140,35 +129,32 @@ When no active mode (no highlighted mode on display), *defaults* exposure mode w
     <td>
     </td>
     <td>
-        <img alt="cyanview-support-RCP-manual-command-panel-touchscreen-menu-Lens" src="/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-touchscreen-menu-Lens.png"/>
+        ![RCP lens touchscreen](/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-touchscreen-menu-Lens.png)
         Lens
     </td>
     <td>
-        <img alt="cyanview-support-RCP-manual-command-panel-touchscreen-menu-Lens" src="/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-touchscreen-menu-Lens2.png"/>
+        ![RCP lens 2 touchscreen](/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-touchscreen-menu-Lens2.png)
         Lens2
     </td>
 </tr>
 </table>
 
-### Screen Navigation
+### Screen navigation
 
-Demonstration on how to access the different **RCP screens**.
+Swipe left or right on the touchscreen to move between RCP screens.
 
-<!-- <MP4Gif alt="cyanview-support-RCP-manual-command-panel-touchscreen-navigation" src="/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-touchscreen-navigation.mp4" poster="/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-touchscreen-navigation.png" width="400" />
- -->
 :::note
-Values represented by '--' are functions not supported by that camera model.
+Values shown as `--` indicate functions not supported by the current camera model.
 :::
-
 
 ## Preview
 
-Change the active camera by pressing the left or right buttons.
+Press the left or right buttons to change the active camera.
 
-If a [router integration](/docs/integrations/generic/routers) has been configured, switching camera on the RCP will also switch the router to the same camera.
+If a [router integration](/docs/integrations/generic/routers) is configured, switching cameras on the RCP also switches the router to the same camera.
 
-<img alt="cyanview-support-RCP-manual-command-panel-preview-switcher" src="/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-preview-switcher@2x-8.png" width="300" />
+![RCP preview and camera switcher buttons](/img/productGfx/RCP/cyanview-support-RCP-manual-command-panel-preview-switcher@2x-8.png)
 
 ### GPIO
 
-The PREVIEW button can a preview/touch-down signal via the RCP [GPIO](/docs/reference/manuals/rcp/gpio-dongle) or recalls the selected camera on the router.
+The PREVIEW button can send a preview/touch-down signal via the RCP [GPIO](/docs/reference/manuals/rcp/gpio-dongle), or recall the selected camera on the router.

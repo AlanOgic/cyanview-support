@@ -7,41 +7,39 @@ keywords: [Lawo, VSM, broadcast control, studio, tally]
 slug: /integrations/broadcast-systems/lawo-vsm
 ---
 
-> This manual will walk you trough the integration of a **Cyanview RCP** as a *control system* in a Lawo [VSM IP broadcast control and workflow solution](https://lawo.com/vsm/) using **pro-bel** protocol.
+This guide walks you through integrating a Cyanview RCP as a control system in a [Lawo VSM IP broadcast control and workflow solution](https://lawo.com/vsm/) using the pro-bel protocol.
 
 ## VSM configuration
 
-- [step 1] Create a new Virtual Layer for automation.
-- [step 2] Click the ‘Automation Entry Point’.
+1. Create a new Virtual Layer for automation.
+2. Click the **Automation Entry Point**.
 
- <img alt="cyanview-support-RCP-VSM-Automation-Entry-Point" src="/img/Integrations/VSM/RCP-VSM-Automation-Entry-Point.png"  width="500"/>
+   ![VSM Automation Entry Point](/img/Integrations/VSM/RCP-VSM-Automation-Entry-Point.png)
 
-- [step 3] Add the virtual layer in the matrix, assign cameras and router outputs (monitors).
+3. Add the virtual layer in the matrix, then assign cameras and router outputs (monitors).
 
- <img alt="cyanview-support-RCP-VSM-Add-virtual-layer" src="/img/Integrations/VSM/RCP-VSM-Add-virtual-layer.png"  width="500"/>
+   ![VSM Add virtual layer](/img/Integrations/VSM/RCP-VSM-Add-virtual-layer.png)
 
-- [step 4] Create a new port X-Switches / pro-bel / SW-P-08.
+4. Create a new port: `X-Switches > pro-bel > SW-P-08`.
 
- <img alt="cyanview-support-RCP-VSM-Create-new-port" src="/img/Integrations/VSM/RCP-VSM-Create-new-port.png"  width="500"/>
+   ![VSM Create new port](/img/Integrations/VSM/RCP-VSM-Create-new-port.png)
 
-- [step 5] Choose TCP - Inbound, assign a port number.
+5. Choose **TCP - Inbound** and assign a port number.
 
- <img alt="cyanview-support-RCP-VSM-Set-TCP-inbound-assign-port-number" src="/img/Integrations/VSM/RCP-VSM-Set-TCP-inbound-assign-port-number.png"  width="500"/>
+   ![VSM Set TCP inbound and assign port number](/img/Integrations/VSM/RCP-VSM-Set-TCP-inbound-assign-port-number.png)
 
-- [step 6] In the layer assignment section, assign the virtual layer created above and select “The
-attached device is a control system” in order to enable bi-directional control.
+6. In the layer assignment section, assign the virtual layer you created and select **The attached device is a control system** to enable bi-directional control.
 
- <img alt="cyanview-support-RCP-VSM-Layer-assignment" src="/img/Integrations/VSM/RCP-VSM-Layer-assignment.png"  width="500"/>
+   ![VSM Layer assignment](/img/Integrations/VSM/RCP-VSM-Layer-assignment.png)
 
-## RCP / GWY Configuration
+## RCP / GWY configuration
 
-- [step 1] If a different network is used for VSM, [add an IP address](/docs/guides/networking/ip-configuration#lan-configuration) to the RCP.
+1. If VSM uses a separate network, [add an IP address](/docs/guides/networking/ip-configuration#lan-configuration) to the RCP.
 
-- [step 2] Add a [pro-bel Router](/docs/integrations/generic/routers) module from the Components section .
+2. Add a [pro-bel Router](/docs/integrations/generic/routers) module from the Components section.
 
- <img alt="cyanview-support-RCP-VSM-Add-Probel" src="/img/Integrations/VSM/RCP-VSM-Add-Probel.png"  width="500"/>
+   ![Add pro-bel module](/img/Integrations/VSM/RCP-VSM-Add-Probel.png)
 
-- [step 3] Set the IP address of the VSM server and port number that was created above, then
-assign cameras and monitors.
+3. Set the VSM server IP address and the port number you created above, then assign cameras and monitors.
 
- <img alt="cyanview-support-RCP-VSM-Set-TCP-inbound-assign-port-number" src="/img/Integrations/VSM/RCP-VSM-Set-TCP-inbound-assign-port-number.png" width="500"/>
+   ![Set IP and port, assign cameras and monitors](/img/Integrations/VSM/RCP-VSM-Set-TCP-inbound-assign-port-number.png)

@@ -7,50 +7,40 @@ keywords: [NIO, manual, GPIO, tally, network I/O]
 slug: /reference/manuals/nio-manual
 ---
 
-## Overview
+The NIO provides 16 GPIO over ethernet. Add multiple NIO units to your setup if you need more GPIO capacity.
 
-<img src="/img/Manual/NIO/NIO.png" width="200"/>
-
-The NIO provides 16 GPIO over ethernet.
-
-You can have multiple NIO's if you need more GPIO's.
+![NIO device](/img/Manual/NIO/NIO.png)
 
 ## Wiring
 
-<img src="/img/Manual/NIO/NIO-wiring.png" width="600"/>
+Connect your NIO and RCP to the same switch. GPIO discovery is automatic — no additional configuration required.
 
-You just need to have your NIO's and RCP's on the same switch.
-
-Then, the discovery of the GPIO is automatic.
+![NIO wiring diagram](/img/Manual/NIO/NIO-wiring.png)
 
 ## Setup
 
-* Power your RCP
-* Power your NIO
-* Connects them on the same network (switch)
+1. Power your RCP.
+2. Power your NIO.
+3. Connect both to the same network switch.
 
-Then in your RCP, you should see your NIO appear in light grey
+Your NIO appears in the RCP in light grey once detected.
 
 ### GPI
 
-<img src="/img/Manual/NIO/NIO-setup2.png" width="200"/>
+![NIO GPI setup screen](/img/Manual/NIO/NIO-setup2.png)
 
-You can then configure it as [usual](/docs/guides/tally/tally#gpi)
+Configure GPI as [described in the tally guide](/docs/guides/tally/tally#gpi).
 
 :::note
-For GPI, if not using a short contact, ensure to use < 5V
+For GPI, if not using a short contact, keep the input voltage below 5V.
 :::
 
 ### GPO
 
-<img src="/img/Manual/NIO/NIO-setup.png" width="500"/>
+![NIO GPO setup screen](/img/Manual/NIO/NIO-setup.png)
 
-You can then configure it as [usual](/docs/guides/tally/tally#gpo)
+Configure GPO as [described in the tally guide](/docs/guides/tally/tally#gpo).
 
 :::note
-When GPO is LOW, output voltage is 0V.
-
-When GPO is HIGH, output voltage is 5V.
-
-Output current 500μA.
+GPO LOW = 0V output. GPO HIGH = 5V output. Output current: 500μA.
 :::

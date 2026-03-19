@@ -7,59 +7,41 @@ keywords: [Bolin, R9, PTZ, remote control]
 slug: /integrations/cameras/other/bolin-r9
 ---
 
-<img src="/img/Integrations/Bolin/R9_front.png" width="450" />
+![Bolin R9 PTZ camera front view](/img/Integrations/Bolin/R9_front.png)
 
-## Supported Controls
+Cyanview controls the Bolin R9 PTZ camera over IP, giving you remote paint and PTZ control from the RCP.
+
+## Supported controls
+
 - **Paint**
-  - **Filters** : ND Filters
-  - **White Balance[^WB]** : red gain, blue gain
-  - **Black Balance** : master black
-  <!-- - **Detail** -->
-  <!-- - **Skin Detail** -->
+  - **Filters** — ND Filters
+  - **White balance**[^WB] — red gain, blue gain
+  - **Black balance** — master black
   - **Matrix**
-  <!-- - **Color Corrector** -->
   - **Multimatrix**
-  - **Gain** : ISO, EV
-  <!-- - **Gamma** -->
-  <!-- - **Knee** -->
+  - **Gain** — ISO, EV
   - **Shutter**
-  - **Color** : Saturation, Hue
-  <!-- - **Look** -->
-  <!-- - **Denoise** -->
+  - **Color** — Saturation, Hue
 - [**Lens/PTZF**](/docs/reference/manuals/rcp/ui/lens.md)
   - **Iris**
-  - **Pan/tilt** : Status, Speed/Position Control
-  - **Zoom/Focus** : Status, Speed/Position Control
+  - **Pan/tilt** — status, speed/position control
+  - **Zoom/Focus** — status, speed/position control
   - **PTZ Presets**
-  <!-- - **Vertical Flip** -->
-<!-- - **Camera** -->
-  <!-- - **Audio** -->
-  <!-- - **Auto** : Focus, Focus Oneshot, Shutter, Gain -->
-  <!-- - **Custom** -->
-  <!-- - **SDI Video Format** -->
-  <!-- - **Menu** : not in API-->
-  <!-- - **Power** -->
-  <!-- - **Sensor** -->
-  <!-- - **Status** : camera model and software version -->
-  <!-- - **Tally** : Red and Green -->
-  <!-- - **Test** -->
-<!-- - **Others** -->
-  <!-- - **Record** -->
-  
+
 :::note
-Some of the other features of the camera will be availble in an upcoming software update. Among those features are the auto modes, record and tally.
+Additional features including auto modes, record, and tally will be available in an upcoming software update.
 :::
 
-[^WB]: Red and Blue gains are only available when the camera 'WB Mode' is set to 'User'.
+[^WB]: Red and blue gains are only available when the camera WB Mode is set to **User**.
 
 ## Configuration
 
-The camera can be configured using the [Generic PTZ Guide](/docs/integrations/generic/ptz)
+Configure the camera using the [Generic PTZ guide](/docs/integrations/generic/ptz).
 
-Bolin provides a discovery tool to help setup the camera. Make sure that the ip address of the camera is reachable by the RCP, see [this page](/docs/guides/networking/ip-configuration?_highlight=ip#lan-configuration) for more information about ip configuration.
+Bolin provides a discovery tool to help set up the camera. Make sure the camera IP address is reachable by the RCP — see the [IP configuration page](/docs/guides/networking/ip-configuration?_highlight=ip#lan-configuration) for details.
 
 ## Workflow
 
-The [Anxinshi joystick](/docs/integrations/accessories/anxinshi-ptz-usb-joystick) can provide a more convenient user interface than the RCP touchscreen for pan, tilt, zoom and presets.
+The [Anxinshi joystick](/docs/integrations/accessories/anxinshi-ptz-usb-joystick) provides a more convenient interface than the RCP touchscreen for pan, tilt, zoom, and presets.
 
-The [Elgato Stream Deck](/docs/integrations/accessories/elgato-stream-deck) can be used to recall the PTZ presets.
+The [Elgato Stream Deck](/docs/integrations/accessories/elgato-stream-deck) can recall PTZ presets.

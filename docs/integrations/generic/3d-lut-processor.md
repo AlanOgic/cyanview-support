@@ -7,18 +7,13 @@ keywords: [3D LUT, color management, LUT processor, broadcast]
 slug: /integrations/generic/3d-lut-processor
 ---
 
-# 3D LUT Processor
+The RCP integrates with 3D LUT processors and grading software such as DaVinci Resolve and Premiere. You can grade offline, push a LUT to the RCP for live shading, then export the final LUT back to your grading application at the end of the show.
 
-## Overview
-
-The RCP can control a 3D LUT processor and integrate with `Davinci Resolve`, `Premiere`, etc.
-
-It means you can:
-* Get some rushes from the cameras
-* Grade in Resolve
-* Export the LUT to the RCP
-* Shade in live from the RCP, combining camera + LUT
-* Export the LUT from the RCP to resolve at the end of the show
+Workflow overview:
+1. Capture rushes from camera.
+2. Grade in Resolve and export the LUT to the RCP.
+3. Shade live from the RCP — camera controls and LUT apply simultaneously.
+4. Export the resulting LUT from the RCP back to Resolve.
 
 ## Supported devices
 
@@ -29,150 +24,124 @@ It means you can:
 
 ## Wiring
 
-<img src="/img/Integrations/Generic/3DLUTP/3DLUTP-wiring.png" width="600"/>
+![3D LUT processor wiring diagram](/img/Integrations/Generic/3DLUTP/3DLUTP-wiring.png)
 
 :::note
-The laptop is optional and only requires for:
-* setup
-* import/export of the LUT
+The laptop is optional. You only need it for initial setup and LUT import/export.
 :::
 
 ## Setup
 
-The setup is similar to any <a href="/docs/integrations/generic/color-corrector">Color Corrector integration</a>.
+The setup follows the same steps as any [color corrector integration](/docs/integrations/generic/color-corrector).
 
-Navigate to your <a href="/docs/reference/manuals/rcp/web-ui">RCP Configuration UI</a>.
+Open your [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui). In the `Configuration` tab, under `Components`, click `+` and select `Video Processor`. Choose your device, then enter a name and IP address:
 
-In the `Configuration` tab, in the `Components` section, click on `+`.
+![3D LUT processor setup](/img/Integrations/Generic/3DLUTP/3DLUTP-setup.png)
 
-Select `Video Processor`.
+* **Step 1** — enter a name for the processor (optional)
+* **Step 2** — enter the device IP address
 
-In the list, select your color corrector and fill in the `name` and `IP address`:
+When connected successfully, the block turns green:
 
-
-<img src="/img/Integrations/Generic/3DLUTP/3DLUTP-setup.png" width="300"/>
-
-- [step 1] chose a name for your color corrector (optional)
-- [step 2] enter the IP of your device
-
-If everything goes well, your block should turn green:
-
-
-<img src="/img/Integrations/Generic/3DLUTP/3DLUTP-block.png" width="300"/>
+![3D LUT processor block — green](/img/Integrations/Generic/3DLUTP/3DLUTP-block.png)
 
 :::note
-In the VP4 case, it is autodetected and nothing to do
+The VP4 is auto-detected — no manual setup required.
 :::
 
-You can now create a camera and in the `Video Processor` section, select the CC you just created.
+Create a camera and, in the `Video Processor` section, select the processor you just configured:
 
-<img src="/img/Integrations/Generic/3DLUTP/3DLUTP-cam1.png" width="300"/>
+![Camera with video processor assigned](/img/Integrations/Generic/3DLUTP/3DLUTP-cam1.png)
 
 :::note
-Here the cam is `Not controlled`, it means I just control the CC.
-
-We could combine camera control (a FX9, etc.) with my BoxIO control.
+`Not controlled` in the camera head means you are controlling the LUT processor only. You can combine this with a camera head (FX9, etc.) to control both simultaneously.
 :::
 
 ## Usage
 
-For RCP operation of CC and combined cam+CC, you can refer to this <a href="/docs/integrations/generic/color-corrector#rcp-operation">generic guide</a>.
+For general RCP operation with a color corrector or combined camera + CC setup, see the [color corrector RCP operation guide](/docs/integrations/generic/color-corrector#rcp-operation).
 
-I'll show here the integration with `Davinci Resolve`, but the workflow is similar with any grading software.
+The steps below show the DaVinci Resolve workflow, but the process is the same with any grading software.
 
-### 3D LUT import/export in RCP
+### Import/export a 3D LUT
 
-In your grading/editing software, export the LUT (format: 33 Point Cube):
+In your grading software, export the LUT in **33-point Cube** format:
 
-<img src="/img/Integrations/Generic/3DLUTP/resolve-export.png" width="300"/>
+![Resolve LUT export dialog](/img/Integrations/Generic/3DLUTP/resolve-export.png)
 
 :::note
-This guide focus on mac os, but the workflow is similar on windows:
-* ensure your PC has a compatible IP (you should be able to browse the RCP web UI)
-* open file explorer in `This PC`
-* right click, `Add a network location`
-* network address: `\\<IP of your RCP>\3DLUT` (pay attention to the backslash), example: `\\10.192.18.4\3DLUT`
+On Windows:
+1. Ensure your PC can reach the RCP web UI.
+2. Open File Explorer → `This PC`.
+3. Right-click → `Add a network location`.
+4. Enter `\\<RCP IP>\3DLUT` (use backslashes), for example `\\10.192.18.4\3DLUT`.
 :::
 
-Ensure your computer is wired and can reach your RCP:
+Make sure your computer is on the same network as the RCP:
 
-<img src="/img/Integrations/Generic/3DLUTP/mac-fixed-IP.png" width="300"/>
+![Mac fixed IP configuration](/img/Integrations/Generic/3DLUTP/mac-fixed-IP.png)
 
-Open your file explorer, and in `Network`, the Cyanview devices should appear with their serial number:
+Open Finder. Under `Network`, Cyanview devices appear by serial number:
 
-<img src="/img/Integrations/Generic/3DLUTP/mac-network-browse.png" width="300"/>
+![Mac network browser showing Cyanview devices](/img/Integrations/Generic/3DLUTP/mac-network-browse.png)
 
-Click on the RCP, then double-click on `3DLUT` to mount this network directory locally on your computer:
+Click the RCP, then double-click `3DLUT` to mount the shared directory:
 
-<img src="/img/Integrations/Generic/3DLUTP/mac-rcp-browse.png" width="300"/>
+![RCP shared folder in Finder](/img/Integrations/Generic/3DLUTP/mac-rcp-browse.png)
 
-You should see this:
+The mounted directory is empty by default:
 
-<img src="/img/Integrations/Generic/3DLUTP/mac-rcp-3DLUT-empty.png" width="300"/>
+![Empty 3DLUT directory](/img/Integrations/Generic/3DLUTP/mac-rcp-3DLUT-empty.png)
 
+The `exports` subfolder holds LUTs exported from the RCP. Copy your graded LUT into the root `3DLUT` directory:
 
-The directory `exports` will contain exported LUT from the RCP.
+![3DLUT directory with LUT files](/img/Integrations/Generic/3DLUTP/mac-rcp-3DLUT.png)
 
-Copy and paste the exported LUT from your computer to this directory (3DLUT root directory):
-
-<img src="/img/Integrations/Generic/3DLUTP/mac-rcp-3DLUT.png" width="300"/>
-
-Here for example, I have 2 dummy LUT:
-* unsaturated
-* saturated
+In this example, two test LUTs are present: `unsaturated` and `saturated`.
 
 :::note
-
-LUT names can contain `-`, `_` or `.`.
-
-Should end with `.cube`.
-
-Are case-sensitive : `saturated.cube` is different from `SATURATED.cube`
-
-No space allowed in name : `LUT Blackmagic_1.3007_12311817_C012.cube` is not allowed.
+LUT filename rules:
+* Allowed characters: `-`, `_`, `.`
+* Must end with `.cube`
+* Names are case-sensitive: `saturated.cube` ≠ `SATURATED.cube`
+* No spaces: `LUT Blackmagic_1.cube` is not valid
 :::
 
 ### RCP operation
 
-In this case, the basic screen displayed on RCP looks like this:
+The RCP main screen looks like this when a LUT processor is configured:
 
-<img src="/img/Integrations/Generic/3DLUTP/rcp-scene0.png" width="300"/>
+![RCP scene overview](/img/Integrations/Generic/3DLUTP/rcp-scene0.png)
 
-Navigate to `Paint 1 > Color`
+Navigate to `Paint 1 > Color`:
 
-<img src="/img/Integrations/Generic/3DLUTP/rcp-nolut.png" width="300"/>
+![RCP color page with no LUT loaded](/img/Integrations/Generic/3DLUTP/rcp-nolut.png)
 
-By turning the 3rd encoder below the screen, I can see the LUT I exported from my computer.
+Turn the third encoder to browse available LUTs:
 
-* <img src="/img/Integrations/Generic/3DLUTP/rcp-browse-lut1.png" width="300"/>
-* <img src="/img/Integrations/Generic/3DLUTP/rcp-browse-lut2.png" width="300"/>
+![Browsing LUT 1 on RCP](/img/Integrations/Generic/3DLUTP/rcp-browse-lut1.png)
+![Browsing LUT 2 on RCP](/img/Integrations/Generic/3DLUTP/rcp-browse-lut2.png)
 
-Once you're on the desired LUT, click on the 3rd encoder (`Set LUT > Apply`).
+Press the third encoder (`Set LUT > Apply`) to load the selected LUT onto the BoxIO channel configured in the RCP.
 
-This will load this LUT on the BoxIO channel 1 (based on my RCP configuration).
+Once loaded, `Apply` disappears:
 
-Once loaded, `Apply` will not be displayed anymore:
+![RCP with LUT loaded and Save option visible](/img/Integrations/Generic/3DLUTP/rcp-save.png)
 
-<img src="/img/Integrations/Generic/3DLUTP/rcp-save.png" width="300"/>
+The LUT `unsaturated.cube` is now active. As you shade from the RCP, the RCP recalculates the LUT in real time.
 
-Here, I loaded my LUT `unsaturated.cube`.
+At the end of the show, press the fourth encoder (`Save LUT > Save`) to export the final LUT (base LUT + live shading) to the `exports` directory:
 
-Now, when I shade using my RCP, the RCP recalculate the LUT based on this one.
+![Exported LUT in the 3DLUT exports folder](/img/Integrations/Generic/3DLUTP/rcp-3DLUT-exported.png)
 
-At the end of the show, I can then click on the 4th encoder (`Save LUT > Save`).
+The exported file is named `X_Y.cube`, where:
+* `X` = camera number
+* `Y` = camera name
 
-And my `live` LUT (base LUT + live shading) will be exported in the `exports` directory:
-
-<img src="/img/Integrations/Generic/3DLUTP/rcp-3DLUT-exported.png" width="300"/>
-
-The name is: `X_Y.cube` with:
-* `X` : my camera number
-* `Y` : my camera name
-
-So in this case, in `exports`, I have a file: `1_BoxIO-CH1.cube` that I can import back to resolve through the network.
+In this example, the exported file is `1_BoxIO-CH1.cube`, ready to import back into Resolve over the network.
 
 ## Downloads
 
-You can download the following dummy 3D LUT (generated from Davinci Resolve):
-* <a target="_blank" href="/files/3DLUTP/unsaturated.cube">zero saturation, black and white</a>
-* <a target="_blank" href="/files/3DLUTP/saturated.cube">over saturated</a>
+Download these test LUTs (generated from DaVinci Resolve):
+* [Zero saturation — black and white](/files/3DLUTP/unsaturated.cube)
+* [Over-saturated](/files/3DLUTP/saturated.cube)

@@ -7,251 +7,206 @@ keywords: [Sony Venice, Venice 2, cinema, remote control]
 slug: /integrations/cameras/sony/sony-venice
 ---
 
-# Sony Venice
+The Sony Venice connects to Cyanview over IP or serial for full remote control and paint. Both Venice 1 and Venice 2 are supported.
 
-<img src="/img/Integrations/Sony/Sony-Venice/Sony-Venice.png" width="500" />
-
+![Sony Venice cinema camera](/img/Integrations/Sony/Sony-Venice/Sony-Venice.png)
 
 ## Compatible models
 
-* Sony Venice 1
-* Sony Venice 2
+- Sony Venice 1
+- Sony Venice 2
 
 ## Overview
-
-This video show the RCP controlling the Sony Venice in IP mode:
 
 <video poster="/img/Integrations/Sony/Sony-Venice/Venice-handson.png" muted controls>
     <source src="/img/Integrations/Sony/Sony-Venice/Venice-handson.mp4"/>
 </video>
 
-
 ## Controls
 
-We have 2 protocols:
-* Sony Venice Serial : typical Sony Venice multicam workflow.
-* Sony Venice IP : if you're working in SLog and don't want/need the camera control using the `RCP` paint mode.
+Two protocols are available:
+- **Sony Venice IP** — Recommended for S-Log workflows where you do not need RCP paint mode.
+- **Sony Venice Serial** — Full broadcast paint control via the 8-pin remote port.
 
-|Control|Sony Venice IP|Sony Venice serial
-:-----|:-----:|:-----:|
-**Exposure** (Iris, Gain, Shutter[^2], ND filter[^3])|✔[^1]|✔[^1.1]
-**White balance** (Color temp and tint)|✔[^4]|✔[^4.1]|
-**Black balance** (R/B and Master)||✔|
-**Avanced shading (Flare, Detail, Matrix, Multi Matrix)**||✔[^5]|
-**REC** (start/stop)|✔|✔|
-**Other controls** (ISO base[^6], APR, pattern, flip horizontal/vertical, replay[^7], User Keys[^8], TC)|✔|
-**Tally**||✔[^9]
-**Lens** <a href="/docs/reference/manuals/rcp/ui/scene">(zoom, focus)</a>[^10]|✔|
-**Scene file** : <a href="/docs/reference/manuals/rcp/ui/scene">save/recall</a>|✔|✔
+| Control | Venice IP | Venice serial |
+|:--------|:---------:|:-------------:|
+| **Exposure** (Iris, Gain, Shutter[^2], ND filter[^3]) | ✔[^1] | ✔[^1.1] |
+| **White balance** (color temp and tint) | ✔[^4] | ✔[^4.1] |
+| **Black balance** (R/B and Master) | | ✔ |
+| **Advanced shading** (Flare, Detail, Matrix, Multi Matrix) | | ✔[^5] |
+| **REC** (start/stop) | ✔ | ✔ |
+| **Other controls** (ISO base[^6], APR, pattern, flip, replay[^7], User Keys[^8], TC) | ✔ | |
+| **Tally** | | ✔[^9] |
+| **Lens** [zoom, focus](/docs/reference/manuals/rcp/ui/scene)[^10] | ✔ | |
+| **Scene file** — [save/recall](/docs/reference/manuals/rcp/ui/scene) | ✔ | ✔ |
 
-[^1]: Venice IP : gain is expressed in ISO, only affects SDI output. Base ISO (800 or 3200) affects the ISO range and the (fixed) REC ISO.
-
-[^1.1]: Venice Serial : gain is expressed in dB, steps: 3dB
-
-[^2]: shutter can be displayed/controlled in angle/speed. ECS is also available.
-
-[^3]: ND are presets only.
-
-[^4]: color temps and tint and AWB.
-
-[^4.1]: R/B and color temp are available in Venice serial, but not the tint (only affects the color temp).
-
+[^1]: Venice IP: gain is expressed in ISO. Affects SDI output only. Base ISO (800 or 3200) determines the ISO range and the fixed REC ISO.
+[^1.1]: Venice Serial: gain in dB, 3 dB steps.
+[^2]: Shutter can be displayed and controlled in angle or speed. ECS is also available.
+[^3]: ND filters are presets only.
+[^4]: Color temperature, tint, and AWB.
+[^4.1]: R/B and color temperature available in Venice Serial, but not tint.
 [^5]: Detail can be changed and toggled on/off. Matrix and Multi Matrix can be changed and toggled.
-
-[^6]: base ISO only in Venice IP
-
-[^7]: to replay, in `Camera > User Keys > Custom`, switch to `Clips`. Then in `Record > Replay`, you can replay your last clip.
-
-[^8]: user keys are accessible on RCP `Camera > User Keys`, in `User Keys` and `Custom`. But you can only call them, you need to assign them in the camera body in `Project > Assignable Button`
-
-[^9]: Venice Serial : only RED tally, only if not recording (as the REC status is used to display the tally)
-
-[^10]: Venice IP : zoom/focus can be displayed/controlled in speed (position is only displayed).
-
+[^6]: Base ISO available in Venice IP only.
+[^7]: To replay: in `Camera > User Keys > Custom`, switch to `Clips`. Then in `Record > Replay`, replay your last clip.
+[^8]: User keys are accessible via `Camera > User Keys` — you can call them but must assign them on the camera body in `Project > Assignable Button`.
+[^9]: Venice Serial: RED tally only, and only when not recording (the REC status uses the same indicator).
+[^10]: Venice IP: zoom/focus can be displayed and controlled in speed; position is display-only.
 
 ## Wiring
 
-We can control the camera in two modes:
-* Sony Venice IP : we control the camera over IP (works best for SLog based workflow, RCP/paint mode is disabled)
-* Sony Venice Serial : we control the camera over remote (8 pins) port, when using the RCP Paint mode in the camera.
+Control modes:
+- **Sony Venice IP** — Control over IP. Works best for S-Log workflows. RCP paint mode is disabled.
+- **Sony Venice Serial** — Control over the 8-pin remote port. Required for RCP paint mode.
 
-We can control the camera locally (LAN) using just the RCP for IP, adding a CI0 for serial.
-
-And we can control the camera wirelessly (4G, RF, Wi-Fi) using a RIO for IP and serial (Steadycam, robotics, etc.).
+You can use the RCP alone for local (LAN) IP control, or add a CI0 for serial. For wireless (4G, RF, Wi-Fi), use a RIO for both IP and serial.
 
 ### Sony Venice IP (LAN)
 
-<img src="/img/Integrations/Sony/Sony-Venice/Sony-Venice-IP-wiring.png" width="900" />
+![Sony Venice IP LAN wiring diagram](/img/Integrations/Sony/Sony-Venice/Sony-Venice-IP-wiring.png)
 
-* RCP powered by PoE or 12V PSU
-* RCP talks directly to camera over IP
+- RCP powered by PoE or 12V PSU.
+- RCP communicates directly with camera over IP.
 
 :::note
-Can work through simple Ethernet switch or fiber like Ereca CAM Racer, etc.
+Works through a simple Ethernet switch or fiber such as Ereca CAM Racer.
 :::
 
 ### Sony Venice Serial (LAN)
 
-<img src="/img/Integrations/Sony/Sony-Venice/Sony-Venice-8P-LAN-wiring.png" width="900" />
+![Sony Venice Serial LAN wiring diagram](/img/Integrations/Sony/Sony-Venice/Sony-Venice-8P-LAN-wiring.png)
 
-* RCP powered by PoE or 12V PSU
-* CI0 or RIO/RIO +LAN powered by camera using the cable (no D-TAP required)
-* cable : CY-CBL-6P-SONY-8P-03 (controls the camera and power the CI0/RIO)
+- RCP powered by PoE or 12V PSU.
+- CI0 or RIO/RIO +LAN powered by the camera through the cable (no D-TAP required).
+- Cable: CY-CBL-6P-SONY-8P-03 (controls camera and powers CI0/RIO).
 
 :::note
-Can work through simple Ethernet switch or fiber like Ereca CAM Racer, etc.
+Works through a simple Ethernet switch or fiber such as Ereca CAM Racer.
 
-Some people prefer to keep the CI0/RIO +LAN on camera side and then it's simply ethernet between the RCP and CI0/RIO +LAN.
-
-
-Some people will prefer to keep the CI0/RIO +LAN on the RCP side and connect the serial through Ereca (pro: clean setup on camera side, cons: you lose the flexibility of the RIO +LAN with external motors/lens control, etc.)
+Some prefer to keep the CI0/RIO +LAN on the camera side, with Ethernet running between the RCP and CI0/RIO +LAN. Others prefer the CI0/RIO +LAN on the RCP side with serial running through Ereca (cleaner camera side, but you lose the flexibility of the RIO +LAN for external motor/lens control).
 :::
 
-### Sony Venice IP (Wireless)
+### Sony Venice IP (wireless)
 
-<img src="/img/Integrations/Sony/Sony-Venice/Sony-Venice-IP-wireless.png" width="900" />
+![Sony Venice IP wireless wiring diagram](/img/Integrations/Sony/Sony-Venice/Sony-Venice-IP-wireless.png)
 
-* RCP powered by PoE or 12V PSU, connected to internet
-* RIO powered by D-TAP
-* RIO connected to camera using ethernet
-* RCP talks to RIO over internet (using 4G, Rf, Wi-Fi, etc.)
+- RCP powered by PoE or 12V PSU, connected to internet.
+- RIO powered by D-TAP.
+- RIO connected to camera via Ethernet.
+- RCP communicates with RIO over internet (4G, RF, Wi-Fi, etc.).
 
 :::note
-Video needs to be HF, we just do the telemetry.
+This handles telemetry only — video transport requires a separate RF solution.
 :::
 
-### Sony Venice Serial (Wireless)
+### Sony Venice Serial (wireless)
 
-<img src="/img/Integrations/Sony/Sony-Venice/Sony-Venice-8P-wireless.png" width="900" />
+![Sony Venice Serial wireless wiring diagram](/img/Integrations/Sony/Sony-Venice/Sony-Venice-8P-wireless.png)
 
-
-* RCP powered by PoE or 12V PSU, connected to internet
-* RIO powered by D-TAP
-* RIO connected to camera using the cable CY-CBL-6P-SONY-8P-03
-* RCP talks to RIO over internet (using 4G, Rf, Wi-Fi, etc.)
+- RCP powered by PoE or 12V PSU, connected to internet.
+- RIO powered by D-TAP.
+- RIO connected to camera via cable CY-CBL-6P-SONY-8P-03.
+- RCP communicates with RIO over internet (4G, RF, Wi-Fi, etc.).
 
 :::note
-Video needs to be HF, we just do the telemetry.
+This handles telemetry only — video transport requires a separate RF solution.
 :::
 
 ## Camera setup
 
 ### Venice IP
 
-* Setup IP/mask, in `Technical > Network > Setting`:
-    - set `Setting` to `LAN`
-    - in `LAN` submenu:
-        - set `DHCP` to `Off`
-        - set `IP Address` to desired cam IP (here `10.192.10.100`)
-        - set `Subnet Mask` to desired cam subnet (here `255.255.0.0`)
-* Setup login/password in `Technical > Authentication` (`Usernam` and `Password`)
-* In `Technical > Special Configuration`: set `RM / RCP Paint Con` to `Off`
+In `Technical > Network > Setting`:
+- Set `Setting` to `LAN`.
+- In the `LAN` submenu:
+  - Set `DHCP` to `Off`.
+  - Set `IP Address` to the desired camera IP (e.g., `10.192.10.100`).
+  - Set `Subnet Mask` to the desired subnet (e.g., `255.255.0.0`).
+
+In `Technical > Authentication`: set your `Username` and `Password`.
+
+In `Technical > Special Configuration`: set `RM / RCP Paint Con` to `Off`.
 
 ### Venice Serial
 
-In `Technical > Special Configuration`: set `RM / RCP Paint Con` to `On`
+In `Technical > Special Configuration`: set `RM / RCP Paint Con` to `On`.
 
 ## RCP setup
 
-Set up a new camera via the <a href="/docs/reference/manuals/rcp/web-ui">RCP Configuration UI</a>:
+Add the camera via the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui).
 
 ### Venice IP
 
-- Enter a custom number, name, etc.
-- Select **Sony** brand
-- Select **Sony Venice(IP)** for the protocol
-- Enter the IP of your camera
-- Enter the login/password of your camera
+- Enter a camera number, name, etc.
+- Select **Sony** for brand.
+- Select **Sony Venice(IP)** for protocol.
+- Enter the camera IP address.
+- Enter the login and password.
 
-<img src="/img/Integrations/Sony/Sony-Venice/Venice-IP-block.png" width="300" />
-<br/>
-<img src="/img/Integrations/Sony/Sony-Venice/Venice-IP-setup.png" width="300" />
+![Venice IP RCP configuration block](/img/Integrations/Sony/Sony-Venice/Venice-IP-block.png)
 
+![Venice IP RCP setup form](/img/Integrations/Sony/Sony-Venice/Venice-IP-setup.png)
 
 ### Venice Serial
 
-- Enter a custom number, name, etc.
-- Select **Sony** brand
-- Select **Sony Venice(Serial)** for the protocol
-- Select the CI0/RIO port on which your camera is plugged
+- Enter a camera number, name, etc.
+- Select **Sony** for brand.
+- Select **Sony Venice(Serial)** for protocol.
+- Select the CI0/RIO port the camera is connected to.
 
-<img src="/img/Integrations/Sony/Sony-Venice/Venice-Serial-block.png" width="300" />
-<br/>
-<img src="/img/Integrations/Sony/Sony-Venice/Venice-Serial-setup.png" width="300" />
+![Venice Serial RCP configuration block](/img/Integrations/Sony/Sony-Venice/Venice-Serial-block.png)
 
+![Venice Serial RCP setup form](/img/Integrations/Sony/Sony-Venice/Venice-Serial-setup.png)
 
 ## RCP operation
 
-### Overview
+![RCP main screen for Sony Venice](/img/Integrations/Sony/Sony-Venice/RCP/F29.BMP)
 
-<img src="/img/Integrations/Sony/Sony-Venice/RCP/F29.BMP"/>
+The exposure section and joystick give you access to iris, ISO, and shutter.
 
-On the exposure and joystick, you have access to iris, ISO, shutter.
+### Assignable keys
 
-### Assignables
+Customize the 10 buttons at the top of the RCP main screen via `MENU > SYSTEM > ASSIGN. > Set Buttons`. Keys 1–5 are unassigned (`NA`) by default.
 
-#### Keys
+![Venice assignable keys configuration](/img/Integrations/Sony/Sony-Venice/RCP/F40.BMP)
 
-You can customize the 10 buttons on top of the RCP main screen.
+Useful assignments:
+- **Lock button** as a shortcut to REC menus (replay, etc.) — the LED reflects REC status.
 
-This is accessible through : `MENU > SYSTEM > ASSIGN. > Set Buttons`.
+  ![Lock button as REC shortcut with LED indicator](/img/Integrations/Sony/Sony-Venice/RCP/F25.BMP)
 
-By default, keys 1-5 are not assigned to anything : `NA`.
+- Camera assignable buttons (1–4 and A–C, Home, Clips).
 
-You can assign them to something more meaningful like this:
+  ![Camera assignable buttons 1-4](/img/Integrations/Sony/Sony-Venice/RCP/F35.BMP)
 
-<img src="/img/Integrations/Sony/Sony-Venice/RCP/F40.BMP"/>
-
-So you have a quick access to:
-
-* Lock button is now a shortcut to REC menus (and replay, etc.) and the LED reflects the REC status.
-
-<img src="/img/Integrations/Sony/Sony-Venice/RCP/F25.BMP"/>
-
-* cam assignables buttons (1-4 and A-C, Home and Clips)
-
-<img src="/img/Integrations/Sony/Sony-Venice/RCP/F35.BMP"/>
-
-<img src="/img/Integrations/Sony/Sony-Venice/RCP/F36.BMP"/>
-
+  ![Camera assignable buttons A-C Home Clips](/img/Integrations/Sony/Sony-Venice/RCP/F36.BMP)
 
 Base ISO from the gain view:
 
-<img src="/img/Integrations/Sony/Sony-Venice/RCP/F37.BMP"/>
+![Base ISO selection in gain view](/img/Integrations/Sony/Sony-Venice/RCP/F37.BMP)
 
+Shutter angle/speed from the shutter view:
 
-Shutter Angle/speed from the shutter view:
-
-<img src="/img/Integrations/Sony/Sony-Venice/RCP/F38.BMP"/>
+![Shutter angle and speed controls in shutter view](/img/Integrations/Sony/Sony-Venice/RCP/F38.BMP)
 
 Test patterns from the test view:
 
-<img src="/img/Integrations/Sony/Sony-Venice/RCP/F39.BMP"/>
+![Test pattern selection in test view](/img/Integrations/Sony/Sony-Venice/RCP/F39.BMP)
 
+### Assignable encoders
 
+Customize the 4 encoders below the RCP main screen via `MENU > SYSTEM > ASSIGN. > Encoders`. Default assignments are gamma, saturation, detail, ND.
 
+![Default encoder assignments: gamma, saturation, detail, ND](/img/Integrations/Sony/Sony-Venice/RCP/F26.BMP)
 
-#### Encoders
+Default encoder layout on the main screen:
 
-You can customize the 4 encoders below the RCP main screen.
+![RCP main screen with default encoder assignments](/img/Integrations/Sony/Sony-Venice/RCP/F27.BMP)
 
+For cine-style cameras like the Venice, reassign to color temperature, tint, ND:
 
-This is accessible through : `MENU > SYSTEM > ASSIGN. > Encoders`.
+![Encoder assignment changed to color temp, tint, ND](/img/Integrations/Sony/Sony-Venice/RCP/F28.BMP)
 
-By default, the encoders are assigned to gamma, saturation, detail, ND.
+Updated encoder layout on the main screen:
 
-<img src="/img/Integrations/Sony/Sony-Venice/RCP/F26.BMP"/>
-
-So it looks like this on the main screen:
-
-<img src="/img/Integrations/Sony/Sony-Venice/RCP/F27.BMP"/>
-
-For cine-style cams like Venice, it's better to assign them to color temp, tint, ND.
-
-<img src="/img/Integrations/Sony/Sony-Venice/RCP/F28.BMP"/>
-
-So it looks like this on the main screen:
-
-<img src="/img/Integrations/Sony/Sony-Venice/RCP/F29.BMP"/>
-
-
+![RCP main screen with color temp, tint, ND encoder assignments](/img/Integrations/Sony/Sony-Venice/RCP/F29.BMP)

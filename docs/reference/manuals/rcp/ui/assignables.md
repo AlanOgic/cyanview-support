@@ -7,183 +7,162 @@ keywords: [RCP, UI, assignable, buttons, knobs, custom]
 slug: /reference/manuals/rcp/ui/assignables
 ---
 
-## Overview
+The RCP has 10 + 1 assignable buttons and 4 assignable encoders. You can customize the LOCK/PWR button, the 10 buttons above the main screen, and the 4 encoders below it.
 
-The RCP has 10 + 1 assignable buttons and 4 assignable encoders.
+![RCP top buttons layout](/img/Manual/RCP/RCP-buttons.png)
+![Assignable buttons overview screen](/img/Integrations/RED/RCP/F1.BMP)
+![RCP encoder layout](/img/Manual/RCP/RCP-encoders.png)
 
-You can customize:
-* the LOCK/PWR button
-* the 10 buttons on top of the RCP main screen
-* the 4 encoders below the RCP main screen
+Path: `MENU > SYSTEM > ASSIGN.`
 
-<img width="480px" src="/img/Manual/RCP/RCP-buttons.png"/>
-<img src="/img/Integrations/RED/RCP/F1.BMP"/>
-<img width="480px" src="/img/Manual/RCP/RCP-encoders.png"/>
+The first tab (**Buttons**) gives you an overview of the current button assignments.
 
-Path : `MENU > SYSTEM > ASSIGN.`
+![Buttons overview tab showing current assignments](/img/Manual/RCP/Assignables/F3.BMP)
 
-The first tab (`Buttons` gives you an overview of the current buttons assignments)
+In this example:
+- The LOCK button is assigned to `POWER`.
+- The first row has no assignments (`NA`).
+- The second row is assigned to SCENE, PAINT, CAMERA, LENS, SYSTEM.
 
-<img src="/img/Manual/RCP/Assignables/F3.BMP"/>
+To reset to defaults, press `ACTION` (top left button on the screen) and select **Reset to default**.
 
-You can see here that:
-* the LOCK button is assigned to `POWER`
-* the first line is assigned to anything (`NA`)
-* the second line is assigned to SCENE, PAINT, CAMERA, LENS, SYSTEM
-
-If you changed it and wants to get back to the default, you can click on `ACTION` (button on the top left of the screen):
-
-<img src="/img/Manual/RCP/Assignables/F5.BMP"/>
-
-And click on `Reset to default`
+![ACTION menu showing Reset to default option](/img/Manual/RCP/Assignables/F5.BMP)
 
 ## LOCK button
 
-Path : `MENU > SYSTEM > ASSIGN.`
+Path: `MENU > SYSTEM > ASSIGN.`
 
-Go in `Set Buttons` and turn the first encoder (`Button`) to select `LOCK`:
+Go to **Set Buttons** and turn the first encoder (`Button`) to select `LOCK`.
 
-<img src="/img/Manual/RCP/Assignables/F31.BMP"/>
+![LOCK button assignment screen](/img/Manual/RCP/Assignables/F31.BMP)
 
-You can then chose 2 shortcuts for the LOCK button:
-* `Power (view)` : typical use case in broadcast
-* `Record (view)` : typical use case in cinematic
+You can assign two shortcuts to the LOCK button:
 
-`view` means it's not a function and just a shortcut to a view, the list vary based on the selected button.
+- `Power (view)` — typical use in broadcast.
+- `Record (view)` — typical use in cinematic.
 
-If `Record` is selected:
-* The `LOCK` button LED will reflect the `REC` status of the camera displayed on RCP
-* Once clicked, it will redirect you to the record page (REC on/off, status, TC, etc.)
+`view` means the assignment navigates to a view rather than triggering a function.
 
-## Assignables buttons
+When `Record` is selected:
+- The LOCK button LED reflects the `REC` status of the camera shown on the RCP.
+- Pressing it takes you to the record page (REC on/off, status, TC, etc.).
 
-Path : `MENU > SYSTEM > ASSIGN.`
+## Assignable buttons
 
-Go in `Set Buttons` and turn the first encoder (`Button`) to select one of the 10 buttons:
+Path: `MENU > SYSTEM > ASSIGN.`
 
+Go to **Set Buttons** and turn the first encoder (`Button`) to select one of the 10 buttons.
 
-<img width="480px" src="/img/Manual/RCP/RCP-buttons.png"/>
+![RCP top buttons layout](/img/Manual/RCP/RCP-buttons.png)
+![Button assignment configuration screen](/img/Manual/RCP/Assignables/F4.BMP)
 
+After selecting a button and a shortcut:
+- Click `Assign` to link the button to the shortcut.
+- Click `Clear` to remove the shortcut.
 
-<img src="/img/Manual/RCP/Assignables/F4.BMP"/>
+Each button (1–10) can be set to any `view`, `menu`, or `function`:
+- `view` — navigates to a view (e.g., `REC` opens the record page).
+- `menu` — opens a submenu (e.g., `Paint Menu` opens the paint submenu).
+- `function` — executes an action.
 
-Once you have a button and a shortcut, you can click on:
-* `Assign` : to link button + shortcut
-* `Clear` : to remove the shortcut
+Available assignments:
 
-For every button (1-10), you can set any `view`, `menu` or `function`:
-* `view` : it will redirect you to a view (i.e. `REC` will redirect you to the record page)
-* `menu` : it will redirect you to a submenu (i.e. `Paint Menu` will redirect you to the paint submenu)
-* `function` : it will execute/trig a function/action
+| Assignment | Type |
+|---|---|
+| `Not assigned` | `NA` |
+| `Scene Menu` | menu |
+| `Scene Files` | view |
+| `Scene Config` | view |
+| `Paint Menu` | menu |
+| `Filters` | view |
+| `White` | view |
+| `Black` | view |
+| `Detail` | view |
+| `Skin Detail` | view |
+| `Matrix` | view |
+| `Gain` | view |
+| `Gamma` | view |
+| `Knee` | view |
+| `Shutter` | view |
+| `Color` | view |
+| `Look` | view |
+| `Denoise` | view |
+| `Camera Menu` | menu |
+| `Auto` | view |
+| `Menu` | view |
+| `User Keys` | view |
+| `Power` | view |
+| `Sensor` | view |
+| `Tally` | view |
+| `Test` | view |
+| `Lens Menu` | menu |
+| `Lens` | view |
+| `PTZF` | view |
+| `Preview` | view |
+| `Record` | view |
+| `System Menu` | menu |
+| `Assignable` | view |
+| `Display` | view |
+| `GPIO` | view |
+| `Info` | view |
+| `Units` | view |
+| `Priority` | view |
+| `Settings` | view |
+| `Toggle Cam / Post Priority` | func — toggles priority between `cam > post` or `post > cam` when combining camera and post processor |
+| `Toggle Camera usage` | func — toggles the camera when combining camera and post processor (keeps only the post) |
+| `Toggle Post processor usage` | func — toggles the post when combining camera and post processor (keeps only the camera) |
+| `Toggle Enable post processor` | func — toggles the post into passthrough mode when combining camera and post processor |
 
-The list:
-* `Not assigned` : `NA`
-* `Scene Menu (menu)`
-* `Scene Files (view)`
-* `Scene Config (view)`
-* `Paint Menu (menu)`
-* `Filters (view)`
-* `White (view)`
-* `Black (view)`
-* `Detail (view)`
-* `Skin Detail (view)`
-* `Matrix (view)`
-* `Gain (view)`
-* `Gamma (view)`
-* `Knee (view)`
-* `Shutter (view)`
-* `Color (view)`
-* `Look (view)`
-* `Denoise (view)`
-* `Camera Menu (menu)`
-* `Auto (view)`
-* `Menu (view)`
-* `User Keys (view)`
-* `Power (view)`
-* `Sensor (view)`
-* `Tally (view)`
-* `Test (view)`
-* `Lens Menu (menu)`
-* `Lens (view)`
-* `PTZF (view)`
-* `Preview (view)`
-* `Record (view)`
-* `System Menu (menu)`
-* `Assignable (view)`
-* `Display (view)`
-* `GPIO (view)`
-* `Info (view)`
-* `Units (view)`
-* `Power (view)`
-* `Priority (view)`
-* `Settings (view)`
-* `Toggle Cam / Post Priority (func)` : toggle priority between `cam > post` or `post > cam` when combining the camera and post processor
-* `Toggle Camera usage (func)` : toggle the camera when combining the camera and post processor (keep only the post)
-* `Toggle Post processor usage (func)` : toggle the post when combining the camera and post processor (keep only the camera)
-* `Toggle Enable post processor (func)` : toggle the post when combining the camera and post processor (the post is in passthrough mode)
-
-## Assignables encoders
+## Assignable encoders
 
 You can customize the 4 encoders below the RCP main screen.
 
-<img src="/img/Integrations/RED/RCP/F1.BMP"/>
-<img width="480px" src="/img/Manual/RCP/RCP-encoders.png"/>
+![Assignable encoders overview screen](/img/Integrations/RED/RCP/F1.BMP)
+![RCP encoder layout](/img/Manual/RCP/RCP-encoders.png)
 
+Path: `MENU > SYSTEM > ASSIGN.`
 
-Path : `MENU > SYSTEM > ASSIGN.`
+Go to **Set Encoders** and turn each encoder to the desired function.
 
-Go in `Set Encoders` and turn each encoder to the desired function.
-
-
-<img src="/img/Manual/RCP/Assignables/F8.BMP"/>
-<img width="480px" src="/img/Manual/RCP/RCP-encoders.png"/>
+![Encoder assignment configuration screen](/img/Manual/RCP/Assignables/F8.BMP)
+![RCP encoder layout](/img/Manual/RCP/RCP-encoders.png)
 
 Each encoder can be assigned to:
-* `--` : nothing / NA
-* `M. GAMMA`
-* `GAMMA`
-* `ND` (presets and variable)
-* `SATURATION`
-* `COLOR TEMP`
-* `DETAIL`
-* `TINT`
+- `--` (none)
+- `M. GAMMA`
+- `GAMMA`
+- `ND` (presets and variable)
+- `SATURATION`
+- `COLOR TEMP`
+- `DETAIL`
+- `TINT`
 
-Just moving the encoder change the assignation, saved automatically.
+Moving an encoder changes its assignment and saves it automatically.
 
-If you want to reset it, you can click on the top left button of the RCP screen (`ACTION`) and click on `Reset to default`:
+To reset to defaults, press the top-left button (`ACTION`) and select **Reset to default**.
 
-<img src="/img/Manual/RCP/Assignables/F6.BMP"/>
+![Encoder reset ACTION menu](/img/Manual/RCP/Assignables/F6.BMP)
 
-## Example
+## Example — RED Raptor
 
-### RED Raptor
+Path: `MENU > SYSTEM > ASSIGN.`
 
-Path : `MENU > SYSTEM > ASSIGN.`
+Button 1 set to toggle cam/post priority (useful when combining a RED Raptor with an AJA ColorBox, VP4, etc.):
 
-I setup the button 1 to toggle cam/post priority (useful if using a combo of RED Raptor + AJA colorbox, VP4, etc.):
+![RED Raptor — button 1 assigned to Toggle Cam/Post Priority](/img/Manual/RCP/Assignables/RED/F2.BMP)
 
-<img src="/img/Manual/RCP/Assignables/RED/F2.BMP"/>
+LOCK button set to Record menu (useful for cinematic cameras):
 
-I setup the LOCK button to Record menu (useful for every cinematic camera):
+![RED Raptor — LOCK button assigned to Record](/img/Manual/RCP/Assignables/RED/F3.BMP)
 
-<img src="/img/Manual/RCP/Assignables/RED/F3.BMP"/>
+Encoders set to saturation, color temp, and tint:
 
-So it looks like this:
+![RED Raptor — encoders assigned to saturation, color temp, tint](/img/Manual/RCP/Assignables/RED/F3.BMP)
 
-<img src="/img/Manual/RCP/Assignables/RED/F3.BMP"/>
+The main view showing the **white** (second row) assignable buttons at the top:
 
+![Main view with white button row visible](/img/Manual/RCP/Assignables/RED/F5.BMP)
 
-I also setup the encoders to saturation, color temp and tint:
+Tap the top of the screen to switch to the **blue** (first row) assignable buttons:
 
-<img src="/img/Manual/RCP/Assignables/RED/F3.BMP"/>
-
-So the main view looks like:
-
-<img src="/img/Manual/RCP/Assignables/RED/F5.BMP"/>
-
-You see on the top of the screen the `white` (second line) of assignables buttons.
-
-If you click on it (top of the screen), you now see the `blue` (first line) of assignables buttons.
-
-<img src="/img/Manual/RCP/Assignables/RED/F6.BMP"/>
-
+![Main view with blue button row visible](/img/Manual/RCP/Assignables/RED/F6.BMP)

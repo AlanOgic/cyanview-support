@@ -7,13 +7,15 @@ keywords: [cyanview, integrations, cameras, Sony, Canon, Panasonic, Blackmagic, 
 slug: /integrations
 ---
 
-# Camera and device integrations
+Connect and control over 100 camera models across 30+ manufacturers. Use the sections below to find setup instructions for your specific camera, lens, accessory, or broadcast system.
 
-Cyanview supports over 100 camera models across 30+ manufacturers. Find your camera or device below for specific connection and configuration instructions.
+:::tip Not sure where to start?
+Check the [generic guides](#generic-guides) first — they cover the underlying connection principles and apply to many devices, even those not listed by brand.
+:::
 
 ## Generic guides
 
-Start here if your camera or device is not listed by brand, or if you want to understand the general connection principles.
+These guides cover connection types and protocols rather than specific models. Start here if your device is not listed, or if you want to understand how Cyanview handles each signal type.
 
 - [Serial cameras](/docs/integrations/generic/serial-camera) — Sony 8-pin, LANC, VISCA RS-232/422
 - [IP cameras](/docs/integrations/generic/ip-camera) — Any camera with an Ethernet connection
@@ -33,9 +35,7 @@ Start here if your camera or device is not listed by brand, or if you want to un
 | [Blackmagic](/docs/integrations/cameras/blackmagic/blackmagic-camera-control) | URSA, Pocket Cinema, Micro — via SDI control |
 | [ARRI](/docs/integrations/cameras/arri/arri-sscp) | SSCP, CAP, cforce motors |
 
-### Other manufacturers
-
-AJA, Birddog, Bolin, BRRemote, Dreamchip, EVS, Grass Valley, Haivision, Ikegami, JVC, LanSee, Lawo, Marshall, Proton, RED, vMix, Zcam — see the [Other cameras](/docs/integrations/cameras/other/aja-rovocam) section.
+AJA, Birddog, Bolin, BRRemote, Dreamchip, EVS, Grass Valley, Haivision, Ikegami, JVC, LanSee, Lawo, Marshall, Proton, RED, vMix, and Zcam are covered in the [Other cameras](/docs/integrations/cameras/other/aja-rovocam) section.
 
 ## Lenses
 

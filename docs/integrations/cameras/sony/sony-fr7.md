@@ -7,115 +7,97 @@ keywords: [Sony FR7, PTZ, cinema, IP control, REMI]
 slug: /integrations/cameras/sony/sony-fr7
 ---
 
-<img src="/img/Integrations/Sony/Sony-FR7/FR7.png" width="400" />
+![Sony FR7 PTZ cinema camera](/img/Integrations/Sony/Sony-FR7/FR7.png)
+
+Control the Sony FR7 over IP with full paint, PTZ, lens, and tally from your Cyanview RCP. The integration combines the [Web app GUI](https://helpguide.sony.net/ilc/2240/v1/en/contents/TP1000669507.html) settings with the [s700 IP protocol](https://helpguide.sony.net/ilc/2240/v1/en/contents/TP1000954839.html) RCP functions.
 
 ## Camera control
 
-The FR7 control integration combines settings available from the [Web app GUI](https://helpguide.sony.net/ilc/2240/v1/en/contents/TP1000669507.html) together with the RCP functions available from the [s700 IP protocol](https://helpguide.sony.net/ilc/2240/v1/en/contents/TP1000954839.html)
+| Control | FR7 |
+|:--------|:----|
+| **White balance** (R/B and color temp) | ✔ |
+| **Exposure** (iris, gain, base ISO, EI, shutter, variable ND filter) | ✔ |
+| **Master black and black balance** | ✔ |
+| **Detail level and crispening** | ✔ |
+| **User matrix** | ✔ |
+| **Multi matrix** | ✔ |
+| **Knee** | ✔ |
+| **Green and red tally** | ✔ |
+| **Camera menu navigation** | ✔ |
+| **Lens** — [zoom, focus](/docs/reference/manuals/rcp/ui/scene) | ✔ |
+| **Pan/Tilt** — [from RCP touchscreen](/docs/reference/manuals/rcp/ui/scene) or [USB joystick](/docs/integrations/accessories/anxinshi-ptz-usb-joystick) | ✔ |
+| **Presets/Positions** — [save/recall](/docs/reference/manuals/rcp/ui/scene#save-and-load) | ✔ |
 
-|Control|FR7
-:-----|:-----|
-**White balance** (R/B and Color temp)|✔
-**Exposure** (Iris, Gain, Base ISO, EI, Shutter, Variable ND filter)|✔
-**Master Black and black balance** |✔
-**Detail level and crispening** |✔
-**User Matrix** |✔
-**Multi Matrix** |✔
-**Knee** |✔
-**Green and Red Tally**|✔
-**Camera Menu Navigation**|✔
-**Lens** <a href="/docs/reference/manuals/rcp/ui/scene">(zoom, focus)</a>|✔
-**Pan/Tilt** (<a href="/docs/reference/manuals/rcp/ui/scene">from RCP touchscreen</a> or <a href="/docs/integrations/accessories/anxinshi-ptz-usb-joystick">USB joystick</a>)|✔
-**Presets/Positions** : <a href="/docs/reference/manuals/rcp/ui/scene#saveload">save/recall</a>|✔
-
-Note that when the camera is set to SLOG-3 or CineEI, most paint controls are disabled by the camera.
+:::info
+When the camera is in SLOG-3 or CineEI mode, the camera disables most paint controls.
+:::
 
 ## Camera wiring
 
 ### With Sony PTZ panel
 
-The Sony PTZ panel is a wired remote control panel that can be used to control the pan, tilt and zoom of the camera.
+The Sony PTZ panel provides wired control of pan, tilt, and zoom. The Cyanview RCP runs shading in parallel, and a tablet can handle auto focus independently.
 
-The Cyanview RCP can control the shading in parallel with the PTZ panel.
+![FR7 wiring diagram with Sony PTZ panel](/img/Integrations/Sony/Sony-FR7/FR7-wiring.png)
 
-The Tablet can control the auto focus in parallel with the PTZ panel.
+- **RCP** — shading, tally, camera menu control
+- **PTZ panel** — pan, tilt, zoom
+- **Tablet** (optional) — auto focus
 
-<img src="/img/Integrations/Sony/Sony-FR7/FR7-wiring.png" width="600" />
+### With USB joystick
 
-:::note
-* RCP : for shading, tally, camera menu control
-* PTZ panel : for pan, tilt and zoom
-* Tablet (optional) : for auto focus
-:::
+A [USB joystick](/docs/integrations/accessories/anxinshi-ptz-usb-joystick) attached to the RCP handles pan, tilt, and zoom. When you navigate between cameras on the RCP, the joystick follows. A tablet can still control auto focus in parallel.
 
-### With USB Joystick
+![FR7 wiring diagram with USB joystick](/img/Integrations/Sony/Sony-FR7/FR7-wiring-USB.png)
 
-The USB joystick is a wired remote control panel that can be used to control the pan, tilt and zoom of the camera.
-
-The Cyanview RCP can control the shading and the PTZ using the USB joystick. If you have multiple cameras, the joystick/RCP are sync, you can navigate through all the camera and shade/PTZ them all.
-
-The Tablet can control the auto focus in parallel with the PTZ panel.
-
-<img src="/img/Integrations/Sony/Sony-FR7/FR7-wiring-USB.png" width="600" />
-
-:::note
-* RCP : for shading, tally, camera menu control
-* <a href="/docs/integrations/accessories/anxinshi-ptz-usb-joystick">USB joystick</a> : for pan, tilt and zoom
-* Tablet (optional ): for auto focus
-:::
-
+- **RCP** — shading, tally, camera menu control
+- **USB joystick** — pan, tilt, zoom
+- **Tablet** (optional) — auto focus
 
 ## Camera configuration
 
 :::warning
-This is based on the latest release of the RCP 23.8.1.
-
-You now need your Sony FR7 to be in firmware minimum 1.10 to be able to control it with the RCP.
+RCP firmware 23.8.1 or later and Sony FR7 firmware **1.10 or later** are required.
 :::
 
-Ensure your Sony FR7 is connected to your network and powered on.
-Ensure your camera has a static IP address and that your computer can navigate to the camera's web interface, and that you know the login/password.
+Ensure your FR7 is powered on, connected to your network, assigned a static IP address, and that you can reach its web interface.
 
 In `Settings > Technical > Tally`:
-* `Tally Lamp Brightness`: whatever you want
-* `G Tally Lamp` : `Enable`
-* `Tally Control` : `External`
+- `Tally Lamp Brightness` — set to your preference
+- `G Tally Lamp` — `Enable`
+- `Tally Control` — `External`
 
-<img src="/img/Integrations/Sony/Sony-FR7/FR7-setup-tally.png" width="600" />
-
+![FR7 tally settings in the web interface](/img/Integrations/Sony/Sony-FR7/FR7-setup-tally.png)
 
 In `Settings > Technical > RCP/MSU`:
-* `CNS Mode` : `Bridge`
+- `CNS Mode` — `Bridge`
 
-<img src="/img/Integrations/Sony/Sony-FR7/FR7-setup-RCP.png" width="600" />
+![FR7 RCP/MSU settings in the web interface](/img/Integrations/Sony/Sony-FR7/FR7-setup-RCP.png)
 
 In `Settings > Network > Brute Force Attack Protection`:
-* `Setting` : disable it
+- `Setting` — disable
 
-<img src="/img/Integrations/Sony/Sony-FR7/FR7-bruteforce.jpeg" width="600" />
+![FR7 brute force attack protection setting](/img/Integrations/Sony/Sony-FR7/FR7-bruteforce.jpeg)
 
 :::info
-If the `Brute Force Attack Protection` was active and you just disabled it. Ensure to:
-1. Disable it
-2. Power cycle your camera to ensure this parameter is properly set.
+If you just disabled Brute Force Attack Protection, power cycle the camera to apply the setting.
 :::
+
 ## RCP configuration
 
-Set up a new camera via the <a href="/docs/reference/manuals/rcp/web-ui">RCP Configuration UI</a>:
-- Enter a custom number, name, etc.
-- Select **Sony** brand
-- Select **Sony FR7** for the model
-- Enter the IP of your camera
-- Enter your login/password
+Add the camera in the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui):
+- Enter a camera number and name.
+- Select **Sony** brand.
+- Select **Sony FR7** model.
+- Enter the camera IP address.
+- Enter your login and password.
 
 :::note
-If your camera is in a different range than your RCP (i.e. not 10.192.0.0/16), follow <a href="/docs/guides/networking/ip-configuration">this guide</a> to add a new IP to the RCP.
+If your camera is on a different subnet from your RCP (not 10.192.0.0/16), follow the [IP configuration guide](/docs/guides/networking/ip-configuration) to add a route.
 :::
 
-This should look like this:
+![FR7 camera setup form in RCP configuration UI](/img/Integrations/Sony/Sony-FR7/FR7-setup.png)
 
-<img src="/img/Integrations/Sony/Sony-FR7/FR7-setup.png" width="300" />
+When connected successfully, the camera block turns green.
 
-And once correctly connected, it should be green:
-
-<img src="/img/Integrations/Sony/Sony-FR7/FR7-block.png" width="300" />
+![FR7 camera block showing green connected status](/img/Integrations/Sony/Sony-FR7/FR7-block.png)

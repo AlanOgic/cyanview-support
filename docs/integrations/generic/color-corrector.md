@@ -7,23 +7,17 @@ keywords: [color corrector, CCU, color grading, live color]
 slug: /integrations/generic/color-corrector
 ---
 
-# Color Correctors
-
-## Overview
-
-Connecting the RCP to your color corrector allows you to:
-* control each CC channel from the RCP instead of a web page
-* mix camera head control and color corrector control in a single camera
+Connecting the RCP to your color corrector lets you control each CC channel directly from the RCP, and optionally combine camera head control and color corrector control in a single camera slot.
 
 ## Supported devices
 
 * Blackmagic Teranex
 * Lawo VPro8
-* AJA FS serie (FS 2, FS 4, FS HDR)
+* AJA FS series (FS 2, FS 4, FS HDR)
 * AJA ColorBox and OG-ColorBox (OpenGear version)
-* FOR-A FA-1010 and FA-1616 (FA-1616 requires firmware version R3.30 or later)
-* EVS Neuron and some Synapse cards
-* Cobalt (support of a few of their cards)
+* FOR-A FA-1010 and FA-1616 (FA-1616 requires firmware R3.30 or later)
+* EVS Neuron and select Synapse cards
+* Cobalt (select cards)
 * Imagine SNP
 * Flanders BoxIO
 * VMix
@@ -31,93 +25,89 @@ Connecting the RCP to your color corrector allows you to:
 
 ## Wiring
 
-Connects your RCP to the same network.
+Connect your RCP to the same network as the color corrector.
 
-<img src="/img/Integrations/Generic/CC/CC-wiring.png" width="900"/>
+![Color corrector wiring diagram](/img/Integrations/Generic/CC/CC-wiring.png)
 
 ## Setup
 
-Navigate to your [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui).
+Open your [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui).
 
-If your color corrector is not in the default range `10.192.0.0/16`, check [this guide](/docs/guides/networking/ip-configuration) to ensure your RCP can communicate with it.
+If your color corrector is outside the default `10.192.0.0/16` range, follow the [IP configuration guide](/docs/guides/networking/ip-configuration) to ensure the RCP can reach it.
 
-In the `Configuration` tab, in the `Components` section, click on `+`.
+In the `Configuration` tab, under `Components`, click `+`, then select `Video Processor`. Choose your color corrector from the list.
 
-Select `Video Processor`. In the list, select your color corrector.
+Click the new block that appears on the right:
 
-A new block should appear, click on it, on the right side:
+![Color corrector setup panel](/img/Integrations/Generic/CC/CC-setup.png)
 
-<img src="/img/Integrations/Generic/CC/CC-setup.png" width="300"/>
+* **Step 1** — enter a name for the color corrector (optional)
+* **Step 2** — enter the device IP address
 
-- [step 1] chose a name for your color corrector (optional)
-- [step 2] enter the IP of your device
+When connected successfully, the block turns green:
 
-If everything goes well, your block shoud turn green:
+![Color corrector block — green](/img/Integrations/Generic/CC/CC-block.png)
 
-<img src="/img/Integrations/Generic/CC/CC-block.png" width="300"/>
+### Color corrector only
 
+To control a CC channel without a camera head:
 
-### Color corrector channel alone
+1. Create a new camera with a number and a name.
+2. Set `Camera Head` to `Not controlled`.
+3. Under `Video Processor`, select your CC and channel in the format `NAME:CHANNEL_ID`.
 
-To control a CC channel:
-* Create a new camera, with a number and a name
-* Select `Not controlled` in the `Camera Head`
-* Select your CC and channel in the `Video processor` section
-* The format is: `NAME:CHANNEL_ID`
+Your configuration should look like this:
 
-It should look like this:
+![CC-only camera setup](/img/Integrations/Generic/CC/CC-alone-setup.png)
 
-<img src="/img/Integrations/Generic/CC/CC-alone-setup.png" width="300"/>
+When connected, the block turns green:
 
-And if everything is fine, the block should appear `green`:
-
-<img src="/img/Integrations/Generic/CC/CC-alone-block.png" width="300"/>
+![CC-only block — green](/img/Integrations/Generic/CC/CC-alone-block.png)
 
 ### Color corrector combined with camera control
 
-To control both a camera and the CC combined:
-* Create a new camera, with a number and a name
-* Select the your camera brand and model in the list
-* Select your CC and channel in the `Video processor` section
-* The format is: `NAME:CHANNEL_ID`
+To control both a camera and a CC together:
 
-It should look like this:
+1. Create a new camera with a number and a name.
+2. Select your camera brand and model.
+3. Under `Video Processor`, select your CC and channel in the format `NAME:CHANNEL_ID`.
 
-<img src="/img/Integrations/Generic/CC/CC-combined-setup.png" width="300"/>
+Your configuration should look like this:
 
-And if everything is fine, the block should appear `green`:
+![Combined camera + CC setup](/img/Integrations/Generic/CC/CC-combined-setup.png)
 
-<img src="/img/Integrations/Generic/CC/CC-combined-block.png" width="300"/>
+When connected, the block turns green:
+
+![Combined block — green](/img/Integrations/Generic/CC/CC-combined-block.png)
 
 ### RCP operation
 
-By default, camera head control has priority over CC control.
-For example, on a camera that only have white controls:
-* if you touch the gain on the RCP, we will send it to the camera
-* if you touch the blacks, we will send it to the CC
+By default, camera head control takes priority over CC control. For example, on a camera with white controls only:
+* Adjusting gain on the RCP sends the command to the camera.
+* Adjusting blacks sends the command to the CC.
 
-In this case, 3 new buttons will appear on your RCP:
-* `CAM` to toggle the camera head control
-* `POST` to toggle the CC control
-* `C->P` | `P->C` to change the camera/CC control priority
+Three buttons appear on the RCP when a CC is configured:
+* `CAM` — toggle camera head control
+* `POST` — toggle CC control
+* `C->P` / `P->C` — switch priority between camera and CC
 
-#### RCP : Camera and CC combined by default
+#### Camera and CC combined (camera priority)
 
-<img src="/img/Manual/VP4/VP4-postpro-camera-combined.png" width="250" />
+![RCP — camera and CC combined, camera priority](/img/Manual/VP4/VP4-postpro-camera-combined.png)
 
-Combine camera and CC, camera has priority (CC only compensate what the camera has not)
+Camera and CC are both active. Camera has priority — the CC compensates only what the camera does not handle.
 
-#### RCP : Camera only
+#### Camera only
 
-<img src="/img/Manual/VP4/VP4-cam-only.png" width="250" />
+![RCP — camera only](/img/Manual/VP4/VP4-cam-only.png)
 
-#### RCP : CC only
+#### CC only
 
-<img src="/img/Manual/VP4/VP4-postpro-camera-only.png" width="250" />
+![RCP — CC only](/img/Manual/VP4/VP4-postpro-camera-only.png)
 
-#### RCP : Camera and CC, CC has priority over camera
+#### Camera and CC combined (CC priority)
 
-<img src="/img/Manual/VP4/VP4-postpro-camera-postpro.png" width="250" />
+![RCP — camera and CC combined, CC priority](/img/Manual/VP4/VP4-postpro-camera-postpro.png)
 
-* `P->C` stands for Post (processing) over Camera control
-* `C->P` stands for Camera over Post (processing) control
+* `P->C` = Post (processing) over Camera
+* `C->P` = Camera over Post (processing)

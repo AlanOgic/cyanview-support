@@ -7,81 +7,72 @@ keywords: [vMix, software production, tally, switching]
 slug: /integrations/broadcast-systems/vmix
 ---
 
-## Overview
+![vMix logo](/img/Integrations/VMIX/vmix-logo.png)
 
-<img src="/img/Integrations/VMIX/vmix-logo.png" width="200"/>
-
-You can integrate the RCP with VMix.
-It will give you:
-* Tally input
-* Switching aux output to sync RCP
-* Color correction
+Integrate your RCP with vMix to get tally input, aux switching output for RCP sync, and color correction control — all from a single connection.
 
 ## Wiring
 
-<img src="/img/Integrations/VMIX/vmix-wiring.png" width="500"/>
+![vMix wiring diagram showing RCP and vMix computer on the same network](/img/Integrations/VMIX/vmix-wiring.png)
 
-Connect the RCP and the VMix on the same network.
+Connect the RCP and the vMix computer to the same network.
 
 ## Setup
 
-Ensure your RCP has a matching IP with your VMix computer.
-You can setup a new IP in the RCP [here](/docs/guides/networking/ip-configuration#lan-configuration).
+Before configuring vMix, ensure your RCP's IP address is reachable from the vMix computer. See the [IP configuration guide](/docs/guides/networking/ip-configuration#lan-configuration) if you need to change it.
 
 ### Router
 
-<img src="/img/Integrations/VMIX/vmix-router-setup.png" width="200"/>
+![vMix router setup panel](/img/Integrations/VMIX/vmix-router-setup.png)
 
-- [step 1] : setup a name (optional)
-- [step 2] : setup the IP of your VMix computer, ensure the RCP can reach the computer ( [IP guide](/docs/guides/networking/ip-configuration#lan-configuration) )
-- [step 3] : link your cameras to the matching VMix input
-- [step 4] : link your RCP with an auxiliary output
+1. Enter a name for the router (optional).
+2. Enter the IP address of your vMix computer. Confirm the RCP can reach it — see the [IP guide](/docs/guides/networking/ip-configuration#lan-configuration) if needed.
+3. Link each camera to its matching vMix input.
+4. Link your RCP to an auxiliary output.
 
-Now, your RCP is configured with your VMix.
+Your RCP is now configured to follow vMix routing.
 
-<img src="/img/Integrations/VMIX/vmix-router-block.png" width="200"/>
+![vMix router block diagram](/img/Integrations/VMIX/vmix-router-block.png)
 
-When you will change the camera on the RCP, the aux output selected will follow
+When you switch the active camera on the RCP, the selected aux output updates to match.
 
 ### Tally input
 
-Follow the step above to configure VMix as a router.
+First complete the router setup above, then configure tally as follows.
 
-Then, in the `Tally` section of the `VMix router`, enter:
-* **AUTO** in `Red Tally Sources`
-* **AUTO** in `Green Tally Sources`
+In the `Tally` section of the `vMix router`, set:
 
-<img src="/img/Integrations/VMIX/vmix-tally-setup.png" width="200"/>
+- **AUTO** in `Red Tally Sources`
+- **AUTO** in `Green Tally Sources`
 
-This will give you a **green tally** for the `preview` and **red tally** for the `live`.
+![vMix tally setup panel](/img/Integrations/VMIX/vmix-tally-setup.png)
 
-If you have a different setup, instead of `AUTO`, you can enter any of the VMix output name: `Output`, `Preview`, `1`, `2`, etc.
+This gives you a **green tally** for `preview` and a **red tally** for `live`.
 
-If you need more tally output, you can check [this page](/docs/guides/tally/tally)
+For custom tally routing, replace `AUTO` with any vMix output name: `Output`, `Preview`, `1`, `2`, etc.
+
+:::tip
+Need more tally outputs? See the [tally configuration page](/docs/guides/tally/tally).
+:::
 
 ### Color correction
 
-<img src="/img/Integrations/VMIX/vmix-ccu-setup.png" width="200"/>
+![vMix CCU setup panel](/img/Integrations/VMIX/vmix-ccu-setup.png)
 
-Enter:
-* Name (optional)
-* IP
+Enter a name (optional) and the IP address of your vMix computer. Your RCP now has control over vMix color correction.
 
-Now your RCP has control on the VMix color correction
+![vMix CCU block in the RCP interface](/img/Integrations/VMIX/vmix-ccu-block.png)
 
-<img src="/img/Integrations/VMIX/vmix-ccu-block.png" width="200"/>
+Click an existing camera to assign a vMix channel to it:
 
-You can now click on an existing camera:
+![Camera CCU before assignment — no video processor selected](/img/Integrations/VMIX/vmix-cam-ccu-before.png)
 
-<img src="/img/Integrations/VMIX/vmix-cam-ccu-before.png" width="200"/>
+When no video processor is selected, the RCP does not control any camera through vMix — it only has color correction access. You can combine camera head control with vMix color correction on the same camera slot.
 
-Here, not controlled, means we don't control any camera, just the VMix color correction.
-You can combine camera head control and VMix color correction.
+In the right menu, scroll to `Video Processor` and select a vMix channel:
 
-In the right menu, scroll to `Video Processor`, select one of your VMix channel:
+![Camera CCU setup — selecting a vMix channel](/img/Integrations/VMIX/vmix-cam-ccu-setup.png)
 
-<img src="/img/Integrations/VMIX/vmix-cam-ccu-setup.png" width="200"/>
+RCP `cam 1` now controls vMix channel 1.
 
-Now you control VMix channel 1 on your RCP `cam 1`
-
-<img src="/img/Integrations/VMIX/vmix-cam-ccu-after.png" width="200"/>
+![Camera CCU after assignment — vMix channel 1 active](/img/Integrations/VMIX/vmix-cam-ccu-after.png)

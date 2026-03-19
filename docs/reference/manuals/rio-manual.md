@@ -7,40 +7,29 @@ keywords: [RIO, manual, installation, gateway, configuration]
 slug: /reference/manuals/rio-manual
 ---
 
-# RIO
+Pronounce [rɪəʊ]. The RIO is an upgraded [RIO +LAN](/docs/reference/manuals/rio-live-manual) with support for an unlimited number of cameras and free cloud access for remote production and remote control over 4G or any WAN connection.
 
-<img src="/img/Manual/RIO/rio.jpeg" width="600"/>
+:::tip
+You can upgrade a RIO +LAN to a RIO at any time — it is a one-time licence fee, no hardware swap needed.
+:::
 
-## Introduction
+![RIO gateway device](/img/Manual/RIO/rio.jpeg)
 
-Pronounce \[rɪəʊ\].
+## Setup and wiring
 
-The RIO is a [RIO Live](/docs/reference/manuals/rio-live-manual) with:
-* Unlimited number of camera (RIO Live is limited to a single camera)
-* Unlimited/Free cloud access for remote production and remote control (4G, etc.)
+The setup is identical to the [RIO +LAN](/docs/reference/manuals/rio-live-manual), with one key difference: the RCP/RIO link works on both LAN and WAN (through the cloud) without any configuration change.
 
-You can upgrade a RIO Live to a RIO, it is just a licence, one time fee.
+To set up the RIO with an RCP:
 
-## Setup/Wiring
+1. Configure the camera on your [RIO web UI](/docs/reference/manuals/rcp/web-ui).
+2. Set a tag/group on your RIO.
+3. Set the same tag/group on your RCP.
+4. Import the camera from your RIO into your RCP.
 
-The setup is exactly the same as the [RIO Live](/docs/reference/manuals/rio-live-manual).
-
-Except that the RCP/RIO link will work on LAN and WAN (through cloud) without any change in the configuration.
-
-To setup RIO with a RCP:
-* Setup the camera on your [RIO web UI](/docs/reference/manuals/rcp/web-ui)
-* Setup a tag/group in your RIO
-* Setup the same tag/group in your RCP
-* Import the camera from your RIO in your RCP
-
-From there, you will have control of the camera from your RCP.
-
-You can find more information about this pairing on [this page](/docs/guides/networking/remi).
-
-The REMI is the way RCP/RIO Live are paired and work together.
+Your RCP now has full control of the camera. See the [REMI pairing guide](/docs/guides/networking/remi) for more details on how RCP and RIO work together.
 
 ## Dimensions
 
-Download [PDF](/img/Manual/RIO/CY-RIO-assembly.pdf) and [STEP](/img/Manual/RIO/CY-RIO-assembly.step) files.
+Download the [PDF](/img/Manual/RIO/CY-RIO-assembly.pdf) or [STEP](/img/Manual/RIO/CY-RIO-assembly.step) file for mechanical drawings.
 
-[<img alt="CY-RIO-assembly.png" src="/img/Manual/RIO/CY-RIO-assembly.png"  width="500"/>](/img/Manual/RIO/CY-RIO-assembly.pdf)
+[![RIO assembly drawing](/img/Manual/RIO/CY-RIO-assembly.png)](/img/Manual/RIO/CY-RIO-assembly.pdf)

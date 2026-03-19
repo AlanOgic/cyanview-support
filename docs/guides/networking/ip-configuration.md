@@ -7,166 +7,126 @@ keywords: [IP, network, LAN, WAN, configuration]
 slug: /guides/networking/ip-configuration
 ---
 
-Cyanview devices *communication* relies on **IP Network**.
+All Cyanview device communication relies on IP networking.
 
-<!--img alt="cyanview-support-IP-Configuration-Basic" src="/img/diagrams/IP-Configuration-Basic@2x-8.png" width="650" /-->
+![IP configuration connections requirement diagram](/img/diagrams/IP-Configuration-Basics-connections-requirement@2x-8.png)
 
-<img alt="cyanview-support-IP-Configuration-Basics-connections-requirement" src="/img/diagrams/IP-Configuration-Basics-connections-requirement@2x-8.png" width="650" />
+## Find your device's IP
 
-## Find device's IP
+There are several ways to find your device's network IP.
 
-There are several ways to find your device's **Network IP**.
+**Derive from the serial number**
 
-- **Deduce IP from the device Serial Number**
+The default IP and subnet mask follow this pattern: **IP** = `10.192.x.y`, **subnet mask** = `255.255.0.0` (/16), where **x** and **y** are the last two numbers of the serial number.
 
- The default *IP* and *Subnet Mask* of the Cyanview devices has the following pattern: **IP**= 10.192.**x**.**y** and **Subnet Mask**= 255.255.0.0 (or /16) where **x**, **y** are the two last numbers of the serial number.
+![RCP serial number label location](/img/productGfx/RCP/cyanview-support-faq-RCP-Serial-Number-sn@2x-8.png)
 
-  <img alt="cyanview-support-faq-RCP-Serial-Number-sn" src="/img/productGfx/RCP/cyanview-support-faq-RCP-Serial-Number-sn@2x-8.png" width="500" />
+Example:
+- **Serial number:** `CY-RCP-25-250`
+- **IP:** `10.192.25.250`
+- **Subnet mask:** `255.255.0.0`
+- **mDNS:** `http://cy-rcp-25-250.local`[^1]
 
-  - **SN**: CY-RCP-**25**-**250**
-  - **IP**: 10.192.**25**.**250**
-  - **Subnet Mask**: 255.255.0.0
-  - **mDNS** : http://cy-rcp-25-250.local<sup>1</sup>
-1. requires a DHCP supporting mDNS (multicast DNS). If `Bonjour` is working, mDNS is working.
-
+[^1]: Requires a DHCP server that supports mDNS (multicast DNS). If Bonjour works, mDNS works.
 
 ## LAN configuration
 
-<img src="/img/diagrams/IP-Configuration-Add-IP-To-Connect-To-Ressources@2x-8.png" width="600" />
+![Diagram showing RCP adding an IP to communicate with an IP camera or router](/img/diagrams/IP-Configuration-Add-IP-To-Connect-To-Ressources@2x-8.png)
 
-Use case:
-* You have a RCP and an IP camera or an IP router
-* They need to communicate with each other
-* You don't want to change your camera/router IP
+Use case: you have an RCP and an IP camera or router on the same network and need them to communicate without changing the camera or router IP.
 
-In the `Configuration` tab, click on `IP Connections`:
+1. In the `Configuration` tab, click `IP Connections`:
 
-<img src="/img/Configuration/Network/Network-IP-block.png" width="600" />
+   ![IP Connections block in the Configuration tab](/img/Configuration/Network/Network-IP-block.png)
 
-On the right panel:
-* Click on `+` of the `LAN connections` block
-* Select `LAN1`
-* Enter a new IP and mask for your RCP
+2. In the right panel, click `+` in the `LAN connections` block.
+3. Select `LAN1`.
+4. Enter a new IP and subnet mask for your RCP.
 
-<img src="/img/Configuration/Network/Network-RCP-LAN-non-persist.png" width="300" />
+   ![LAN configuration form showing IP and mask fields (non-persistent)](/img/Configuration/Network/Network-RCP-LAN-non-persist.png)
 
-Now, your RCP:
-* is reachable on `10.10.115.2`
-* can reach all devices on the network `10.10.115.0/24` (from `10.10.115.1` to `10.10.115.254`)
-* in particular the PTZ at `10.10.115.1`
+Your RCP is now:
+- Reachable at `10.10.115.2`.
+- Able to reach all devices on `10.10.115.0/24` (from `10.10.115.1` to `10.10.115.254`).
+- Able to communicate with the PTZ at `10.10.115.1`.
 
 ## LAN web UI access
 
-<img src="/img/diagrams/IP-Configuration-Add-IP-To-RCP-To-Join-Subnet@2x-8.png" width="600" />
+![Diagram showing RCP adding IP to join a corporate subnet for web UI access](/img/diagrams/IP-Configuration-Add-IP-To-RCP-To-Join-Subnet@2x-8.png)
 
-Use case:
-* You have a RCP
-* You have a computer
-* You need to access the RCP web UI from the corporate network (not the factory IP of the RCP)
+Use case: you want to access the RCP web UI from a corporate network without using the factory IP.
 
-In the `Configuration` tab, click on `IP Connections`:
+1. In the `Configuration` tab, click `IP Connections`.
+2. In the right panel, click `+` in the `LAN connections` block.
+3. Select `LAN1`.
+4. Enter a new IP and subnet mask for your RCP.
+5. Tick `persist`.
 
-<img src="/img/Configuration/Network/Network-IP-block.png" width="600" />
+   ![LAN configuration form showing corporate IP with persist option enabled](/img/Configuration/Network/Network-RCP-corporate.png)
 
-On the right panel:
-* Click on `+` of the `LAN connections` block
-* Select `LAN1`
-* Enter a new IP and mask for your RCP
-* Click on `persist`
-
-<img src="/img/Configuration/Network/Network-RCP-corporate.png" width="300" />
-
-Now, your RCP:
-* is reachable on `172.16.0.115`
-* can reach all devices on the network `172.16.0.0/24` (from `172.16.0.1` to `172.16.0.254`)
-* in particular from your computer (which has the IP `172.16.0.114`)
-* this IP is marked as `persist`, this will stay even if you reset your config or upgrade the OS with a SWU
+Your RCP is now:
+- Reachable at `172.16.0.115`.
+- Able to reach all devices on `172.16.0.0/24`.
+- Accessible from your computer at `172.16.0.114`.
+- Configured with a **persistent** IP — this address survives configuration resets and system updates.
 
 :::note
-It is interesting to setup a static IP on your RCP and computer. This way your computer can easily access your RCP web UI.
-To setup a static IP on your computer (Windows and Mac OSX), you can follow this [guide](https://kb.netgear.com/27476/How-do-I-set-a-static-IP-address-in-Windows)
+Setting a static IP on both your RCP and computer makes web UI access predictable. Follow [this guide](https://kb.netgear.com/27476/How-do-I-set-a-static-IP-address-in-Windows) for Windows and Mac.
 :::
 
 ## WAN setup
 
-By default, all our devices will connect to internet using DHCP.
+By default, all Cyanview devices connect to the internet via DHCP. If your network requires a static WAN configuration, follow these steps.
 
-You can change that if your network setup needs a static setup (IP, mask and gateway).
+1. In the `Configuration` tab, click `IP Connections`.
+2. In the right panel, click `+` in the `WAN connections` block.
+3. Select `LAN1`.
+4. Enter the IP, mask, gateway, and a DNS server (e.g., Google's `8.8.8.8`).
+5. Tick `persist`.
 
-In the `Configuration` tab, click on `IP Connections`:
+   ![WAN configuration form showing IP, mask, gateway, and DNS fields](/img/Configuration/Network/Network-WAN-static.png)
 
-<img src="/img/Configuration/Network/Network-IP-block.png" width="600" />
-
-On the right panel:
-* Click on `+` of the `WAN connections` block
-* Select `LAN1`
-* Enter a new IP and mask for your RCP
-* Enter the gateway of your router
-* Enter a valid DNS server/relay (you can use google ones : `8.8.8.8`)
-* Click on `persist`
-
-<img src="/img/Configuration/Network/Network-WAN-static.png" width="300" />
-
-Now, your RCP:
-* is reachable on `192.168.8.100`
-* can reach all devices on the network `192.168.8.0/24` (from `192.168.8.1` to `192.168.8.254`)
-* can connect to internet using the router located at `192.168.8.1`
-* using DNS server `8.8.8.8`
-* this IP is marked as `persist`, this will stay even if you reset your config or upgrade the OS with a SWU
+Your RCP is now:
+- Reachable at `192.168.8.100`.
+- Connected to the internet through the router at `192.168.8.1`.
+- Using DNS server `8.8.8.8`.
+- Configured with a **persistent** IP.
 
 ## Route setup
 
-Use case, you need to access a specific network through a specific router.
+Use case: you need to reach a specific network through a specific router.
 
-In the `Configuration` tab, click on `IP Connections`:
+1. In the `Configuration` tab, click `IP Connections`.
+2. In the right panel, click `+` in the `Routes` block.
+3. Select `LAN1`.
+4. Enter the gateway, destination network, and network mask. The gateway must already be reachable by the RCP.
 
-<img src="/img/Configuration/Network/Network-IP-block.png" width="600" />
+   ![Route configuration form showing gateway, destination network, and mask fields](/img/Configuration/Network/Network-Route.png)
 
-On the right panel:
-* Click on `+` of the `Routes` block
-* Select `LAN1`
-* Enter the gateway (this gateway should be reachable by the RCP)
-* Enter the network destination
-* Enter the network mask
-
-<img src="/img/Configuration/Network/Network-Route.png" width="300" />
-
-Now, your RCP
-* can reach the network `192.168.9.1/24`
-* the trafic for this network is routed to `192.168.8.1`
+Your RCP can now reach network `192.168.9.1/24`, with traffic routed through `192.168.8.1`.
 
 ## USB dongles
 
-We support a wide range of USB ethernet dongles.
-This allows you to have physically separated networks.
+Cyanview supports a wide range of USB Ethernet dongles, allowing you to connect to physically separate networks. Dongles appear alongside `LAN1` in the interface dropdown when connected.
 
-In the web UI, they will appear allongside `LAN1` in the dropdown list.
-
-<img src="/img/Configuration/Network/Network-USB.png" width="300" />
+![USB Ethernet dongle interface appearing in the LAN dropdown](/img/Configuration/Network/Network-USB.png)
 
 ## Network overview
 
-You can navigate to the `Diagnotics` tab.
+Open the `Diagnostics` tab for an overview of all IP addresses across all interfaces, including DHCP-assigned addresses.
 
-<img src="/img/Configuration/Network/Network-diagnostics-tab.png" width="600" />
+![Diagnostics tab navigation](/img/Configuration/Network/Network-diagnostics-tab.png)
 
-And here, you have an overview of all your IP's for all the interfaces (including DHCP addresses, etc.).
+![Diagnostics panel showing all IP addresses per interface](/img/Configuration/Network/Network-diagnostics.png)
 
-<img src="/img/Configuration/Network/Network-diagnostics.png" width="300" />
-
-Here in my example, my RCP has:
-* a factory IP : `10.192.18.4` (based on serial number `cy-rcp-18-4`)
-* a DHCP address : `192.168.88.30`
+In this example, the RCP has:
+- Factory IP: `10.192.18.4` (from serial number `cy-rcp-18-4`)
+- DHCP-assigned IP: `192.168.88.30`
 
 ## Internet check
 
-You can navigate to the `Admin` tab.
+Open the `Admin` tab and wait a few seconds for the connectivity check to complete (up to a minute if there are network issues). If all items in the `Connectivity check` block are green, you have internet access.
 
-<img src="/img/Configuration/Network/Network-admin-tab.png" width="600" />
+![Admin tab navigation](/img/Configuration/Network/Network-admin-tab.png)
 
-Wait some time (usually a couple of seconds if everything is OK, up to a minute if you have network issues).
-
-And in the `Connectivity check` block, if everything is green, you're connected to internet.
-
-<img src="/img/Configuration/Network/Network-connectivity-check.png" width="300" />
-
+![Connectivity check block showing all green indicators](/img/Configuration/Network/Network-connectivity-check.png)

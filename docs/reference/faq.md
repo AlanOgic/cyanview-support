@@ -7,61 +7,73 @@ keywords: [FAQ, questions, answers, help, common issues]
 slug: /reference/faq
 ---
 
-## Can the CIO power a camera from PoE only?
+Common questions about CI0 power, networking, IP configuration, device discovery, and tally. If you don't find what you need here, email **support@cyanview.com**.
 
-Yes, the CI0 can typically power and control one mini-camera on each port. The CI0 is not meant to power larger camcorders that typically run on batteries or supply and in this case the control cable will not include power. For some camcorders like Sony ENG cameras, the CI0 will be powered from the camera in which case power doesn't have to be provided by PoE or external (the right cable is necessary for this). You can find more information on power here in the [CI0 Manual](/docs/reference/manuals/ci0/ci0-manual).
+## Can the CI0 power a camera from PoE only?
 
-## How many CIO's can one RCP control?
+Yes. The CI0 can typically power and control one mini-camera on each port.
 
-There's no limitation. You can use as much CI0 as needed.
+It is not designed to power larger camcorders that run on batteries or an external supply — in those cases, the control cable carries no power. With some camcorders (such as Sony ENG cameras), the camera powers the CI0 instead, so neither PoE nor an external supply is required. The correct cable is essential for this to work.
 
-## In multi RCP and multi CIO on one network, how is the addressing/numbering done, can any CIO be controlled from any RCP?
+For full power details, see the [CI0 manual](/docs/reference/manuals/ci0/ci0-manual).
 
-Only **one** RCP can control a CI0 and the camera(s) connected on it. The pairing happens once the CI0 is used in the configuration of any of the RCP in which case it becomes unavailable to the other RCPs until removed from the configuration.
-If one camera has to be controlled from multiple RCPs, we have multi-operator workflows using the CY-GWY or upcoming options using a distributed architecture for remote production.
+## How many CI0s can one RCP control?
 
+There is no limit. You can connect as many CI0 units as your setup requires.
 
-## I would like to set my own IP addresses, is this possible?
+## In a multi-RCP, multi-CI0 network, can any CI0 be controlled from any RCP?
 
-The RCP, GWY and RIO can be configured with multiple IP addresses and the default route for internet access can be changed as from releases 21. Typically multiple IPs are useful to reach a range of IP cameras (typically PTZ), a technical network, change the internet access from DHCP to static or add special routes for VPNs or vlans. See [IP Configuration](/docs/guides/networking/ip-configuration).
-You can't remove the factory IP though as it is used to control devices on the local network like a CI0. The CI0 IP can't be changed at this stage, we have plans to allow that in the future but in all cases a CI0 is not the right device to go over latency networks such as VPNs. A RIO is typically used in these cases.
+No. Only **one** RCP can control a given CI0 and its connected cameras. Once you add a CI0 to an RCP configuration, it becomes unavailable to all other RCPs until you remove it from that configuration.
 
+If you need a single camera accessible from multiple RCPs, use the CY-GWY multi-operator workflow or the upcoming distributed architecture for remote production.
 
-## Is there documentation on the GPIO-8 cable to make it by ourselves?
+## Can I set my own IP addresses?
 
-The GPIO-8 is an active cable with electronic components and IDs for auto-detection.
+Yes, from release 21 onward. The RCP, GWY, and RIO each support multiple IP addresses, and you can change the default route for internet access. Common use cases include:
 
+- Reaching a range of IP cameras (typically PTZ)
+- Connecting to a technical network
+- Switching from DHCP to a static address
+- Adding routes for VPNs or VLANs
 
-## Can different camera models with different control protocols be controlled by the same RCP system?
+See [IP configuration](/docs/guides/networking/ip-configuration) for step-by-step instructions.
 
-Yes, all protocols we support can be mixed on a single controller, even the CI0 can use different protocols on each port.
+:::caution
+You cannot remove the factory IP address — it is required to control local devices such as the CI0. The CI0 IP address is not user-configurable. Because the CI0 is not suited to high-latency networks (VPNs, WAN links), use a RIO in those scenarios instead.
+:::
 
+## Is there documentation on the GPIO-8 cable so I can build my own?
 
-## What is discovery?
+No. The GPIO-8 is an active cable with embedded electronic components and ID circuits for auto-detection. It cannot be replicated with a standard cable.
 
-Cyanview device have an automatic discovery functionality.
+## Can I mix different camera models and control protocols on one RCP?
 
-RCP will discover Cyanview devices connected to the network.
+Yes. The RCP supports all Cyanview-compatible protocols simultaneously. The CI0 itself can run a different protocol on each port, so you can control a mixed fleet from a single controller.
 
-When connecting a new Cyanview device to the network, it is automatically discovered by the already present RCP.
+## What is device discovery?
 
-The discovery page displays the list of the discovered devices.
+Cyanview devices support automatic discovery. When you connect a new Cyanview device to the network, any RCP already on the same network detects it automatically.
 
-This allows easy network configurations verification.
+The **Discovery** page in the RCP interface lists all discovered devices, making it easy to verify your network configuration at a glance.
 
-## What is RCP dashboard?
+:::tip
+Use the discovery page as a quick sanity check whenever you add or move a device on the network.
+:::
 
-The *dashboard* page is an extended monitoring page.
+## What is the RCP dashboard?
 
-URL: `[Cy-RCP IP/DNS name]:5000`
+The dashboard is an extended monitoring page for the RCP. Access it at:
 
-From the *dashboard* page, you can:
+```
+http://[RCP-IP-or-hostname]:5000
+```
 
-- Verify the RCP health (memory, temperature, etc...).
-- Execute ping command.
-- Use the MQTT client interface.
+From the dashboard you can:
 
-## Is there a possibility to connect a separate Tally Light to the CI0?
+- Check RCP health — memory usage, temperature, and more
+- Run a ping to test network reachability
+- Use the built-in MQTT client interface
 
-Yes, the easiest way is to connect an LED to the 12V output of the second port. There are some other pins that can be used for GPIO and which could drive external electronics to control a tally light.
+## Can I connect an external tally light to the CI0?
 
+Yes. The simplest approach is to wire an LED to the 12 V output on the second port. Additional GPIO pins are available on the connector and can drive external electronics for more advanced tally light circuits.

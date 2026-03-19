@@ -248,7 +248,7 @@ VISCA allows up to 8 cameras to be connected to an RS485 bus. When a VISCA bus i
 ### 1. The Camera Is Not Detected
 
 - **Verify camera communication settings**: Ensure the baud rate is set to _9600_ and the camera ID is _1_, unless you are using a VISCA control bus with multiple cameras.
-- **Check the cable and pinout**: If you made your own cable, refer to our [cable diagram](/docs/resources/cable-catalog#marshall-cable) to confirm the wiring is correct.
+- **Check the cable and pinout**: If you made your own cable, refer to our [cable diagram](/docs/resources/cable-catalog#marshall-cables) to confirm the wiring is correct.
 - **Test for hardware issues**: It’s not uncommon for some cameras to have a defective RS485 interface. To confirm, compare behavior with another unit of the same model or test the camera using Marshall’s control software with a USB-to-RS485 adapter. You should be able ton control the camera using the Marsdhall software.
 - **Old firmware limitations**: Some older camera models or firmware versions do not acknowledge commands or send return data. In such cases, the camera may not be "detected" but can still respond to control commands.
 

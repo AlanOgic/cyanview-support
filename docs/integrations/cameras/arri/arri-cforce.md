@@ -2,94 +2,92 @@
 id: arri-cforce
 title: "ARRI cforce motors"
 sidebar_label: "ARRI cforce"
-description: "Control ARRI cforce lens motors with Cyanview through a RIO for precision focus, iris, and zoom control."
-keywords: [ARRI, cforce, lens motor, focus, iris, zoom]
+description: "Control ARRI cforce lens motors with Cyanview through a RIO for precision focus, iris, and zoom control over CAN bus."
+keywords: [ARRI, cforce, lens motor, focus, iris, zoom, RIO, CAN bus, Cyanview]
 slug: /integrations/cameras/arri/arri-cforce
 ---
 
-# ARRI cforce motors
+Control ARRI cforce lens motors directly from a Cyanview RCP through a RIO. This integration provides precision iris, zoom, and focus control over a CAN bus connection with a USB dongle.
 
+## Compatible models
 
-## Overview
+- ARRI cforce mini
+- ARRI cforce mini RF
+- ARRI cforce plus
 
-Compatible models:
-* ARRI cforce mini
-* ARRI cforce mini RF
-* ARRI cforce plus
-
-<img src="https://www.arri.com/resource/responsive-image/344442/text-media-halfsize/lg/5/cforce-motors-group-articles.jpg" width="400"/>
-
+<img src="https://www.arri.com/resource/responsive-image/344442/text-media-halfsize/lg/5/cforce-motors-group-articles.jpg" width="400" alt="ARRI cforce motor family" />
 
 ## Wiring
 
-<img src="/img/Integrations/ARRI/cforce/ARRI-cforce-wiring.png" width="1000"/>
+Connect up to three cforce motors on a CAN bus chain to your RIO via a USB dongle:
 
-* up to 3 motors on the CAN bus
-* the last motor takes power from 2nd port
-* the first motor connects the LBUS CAN-L and CAN-H to the USB dongle
-* the USB dongle plugs in any USB port of the RIO
+<img src="/img/Integrations/ARRI/cforce/ARRI-cforce-wiring.png" width="1000" alt="ARRI cforce wiring diagram with RIO" />
 
-optional:
-* link RCP/RIO through ethernet, wifi, 4G, etc.
-* add blackmagic handles (so iris is done on RCP and zoom/focus with the blackmagic handles)
+**Required connections:**
+- Chain up to 3 motors on the CAN bus
+- Connect the last motor's power from the 2nd port
+- Wire **CAN-L** and **CAN-H** from the first motor to the USB dongle
+- Plug the USB dongle into any USB port on the RIO
 
-On the USB dongle, should be wired:
-* CAN-L
-* CAN-H
+**Optional additions:**
+- Link the RCP to the RIO over Ethernet, WiFi, 4G, or other network connection
+- Add Blackmagic handles for physical zoom/focus control while iris remains on the RCP
 
 ## Setup
 
-On an existing camera, scroll to `Lens` section:
-* `Model` : select `ARRI - cforce`
-* `Interface` : select your USB dongle (in my case `USB:1`, which means USB on port 1)
+On an existing camera in the RCP interface, scroll to the **Lens** section and configure:
+- **Model**: select `ARRI - cforce`
+- **Interface**: select your USB dongle (example: `USB:1` for USB on port 1)
 
-By default:
-* iris + zoom + focus are controlled
-* iris 1.6 to 32 with torque 2, direction left
-* zoom torque 2, direction left
-* focus torque 2, direction left
+### Default motor settings
 
-You can alter the configuration, especially to adapt the iris range:
-* top right of the panel, click on `...`
-* activate "advanced mode"
-* come back to your lens setup, new `Advanced` field
-* text, `zoom|iris|focus` config serparated by `,` (each block should be fully configured: range if applicable, function, torque and direction). If you just configure iris, default focus and default zoom are still applied.
-* formats:
-  * iris : `IRIS_MIN:IRIS_MAX:iris:IRIS_TORQUE:IRIS_DIRECTION`
-    * `IRIS_MIN` is the minimum iris value
-    * `IRIS_MAX` is the maxium iris value
-    * `IRIS_TORQUE` is the torque of the iris motor (1, 2, 3 or 4)
-    * `IRIS_DIRECTION` is the direction of the iris motor (left or right) 
-  * zoom: `zoom:ZOOM_TORQUE:ZOOM_DIRECTION`
-    * `ZOOM_TORQUE` is the torque of the zoom motor (1, 2, 3 or 4)
-    * `ZOOM_DIRECTION` is the direction of the zoom motor
-  * focus: `focus:FOCUS_TORQUE:ZOOM_DIRECTION`
-    * `FOCUS_TORQUE` is the torque of the focus motor (1, 2, 3 or 4)
-    * `FOCUS_DIRECTION` is the direction of the focus motor (left or right)
-  * examples:
-    * `1.6:32:iris:2:left` : iris from 2 to 8, torque is 2, direction is left
-    * `2:32:iris:2:right` : iris from 2 to 32, torque is 2, direction is right
-    * `1.6:32:iris:2:left,zoom:4:right` : iris from 1.6 to 32, left and torque is 2. Zoom with torque 4 and direction is right. No focus.
-    * `1.6:32:iris:2:left,zoom:4:right,focus:2:left` : iris, zoom and focus with torque 2 and direction left
+With no additional configuration, the RCP controls iris, zoom, and focus with these defaults:
+- **Iris**: range 1.6 to 32, torque 2, direction left
+- **Zoom**: torque 2, direction left
+- **Focus**: torque 2, direction left
 
+### Customize motor parameters
 
-<img src="/img/Integrations/ARRI/cforce/ARRI-cforce-setup.png" width="400"/>
+To adjust the iris range, torque, or direction for each motor:
 
-If everything is properly configured and wired, the `lens` block should appear green:
+1. Click **...** in the top right of the lens panel
+2. Activate **Advanced mode**
+3. Return to your lens setup — a new **Advanced** field appears
+4. Enter a comma-separated configuration string for the motors you want to customize
 
-<img src="/img/Integrations/ARRI/cforce/ARRI-cforce-block.png" width="400"/>
+**Configuration format:**
 
+| Motor | Format | Parameters |
+|:------|:-------|:-----------|
+| **Iris** | `MIN:MAX:iris:TORQUE:DIRECTION` | MIN/MAX = iris range, TORQUE = 1–4, DIRECTION = left or right |
+| **Zoom** | `zoom:TORQUE:DIRECTION` | TORQUE = 1–4, DIRECTION = left or right |
+| **Focus** | `focus:TORQUE:DIRECTION` | TORQUE = 1–4, DIRECTION = left or right |
+
+If you configure only one motor (for example, iris), the other motors retain their defaults.
+
+**Examples:**
+
+| Configuration string | Result |
+|:---------------------|:-------|
+| `1.6:32:iris:2:left` | Iris from 1.6 to 32, torque 2, direction left |
+| `2:32:iris:2:right` | Iris from 2 to 32, torque 2, direction right |
+| `1.6:32:iris:2:left,zoom:4:right` | Iris (torque 2, left) + zoom (torque 4, right). Focus uses defaults. |
+| `1.6:32:iris:2:left,zoom:4:right,focus:2:left` | All three motors configured |
+
+<img src="/img/Integrations/ARRI/cforce/ARRI-cforce-setup.png" width="400" alt="ARRI cforce advanced configuration" />
+
+When the motors are properly configured and wired, the **Lens** block turns green:
+
+<img src="/img/Integrations/ARRI/cforce/ARRI-cforce-block.png" width="400" alt="ARRI cforce connected status" />
 
 :::info
-Here the camera head is "Not controlled", so I just have read/write of iris/zoom/focus. But I could combine it with any camera control.
+In this example, the camera head shows "Not controlled" — only iris, zoom, and focus are active through the motors. You can combine cforce motor control with any camera integration for full control.
 :::
 
 ## Calibration
 
-You can run the motor calibration from the RCP:
+Run motor calibration directly from the RCP when you change lenses or reposition motors.
 
+Navigate to **MENU > LENS > LENS > ACTION** and click **Calibrate**:
 
-This menu is available in `MENU > LENS > LENS > ACTION`, click on `Calibrate`
-
-
-<img src="/img/Integrations/ARRI/cforce/RCP-UI/calibration.gif" width="400"/>
+<img src="/img/Integrations/ARRI/cforce/RCP-UI/calibration.gif" width="400" alt="RCP lens calibration animation" />

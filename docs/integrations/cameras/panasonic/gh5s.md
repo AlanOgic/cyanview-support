@@ -7,52 +7,50 @@ keywords: [Panasonic GH5S, mirrorless, serial, IP control]
 slug: /integrations/cameras/panasonic/gh5s
 ---
 
-<img src="/img/Integrations/Panasonic/GH5S.png" width="400"/>
+![Panasonic GH5S](/img/Integrations/Panasonic/GH5S.png)
 
-Supported controls:
-* Auto exposure modes P, A, S or manual
-* Exposure compensation
-* Iris
-* Shutter
-* Gain in ISO
-* Color temperature
-* A-B/G-M settings are mapped to R/B encoders, it's not standard red/blue gains
+Connect the Panasonic DC-GH5S or DC-GH7 to a Cyanview RCP or RIO via USB for remote exposure and color control.
 
-For the GH7:
-* Saturation
-* Hue
-* Detail
-* Noise reduction
-* Knee (just on/off/manual, no control of point and slope)
+## Supported controls
+
+**All models (GH5S, GH7):**
+- Auto exposure modes P, A, S, or manual
+- Exposure compensation
+- Iris
+- Shutter
+- Gain (ISO)
+- Color temperature
+- A-B / G-M settings mapped to R/B encoders — these are not standard red/blue gains
+
+**GH7 additional controls:**
+- Saturation
+- Hue
+- Detail
+- Noise reduction
+- Knee (on/off/manual — point and slope not controllable)
 
 ## Wiring
 
-This camera must be connected with a USB cable to a RCP or a RIO.
+Connect the camera to a RCP or RIO using a USB cable.
 
 ## Configuration
 
-Connect the USB cable to a RCP or a RIO, and connect the camera. When the USB cable is connected to the camera, you'll have to choose between three USB options :
+Connect the USB cable to the RCP or RIO, then connect the camera. When the USB cable is connected, the camera prompts you to choose a USB mode. Select **PC (Tether)**.
 
-- PC (storage)
-- PC (Tether)
-- PictBridge (PTP)
+Then configure the camera in the RCP configuration interface:
 
-Select **PC (Tether)**. Then, configure the camera in the configuration interface :
+1. Click `+` in the camera block — a new panel appears on the right.
+2. Under `General`, set a number and a name.
+3. Select `Panasonic` for the brand and `DC-GH5S` or `DC-GH7` for the model.
 
-- Click on the `+` in the camera block, a new panel will appear on the right
-- In `General` Configure a Number and a Name
-- Select `Panasonic` for the brand and `DC-GH5S` or `DC-GH7` for the model.
+Your settings should look like this:
 
-Your settings should look like:
-
-
-<img src="/img/Integrations/Panasonic/Panasonic-GH5S-setup.png" width="200"/>
-
+![GH5S setup configuration](/img/Integrations/Panasonic/Panasonic-GH5S-setup.png)
 
 And your camera block:
 
-<img src="/img/Integrations/Panasonic/Panasonic-GH5S-block.png" width="200"/>
+![GH5S camera block](/img/Integrations/Panasonic/Panasonic-GH5S-block.png)
 
-## Notes
-
-- To use the full ISO range, the "Dual Native ISO Setting" in the Exposure menu must be set to "AUTO".
+:::tip
+To use the full ISO range, set **Dual Native ISO Setting** (in the Exposure menu) to **AUTO**.
+:::

@@ -7,320 +7,233 @@ keywords: [fashion show, workflow, multi-camera, live event]
 slug: /guides/workflows/fashion-show
 ---
 
-This article covers the technical details of this <a href="https://www.cyanview.com/how-planipresse-uses-large-sensor-cameras-with-lens-control-for-fashion-shows/">use case</a>.
+This guide covers the technical details from the [PlaniPresse Paris Fashion Week use case](https://www.cyanview.com/how-planipresse-uses-large-sensor-cameras-with-lens-control-for-fashion-shows/) — 12 Sony FX9 cameras, mixed wired and 4G links, PL lenses, and full tally integration.
 
-Paris Fashion week summer 2022:
-* 9 fixed FX9 with 9 RIO live to control the PL lenses
-* 3 mobile FX9 with 3 RIO in 4G to control the camera and the PL lenses
-* 12 RCP, one per camera
-* Tally integration
-* Switcher integration
+Paris Fashion Week, summer 2022:
+- 9 fixed FX9 cameras with 9 wired RIOs for PL lens control
+- 3 mobile FX9 cameras with 3 RIOs over 4G for camera and lens control
+- 12 RCPs, one per camera
+- Tally integration
+- Switcher integration
 
-<img src="https://www.cyanview.com/wp-content/uploads/2022/07/CyanView-FX9-Vislink.jpg"/>
+![Cyanview FX9 Vislink setup at Paris Fashion Week](https://www.cyanview.com/wp-content/uploads/2022/07/CyanView-FX9-Vislink.jpg)
 
-<!--truncate-->
+PlaniPresse covered multiple shows during the week: Balenciaga, LV, Gucci, AMI, Rains, Loewe, and others. Fashion shows have shifted from post-production workflows to live multi-camera streaming on social platforms, driving the need for real-time shading of large-sensor cameras.
 
-## Introduction
+The two main camera choices at Fashion Week are the Sony Venice and Sony FX9. The Venice supports any B4 lens, but at a higher price. The FX9 offers similar control but is limited to E-mount lenses.
 
-We were present on multiple shows during the fashion week:
-* Balenciaga
-* LV
-* Gucci
-* AMI
-* Rains
-* Loewe
-* etc.
-
-This kind of shows used to only be recorded, and the image processing was taking care of in post-production to finally come a month later in the stores.
-
-Now, everything goes faster, social networks are more and more present and are pushing the multi camera live workflow with large sensor cameras.
-
-The two main choices on the fashion week:
-* Sony Venice
-* Sony FX9
-
-Sony Venice allows you to control any B4 lens. But comes at a price.
-FX9 offers similar control, but is only compatible with E-mount lenses, limiting the possibilities.
-
-What we will describe here:
-* How to control your FX9's
-* Integrate it with any lens (Fuji, Canon, motorized or prime)
-* Using any kind of link: IP/SDI, Fiber, HF/4G
+This guide covers:
+- Controlling your FX9s
+- Integrating any lens (Fuji, Canon, motorized or prime)
+- Using any link type: IP/SDI, fiber, RF/4G
 
 ## Set up the cameras
 
-On these shows, they used mainly the FX9 and some GoPro's.
+PlaniPresse used FX9 cameras and some GoPros. See the full [FX9 integration guide](/docs/integrations/cameras/sony/sony-fx9).
 
-You can find a full integration guide [here](/docs/integrations/cameras/sony/sony-fx9)
+Key points:
+- The FX9 can be controlled over Ethernet (with an XDCA accessory) or Wi-Fi (RIO acts as an access point).
+- Enable control over Ethernet or Wi-Fi in the camera menu.
 
-But the main points are:
-* We can control the FX9 over Ethernet (with XDCA accessory) or Wi-Fi (RIO acts as an access point).
-* Enable control over Ethernet or Wi-Fi
+![FX9 network LAN menu](/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-network-LAN.jpg)
 
-<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-network-LAN.jpg" width="300"/>
+- Set a fixed IP on the camera.
 
-* Set up a fixed IP
-
-<img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-network-staticIP.jpg" width="300"/>
+![FX9 static IP menu](/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-network-staticIP.jpg)
 
 :::note
-You can find more about the RIO Wi-Fi possibilities <a href="/docs/guides/networking/wifi-usb">here</a>
+Each camera IP was in the range `192.168.10.X/16`, where X matches the camera ID. See the [RIO Wi-Fi guide](/docs/guides/networking/wifi-usb) for Wi-Fi dongle options.
 :::
 
-:::note
-Each camera IP was in the range `192.168.10.X/16` with X the ID of the camera
-:::
+## Set up the lenses
 
-## Set up the lens
+See the full integration guides for [B4 lenses](/docs/integrations/lenses/b4-lens) and [Tilta motors](/docs/integrations/lenses/tilta) for motorized setups.
 
-You can find a full integration guide for B4 lenses [here](/docs/integrations/lenses/b4-lens)
+![FX9 on AGITO robotic dolly with Cyanview](https://www.cyanview.com/wp-content/uploads/2022/08/CyanView-FX9-Agito-1.jpg)
 
-If you need to motorize a lens (prime lens, photo lens or robotic applications), we used Tilta motors, the full integration guide is available [here](/docs/integrations/lenses/tilta)
+The show used a wide variety of lenses:
+- Canon Cine-Servo 17-120 mm (PL)
+- Canon Cine-Servo 25-250 mm T2.95 (PL)
+- Fujinon Cabrio 14-35 mm T2.9 (PL)
+- Canon CN-E18-80 mm T4.4 (EF)
+- Canon Prime 14 mm f/2.8L II USM (EF)
+- Canon 11-24 mm f/4L USM (EF)
 
-<img src="https://www.cyanview.com/wp-content/uploads/2022/08/CyanView-FX9-Agito-1.jpg" width="400"/>
+Canon lenses use cable [CY-CBL-B4-6P](/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default) and Fujinon lenses use [CY-CBL-6P-FUJI](/docs/resources/cable-catalog#fujinon-cables). PlaniPresse chose to standardize on a Fujinon B4 (12-pin) accessory across all lenses, using a single cable ([CY-CBL-B4-6P](/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default)). Both approaches work — standardizing simplifies wiring on large deployments.
 
-We had a big variety of lenses on this show:
-* Canon Cine-Servo 17-120 mm (PL)
-* Canon Cine-Servo 25-250 mm T2.95 (PL)
-* Fujinon Cabrio 14-35 mm T2.9 (PL)
-* Canon CN-E18-80 mm T4.4 (EF)
-* Canon Prime 14 mm f/2.8L II USM (EF)
-* Canon 11-24 mm f/4L USM (EF)
+## Set up the RIOs
 
-We can control Canon (using our cable <a href="/docs/resources/cable-catalog#cy-cbl-6p-b4-01">CY-CBL-B4-6P</a>) and Fujinon lenses (using our cable <a href="/docs/resources/cable-catalog#cy-cbl-6p-fuji">CY-CBL-6P-FUJI</a>) with their own connectors.
-
-PlaniPresse decided to use a Fujinon accessory to have a standard control over B4 (12pin) on all lenses to use only a single cable : <a href="/docs/resources/cable-catalog#cy-cbl-6p-b4-01">CY-CBL-B4-6P</a>
-
-It makes the wiring and setup easier, but both solutions works.
-
-## Set up the RIO's
-
-Here we describe how to configure RIO for the camera 1, but this is the same setup for all the other cameras.
+The steps below describe configuration for camera 1. Repeat the same setup for each camera.
 
 ### Configure the group control (REMI)
 
-In each RIO, set up the REMI tags, this will allow any RCP in the same group to import/control the camera configured in the RIO.
+On each RIO, set up the REMI tag. This lets any RCP in the same group discover and control the camera configured in that RIO.
 
-In the RIO, in the REMI tab:
+In the RIO, open the REMI tab:
 
-<img src="/img/Configuration/REMI-tab.png"/>
+![RIO REMI tab](/img/Configuration/REMI-tab.png)
 
-Set up a private group, here `planipresse`
+Set up a private group name, here `planipresse`:
 
-<img src="/img/blog/planipresse-remi.png" width="300"/>
-
-### Configure the camera control
-
-Create a new camera:
-* Enter a number (here, the camera number, linked to the IP `192.168.10.X/16`)
-* Enter a camera name (here, simply `FX9`, camera number is enough to distinguish them)
-* Select brand, model (here `Sony` and `FX9`)
-* Enter camera IP (here `192.168.10.1`)
-
-
-<img src="/img/blog/planipresse-rio-FX9.png" width="300"/>
-
-### Configure the lens control
-
-If the lens is controllable by the camera, we control iris through the camera protocol.
-
-But for all the other cases, we need to control the lens directly in parallel.
-
-#### All the B4 (Fuji and Canon)
-
-Select the camera you previously created:
-* In the lens section
-* Chose model `B4 generic`
-* Select on which RIO port you plugged the lens (here port `1`)
-
-<img src="/img/blog/planipresse-rio-lens.png" width="300"/>
-
-#### Robotic application lens control
-
-In robotic application (AGITO, cable cam, crane, etc.), they usually use the 12 pin port already.
-
-The analog/handle ports only offer zoom and focus, so they use the digital B4 port to have access to zoom/focus and iris.
-
-In this case, Iris is not done by the robotic operator, but by vision engineer, but the B4 is already in use.
-
-So we put the lens iris in manual and put a Tilta motor on the iris, connected to the RIO to allow:
-* robotic operator to handle zoom/focus (through B4)
-* vision engineer to handle iris (through Tilta)
-
-<img src="/img/blog/planipresse-rio-lens-robotic.png" width="300"/>
-
-#### Other lens
-
-Some lenses are simply not motorized, so we can put a Tilta motor like we did for robotic application.
-
-And some lenses don't have any B4 control at all, so we also use Tilta motor in this case.
-
-The `Canon CN-E18-80 mm T4.4 (EF)` for example has only one connector to control the zoom with a handle. This port is analog, and we can't control iris through it.
-
-
-<img src="https://www.cyanview.com/wp-content/uploads/2022/08/CyanView-FX9-Rains-PFS.jpg" width="400"/>
-
-We can see here this lens:
-* Zoom handle
-* Manual focus control
-* Tilta motor on iris
-* RIO to provide camera + iris control to the CCU room
-
-
-### Configure the 4G control
-
-We had 3 remote cameras:
-* Steadicam : video in HF with Vislink
-* AGITO : video in HF with Vislink
-* Beauty shot : video in 4G with TVU
-
-We plugged a 4G dongle in each cam's RIO to allow remote control.
-
-<img src="/img/blog/planipresse-4G.jpg" width="300"/>
-
-To control a camera locally or with 4G, nothing change in the configuration.
-
-You just need to set up the 4G dongle, and then it is plug and play:
-* Plug the dongle in your computer
-* Unlock SIM with PIN
-* Enter APN, login, password
-* Do a speed test to ensure it works
-
-Unplug from computer, plug in RIO, and you're good to go.
-
-You can see it, here, connected to RIO:
-
-<img src="https://www.cyanview.com/wp-content/uploads/2022/08/CyanView-FX9-SteadyCam-1.jpg" width="500"/>
-
-:::note
-Here, latency is not an issue (+/- 60ms) and stability neither as we use such a small amount of data that we experienced no drop, even with the full crowd at peak hour in a touristic place in Paris.
-:::
-
-### Configure the FX9 web interface access
-
-The RIO is connected to the FX9 either on Wi-Fi or Ethernet (using XDCA).
-
-The RIO needs also an Ethernet link to the RCP (CCU room) using Ereca CAM Racer fiber solution (provide power and transport video + Ethernet over SMPTE fiber).
-
-You can plug a USB Ethernet dongle on the RIO to have a second Ethernet interface.
-
-And we can bridge both Ethernet together, this way, the RIO acts as an Ethernet switch.
-
-If allows you to get control of the camera and access to the FX9 webpage from the CCU room without adding anything.
-
-In the IP configuration of each RIO, simply cross the checkbox `Auto Bridge USB Interfaces`, this way any USB dongle will be bridge automatically.
-
-
-<img src="/img/blog/planipresse-ethernet-bridge.png" width="300"/>
-
-## Shading a GoPro using our VP4
-
-<img src="/img/diagrams/cyanview-VP4-RCP-color-corrector-CCU-workflow-Overview@2x-8.png" width="600"/>
-
-GoPro doesn't offer any way to control the camera, but here, we shade it using our advanced color corrector : the VP4.
-
-They first convert the HDMI to SDI using a Decimator
-
-<img src="/img/blog/decimator.jpg" width="200"/>
-
-You can get a full integration guide for the VP4 [here](/docs/reference/manuals/vp4-manual)
-
-The only setup in the VP4 is the format and genlock options:
-
-<img src="/img/Manual/VP4/VP4-settings.png" width="400"/>
-
-The VP4 can be use in standalone (using the web interface) or from the RCP.
-
-They chose here to have a dedicated RCP to shade the GoPro's.
-
-## Set up the RCP
-
-Here we describe how to configure RCP for the camera 1, but this is the same setup for all the other cameras.
-
-### Configure the group control (REMI)
-
-In each RCP, like you did on the RIO's, in the REMI tab:
-
-<img src="/img/Configuration/REMI-tab.png"/>
-
-Set up a private group, here `planipresse` (same as in the RIO)
-
-<img src="/img/blog/planipresse-remi.png" width="300"/>
+![PlaniPresse REMI tag configuration](/img/blog/planipresse-remi.png)
 
 ### Configure the camera
 
-In each RCP, we have only one camera.
+Create a new camera:
+- Enter a number (here, matching the IP address: `192.168.10.X/16`)
+- Enter a camera name (here `FX9` — the number alone distinguishes cameras)
+- Select brand and model: `Sony` and `FX9`
+- Enter the camera IP: `192.168.10.1`
 
-Navigate to the REMI tab, there, you will see the list of device in your group `planipresse`.
+![RIO FX9 camera configuration](/img/blog/planipresse-rio-FX9.png)
 
-Cross the checkbox to import the desired cam in your RCP.
+### Configure the lens
 
-<img src="/img/blog/planipresse-rcp-rio.png" width="300"/>
+When the lens is controllable by the camera protocol, iris goes through that channel. For all other cases, control the lens directly through a separate RIO port.
 
-And it will appear like that in your RCP configuration:
+#### B4 lenses (Fuji and Canon)
 
-<img src="/img/blog/planipresse-rcp-imported.png" width="300"/>
+Select the camera you created:
+- Go to the lens section
+- Choose model `B4 generic`
+- Select the RIO port where the lens is connected (here port `1`)
+
+![RIO B4 lens configuration](/img/blog/planipresse-rio-lens.png)
+
+#### Robotic application lens control
+
+In robotic applications (AGITO, cable cam, crane), the 12-pin port is typically already used by the robot for zoom and focus. Iris is not managed by the robotic operator — it's handled by the vision engineer. But since the B4 port is occupied, you can't use it for iris.
+
+The solution: set lens iris to manual and attach a Tilta motor to the iris ring, connected to the RIO. This gives:
+- Robotic operator: zoom and focus through B4
+- Vision engineer: iris through Tilta
+
+![RIO robotic lens configuration](/img/blog/planipresse-rio-lens-robotic.png)
+
+#### Other lenses
+
+For lenses with no motorized iris or no B4 connector, use a Tilta motor the same way.
+
+The Canon CN-E18-80 mm T4.4 (EF), for example, has only a zoom handle connector — analog only, no iris control.
+
+![FX9 with Tilta motor on iris at Rains show](https://www.cyanview.com/wp-content/uploads/2022/08/CyanView-FX9-Rains-PFS.jpg)
+
+This lens setup has:
+- Zoom handle
+- Manual focus ring
+- Tilta motor on iris
+- RIO providing camera and iris control to the CCU room
+
+### Configure 4G control
+
+Three cameras ran remotely:
+- Steadicam — video over RF with Vislink
+- AGITO — video over RF with Vislink
+- Beauty shot — video over 4G with TVU
+
+Each remote camera's RIO used a 4G USB dongle for control.
+
+![4G dongle connected to RIO](/img/blog/planipresse-4G.jpg)
+
+The RIO configuration is identical whether you're using local Ethernet or 4G. You only need to configure the dongle once:
+1. Plug the dongle into your computer
+2. Unlock the SIM with your PIN
+3. Enter the APN, login, and password
+4. Run a speed test to confirm connectivity
+
+Then unplug from your computer, plug into the RIO, and you're ready.
+
+![FX9 on Steadicam with 4G RIO](https://www.cyanview.com/wp-content/uploads/2022/08/CyanView-FX9-SteadyCam-1.jpg)
+
+:::note
+Latency was around 60 ms and connection was rock solid, even with peak-hour crowds in busy Paris locations. Camera shading uses far less data than a standard webpage reload.
+:::
+
+### Configure FX9 web interface access
+
+The RIO connects to the FX9 over Wi-Fi or Ethernet (via XDCA). It also needs an Ethernet link to the CCU room — PlaniPresse used Ereca CAM RACER fiber (power, video, and Ethernet over SMPTE fiber).
+
+To add a second Ethernet interface to the RIO, plug in a USB-Ethernet dongle. Then enable bridge mode so both interfaces act as a single switch.
+
+In `IP Connections`, check `Auto Bridge USB Interfaces`. Any USB dongle plugs in automatically after that.
+
+![RIO Ethernet bridge configuration](/img/blog/planipresse-ethernet-bridge.png)
+
+This gives you full camera control and access to the FX9 web interface from the CCU room — no extra switch needed.
+
+## Shading a GoPro with the VP4
+
+![VP4 RCP color corrector workflow diagram](/img/diagrams/cyanview-VP4-RCP-color-corrector-CCU-workflow-Overview@2x-8.png)
+
+GoPros don't support camera control, but you can shade them using the VP4 color corrector. Convert the HDMI output to SDI with a Decimator:
+
+![Decimator HDMI to SDI converter](/img/blog/decimator.jpg)
+
+See the full [VP4 manual](/docs/reference/manuals/vp4-manual). The only required VP4 settings are format and genlock:
+
+![VP4 settings page](/img/Manual/VP4/VP4-settings.png)
+
+The VP4 works standalone (via its web interface) or controlled from an RCP. PlaniPresse dedicated one RCP to shading the GoPros.
+
+## Set up the RCPs
+
+The steps below describe configuration for RCP 1. Repeat the same setup for each RCP.
+
+### Configure the group control (REMI)
+
+On each RCP, open the REMI tab and set the same group name as the RIOs (`planipresse`):
+
+![RIO REMI tab](/img/Configuration/REMI-tab.png)
+
+![PlaniPresse REMI tag configuration](/img/blog/planipresse-remi.png)
+
+### Import the camera
+
+In the REMI tab, you'll see the list of devices in the `planipresse` group. Check the box next to the camera you want to import.
+
+![RCP REMI device list](/img/blog/planipresse-rcp-rio.png)
+
+The camera appears in your RCP configuration:
+
+![RCP imported camera](/img/blog/planipresse-rcp-imported.png)
 
 ### Tally
 
-The tally input was done using the ATEM, you can find a generic integration guide [here](/docs/integrations/generic/routers).
+Tally input came from the ATEM. See the [router/switcher integration guide](/docs/integrations/generic/routers) for setup details.
 
-As the ATEM is limited to 12 simultaneous connections, we tried to limit as much as possible the number of device connecting to it, so instead of having each RCP connecting to the ATEM to have the tally input.
+The ATEM supports a limited number of simultaneous connections (12), so instead of connecting each RCP to the ATEM, PlaniPresse imported all 12 cameras onto a single RCP and linked each one to the ATEM configuration:
 
-We imported all cameras (12 in total) on RCP 1 and linked each camera to our ATEM configuration:
+![RCP ATEM configuration](/img/blog/planipresse-ATEM.png)
 
-<img src="/img/blog/planipresse-ATEM.png" width="300"/>
-
-This way, tally input is routed correctly to each camera:
-* Visible on the camera side
-* Visible on each RCP preview button (red light)
-* Visible on each RCP display (camera name is red or green)
+Tally then routes correctly to each camera:
+- Visible on the camera side
+- Visible on each RCP preview button (red light)
+- Visible on each RCP display (camera name in red or green)
 
 ### Preview button
 
-For the vision, we use an AJA KUMO, this is one of the few switchers that supports as many inputs/outputs and have a clean switch.
+PlaniPresse used an AJA KUMO router — one of the few options supporting this many inputs and outputs with a clean switch. See the [router/switcher integration guide](/docs/integrations/generic/routers).
 
-You can find a generic integration guide [here](/docs/integrations/generic/routers).
+The RCP preview button lets you call a camera to your monitoring display. With 12 RCPs and 2 vision engineers:
+- V1 used RCPs 1–6, with a screen on KUMO output 1
+- V2 used RCPs 7–12, with a screen on KUMO output 2
 
-Each RCP as a preview button that allows to call the camera on a switcher.
+Each RCP had an AJA KUMO block configured:
+- Camera linked to its router input (camera 1 → input 1)
+- RCP linked to the vision engineer's screen (V1 → output 1)
 
-We had 12 RCP for 2 Vision engineers:
-* V1 had RCP 1 to 6
-* V2 had RCP 7 to 12
+![RCP KUMO configuration](/img/blog/planipresse-kumo.png)
 
-They both had a display linked to an output of the KUMO:
-* V1 screen to output 1
-* V2 screen to output 2
+Once all 12 RCPs were configured, pressing preview on any RCP sent that camera to the operator's display.
 
-Each RCP had a AJA KUMO block:
-* camera imported linked to correct input (here, for cam 1 it was input 1)
-* RCP linked to vision screen (here, for V1 it was output 1)
+## Triggering REC remotely
 
-<img src="/img/blog/planipresse-kumo.png" width="300"/>
+This production was both streamed (YouTube, Instagram) and recorded simultaneously. Manually starting recording on 12 cameras — opening each web page and clicking REC — is tedious.
 
-Once this setup is done for 12 RCP:
-* When touching preview on an RCP
-* The camera of this RCP is on the display
+Because one RCP already had all 12 cameras imported for tally, and the RCP controls the REC trigger through the camera protocol, you can use [group control](/docs/guides/advanced/camera-groups) to start or stop recording on all cameras at once.
 
-## Trigger REC button remotely
+Put the RCP into group control mode, navigate to `Camera > OSD`, and click `REC`. All 12 cameras switch to record in one step. Stop recording the same way.
 
-All this setup was hybrid. We were streaming (YouTube, Instagram, etc.) and recording at the same time.
-
-Ensuring that all cameras are recording is really important and is painful:
-* You need to get into each camera web page
-* Click on REC
-
-As we have:
-* 1 RCP with all the cameras imported for the tally [here](#tally)
-* As we control the REC trigger of the camera in the protocol
-* We can use the group control feature (described <a href="/docs/guides/advanced/camera-groups">here</a>) to trig REC on all cameras at the same time
-
-You simply put the RCP in "group control" mode and navigate to `Camera > OSD` menu in the RCP and click on `REC`.
-
-Now, all the 12 cameras are switched to record.
-
-It is especially convenient for HF cameras:
-* With fiber, we can have clean signal and OSD at the same time
-* With HF, it is not possible (only the clean signal)
-
-We can stop record the same way.
+:::tip
+With fiber, you can have clean signal and OSD simultaneously. With RF links, only the clean signal is available — making remote REC control especially useful for HF cameras.
+:::

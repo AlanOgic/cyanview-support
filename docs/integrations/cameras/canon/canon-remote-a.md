@@ -7,93 +7,86 @@ keywords: [Canon, Remote A, serial, camera control, protocol]
 slug: /integrations/cameras/canon/canon-remote-a
 ---
 
-<img src="/img/Integrations/Canon/canon-C200.png" width="300"/>
+Cyanview controls Canon cinema cameras using the Remote A protocol over a 2.1 mm jack serial connection. This covers older CXX models that do not support XC over IP.
 
+![Canon C200 cinema camera](/img/Integrations/Canon/canon-C200.png)
 
 ## Supported models
 
-We support all CXX models through the `Remote A` control:
-* C100
-* C200
-* C300mk1 and C300mk2
-* C500mk1
-* C700
-* XF705
+- C100
+- C200
+- C300 Mk I and Mk II
+- C500 Mk I
+- C700
+- XF705
 
-:::note
-If you have a:
-* C70
-* C300mk3
-* C500mk2
-
-Remote-A is supported, but prefer the <a href="/docs/integrations/cameras/canon/canon-xc">Canon XC</a> protocol, it is IP, faster and bidirectional.
+:::tip
+If you have a C70, C300 Mk III, or C500 Mk II, Remote A is supported but the [Canon XC](/docs/integrations/cameras/canon/canon-xc) protocol is preferred — it is IP-based, faster, and bidirectional.
 :::
-
 
 ## Wiring
 
-<img src="/img/Integrations/Canon/canon-LANC-wiring.png"/>
+![Canon Remote A wiring diagram](/img/Integrations/Canon/canon-LANC-wiring.png)
 
-
-* Plug the cable [CY-CBL-6P-LANC-03](/docs/resources/cable-catalog#cy-cbl-6p-lanc-03) in your camera
-* Plug the other side on the CI0 port 2 (port 1 is not compatible with `Remote A`)
+- Plug cable [CY-CBL-6P-LANC-03](/docs/resources/cable-catalog#cy-cbl-6p-lanc-03) into your camera.
+- Plug the other end into CI0 **port 2** — port 1 is not compatible with Remote A.
 
 ## Controls
 
-|Control|Remote-A
-:-----|:----
-**Exposure** (Iris, Gain, Shutter, ND filter)|✔
-**White balance** (R/B)|✔
-**Black balance** (R/B, master black and black gamma)|✔
-**Other settings** (knee, detail)|✔
-**OSD/Menu**|✔
-**Lens** <a href="/docs/reference/manuals/rcp/ui/scene">(zoom, focus)</a>|✔
-**Scene file** : <a href="/docs/reference/manuals/rcp/ui/scene">save/recall</a>|✔
+| Control | Remote A |
+| :--- | :--- |
+| **Exposure** (iris, gain, shutter, ND filter) | ✔ |
+| **White balance** (R/B) | ✔ |
+| **Black balance** (R/B, master black, black gamma) | ✔ |
+| **Other settings** (knee, detail) | ✔ |
+| **OSD/Menu** | ✔ |
+| **Lens** ([zoom, focus](/docs/reference/manuals/rcp/ui/scene)) | ✔ |
+| **Scene file** ([save/recall](/docs/reference/manuals/rcp/ui/scene)) | ✔ |
 
-:::note
-The protocol Remote-A is unidirection (no feedback from camera) and limited. We try to display the most accurate values, but we receive no feedback from the camera so this is always an approximation. Ensure to precisely follow the camera setup guide below to ensure the best match between RCP values and camera values.
+:::warning
+Remote A is unidirectional — there is no feedback from the camera. The RCP displays estimated values only. Follow the camera setup steps below carefully to keep RCP values and camera values in sync.
 :::
 
 ## Camera configuration
 
-You can find more information on the Canon camera [manual](https://www.usa.canon.com/internet/portal/us/home/support/details/cameras/cinema-eos/eos-c200?tab=manuals) and in the RCV-100 [manual](https://www.usa.canon.com/internet/portal/us/home/support/details/supplies-accessories/controllers-remotes-wireless-microphones/remote-controller-rc-v100?tab=manuals)
+Refer to the Canon camera [manual](https://www.usa.canon.com/internet/portal/us/home/support/details/cameras/cinema-eos/eos-c200?tab=manuals) and the RCV-100 [manual](https://www.usa.canon.com/internet/portal/us/home/support/details/supplies-accessories/controllers-remotes-wireless-microphones/remote-controller-rc-v100?tab=manuals) for additional context.
 
-You need to check (if you don't change it, it will probably work, but the values on the RCP and camera will not match):
-* The IRIS :
-    * `Iris Increment` set to `1/3 stop`
-    * `Fine Increment` set to `on`
+Set the following in the camera menu (leaving these at defaults will likely work, but RCP values and camera values will not match):
 
+**Iris:**
+- `Iris Increment` → `1/3 stop`
+- `Fine Increment` → `On`
 
-<img src="/img/Integrations/Canon/canon-LANC-menu-iris.png" width="300"/>
+![Canon iris menu settings](/img/Integrations/Canon/canon-LANC-menu-iris.png)
 
+**Shutter and gain:**
+- `Shutter Mode` → `Speed`
+- `Shutter Increment` → `1/4 stop`
+- `ISO/Gain` → `Gain`
+- `ISO/Gain Extended Range` → `Off`
+- `Gain Increment` → `Fine`
 
-* The Shutter :
-    * `Shutter Mode` to `Speed`
-    * `Shutter Increment to `1/4 stop`
-    * `ISO/Gain` to `Gain`
-    * `ISO/Gain Extended Range` to `Off`
-    * `Gain Increment` to `Fine`
+![Canon shutter menu settings](/img/Integrations/Canon/canon-LANC-menu-shutter.png)
 
-<img src="/img/Integrations/Canon/canon-LANC-menu-shutter.png" width="300"/>
+**Remote mode:**
+- `REMOTE Term.` → `RC-V100`
 
-* Remote mode : `REMOTE Term.` to `RC-V100`
+![Canon remote menu settings](/img/Integrations/Canon/canon-LANC-menu-remote.png)
 
-
-<img src="/img/Integrations/Canon/canon-LANC-menu-remote.png" width="300"/>
-
-* Red/Blue gain, Red/Blue pedestal, master black:
-    * `Custom picture` to any value except `off`
+**Color controls** (R/B gain, R/B pedestal, master black):
+- `Custom Picture` → any value except `Off`
 
 ## Setup
 
-* Click on the `+` in the camera block, a new panel will appear on the right
-* In `General` Configure a Number and a Name
-* Select `Canon` for the brand and ``Remote A`` as the model.
-* Then select in the interface drop-down list your CI0 serial (only port 2 is available for `Remote A`)
-* Here, my CI0 is `CI0-15-13`, on the port `2`
+1. Click `+` in the camera block — a new panel appears on the right.
+2. Under `General`, set a **Number** and a **Name**.
+3. Select brand `Canon` and model `Remote A`.
+4. In the interface drop-down, select your CI0 serial port — only port 2 is available for Remote A.
 
-<img src="/img/Integrations/Canon/canon-LANC-setup.png" width="300"/>
+Your settings should look like this (example: CI0-15-13, port 2):
 
-The block:
+![Canon Remote A setup view](/img/Integrations/Canon/canon-LANC-setup.png)
 
-<img src="/img/Integrations/Canon/canon-LANC-block.png" width="300"/>
+Your camera block:
+
+![Canon Remote A connected block](/img/Integrations/Canon/canon-LANC-block.png)

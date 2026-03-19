@@ -7,47 +7,42 @@ keywords: [Panasonic VariCam, cinema, paint, exposure]
 slug: /integrations/cameras/panasonic/varicam
 ---
 
-<img src="/img/Integrations/Panasonic/varicam.png" width="900" />
+![Panasonic VariCam](/img/Integrations/Panasonic/varicam.png)
 
-## Controls
+Control the Panasonic VariCam cinema camera over IP from an RCP or RIO. Use the RCP for both local (LAN) and remote (internet) control, or the RIO for remote-only control.
 
-- [tally (red, green, call)](/docs/guides/tally/tally/)
-- OSD/Menu
+## Supported controls
+
+- [Tally (red, green, call)](/docs/guides/tally/tally/)
+- OSD / Menu
 - Lens
 - Iris
 - Gains (master, red, blue)
 - Blacks (master, red, blue)
-- Whiteclip
+- White clip
 - Shutter
 - Knee
 - Saturation
 - Detail
 - Multimatrix
 
-## Compatible Cyanview device
-
-- RCP for local (LAN) and remote control (internet)
-- RIO for remote control (internet)
-
 ## Setup
 
-The link between the RCP/RIO and the camera is IP.
+The connection between the RCP/RIO and the camera is over IP.
 
-On camera side:
-- Setup a static IP
-- Ensure to have a **user/password** : **guest/p2guest**
+**On the camera:**
+- Set a static IP address.
+- Ensure the user/password credentials are set to: **guest / p2guest**
 
-On RCP side:
-- Ensure to be be on your camera network with [a compatible IP](/docs/guides/networking/ip-configuration#lan-configuration)
-- Setup a new camera via the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui):
-    * Select **Panasonic** brand
-    * Select **Varicam** model
-    * Enter the IP of your camera
+**On the RCP:**
+- Confirm the RCP has an IP address on the same network as the camera — see [IP configuration](/docs/guides/networking/ip-configuration#lan-configuration) if needed.
+- Add a new camera via the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui):
+  - Select **Panasonic** as the brand.
+  - Select **Varicam** as the model.
+  - Enter the camera's IP address.
 
-<img src="/img/Integrations/Panasonic/varicam-setup.png" width="200" />
+![VariCam setup configuration](/img/Integrations/Panasonic/varicam-setup.png)
 
-And once the camera is correctly controlled by the RCP, it should look like that:
+Once the camera is connected, the camera block should look like this:
 
-<img src="/img/Integrations/Panasonic/varicam-block.png" width="300" />
-
-
+![VariCam camera block](/img/Integrations/Panasonic/varicam-block.png)

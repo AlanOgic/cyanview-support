@@ -7,76 +7,69 @@ keywords: [Elgato, Stream Deck, macros, camera selection]
 slug: /integrations/accessories/elgato-stream-deck
 ---
 
-<img alt="cyanview-support-RCP-Elgato-Stream-Deck" src="/img/Integrations/Accessories/ElgatoStreamDeck/device.png" width="400" />
+![Elgato Stream Deck connected to an RCP](/img/Integrations/Accessories/ElgatoStreamDeck/device.png)
 
-## Overview
+Use an Elgato Stream Deck as a physical control surface for your RCP. It displays live camera status, handles tally feedback, and lets you switch cameras or recall scenes with a single keypress.
 
-<img alt="cyanview-support-RCP-Elgato-Stream-Deck-Overview" src="/img/Integrations/Accessories/ElgatoStreamDeck/Elgato-Stream-Deck-RCP-Overview.png" width="600" />
+## Supported models
 
-Elgato Stream Deck functionalities:
-
-
-- Displays camera statuses
-- Display camera tally statuses
-- Camera selection
-- Load/Save scenes 
-- Load/Save positions
-
-
-Supported streamdecks:
 - Mini (6 keys)
 - Medium (15 keys)
 - XL (32 keys)
 
-:::note
-When the Streamdeck XL is plugged in, it has an inrush current above the USB2 specifications. The RCP/RIO internal protections will not allow such a high current and limit it to avoid any damage.
+:::warning
+The Stream Deck XL draws an inrush current that exceeds USB 2.0 specifications. The RCP/RIO internal protections cap that current to prevent damage, which causes the Stream Deck XL to boot-loop or the RCP/RIO to restart.
 
-In that case, either the Streamdeck XL will boot loop or the RCP/RIO will restart.
-
-To avoid this, you can use a self-powered USB hub between the RCP/RIO and the Streamdeck XL.
+Use a self-powered USB hub between the RCP/RIO and the Stream Deck XL to avoid this issue.
 :::
 
-<!-- To add Slow motion functionality, with a SSM 500 integration for example. -->
+## Available functions
+
+![Stream Deck overview showing camera status, tally, and selection keys](/img/Integrations/Accessories/ElgatoStreamDeck/Elgato-Stream-Deck-RCP-Overview.png)
+
+- Display camera statuses
+- Display camera tally statuses
+- Select cameras
+- Load and save scenes
+- Load and save positions
 
 ## Configuration
 
-[1] Connect the Stream Deck to the RCP USB port.
+1. Connect the Stream Deck to the RCP USB port.
 
-<img alt="cyanview-support-RCP-Port-USB-PTZ-Joystick-Controller" src="/img/Integrations/Accessories/PTZUSBJoystick/RCP-USB-Anxinshi-Joystick.png" width="200" />
+   ![RCP USB port for connecting a Stream Deck or joystick controller](/img/Integrations/Accessories/PTZUSBJoystick/RCP-USB-Anxinshi-Joystick.png)
 
-[2] In the [Configuration page](/docs/reference/manuals/rcp/web-ui#configuration) of the RCP Click on the monitor (`RCP` by default) in the `Controllers` section
+2. Open the [Configuration page](/docs/reference/manuals/rcp/web-ui#configuration) of the RCP and click the monitor (`RCP` by default) in the `Controllers` section.
 
-<img src="/img/Integrations/Accessories/ElgatoStreamDeck/RCP-Monitor.png" width="300" />
+   ![RCP monitor entry in the Controllers section](/img/Integrations/Accessories/ElgatoStreamDeck/RCP-Monitor.png)
 
-[3] In the right panel, in the `Controller` section, in the list, you should see "cy-rcp-XX-YY.streamdeck", click on it
+3. In the right panel under `Controller`, find and click the entry named `cy-rcp-XX-YY.streamdeck`.
 
-<img src="/img/Integrations/Accessories/ElgatoStreamDeck/Add-Elgato-Stream-Deck-To-RCP.png" width="300" />
+   ![Adding the Stream Deck to the RCP controller list](/img/Integrations/Accessories/ElgatoStreamDeck/Add-Elgato-Stream-Deck-To-RCP.png)
 
-[4] Stream Deck is now associated with the RCP control.
+4. The Stream Deck is now associated with your RCP.
 
-<img src="/img/Integrations/Accessories/ElgatoStreamDeck/Elgato-Stream-Deck-Associated-To-RCP.png" width="300" />
+   ![Stream Deck successfully associated with the RCP](/img/Integrations/Accessories/ElgatoStreamDeck/Elgato-Stream-Deck-Associated-To-RCP.png)
 
 ## Operation
 
-<img alt="cyanview-support-RCP-Elgato-Stream-Deck-Camera-Selection-Status" src="/img/Integrations/Accessories/ElgatoStreamDeck/RCP-Elgato-Stream-Deck-Camera-Selection-Status.png" width="400" />
+![Stream Deck showing camera selection and status indicators](/img/Integrations/Accessories/ElgatoStreamDeck/RCP-Elgato-Stream-Deck-Camera-Selection-Status.png)
 
-- [1] **Active** camera (blue highlight).
-- [2] Camera **Name**.
-- [3] Camera **Number**.
-- [4] Camera **Status**.
-- [5] Camera **Tally**.
+Each key displays the following information:
 
+1. **Active** camera — highlighted in blue
+2. Camera **name**
+3. Camera **number**
+4. Camera **status**
+5. Camera **tally**
 
 ## Troubleshooting
 
 ### Server error: unexpected
 
-Probably because your Streamdeck is already associated with another item.
+This error usually means the Stream Deck is already associated with another item. To resolve it:
 
-How to fix:
-* Check if you have another monitor, and eventually, delete it from the other monitor
-* Click on every cameras, scroll to `User Controllers` section and check if streamdeck is present, delete it.
+1. Check whether another monitor exists in the configuration and remove the Stream Deck association from it.
+2. Click each camera, scroll to the `User Controllers` section, and delete any Stream Deck entry you find there.
 
-After that, the error should be gone.
-
-You can also check in `/dev/app.html`, search for streamdeck and see the link and delete it (`x`)
+If the error persists, open `/dev/app.html`, search for `streamdeck`, locate the association link, and delete it using the `x` control.

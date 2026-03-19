@@ -7,96 +7,97 @@ keywords: [SBUS, servo, RC control, configuration]
 slug: /guides/advanced/sbus
 ---
 
-S.BUS is a protocol created by Futaba, to control servos motor. Some gimbal or pan/tilt heads can be controlled by S.BUS
+S.BUS is a Futaba protocol for controlling servo motors. Many gimbals and pan/tilt heads support S.BUS, letting you drive them directly from a Cyanview RIO or CI0.
 
 ## Configuration
 
 ### Bus creation
 
-To use S.BUS, a `Futaba: S.BUS` bus must be created. In the *Features* section, add a *Futaba: S.BUS* :
+In the *Features* section, add a *Futaba: S.BUS* bus.
 
-<img src="/img/Configuration/sbus/SBUS_creation.png" width="800"/>
+![SBUS bus creation](/img/Configuration/sbus/SBUS_creation.png)
 
-Once the bus is created, click on the newly *Futaba S.BUS* block to configure the bus. Then, choose your CI0 or RIO in the *Interface: Port* drop-down list:
+Click the new *Futaba S.BUS* block, then choose your CI0 or RIO in the *Interface: Port* drop-down.
 
-<img src="/img/Configuration/sbus/SBUS_configuration.png" width="400"/>
+![SBUS bus configuration](/img/Configuration/sbus/SBUS_configuration.png)
 
-The default settings should work with most S.BUS configurations. In the case of a special S.BUS device, the bus speed, duplexing or IDs can be changed from this configuration panel.
+The default settings work with most S.BUS devices. If your device requires non-standard bus speed, duplexing, or IDs, adjust them in this panel.
 
 ### S.BUS device configuration
 
-To configure an S.BUS device, first create a camera. In this example, the camera is a *Not controlled* model, and will only be used to control the S.BUS device
+Create a camera — a *Not controlled* model is fine if you only need S.BUS control. In the *Pan & Tilt* section, set the model to *S.BUS Gimbal* and select the *Futaba: S.BUS* bus you just created as the *Interface: Port*.
 
-In the *Pan & Tilt* section, select *S.BUS Gimbal* as a model, and select the *Futaba: S.BUS* bus created previously for the *Interface: Port*
+![SBUS device creation](/img/Configuration/sbus/SBUS_device_creation.png)
 
-<img src="/img/Configuration/sbus/SBUS_device_creation.png" width="800"/>
+Enable advanced settings by clicking the three-dot menu at the top right of the *Settings* panel.
 
-Then, the advanced settings must be activated to configure the S.BUS channels. Advanced settings can be activated by clicking the three dots at the top right part of the *Settings*
+![Enable advanced settings](/img/Configuration/sbus/SBUS_advanced_enable.png)
 
-<img src="/img/Configuration/sbus/SBUS_advanced_enable.png" width="400"/>
+A new *Advanced* field appears in the *Pan & Tilt* block.
 
-Once the advanced settings are activated, a new field appears in the *Pan & Tilt* configuration block :
+![SBUS advanced settings field](/img/Configuration/sbus/SBUS_advanced_settings.png)
 
-<img src="/img/Configuration/sbus/SBUS_advanced_settings.png" width="400"/>
+Use this format for the *Advanced* field:
 
-The *Advanced* field configuration must respect the following format :
+```
+pan:tilt:pan_speed:tilt_speed:roll:roll_speed,channelX=config;channelY=config;...
+```
 
-`pan channel`:`tilt channel`:`pan speed channel`:`tilt speed channel`:`roll channel`:`roll speed channel`,`channel X`=`channel_x config`;`channel Y`=`channel_y config`; ...
+The example above maps to:
+- Pan: not used (channel 0)
+- Tilt: not used (channel 0)
+- Pan speed: channel 1
+- Tilt speed: channel 2
+- Roll: channel 3
+- Roll speed: not used
+- No extra channels configured
 
-In the example above, the configuration is :
-- pan: Not used (channel 0)
-- tilt: Not used (channel 0)
-- pan speed: Channel 1
-- tilt speed: Channel 2
-- roll: Channel 3
-- roll speed: Not used.
-- No extra channels are configured
+Once configured, you control the S.BUS device from the RCP Lens menus.
 
-Once this configuration is done, the S.BUS device can be controlled via the RCP, in the Lens menus.
+#### Extra channels
 
-#### Extra channels configuration
+You can assign fixed analog or digital values to additional channels. To set an analog value of 1024 (half range) on channel 15 and a digital state of 1 on channel 16, append:
 
-Extra channels can be added with fixed analog or digital values. For example, to add an analog value of 1024 (half range) on channel 15 and a digital state 1 on channel 16, the following configuration must be added :
+```
+15=A1024;16=D1
+```
 
-`15=A1024;16=D1`.
+- Prefix analog values with `A`
+- Prefix digital values with `D`
 
-- Analog values are prefixed by *A*
-- Digital values are prefixed by *D*
+A complete configuration including pan/tilt/roll channels looks like this:
 
-The complete settings, with pan / tilt / roll channels would be :
-`0:0:1:2:3:0,15=A1024;16=D1`
+```
+0:0:1:2:3:0,15=A1024;16=D1
+```
 
 ## Wiring
 
-S-BUS is accessible on PORT2 of RIO and CI0. It is also available on PORT3 of CI0 3Ports versions.
+S.BUS is available on PORT2 of the RIO and CI0, and on PORT3 of CI0 3Ports versions.
 
-The pinout is :
-- HR10A pin 4: SBUS
-- HR10A pin 5: Ground
+Pinout (HR10A connector):
+- Pin 4: SBUS
+- Pin 5: Ground
 
-Cable [CY-CBL-6P-FAN](/docs/resources/cable-catalog#cy-cbl-6p-fan) can be used to connect a S.BUS device to a CI0.
+Use cable [CY-CBL-6P-FAN](/docs/resources/cable-catalog#cy-cbl-6p-fan) to connect an S.BUS device to a CI0.
 
-## Example with a DJI Ronin-S gimbal
+## Example: DJI Ronin-S gimbal
 
-The DJI Ronin-S gimbal can be controlled by S-BUS. The channels for this gimbal are :
+The DJI Ronin-S supports S.BUS on the following channels:
 - Channel 1: Pan speed
 - Channel 2: Tilt speed
 - Channel 4: Roll speed
 
-Advanced configuration is then `0:0:1:2:0:4`.
+Set the advanced configuration to `0:0:1:2:0:4`.
 
-S-BUS connector is available on the Focus wheel, with the following pin-out :
+The S.BUS connector is on the Focus wheel:
 1. Not connected
 2. Ground
 3. Not connected
 4. S-BUS
 
-<img src="/img/Configuration/sbus/DJI_pinout.png"/>
+![DJI Ronin-S S.BUS pinout](/img/Configuration/sbus/DJI_pinout.png)
 
-Notes : 
-- The CAN / S-BUS selector on the focus wheel must be set to *S-BUS*
-- Control is not possible when USB is connected (even with a USB charger)
-
-
-
-
+:::info DJI Ronin-S requirements
+Set the CAN/S-BUS selector on the Focus wheel to *S-BUS*. Control is not available while USB is connected — this includes USB chargers.
+:::

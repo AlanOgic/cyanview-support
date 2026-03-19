@@ -23,6 +23,7 @@ const config: Config = {
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'warn',
+      onBrokenMarkdownImages: 'warn',
     },
   },
 
@@ -107,12 +108,12 @@ const config: Config = {
         crossorigin: 'anonymous',
       },
     },
-    // Plus Jakarta Sans + JetBrains Mono
+    // Outfit + Source Code Pro
     {
       tagName: 'link',
       attributes: {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500&display=swap',
       },
     },
   ],
@@ -140,6 +141,7 @@ const config: Config = {
           {from: '/docs/Maintenance/ReleaseNotes', to: '/docs/reference/release-notes'},
           {from: '/docs/Accessories/CableCatalog', to: '/docs/resources/cable-catalog'},
           {from: '/docs/DrawIOSymbols', to: '/docs/resources/draw-io-symbols'},
+          {from: '/docs/my-first-cyanview', to: '/docs/getting-started/my-first-cyanview'},
         ],
       },
     ],
@@ -199,7 +201,7 @@ const config: Config = {
         alt: 'Cyanview',
         src: 'img/siteGfx/Logo_Cyan_flat.svg',
         srcDark: 'img/siteGfx/Logo_Cyan_flat.svg',
-        height: 32,
+        height: 40,
       },
       items: [
         {
@@ -232,12 +234,6 @@ const config: Config = {
           position: 'left',
         },
         {
-          label: 'Get started',
-          to: '/docs/getting-started/quickstart',
-          position: 'right',
-          className: 'navbar__item--cta',
-        },
-        {
           href: 'https://cyanview.cloud',
           label: 'AI Search',
           position: 'right',
@@ -247,6 +243,24 @@ const config: Config = {
     footer: {
       style: 'dark',
       links: [
+        {
+          title: 'Support',
+          items: [
+            {label: 'Knowledge Base', to: '/docs/getting-started'},
+            {label: 'Troubleshooting', to: '/docs/reference/troubleshooting/troubleshooting'},
+            {label: 'FAQ', to: '/docs/reference/faq'},
+            {label: 'RMA Procedure', to: '/docs/reference/rma-procedure'},
+          ],
+        },
+        {
+          title: 'Resources',
+          items: [
+            {label: 'Firmware & Downloads', to: '/docs/reference/firmware-download'},
+            {label: 'User Guides', to: '/docs/reference/manuals/rcp/installation'},
+            {label: 'Cable Catalog', to: '/docs/resources/cable-catalog'},
+            {label: 'Release Notes', to: '/docs/reference/release-notes'},
+          ],
+        },
         {
           title: 'Products',
           items: [
@@ -258,25 +272,11 @@ const config: Config = {
           ],
         },
         {
-          title: 'Resources',
+          title: 'Cyanview',
           items: [
-            {label: 'Quick start', to: '/docs/getting-started/quickstart'},
-            {label: 'Cable catalog', to: '/docs/resources/cable-catalog'},
-            {label: 'FAQ', to: '/docs/reference/faq'},
-            {label: 'Release notes', to: '/docs/reference/release-notes'},
-          ],
-        },
-        {
-          title: 'Company',
-          items: [
-            {label: 'Cyanview.com', href: 'https://www.cyanview.com'},
-            {label: 'Contact support', href: 'mailto:support@cyanview.com'},
-            {label: 'AI search', href: 'https://cyanview.cloud'},
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
+            {label: 'cyanview.com', href: 'https://www.cyanview.com'},
+            {label: 'Contact Support', href: 'mailto:support@cyanview.com'},
+            {label: 'AI Assistant', href: 'https://cyanview.cloud'},
             {label: 'LinkedIn', href: 'https://www.linkedin.com/company/cyanview'},
             {label: 'YouTube', href: 'https://www.youtube.com/@cyanview'},
           ],

@@ -7,68 +7,56 @@ keywords: [commands, diagnostics, network test, status, CLI]
 slug: /reference/troubleshooting/commands
 ---
 
-# cmd.txt
-
-## Introduction
-
-You can perform advanced action using a USB key with a text file containing pre-defined commands.
-This guide will describe the different features available.
+You can perform advanced actions on Cyanview devices using a USB key with a text file named `cmd.txt`. Commands run sequentially from top to bottom.
 
 ## Setup
 
-1. Format a USB key in FAT (instructions for [Windows](https://www.windowscentral.com/how-format-usb-flash-drive-windows-10) and [Mac OS X](https://www.techsolutions.support.com/how-to/how-to-format-a-usb-drive-on-a-mac-12899) )
-2. Create a text file (at the root) name `cmd.txt`
-3. Edit this file, one command per line, executed sequentially from top to bottom
-4. See below for a detailed list of commands
+1. Format a USB key as FAT — instructions for [Windows](https://www.windowscentral.com/how-format-usb-flash-drive-windows-10) and [Mac OS X](https://www.techsolutions.support.com/how-to/how-to-format-a-usb-drive-on-a-mac-12899).
+2. Create a text file named `cmd.txt` at the root of the USB key.
+3. Add commands to the file — one per line, in the order you want them to run.
+4. Insert the USB key into the device.
 
-## Commands available
+## Available commands
 
 ### `network_reset`
 
-This command will perform a reset of "persistent" network settings.
-Pay attention that all `volatile` IPs present in your config will still be present.
+Resets persistent network settings. Volatile IPs present in your config will remain.
 
 ### `config_reset`
 
-This command will perform a reset of your device configuration.
-Erasing your camera, routers integration, tally settings, volatile IPs, etc.
-Pay attention that all `persistent` IPs present in your setup will be kept.
+Resets your device configuration — cameras, router integrations, tally settings, and volatile IPs. Persistent IPs are kept.
 
 ### `reset_all`
 
-This command will reset both the network and your config (including `volatile` and `persistent` IPs).
-This will get back your device to `factory settings`.
+Resets both the network and your configuration, including all volatile and persistent IPs. This returns the device to factory settings.
 
 ### `take_snapshot`
 
-This will take a snapshot of your device configuration and store it on your USB key with the filename `snapshot.YOUR-DEVICE-SERIAL.txt`.
+Saves a snapshot of your device configuration to the USB key as `snapshot.YOUR-DEVICE-SERIAL.txt`.
 
 ### `restore_snapshot`
 
-You need a valid snapshot named `snapshot.txt` on your USB key, located at the root.
-It will restore this snapshot on the device.
+Restores a snapshot from a file named `snapshot.txt` at the root of the USB key.
 
 ### `doc`
 
-This command will print in a file named `cmd_logs.YOUR-DEVICE-SERIAL.txt` (on your USB key) the complete list of commands available.
+Writes the complete list of available commands to `cmd_logs.YOUR-DEVICE-SERIAL.txt` on the USB key.
 
 ## Logs
 
-All the commands are processed from the file `cmd.txt` and executed sequentially from top to bottom.
-For example, the file containing:
+After the commands run, a complete log is saved on the USB key as `cmd_logs.YOUR-DEVICE-SERIAL.txt`.
+
+For example, a `cmd.txt` file containing:
+
 ```
 take_snapshot
 reset_all
 ```
 
 Will:
-1. Take a snapshot of the running configuration.
-2. Then reset all (persistent network and configuration)
-
-A complete log of the commands will be stored on the USB key and named: `cmd_logs.YOUR-DEVICE-SERIAL.txt`
+1. Save a snapshot of the running configuration.
+2. Reset all settings (persistent network and configuration).
 
 ## Examples
 
-Here is a list of pre-made cmd.txt files examples:
-
-* factory settings : <a target="_blank" href="/files/reset_all/cmd.txt" download>cmd.txt</a>
+- Factory reset: [cmd.txt](/files/reset_all/cmd.txt)

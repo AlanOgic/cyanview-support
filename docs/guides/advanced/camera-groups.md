@@ -7,42 +7,38 @@ keywords: [camera groups, multi-camera, management, batch]
 slug: /guides/advanced/camera-groups
 ---
 
-## Concept
-
-This feature allows to create camera groups, with the ability to control each camera of a group at the same time. Grouping cameras can be used when an adjustement must be done on multiple cameras at the same time. For example, to recall a position on PTZ cameras, or to perform a white balance.
+Camera groups let you control multiple cameras simultaneously — useful for recalling a PTZ position or performing a white balance across a set of cameras at the same time.
 
 ## Group configuration
 
-Groups are configured directly in the [Configuration Web UI](/docs/reference/manuals/rcp/web-ui). Once all the cameras are configured, groups can be added on the `Tags` field.
+Configure groups in the [Configuration Web UI](/docs/reference/manuals/rcp/web-ui) after setting up your cameras.
 
-1. First, create your camera configuration. In this example, the configuration contains two cameras in a stadium on each goal, and two [VP4](/docs/reference/manuals/vp4-manual) channels
+1. Create your camera configuration. In this example, two cameras are placed in a stadium at each goal, along with two [VP4](/docs/reference/manuals/vp4-manual) channels.
 
-<img src="/img/Configuration/GROUP-camera-config.png" width="800" />
+![Camera configuration overview](/img/Configuration/GROUP-camera-config.png)
 
-2. Click on the camera you want to add in a or multiple groups, and set your groups in the `Tags` field. Groups are defined with the keywork `group:`, followed by the group name. Each groups must be separated by a comma. For example : `group:Group1, group:Group2`.
+2. Click a camera you want to add to a group, then set your groups in the `Tags` field. Use the `group:` keyword followed by the group name. Separate multiple groups with a comma — for example: `group:Group1, group:Group2`.
 
-<img src="/img/Configuration/GROUP-config-tags.png" width="800" />
+![Tags field with group assignment](/img/Configuration/GROUP-config-tags.png)
 
-3. Set the desired group name for each cameras that must be grouped. Each camera can have up to height groups. Group names are case sensitive, can contains only alpha-numeric characters plus "_" and "-".
-
+3. Repeat for each camera you want grouped. Each camera supports up to eight groups. Group names are case-sensitive and may only contain alphanumeric characters, underscores (`_`), and hyphens (`-`).
 
 ## Using groups on RCP
 
-Each RCP contains a default group named "All". Even when no groups are configured, the "All" group is accessible from the RCP, and allows to control every camera set in the configuration.
+Every RCP includes a default group called **All**, which is always available even if no custom groups are configured. It lets you control every camera in your configuration at once.
 
-- The group menu can be accessed by pressing and holding the Preview button, and selecting the Groups tab.
+- Press and hold the **Preview** button, then select the **Groups** tab to open the group menu.
 
-<img src="/img/Configuration/GROUP-enter-menu.bmp"/>
+![Entering the group menu](/img/Configuration/GROUP-enter-menu.bmp)
 
-- On the group menu, groups can be selected by pressing the on-screen button. Once a group is selected, it is highlighed in orange, and the an orange line is displayed around the screen.
+- Select a group by pressing its on-screen button. The selected group highlights in orange, and an orange border appears around the screen.
 
-<img src="/img/Configuration/GROUP-menu-selected.bmp"/>
+![Group selected in menu](/img/Configuration/GROUP-menu-selected.bmp)
 
-- To close the group menu, release the preview buton.
+- Release the **Preview** button to close the group menu. The orange border stays visible while a group is active.
 
-- When a group is selected, the orange line around the screen remains.
+![Group active, idle state](/img/Configuration/GROUP-idle.bmp)
 
-<img src="/img/Configuration/GROUP-idle.bmp"/>
-
-- Finally, to unselect a group, enter again in the group menu, and press on the selected group to unselect it. Changing camera also automatically unselect the group.
-
+:::tip
+To deselect a group, re-enter the group menu and press the active group again. Switching to a different camera also deselects the group automatically.
+:::

@@ -7,58 +7,47 @@ keywords: [Sony, 8-pin, serial, camera control, paint]
 slug: /integrations/cameras/sony/sony-8pin
 ---
 
-<img alt="cyanview-support-Sony-PMW-XXX" src="/img/Integrations/camera/Sony/Sony-PMW/Sony-PMW-XXX@2x-8.png" width="900" />
+![Sony PMW series cameras with 8-pin remote connector](/img/Integrations/camera/Sony/Sony-PMW/Sony-PMW-XXX@2x-8.png)
 
+Connect Sony cameras with an 8-pin remote connector to a **CI0** (local) or **RIO** (remote) for full paint control over the standard Sony serial protocol.
 
-This guide covers the different Sony cameras that have a **8Pins Remote Connector**.
+![Sony shoulder camcorder 8-pin remote connector detail](/img/Integrations/camera/Sony/Sony-PMW/SONY-Shoulder-Camcorder-Remote-Connector@2x-8.png)
 
-<img alt="cyanview-support-Sony-Camcorder-Remote-Connector" src="/img/Integrations/camera/Sony/Sony-PMW/SONY-Shoulder-Camcorder-Remote-Connector@2x-8.png" width="900" />
+![Sony PMW connected via RIO to an RCP](/img/Integrations/camera/Sony/Sony-PMW/SONY-PMW-XXX-RCP-CI0@2x-8.png)
 
-These camera can be controlled directly from a **CI0** (local) or via a **RIO** (remote).
-
-<img alt="cyanview-support-Sony-PMW-RIO-RCP" src="/img/Integrations/camera/Sony/Sony-PMW/SONY-PMW-XXX-RCP-CI0@2x-8.png" width="900" />
-
-<img alt="cyanview-support-Sony-PMW-CI0-RCP" src="/img/Integrations/camera/Sony/Sony-PMW/Sony-PMW-XXX-RCP-RIO-Internet@2x-8.png" width="900" />
+![Sony PMW connected via CI0 to an RCP over internet](/img/Integrations/camera/Sony/Sony-PMW/Sony-PMW-XXX-RCP-RIO-Internet@2x-8.png)
 
 ## Connection
 
-Connect the **Remote connector** terminal on the camera to the **CI0** / **RIO** with a [CY-CBL-6P-SONY-8-03](/docs/resources/cable-catalog#cy-cbl-sony-8p-03).
+Connect the camera's **Remote connector** to the **CI0** or **RIO** using a [CY-CBL-6P-SONY-8-03](/docs/resources/cable-catalog#cy-cbl-sony-8p-03) cable.
 
-The **RIO** can be powered by the camera using this cable.
+The RIO can draw power from the camera through this cable.
 
 :::warning
-On some camcorders, and when the cable reference is CY-CBL-6P-SONY-8-02, the RIO will need an external power supply to avoid a boot loop:
-* the camera will starts
-* the camera will power the RIO
-* the RIO will start to control the camera
-* the camera will change from `uncontrolled` to `controlled` and will require a power cycle, etc.
+On some camcorders, using cable **CY-CBL-6P-SONY-8-02** can cause a boot loop:
 
-Use an external power supply (or a D-Tap cable from external batteries).
+1. The camera starts and powers the RIO.
+2. The RIO begins controlling the camera.
+3. The camera transitions from `uncontrolled` to `controlled` and requires a power cycle — then repeats.
 
-The point is to ensure that RIO should start before the cam.
-
-When a CY-CBL-6P-SONY-8-02 is used, there's no bootloop conditions.
+Use an external power supply or a D-Tap cable from an external battery to ensure the RIO starts before the camera. This issue does not occur with the **CY-CBL-6P-SONY-8-03** cable.
 :::
 
-<img alt="cyanview-support-Sony-RIO-4G-12V" src="/img/Integrations/camera/Sony/Sony-PMW/Sony-RIO-4G-12v@2x-8.png" width="900" />
+![Sony RIO connected with 4G and 12V external power](/img/Integrations/camera/Sony/Sony-PMW/Sony-RIO-4G-12v@2x-8.png)
 
 ## Setup
 
-- **Connect** the camera to the **CI0** / **RIO** with a **[CY-CBL-6P-SONY-8-01](/docs/resources/cable-catalog#cy-cbl-sony-8p-03)** cable.
-- **Power ON** the camera.
-- **Add the Camera** to the RCP configuration via the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui).
+1. Connect the camera to the CI0 or RIO with a [CY-CBL-6P-SONY-8-01](/docs/resources/cable-catalog#cy-cbl-sony-8p-03) cable.
+2. Power on the camera.
+3. Add the camera in the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui):
    - Select **Sony** brand.
    - Select **Legacy** model.
-   - Select the **CI0** / **RIO** and port on which the camera is connected to.
-   - Open the RCP menu : **Cam** > **Tally**, try to turn **ON** and **OFF** tally **Red** encoder.
-   - If *Tally* works, you're good to go.
-   - If *Tally* does not work, in the same **Cam** > **Tally** menu, try to turn **ON** and **OFF** the **Call** encoder.
-   - If *Call* is working but not *Tally RED*, then change the camera model from **Legacy** to **Camcorder**.
+   - Select the CI0 or RIO and the port the camera is connected to.
+4. Open **Cam > Tally** in the RCP menu and toggle **Tally Red** on and off.
+   - If tally responds, you're done.
+   - If tally does not respond, toggle **Call** in the same menu.
+   - If **Call** works but **Tally Red** does not, change the camera model from **Legacy** to **Camcorder**.
 
 ## Note on RS422
 
-Some cameras needs to be configured in RS422 (HXC-D70, CA-FB70, etc.) to work properly with our system.
-
-You can find an example on how to change that [here](https://www.markertek.com/Attachments/Manuals/SonyProAudio/CA-FB70-Manual.pdf).
-
-Search for section `Outputting Trunk Signal`.
+Some cameras (HXC-D70, CA-FB70, etc.) must be configured for RS422 to work with Cyanview. Refer to your camera's manual for the `Outputting Trunk Signal` section — [see this example](https://www.markertek.com/Attachments/Manuals/SonyProAudio/CA-FB70-Manual.pdf).

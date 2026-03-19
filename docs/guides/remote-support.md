@@ -7,47 +7,36 @@ keywords: [remote support, troubleshooting, diagnostics, help]
 slug: /guides/remote-support
 ---
 
-## Overview
+Your RCP must be connected to the internet to enable remote support. Once connected, it establishes an outbound SSH connection to `ssh.cyanview.com` on port `22`, allowing the Cyanview team to diagnose and troubleshoot your setup remotely.
 
-<img alt="cyanview-remote-support-internet-network-configuration-ssh-RCP" src="/img/diagrams/cyanview-remote-support-internet-network-configuration-ssh-RCP@2x-8.png" width="600" />
+![RCP remote support network diagram](/img/diagrams/cyanview-remote-support-internet-network-configuration-ssh-RCP@2x-8.png)
 
-**Cyanview Devices** must be connected to internet to allow different support activities.
+## Check the connection status
 
-The RCP will connect to *ssh.cyanview.com* on port *22*.
+You can verify the remote support status from two places: the RCP screen or the RCP web UI.
 
-The status of this connection can be verified in the RCP's screen and in the RCP's web UI. 
+### RCP screen
 
-### RCP Screen 
+On the RCP screen, navigate to the [Network status section](/docs/reference/manuals/rcp/controls#network). Look for the **Remote support** row:
 
-To verify the **Remote support** status on the RCP screen, see [RCP Network Status](/docs/reference/manuals/rcp/controls#network) on RCP screen.
+```
+Remote support       Available
+```
 
-     Remote support       Available
-
-If the status is *Not Available*, proceed to the RCP's *Admin* page.
+If the status shows **Not Available**, proceed to the RCP Admin page to investigate.
 
 ### RCP Admin page
 
-Access the RCP [Configuration Web UI](/docs/guides/networking/ip-configuration#lan-web-ui-access).
-Open [Admin](/docs/reference/manuals/rcp/web-ui#admin) page in your browser.
+Open the [Configuration Web UI](/docs/guides/networking/ip-configuration#lan-web-ui-access) and go to the [Admin page](/docs/reference/manuals/rcp/web-ui#admin).
 
-<img alt="cyanview-support-RCP-remote-connection-status" src="/img/productGfx/RCP/cyanview-support-RCP-remote-connection-status.png" width="400" />
+![RCP Admin page showing remote connection status](/img/productGfx/RCP/cyanview-support-RCP-remote-connection-status.png)
 
-The **Remote support** section provides a global status of the *remote support* functionality.
+The **Remote support** section shows the overall connection status. If it does not read **Connection OK**, check the **Connectivity check** section for details on each step of the connection.
 
-If the status is not *Connection OK*, verify the different statuses of the **Connectivity check** section to identify the cause.
+Click the orange **?** next to any failed item to get more information.
 
-When an issue is reported, click the orange **?** to get additional information.
+![RCP Admin connectivity check failure](/img/productGfx/RCP/RCP-Admin-Connectivity-Check-SSH-Connection-Failure.png)
 
-<img alt="RCP-Admin-Connectivity-Check-SSH-Connection-Failure" src="/img/productGfx/RCP/RCP-Admin-Connectivity-Check-SSH-Connection-Failure.png" width="400" />
-
-You can get technical informations on the *Connectivity diagnostic page*. The *Connectivity diagnostic page* is accessible at 
-- http://*IP*/dev/connectivity-support.html
-
-
-
-
-
-
-
-
-
+:::tip
+For deeper diagnostics, open the connectivity diagnostic page directly in your browser at `http://<RCP-IP>/dev/connectivity-support.html`.
+:::

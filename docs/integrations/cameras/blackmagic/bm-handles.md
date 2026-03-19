@@ -7,110 +7,85 @@ keywords: [Blackmagic, handles, operator, camera control]
 slug: /integrations/cameras/blackmagic/bm-handles
 ---
 
-# Blackmagic Zoom and Focus demand
+The Blackmagic zoom and focus demands connect to your RIO, NIO, or RCP to provide zoom and focus input. Buttons on the handles map to video return switching, letting the camera operator cycle between their own feed, a live feed, or a wide shot on a single monitor.
 
-<img src="/img/Integrations/Blackmagic/Handles/BMF.jpeg" width="400" />
-<img src="/img/Integrations/Blackmagic/Handles/BMZ.jpeg" width="400" />
+![Blackmagic focus demand handle](/img/Integrations/Blackmagic/Handles/BMF.jpeg)
+
+![Blackmagic zoom demand handle](/img/Integrations/Blackmagic/Handles/BMZ.jpeg)
 
 ## Control
 
-The goal of this integration is to provide zoom and focus input to your RIO/NIO/RCP.
+The handles let you control any lens that Cyanview supports:
+- Lenses driven directly through the camera protocol.
+- External lenses (B4, PL, etc.).
+- Motors (Tilta, etc.).
 
-We also map the buttons to allow you to control the video feedback signal (allows the cameraman to switch on a single monitor between its own camera, live feed, other camera with wide angle, etc.)
+Thanks to the IP architecture, the handles can be placed:
+- On the camera with a RIO or RIO +LAN — for camera operators, polecam operators, etc.
+- In a remote location with a NIO — for cable cams, etc.
 
-It allows you to control any lens that Cyanview is able to control:
-* lens driven directly by the camera (through the protocol)
-* external lens (B4, PL, etc.)
-* motors (tilta, etc.)
-
-And thanks to our IP architecture, the handles can be placed:
-* on the camera with a RIO/RIO +LAN (cameraman, polecam operator, etc.)
-* in a remote location with a NIO (cable cam, etc.)
-
-This gives you more flexibility (various lens, even the ones that can't support handles like prime lens or E-mount, various workflow and setup thanks to IP) while keeping the same control that you are used to with typical handles plugged directly on the lens (fujinon/canon handles).
+This gives you more lens flexibility (including prime lenses and E-mount, which don't support physical handles) and workflow flexibility, while keeping the same familiar control feel as handles plugged directly into a Fujinon or Canon lens.
 
 ## Wiring
 
-Here is an example of a setup with a FX9 and a cine lens that we motorise with tilta motors:
+Example setup using a Sony FX9 with a cine lens controlled by Tilta motors:
 
-<img src="/img/Integrations/Blackmagic/Handles/BMHandles-wiring.png" width="800" />
+![BM handles wiring diagram with FX9 and Tilta motors](/img/Integrations/Blackmagic/Handles/BMHandles-wiring.png)
 
-
-* `lens` : RIO will drive the 3 Tilta motors (zoom, focus, iris) over serial.
-* `camera` : RIO will drive the FX9 over Ethernet (using a USB dongle bridging both and acting as an ethernet switch)
-* `handles` : Blackmagic handles are plugged on RIO over USB.
+- `lens` — RIO drives 3 Tilta motors (zoom, focus, iris) over serial.
+- `camera` — RIO drives the FX9 over Ethernet via a USB dongle acting as an Ethernet switch.
+- `handles` — Blackmagic handles connect to the RIO over USB.
 
 :::note
-Works also with motorised lens:
-* through the camera (E-mount on FX9, B4 on a broadcast camera, etc.)
-* through the lens (Canon Cine Servo, Fujinon Cabrio, B4 broadcast, etc.)
+This also works with motorized lenses through the camera (E-mount on FX9, B4 on a broadcast camera) or through the lens (Canon Cine Servo, Fujinon Cabrio, B4 broadcast).
 :::
 
 ## Setup
 
-You can wire the zoom and focus together:
-* USB-C to USB-C cable from Focus `cam` port to Zoom `loop` port
-* USB-C to USB-A cable from Zoom `cam` port to RIO/NIO/RCP
+Connect the handles:
+- USB-C to USB-C from Focus `cam` port to Zoom `loop` port, then USB-C to USB-A from Zoom `cam` port to the RIO/NIO/RCP.
+- Or use two separate USB-C to USB-A cables — one per handle.
 
-Or separately using 2 USB-C to USB-A cables (one for each).
+Configure your camera and lens as usual. In the camera configuration in the **right panel**, find the **User controllers** section and select both `BMFocus` and `BMZoom`.
 
-Configure your camera, lens, etc. as usual.
-Then in your camera configure (in the `right panel`), in the `User controllers` section, you will find the `Blackmagic handles` controllers (`BMFocus` and `BMZoom`):
+![BM handles setup screen showing BMFocus and BMZoom in User controllers section](/img/Integrations/Blackmagic/Handles/BMHandles-setup.png)
 
-<img src="/img/Integrations/Blackmagic/Handles/BMHandles-setup.png" width="400" />
-
-Ensure you selected both (they should be listed in the `User controllers` section).
-
-If paired properly, the LED of the handles should be steady white.
+When paired correctly, the LED on each handle turns steady white.
 
 ## Video return configuration
 
-You first need to setup your:
-* handles
-* switcher/router
+Set up your handles and switcher/router first, then follow the [B4 return guide](/docs/guides/advanced/b4-return) to link the handle buttons to your switcher/router inputs and outputs.
 
-Then you can follow <a href="/docs/guides/advanced/b4-return">this guide</a> to link the handles buttons to the switcher/router desired inputs/output.
+## Button mapping
 
-## Buttons mapping
+![BM handles button layout — top view](/img/Integrations/Blackmagic/Handles/BMHandles-buttons2.png)
 
-<img src="/img/Integrations/Blackmagic/Handles/BMHandles-buttons2.png" width="400" />
-<div/>
-<img src="/img/Integrations/Blackmagic/Handles/BMHandles-buttons1.png" width="400" />
-
+![BM handles button layout — side view](/img/Integrations/Blackmagic/Handles/BMHandles-buttons1.png)
 
 1. VTR
 2. RET1
-3. 
-    * Long press : Switch zoom speed encoder to iris control
-    * 3 x short press : Switch zoom rocker to focus speed
-4. 
-    * Long press : Switch zoom speed encoder to focus control
-    * 3 x short press : Switch zoom rocker to iris
-5. Long press : calibrate zoom rocker (zero position)
-
-
+3. Long press: switch zoom speed encoder to iris control. Triple short press: switch zoom rocker to focus speed.
+4. Long press: switch zoom speed encoder to focus control. Triple short press: switch zoom rocker to iris.
+5. Long press: calibrate zoom rocker (zero position).
 
 :::note
+Hold a button for at least 5 seconds to confirm a long-press action.
 
-To ensure that the long-press action has been validated, keep the button pressed for at least 5 seconds.
-
-If the Zoom is drifting, the calibration must be done by long-pressing the button number 5.
-
+If the zoom drifts, calibrate it by long-pressing button 5.
 :::
-
-
 
 ## From the field
 
 ### BM handles on a Canon Cine Servo and RED Komodo
 
-* RCP
-* RIO[^1]
-* 1 x <a href="/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a>[^2]
-* BM zoom and focus handles
+Equipment:
+- RCP
+- RIO[^1]
+- 1× [CY-CBL-6P-B4-01](/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default)[^2]
+- BM zoom and focus handles
 
-<img src="/img/Workflows/BM-handles-Komodo-Canon.png" width="400"/>
+![BM handles with Canon Cine Servo and RED Komodo wiring diagram](/img/Workflows/BM-handles-Komodo-Canon.png)
 
-[^1]: RIO is powered by D-DTAP, connected to the cam using USB Ethernet dongle. And to the RCP using the onboard Ethernet (no need for an additional switch, we can bridge both networks).
+[^1]: RIO is powered by D-TAP, connected to the camera via a USB Ethernet dongle, and to the RCP via onboard Ethernet — no additional switch needed, both networks can be bridged.
 
-[^2]: <a href="/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a> is used to connect the RIO to the lens (Canon Cine Servo) using the 12pin port (data + power). Here, RIO takes control of zoom, focus and iris. BM handles can then act on zoom and focus, while RCP can paint and control the iris.
+[^2]: [CY-CBL-6P-B4-01](/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default) connects the RIO to the Canon Cine Servo lens via the 12-pin port (data + power). The RIO controls zoom, focus, and iris. BM handles control zoom and focus while the RCP paints and controls iris.

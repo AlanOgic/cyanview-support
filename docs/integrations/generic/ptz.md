@@ -7,17 +7,13 @@ keywords: [PTZ, pan tilt zoom, joystick, presets, VISCA]
 slug: /integrations/generic/ptz
 ---
 
-# PTZ
+Connect and control PTZ cameras from your Cyanview RCP — exposure, white balance, black balance, advanced shading, and full pan/tilt/zoom/focus control.
 
-This guide describes how to configure a PTZ cameras.
+![Panasonic AW-UE150](/img/Integrations/Panasonic/AW-UE150.png)
 
-<img src="/img/Integrations/Panasonic/AW-UE150.png" width="300"/>
+## Compatible PTZ cameras
 
-## Compatible PTZ
-
-If your model is not listed, you can try a `similar` or `close` model.
-
-If that doesn't work, contact Cyanview support.
+If your model is not listed, try a `similar` or `close` model. If that doesn't work, [contact Cyanview support](mailto:support@cyanview.com).
 
 ### BirdDog
 
@@ -34,9 +30,9 @@ If that doesn't work, contact Cyanview support.
 * CR-N300
 * CR-N500
 
-### Panasonic:
+### Panasonic
 
-AW-HE:
+AW-HE series:
 * AW-HE40
 * AW-HE42
 * AW-HE50
@@ -45,12 +41,12 @@ AW-HE:
 * AW-HE120
 * AW-HE130
 
-AW-UE:
+AW-UE series:
 * AW-UE70
 * AW-UE100
 * AW-UE150
 
-AW-HR:
+AW-HR series:
 * AW-HR140 (use `AW-HE130` model)
 
 ### Sony
@@ -71,49 +67,45 @@ You can control:
 * Exposure
 * White balance
 * Black balance
-* Advance shading (multi matrix, etc.) based on camera compatibility
+* Advanced shading (multi matrix, etc.) — based on camera compatibility
 * Pan/Tilt/Zoom/Focus
 
-For a more detailed list, check if your model has its own integration guide.
+For a full list of parameters, check whether your model has a dedicated integration guide.
 
 ## Wiring
 
-Compatible Cyanview device: RCP, RIO, RIO Live
+Compatible Cyanview devices: RCP, RIO, RIO Live.
 
-If the RCP/RIO doesn't have an IP address in the same range as the camera IP, you should add one in the LAN section by following this <a href="/docs/guides/networking/ip-configuration">guide</a>.
+If your RCP/RIO does not have an IP address in the same range as the camera, add one in the LAN section by following the [IP configuration guide](/docs/guides/networking/ip-configuration).
 
-<img src="/img/Integrations/Generic/ptz-wiring.png" width="900"/>
+![PTZ wiring diagram](/img/Integrations/Generic/ptz-wiring.png)
 
 ## Setup
 
-In this example, we will set up a Panasonic AW-UE150, but the setup is similar for all other PTZ.
+The example below uses a Panasonic AW-UE150, but the setup is the same for all PTZ cameras. You can run multiple PTZ from different brands on the same RCP without any issue.
 
-On the same RCP. You can have multiple PTZ from multiple brands without any issue.
+![Panasonic PTZ setup](/img/Integrations/Panasonic/panasonic-ptz-setup.png)
 
-<img src="/img/Integrations/Panasonic/panasonic-ptz-setup.png" width="300"/>
+1. Click `+` in the camera block — a new panel appears on the right.
+2. Under `General`, set a number and a name.
+3. Select the brand (`Panasonic`).
+4. Select the model (`AW-UE150`).
+5. Enter the IP address of your PTZ.
 
-Setup:
-* Click on the `+` in the camera block, a new panel will appear on the right
-* In `General` Configure a Number and a Name
-* Select the brand (here `Panasonic`)
-* Select the model (here `AW-UE150`)
-* Enter the IP of your PTZ
+When connected successfully, the block turns green:
 
-If everything went well, it should go green:
+![Panasonic PTZ block — green](/img/Integrations/Panasonic/panasonic-ptz-block.png)
 
-<img src="/img/Integrations/Panasonic/panasonic-ptz-block.png" width="300"/>
+## Pan/Tilt control
 
-## Pan/Tilt
+Once the camera is configured, you have several control options:
 
-Once the camera is configured, you can have:
-* Cyanview RCP (shading) and Sony joystick panel (`rm-ip500`)
-* Cyanview RCP (shading + pan/tilt/zoom/focus) from touchscreen, more information <a href="/docs/reference/manuals/rcp/ui/scene">here</a>
-* Cyanview RCP (shading + pan/tilt/zoom/focus) from USB joystick, more information <a href="/docs/integrations/accessories/anxinshi-ptz-usb-joystick">here</a>
+* **Cyanview RCP** (shading) combined with a Sony joystick panel (`rm-ip500`)
+* **Cyanview RCP** (shading + pan/tilt/zoom/focus) via touchscreen — see the [scene UI reference](/docs/reference/manuals/rcp/ui/scene)
+* **Cyanview RCP** (shading + pan/tilt/zoom/focus) via USB joystick — see the [Anxinshi PTZ USB joystick guide](/docs/integrations/accessories/anxinshi-ptz-usb-joystick)
 
-## Remote control / Remote production
+## Remote production
 
-Even if the PTZ control is IP, it can be interesting to combine a PTZ with a <a href="/docs/reference/manuals/rio-manual">RIO</a> (with AVIWEST for example).
+Even when PTZ control runs over IP, combining a PTZ with a [RIO](/docs/reference/manuals/rio-manual) (with AVIWEST, for example) is a useful option for remote productions.
 
-Or combine local shading with RCP with remote shading from anywhere in the world using a second RCP.
-
-For more information, take a look at <a href="/docs/guides/networking/remi">REMI page</a>
+You can also run local shading from an RCP alongside remote shading from anywhere in the world using a second RCP. See the [REMI guide](/docs/guides/networking/remi) for details.

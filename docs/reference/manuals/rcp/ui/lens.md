@@ -7,134 +7,95 @@ keywords: [RCP, UI, lens control, focus, zoom, iris]
 slug: /reference/manuals/rcp/ui/lens
 ---
 
-## Overview
+The Lens menu lets you control zoom, focus, and robotics (pan/tilt/roll). What you can control — and how — depends on your camera, lens, and robotic head.
 
-The Lens menu allows you to control:
-* lens : zoom, focus
-* robotics : pan/tilt/roll
+The available controls and their type (speed or position) vary based on whether you have:
+- A PTZ camera.
+- A lens (iris, zoom, focus) controlled through the camera.
+- An external lens (iris, zoom, focus) controlled directly through the lens or via motors (ARRI, Tilta).
 
-The type of control (speed or position) and what you can control will vary, based on:
-* the camera
-* the lens
-* the robotic head
+:::info
+As a general rule:
+- PTZ cameras have speed/position control for everything (zoom, focus, pan, tilt).
+- Cameras offer iris control in position, but no zoom/focus control.
+- Lens + camera setups have iris in position and zoom/focus (optional) in speed and position.
 
-This will also vary if you:
-* have a PTZ
-* have a lens (iris, zoom, focus) is controlled through the camera
-* have an external lens (iris, zoom, focus) is controlled externally (in parallel of the camera) directly through the lens or using motors (ARRI, Tilta)
+This is determined by the camera protocol.
 
-:::note
-Usually:
-* PTZ have speed/position control for everything (zoom, focus, pan, tilt)
-* Camera have iris control in position, but no zoom/focus control
-* Lens (+Camera) have iris in position and zoom/focus (optional) in speed and position
-
-It's based on the camera protocol limitations.
-:::
-
-:::note
-This speed/position is important:
-* To use external zoom/focus control (BM handles, etc.), you need to ensure you have zoom in speed and focus in position.
-* To smooth the remote control (4G, etc.), it's better to use speed instead of position as it smooth the network jitter
-* you can only save/recall absolute positions
+Speed vs. position matters:
+- To use external zoom/focus control (BM handles, etc.), you need zoom in speed and focus in position.
+- For remote control over unstable connections (4G, etc.), speed mode smooths network jitter better than position.
+- You can only save and recall absolute positions.
 :::
 
 ## Lens menu
 
-Path : `MENU > LENS`
+Path: `MENU > LENS`
 
-<img src="/img/Manual/RCP/Lens/F1.BMP"/>
+![Lens menu overview](/img/Manual/RCP/Lens/F1.BMP)
 
-* `LENS` is dedicated to setup/infos
-* `PTZF` is dedicated to PTZ control/operation
+- **LENS** — setup and info.
+- **PTZF** — PTZ control and operation.
 
-<img src="/img/Manual/RCP/Lens/F2.BMP"/>
+![Lens control and enable settings](/img/Manual/RCP/Lens/F2.BMP)
 
-This page only works for external lens (i.e. Canon PL lens on FX9 controlled with RIO +LAN):
-* control is exclusive : if RIO takes control, cameraman lose control
-* Iris : usually enabled as it's the main usage for RCP
-* Zoom : usually disable to let the cameraman zoom in/out. Used for robotic application or beauty shot (then RCP or any cyanview device can operate the zoom/focus)
-* Focus : usually disable to let the cameraman focus. Used for robotic application or beauty shot (then RCP or any cyanview device can operate the zoom/focus)
+This page applies only to external lenses (e.g., a Canon PL lens on an FX9 controlled via RIO + LAN):
+- Control is exclusive — if the RIO takes control, the cameraman loses it.
+- **Iris** — usually enabled, as it is the primary RCP use case.
+- **Zoom** — usually disabled to let the cameraman zoom. Enable for robotic or beauty shot applications.
+- **Focus** — usually disabled to let the cameraman focus. Enable for robotic or beauty shot applications.
 
-<img src="/img/Manual/RCP/Lens/F3.BMP"/>
+![Lens communication status showing connected lens model](/img/Manual/RCP/Lens/F3.BMP)
 
-If using external lens (Canon PL lens on FX9 controlled with RIO +LAN), you can check here if the communication is established as the lens model will be displayed.
+If using an external lens, this page shows the lens model when communication is established.
 
-<img src="/img/Manual/RCP/Lens/F4.BMP"/>
+![Lens info page](/img/Manual/RCP/Lens/F4.BMP)
 
 ## PTZF menu
 
-### Control of PTZF
+### Controlling PTZF
 
-<img src="/img/Manual/RCP/Lens/F5.BMP"/>
-<img width="480px" src="/img/Manual/RCP/RCP-encoders.png"/>
+![PTZF control page](/img/Manual/RCP/Lens/F5.BMP)
+![RCP encoder layout](/img/Manual/RCP/RCP-encoders.png)
 
-Here you can control:
-* Zoom
-* Focus
-* Pan
-* Tilt
+Control zoom, focus, pan, and tilt using:
+- **Encoders** — absolute/position control.
+- **Touchscreen** — speed/relative control.
 
-Using:
-* Encoders : position/absolute control
-* Touchscreen : speed/relative control
+Some protocols display an absolute value without offering absolute control. This is a camera protocol limitation.
 
-Sometime you will have an absolute value displayed, but no absolute control. This depends on every camera protocol.
+### Saving and loading positions
 
-### Positions save/load
+You can save and load up to 10 presets for zoom, focus, pan, and tilt — provided you have absolute control and values.
 
-You can save/load 10 presets for:
-* zoom
-* focus
-* pan
-* tilt
+![Position presets save/load screen](/img/Manual/RCP/Lens/F6.BMP)
+![RCP encoder layout](/img/Manual/RCP/RCP-encoders.png)
 
-If you have absolute control and values, then you can save/recall presets:
-
-<img src="/img/Manual/RCP/Lens/F6.BMP"/>
-<img width="480px" src="/img/Manual/RCP/RCP-encoders.png"/>
-
-If you click on `Save`, then one of the position, it save the values in this slot.
-
-If you click on a slot, it recalls the values you saved (zoom, focus, pan, tilt).
-
-You can clear a slot by clicking on `Clear` then the desired slot.
+- Click **Save**, then select a position slot to store the current values.
+- Click a slot to recall its saved values (zoom, focus, pan, tilt).
+- Click **Clear**, then select a slot to delete it.
 
 ### Settings
 
-<img src="/img/Manual/RCP/Lens/F7.BMP"/>
+![PTZF settings page](/img/Manual/RCP/Lens/F7.BMP)
 
-You can setup:
-* Horizontal/Vertical flip
-* Digital zoom toggle
-* Stabilisation toggle
+Configure:
+- Horizontal/vertical flip
+- Digital zoom toggle
+- Stabilisation toggle
 
 Control:
-* Roll
-* Digital zoom
-
-:::note
-Here in my case, on my PTZ, I can only flip horizontally or vertically.
-:::
+- Roll
+- Digital zoom
 
 ### Focus
 
-<img src="/img/Manual/RCP/Lens/F9.BMP"/>
-<img width="480px" src="/img/Manual/RCP/RCP-encoders.png"/>
+![Focus control page](/img/Manual/RCP/Lens/F9.BMP)
+![RCP encoder layout](/img/Manual/RCP/RCP-encoders.png)
 
-You can control:
-* Focus relatively, in speed (using the touchscreen)
-* Focus in absolute position using the first encoder
-* Change AF mode (if available) using the second encoder
-* Do a one shot focus (touchscreen button)
-* Toggle AF on/off (touchscreen button)
-
-:::note
-In my case, on my PTZ:
-* I can toggle AF on/off
-* control focus in speed and position
-
-Nothing else
-:::
-
-
+From this page you can:
+- Control focus relatively in speed using the touchscreen.
+- Control focus in absolute position using the first encoder.
+- Change AF mode (if available) using the second encoder.
+- Trigger a one-shot focus using the touchscreen button.
+- Toggle AF on/off using the touchscreen button.

@@ -7,11 +7,13 @@ keywords: [RED, Komodo, cinema camera, remote control]
 slug: /integrations/cameras/other/red-komodo
 ---
 
-<img src="/img/Integrations/RED/komodo.jpg" width="600" />
+![RED Komodo cinema camera](/img/Integrations/RED/komodo.jpg)
+
+The RED Komodo integrates with Cyanview over IP, giving you full remote paint and exposure control from the RCP.
 
 ## Wiring
 
-<img src="/img/Integrations/RED/komodo-wiring.png" width="600" />
+![RED Komodo wiring diagram](/img/Integrations/RED/komodo-wiring.png)
 
 ## Controls
 
@@ -27,171 +29,144 @@ slug: /integrations/cameras/other/red-komodo
 
 ### Main view
 
-<img src="/img/Integrations/RED/RCP/F1.BMP"/>
+![RCP main view](/img/Integrations/RED/RCP/F1.BMP)
 
 ### White balance
 
-Path : `MENU > PAINT > WHITE`
+Path: `MENU > PAINT > WHITE`
 
-<img src="/img/Integrations/RED/RCP/F3.BMP"/>
+![RCP white balance screen](/img/Integrations/RED/RCP/F3.BMP)
 
 :::note
-You can click on the first row to control R/G/B using encoders.
-And clicking on the second row will switch to color temp and tint.
+Click the first row to control R/G/B using encoders. Click the second row to switch to color temp and tint.
 :::
 
-<img src="/img/Integrations/RED/RCP/F4.BMP"/>
+![RCP color temperature screen](/img/Integrations/RED/RCP/F4.BMP)
 
 :::note
 You can control:
-* Presets : navigate through a list of presets color temp (2800K, 3200K, 3800K, 4500K, 5600K, 7000K, 9000K)
-* Color Temp : variable color temp to select any value based on the camera steps
-* Tint
-* Action (menu) : set A and B boundaries (minimum/maximum) for the color temp
-* A/B : direct access to A and B boundaries
-* Slider : Move variable color temp between A and B boundaries
-* A-B encoder : Move variable color temp between A and B boundaries
+- **Presets** — navigate through color temp presets (2800K, 3200K, 3800K, 4500K, 5600K, 7000K, 9000K)
+- **Color Temp** — variable color temp based on camera steps
+- **Tint**
+- **Action (menu)** — set A and B boundaries (min/max) for color temp
+- **A/B** — direct access to A and B boundaries
+- **Slider** — move variable color temp between A and B boundaries
+- **A-B encoder** — move variable color temp between A and B boundaries
 :::
 
 ### Black balance
 
-Path : `MENU > PAINT > BLACK`
+Path: `MENU > PAINT > BLACK`
 
-<img src="/img/Integrations/RED/RCP/F38.BMP"/>
+![RCP black balance screen](/img/Integrations/RED/RCP/F38.BMP)
 
 ### ISO/dB
 
-Path : `MENU > PAINT > Gain`
+Path: `MENU > PAINT > Gain`
 
-<img src="/img/Integrations/RED/RCP/F11.BMP"/>
+![RCP gain screen](/img/Integrations/RED/RCP/F11.BMP)
 
-<br/>
-
-<img src="/img/Integrations/RED/RCP/F12.BMP"/>
-
+![RCP gain screen detail](/img/Integrations/RED/RCP/F12.BMP)
 
 ### Matrix
 
-Path : `MENU > PAINT > Matrix`
+Path: `MENU > PAINT > Matrix`
 
-You can change the presets:
+Change the presets using the encoder:
 
-<img src="/img/Integrations/RED/RCP/color_space.gif"/>
-<img width="480px" src="/img/Manual/RCP/RCP-encoders-1-right.png"/>
+![RCP color space selection](/img/Integrations/RED/RCP/color_space.gif)
+![RCP encoder control](/img/Manual/RCP/RCP-encoders-1-right.png)
 
-And You can enable/disable it with ON/OFF button
+Toggle the matrix on or off with the ON/OFF button.
 
 ### Gamma
 
-Path : `MENU > PAINT > Gamma`
-
+Path: `MENU > PAINT > Gamma`
 
 In Gamma, you can change the R/B/M gamma:
 
-<img src="/img/Integrations/RED/RCP/F14.BMP"/>
+![RCP gamma screen](/img/Integrations/RED/RCP/F14.BMP)
 
-In Tables, you can change OETF:
+In Tables, you can change the OETF:
 
-<img src="/img/Integrations/RED/RCP/gamma_tables.gif"/>
-<img width="480px" src="/img/Manual/RCP/RCP-encoders-1-right.png"/>
+![RCP gamma tables selection](/img/Integrations/RED/RCP/gamma_tables.gif)
+![RCP encoder control](/img/Manual/RCP/RCP-encoders-1-right.png)
 
-And the Tone Curve:
+And the tone curve:
 
-<img src="/img/Integrations/RED/RCP/gamma_tables2.gif"/>
-<img width="480px" src="/img/Manual/RCP/RCP-encoders-3-right.png"/>
+![RCP tone curve selection](/img/Integrations/RED/RCP/gamma_tables2.gif)
+![RCP encoder control](/img/Manual/RCP/RCP-encoders-3-right.png)
 
 :::note
-This list will be updated based on the Color Space selected in the camera.
-
-Check on the RCP : `MENU > PAINT > Matrix > Preset` (Here I was in `Rec709`)
+This list updates based on the color space selected in the camera. Check on the RCP: `MENU > PAINT > Matrix > Preset`.
 :::
 
 ### Shutter
 
-Path : `MENU > PAINT > SHUTTER`
+Path: `MENU > PAINT > SHUTTER`
 
 You can change:
-* Shutter on/off
-* Shutter in speed or angle
-* ECS
+- Shutter on/off
+- Shutter in speed or angle
+- ECS
 
-<img src="/img/Integrations/RED/RCP/shutter.gif"/>
+![RCP shutter control](/img/Integrations/RED/RCP/shutter.gif)
 
 ### White clip
 
-Path : `MENU > PAINT > KNEE`
+Path: `MENU > PAINT > KNEE`
 
-
-<img src="/img/Integrations/RED/RCP/white_clip.gif"/>
-<img width="480px" src="/img/Manual/RCP/RCP-encoders-1-right.png"/>
-
+![RCP white clip control](/img/Integrations/RED/RCP/white_clip.gif)
+![RCP encoder control](/img/Manual/RCP/RCP-encoders-1-right.png)
 
 ### Saturation
 
-Path : `MENU > PAINT > COLOR`
+Path: `MENU > PAINT > COLOR`
 
-<img src="/img/Integrations/RED/RCP/F44.BMP"/>
+![RCP saturation screen](/img/Integrations/RED/RCP/F44.BMP)
 
 ### LUT
 
-Path : `MENU > PAINT > LOOK`
+Path: `MENU > PAINT > LOOK`
 
-<img src="/img/Integrations/RED/RCP/lut.gif"/>
-<img width="480px" src="/img/Manual/RCP/RCP-encoders-1-right.png"/>
+![RCP LUT selection](/img/Integrations/RED/RCP/lut.gif)
+![RCP encoder control](/img/Manual/RCP/RCP-encoders-1-right.png)
 
 :::note
-You can upload LUTs on the RCP, see <a href="/docs/integrations/generic/3d-lut-processor#3d-lut-importexport-in-rcp">here</a>.
-And you can then navigate through the LUT list.
-
-Clear will set the LUT to `None` in the camera.
-
-Set will upload the selected LUT to the camera.
-
-ON/OFF will toggle it.
+You can upload LUTs on the RCP — see [3D LUT import/export in RCP](/docs/integrations/generic/3d-lut-processor#importexport-a-3d-lut). Navigate through the LUT list, use **Clear** to set the LUT to `None`, **Set** to upload the selected LUT to the camera, and **ON/OFF** to toggle it.
 :::
 
 ### REC / TC
 
-Path : `MENU > RECORD`
+Path: `MENU > RECORD`
 
-You can see the TC from the camera and trig the REC from the RCP.
+View the TC from the camera and trigger REC from the RCP.
 
-<img src="/img/Integrations/RED/RCP/F40.BMP"/>
+![RCP record screen](/img/Integrations/RED/RCP/F40.BMP)
 
 :::note
-You can select a group and toggle the group using the Group button.
-
-This will allow you to trig the REC on all the camera within the selected group.
-
-This only applies to camera configured/imported on the RCP. So usuallly people put a RCP with all the cams (unlimited/broadcast version) and use it as a MSU and for this REC control.
+Select a group and toggle it using the Group button to trigger REC on all cameras within that group. This applies only to cameras configured on the RCP — typically people use a RCP with all cameras (unlimited/broadcast version) as an MSU for this REC control.
 :::
 
-You can then see in the next tab a list of all:
-* the cameras
-* their TC
-* their REC status
+The next tab shows a list of all cameras with their TC and REC status:
 
-<img src="/img/Integrations/RED/RCP/F41.BMP"/>
-
+![RCP camera TC list](/img/Integrations/RED/RCP/F41.BMP)
 
 ## Setup RCP/RIO
 
-- **Connect** camera and your RCP/RIO on the same network
+- **Connect** the camera and your RCP/RIO to the same network.
 - Enter a custom number, name, etc.
-- **Add the Camera** to the RCP configuration via the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui).
-   - Select **Red** brand.
-   - Select **Komodo** or **V-Raptor** model.
-   - Enter the IP of your camera
+- **Add the camera** to the RCP configuration via the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui):
+  - Select **Red** brand.
+  - Select **Komodo** or **V-Raptor** model.
+  - Enter the IP address of your camera.
 
 :::note
-If your camera is in a different range than your RIO/RCP. Follow [this guide](/docs/guides/networking/ip-configuration)
+If your camera is in a different range than your RIO/RCP, follow the [IP configuration guide](/docs/guides/networking/ip-configuration).
 :::
 
-This should looks like this:
+![RCP camera configuration form](/img/Integrations/RED/komodo-config-setup.png)
 
-<img src="/img/Integrations/RED/komodo-config-setup.png" width="300" />
+Once connected correctly, the status turns green:
 
-And once correctly connected, it should be green:
-
-<img src="/img/Integrations/RED/komodo-config-block.png" width="300" />
-
+![RCP camera connected green status](/img/Integrations/RED/komodo-config-block.png)

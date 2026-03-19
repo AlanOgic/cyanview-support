@@ -7,64 +7,66 @@ keywords: [RCP, installation, mounting, power, PoE, setup]
 slug: /reference/manuals/rcp/installation
 ---
 
-## Mounting RCP
+Use this guide to mount your RCP, connect power, and get it ready for configuration.
 
-### RCP-J Dimensions
+## Mounting the RCP
 
-Download [PDF](/img/Manual/RCP/CY-RCP-J-assembly.pdf) and [STEP](/img/Manual/RCP/CY-RCP-J-assembly.step) files.
+### RCP-J dimensions
 
-[<img alt="CY-RCP-J-assembly.png" src="/img/Manual/RCP/CY-RCP-J-assembly.png"  width="500"/>](/img/Manual/RCP/CY-RCP-J-assembly.pdf)
+Download the [PDF](/img/Manual/RCP/CY-RCP-J-assembly.pdf) and [STEP](/img/Manual/RCP/CY-RCP-J-assembly.step) mechanical files.
 
+[![RCP-J assembly drawing](/img/Manual/RCP/CY-RCP-J-assembly.png)](/img/Manual/RCP/CY-RCP-J-assembly.pdf)
 
 ### RCP dimensions
 
-Download [PDF](/img/Manual/RCP/CY-RCP-assembly.pdf) and [STEP](/img/Manual/RCP/CY-RCP-assembly.step) files.
+Download the [PDF](/img/Manual/RCP/CY-RCP-assembly.pdf) and [STEP](/img/Manual/RCP/CY-RCP-assembly.step) mechanical files.
 
-[<img alt="CY-RCP-assembly.png" src="/img/Manual/RCP/CY-RCP-assembly.png"  width="500"/>](/img/Manual/RCP/CY-RCP-assembly.pdf)
+[![RCP assembly drawing](/img/Manual/RCP/CY-RCP-assembly.png)](/img/Manual/RCP/CY-RCP-assembly.pdf)
 
+### Mounting frame for the short RCP version
 
-### Mounting Frame for the short RCP version
+A **Mounting Frame** (frame + cover) is available to bring the short RCP version up to standard RCP panel dimensions.
 
-To fit with standard RCP dimensions, a **Mounting Frame** can be added and is composed of a frame and cover.
+Download the [PDF](/img/Manual/RCP/CY-RCP-assembly-frame.pdf) and [STEP](/img/Manual/RCP/CY-RCP-assembly-frame.step) files.
 
-Download [PDF](/img/Manual/RCP/CY-RCP-assembly-frame.pdf) and [STEP](/img/Manual/RCP/CY-RCP-assembly-frame.step) files.
+[![RCP frame assembly drawing](/img/Manual/RCP/CY-RCP-assembly-frame.png)](/img/Manual/RCP/CY-RCP-assembly-frame.pdf)
 
-[<img alt="CY-RCP-assembly-frame.png" src="/img/Manual/RCP/CY-RCP-assembly-frame.png"  width="500"/>](/img/Manual/RCP/CY-RCP-assembly-frame.pdf)
+You can align the RCP at the bottom of the frame (option A) or at the top (option B).
 
-
-The RCP can be aligned at the bottom of the frame (option A) or at the top (option B).
-
-<img alt="Cyanview-RCP-frame-mounting-options" src="/img/productGfx/RCP/Cyanview-RCP-frame-mounting-options@2x-8.png" width="300"/>
+![RCP frame mounting options A and B](/img/productGfx/RCP/Cyanview-RCP-frame-mounting-options@2x-8.png)
 
 ## Powering the RCP
 
-The RCP can be powered from **PoE** or using an external **12V power supply**.
+The RCP accepts power from **PoE** or an external **12V supply**:
 
 - PoE 802.3af
-- DC Input: +12V 200mA (acceptable range: 9V to 24V)
+- DC input: +12V 200mA (acceptable range: 9V–24V)
 
-    Power plug is a [switchcraft 762K](http://www.switchcraft.com/Product.aspx?ID=7007) or compatible (5.5x2.1mm).
+The DC power connector is a [Switchcraft 762K](http://www.switchcraft.com/Product.aspx?ID=7007) or compatible 5.5×2.1mm barrel connector.
 
-    <img alt="cyanview-support-manual-CI0-switchcraft-power-connector" src="/img/3Parties/cyanview-support-manual-switchcraft-power-connector.png" width="120" />
+![Switchcraft power connector](/img/3Parties/cyanview-support-manual-switchcraft-power-connector.png)
 
-    <img alt="cyanview-support-manual-CI0-switchcraft-762k-pinout" src="/img/3Parties/Switchraft-762K-pinout@2x-8.png" width="250" />   
+![Switchcraft 762K pinout](/img/3Parties/Switchraft-762K-pinout@2x-8.png)
 
-## RCP UI
+## RCP configuration
 
-RCP is *configured* and *managed* via a **[Configuration Web UI](/docs/reference/manuals/rcp/web-ui)**.
+Configure and manage your RCP through the **[Configuration Web UI](/docs/reference/manuals/rcp/web-ui)**.
 
-## RCP Update
+## RCP update
 
-Make sure your RCP runs our latest releases.
-
-Please refer to the [update manual](/docs/reference/product-update).
+Keep your RCP on the latest firmware. See the [update guide](/docs/reference/product-update) for instructions.
 
 ## Troubleshooting
 
 ### Force upgrade
 
-* Unplug power (remove RJ45 if PoE, 12V if external power supply)
-* Push the "lock" / "power" button (top left) and keep pressed
-* Plug back the power and wait until a "loading screen" is displayed, then you can release
-* Wait a couple of minutes and it should "load" the upgrade and then reboot and reload the camera list and values
- 
+Use this procedure if the RCP is stuck and will not update normally:
+
+1. Unplug power (remove the RJ45 cable if using PoE, or disconnect the 12V supply).
+2. Press and hold the **Lock/Power** button (top left).
+3. Reconnect power while keeping the button held. Release once the loading screen appears.
+4. Wait a few minutes for the upgrade to complete. The RCP will reboot and reload the camera list and values.
+
+:::tip
+If the RCP does not show a loading screen after reconnecting power, repeat from step 1. The button must be held before power is restored.
+:::

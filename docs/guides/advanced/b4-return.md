@@ -7,87 +7,73 @@ keywords: [B4, lens return, feedback, broadcast lens, configuration]
 slug: /guides/advanced/b4-return
 ---
 
-# B4 Video Return
+Use the RET and VTR buttons on B4 lenses to switch the video return signal from your switcher directly from the lens.
 
-## Overview
+## Camera setup
 
-The goal is to use RET, VTR buttons on B4 lenses to be able to act on the video return from the switcher.
+Start by configuring your camera and lens in the web UI `Configuration` section.
 
-## Camera set up
+- In `Camera`, click `+` to add a new camera (for example, a Dreamchip AtomOne).
+- Add your lens — for example, `B4 Generic` on CI0-12-137, port 2.
 
-The first step is to configure the camera and the lens.
+See [Dreamchip camera setup](/docs/integrations/cameras/other/dreamchip) and [B4 lens setup](/docs/integrations/lenses/b4-lens) for detailed steps.
 
-Here, I created a Dreamchip AtomOne with a Canon B4 lens:
-* On the web UI `Configuration`, in `Camera`, click on `+`
-* Create your camera as usual, here I used a Dreamchip AtomOne
-* Add your lens as usual, here I used `B4 Generic` on my CI0-12-137, port 2
+![B4 return block configuration](/img/Configuration/advanced/B4Ret/B4-ret-block.png)
 
-You can find more information:
-* on Dreamchip camera setup <a href="/docs/Integrations/Dreamchip">here</a>.
-* on B4 lens set up <a href="/docs/integrations/lenses/b4-lens">here</a>.
+## Switcher setup
 
-<img src="/img/Configuration/advanced/B4Ret/B4-ret-block.png" width="300"/>
+Next, configure your switcher and link your camera to the correct input.
 
-## Switcher set up
+Create an ATEM switcher entry and link your camera (for example, `DC`) to `input 1`.
 
-The second step is to configure the switcher and link my camera (configured above) to the correct input.
+See [switcher and router integrations](/docs/integrations/lenses/b4-lens) for all supported devices.
 
-Here, I created an ATEM switcher and linked my camera `DC` to the `input 1`.
+![ATEM switcher setup](/img/Configuration/advanced/B4Ret/B4-ret-ATEM-setup.png)
 
-You can find more information on various switcher/router integration <a href="/docs/integrations/lenses/b4-lens">here</a>.
+Confirm the link is working — the block should appear green.
 
-<img src="/img/Configuration/advanced/B4Ret/B4-ret-ATEM-setup.png" width="300"/>
+![ATEM block green status](/img/Configuration/advanced/B4Ret/B4-ret-ATEM-block.png)
 
-Ensure the link is working, the block should be green:
+## Lens button link
 
-<img src="/img/Configuration/advanced/B4Ret/B4-ret-ATEM-block.png" width="300"/>
+Navigate to `/dev/app.html` on your RCP. For example, if your RCP is `RCP-18-4`, go to `http://10.192.18.4/dev/app.html`.
 
-## Lens buttons link
+Search for your ATEM switcher using `CTRL+F`.
 
-Now, navigate to `/dev/app.html`. If my RCP is `RCP-18-4` and I use the URL: `http://10.192.18.4`, then it is `http://10.192.18.4/dev/app.html`
+![ATEM switcher in dev app](/img/Configuration/advanced/B4Ret/B4-ret-ATEM-devapp-block.png)
 
-Search for ATEM switcher (`CTRL+F`)
+Click the title to open the settings panel on the right.
 
+![ATEM dev app settings panel](/img/Configuration/advanced/B4Ret/B4-ret-ATEM-devapp-setup.png)
 
-<img src="/img/Configuration/advanced/B4Ret/B4-ret-ATEM-devapp-block.png" width="300"/>
+Set up B4 video return by filling in the `video_return` field (empty by default). The field accepts a comma-separated list, where each item uses this syntax:
 
+```
+output:live_input,program_input,ret1_input,ret2_input
+```
 
-Click on the title, and you should see a panel on the right:
-
-
-<img src="/img/Configuration/advanced/B4Ret/B4-ret-ATEM-devapp-setup.png" width="300"/>
-
-Set up the B4 video return by changing the field `video_return` (empty by default):
-* It is a list, separated by `,`
-* Each item in this list follows the syntax : `output:live_input,program_input,ret1_input,ret2_input`
-* In this example: `Aux5:1,2,3,4` means:
-    - `Aux5` : my monitor output on my ATEM
-    - `1` : my camera is on input 1, input 1 is displayed when no button is pressed
-    - `2` : input 2 is displayed when program button is pressed
-    - `3` : input 3 is displayed when RET1 button is pressed
-    - `4` : input 3 is displayed when RET2 button is pressed
+Example — `Aux5:1,2,3,4` means:
+- `Aux5` — monitor output on your ATEM
+- `1` — camera is on input 1; input 1 displays when no button is pressed
+- `2` — input 2 displays when the program button is pressed
+- `3` — input 3 displays when RET1 is pressed
+- `4` — input 4 displays when RET2 is pressed
 
 :::note
+**Router input/output names**
 
-Router input/output names
+Check the RCP configuration page to confirm names match. Input/output names appear in light grey.
 
-Refer to the configuration page of the RCP to ensure names match. Input/Output names are displayed in light grey.
-
-ATEM:
-* input names : 1, 2, ...
-* output names : Aux1, Aux2, ...
-
-VideoHub:
-* input names : 1, 2, ...
-* output names : 1, 2, ...
+- ATEM: inputs are `1, 2, ...` — outputs are `Aux1, Aux2, ...`
+- VideoHub: inputs are `1, 2, ...` — outputs are `1, 2, ...`
 :::
 
 ## Troubleshooting
 
-* Ensure your lens is properly configured. You can check by changing iris from RCP, you should read/write value.
-* Ensure your camera is properly linked to the valid input in your switcher (this is how we link video_return numbers and cameras)
-* Ensure your video_return is properly configured:
-    - input is in the input range of the router. If not, will be ignored. You can have input `21` if your router input range is `1-12`
-    - output is in the output range of the router. If not, will be ignored. You can have output `Aux5` if your router output range is `1-4`
-    - syntax is correct. You need all field, input/output separated by `:`, 4 inputs separated by `,` and blocks separated by `;`
-* check on MQTT, you should see button press actions by subscribing to topic `+/+/camhead/action/set/video_return` (you will see values like `ret1`, `live`, etc.)
+- Verify your lens is properly configured — change iris from the RCP and confirm you can read and write values.
+- Confirm your camera is linked to the correct switcher input — this is how `video_return` numbers map to cameras.
+- Verify your `video_return` configuration:
+  - Input must be within the router's input range. An input of `21` is ignored if the range is `1–12`.
+  - Output must be within the router's output range. `Aux5` is ignored if the range is `1–4`.
+  - Syntax must be complete: all fields present, input/output separated by `:`, four inputs separated by `,`, and blocks separated by `;`.
+- Monitor MQTT by subscribing to `+/+/camhead/action/set/video_return` — you should see values like `ret1`, `live`, etc. on button press.

@@ -7,31 +7,27 @@ keywords: [CI0, manual, installation, wiring, configuration]
 slug: /reference/manuals/ci0/ci0-manual
 ---
 
-This page covers the **generic** CI0 characteristics and configurations. **Specific** guidance for supported cameras and devices configuration can be found in the *Integration* section.
+This page covers the generic CI0 characteristics and configurations. Camera-specific configuration guidance is in the *Integration* section.
 
-## CI0 Ports
+## CI0 ports
 
-### Serial Ports
+### Serial ports
 
-<img alt="cyanview-support-CI0-manual-serial-port" src="/img/productGfx/CI0/cyanview-support-CI0-manual-serial-port@2x-8.png" width="600" />
+![CI0 serial port overview diagram](/img/productGfx/CI0/cyanview-support-CI0-manual-serial-port@2x-8.png)
 
 #### Connectors
 
-Serial ports connector refererence: Hirose HR10A-7R-6S(73)
+Serial port connector reference: Hirose HR10A-7R-6S(73). Mating plug for cables: HR10A-7P-6P(73).
 
-Mating plug for cables: HR10A-7P-6P(73)
+Cyanview provides a range of cables for most cameras — see the [cable catalog](/docs/resources/cable-catalog). Integration manuals also specify which cable to use for each camera.
 
-Cyanview provides a range of cables to interface most cameras. Please refer to our [cable page](/docs/resources/cable-catalog).
-
-The *Integration* manuals also provide information on what cable to use for what camera.
-
-#### Port Pinout
+#### Port pinout
 
 <table>
 <tr>
-<th rowspan='9'><img alt="cyanview-support-CI0-manual-serial-port-pinout" src="/img/productGfx/CI0/cyanview-support-CI0-manual-serial-port-pinout@2x-8.png" width="200px"/><br/>Female receptacle.</th>
-<th>PIN Number</th>
-<th colspan='3'>Protocol Pinouts</th>
+<th rowspan='9'><img alt="CI0 serial port female receptacle pinout diagram" src="/img/productGfx/CI0/cyanview-support-CI0-manual-serial-port-pinout@2x-8.png" width="200px"/><br/>Female receptacle.</th>
+<th>PIN number</th>
+<th colspan='3'>Protocol pinouts</th>
 </tr>
 <tr>
 <th></th>
@@ -83,151 +79,130 @@ The *Integration* manuals also provide information on what cable to use for what
 </tr>
 </table>
 
-#### CI0 Models
+#### CI0 models
 
-Different CI0 models differentiates on **number** and **type** of ports:
+CI0 models differ in the number and type of ports:
 
-- **CY-CI0**: Standard two ports.
-- **CY-CI03P**: A third ports available for cam head management.
-- **CY-CI0BM**: CI0 two ports with BlackMagic SDI control extension (see: BM serial cam integration manual).
+- **CY-CI0** — Standard two ports.
+- **CY-CI03P** — A third port for camera head management.
+- **CY-CI0BM** — Two ports with a BlackMagic SDI control extension (see the BM serial camera integration manual).
 
 #### Supported protocols
 
-Different CI0 Ports will support different protocols:
+| Port/Protocol | RS485 | RS232 | RS422 | LANC | SBUS | VISCA | B4 lens |
+| ------------- | :---: | :---: | :---: | :--: | :--: | :---: | :-----: |
+| P1            | ✔     | ✔     | ✔     |      |      | ✔     | ✔       |
+| P2            | ✔     | ✔     | ✔     | ✔    | ✔    | ✔     | ✔       |
+| P3            |       |       |       |      | ✔    |       |         |
 
-| Port/Protocol | RS485 | RS232 | RS422 | LANC | SBUS | VISCA | B4 Lens |
-| ------------- | ----- | ----- | ----- | ---- | ---- | ----- | --------- |
-| P1            | V     | V     | V     |      |      | V     | V         |
-| P2            | V     | V     | V     | V    | V    | V     | V         |
-| P3            |       |       |       |      | V    |       |           |
+### Ethernet port
 
+10/100 Mb Ethernet, PoE+ (Power over Ethernet) 802.3af/at.
 
-### Ethernet Port
+## Supported serial topologies
 
-10/100Mb Ethernet, PoE+ (Power over Internet) 802.3af/at
+### Single camera on CI0
 
-## Supported Serial topology
+![CI0 with one serial camera — basic configuration diagram](/img/productGfx/CI0/cyanview-support-CI0-manual-serial-one-camera-configuration@2x-8.png)
 
-### A serial camera connected to CI0
+Basic configuration where the CI0 makes a camera remotely managed.
 
-<img alt="cyanview-support-CI0-manual-serial-one-camera-configuration" src="/img/productGfx/CI0/cyanview-support-CI0-manual-serial-one-camera-configuration@2x-8.png" width="800" />
+### One camera per port
 
-- Basic configuration where CI0 turns a camera into managed camera.
+![CI0 with two serial cameras — one per port configuration diagram](/img/productGfx/CI0/cyanview-support-CI0-manual-serial-two-camera-configuration@2x-8.png)
 
-### A camera on each port
+Multiple serial cameras connected to the CI0, one per port. The base **CY-CI0** has two ports; the **CY-CI03P** has three.
 
-<img alt="cyanview-support-CI0-manual-serial-two-camera-configuration" src="/img/productGfx/CI0/cyanview-support-CI0-manual-serial-two-camera-configuration@2x-8.png" width="800" />
+### A bus of cameras
 
-- Several Serial camera connected to CI0.
-- One serial camera by port.
-- Two ports available on base **CY-CI0** model, three ports available on **CY-CI03P**.
+![CI0 serial bus topology with multiple cameras on one port](/img/productGfx/CI0/cyanview-support-CI0-manual-serial-bus-camera@2x-8.png)
 
-### A BUS of cameras
+When a camera supports **serial bus**, multiple cameras can share a single port — see the CI0 Serial BUS documentation.
 
-<img alt="cyanview-support-CI0-manual-serial-bus-camera" src="/img/productGfx/CI0/cyanview-support-CI0-manual-serial-bus-camera@2x-8.png" width="800" />
-
-- When camera supports **Serial BUS**, several camera can be connected on a single port (see: CI0 Serial BUS).
-
-
-## Connection and Setup
+## Connection and setup
 
 ### Network setup
 
-<img alt="cyanview-support-CI0-manual-serial-IP-network" src="/img/diagrams/cyanview-support-CI0-manual-serial-IP-network@2x-8.png" width="700" />
+![CI0 IP network connection diagram](/img/diagrams/cyanview-support-CI0-manual-serial-IP-network@2x-8.png)
 
-The CI0 has been designed to be plug and play and avoid conflicts. As such, IP addresses are fixed based on the serial number, and a discovery process makes the CI0 appear automatically on the RCP interface.
+The CI0 is designed to be plug-and-play. IP addresses are fixed based on the serial number, and a discovery process makes the CI0 appear automatically in the RCP interface.
 
-**Required ports**
-
-CI0 relies on TCP/IP network with no port limitation in order to communicate with other devices.
-
-Mandatory ports:
-
-- 3838 UDP port for discovery.
-- 1883 TCP port.
+**Required ports:**
+- UDP 3838 for discovery.
+- TCP 1883.
 - Random port for serial communication.
 
 ### WiFi
 
-<img src="/img/Configuration/CI0WiFi.png" />
+![CI0 WiFi setup with TPLink nano router](/img/Configuration/CI0WiFi.png)
 
+Use a TP-Link nano router to control your camera over WiFi. Follow the [WiFi setup guide](/docs/guides/networking/wifi).
 
-By using a TPLink nano router, you can control your camera over WiFi.
-You can follow this [guide](/docs/guides/networking/wifi) to guide you through the setup.
-
-
-### Power Connection
+### Power connection
 
 The CI0 can be powered through **PoE+** or an external **12V 2A DC** power supply.
 
-When powered with PoE, the output voltage on ports connectors will be 12V DC, regulated. When powered with the DC IN plug, the voltage is not regulated. Thus, the input voltage will be present on the 2 camera ports. Make sure that the cameras connected support the voltage you supply on DC IN.
+With PoE, the output voltage on port connectors is 12V DC regulated. With the DC IN plug, the voltage is not regulated — the input voltage passes directly to the camera ports. Ensure your cameras support the voltage you supply.
 
-<img alt="cyanview-support-CI0-manual-serial-power-supply-specification" src="/img/productGfx/CI0/cyanview-support-CI0-manual-serial-power-supply-specification@2x-8.png" width="500" />
+![CI0 power supply specification diagram](/img/productGfx/CI0/cyanview-support-CI0-manual-serial-power-supply-specification@2x-8.png)
 
-- **DC IN** voltage is between 10V and 24V. The input voltage will be directly applied to the camera so if you power from batteries, make sure the camera does support the higher battery voltage as well.
-For thermal reasons, camera consumption should not exceed **12W** by port.
-- When using **PoE+**, the power provided to the camera is **12V 1A**, depending on the network switch. For most mini-cameras, regular **PoE** is enough and PoE+ isn't necessary.
+- **DC IN** accepts 10–24V. The input voltage is applied directly to the camera, so if you use batteries, confirm the camera supports the higher battery voltage. Camera consumption should not exceed **12W per port** for thermal reasons.
+- With **PoE+**, the power supplied to the camera is **12V 1A** depending on the switch. Regular PoE is sufficient for most mini-cameras.
 
-The power plug is a [switchcraft 762K](http://www.switchcraft.com/Product.aspx?ID=7007) or compatible (5.5x2.1mm) with a locking screw. D-TAP to DC locking screw cables are easily found in online shops. To build custom cables, another option is to use the [Digikey 10-00110](https://www.digikey.com/en/products/detail/tensility-international-corp/10-00110/2123065) cable cut in half.
+The power plug is a [Switchcraft 762K](http://www.switchcraft.com/Product.aspx?ID=7007) or compatible (5.5×2.1 mm) with a locking screw. D-TAP to DC locking screw cables are available online. For custom cables, you can also use a [Digikey 10-00110](https://www.digikey.com/en/products/detail/tensility-international-corp/10-00110/2123065) cable cut in half.
 
-<img alt="cyanview-support-manual-CI0-switchcraft-power-connector" src="/img/3Parties/cyanview-support-manual-switchcraft-power-connector.png" width="120" />
+![Switchcraft 762K locking power connector](/img/3Parties/cyanview-support-manual-switchcraft-power-connector.png)
 
-<img alt="cyanview-support-manual-CI0-switchcraft-762k-pinout" src="/img/3Parties/Switchraft-762K-pinout@2x-8.png" width="250" />
+![Switchcraft 762K pinout diagram](/img/3Parties/Switchraft-762K-pinout@2x-8.png)
 
 ## CI0 status
 
-CI0 **network connectivity status** is displayed on the lateral LCD screen.
+Network connectivity status appears on the lateral LCD screen.
 
-<img alt="cyanview-support-manual-screen-lcd" src="/img/productGfx/CI0/cyanview-support-manual-screen-lcd@2x-8.png" width="300" />
+![CI0 lateral LCD status screen](/img/productGfx/CI0/cyanview-support-manual-screen-lcd@2x-8.png)
 
-Status:
-- <img alt="cyanview-support-manual-screen-lcd-wait-ethernet-status" src="/img/productGfx/CI0/cyanview-support-manual-screen-lcd-wait-ethernet-status.png" width="78" /> CI0 is waiting for network connection.
-- <img alt="cyanview-support-manual-screen-lcd-X-status" src="/img/productGfx/CI0/cyanview-support-manual-screen-lcd-X-status.png" width="78" /> CI0 is connected to the network but not RCP.
-- <img alt="cyanview-support-manual-screen-lcd-discovery-status" src="/img/productGfx/CI0/cyanview-support-manual-screen-lcd-discovery-status.png" width="78" /> CI0 is discovered by an RCP.
-- <img alt="cyanview-support-manual-screen-lcd-camera-configured-status" src="/img/productGfx/CI0/cyanview-support-manual-screen-lcd-camera-configured-status.png" width="78" /> Camera 01 is configured on port 1 but not connected to CI0.
-- <img alt="cyanview-support-manual-screen-lcd-camera-connected-status" src="/img/productGfx/CI0/cyanview-support-manual-screen-lcd-camera-connected-status.png" width="78" /> Camera 01 connected to CI0.
+Status icons:
+- ![CI0 waiting for network connection status icon](/img/productGfx/CI0/cyanview-support-manual-screen-lcd-wait-ethernet-status.png) — CI0 is waiting for a network connection.
+- ![CI0 connected to network but not RCP status icon](/img/productGfx/CI0/cyanview-support-manual-screen-lcd-X-status.png) — CI0 is connected to the network but not to an RCP.
+- ![CI0 discovered by an RCP status icon](/img/productGfx/CI0/cyanview-support-manual-screen-lcd-discovery-status.png) — CI0 is discovered by an RCP.
+- ![Camera 01 configured on port 1 but not connected status icon](/img/productGfx/CI0/cyanview-support-manual-screen-lcd-camera-configured-status.png) — Camera 01 is configured on port 1 but not connected.
+- ![Camera 01 connected to CI0 status icon](/img/productGfx/CI0/cyanview-support-manual-screen-lcd-camera-connected-status.png) — Camera 01 is connected to CI0.
 
-In this example, status screen shows that camera 01 is configured on Port 1 (left), if camera is configured on port 2 (right), the camera number would be displayed on the right side 
+If a camera is configured on port 2, the number appears on the right side: ![Camera connected on port 2 status icon](/img/productGfx/CI0/cyanview-support-manual-screen-lcd-camera-connected-status-port-2.png)
 
-- <img alt="cyanview-support-manual-screen-lcd-camera-connected-status-port-2" src="/img/productGfx/CI0/cyanview-support-manual-screen-lcd-camera-connected-status-port-2.png" width="78" />.
+On the CY-CI03P, the third port status appears in the center: ![Camera connected on port 3 status icon (CI03P)](/img/productGfx/CI0/cyanview-support-manual-screen-lcd-camera-connected-status-port-3.png)
 
-When using a CY-CI03P, the third port status is displayed in the middle: 
-
-- <img alt="cyanview-support-manual-screen-lcd-camera-connected-status-port-3" src="/img/productGfx/CI0/cyanview-support-manual-screen-lcd-camera-connected-status-port-3.png" width="78" />
-
-When pushing one of the button aside the screen, the screen will loop the following information: Camera name on PORT1, PORT2, CI0 IP address, CI0 MAC address. The screen will display the default information after a few seconds.
+Press either button beside the screen to cycle through: camera name on PORT1, PORT2, CI0 IP address, CI0 MAC address. The screen returns to default after a few seconds.
 
 ## Update
 
-CI0 is updated automatically by the RCP or GWY when the software version changes. This ensures that the firmware is always synchronized with the corresponding software. If the CI0 firmware version doesn't match the version required by the RCP, the CI0 will be updated at startup.
+The CI0 updates automatically when the RCP or GWY software version changes, ensuring firmware stays synchronized. If the CI0 firmware version does not match what the RCP requires, it updates at startup.
 
 ## Troubleshooting
 
-You can find typical issues and solution in this dedicated [section](/docs/reference/troubleshooting/troubleshooting)
+See the [troubleshooting section](/docs/reference/troubleshooting/troubleshooting) for common issues and solutions.
 
 ### CI0 doesn't start
 
-A working CI0 should have:
-* RJ45 steady green LED (operating at 100-Mbps)
-* RJ45 blinking orange LED (activity on the link)
-* screen showing `>-<` or `<->` with numbers
+A working CI0 shows:
+- Steady green RJ45 LED (100 Mbps link)
+- Blinking orange RJ45 LED (link activity)
+- Screen displaying `>-<` or `<->` with numbers
 
-1. Check your wiring. Eventually put your CI0 and RCP/GWY on the same switch.
-2. Perform a config reset of your RCP/RIO/GWY. To check that the CI0 is detected properly.
-3. If you're in PoE, try using a 12V DC power supply.
-4. If you're already using a 12V DC power supply, try another one.
+Steps to resolve:
+1. Check your wiring. Try connecting your CI0 and RCP/GWY to the same switch.
+2. Perform a config reset on your RCP/RIO/GWY to verify the CI0 is detected.
+3. If using PoE, try a 12V DC power supply.
+4. If already using a 12V DC supply, try a different one.
 
 ### Force a firmware update
 
-It is possible to force a CI0 firmware update.
+You can force a CI0 firmware update. Make sure an RCP, GWY, or RIO is on the same network.
 
-Ensure to have a RCP/GWY/RIO on the same network.
-
-1. Hold the 2 buttons pressed while you power it
-2. Release after 5 seconds
-3. If the LEDs blink, then it's in bootloader.
-4. After maximum 1 minute it should come back to life and display `>-<`
-
+1. Hold both buttons while powering the CI0.
+2. Release after 5 seconds.
+3. If the LEDs blink, the CI0 is in bootloader mode.
+4. Within 1 minute, the CI0 should return to normal and display `>-<`.
 
 <video poster="/img/productGfx/CI0/cyanview-support-manual-force-firmware-update.jpg" muted controls>
     <source src="/img/productGfx/CI0/cyanview-support-manual-force-firmware-update.mp44"/>
@@ -235,25 +210,23 @@ Ensure to have a RCP/GWY/RIO on the same network.
 
 ### Power supply issues
 
-If your camera control sometimes drops or if your camera reboots continuously.
-Try to switch from PoE to a dedicated power supply.
+If camera control drops intermittently or the camera reboots continuously, switch from PoE to a dedicated power supply.
 
-On some camera (Dreamchip ATOM 4K with a motorised lens for example), the init power spike can be "too much". Use a dedicated power supply for your camera.
+On some cameras (for example, a Dreamchip ATOM 4K with a motorized lens), the startup power spike can overwhelm the supply. Use a dedicated power supply for the camera.
 
-If you have multiple camera plugged on the same CI0, try to remove them all and plug them one by one.
+If multiple cameras are connected to the same CI0, remove them all and reconnect them one at a time.
 
+### CI0 screen shows 'X'
 
-### CI0 screen 'X'
+The CI0 cannot communicate with the RCP/RIO over the network.
 
-CI0 can't communicate with RCP/RIO over the network.
-
-- Check your wiring
-- Verify network connections: activity on the green and yellow LED of ethernet port.
-- Make sure 3838 UDP port is not blocked.
+- Check your wiring.
+- Verify network activity on the green and yellow LEDs of the Ethernet port.
+- Make sure UDP port 3838 is not blocked.
 
 ### Camera not powered and screen is dark
 
-This is a bug on old CI0 with software 21.10
+This is a known bug in old CI0 units running software 21.10.
 
-1. [Upgrade](/docs/reference/product-update) your RCP/GWY to 21.11.1 or later (to have the bug fix)
-2. Force a firmware update on your CI0 by following this [guide](/docs/reference/manuals/ci0/ci0-manual#force-a-firmware-update)
+1. [Upgrade](/docs/reference/product-update) your RCP/GWY to version 21.11.1 or later.
+2. Force a firmware update on your CI0 using the [guide above](#force-a-firmware-update).

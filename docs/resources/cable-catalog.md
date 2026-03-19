@@ -7,311 +7,256 @@ keywords: [cables, catalog, CI0, RIO, serial, power, tally]
 slug: /resources/cable-catalog
 ---
 
-## Generic Cable
+This catalog lists all available cables for CY-CI0 and CY-RIO devices. Each entry includes the pinout diagram and compatible equipment.
+
+## Generic cables
 
 ### CY-CBL-6P-EXT50, CY-CBL-6P-EXT100, CY-CBL-6P-EXT300, CY-CBL-6P-EXT500
 
-CY-CI0/CY-RIO extension cable.
+Extension cable for CY-CI0/CY-RIO. Extends the connection between a CI0 or RIO and any supported camera.
 
-This cable extends the connection between CY-CI0/CY-RIO and camera
-and is universal for all camera.
-
-<img alt="cyanview-support-cable-CY_CBL-6P-EXT" src="/img/productGfx/cables/CY_CBL-6P-EXT.svg"  width="500"/>
+![CY-CBL-6P-EXT extension cable pinout](/img/productGfx/cables/CY_CBL-6P-EXT.svg)
 
 ### CY-CBL-6P-FAN
 
-CY-CI0/CY-RIO generic fan-out adapter cable.
+Generic fan-out adapter cable for CY-CI0/CY-RIO.
 
-NB: Don't mix GND and shield! The shield is connected to a slightly thicker black wire than the GND black wire. These are the signal from the controller side. Connect the TX to the camera RX and vice versa.
+:::warning
+Do not mix GND and shield. The shield connects to a slightly thicker black wire than the GND wire. Connect TX to the camera RX and vice versa.
+:::
 
-<img alt="cyanview-support-cable-CY_CBL-6P-FAN" src="/img/productGfx/cables/CY-CBL-6P-FAN.svg"  width="500"/>
+![CY-CBL-6P-FAN fan-out cable pinout](/img/productGfx/cables/CY-CBL-6P-FAN.svg)
 
 ### CY-CBL-6P-PFAN
 
-CY-CI0/CY-RIO generic power and fan-out adapter cable.
+Power and fan-out adapter cable for CY-CI0/CY-RIO. Use with equipment that has a 12V 5.5×2.1 mm power jack:
+- Marshall mini cameras
+- PTZ RS232/422 cameras
+- Pan/tilt heads
 
-Cable for equipment with 12v 5.5x2.1 mm power jack.
-- Marshall mini camera
-- PTZ RS232/422 camera
-- Pan/Tilt heads
-
-<img alt="cyanview-support-cable-CY_CBL-6P-PFAN" src="/img/productGfx/cables/CY-CBL-6P-PFAN.svg"  width="500"/>
+![CY-CBL-6P-PFAN power fan-out cable pinout](/img/productGfx/cables/CY-CBL-6P-PFAN.svg)
 
 ### CY-CBL-6P-ST-15, CY-CBL-6P-ST-50
 
-CY-CI0/CY-RIO adapter cable with straight mapping.
+Adapter cable with straight mapping for CY-CI0/CY-RIO. Compatible with the CY-RSBM module.
 
-Cable suitable for the CY-RSBM module.
-
-<img alt="cyanview-support-cable-CY_CBL-6P-ST" src="/img/productGfx/cables/CY-CBL-6P-ST.svg"  width="500"/>
-
+![CY-CBL-6P-ST straight mapping cable pinout](/img/productGfx/cables/CY-CBL-6P-ST.svg)
 
 ### CY-CBL-6P-PWR
 
-CY-CI0/CY-RIO power cable for low consumption Devices
+Power cable for low-consumption devices on CY-CI0/CY-RIO. Use with tally LEDs — see the [LED Assembly Guide](/docs/resources/build-tally-led).
 
-Use for Tally LED for instance (see [LED Assembly Guide](/docs/resources/build-tally-led)).
-
-<img alt="cyanview-support-cable-CY-CBL-6P-PWR" src="/img/productGfx/cables/CY-CBL-6P-PWR.svg"  width="500"/>
+![CY-CBL-6P-PWR power cable pinout](/img/productGfx/cables/CY-CBL-6P-PWR.svg)
 
 ### CY-CBL-DTAP
 
-Power supply cable for CY-CI0/CY-RIO from battery or camera using DTAP connector.
+Powers the CY-CI0/CY-RIO from a battery or camera using a D-TAP connector.
 
-## AJA Cable
+## AJA cables
 
 ### CY-CBL-6P-AJA-01
 
-CY-CI0/CY-RIO adapter cable AJA Rovocam.
+Adapter cable for the AJA Rovocam. The Rovocam is controlled over RS232 at the back of the camera or at the RovoRx units.
 
-The AJA Rovocam is controlled over RS232 directly at the back of the camera or at the RovoRx units.
+![CY-CBL-6P-AJA-01 AJA Rovocam cable pinout](/img/productGfx/cables/CY-CBL-6P-AJA-01.svg)
 
-<img alt="cyanview-support-cable-CY_CBL-6P-AJA-01" src="/img/productGfx/cables/CY-CBL-6P-AJA-01.svg"  width="500"/>
-
-## Astro Design Cable
+## Astro Design cables
 
 ### CY-CBL-ASTRO-01
 
-CI0/RIO cable for Astro Design 8K camera.
+Cable for CI0/RIO and Astro Design 8K cameras.
 
-<img alt="cyanview-support-cable-CY-CBL-ASTRO-01" src="/img/productGfx/cables/CY-CBL-ASTRO-01.svg"  width="500"/>
+![CY-CBL-ASTRO-01 Astro Design cable pinout](/img/productGfx/cables/CY-CBL-ASTRO-01.svg)
 
-
-## Bradley Cable
+## Bradley cables
 
 ### CY-CBL-6P-BRADLEY-01
 
-Adapter cable provides power and control to the Bradley Micro L PAN/TILT head. You need a separate cable to connect to your camera (see Marshall and Dreamchip)
+Adapter cable providing power and control to the Bradley Micro L PAN/TILT head. You need a separate cable to connect to your camera — see Marshall and Dreamchip entries.
 
-<img alt="cyanview-support-cable-CY-CBL-BRADLEY-01" src="/img/productGfx/cables/CY-CBL-BRADLEY-01.svg"  width="500"/>
+![CY-CBL-BRADLEY-01 Bradley PAN/TILT cable pinout](/img/productGfx/cables/CY-CBL-BRADLEY-01.svg)
 
-## Canon Cable
+## Canon cables
 
-If you don't know, it means you need this: `CY-CBL-6P-B4-01`
+If you're unsure which cable to order, use `CY-CBL-6P-B4-01`.
 
 ### CY-CBL-6P-B4-01 (default)
 
-This cable is used to connect the CY-CI0/CY-RIO to the Canon B4 or Cine Servo lenses.
+Connects the CY-CI0/CY-RIO to Canon B4 or Cine Servo lenses.
 
-<img alt="cyanview-support-cable-CY-CBL-6P-B4-01" src="/img/productGfx/cables/CY-CBL-6P-B4-01.svg"  width="500"/>
-
+![CY-CBL-6P-B4-01 Canon B4 lens cable pinout](/img/productGfx/cables/CY-CBL-6P-B4-01.svg)
 
 ### CY-CBL-6P-CN-REM (advanced robotic)
 
-<img alt="cyanview-support-cable-CY-CBL-6P-CN-REM.svg" src="/img/productGfx/cables/CY-CBL-6P-CN-REM.svg"  width="500"/>
+![CY-CBL-6P-CN-REM Canon remote cable pinout](/img/productGfx/cables/CY-CBL-6P-CN-REM.svg)
 
-## CIS Cable
+## CIS cables
 
 ### CY-CBL-6P-CIS-01
 
-CY-CI0/CY-RIO adapter cable for CIS camera.
-
-Cable for CIS camera with a HR10A connector for power and TRRS audio socket for control:
+Adapter cable for CIS cameras using an HR10A connector for power and a TRRS audio socket for control:
 - VCC-HD3
 - VCC-HD10ZM
 
-<img alt="cyanview-support-cable-CY_CBL-6P-CIS-01" src="/img/productGfx/cables/CY-CBL-6P-CIS-01.svg"  width="500"/>
+![CY-CBL-6P-CIS-01 CIS camera cable pinout](/img/productGfx/cables/CY-CBL-6P-CIS-01.svg)
 
 ### CY-CBL-6P-CIS-02
 
-CY-CI0/CY-RIO adapter cable for CIS and Camera Corps.
+Adapter cable for CIS and Camera Corps cameras. Provides power and control via an HR10A connector.
 
-This cable provides power and control to the mini-camera from CIS and Camera Corp using a HR10A connector.
+![CY-CBL-6P-CIS-02 CIS Camera Corps cable pinout](/img/productGfx/cables/CY-CBL-6P-CIS-02.svg)
 
-<img alt="cyanview-support-cable-CY_CBL-6P-CIS-02" src="/img/productGfx/cables/CY-CBL-6P-CIS-02.svg"  width="500"/>
-
-## DJI Cable
+## DJI cables
 
 ### CY-CBL-6P-SBUS-01
 
-<img alt="cyanview-support-cable-CY-CBL-6P-SBUS" src="/img/productGfx/cables/CY-CBL-6P-SBUS.svg"  width="500"/>
+![CY-CBL-6P-SBUS DJI SBUS cable pinout](/img/productGfx/cables/CY-CBL-6P-SBUS.svg)
 
-## Dreamchip Cable
+## Dreamchip cables
 
 ### CY-CBL-DREAMCHIP-01 (default)
 
-CY-CI0/CY-RIO adapter cable for Dreamchip camera.
+Adapter cable for all Dreamchip mini cameras. Provides power and control.
 
-This cable provides power and control to all Dreamchip Mini Camera.
-
-<img alt="cyanview-support-cable-CY_CBL-DREAMCHIP-01" src="/img/productGfx/cables/CY-CBL-DREAMCHIP-01.svg"  width="500"/>
+![CY-CBL-DREAMCHIP-01 Dreamchip camera cable pinout](/img/productGfx/cables/CY-CBL-DREAMCHIP-01.svg)
 
 ### CY-CBL-DREAMCHIP-02 (SSM500)
 
-CY-CI0/CY-RIO adapter cable for Dreamchip DCT-Powercable 350-00011v.
+Adapter cable for Dreamchip cameras using the Dreamchip DCT-Powercable 350-00011v. Provides RS485 control.
 
-This cable provides RS485 control on all Dreamchip camera with the Dreamchip DCT-Powercable 350-00011v.
-
-<img alt="cyanview-support-cable-CY_CBL-DREAMCHIP-02" src="/img/productGfx/cables/CY-CBL-DREAMCHIP-02.svg"  width="500"/>
+![CY-CBL-DREAMCHIP-02 Dreamchip SSM500 cable pinout](/img/productGfx/cables/CY-CBL-DREAMCHIP-02.svg)
 
 ### CY-CBL-DREAMCHIP-03 (with PT-Head)
 
-This is exactly the same cable as `CY-CBL-DREAMCHIP-01` except is is slightly longer and more flexible.
+Same pinout as `CY-CBL-DREAMCHIP-01` but slightly longer and more flexible. Use this cable when pairing a Dreamchip camera with a PT-Head.
 
-This is the cable you need if you are using a PT-Head with your Dreamchip camera.
+## Fujinon cables
 
-
-## Fujinon Cable
-
-If you don't know, it means you need this: `CY-CBL-6P-FUJI-02` (+ `CY-CBL-6P-B4-01`)
+If you're unsure which cable to order, use `CY-CBL-6P-FUJI-02` together with `CY-CBL-6P-B4-01`.
 
 ### CY-CBL-6P-FUJI-01 (discontinued)
 
-Discontinued to to bug in lens when used with handels. Requires a lens firmware upgrade.
+Discontinued due to a lens bug when used with handles. Requires a lens firmware upgrade.
 
-<img alt="cyanview-support-cable-CY_CBL-6P-FUJI-01" src="/img/productGfx/cables/CY-CBL-6P-FUJI-01.svg"  width="500"/>
+![CY-CBL-6P-FUJI-01 Fujinon cable pinout (discontinued)](/img/productGfx/cables/CY-CBL-6P-FUJI-01.svg)
 
 ### CY-CBL-6P-FUJI-02 (default)
 
-Use this cable for all Fujinon lenses (B4 and Cabrio), in conjonction with this cable: <a href="/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default">`CY-CBL-6P-B4-01`</a>
+Use for all Fujinon lenses (B4 and Cabrio), in conjunction with [CY-CBL-6P-B4-01](/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default).
 
-<img alt="cyanview-support-cable-CY_CBL-6P-FUJI-02" src="/img/productGfx/cables/CY-CBL-6P-FUJI-02.svg"  width="500"/>
+![CY-CBL-6P-FUJI-02 Fujinon default cable pinout](/img/productGfx/cables/CY-CBL-6P-FUJI-02.svg)
 
 ### CY-CBL-6P-FUJI-03 (advanced robotic)
 
-This cable
-* Camera keeps iris control (directly connected to the camera)
-* CI0/RIO takes control of zoom/focus
-* You can get iris/zoom/focus from the RCP
+- The camera keeps iris control (directly connected to the camera).
+- CI0/RIO takes control of zoom and focus.
+- You can access iris, zoom, and focus from the RCP.
 
-<img alt="cyanview-support-cable-CY_CBL-6P-FUJI-03" src="/img/productGfx/cables/CY-CBL-6P-FUJI-03.svg"  width="500"/>
-
+![CY-CBL-6P-FUJI-03 Fujinon robotic cable pinout](/img/productGfx/cables/CY-CBL-6P-FUJI-03.svg)
 
 ## Ikegami
 
-### DIY Cable
+### DIY cable
 
-The connector is pricey and difficult to find. We recommend you build your own cable.
+The connector is expensive and hard to find. Build your own cable using a Cyanview [CY-CBL-6P-FAN](/docs/resources/cable-catalog#cy-cbl-6p-fan) cable and a **Tajimi Male Plug 8-pin PRC05-PB8M connector**.
 
-This adapter cable provides power and control over Ikegami professional cameras through the 8 pins remote interface.
+This cable provides power and control over the 8-pin remote interface of Ikegami professional cameras. Refer to the **Pin Assignment** table in the document below for soldering.
 
-This cable has to be built from a Cyanview multipurpose [CY-CBL-6P-FAN](/docs/resources/cable-catalog#cy-cbl-6p-fan) cable and a **Tajimi Male Plug 8 pins PRC05-PB8M connector**.
+![Ikegami DIY cable pinout diagram](/img/productGfx/cables/DIY-IKEGAMI.svg)
 
-Refer to **Pin Assignment** table in the document below for cable soldering.
-
-<img alt="cyanview-support-cable-CY-CBL-BRADLEY-01" src="/img/productGfx/cables/DIY-IKEGAMI.svg"  width="500"/>
-
-
-
-## IOI Cable
+## IOI cables
 
 ### CY-CBL-6P-IOI-01
 
-CY-CI0/CY-RIO adapter cable for IOI camera.
+Adapter cable providing power and control to all IO Industries cameras.
 
-This cable provides power and control to all IO Industries camera.
+![CY-CBL-6P-IOI-01 IO Industries camera cable pinout](/img/productGfx/cables/CY-CBL-6P-IOI-01.svg)
 
-<img alt="cyanview-support-cable-CY_CBL-6P-IOI-01" src="/img/productGfx/cables/CY-CBL-6P-IOI-01.svg"  width="500"/>
-
-## LANC Cable
+## LANC cables
 
 ### CY-CBL-6P-LANC-03
 
-CY-CI0/CY-RIO adapter cable for LANC controlled cameras or Canon Remote-A port.
-
-This cable provides control over compatible with Sony LANC physical interface:
+Adapter cable for LANC-controlled cameras and Canon Remote-A port. Compatible with the Sony LANC physical interface:
 - Sony, JVC
 - All Canon camcorders and cameras
 - Blackmagic LANC interface
 
-<img alt="cyanview-support-cable-CY_CBL-6P-LANC-03" src="/img/productGfx/cables/CY-CBL-6P-LANC-03.svg"  width="500"/>
+![CY-CBL-6P-LANC-03 LANC cable pinout](/img/productGfx/cables/CY-CBL-6P-LANC-03.svg)
 
-### CY-CBL-6P-LANC-01 (Canon Remote-A) (discontinued)
+### CY-CBL-6P-LANC-01 — Canon Remote-A (discontinued)
 
-CY-CI0/CY-RIO adapter cable for LANC camera.
+Adapter cable for LANC cameras. Compatible with the Sony LANC physical interface (Sony, JVC, Canon camcorders, Blackmagic). The second port is unused.
 
-This cable provides control over compatible with Sony LANC physical interface:
-- Sony, JVC
-- All Canon camcorders and cameras
-- Blackmagic LANC interface
+![CY-CBL-6P-LANC-01 Canon Remote-A LANC cable pinout (discontinued)](/img/productGfx/cables/CY-CBL-6P-LANC-01.svg)
 
-The second port is not used
+### CY-CBL-6P-LANC-02 — Sony LANC (discontinued)
 
-<img alt="cyanview-support-cable-CY_CBL-6P-LANC-01" src="/img/productGfx/cables/CY-CBL-6P-LANC-01.svg"  width="500"/>
+LANC adapter with control pass-through for Sony LANC cameras. Features dual LANC ports: LANC input for remote control pass-through and camera LANC output. The second port connects the zoom/focus handle of cameras like the Sony PXW-FS7, which have only one LANC port. Later cameras like the Sony ILME-FX6 have dual LANC ports or use other connector types, making this cable unnecessary.
 
-### CY-CBL-6P-LANC-02 (Sony LANC) (discontinued)
+![CY-CBL-6P-LANC-02 Sony LANC pass-through cable pinout (discontinued)](/img/productGfx/cables/CY-CBL-6P-LANC-02.svg)
 
-CY-CI0/CY-RIO LANC adapter for Sony LANC cameras with control pass-through.
+## Marshall cables
 
-With double LANC ports: LANC input for remote control pass-through, camera LANC output. The second port is not used to control a second camera but to connect the zoom/focus handle of a camera like Sony PXW-FS7 which only has a single LANC port. Later cameras like the Sony ILME-FX6 and later have dual LANC ports or the zoom handle connects using other types of connectors so this cable is not necessary anymore.
+### CY-CBL-6P-MARS-02 (current)
 
-<img alt="cyanview-support-cable-CY_CBL-6P-LANC-02" src="/img/productGfx/cables/CY-CBL-6P-LANC-02.svg"  width="500"/>
+Adapter cable for newer Marshall mini cameras with a 12-pin Hirose connector. Replaces CY-CBL-6P-MARS-01i with the same pinout but thinner and longer for use on small PT heads.
 
-## Marshall Cable
+![CY-CBL-MARSHALL-01 Marshall camera cable pinout](/img/productGfx/cables/CY-CBL-MARSHALL-01.svg)
 
-### CY-CBL-6P-MARS-02 (new)
+### CY-CBL-6P-PFAN (older Marshall)
 
-CY-CI0/CY-RIO adapter cable for Marshall camera. CY-CBL-6P-MARS-02 replaces CY-CBL-6P-MARS-01i, same pinout but thinner and longer to be work on the small PT head.
+Adapter cable for older Marshall mini cameras equipped with a power DC jack and a 2-position RS485 terminal block.
 
-This cable provides power and control to a newer Marshall mini camera having 12 pin Hirose connector.
+![CY-CBL-6P-PFAN-MARSHALL older Marshall camera cable pinout](/img/productGfx/cables/CY-CBL-6P-PFAN-MARSHALL.svg)
 
-<img alt="cyanview-support-cable-CY_CBL-MARSHALL-01" src="/img/productGfx/cables/CY-CBL-MARSHALL-01.svg"  width="500"/>
-
-### CY-CBL-6P-PFAN (older)
-
-CY-CI0/CY-RIO adapter cable for Marshall camera with power and RS485 Phoenix.
-
-Cable for Marshall mini camera equipped with power DC jack and 2 position RS485 terminal block.
-
-<img alt="cyanview-support-cable-CY_CBL-6P-PFAN-MARSHALL" src="/img/productGfx/cables/CY-CBL-6P-PFAN-MARSHALL.svg"  width="500"/>
-
-## Panasonic Cable
+## Panasonic cables
 
 ### CY-CBL-6P-PAN-10P
 
-CY-CI0/CY-RIO adapter cable for Panasonic camera.
+Adapter cable providing control over older Panasonic P2 cameras.
 
-This cable provides control over the older Panasonic P2 camera.
+![CY-CBL-6P-PANASONIC Panasonic P2 camera cable pinout](/img/productGfx/cables/CY-CBL-6P-PANASONIC.svg)
 
-<img alt="cyanview-support-cable-CY_CBL-6P-PANASONIC" src="/img/productGfx/cables/CY-CBL-6P-PANASONIC.svg"  width="500"/>
+## Sony cables
 
-## CY-CBL-SONY-8P-03
+### CY-CBL-SONY-8P-03
 
-CY-CI0/CY-RIO adapter cable for Sony 8-pin remote interface with power.
-
-This cable provides control to Sony professional camera and camcorder through the 8-pin remote interface.
+Adapter cable for Sony professional cameras and camcorders through the 8-pin remote interface, with power.
 
 :::note
-The last number of the cable (`-01`, `-02`, etc.) refers to the batch and can vary based on when you order.
+The suffix number (`-01`, `-02`, etc.) refers to the production batch and may vary depending on when you order.
 :::
 
-<img alt="cyanview-support-cable-CY_CBL-6P-SONY-8-2" src="/img/productGfx/cables/CY-CBL-6P-SONY-8-2.svg"  width="500"/>
+![CY-CBL-6P-SONY-8-2 Sony 8-pin remote cable with power pinout](/img/productGfx/cables/CY-CBL-6P-SONY-8-2.svg)
 
-## Tilta
+## Tilta cables
 
-If you don't know : If you don't know, it means you need this: `CY-CBL-TILTA-SERIAL`.
-
-Lockable, works with CI0/RIO and provide power+control.
+If you're unsure which cable to order, use `CY-CBL-TILTA-SERIAL`. It is lockable, works with CI0/RIO, and provides power and control.
 
 ### CY-CBL-TILTA-USB
 
-CY-RIO adapter cable for Tilta motors.
+Adapter cable for Tilta motors on CY-RIO. Connects from the RIO USB port to Tilta motors via LEMO. Requires an external power supply.
 
-Plugs on CY-RIO (USB) and Tilta motors (LEMO).
-Needs external power supply.
-
-<img alt="cyanview-support-cable-CY-CBL-TILTA-01" src="/img/productGfx/cables/CY-CBL-TILTA-01.svg"  width="500"/>
-
+![CY-CBL-TILTA-01 Tilta USB cable pinout](/img/productGfx/cables/CY-CBL-TILTA-01.svg)
 
 ### CY-CBL-TILTA-SERIAL
-CY-RIO/CY-CI0 adapter cable for Tilta motors.
 
-<img alt="cyanview-support-cable-CY-CBL-TILTA-02" src="/img/productGfx/cables/CY-CBL-TILTA-02.svg"  width="500"/>
+Adapter cable for Tilta motors on CY-RIO or CY-CI0.
 
-## Toshiba Cable
+![CY-CBL-TILTA-02 Tilta serial cable pinout](/img/productGfx/cables/CY-CBL-TILTA-02.svg)
+
+## Toshiba cables
 
 ### CY-CBL-6P-TOSHIBA-01
 
-CY-CI0/CY-RIO adapter cable for Toshiba camera.
+Adapter cable for Toshiba cameras and any RS232 device.
 
-Cable for Toshiba camera and any RS232 device.
+![CY-CBL-6P-TOSHIBA-01 Toshiba RS232 camera cable pinout](/img/productGfx/cables/CY-CBL-6P-TOSHIBA-01.svg)
 
-<img alt="cyanview-support-cable-CY_CBL-6P-TOSHIBA-01" src="/img/productGfx/cables/CY-CBL-6P-TOSHIBA-01.svg"  width="500"/>
-
-## VISCA Cable
+## VISCA cables
 
 ### CY-CBL-6P-PFAN → VISCA4, VISCA5, VISCA9
 
-CY-CI0/CY-RIO adapter cable with power for VISCA camera using RS422 can be constructed from [CY-CBL-6P-PFAN](/docs/resources/cable-catalog#cy-cbl-6p-pfan) and a 4, 5 or 9 pin 3.5 mm pitch Phoenix connector.
+Adapter cable with power for VISCA cameras using RS422. Build it from a [CY-CBL-6P-PFAN](/docs/resources/cable-catalog#cy-cbl-6p-pfan) and a 4-, 5-, or 9-pin 3.5 mm pitch Phoenix connector.
 
-<img alt="cyanview-support-cable-CY_CBL-6P-PFAN-VISCA" src="/img/productGfx/cables/CY-CBL-6P-PFAN-VISCA.svg"  width="500"/>
+![CY-CBL-6P-PFAN-VISCA VISCA RS422 camera cable pinout](/img/productGfx/cables/CY-CBL-6P-PFAN-VISCA.svg)

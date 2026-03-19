@@ -7,69 +7,61 @@ keywords: [lens control, B4, cine servo, motorized, RIO]
 slug: /integrations/generic/lens
 ---
 
-## Introduction
+![Canon B4 lens](/img/Integrations/Lens/B4-canon.png)
+![Canon Cine Servo lens](/img/Integrations/Lens/canon-cine-servo.png)
+![Fujinon Cabrio lens](/img/Integrations/Lens/fujinon-cabrio.png)
 
-<img src="/img/Integrations/Lens/B4-canon.png" width="300" />
-<img src="/img/Integrations/Lens/canon-cine-servo.png" width="300"/>
-<img src="/img/Integrations/Lens/fujinon-cabrio.png" width="300"/>
+Cyanview lets you run lens control in parallel with camera control. This is useful when the camera cannot control the lens, or when the lens and camera are not directly compatible (for example, an FX9 with a Cabrio lens).
 
-The goal is to setup a lens control in parallel of the camera control.
-
-Use case:
-* when the camera cannot control the lens
-* the lens is not compatible (FX9 + cabrio lens) with the camera
-
-When changing:
-* iris/zoom/focus, we will send it to the lens
-* shading, we will send it to the camera
-and it is transparent for the vision engineer on the RCP.
+When you adjust iris, zoom, or focus on the RCP, the command goes to the lens. When you shade, it goes to the camera. The split is transparent to the vision engineer.
 
 ## Lens compatibility
 
-### Specialty : B4 ENG
+### B4 ENG lenses
 
-<img src="/img/Integrations/Lens/B4-ENG.png"/>
+![B4 ENG lens](/img/Integrations/Lens/B4-ENG.png)
 
-For specialty and robotic application, you can have a look at this <a href="/docs/integrations/lenses/b4-lens">guide</a>
+For specialty and robotic applications, follow the [B4 lens guide](/docs/integrations/lenses/b4-lens).
 
-### Cine/Photo lens
+### Cine and photo lenses
 
-<img src="/img/Integrations/Lens/B4-cabrio.png"/>
+![Fujinon Cabrio on B4 mount](/img/Integrations/Lens/B4-cabrio.png)
 
-If you have a motorised cinema lens, you can follow this <a href="/docs/integrations/lenses/cine-lens">guide</a>
+For motorized cinema lenses, follow the [cine lens guide](/docs/integrations/lenses/cine-lens).
 
-Compatible with:
-* Canon : using 12P port (digital)
-* Fujinon : using 20P or 12P (digital)
-* cmotion : using 12P port (ditial)
-
-If you have a Canon photo lens (18-80 mm), it is motorised, but has only the 20P analog port that only allows control of zoom/focus. If you want remote iris control, you need to use external motor (cmotion, Tilta, ARRI, etc.)
-
-### Prime lens/Non motorised lens or robotics
-
-The same way we control the lens, we can control external motors:
-* cmotion : follow this <a href="/docs/integrations/lenses/cine-lens">guide</a>
-* Tilta : follow this <a href="/docs/integrations/lenses/tilta">guide</a>
-
-<img src="/img/Integrations/Lens/agito-tilta.png" width="500"/>
+Compatible connections:
+* Canon: 12P port (digital)
+* Fujinon: 20P or 12P (digital)
+* cmotion: 12P port (digital)
 
 :::note
-On this picture, you see a Canon 17-120 mm, that is normally controllable using 12P digital connector. But this port was already used by the ARRI AGITO operator (for zoom/focus). So here, they used a tilta motor to get iris control from the RCP in the CCU room.
+Canon 18-80 mm photo lenses have only a 20P analog port, which supports zoom/focus handles only. For remote iris control from the RCP, you need external motors (cmotion, Tilta, ARRI, etc.).
+:::
+
+### Prime lenses, non-motorized lenses, and robotics
+
+You can control external motors the same way as motorized lenses:
+* cmotion — follow the [cine lens guide](/docs/integrations/lenses/cine-lens)
+* Tilta — follow the [Tilta guide](/docs/integrations/lenses/tilta)
+
+![ARRI AGITO with Tilta motor for iris](/img/Integrations/Lens/agito-tilta.png)
+
+:::note
+The image above shows a Canon 17-120 mm, which is normally controllable via the 12P digital connector. In this setup, the 12P port was already occupied by the ARRI AGITO operator for zoom/focus, so a Tilta motor was added to provide iris control from the RCP.
 :::
 
 ## Cables
 
-* Lens controlled by camera : nothing to do, we control the lens using the camera protocol
-* 2/3" B4 : <a href="/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a>
-* Canon Cine Servo (12P digital): <a href="/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a>
-* Fujinon Cabrio (20P digital) : <a href="/docs/resources/cable-catalog#cy-cbl-6p-fuji-02-default">CY-CBLL-6P-FUJI-02</a> + <a href="/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default">CY-CBL-6P-B4-01</a>
-* Other (non motorised, prime lens, etc.) : Tilta motors with  <a href="/docs/resources/cable-catalog#cy-cbl-tilta-02-serial">CY-CBL-TILTA-SERIAL</a>
+| Lens type | Required cable |
+|-----------|---------------|
+| Lens controlled by camera | None — lens is controlled via camera protocol |
+| 2/3" B4 | [CY-CBL-6P-B4-01](/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default) |
+| Canon Cine Servo (12P digital) | [CY-CBL-6P-B4-01](/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default) |
+| Fujinon Cabrio (20P digital) | [CY-CBL-6P-FUJI-02](/docs/resources/cable-catalog#cy-cbl-6p-fuji-02-default) + [CY-CBL-6P-B4-01](/docs/resources/cable-catalog#cy-cbl-6p-b4-01-default) |
+| Non-motorized / prime lens | Tilta motors with [CY-CBL-TILTA-SERIAL](/docs/resources/cable-catalog#cy-cbl-tilta-serial) |
 
+:::warning
+For lens control, use a RIO with LAN rather than a CI0.
 
-:::note
-As lenses are critical, we recommend to use RIO +LAN instead of CI0.
-
-CI0 is a slave device and if you remove the ethernet cable, the lens is not controlled anymore and will then "close" (iris).
-
-While a RIO +LAN has all the protocols builtin and can control the lens on its own without any ethernet/RCP. It also allows to plug handles, USB accessories, etc.
+A CI0 acts as a serial/IP converter — if the Ethernet link drops, the lens loses control and the iris closes. A RIO runs all protocols onboard and continues controlling the lens independently, even without an active RCP connection. It also supports handles and USB accessories.
 :::

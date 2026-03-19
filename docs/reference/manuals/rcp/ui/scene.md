@@ -7,249 +7,193 @@ keywords: [RCP, UI, scene files, paint settings, recall]
 slug: /reference/manuals/rcp/ui/scene
 ---
 
-# RCP Scene Files
+Scene files let you save and recall complete camera paint settings. Access them from the main view by pressing the `SCENE` button or via `MENU > SCENE`.
 
-This guide will describe how to use the scene files on the RCP.
+![RCP main view showing SCENE button](/img/Manual/RCP/Scenes/RCP-main-view.BMP)
 
-On your RCP main view, 2 ways to access the scene files:
-* pressing the `SCENE` button
-* pressing `MENU` button, then navigating to `SCENE`
+Two submenus are available:
+- `S. FILES` — save and load scene files.
+- `S. CONFIG` — configure folders and filters.
 
-<img src="/img/Manual/RCP/Scenes/RCP-main-view.BMP"/>
-
-You have two submenus:
-* `S. FILES` : to use the scene files (load, save, etc.)
-* `S. CONFIG` : to configure the behavior (folders, filters)
-
-Once you're in a submenu (`S. FILES` or `S. CONFIG`), you can:
-* go back to the previous view by pressing the `BACK` button
-* press arrows `<` or `>` to navigate between the submenus pages
-* press `MENU` button to go back to the main view
+Once inside a submenu, you can:
+- Press `BACK` to return to the previous view.
+- Press `<` or `>` to move between submenu pages.
+- Press `MENU` to return to the main view.
 
 :::tip
-Once you're on a submenu page, pressing `MENU` will go back to the main view.
-Pressing `SCENE` shortcut will go back to the previous submenu page you selected.
-If you were on `S. FILES > Files`, pressing `SCENE` will go back to this page.
+The `SCENE` button always returns you to the last submenu page you visited within the scene section. The `MENU` button position is tracked independently — pressing `MENU` returns to the main view, and pressing it again takes you to wherever your last `MENU` navigation left off (which may be `PAINT` or another section, not necessarily `SCENE`).
 :::
 
-:::tip
-`SCENE` last used page is always saved on a "page" level. But `MENU` position is saved separately. So if you're in `S. FILES > Files`, you click on `MENU`, you're back on the main view, if you press `MENU` again and your last menu navigation was in another section (`PAINT` for example), it will bring you there. `MENU` button will bring you back to `SCENE` only if you navigated there using `MENU` button. While `SCENE` shortcut always brings you to your last page in `SCENE`.
-:::
-
-<img src="/img/Manual/RCP/Scenes/RCP-menu-scene.BMP"/>
+![Scene menu overview](/img/Manual/RCP/Scenes/RCP-menu-scene.BMP)
 
 ## Quick scene files
 
-This page provides a quick way to save/load scene files based on scene slots.
+This page gives you a fast way to save and load scene files using numbered slots.
 
 :::note
-If you have an RCP-J, you have 5 scene file buttons, mapped to loading scene files 1-5.
-
-Pay attention that:
-* it only load the scene file slot (quick press)
-* no save
-* as you can lock your joystick module to a specific camera, the scene load buttons are linked to the same camera. So your quick load on RCP and quick load on joystick, even if working exactly the same way, could load different scene files on different cameras.
+If you have an RCP-J, the 5 scene file buttons map to quick-loading slots 1–5 (load only, no save). Since you can lock the joystick module to a specific camera, the quick-load buttons on the RCP and the joystick may operate on different cameras.
 :::
 
-### Save/Load
+### Save and load
 
-This is the main view and allow to quickly:
-* load a scene file
-* save scene file
-* load/save but on a whole <a href="/docs/guides/advanced/camera-groups">camera group</a>
+| ![Quick scene files main view](/img/Manual/RCP/Scenes/RCP-menu-scene-quick.BMP) | ![Quick scene files actions](/img/Manual/RCP/Scenes/RCP-menu-scene-quick-actions.BMP) |
+|---|---|
 
-<table>
-    <tr>
-    <td><img src="/img/Manual/RCP/Scenes/RCP-menu-scene-quick.BMP"/></td>
-    <td><img src="/img/Manual/RCP/Scenes/RCP-menu-scene-quick-actions.BMP"/></td>
-    </tr>
-</table>
+To **save**:
+1. Click `Store` to enter save mode.
+2. Select the slot you want to save to.
+3. The last used slot is highlighted; you can overwrite it by clicking it again.
+4. After clicking a slot, `Store` disengages and you return to load mode.
 
-To save:
-* Click on `Store`, it's a modifier button, once engaged, you're saving (not loading)
-* Select the slot you want to save to
-* The last slot used is highlighted
-* You can overwrite a slot by clicking on it, even if highlighted
-* Once a slot is clicked, the `Store` modifier is disengaged, and you're back in loading mode
-
-To load : simply click on a slot
+To **load**: click a slot directly.
 
 ### Actions
 
-* `Remote` : this is a modifier, will save/load on the remote device (if you use REMI from RIO, it will save/load on RIO).
-* `Sync Camera` : force a refresh of the values from the camera, useful for RF/wireless.
+- `Remote` — modifier that makes save/load act on the remote device (e.g., saves to RIO when using REMI from RIO).
+- `Sync Camera` — forces a refresh of values from the camera; useful for RF/wireless.
 
-<img src="/img/Manual/RCP/Scenes/RCP-menu-scene-quick-actions.BMP"/>
+![Quick scene actions menu](/img/Manual/RCP/Scenes/RCP-menu-scene-quick-actions.BMP)
 
 ### Groups
 
-For more information on <a href="/docs/guides/advanced/camera-groups">group setup</a>.
+For group setup, see [camera groups](/docs/guides/advanced/camera-groups).
 
-In this setup, I have my BirdDog P200 camera that is in multiple groups: `All`, `PTZ`, `Birddog`.
-
-:::note
-The group `All` exists by default, and all cams in the RCP config are in this group.
-:::
-
-<table>
-    <tr>
-        <td><img src="/img/Manual/RCP/Scenes/RCP-config-P200-block.png"/>
-</td>
-        <td><img src="/img/Manual/RCP/Scenes/RCP-config-P200-setup.png"/>
-</td>
-    </tr>
-</table>
-
-<br/>
-
-<img src="/img/Manual/RCP/Scenes/RCP-menu-scene-quick-group.gif"/>
-<img width="480px" src="/img/Manual/RCP/RCP-encoders-3-right.png"/>
-
+In this example, the BirdDog P200 belongs to the groups `All`, `PTZ`, and `Birddog`.
 
 :::note
-Once the group button is engaged, all actions are performed on the selected group and not on the selected camera.
-
-You see a yellow border on your RCP display to signal you're in group mode.
+The `All` group exists by default and includes every camera in the RCP configuration.
 :::
 
---- 
+| ![P200 block config](/img/Manual/RCP/Scenes/RCP-config-P200-block.png) | ![P200 group setup](/img/Manual/RCP/Scenes/RCP-config-P200-setup.png) |
+|---|---|
+
+![Group mode scene load animation](/img/Manual/RCP/Scenes/RCP-menu-scene-quick-group.gif)
+![RCP encoder layout — right side](/img/Manual/RCP/RCP-encoders-3-right.png)
+
+:::note
+When group mode is active, all actions apply to the selected group rather than the individual camera. A yellow border appears on the RCP display to indicate group mode.
+:::
 
 ## Files
 
-This page allows to Store & Load scene file with more options:
-* See scene file names
-* Rename scene filenames
-* Change source/destination camera
+The Files page gives you more control over scene file operations: view file names, rename them, and change the source or destination camera.
 
-- Go to `Menu` -> `S Files` -> `Files`
+Go to `Menu > S Files > Files`.
 
-<img src="/img/Manual/RCP/Scenes/RCP-menu-scene-files.BMP"/>
+![Scene files management page](/img/Manual/RCP/Scenes/RCP-menu-scene-files.BMP)
 
-- In this menu, The buttons are:
-    - `Current` = The scene file which is loaded for this camera
-    - `Selected` = The scene file slot which you can `Store` or `Load` from
-    - `Store` = Save or 'Store' the camera configuration into a scene file 
-    - `Load` = Load a certain scene file onto camera 
-    - `Source` = This details which camera you want to load from - This is used when transferring a scene file from one camera to another
+Buttons on this page:
+- `Current` — the scene file currently loaded on this camera.
+- `Selected` — the scene file slot you want to store to or load from.
+- `Store` — saves the camera configuration to the selected slot.
+- `Load` — loads the selected scene file onto the camera.
+- `Source` — the camera to load from, used when transferring a scene file between cameras.
 
-:::info Labelling format
-The labelling format is the Slot number and the description. For example `1 N/A` = Slot 1 - No scene file stored
+:::info
+The label format is `[slot number] [name]`. For example, `1 N/A` means slot 1 with no scene file stored.
 :::
 
-- The encoder's are:
-    - `Select` - This changes the `Selected` scene file (Highlighted in `RED`) 
-    - `Group` - Changes the camera group selected (Highlighted in `Green`)
-    - `Camera` - Changes the source camera number (Highlighted in `Blue`)
+Encoders on this page:
+- `Select` — changes the selected scene file (highlighted in red).
+- `Group` — changes the selected camera group (highlighted in green).
+- `Camera` — changes the source camera number (highlighted in blue).
 
-![Encoders](/img/Manual/RCP/Scenes/RCP_Scene_File_Encoders.png)
+![Scene file encoder layout](/img/Manual/RCP/Scenes/RCP_Scene_File_Encoders.png)
 
-### Store/Save
+### Store/save
 
-The camera is currently set to:
+With the camera at its current settings:
 
-<img src="/img/Manual/RCP/Scenes/RCP-menu-scene-files-scne1-main-view.BMP"/>
+![Main view showing current camera settings](/img/Manual/RCP/Scenes/RCP-menu-scene-files-scne1-main-view.BMP)
 
-To store these settings in slot 1:
-* Use the first encoder to change `Selected` to 1
-* Here it is labelled `NA` as there is no scene file saved
-* Click on `Store` to save/store all painting parameters to the slot 1
+To store to slot 1:
+1. Turn the first encoder to set `Selected` to 1 (shown as `NA` if empty).
+2. Click `Store`.
 
-<img src="/img/Manual/RCP/Scenes/RCP-menu-scene-file-save.gif"/>
-<img width="480px" src="/img/Manual/RCP/RCP-encoders-1-right.png"/>
+![Save to slot 1 animation](/img/Manual/RCP/Scenes/RCP-menu-scene-file-save.gif)
+![RCP encoder — first encoder highlighted](/img/Manual/RCP/RCP-encoders-1-right.png)
 
-You can change another setting and then save it to another slot. Gain changed:
+Change a setting (e.g., gain) and repeat to store to slot 2:
 
-<img src="/img/Manual/RCP/Scenes/RCP-menu-scene-files-scene2-values.BMP"/>
+![Main view with changed gain value](/img/Manual/RCP/Scenes/RCP-menu-scene-files-scene2-values.BMP)
 
-Repeat the store settings to slot 2:
+![Save to slot 2 animation](/img/Manual/RCP/Scenes/RCP-menu-scene-file-save2.gif)
+![RCP encoder — first encoder highlighted](/img/Manual/RCP/RCP-encoders-1-right.png)
 
-<img src="/img/Manual/RCP/Scenes/RCP-menu-scene-file-save2.gif"/>
-<img width="480px" src="/img/Manual/RCP/RCP-encoders-1-right.png"/>
+### Load a scene file
 
-### Load scene file
+1. Turn the first encoder to set `Selected` to the desired slot.
+2. Click `Load`.
 
-If you have several scene files for a camera, you may need to load between them 
+![Scene files page with slot 2 selected](/img/Manual/RCP/Scenes/RCP_Scene_File_click_load_slot2.BMP)
 
-- Use the first encoder to change the `Selected` - Go to the slot you want to change to. You can see `Selected` is on Slot 2 below
-- Click `Load` 
+`Current` updates to reflect the newly loaded slot.
 
-<img src="/img/Manual/RCP/Scenes/RCP_Scene_File_click_load_slot2.BMP"/>
-
-- `Current` is now on slot 2
-
-<img src="/img/Manual/RCP/Scenes/RCP_Scene_File_slot2_loaded.bmp"/>
+![Scene files page showing slot 2 loaded](/img/Manual/RCP/Scenes/RCP_Scene_File_slot2_loaded.bmp)
 
 ### Copying scene files
 
-If you want to 'copy' scene file to another camera, you would use the `source` button and `Camera` encoder
+To copy a scene file from one camera to another, use the `Source` button and the `Camera` encoder.
 
-- Select which camera has the scene file - In this case it is `Camera 1`
+1. Identify which camera holds the scene file — in this example, Camera 1.
 
-:::info Note
-There are two camera numbers to note. 
-1. Which camera the RCP is connected to - top left
-2. The camera which is the scene file `source` - Bottom right
+:::info
+Two camera numbers are visible: the camera the RCP is connected to (top left) and the scene file source camera (bottom right).
 :::
 
-![Camera 1](/img/Manual/RCP/Scenes/RCP_Scene_File_Source_Cam1.BMP)
+![Scene files page with Camera 1 as source](/img/Manual/RCP/Scenes/RCP_Scene_File_Source_Cam1.BMP)
 
-- Navigate to the camera **using either left and right arrows or switcher** you want to 'copy' the scene files to - In this case it is `Camera 2`
+2. Navigate to the destination camera (Camera 2) using the left/right arrows or switcher.
 
-:::info Note
-You can see the camera has moved to `Camera 2` but the source camera is still `1`
-:::
+![Scene files page showing Camera 2 selected, source still Camera 1](/img/Manual/RCP/Scenes/RCP_Scene_File_Source_Cam2.BMP)
 
-![Camera 2](/img/Manual/RCP/Scenes/RCP_Scene_File_Source_Cam2.BMP)
+3. Click `Source` — it remains highlighted to confirm it is active.
 
-- Click `Source` - This should remain highlighted  
+![Source button highlighted for Camera 2](/img/Manual/RCP/Scenes/RCP_Scene_File_Enable_Source_Cam2.BMP)
 
-![Source cam2](/img/Manual/RCP/Scenes/RCP_Scene_File_Enable_Source_Cam2.BMP)
+4. Click `Load`.
 
-- Click `load` 
+![Load button clicked to copy scene file](/img/Manual/RCP/Scenes/RCP_Scene_File_click_load.BMP)
 
-![Source cam2](/img/Manual/RCP/Scenes/RCP_Scene_File_click_load.BMP)
+Camera 2 now has the scene file from Camera 1 Slot 1.
 
-- You will now have the scene file from `Camera 1` Slot 1 on `Camera 2` Slot 1
-
-![Source cam2](/img/Manual/RCP/Scenes/RCP_Scene_File_Enable_loaded.BMP)
+![Camera 2 with scene file loaded from Camera 1](/img/Manual/RCP/Scenes/RCP_Scene_File_Enable_loaded.BMP)
 
 ### Actions
 
-* `Remote` : this is a modifier, will save/load on the remote device (if you use REMI from RIO, it will save/load on RIO).
-* `Sync Camera` : force a refresh of the values from the camera, useful for RF/wireless.
-* `Clear` : delete the selected slot file
-* `Rename` : rename the selected slot file
+- `Remote` — saves/loads on the remote device (e.g., RIO when using REMI).
+- `Sync Camera` — forces a refresh of values from the camera; useful for RF/wireless.
+- `Clear` — deletes the selected slot file.
+- `Rename` — renames the selected slot file.
 
-I can rename my slot 1 as my `default` scene:
+To rename slot 1 to "default":
 
-Go back to scene 1 slot:
+1. Navigate back to the slot 1 view.
 
-<img src="/img/Manual/RCP/Scenes/RCP-menu-scene-files-save-scene1-2.BMP"/>
+![Scene files page showing slot 1](/img/Manual/RCP/Scenes/RCP-menu-scene-files-save-scene1-2.BMP)
 
-Click on `ACTIONS`, then `Rename`, validate with `✔`:
+2. Click `ACTIONS`, then `Rename`, and confirm with `✔`.
 
-<img src="/img/Manual/RCP/Scenes/RCP-menu-scene-files-rename.gif"/>
+![Rename animation for slot 1](/img/Manual/RCP/Scenes/RCP-menu-scene-files-rename.gif)
 
-### Files
+### Files on disk
 
-Scene files are saved on RCP. They are actual files you can see using your computer file browser.
+Scene files are stored on the RCP and accessible as regular files from your computer.
 
-On my Mac, I can open `Finder`, then in `Network` and see all my Cyanview devices:
+On a Mac, open Finder, go to **Network**, and you'll see all your Cyanview devices:
 
-<img src="/img/Manual/RCP/Scenes/RCP-scene-files-browser.png"/>
+![Finder network view showing Cyanview devices](/img/Manual/RCP/Scenes/RCP-scene-files-browser.png)
 
-Each device has 3 directories exposed:
-* `3DLUT` : to store 3D LUTs (some cameras and LUT boxes)
-* `scenes` : to store scene files
-* `snapshots` : to store the configuration snapshots
+Each device exposes three directories:
+- `3DLUT` — 3D LUT files (for compatible cameras and LUT boxes).
+- `scenes` — scene files.
+- `snapshots` — configuration snapshots.
 
-Here I clicked on my RCP `CY-RCP-40-142` scenes directory:
+![Scene files directory listing on the RCP](/img/Manual/RCP/Scenes/RCP-scene-files-list.png)
 
-<img src="/img/Manual/RCP/Scenes/RCP-scene-files-list.png"/>
+Files follow the naming convention: `CAM-{CAM_NUMBER}.{SCENE_SLOT}.{SCENE_NAME}.scene`
 
-I see my files with this naming: `CAM-{CAM_NUMBER}.{SCENE_SLOT}.{SCENE_NAME}.scene`
-
-You can open the `*.scene` files using a text editor and see something like this:
+Opening a `.scene` file in a text editor shows:
 
 ```
 lens/iris=16.0
@@ -284,141 +228,101 @@ tally/green=0
 number=1
 ```
 
-You can:
-* rename the files by changing `SCENE_NAME` section in the filename
-* copy and paste the file and change `SCENE_SLOT`
-* copy and paste the file and change `CAM_NUMBER`
-* edit the text file and enter manually the desired value (like `lens/iris_fstop=4`)
+You can manipulate scene files directly:
+- Rename a file by changing the `SCENE_NAME` portion of the filename.
+- Duplicate a file for a different slot by changing `SCENE_SLOT`.
+- Duplicate a file for a different camera by changing `CAM_NUMBER`.
+- Edit values manually (e.g., set `lens/iris_fstop=4`).
 
 ### Group
 
-It's exactly the same logic as in the quick scene files page.
-Every action you perform is here performed on the group instead of the camera.
+The group behavior here is identical to the quick scene files page — all actions apply to the selected group instead of the individual camera.
 
 ## Presets
 
-In the above section:
-* I saved a scene file in slot 1
-* I renamed it to `default`
-* I saw that I can browse the scene files using my computer
+A preset is a read-only scene file. You can load it from the RCP but cannot delete or rename it from the device (only from your computer).
 
-And you can copy/paste or drag'n'drop the default scene file in the directory `presets`
+To create a preset, copy a scene file into the `presets` directory on the RCP.
 
-This allows to transform a scene file in a preset.
+![Preset files page showing Factory default](/img/Manual/RCP/Scenes/RCP-menu-scene-presets.BMP)
 
-A preset is a read-only scene file that can't be deleted or renamed from the RCP (only from the computer).
+By default, one preset is available: `Factory default`, which resets the camera to Cyanview default values.
 
-<img src="/img/Manual/RCP/Scenes/RCP-menu-scene-presets.BMP"/>
+To add your own preset:
 
-By default, only 1 preset is available: `Factory default`.
-It will reset the camera to the default values (in Cyanview world).
+1. Browse to the scene files on your computer.
 
-You can add your own presets by copying scene files in this directory:
+![File browser showing the scene file to copy](/img/Manual/RCP/Scenes/RCP-scene-presets-browse.png)
 
-Here, I take the file `CAM-1.1.default.scene`
+2. Move or copy the file into the `presets` directory.
 
-<img src="/img/Manual/RCP/Scenes/RCP-scene-presets-browse.png"/>
+![File browser showing the file moved into the presets directory](/img/Manual/RCP/Scenes/RCP-scene-presets-add.png)
 
-And move it to the `presets` directory:
-
-<img src="/img/Manual/RCP/Scenes/RCP-scene-presets-add.png"/>
-
-As it is, it's now available as a preset for my camera 1.
+The preset is now available for the camera matching the `CAM_NUMBER` in the filename.
 
 :::tip
-You can create presets for various cameras by changing the name: `CAM-{CAM_NUMBER}.{SCENE_SLOT}.{SCENE_NAME}.scene`
-
-You can:
-* rename the files by changing `SCENE_NAME` section in the filename
-* copy and paste the file and change `SCENE_SLOT`
-* copy and paste the file and change `CAM_NUMBER`
-* edit the text file and enter manually the desired value (like `lens/iris_fstop=4`)
+Use the filename convention `CAM-{CAM_NUMBER}.{SCENE_SLOT}.{SCENE_NAME}.scene` to create presets for specific cameras and slots. You can edit the text file directly to set exact values (e.g., `lens/iris_fstop=4`).
 :::
 
+To load a preset, use the same steps as loading a scene file.
 
-To load a preset, it's exactly like for the scene files.
-
-Here, loading my preset named `default`
-
-<img src="/img/Manual/RCP/Scenes/RCP-menu-scene-presets.gif"/>
-<img width="480px" src="/img/Manual/RCP/RCP-encoders-1-right.png"/>
+![Loading the default preset animation](/img/Manual/RCP/Scenes/RCP-menu-scene-presets.gif)
+![RCP encoder — first encoder highlighted](/img/Manual/RCP/RCP-encoders-1-right.png)
 
 ## Folders
 
+Folders let you organize scene files into subdirectories — useful for separating different events or productions.
+
 ### Create
 
-This allows to organize scene files in subdirectories
+![Folders configuration page — default view](/img/Manual/RCP/Scenes/RCP-menu-scene-folders-0.BMP)
 
-<img src="/img/Manual/RCP/Scenes/RCP-menu-scene-folders-0.BMP"/>
+By default, all scene files are stored in the root directory. In this example:
+- Camera 1, slot 2
+- Camera 2, slot 1
+- Camera 1, slot 1 (preset named `default`)
 
-By default, all scene files are stored in the root directory.
+![File browser showing original flat structure](/img/Manual/RCP/Scenes/RCP-scene-folder-orig.png)
 
-I have 2 scene files:
-* cam 1, slot 2
-* cam 2, slot 1
+You can create subfolders to organize files by event. In the example below, the root scene file is kept as-is, and two folders (`A` and `B`) each contain their own scene files:
 
-And 1 preset:
-* cam 1 slot 1, named `default`
-
-<img src="/img/Manual/RCP/Scenes/RCP-scene-folder-orig.png"/>
-
-
-I can create scene files subfolders to organize my scene files for different events.
-
-Here I:
-* kept my original scene file (not associated with any event, so in the root directory).
-* created a folder named `A` with 2 scene files
-* created a folder named `B` with 2 scene files
-
-<img src="/img/Manual/RCP/Scenes/RCP-scene-folder-org.png"/>
-
+![File browser showing organized A and B folders](/img/Manual/RCP/Scenes/RCP-scene-folder-org.png)
 
 ### Load a folder
 
-On the RCP, you can now:
-* change the base folder using 4th encoder
-* select `B`
-* click on `Apply` to validate
+On the RCP:
+1. Turn the 4th encoder to change the base folder.
+2. Select the desired folder (e.g., `B`).
+3. Click `Apply` to confirm.
 
-<img src="/img/Manual/RCP/Scenes/RCP-menu-scene-folders.gif"/>
-<img width="480px" src="/img/Manual/RCP/RCP-encoders-1-right.png"/>
+![Folder selection animation](/img/Manual/RCP/Scenes/RCP-menu-scene-folders.gif)
+![RCP encoder — first encoder highlighted](/img/Manual/RCP/RCP-encoders-1-right.png)
 
-And if I go in the file browser, I can see:
+In the file browser, `current` is a symbolic link pointing to the selected folder. Changes made in `B` or in `current` affect the same files.
 
-<img src="/img/Manual/RCP/Scenes/RCP-scene-folder-B.png"/>
+![File browser showing folder B selected via the current symlink](/img/Manual/RCP/Scenes/RCP-scene-folder-B.png)
 
-`current` is a symbolic link to the actual folder selected on RCP (here, `B`). So changing files in `B` or in `current` are changing the same files under the hood.
-
-Now, every load/scene actions will be performed in this subdirectory.
+All save/load actions now operate within the selected subfolder.
 
 :::tip
-To go back to root folder, select the option `No selected folder`
+To return to the root folder, select **No selected folder**.
 :::
 
 ## Filters
 
-This allows to filter the loaded parameters in a scene file.
+Filters let you control which parameters are applied when loading a scene file. Saving always captures everything — filters only affect loading.
 
-This is the default values:
+![Scene filters configuration page](/img/Manual/RCP/Scenes/RCP-menu-scene-filters.BMP)
 
-<img src="/img/Manual/RCP/Scenes/RCP-menu-scene-filters.BMP"/>
+Available filter options:
+- Paint — all paint parameters (white balance, black balance, etc.)
+- Matrix — all matrix parameters (matrix, multi-matrix, etc.)
+- LUTs
+- Iris
+- ND/Shutter
+- Gain
+- PTZF — pan, tilt, zoom, focus
 
+To reset to defaults, click `ACTIONS > Reset Selection`.
 
-You can select:
-* Paint : all paint parameters (white balance, black balance, etc.)
-* Matrix : all matrix parameters (matrix, multi matrix, etc.)
-* LUTs
-* Iris 
-* ND/Shutter
-* Gain
-* PTZF : pan, tilt, zoom, focus
-
-When you save, we always save everything. This selection only impacts the load actions.
-
-And you can reset the default selection by clicking on `ACTIONS > Reset Selection`.
-
-Here I had: Iris, ND/Shutter, Gain, PTZF selected
-
-After the reset, I'm back to default: Paint, Matrix, ND/Shutter, Gain:
-
-<img src="/img/Manual/RCP/Scenes/RCP-menu-scene-filters-reset.gif"/>
+![Filter reset animation](/img/Manual/RCP/Scenes/RCP-menu-scene-filters-reset.gif)

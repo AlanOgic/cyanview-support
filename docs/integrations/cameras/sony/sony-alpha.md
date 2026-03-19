@@ -7,9 +7,11 @@ keywords: [Sony Alpha, mirrorless, USB, A7, RIO]
 slug: /integrations/cameras/sony/sony-alpha
 ---
 
-<img alt="cyanview-support-Sony-DSLR" src="/img/Integrations/camera/Sony/Sony-DSLR/Sony-A7S-III-ILCE-7SM3.png" width="600" />
+![Sony Alpha 7S III ILCE-7SM3](/img/Integrations/camera/Sony/Sony-DSLR/Sony-A7S-III-ILCE-7SM3.png)
 
-## Supported Camera
+Connect your Sony Alpha mirrorless camera to a Cyanview RCP or RIO over USB for full remote control of paint, exposure, and recording parameters.
+
+## Supported cameras
 
 - **ILX-LR1**
 - **ILCE-1** : Alpha 1
@@ -24,158 +26,140 @@ slug: /integrations/cameras/sony/sony-alpha
 - **ILCE-7C** : Alpha 7C
 - **ILCE-7CM2** : Alpha 7C II
 - **ILCE-6700** : Alpha 6700
-- **ILME-FX2** : FX2  **\*\* Needs RIO version 25.10.1beta2 or up**
-- **ILME-FX3** : FX3 **\*\* FX3A needs RIO version 25.10.1beta2 or up**
+- **ILME-FX2** : FX2 — requires RIO version 25.10.1beta2 or later
+- **ILME-FX3** : FX3 — FX3A requires RIO version 25.10.1beta2 or later
 - **ILME-FX30** : FX30
-- **ZV-E1** : ZV E1
-- **ZV-E10M2** : ZV E10 II
-- **DSC-RX0M2** : RX0 Mark 2
+- **ZV-E1** : ZV-E1
+- **ZV-E10M2** : ZV-E10 II
+- **DSC-RX0M2** : RX0 Mark II
 
-:::warning[Latest SDK only in 25.10.1beta2 and up]
-Integrating latest Sony SDK required some deeper changes and dependencies in the RIO OS, so it is only available in RIO version `25.10.1beta2` and up.
-This is required for the newer models like the FX2, FX3A and the newer camcorders like Sony PXW-Z200, PXW-Z300 and HXR-NX800.
+:::warning[Latest Sony SDK requires RIO 25.10.1beta2 or later]
+Integrating the latest Sony SDK required deeper changes at the RIO OS level. RIO version `25.10.1beta2` or later is required for newer models including the FX2, FX3A, and camcorders such as the Sony PXW-Z200, PXW-Z300, and HXR-NX800.
 :::
 
-These cameras can be controlled directly from the **RCP** or via a **RIO** (local or remote).
+You can control these cameras directly from the **RCP** or through a **RIO** (local or remote).
 
-<img alt="cyanview-support-Sony-DSLR-RCP" src="/img/Integrations/camera/Sony/Sony-DSLR/Sony-DSLR-RCP@2x-8.png" width="450" />
+![Sony Alpha controlled from RCP](/img/Integrations/camera/Sony/Sony-DSLR/Sony-DSLR-RCP@2x-8.png)
 
-<img alt="cyanview-support-Sony-DSLR-RIO-RCP-Local" src="/img/Integrations/camera/Sony/Sony-DSLR/SONY-DSLR-RIO-RCP-Local@2x-8.png" width="700" />
+![Sony Alpha controlled via RIO and RCP locally](/img/Integrations/camera/Sony/Sony-DSLR/SONY-DSLR-RIO-RCP-Local@2x-8.png)
 
-<img alt="cyanview-support-Sony-DSLR-RIO-RCP-4G" src="/img/Integrations/camera/Sony/Sony-DSLR/SONY-DSLR-RIO-4G@2x-8.png" width="700" />
+![Sony Alpha controlled via RIO over 4G](/img/Integrations/camera/Sony/Sony-DSLR/SONY-DSLR-RIO-4G@2x-8.png)
 
 ## Controls
 
-:::warning Firmware Update
-Most of the paint settings are managed through the camera's Picture Profile. Ensure your camera firmware is up to date, as both these settings and the remote control capabilities were implemented in later firmware releases for most cameras.
+:::warning[Keep camera firmware up to date]
+Most paint settings are managed through the camera's Picture Profile. Both these settings and remote control capabilities were introduced in later firmware releases for most models. Update your camera firmware before use.
 :::
 
-|Control|Notes| ILCE-9M2, ILCE-7RM4A, ILCE-7RM4, ILCE-7C|Others|
-|:-----|:-----|:-----:|:-----:|
-**Iris** | Manual and Auto | ✔ | ✔
-**ISO**  | Manual and Auto (+ offset).<br/>Only native ISO, not extended ISO | ✔ | ✔
-**Shutter** | Manual, AUTO | ✔ | ✔
-**White Balance** | R/B mapped to AB-GM and Color temp | ✔ | ✔
-**Black Balance** | Master Black only |   | ✔
-**Black Gamma** | Range (1-3, Narrow-Wide) and Master Gamma |   | ✔
-**Detail** | Level, Crisp, Level Dep, H/Ratio and Mix |   | ✔
-**Knee** | Point and Slope, ON/OFF |   | ✔
-**Sat and Hue** |  |   | ✔
-**Color space** | Movie, Still, SCinetone, Cinema, Pro, ITU709, BlackWhite, SGamut3Cine, SGamut3   |   | ✔
-**OETF** | Movie, Still, SCinetone, Cine1, Cine2, Cine3, Cine4, ITU709, SLog3, HLG, HLG1, HLG2, HLG3  |   | ✔
-**Multi Matrix** | Hue and Saturation on 6 vectors : MAGENTA, BLUE, CYAN, GREEN, YELLOW, RED |   | ✔
-**REC** | REC on/off and status | ✔ | ✔
+| Control | Notes | ILCE-9M2, ILCE-7RM4A, ILCE-7RM4, ILCE-7C | Others |
+|:--------|:------|:-----------------------------------------:|:------:|
+| **Iris** | Manual and Auto | ✔ | ✔ |
+| **ISO** | Manual and Auto (+ offset). Native ISO only, not extended ISO | ✔ | ✔ |
+| **Shutter** | Manual and Auto | ✔ | ✔ |
+| **White balance** | R/B mapped to AB-GM and color temp | ✔ | ✔ |
+| **Black balance** | Master black only | | ✔ |
+| **Black gamma** | Range (1–3, Narrow–Wide) and master gamma | | ✔ |
+| **Detail** | Level, Crisp, Level Dep, H/Ratio, and Mix | | ✔ |
+| **Knee** | Point and Slope, On/Off | | ✔ |
+| **Saturation and Hue** | | | ✔ |
+| **Color space** | Movie, Still, S-Cinetone, Cinema, Pro, ITU709, Black & White, S-Gamut3.Cine, S-Gamut3 | | ✔ |
+| **OETF** | Movie, Still, S-Cinetone, Cine1, Cine2, Cine3, Cine4, ITU709, S-Log3, HLG, HLG1, HLG2, HLG3 | | ✔ |
+| **Multi matrix** | Hue and saturation on 6 vectors: Magenta, Blue, Cyan, Green, Yellow, Red | | ✔ |
+| **REC** | Record on/off and status | ✔ | ✔ |
 
+Sony Alpha cameras have no built-in tally. You can add tally output through a RIO port using a [cy-cbl-6p-pwr](/docs/resources/cable-catalog#cy-cbl-6p-pwr) cable. See the [Tally](/docs/guides/tally/tally) configuration guide.
 
-**Tally** is not present on the camera, but it can be added by via a RIO port as Tally output using a <a src="/docs/resources/cable-catalog#cy-cbl-6p-pwr">cy-cbl-6p-pwr</a>. See <a href="/docs/guides/tally/tally">Tally</a> configuration page.
-
-
-<img src="/img/Integrations/Sony/Alpha/A7CR/A7CR.gif"/>
+![Sony Alpha 7CR camera controls animation](/img/Integrations/Sony/Alpha/A7CR/A7CR.gif)
 
 ## Setup
 
-Ensure your Sony Alpha is updated in the latest version.
+1. Update your Sony Alpha camera to the latest firmware.
+2. Update your RCP and RIO to the latest version — minimum `24.2.1`.
+3. Connect the camera to the RIO or RCP using a USB data cable.
+4. Open the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui) and add the camera:
+   - Select **Sony** as the brand.
+   - Select **Alpha** as the model.
 
-Also ensure your RCP/RIO are also updated to the latest version (should be `24.2.1` minimum)
+The configuration block should look like this:
 
+![Sony Alpha setup in RCP Configuration UI](/img/Integrations/Sony/Alpha/A7CR/sony-alpha-setup.png)
 
-**Connect** camera to RIO or RCP using the USB cable.
+When the connection is established, the block turns green:
 
+![Sony Alpha connection block showing green status](/img/Integrations/Sony/Alpha/A7CR/sony-alpha-block.png)
 
-**Add the Camera** to the RCP configuration via the <a src="/docs/reference/manuals/rcp/web-ui">RCP Configuration UI</a>.
-- Select **Sony** brand.
-- Select **Alpha** model.
+On the camera display:
+- `-PC-` appears in white when the USB cable is connected.
+- `-PC-` turns orange when the camera is under active remote control.
 
-The setup should look like this:
-
-<img src="/img/Integrations/Sony/Alpha/A7CR/sony-alpha-setup.png"/>
-
-And if everything is OK, the block should be green:
-
-<img src="/img/Integrations/Sony/Alpha/A7CR/sony-alpha-block.png"/>
-
-On your camera:
-* Once plugged in : `-PC-` appears in white
-* Once controlled : `-PC-` changed to orange
+:::tip
+If `-PC-` never appears, the USB cable is likely power-only. Replace it with a USB data cable.
+:::
 
 ## Troubleshooting
 
-### Camera is RED
+### Camera shows red in the RCP
 
-Check your cables, ensure to use a USB DATA capable cable (some USB cable are just for power).
-
-Ensure to update your RIO and/or RCP to the latest version (even beta/rc version) using a SWU file as the Sony protocol for alpha is at OS level (not app). Try the latest beta/rc version.
+Check your USB cable — use a data-capable cable, not a charge-only cable. Then update your RIO and RCP to the latest version (including beta or RC releases) using a SWU file. The Sony Alpha protocol operates at OS level, not the application layer, so an app-only upgrade is not sufficient.
 
 :::note
-The Sony mirrorless protocol changes with Sony updates and requires a RIO/RCP sync with the Sony protocol to be compatible.
+The Sony mirrorless protocol evolves with Sony firmware updates. Your RIO and RCP must be on a compatible version.
 :::
 
 ### FX3 is not controllable
 
-Ensure to update your FX3 to the latest version (`3.00`) and your RCP/RIO to the latest version (`23.8.1`). The protocol evolve with the camera firmware and the RCP/RIO needs to be updated to be compatible (and vice-versa).
+Update the FX3 firmware to version `3.00` or later, and update the RCP and RIO to version `23.8.1` or later. The protocol evolves with camera firmware; both sides must be on compatible versions.
 
-### White Balance not controllable
+### White balance is not controllable
 
-Ensure to change ATW to `Off` in your RCP `Camera > WB > ATW`.
+Set ATW to **Off** in the RCP under **Camera > WB > ATW**. The camera's white balance mode must also be set to manual or color temperature mode.
 
-Your camera white balance needs to be in manual/color temp.
+### Parameters display but do not change
 
-### Some parameters are displayed but don't change
-
-Depending on the mode, some information will either be fixed or auto, but in both cases, read-only.
-Change mode (to M, S&Q, etc.) or check next point.
+Some parameters become read-only depending on the shooting mode. Switch to a mode such as M or S&Q, or check the unstable link steps below.
 
 ### Unstable link
 
-* Check your wiring, some USB cables only provide power and no data
-* Check your mirrorless settings (disable power over USB)
-* Only one device is able to control a Sony Alpha:
-    - check that you don't use the micro USB with a DJI gimbals or similar
-    - Ensure to disable Wi-Fi control
-* Ensure to upgrade your RIO/RCP to the latest version <a href="/docs/reference/product-update#system-update">using a SWU</a> (not only an app upgrade from admin page) as the Sony protocol for alpha is at OS level.
+- Use a USB cable that carries data, not power only.
+- Disable **Power Supply via USB** in the camera settings.
+- Only one device can control a Sony Alpha at a time:
+  - Disconnect any DJI gimbal or similar device using the USB port.
+  - Disable Wi-Fi remote control on the camera.
+- Update your RIO and RCP to the latest version using a SWU file — a standard app upgrade from the admin page is not sufficient, as the Sony protocol is at OS level.
 
-## From the field
+## Field examples
 
-This sections contains some example of setup from the field.
-This is not an exhaustive list, but it can help you to setup your own configuration.
+The following setups illustrate real-world configurations using Sony Alpha cameras with Cyanview.
 
-You can find a full breakdown of this kind of setup <a href="/docs/Workflows/SonyMirrorlessGimbal">here</a>.
+### FX30 with Fujinon 18–55 mm
 
-### FX30 with Fujinon 18-55 mm
+- FX30 camera
+- Fujinon 18–55 mm lens
+- RIO with ZTE 4G USB stick
+- VP4
+- RCP
 
-Andy from 4ACrew using its Rocky gear with Cyanview:
-* FX30 camera
-* Fujinon 18-55 mm lens
-* RIO with ZTE 4G USB stick
-* VP4
-* RCP
+![FX30 with Fujinon 18-55 mm lens, RIO 4G control](/img/Workflows/FX30-fujinon-18-55.png)
 
-<img alt="Cyanview FX30 with Fujinon 18-55 RIO 4G control" src="/img/Workflows/FX30-fujinon-18-55.png" width="600" />
+### FX3 with Sony FE 16–35 mm F2.8 GM
 
-### FX3 with Sony FE 16-35 mm F2.8 GM
+- FX3 camera
+- Sony FE 16–35 mm F2.8 GM lens
+- RIO with Huawei 4G USB stick
+- VP4
+- RCP
 
-Fabry (freelance) using its Cyanview kit:
-* FX3 camera
-* Sony FE 16-35 mm F2.8 GM lens
-* RIO with Huawei 4G USB stick
-* VP4
-* RCP
+![FX3 with Sony FE 16-35mm F2.8 GM lens, RIO 4G control](/img/Workflows/FX3-Sony-Emount.jpeg)
 
-<img alt="Cyanview FX3 with Sony FE 16-35mm F2.8 GM RIO 4G control" src="/img/Workflows/FX3-Sony-Emount.jpeg" width="600" />
+### FX3 with RIO 4G and Teltonika RUT240
 
-### FX3 with RIO 4G using RUT240
+- FX3 camera
+- Sony FE PZ 16–35 mm F4 G lens
+- RIO with Teltonika RUT240 4G router (external antenna recommended for a more stable connection)
+- Cyanview tally light (tally input from ATEM via RCP; tally output via tally module on RIO port 1)
+- DJI RS3 Pro gimbal
+- CV-HD Pro800 for video transmission
+- VP4
+- RCP
 
-* FX3 camera
-* Sony FE PZ 16-35 mm F4 G lens
-* RIO with Teltonika RUT240 4G router[^1]
-* Cyanview tally light[^2]
-* DJI RS3 pro gimbal
-* CV-HD Pro800 for video transmission
-* VP4
-* RCP
-
-<img alt="Cyanview FX3 RIO 4G RUT240" src="/img/Workflows/FX3-DJIRS3-RIO-RUT240.png" width="600" />
-
-[^1]: with external antenna, it makes the connection more stable
-
-[^2]: tally input from ATEM using RCP, tally output using tally module on RIO port 1
+![FX3 with RIO 4G using Teltonika RUT240 router and DJI RS3 Pro gimbal](/img/Workflows/FX3-DJIRS3-RIO-RUT240.png)

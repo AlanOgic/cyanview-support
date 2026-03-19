@@ -7,151 +7,134 @@ keywords: [VP4, manual, video processor, color correction]
 slug: /reference/manuals/vp4-manual
 ---
 
-## Overview
+The VP4 is an advanced color corrector designed for camera matching. It includes secondary corrections such as a 12-vector multimatrix, detail, and coring — controls typically found only in CCUs. All channels are controllable directly from the RCP.
 
-<img alt="cyanview-VP4-RCP-color-corrector-CCU-workflow-Overview" src="/img/diagrams/cyanview-VP4-RCP-color-corrector-CCU-workflow-Overview@2x-8.png" width="800" />
-
-The VP4 is an advanced color corrector ideal to color match cameras. It does feature secondary corrections like a 12 vectors multimatrix and other controls only found in CCUs such as detail and coring. All channels can directly be controlled  from the RCP.
+![VP4 workflow overview diagram](/img/diagrams/cyanview-VP4-RCP-color-corrector-CCU-workflow-Overview@2x-8.png)
 
 ## Prerequisites
 
-* **Network**: the VP4 needs an ethernet connection to the RCP, and a PoE Switch is necessary to power the RCP or an external 12V power supply should be used.
-
-* **SDI Cables**: 9x 3G-SDI cables with DIN 1.0/2.3 connectors are required to connect the 4 channels and reference.
-
-* **Computer**: required to access the web configuration of the RCP.
+- **Network**: the VP4 requires an ethernet connection to the RCP. Use a PoE switch to power the RCP, or connect an external 12V power supply.
+- **SDI cables**: 9× 3G-SDI cables with DIN 1.0/2.3 connectors are required to connect the 4 channels and reference.
+- **Computer**: required to access the RCP web configuration.
 
 ## Connection
 
-<img alt="cyanview-support-VP4-configuration-connection-RCP" src="/img/diagrams/cyanview-support-VP4-configuration-connection-RCP.png" width="600" />
+![VP4 connection diagram](/img/diagrams/cyanview-support-VP4-configuration-connection-RCP.png)
 
-- [step 1] Network setup: connect the RCP, the VP4 *LAN port* and your computer to the switch. For software update, connect the switch to your internet access.
- <img alt="cyanview-support-VP4-connection-back-panel-lan" src="/img/productGfx/VP4/cyanview-support-VP4-connection-back-panel-lan@2x-8.png" width="300" />
+**Step 1 — Network setup**: connect the RCP, the VP4 LAN port, and your computer to the switch. For software updates, connect the switch to your internet access.
 
-- [step 2] Video connection
- <img alt="cyanview-support-VP4-connection-back-panel-dvi" src="/img/productGfx/VP4/cyanview-support-VP4-connection-back-panel-dvi@1x-50.jpg" width="300" />
+![VP4 back panel LAN port](/img/productGfx/VP4/cyanview-support-VP4-connection-back-panel-lan@2x-8.png)
 
-  - Connectors: DIN 1.0/2.3
-  - Video: 720p/1080i HD-SDI or 1080p 3G-SDI in 50/59/60
-  - Reference: compatible with Black Burst and Tri-Level
-- [step 3] Turn VP4 ON
- Long press on the power button will turn VP4 on/off.
- The boot status is displayed on the LED on the front panel.
- <img alt="cyanview-support-VP4-front-panel-led-status" src="/img/productGfx/VP4/cyanview-support-VP4-front-panel-led-status@1x-50.jpg" width="300" />
+**Step 2 — Video connection**:
 
-  - The first LED turns green when the unit is powered.
-  - The second LED turns green when the unit is booted and operational.
+![VP4 back panel DVI connectors](/img/productGfx/VP4/cyanview-support-VP4-connection-back-panel-dvi@1x-50.jpg)
+
+- Connectors: DIN 1.0/2.3
+- Video: 720p/1080i HD-SDI or 1080p 3G-SDI at 50/59/60 Hz
+- Reference: compatible with Black Burst and Tri-Level
+
+**Step 3 — Power on**: long-press the power button to turn the VP4 on or off. Boot status is shown on the front panel LEDs.
+
+![VP4 front panel LED status indicators](/img/productGfx/VP4/cyanview-support-VP4-front-panel-led-status@1x-50.jpg)
+
+- First LED turns green when the unit is powered.
+- Second LED turns green when the unit is booted and operational.
 
 ## Configuration
 
-The VP4 can be operated in standalone using its own web UI.
-You can also operate it from a RCP.
+You can operate the VP4 standalone via its own web UI, or from an RCP.
 
 ### VP4 channel alone
 
-To control a VP4 channel:
-* Create a new camera, with a number and a name
-* Select `Not controlled` in the `Camera Head`
-* Select your VP4 and channel in the `Video processor` section
-* The format is: `SERIAL:CHANNEL_ID`
+To control a VP4 channel independently:
 
-It should look like this:
+1. Create a new camera with a number and a name.
+2. Select `Not controlled` in the `Camera Head` field.
+3. Select your VP4 and channel in the `Video processor` section using the format `SERIAL:CHANNEL_ID`.
 
-<img src="/img/Manual/VP4/VP4-CH1-block.png" width="250" />
+![VP4 channel 1 block configuration](/img/Manual/VP4/VP4-CH1-block.png)
 
-And if everything is fine, the block should appear `green`:
+When the connection is established, the block turns green.
 
-<img src="/img/Manual/VP4/VP4-setup-CH1.png" width="250" />
+![VP4 channel 1 setup — green state](/img/Manual/VP4/VP4-setup-CH1.png)
 
 ### VP4 combined with camera control
 
-To control both a camera and the VP4 combined:
-* Create a new camera, with a number and a name
-* Select the your camera brand and model in the list
-* Select your VP4 and channel in the `Video processor` section
-* The format is: `SERIAL:CHANNEL_ID`
+To control a camera and VP4 together:
 
-It should look like this:
+1. Create a new camera with a number and a name.
+2. Select your camera brand and model from the list.
+3. Select your VP4 and channel in the `Video processor` section using the format `SERIAL:CHANNEL_ID`.
 
-<img src="/img/Manual/VP4/VP4-CH1-combined-block.png" width="250" />
+![VP4 channel 1 combined block configuration](/img/Manual/VP4/VP4-CH1-combined-block.png)
 
-And if everything is fine, the block should appear `green`:
+When the connection is established, the block turns green.
 
-<img src="/img/Manual/VP4/VP4-CH1-combined-setup.png" width="250" />
+![VP4 channel 1 combined setup — green state](/img/Manual/VP4/VP4-CH1-combined-setup.png)
 
 ### RCP operation
-By default, camera head control has priority over VP4 control.
-For example, if both your camera and the VP4 have gain, by default, gain controls the camera gain.
 
-In this case, 3 new buttons will appear on your RCP:
-* `CAM` to toggle the camera head control
-* `POST` to toggle the VP4 control
-* `C->P` | `P->C` to change the camera/VP4 control priority
+By default, camera head control has priority over VP4 control. For example, if both your camera and the VP4 have a gain control, the gain knob controls the camera by default.
 
-#### RCP : Camera and VP4 combined by default
+When a camera and VP4 are combined, three buttons appear on your RCP:
 
-<img src="/img/Manual/VP4/VP4-postpro-camera-combined.png" width="250" />
+- `CAM` — toggle camera head control
+- `POST` — toggle VP4 control
+- `C->P` / `P->C` — switch control priority between camera and VP4
 
-Combine camera and VP4, camera has priority (VP4 only compensate what the camera has not)
+#### Camera and VP4 combined (camera priority, default)
 
-#### RCP : Camera only
+![RCP combined camera and VP4 — camera priority](/img/Manual/VP4/VP4-postpro-camera-combined.png)
 
-<img src="/img/Manual/VP4/VP4-cam-only.png" width="250" />
+Camera has priority; the VP4 only compensates what the camera does not control.
 
-#### RCP : VP4 only
+#### Camera only
 
-<img src="/img/Manual/VP4/VP4-postpro-camera-only.png" width="250" />
+![RCP camera-only mode](/img/Manual/VP4/VP4-cam-only.png)
 
-#### RCP : Camera and VP4, VP4 has priority over camera
+#### VP4 only
 
-<img src="/img/Manual/VP4/VP4-postpro-camera-postpro.png" width="250" />
+![RCP VP4-only mode](/img/Manual/VP4/VP4-postpro-camera-only.png)
 
-* `P->C` stands for Post (processing) over Camera control
-* `C->P` stands for Camera over Post (processing) control
+#### Camera and VP4 — VP4 priority
+
+![RCP combined — VP4 has priority over camera](/img/Manual/VP4/VP4-postpro-camera-postpro.png)
+
+- `P->C` — Post (processing) over Camera control
+- `C->P` — Camera over Post (processing) control
 
 #### Vector selection
 
-Vectors are identified by a number from **1** to **16**.
+Vectors are numbered **1** to **16**.
 
-**GATE** will highlight the selected vector by desaturating the unselected colors. This allows a quick visual selection of the right vector. This can't be used while the camera is on air as this affect the main signal. Another option is to press the **vect/peek** knob which will generate a small burst of saturation on the selected vector which will be visible on the vectorscope but won't affect the live image  significantly.
+**GATE** highlights the selected vector by desaturating all other colors, making visual selection quick and accurate. Do not use GATE while the camera is on air, as it affects the main signal. Instead, press the **vect/peek** knob to generate a brief saturation burst on the selected vector — visible on a vectorscope without significantly affecting the live image.
 
-<img alt="cyanview-support-RCP-Menu-Multi-Matrix-VP4-Peek-Gate" src="/img/productGfx/VP4/RCP-Menu-VP4-M-Matrix-Peek-Gate@2x-8.png" width="300" />
+![RCP multimatrix VP4 peek and gate controls](/img/productGfx/VP4/RCP-Menu-VP4-M-Matrix-Peek-Gate@2x-8.png)
 
-#### VP4 Controls
+#### VP4 controls
 
-<img alt="cyanview-support-RCP-Menu-Multi-Matrix-VP4-Controls" src="/img/productGfx/VP4/RCP-Menu-VP4-M-Matrix-Controls@2x-8.png" width="300" />
+![RCP multimatrix VP4 controls](/img/productGfx/VP4/RCP-Menu-VP4-M-Matrix-Controls@2x-8.png)
 
-- **vect/peek** Rotate the encoder to select the color vector that needs to be modified. Push the encoder will do a saturation peek allowing to  identify the current color vector on screen.
-
-- **hue** Rotate to change the hue of the selected color vector.
-
-- **Saturation** Rotate the encoder to set vector color saturation.
-
-- **enable** Rotate the encoder to select OFF, ON, Gate.
-  - *GATE* will highlight the selected vector by desaturating the unselected colors.
-  - *ON* enable color correction.
-  - *OFF* disable color correction.
-
+- **vect/peek** — rotate to select the color vector to modify; push to trigger a saturation peek for on-screen identification.
+- **hue** — rotate to change the hue of the selected vector.
+- **saturation** — rotate to set vector color saturation.
+- **enable** — rotate to select OFF, ON, or Gate.
+  - *GATE*: highlights the selected vector by desaturating others.
+  - *ON*: enables color correction.
+  - *OFF*: disables color correction.
 
 ## Genlock settings
 
-You can configure the genlock parameters on the VP4 web interface.
-You can find it based on [your device serial](/docs/guides/networking/ip-configuration#find-devices-ip)
+Configure genlock on the VP4 web interface. Find your device's IP address using [this guide](/docs/guides/networking/ip-configuration#find-your-devices-ip).
 
-<img src="/img/Manual/VP4/VP4-settings.png" width="500" />
+![VP4 genlock settings page](/img/Manual/VP4/VP4-settings.png)
 
-It is disabled by default (freerun) and you can:
-* enable it
-* change horizontal phase
-* change vertical phase
+Genlock is disabled by default (freerun). You can enable it and adjust horizontal and vertical phase.
 
 ## Web UI operations
 
-The **VP4** *color correction* and *color matching* are operated via a **Multi Matrix** on the **RCP**.
+VP4 color correction and color matching are operated via the **Multi Matrix** on the RCP. To access it, press *Paint1*, then press the same button again to reach *Paint2* using the blue buttons, then press **M-Matrix** in the *Paint2* menu using the white buttons. See [RCP screens overview](/docs/reference/manuals/rcp/controls#rcp-screen) for navigation details.
 
-To access the RCP Multi Matrix screen, Click on *Paint1*, then push the same button again to see *Paint2* using the *blue buttons*.
-Then click on **M-Matrix** in *paint2* menu using the *white buttons*. (see [RCP Screens Overview/Navigation](/docs/reference/manuals/rcp/controls#rcp-screen))
+Color correction works by selecting a **color vector** and adjusting its **hue** and **saturation**.
 
-Color correction is done by selecting a **color vector** and the changing his **hue** and **saturation**.
-
-<img src="/img/Manual/VP4/VP4-multimatrix.png" width="400" />
+![VP4 multimatrix screen on RCP](/img/Manual/VP4/VP4-multimatrix.png)

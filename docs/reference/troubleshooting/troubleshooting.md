@@ -7,75 +7,75 @@ keywords: [troubleshooting, diagnosis, connection, camera, errors]
 slug: /reference/troubleshooting/troubleshooting
 ---
 
+Use this guide to diagnose and resolve common issues with Cyanview devices. Work through each section from top to bottom — most problems are resolved with power, network, or firmware checks.
+
 ## Device does not start
 
-> If device's screen does not display information, please follow procedure below:
+If the device screen stays blank, follow these steps in order:
 
-- Verify activity on network port (green yellow led).
+1. **Check the network port LEDs** — verify you see green and yellow activity.
 
-- If no activity on network port, verify power supply.
+2. **If no LED activity, switch the power source:**
+   - If powered via **PoE**, try connecting an external **power supply**.
+   - If powered via **power supply**, try connecting a **PoE** network cable.
 
-  - If device is powered via **PoE**, try to connect a **Power Supply**.
-  - If device is powered via **Power Supply**, try to connect a **PoE** network cable.
+3. **If switching power does not help**, contact **support@cyanview.com** or return the device via the [RMA procedure](/docs/reference/rma-procedure).
 
-- If no activity on network port after switching power source, please contact <a href="mailto:support@cyanview.com">support@cyanview.com</a> or send the device back to Cyanview via the [RMA procedure](/docs/reference/rma-procedure).
+4. **If the network port shows activity but the screen stays off**, check your network configuration and verify the device is reachable:
+   - **RCP, GWY** — try accessing the configuration page (see [IP configuration](/docs/guides/networking/ip-configuration)).
+   - **CI0, RIO, NIO** — check whether the device appears on the RCP discovery page.
 
-- If there is activity on network port and the device's screen does not turn on, check your network configuration <!--link to P manual when available-->, then verify the device is available on the network.
+5. **If the device is not accessible**, try a firmware recovery:
 
-  - **RCP, GWY**: Try to access configuration page (see Network IP).
-  - **CI0, RIO, NIO**: Verify if listed in RCP discovery page.
+| Device | Recovery scope | Procedure |
+|:-------|:---------------|:----------|
+| CI0 | Whole device | [Force a firmware update](/docs/reference/manuals/ci0/ci0-manual#force-a-firmware-update) |
+| RIO | Port management | Same procedure as CI0 — see [Force a firmware update](/docs/reference/manuals/ci0/ci0-manual#force-a-firmware-update) |
+| GWY | N/A | N/A |
+| NIO | N/A | N/A |
 
- If the device is not accessible/listed, try to recover firmware according the table below.
+6. **If none of the above resolves the issue**, contact **support@cyanview.com** or return the device via the [RMA procedure](/docs/reference/rma-procedure).
 
- | Device        | Recovery          | Procedure     |
- | ------------- | ----------------- | ------------- |
- | CI0           | Whole Device.     | See [Force a firmware update](/docs/reference/manuals/ci0/ci0-manual#force-a-firmware-update) procedure in CI0 manual.           |
- | RIO           | Port management.  | Same principle as CI0, See [Force a firmware update](/docs/reference/manuals/ci0/ci0-manual#force-a-firmware-update) procedure in CI0 manual. |
- | GWY           | na                | na |
- | NIO           | na                | na |
+## Network issues
 
-- If your issue is not fixed, contact <a href="mailto:support@cyanview.com">support@cyanview.com</a> or send the device back to Cyanview via the [RMA procedure](/docs/reference/rma-procedure).
+If devices cannot reach each other or connect to controlled equipment, review the [IP configuration guide](/docs/guides/networking/ip-configuration).
 
-## Network Issue
-
-If devices are not accessible on the network or have issues connecting to each other or to other controlled devices, please refer to the IP Configuration guide. <!--add link whe guide available-->
-
-For users of Cisco or Netgear devices, please check the sections below:
+For Cisco or Netgear networks, check the specific sections below.
 
 ### Cisco Portfast
 
-The **Cisco Portfast** feature is mandatory for Cyanview devices communication.
+:::warning
+Cisco **Portfast** is mandatory for Cyanview devices. Without it, devices may fail to communicate after a switch port comes up.
+:::
 
-Configuration is available [Here](https://www.grandmetric.com/knowledge-base/design_and_configure/how-to-configure-spanning-tree-portfast-cisco-ios/#:~:text=Portfast%20feature%20causes%20a%20switch,the%20listening%20and%20learning%20states).
+Enable Portfast on all switch ports connected to Cyanview devices. See the [Cisco Portfast configuration guide](https://www.grandmetric.com/knowledge-base/design_and_configure/how-to-configure-spanning-tree-portfast-cisco-ios/) for instructions.
 
-### Netgear Router
+### Netgear router ARP conflict
 
-In configuration using netgear 4G modems like [this one](https://www.amazon.fr/MR1100-100EUS-Nighthawk-maximales-t%C3%A9l%C3%A9chargement-Chargement/dp/B079H2LX8X/ref=sr_1_3?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=netgear+nighthawk&qid=1615449073&sr=8-3), the modem tends to reply to ARP request intended to devices. 
+Netgear 4G modems (such as the Nighthawk MR1100) can respond to ARP requests intended for other devices on the network. This causes erratic behavior — devices connect and disconnect randomly, blocks stay red, or connections drop.
 
-The communication between Cyanview devices, Camera, and other is not working or working erratically. ie: not connecting, disconnecting, red status, ...
+**Symptoms:**
+- Communication works intermittently
+- Devices alternate between connected and disconnected
+- Camera blocks flash between green and red
 
-This is caused by Netgear modem answering in place of the devices.
+**Diagnosis:**
 
-Issue is "random" depending on the Netgear answering before the device or not.
+1. Access the RCP Configuration Web UI several times using **private/incognito browsing** (to avoid cache).
+2. On Unix systems, run an ARP ping to your device — if you see multiple MAC addresses responding to the same IP, one belongs to the Netgear modem.
 
-**Diagnosis**
+**Solution:**
 
- - Try to access the *Configuration Web UI* of your RCP several times in *private navigation*"* to avoid cache.
- - For Unix users, perform an ARP ping of your device, you will see multiple devices answering to the same IP with multiple MAC, one of them is the your device, the other one is the Netgear router.
-
-**Solution**
-
- - Use Netgear modem only to get access to internet.
-    - Remove it from your network.
-    - Reboot all network devices to ensure all ARP tables are "cleared".
- - Swap the router with one from another brand.
+1. Use the Netgear modem only for internet access — remove it from the production network.
+2. Reboot all network devices to clear ARP tables.
+3. Alternatively, replace the Netgear router with another brand.
 
 ## CI0 status 'X'
 
-CI0 can't communicate with RCP over the network.
+The CI0 cannot communicate with the RCP over the network. Work through these checks:
 
-- Verify network connectivity: check activity on the green and yellow LED of ethernet port.
-- Check if CI0 is listed in discovery page of your RCP. See [What is discovery](/docs/reference/faq#what-is-discovery).
-- Perform a Firmware recovery. See [Force a firmware Update](/docs/reference/manuals/ci0/ci0-manual#force-a-firmware-update)).
-- For unix users, perform an ARP ping to your device.
-- Check known limitation of [Cisco](#cisco-portfast) and [Netgear](#netgear-router) devices.
+1. Verify network connectivity — check the green and yellow LEDs on the Ethernet port.
+2. Check whether the CI0 appears on the RCP [discovery page](/docs/reference/faq#what-is-device-discovery).
+3. Perform a firmware recovery — see [Force a firmware update](/docs/reference/manuals/ci0/ci0-manual#force-a-firmware-update).
+4. On Unix systems, run an ARP ping to the device to verify it responds.
+5. Rule out known issues with [Cisco](#cisco-portfast) and [Netgear](#netgear-router-arp-conflict) networks.

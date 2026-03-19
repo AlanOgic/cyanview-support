@@ -2,156 +2,149 @@
 id: arri-cap
 title: "ARRI CAP integration"
 sidebar_label: "ARRI CAP"
-description: "Integrate ARRI cameras using the Camera Access Protocol (CAP) with Cyanview for IP-based remote control."
-keywords: [ARRI, CAP, Camera Access Protocol, IP, remote]
+description: "Integrate ARRI Alexa cameras using the Camera Access Protocol (CAP) with Cyanview for IP-based remote paint and exposure control."
+keywords: [ARRI, CAP, Camera Access Protocol, Alexa, IP, remote, Cyanview]
 slug: /integrations/cameras/arri/arri-cap
 ---
 
-# ARRI CAP
+Control your ARRI Alexa cameras over IP using the Camera Access Protocol (CAP). This integration provides remote exposure, white balance, black balance, recording, and paint control from a Cyanview RCP.
 
 ## Compatible models
 
-* ARRI Alexa mini
-* ARRI Alexa mini LF
-* ARRI Alexa 35
+- ARRI Alexa Mini
+- ARRI Alexa Mini LF
+- ARRI Alexa 35
 
-For Amira and SSCP, check our <a href="/docs/integrations/cameras/arri/arri-sscp">ARRI SSCP guide</a>.
+For the ARRI Amira, use the [ARRI SSCP integration](/docs/integrations/cameras/arri/arri-sscp) instead.
 
-## Controls
+## Available controls
 
-|Control|ARRI CAP
-:-----|:-----:|
-**Exposure** (Iris, ISO, Shutter and ND filter)|✔
-**White balance** (R/B and Color temp)|✔
-**Black balance** (R/B)|✔
-**REC** (start/stop and status)|✔
-**Other** (Multi matrix, Black Gamma, Knee, Test/Bars)|✔
-**Scene file** : <a href="/docs/reference/manuals/rcp/ui/scene">save/recall</a>|✔
+| Control | ARRI CAP |
+|:--------|:--------:|
+| **Exposure** (iris, ISO, shutter, ND filter) | ✔ |
+| **White balance** (R/B and color temp) | ✔ |
+| **Black balance** (R/B) | ✔ |
+| **REC** (start/stop and status) | ✔ |
+| **Other** (multi matrix, black gamma, knee, test/bars) | ✔ |
+| **Scene files** ([save/recall](/docs/reference/manuals/rcp/ui/scene)) | ✔ |
 
-<img src="/img/Integrations/ARRI/RCP-alexa35/RCP-alexa35.gif"/>
+<img src="/img/Integrations/ARRI/RCP-alexa35/RCP-alexa35.gif" alt="ARRI Alexa 35 paint control on RCP" />
 
 ## Wiring
 
-The camera is controlled over IP:
+Connect the camera and RCP over IP using a standard Ethernet connection:
 
-<img src="/img/Integrations/camera/ARRI/arri-wiring.png" width="800"/>
+<img src="/img/Integrations/camera/ARRI/arri-wiring.png" width="800" alt="ARRI CAP Ethernet wiring diagram" />
 
 ## Setup
 
 ### Camera setup
 
-You need to:
-* Setup a static IP on the camera
-* Activate and configure CAP control
-* Ensure to have an unlocked look to paint it
+Prepare your ARRI camera with three steps:
+1. Set a static IP address
+2. Activate and configure the CAP server
+3. Unlock a look (required for full paint control)
 
-#### Camera IP
+#### Set the camera IP
 
-In `System > Network/WiFi`, setup:
-* **LAN IP mode** to `static`
-* **LAN static IP** to desired cam IP (here `10.0.2.6`)
-* **LAN static subnet** to desired cam subnet (here `255.255.0.0`)
+In **System > Network/WiFi**, configure:
+- **LAN IP mode** to `static`
+- **LAN static IP** to your desired camera IP (example: `10.0.2.6`)
+- **LAN static subnet** to your desired subnet (example: `255.255.0.0`)
 
-<img src="/img/Integrations/camera/ARRI/ARRI-CAP-IP.png" width="500"/>
+<img src="/img/Integrations/camera/ARRI/ARRI-CAP-IP.png" width="500" alt="ARRI CAP IP configuration" />
 
 :::note
-If the RCP doesn't have an IP address in the same range as the camera IP, you should add one in the LAN section by following this [guide](/docs/guides/networking/ip-configuration).
+If the RCP does not have an IP address in the same range as the camera, add one by following the [IP configuration guide](/docs/guides/networking/ip-configuration).
 
-In this setup, my camera IP is `10.0.2.6/16` and my RCP IP is `10.0.3.10/16`
+In this example, the camera IP is `10.0.2.6/16` and the RCP IP is `10.0.3.10/16`.
 :::
 
-#### CAP control
+#### Enable the CAP server
 
-In `System > Camera Access Protocol (CAP)`:
-* Ensure `Enable CAP Server` is checked
-* Ensure `CAP Server Password` is set to `arri`
+In **System > Camera Access Protocol (CAP)**:
+- Check **Enable CAP Server**
+- Set **CAP Server Password** to `arri`
 
-<img src="/img/Integrations/camera/ARRI/arri-CAP.png" width="500"/>
+<img src="/img/Integrations/camera/ARRI/arri-CAP.png" width="500" alt="ARRI CAP server settings" />
 
-#### Look unlocking
+#### Unlock a look for paint control
 
-* Navigate on the camera menu `Image > Look > Look`
-* Take the desired look and duplicate it
-* Ensure to select it after that
+To access full paint controls (R/B gains, blacks, and more), you need an unlocked look:
+
+1. Navigate to **Image > Look > Look** on the camera menu
+2. Select your desired look and duplicate it
+3. Select the duplicated look as the active look
 
 :::info
-This step is not mandatory:
-* you can keep a locked look, with limited control:
-    * only: exposure (iris, ISO, shutter, ND filter) and WB (color temp and tint)
-    * no paint (R/B gains, blacks, etc.)
-* you already have your own look that is already unlocked, then keep it
+Unlocking a look is optional but limits your control:
+- **With a locked look** — you can only adjust exposure (iris, ISO, shutter, ND filter) and white balance (color temp and tint)
+- **With an unlocked look** — you get full paint access including R/B gains, blacks, and all shading parameters
+
+If you already have an unlocked look, skip this step.
 :::
 
-### RCP configuration
+### Configure the RCP
 
-* Click on the `+` in the camera block, a new panel will appear on the right
-* In `General` Configure a Number and a Name
-* Select `ARRI` for the brand and `CAP` as the model
-* Enter the `IP` of your camera
+Add and configure the camera in the [RCP web UI](/docs/reference/manuals/rcp/web-ui):
 
-<img src="/img/Integrations/camera/ARRI/arri-cap-setup.png" width="300"/>
+1. Click **+** in the camera block. A new panel appears on the right.
+2. In **General**, set a number and a name for the camera.
+3. Select **ARRI** as the brand and **CAP** as the model.
+4. Enter the **IP** of your camera.
 
-If everything is properly configured, it should go green:
+<img src="/img/Integrations/camera/ARRI/arri-cap-setup.png" width="300" alt="ARRI CAP RCP configuration" />
 
-<img src="/img/Integrations/camera/ARRI/arri-cap-block.png" width="300"/>
+When the connection succeeds, the camera block turns green:
+
+<img src="/img/Integrations/camera/ARRI/arri-cap-block.png" width="300" alt="ARRI CAP connected status" />
 
 ## Going further
 
-### External Lens Control (RIO)
+### External lens control with a RIO
 
-But you can control the iris with the `Lens` block:
-* You have a Fuji or Canon motorised lens, follow this <a href="/docs/integrations/lenses/cine-lens">guide</a>
-* You have a non motorised lens, you can integrate <a href="/docs/integrations/lenses/tilta">tilta motors</a>
+Control the iris through the **Lens** block on the RCP:
+- For a Fuji or Canon motorized lens, follow the [cine lens integration guide](/docs/integrations/lenses/cine-lens)
+- For a non-motorized lens, integrate [Tilta motors](/docs/integrations/lenses/tilta)
 
-### More shading control
+### Extend shading control beyond CAP
 
-CAP protocol is limited to the controls listed above.
-If you need more control you, you can combine it with a <a href="/docs/integrations/generic/3d-lut-processor">LUT processor</a>.
-Check our VP4 <a href="/docs/reference/manuals/vp4-manual">manual</a> for more information.
+The CAP protocol supports the controls listed above. For additional shading parameters, combine CAP with a [LUT processor](/docs/integrations/generic/3d-lut-processor). See the [VP4 manual](/docs/reference/manuals/vp4-manual) for configuration details.
 
 ## Troubleshooting
 
-* Ensure to update your camera and your RCP/RIO.
-* Ensure your RCP/RIO are in similar versions
+Before investigating specific issues:
+- Update your camera firmware and your RCP/RIO firmware to the latest versions
+- Verify that your RCP and RIO run matching firmware versions
 
 ### Iris not controllable or value not matching (LBUS)
 
-Your setup looks like this:
+This issue applies when you use an L-Bus motor for iris control alongside CAP:
 
-<img src="/img/Integrations/ARRI/ARRI-CAP-LBUS.png"/>
+<img src="/img/Integrations/ARRI/ARRI-CAP-LBUS.png" alt="ARRI CAP with LBUS motor setup" />
 
-Ensure that the WCU is not taking priority to iris, if not sure, split the bus in two: iris for camera and focus/zoom for WCU.
+Verify that the WCU (Wireless Compact Unit) is not claiming priority over iris. If you are unsure, split the bus into two: iris controlled by the camera, and focus/zoom by the WCU.
 
-Follow these steps (order matters):
-* Power on your camera
-* Plug the L-Bus motor
-* Load the lens table (you can do that using a WCU or camera SD card)
-* Calibrate the motor
-* Now plug Ethernet in the camera
-* Configure the ARRI/CAP camera on your RCP
+Follow these steps in order:
+1. Power on the camera
+2. Plug in the L-Bus motor
+3. Load the lens table (using a WCU or camera SD card)
+4. Calibrate the motor
+5. Plug Ethernet into the camera
+6. Configure the ARRI/CAP camera on the RCP
 
-At this step, the motor should blink red/green, like it's not connected.
-Move the iris knob on your RCP so the camera takes control of your motor.
+At this point, the motor should blink red/green as if disconnected. Move the iris knob on the RCP so the camera takes control of the motor.
 
-### Camera is RED
+### Camera block stays red
 
-* check your camera IP
-* check your RCP IP
-* Ensure the CAP is active and password is `arri`
-* Ensure the RCP can access the camera (try to ping RCP and camera from a laptop in the same range)
+If the camera block does not turn green:
+- Verify the camera IP address is correct
+- Verify the RCP IP address is correct
+- Confirm CAP is active and the password is set to `arri`
+- Test connectivity by pinging both the RCP and camera from a laptop on the same network
 
-### Camera control is limited to exposure (no paint)
+### Paint controls limited to exposure only
 
-If you can control:
-* iris
-* iso
-* shutter
-* ND
-* color temp
-* tint
+If you can adjust iris, ISO, shutter, ND, color temp, and tint, but whites and blacks remain unavailable, your look is locked.
 
-But not the whites/blacks, etc.
-
-Your look is probably locked.
-
-Ensure to unlock it by following <a href="/docs/integrations/cameras/arri/arri-cap#look-unlocking">this procedure</a>.
+Unlock the look by following the [look unlocking procedure above](#unlock-a-look-for-paint-control).

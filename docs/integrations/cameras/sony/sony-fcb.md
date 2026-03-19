@@ -7,93 +7,83 @@ keywords: [Sony FCB, block camera, VISCA, robotic, compact]
 slug: /integrations/cameras/sony/sony-fcb
 ---
 
-# Sony FCB
+![Sony FCB-ER8530 block camera](/img/Integrations/Sony/Sony-FCB/Sony-FCB-ER8530.jpeg)
 
-<img src="/img/Integrations/Sony/Sony-FCB/Sony-FCB-ER8530.jpeg" width="400" />
+Control Sony FCB block cameras from your Cyanview RCP over VISCA serial. The CI0 powers and controls the camera through a single cable, making this integration well-suited for robotic and specialty applications.
 
 ## Compatible models
 
-* Sony FCB-7520
-* Sony FCB-8230
-* Sony FCB-8530
-* Sony FCB-8550
-* Sony FCB-H11
+- Sony FCB-7520
+- Sony FCB-8230
+- Sony FCB-8530
+- Sony FCB-8550
+- Sony FCB-H11
 
 :::note
-More or less all the FCB models are compatible, but we only tested the ones listed above.
-
-If your model is different, as they're often similar and just different capabilities, chose a close model and try it.
+Most FCB models share a similar feature set — only the capabilities differ. If your exact model is not listed, select the closest one in the RCP configuration and test it.
 :::
 
-## Controls
+## Supported controls
 
-|Control|FCB-XXX
-:-----|:-----:|
-**Exposure** (Iris, Gain, Shutter)|✔
-**White balance** (R/B)|✔
-**Advance Shading** (Master Gamma, Detail value + on/off)|✔
-**Lens** (Zoom/focus in speed/position)|✔
-**Menus** (I_lens, I_cam, ICRon, ICRoff, FlipOn, FlipOff)|✔
-**Other** (AWB/ATW, Auto Focus, Auto Gain/Shutter/Iris (and EV comp))|✔
-**Scene file** : <a href="/docs/reference/manuals/rcp/ui/scene">save/recall</a>|✔
+| Control | FCB-XXX |
+|:--------|:-------:|
+| **Exposure** (iris, gain, shutter) | ✔ |
+| **White balance** (R/B) | ✔ |
+| **Advanced shading** (master gamma, detail value + on/off) | ✔ |
+| **Lens** (zoom/focus in speed or position) | ✔ |
+| **Menus** (I_lens, I_cam, ICRon, ICRoff, FlipOn, FlipOff) | ✔ |
+| **Other** (AWB/ATW, auto focus, auto gain/shutter/iris and EV comp) | ✔ |
+| **Scene file** — [save/recall](/docs/reference/manuals/rcp/ui/scene) | ✔ |
 
 ## Wiring
 
-<img src="/img/Integrations/Sony/Sony-FCB/Sony-FCB-wiring.png" width="900" />
+![Sony FCB block camera wiring diagram](/img/Integrations/Sony/Sony-FCB/Sony-FCB-wiring.png)
 
-* The camera is connected to the CI0 using the cable <a href="/docs/resources/cable-catalog#cy-cbl-6p-fan">CY-CBL-6P-FAN</a>:
-    - GND / PWR to the camera power input (the CI0 can be powered by PoE or 12V and will power the camera + control it over serial)
-    - GND / Tx / Rx to the VISCA/RS232 port of the camera
-* The RCP is connected to the CI0 using Ethernet
+Connect the camera to the CI0 using a [CY-CBL-6P-FAN](/docs/resources/cable-catalog#cy-cbl-6p-fan) cable:
+- **GND / PWR** — camera power input (the CI0 can be powered by PoE or 12V and will power the camera)
+- **GND / Tx / Rx** — VISCA/RS232 port on the camera
+
+The RCP connects to the CI0 over Ethernet.
 
 :::note
-For remote/wireless/RF applications, you can use a RIO with a <a href="/docs/resources/cable-catalog#cy-cbl-6p-fan">CY-CBL-6P-FAN</a> cable to connect to the camera.
+For remote or RF applications, use a RIO with a [CY-CBL-6P-FAN](/docs/resources/cable-catalog#cy-cbl-6p-fan) cable in place of the CI0.
 :::
 
 ## Setup
 
 ### VISCA bus
 
-This camera is controlled using the VISCA protocol over serial.
+Add the VISCA bus in the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui):
 
-You need to add the BUS to the RCP configuration via the <a src="/docs/reference/manuals/rcp/web-ui">RCP Configuration UI</a>.
+1. In **Features**, click `+`.
+2. Select `Sony: VISCA Bus`.
+3. Click the new **Sony VISCA** block that appears.
 
-In Features:
-* click on `+`
-* select `Sony: VISCA Bus`
-* click on the new `Sony VISCA` block that just appeared
+Configure it to match your camera's settings (ID, baud rate, etc.):
 
-Configure it as follow:
+![Sony FCB VISCA bus configuration form](/img/Integrations/Sony/Sony-FCB/Sony-FCB-VISCA-setup.png)
 
-<img src="/img/Integrations/Sony/Sony-FCB/Sony-FCB-VISCA-setup.png" width="400" />
+The configured bus should look like this:
 
-:::note
-Adapt IDs, baudrate, etc. based on your camera setup.
-:::
-
-It should look like this:
-
-<img src="/img/Integrations/Sony/Sony-FCB/Sony-FCB-VISCA-block.png" width="400" />
+![Sony FCB VISCA bus block in the configuration UI](/img/Integrations/Sony/Sony-FCB/Sony-FCB-VISCA-block.png)
 
 :::note
-This bus has no status (red/green), as it only makes sense when linked to a camera
+The VISCA bus block shows no status indicator — status only applies once a camera is linked to the bus.
 :::
 
-## Camera
+### Camera
 
-You can now create a camera in the RCP configuration via the <a src="/docs/reference/manuals/rcp/web-ui">RCP Configuration UI</a>, and link it to the VISCA bus.
+Add the camera in the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui) and link it to the VISCA bus:
 
-In Camera:
-* Click on `+`
-* Click on the new camera block that just appeared
-* Enter a number
-* Enter a name
-* Select `Sony` as brand
-* Select `FCBXXXX` as model, here in my case `FCB8230` as my exact model is `FCB-ER8530` and not in the list
-* Select the `CI0` port and `VISCA bus ID`, here in my case `CI0-20-99:2:Visca:1` (my `VISCA bus` on CI0 `20-99`, port `2` and the camera `ID` on this bus is `1`).
+1. In **Camera**, click `+`.
+2. Click the new camera block that appears.
+3. Enter a camera number and name.
+4. Select **Sony** as brand.
+5. Select the closest **FCBXXXX** model — for example, select `FCB8230` for an `FCB-ER8530`.
+6. Select the CI0 port and VISCA bus ID — for example, `CI0-20-99:2:Visca:1` (VISCA bus on CI0 `20-99`, port `2`, camera ID `1` on this bus).
 
-<img src="/img/Integrations/Sony/Sony-FCB/Sony-FCB-setup.png" width="400" />
+![Sony FCB camera configuration form](/img/Integrations/Sony/Sony-FCB/Sony-FCB-setup.png)
 
-It should look like this:
+The configured camera block should look like this:
 
-<img src="/img/Integrations/Sony/Sony-FCB/Sony-FCB-block.png" width="400" />
+![Sony FCB camera block in the configuration UI](/img/Integrations/Sony/Sony-FCB/Sony-FCB-block.png)

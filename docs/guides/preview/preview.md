@@ -7,88 +7,110 @@ keywords: [preview, return video, monitoring, camera operator]
 slug: /guides/preview/preview
 ---
 
-## Overview
-RCP touchdown or preview is a joystick or button push on the RCP that calls the right CCU output on the preview video monitor. This configuration only works when one camera is controlled by the RCP. In the case of multiple cameras, the configuration is slightly more complex and uses multiple GPIOs or an integration with a router protocol. The RCP will call the selected camera automatically when changing cameras or manually when pressing the preview button. In the other direction, if a camera is selected on the router panel (VSM, Cerebrum, Quartz, etc.) the RCP will automatically switch to that camera so the preview video and the RCP are always synchronized. Both directions work simultaneously so you can switch cameras either from the router panel or from the RCP. This makes it convenient to handle a large number of cameras on a single RCP or use the RCP as a master panel.
+RCP touchdown (preview) lets a joystick push or button press on the RCP call the correct CCU output on the preview video monitor. Use it to keep the camera operator's return video in sync with whichever camera is active — whether you switch from the RCP or from an external router panel.
 
-These are different options to configure camera touchdown:
+## How camera selection works
 
-* One camera on the RCP, using the preview button as a GPIO contact closure (RCP GPIO dongle)
-* Multiple cameras on one RCP using the RCP GPIO dongle or the NIO (IP box with 16 GPIO)
-* Multiple cameras using the router or switcher control protocol
-* Using Ember+ camera selection (unofficial and undocumented, please contact us if you have a project requiring this)
+When one RCP controls one camera, a button press drives a contact closure directly. When one RCP controls multiple cameras, touchdown uses multiple GPIOs or a router protocol integration.
+
+Switching works in both directions simultaneously:
+
+- **RCP to router** — changing cameras on the RCP switches the router or drives a GPO pulse.
+- **Router to RCP** — selecting a camera on a router panel (VSM, Cerebrum, Quartz, etc.) automatically updates the RCP camera selection.
+
+This makes it straightforward to manage a large camera count from a single RCP, or to use the RCP as a master panel.
+
+## Configuration options
+
+Choose the approach that matches your setup:
+
+- One camera on the RCP, using the preview button as a GPIO contact closure (RCP GPIO dongle)
+- Multiple cameras on one RCP using the RCP GPIO dongle or the NIO (IP box with 16 GPIO)
+- Multiple cameras using a router or switcher control protocol
+- Ember+ camera selection *(unofficial and undocumented — contact us if your project requires this)*
 
 ## GPIO interfaces: RCP dongle or NIO
 
-For GPIO, 2 solutions are available:
+Two hardware options provide GPIO connectivity.
 
-1. **[CY-CBL-JACK-GPIO8 GPIO dongle](/docs/reference/manuals/rcp/gpio-dongle)** that plugs at the back of the RCP and provides 8x GPIO that handles input and output at the same time. 2 units can be combined to provide 16x GPIO. See the link for the pinout. If only one camera is used, it uses the same pins as a Sony RCP on the DB9 connector so it can be plugged directly to the pre-wired installations in the desk where the RCP is installed.
+**CY-CBL-JACK-GPIO8 GPIO dongle**
 
-[<img alt="CY-CBL-JACK-GPIO8" src="/img/productGfx/cables/CY-CBL-JACK-GPIO8.png" width="300"/>](/img/productGfx/cables/CY-CBL-JACK-GPIO8.png)
+The [CY-CBL-JACK-GPIO8 GPIO dongle](/docs/reference/manuals/rcp/gpio-dongle) plugs into the back of the RCP and provides 8 bidirectional GPIO pins. Combine two units for 16 GPIO. When controlling a single camera, the pinout matches a Sony RCP on the DB9 connector, so you can plug it directly into pre-wired desk installations.
 
-2. **CY-NIO** is a multi-purpose box that provides a 16 GPIO interface over IP. It is automatically detected by the RCP and is used in the same way as the GPIO dongle.
+[![CY-CBL-JACK-GPIO8 GPIO dongle](/img/productGfx/cables/CY-CBL-JACK-GPIO8.png)](/img/productGfx/cables/CY-CBL-JACK-GPIO8.png)
 
-[<img alt="CY-NIO" src="/img/productGfx/NIO/NIO.png" width="150"/>](/img/productGfx/cables/CY-CBL-JACK-GPIO8.png)
+**CY-NIO**
 
+The CY-NIO is a multi-purpose IP box that provides 16 GPIO over the network. It is detected automatically by the RCP and works the same way as the GPIO dongle.
 
-## Configuration with one camera using a GPIO dongle or NIO
+[![CY-NIO IP GPIO box](/img/productGfx/NIO/NIO.png)](/img/productGfx/NIO/NIO.png)
 
-This configuration is similar to a standard RCP: a contact closure is linked to the press of the preview button. This is the desired behavior when the RCP only has one camera or when the preview button should be independent of the camera selection on the RCP.
+## Configure preview with one camera
 
-The configuration is done in the GPIO tab by selecting *GPIO* on the upper left. You can then link the preview button of the RCP on the left to the GPIO output on the top. When the preview button is pressed, the GPO will be driven low which is equivalent to a contact closure.
+This setup mirrors a standard RCP: pressing the preview button generates a contact closure. Use it when the RCP controls only one camera, or when the preview button should be independent of camera selection.
+
+Open the **GPIO** tab and select **GPIO** in the upper-left corner. Link the preview button on the left to the GPIO output at the top. When you press the preview button, the GPO is driven low — equivalent to a contact closure.
 
 ![GPIO preview configuration for one camera](/img/Configuration/preview/web-ui-GPIO-preview-01.png)
 
+## Configure preview with multiple cameras
 
-## Configuration with multiple cameras using the GPIO dongle or NIO
+When one RCP controls several cameras, you need one GPIO per camera. Triggering can flow in any direction:
 
-When multiple cameras are configured on a single RCP, we need multiple GPIO to trigger each of the cameras. The trigger can be in any direction: the RCP can do contact closures to change the router input, or a router or an external push button could generate the contact closure that the RCP will receive as GPI to select another camera, or both simultaneously. This is the case when external buttons could change both the router and RCP selection, while the RCP could also generate a contact closure so the router will follow when the selection is done on the RCP itself.
+- The RCP generates contact closures to change the router input.
+- A router panel or external push button generates a GPI that the RCP receives to select a different camera.
+- Both simultaneously — external buttons update both the router and the RCP, while the RCP also drives the router when you change cameras locally.
 
-Pulses are generated by default from the RCP. This allows switching the router from the RCP buttons, but also from a Streamdeck or the web GUI switcher tab.
+By default, the RCP generates pulses, so you can switch the router from the RCP buttons, a Streamdeck, or the web GUI switcher tab.
 
+### Configure the GPIO mapping
 
-### Configuring the GPIO
+Select **Preview** mode in the upper-left corner, then choose the RCP from the drop-down. The view shows the mapping for that RCP and all its available cameras.
 
-Select the *Preview* mode in the upper left corner and select the RCP in the drop-down list. The view will then show the mapping for that RCP with all the cameras available.
-
-Adding a node from a GPI on the left to the cameras on the top (orange lines) will switch the RCP when a GPI is triggered. Adding a node on the right between a camera on the left and a GPO on the top will generate a pulse or level when the camera changes on the RCP or when the preview button is pressed.
+- **Orange lines (GPI → camera)** — trigger an RCP camera switch when a GPI is activated.
+- **Right-side nodes (camera → GPO)** — generate a pulse or level when the camera changes on the RCP or when you press the preview button.
 
 ![GPIO preview configuration for multiple cameras](/img/Configuration/preview/web-ui-GPIO-preview-02.png)
 
+### Joystick override mode
 
-### Joystick Override Mode
+Joystick override switches the router input to the selected camera while you hold the preview button, then restores the previous router input when you release it.
 
-*Joystick Override means switching the router input to the selected camera while the preview button is pressed and held, and restoring the previous router input when the button is released.*
+You have two options for joystick override:
 
-There are two ways to use the RCP with a system that handles Joystick Override, such as typically used in the UK. One option is to use GPIO. The second is to configure a router integration to add a fallback route when the preview button is not pressed.
+**Using a router integration**
 
-**Joystick override using a router integration**
+See the [router integration section](/docs/integrations/generic/routers#joystick-override-configuration) for this setup.
 
-This setup is described in our [router integration section](/docs/integrations/generic/routers#joystick-override-configuration)
+**Using GPIO**
 
-**Joystick override using GPIO**
+If you control a single camera from the RCP, route the PREVIEW button state directly from the GPIO page to any GPIO output. It behaves like a classic contact closure on a traditional RCP.
 
-If you control only a single camera from the RCP, the simplest option is to use the PREVIEW button state directly. This state can be routed from the GPIO page to any GPIO output and behaves like a classic contact closure on a traditional RCP.
+For multiple cameras with joystick override over GPIO, configure the RCP to generate one GPIO signal per camera using **levels** instead of pulses. In level mode, holding the preview button keeps that camera's GPIO "closed" for as long as the button is pressed. The RCP itself does not perform the override — external systems (VSM, Cerebrum, dedicated joystick-override boxes) manage the router.
 
-When the RCP is configured for multiple cameras and used with a system that handles Joystick Override over GPIO, the RCP should generate one GPIO signal per camera, using levels instead of pulses. In this mode, the PREVIEW button holds the corresponding camera’s GPIO “closed” for as long as the button is pressed. The RCP itself does not perform the override; it behaves like a standard RCP so that external systems such as VSM, Cerebrum, or dedicated joystick-override boxes can manage the router.
+To switch from pulse to level mode, open the controller set properties (main tab, controller section) and set the preview GPIO behavior to **Level**. All preview-related GPIO actions for that controller will then use levels.
 
-To switch from pulse mode to level mode, open the controller set properties (main tab, controller section) and change the preview GPIO behavior to “Level”. All preview-related GPIO actions for that controller will then use levels instead of pulses.
+![GPIO preview mode set to level or pulse](/img/Configuration/preview/web-ui-GPIO-preview-03.png)
 
-![GPIO level or pulse](/img/Configuration/preview/web-ui-GPIO-preview-03.png)
+:::tip
+Use level mode when an external system (such as VSM or Cerebrum) is responsible for the override logic. Use pulse mode when the RCP drives router selection directly.
+:::
 
+## Sync with a router or switcher protocol
 
-## Synchronization with a router or switcher protocol
+Instead of GPIO, you can use a router control protocol to keep camera selection in sync between the RCP and the preview monitor. Configure this on the main configuration tab in the components section. Refer to the integration guide for your equipment or protocol.
 
-An alternative to GPI is to use the router control protocols to synchronize camera selection on the RCP and on the preview video monitor. This is done on the main configuration tab in the components section. Refer to the integration guides for each equipment or protocol.
+The integration module assigns a router output to the RCP controller set, and assigns a router input to each known camera. When the router switches the input on the preview monitor, the RCP automatically changes to the matching camera. When you change the camera on the RCP, it switches the router to the corresponding video input.
 
-Typically, the integration module will assign a router output to the RCPs controller set, and assign a router input to any known camera. When the router switches the input on that preview monitor, the RCP will automatically change to the corresponding camera. And when the camera is changed on the RCP, it will switch the router to that corresponding video input. This ensures that the RCP camera selection will always match the camera displayed on the preview monitor.
-
-![GPIO level or pulse](/img/Configuration/preview/web-ui-GPIO-preview-04.png)
+![Router protocol sync configuration](/img/Configuration/preview/web-ui-GPIO-preview-04.png)
 
 ## RCP options for preview and auto-selection
 
-The RCP has a few options available on the LCD interface itself to change the behavior of the preview function when switching cameras. These are under `MENU > Settings`.
+The RCP exposes several preview-related options under `MENU > Settings` on the LCD interface.
 
-* Follow Router Selection: the RCP will automatically change the camera when a GPI or a router changes the input. This can be disabled if you want to temporarily hold the RCP to one camera.
-* AUTO preview on camera change: when using the arrow keys on the RCP to change the camera, a preview pulse will be automatically generated on the GPO or the router will change to the new camera source. If this is disabled, cameras can be changed on the RCP but pressing preview is then necessary to change the router or generate the GPO pulse.
-* Disable Pre/Next keys: when one RCP is used per camera, or if an external router panel or Streamdeck is used to change cameras on the RCP, it is possible to disable the arrow keys in which case all 3 keys will act as the preview button.
-* Access all cameras: this is an advanced configuration where one RCP can be restricted to a subset of cameras. This option allows temporary access to all cameras. *Note: This feature isn't yet integrated in the GUI and will be available in a future release*
+| Option | Description |
+|---|---|
+| **Follow router selection** | The RCP changes camera automatically when a GPI or router switches the input. Disable this to temporarily lock the RCP to one camera. |
+| **Auto preview on camera change** | When you use the arrow keys to change camera, a preview pulse is generated (or the router switches) automatically. Disable to require a manual preview button press after each camera change. |
+| **Disable Prev/Next keys** | Disables the arrow keys so all three keys act as the preview button. Useful when one RCP is dedicated to one camera, or when an external panel or Streamdeck handles camera selection. |
+| **Access all cameras** | Lets an RCP restricted to a camera subset temporarily access all cameras. *This feature is not yet integrated in the GUI and will be available in a future release.* |

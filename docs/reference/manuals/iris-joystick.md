@@ -7,81 +7,74 @@ keywords: [iris joystick, manual, calibration, iris control]
 slug: /reference/manuals/iris-joystick
 ---
 
-## Overview
+The iris joystick is an add-on for the RCP variant with iris joystick. This page describes its configuration and use.
 
-This page describes the configuration and usage of the joystick, which is an additional part of the RCP variant with Iris Joystick.
-
-<img alt="rcp-j" src="/img/Manual/IJ/rcp-j.png" width="400" />
+![RCP with iris joystick attached](/img/Manual/IJ/rcp-j.png)
 
 ## Configuration
 
 ### Assign to RCP
 
-The iris joystick must be linked to the RCP. To assign an iris joystick to an RCP, proceed this way :
+You must link the iris joystick to an RCP before use.
 
-1. On the startup screen, press the button next to the gear icon (PREVIEW), and then select "Assign"
+1. On the startup screen, press the button next to the gear icon (PREVIEW), then select **Assign**.
 
-<img alt="IJ_Startup" src="/img/Manual/IJ/ij_startup_screen.jpg" width="300" />
+   ![Iris joystick startup screen with Assign option](/img/Manual/IJ/ij_startup_screen.jpg)
 
-2. On the assign menu, select the serial number of the RCP (in this case, 44-20 for RCP CY-RCP-44-20). To change the serial number, use the buttons ND UP/ ND DOWN and CC UP / CC DOWN.
+2. On the assign menu, select the RCP serial number (for example, `44-20` for `CY-RCP-44-20`). Use the ND UP / ND DOWN and CC UP / CC DOWN buttons to change the value.
 
-<img alt="IJ_SAssign" src="/img/Manual/IJ/ij_assign_screen.jpg" width="300" />
+   ![Iris joystick assign screen showing serial number selection](/img/Manual/IJ/ij_assign_screen.jpg)
 
-3. Press "Save" button (PREVIEW). The Iris Joystick will reboot, and display "Serial# 44-20" in the startup screen.
+3. Press **Save** (PREVIEW). The joystick reboots and displays the assigned serial number on the startup screen.
 
-<img alt="IJ_Startup" src="/img/Manual/IJ/ij_startup_screen.jpg" width="300" />
+   ![Iris joystick startup screen after assignment showing serial number](/img/Manual/IJ/ij_startup_screen.jpg)
 
-Once the Iris Joystick is assigned to the RCP, the main screen will be displayed after a while.
-<img alt="IJ_Blank" src="/img/Manual/IJ/ij_default_blank_screen.jpg" width="300" />
+After assignment, the main screen appears after a short delay.
 
-### Calibrate the Joystick
+![Iris joystick main screen after successful assignment](/img/Manual/IJ/ij_default_blank_screen.jpg)
 
-The joystick must be calibrated to work correctly. The goal of the calibration is to internally set and store the sensors' values for specific positions. The positions are :
+### Calibrate the joystick
 
-- Iris Joystick maximum opened (Joystick forced UP - spring compressed) `I max open`
-- Iris Joystick opened (Joystick UP, without forcing the spring) `I open`
-- Iris Joystick closed (Joystick DOWN, without forcing the spring) `I close`
-- Iris Joystick maximum closed (Joystick forced DOWN - spring compressed) `I max close`
-- Maximum black value (black ring turned clockwise to its mechanical stop) `Black max`
-- Minimum black value (black ring turned anti-clockwise to its mechanical stop) `Black min`
-- Iris Joystick pressed (Iris Joystick shaft pressed) `J pressed`
-- Iris Joystick released (Iris Joystick shaft not pressed) `J released`
+Calibration stores sensor values for specific mechanical positions. You need to set these positions:
 
-It is important to perform this calibration correctly to ensure the correct behaviour of the joystick.
+- `I max open` — Joystick forced UP (spring compressed)
+- `I open` — Joystick UP (without forcing the spring)
+- `I close` — Joystick DOWN (without forcing the spring)
+- `I max close` — Joystick forced DOWN (spring compressed)
+- `Black max` — Black ring turned clockwise to its mechanical stop
+- `Black min` — Black ring turned counter-clockwise to its mechanical stop
+- `J pressed` — Joystick shaft pressed
+- `J released` — Joystick shaft not pressed
+
+Perform calibration carefully to ensure correct joystick behavior.
 
 <video poster="/img/Manual/IJ/RCP-J-calibration.png" muted controls>
     <source src="/img/Manual/IJ/RCP-J-calibration.mp4"/>
 </video>
 
-The calibration menu can be accessed in two different ways :
-1. On the startup screen, press the button next to the GEAR icon (PREVIEW), and then select "Calibrate"
-2. On the main screen, hold the Iris Joystick and then press the PREVIEW button to enter the configuration screen, then the GEAR icon (SHUTTER DOWN), and finally select "Calibrate"
+Access the calibration menu in one of two ways:
+1. From the startup screen: press the button next to the gear icon (PREVIEW), then select **Calibrate**.
+2. From the main screen: hold the iris joystick shaft, press PREVIEW to enter the configuration screen, press the gear icon (SHUTTER DOWN), then select **Calibrate**.
 
-The calibration menu looks like this :
-<img alt="IJ_Calib" src="/img/Manual/IJ/ij_calib_screen.jpg" width="300" />
+![Iris joystick calibration screen showing sensor values](/img/Manual/IJ/ij_calib_screen.jpg)
 
-To perform a calibration :
+To calibrate:
+- Place the joystick, black ring, or shaft in the required position, then press the button next to its label to save.
+- A highlighted button confirms the value is saved.
+- You can press any button again if you made an error — only the last value is saved.
 
+The bottom of the screen shows live sensor values:
+- `I : 4033` — Raw sensor value for the iris joystick.
+- `B : 1862` — Raw sensor value for the black ring.
+- `SW : 128` — Raw sensor value for the joystick shaft.
 
-- Place the Joystick, the black ring, or the Joystick shaft in the desired position, as described above, and then validate the position with the button next to the label.
-- When the position is saved, the button is highlighted.
-- In case of doubt or wrong position, the buttons can be pressed again. Only the last value will be saved.
+These values must change when you move the corresponding part. A static value regardless of position may indicate a hardware problem.
 
-At the bottom of the display, the following technical information are displayed :
-
-- `I : 4033` : This value represents the raw sensor value for the Iris Joystick.
-- `B : 1862` : This value represents the raw sensor value for the black ring
-- `SW : 128` : This value represents the raw sensor value for the joystick shaft
-
-The values must change when the Iris Joystick, the black ring, or the Iris Joystick shaft are moved. If one of the values stay static regardless the mechanical positions, it could indicate a hardware problem.
-
-Once the calibration is done, press the "Save" button (PREVIEW). The Iris Joystick will reboot and load the new calibration data.
-
-Note : The calibration is saved internally. It is not necessary to perform the calibration each time the joystick boots. If the behaviour seems not correct, a calibration can be performed anytime to try to fix it.
+When done, press **Save** (PREVIEW). The joystick reboots and loads the new calibration. Calibration is stored internally — you do not need to repeat it every time the joystick boots. If behavior seems incorrect, you can recalibrate at any time.
 
 ### Set the limits
 
-This allows you to force the iris values and increase the resolution of the shaft.
+Limits let you restrict the iris range and increase shaft resolution.
 
 <video poster="/img/Manual/IJ/RCP-J-limits.png" muted controls>
     <source src="/img/Manual/IJ/RCP-J-limits.mp4"/>
@@ -91,8 +84,7 @@ This allows you to force the iris values and increase the resolution of the shaf
 
 ### Main screen
 
-The default screen allows to show and control the following parameters :
-
+The main screen shows and controls:
 - Iris
 - Black
 - ND
@@ -100,57 +92,48 @@ The default screen allows to show and control the following parameters :
 - Shutter
 - Gain
 
-<img alt="IJ_Main" src="/img/Manual/IJ/ij_main_screen.jpg" width="300" />
+![Iris joystick main screen showing camera parameters](/img/Manual/IJ/ij_main_screen.jpg)
 
-At the bottom of the display, the following information are given :
+At the bottom of the screen:
+- Camera number (e.g., camera 1).
+- A tick (online) or cross (offline) showing camera status.
+- A lock icon when the joystick is locked to a specific camera.
 
-- The camera number (in this case, camera 1) is displayed.
-- A tick mark or a cross that indicates the camera status (online / offline)
-- A lock when the iris joystick is locked on a particular camera (see configuration screen)
+Pressing the joystick button acts as a preview — same behavior as the green PREVIEW button.
 
-The joystick button acts as a preview. It has the same behaviour as the green PREVIEW button.
+Holding PREVIEW disables the joystick and black ring. This lets you reposition them mechanically without changing camera values.
 
-When the PREVIEW button (green button) is held, the joystick and black ring are disabled. This allows to mechanically place the joystick or the ring without changing the value on the camera.
-
-The five blue buttons at the top of the joystick part can be used to recall scene files (scenes 1 to 5). Scene files can't be saved from here. They must be saved from the RCP menu.
+The five blue buttons at the top recall scene files 1 through 5. Scene files must be saved from the RCP menu.
 
 ### Configuration screen
 
-A configuration screen can be accessed by holding the Iris Joystick shaft and then pressing the preview button together.
+Hold the iris joystick shaft and press the PREVIEW button together to open the configuration screen.
 
-<img alt="IJ_Config" src="/img/Manual/IJ/ij_config_screen.jpg" width="300" />
+![Iris joystick configuration screen](/img/Manual/IJ/ij_config_screen.jpg)
 
-This configuration menu allows to change the following parameters :
+Available settings:
 
-- Set the joystick limits (Note : at that time, this function is not fully implemented and may be not functional).
-   - Clear : Clear the limits
-   - OFF/ON : Disable/Enable the hard limits. When enabled, the joystick works withing the limits. When disabled, the joystick works in a range (defined by the limits), but it can be outside of the defined range (with the springs/push).
-   - MAX : Set the maximum value (move the joystick to reach the desired value, and then set the value by pressing the Max button)
-   - MIN : Set the minimal value (move the joystick to reach the desired value, and then set the value by pressing the Min button)
-- Black 1X / 2X : When black is set to 2X, the range will be divided by two, allowing a higher precision. The parameter is toggled each time the button is pressed.
-- Iris / ND / Shutter / Variable Gain: select the function assigned to the joystick lever, which by default is Iris. For example, for cameras that have continuous ND filters, the configuration can be set to ND. The joystick will then control the variable ND for exposure instead of the iris. Gain or ISO can be assigned if it can be varied continuously and not a set of fixed values.
-- Cam Lock : This setting allows to lock the iris joystick to a camera. To use the lock, select the camera on the RCP (with next/prev buttons), and then press "Cam Lock". The camera number will be displayed, and a LOCK icon will be visible on the main screen.
-- GEAR icon : Access the technical menu
+- **Joystick limits** — Clear limits, toggle ON/OFF (when ON the joystick is constrained to the defined range; when OFF it can go beyond with the spring), set MAX, set MIN.
+- **Black 1X / 2X** — At 2X the range is halved, giving higher precision. Toggled on each press.
+- **Iris / ND / Shutter / Variable Gain** — Function assigned to the joystick lever. Default is Iris. For cameras with continuous ND filters, assign ND to control exposure with the joystick. Gain or ISO can be assigned if continuously variable.
+- **Cam Lock** — Locks the joystick to a specific camera. Select the camera on the RCP, then press **Cam Lock**. The camera number and a lock icon appear on the main screen.
+- **Gear icon** — Opens the technical menu.
 
-To go back to the main view, press the PREVIEW button (green button).
+Press PREVIEW to return to the main view.
 
 ### Technical menus
 
-During loading, press the GEAR icon to active the technical menu.
-Or, on the main screen, hold the Iris Joystick shaft and then press the preview, and then the GEAR icon.
+During loading, press the gear icon to access the technical menu. From the main screen, hold the shaft, press PREVIEW, then press the gear icon.
 
-This menu allows to calibrate and assign the RCP (see Configuration of this page). In addition, a menu can display information about the iris joystick, such as IP address, MAC address, firmware version, and error codes.
+This menu provides calibration, RCP assignment, device information (IP address, MAC address, firmware version, error codes), and a reboot button.
 
-The Reboot button will reboot the iris joystick. The iris joystick can be forced in bootloader mode, to update the internal firmware with the latest available, by performing the following sequence :
-
-1. Press and hold the Scene 1 and 2 buttons
-2. Press the "Reboot" buttons (in the iris joystick technical menu)
-3. After 3 seconds, release the Scene 1 and 2 buttons
+To force the joystick into bootloader mode for a firmware update:
+1. Press and hold Scene 1 and Scene 2 buttons.
+2. Press **Reboot** in the technical menu.
+3. After 3 seconds, release Scene 1 and Scene 2.
 
 ### Multi-camera operations
 
-When using a single RCP to control multiple cameras, there are a few key features to consider related to the iris joystick.
+When one RCP controls multiple cameras, the joystick operates on a relative basis to avoid sudden jumps. At the end of its range it can be pushed further with a spring effect for continuous adjustment, or repositioned by holding PREVIEW for a "free" mode. The main exposure and master black encoders provide quick multi-camera adjustments without the joystick.
 
-- The joystick operates on a relative basis, ensuring smooth camera adjustments without sudden jumps. When reaching the end of its range, it can either be pushed further with a spring effect—similar to a PTZ joystick—allowing continuous adjustment until released, or it can be repositioned by holding the preview button for a "FREE" effect. Additionally, the main exposure and master black encoders can be used for quick multi-camera adjustments without relying on the joystick.
-
-- As explained above, a feature allows the joystick to be locked to a single camera while the upper section of the RCP remains switchable between other cameras. This "split-camera" mode can be particularly useful when one camera needs constant access while the upper controls are used to adjust different cameras as needed.
+Using **Cam Lock** keeps the joystick locked to one camera while the upper RCP section switches between others. This "split-camera" mode is useful when one camera needs constant iris access while you shade other cameras.

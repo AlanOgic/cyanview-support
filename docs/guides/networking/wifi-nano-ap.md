@@ -7,39 +7,36 @@ keywords: [WiFi, Nano AP, access point, direct connection]
 slug: /guides/networking/wifi-nano-ap
 ---
 
-<img src="/img/Configuration/TPLink-wiring.png"/>
+![TP-Link wiring diagram](/img/Configuration/TPLink-wiring.png)
 
-This guide is intended to provide a WiFi connectivity to Cyanview devices:
-* CI0 : to control a camera over WiFi (Blackmagic, etc.) `schema 1`
-* RIO : to get internet using WiFi
-* RCP : to connect to a LAN using WiFi `schema 2`
-* IP/Ethernet Camera : to control it over WiFi (PTZ, BGH1, etc.) `schema 3`
+Use a TP-Link Nano Router as a Wi-Fi access point to provide wireless connectivity to your Cyanview device. This covers several use cases:
 
-You have various way to achieve that, the one presented here is using a TP Link nano router.
+- **CI0** — control a camera over Wi-Fi (Blackmagic, etc.) `schema 1`
+- **RIO** — access the internet over Wi-Fi
+- **RCP** — connect to a LAN over Wi-Fi `schema 2`
+- **IP/Ethernet camera** — control a PTZ, BGH1, or similar device over Wi-Fi `schema 3`
 
 ## Setup
 
-You can find the documentation [here](https://www.tp-link.com/nl-be/support/download/tl-wr802n/)
+Refer to the [TP-Link TL-WR802N documentation](https://www.tp-link.com/nl-be/support/download/tl-wr802n/) for hardware details.
 
-- [step 1] Connect your TPLink to its USB power supply
-- [step 2] Connect your device to the ethernet port of the TPLink
-- [step 3] Check on the sticker to find the SSID/Password and connect to it with your laptop
-- [step 4] Navigate to [http://tplinkwifi.net/](http://tplinkwifi.net/) and login using the password (default is admin/admin)
+1. Connect your TP-Link to its USB power supply.
+2. Connect your Cyanview device to the Ethernet port of the TP-Link.
+3. Check the sticker on the TP-Link for its SSID and password, then connect your laptop to that network.
+4. Open [http://tplinkwifi.net/](http://tplinkwifi.net/) and log in (default credentials: `admin` / `admin`).
 
-Now, you should setup the TPLink in Client mode:
-* It will connect to a WiFi AP
-* And act as a bridge between Ethernet and WiFi
+Configure the TP-Link in **Client** mode so it bridges Ethernet and Wi-Fi:
 
-You should ensure to setup this parameter:
-* Connect the TPLink to the good WiFi AP
-* Mode should be `Client`
-* Keep `Smart IP` to have the bridge mode
+- **Network** — select the target Wi-Fi access point.
+- **Mode** — set to `Client`.
+- **IP** — keep `Smart IP` to enable bridge mode.
 
-Your setup should look like this:
+Your configuration should look like this:
 
+![TP-Link Nano client mode configuration](/img/Configuration/TPLink-nano-overview.png)
 
-<img src="/img/Configuration/TPLink-nano-overview.png"/>
+:::tip
+After you save the settings, the TP-Link reboots and disconnects your laptop from its own network. This is expected — the configuration is applied.
+:::
 
-After validating, the TPLink will reboot, you will be disconnected and the setup is applied.
-
-Now every device plugged on the ethernet will be accessible over WiFi.
+Every device connected to the Ethernet port is now accessible over Wi-Fi.

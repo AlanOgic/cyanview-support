@@ -7,56 +7,53 @@ keywords: [Panasonic P2, serial, CI0, RIO, broadcast]
 slug: /integrations/cameras/panasonic/p2-serial
 ---
 
-<img src="/img/Integrations/Panasonic/aj-hpx3100g.jpg" width="600" />
+![Panasonic AJ-HPX3100G](/img/Integrations/Panasonic/aj-hpx3100g.jpg)
 
-## Supported Models
+Control older Panasonic P2 cameras over a serial link using a CY-CIO or CY-RIO interface.
 
-* AG-HPX300
-* AG-HPX500
-* AJ-HPX2700
-* AJ-HPX3100
-* Generic : this model assumes all features are available so this can be used with any other camera. Some features may not be available or may not function as expected depending on what is supported by the specific camera model.
+## Supported models
+
+- AG-HPX300
+- AG-HPX500
+- AJ-HPX2700
+- AJ-HPX3100
+- Generic — assumes all features are available; use this for any other model. Some features may not work depending on what the specific camera supports.
 
 :::note
-All AJ-HPX cameras with the Hirose 10p connector are supported. Simply select `Generic` model. Depending on the model (if not specificaly listed), some features may not be available or not working properly.
+All AJ-HPX cameras with the Hirose 10-pin connector are supported. Select `Generic` if your model is not specifically listed. Some features may not be available or may behave unexpectedly depending on the camera.
 :::
 
+## Supported control
 
-## Supported Control
-
-|Control|AG-HPX300|AG-HPX500|AJ-HPX2700|AJ-HPX3100|Generic|
-|:-------|:----:|:----:|:----:|:---:|:---:|
-|OSD|✔|✔|✔|✔|✔|
-|Gain (M / R / B)|✔|✔|✔|✔|✔|
-|Pedestal (M / R / B)|✔|✔|✔|✔|✔|
-|Gamma (M / R / B)|||✔|✔|✔|
-|Black gamma|||✔|✔|✔|
-|Saturation|||✔|✔|✔|
-|Whiteclip|||✔|✔|✔|
-|Knee|||✔|✔|✔|
-|Matrix|||✔|✔|✔|
-|Detail|||✔|✔|✔|
-|ND filters||RO|||✔|
-|AWB|✔|✔|✔|✔|✔|
-|Iris|✔|✔|✔|✔|✔|
-|Shutter|✔|✔|✔|✔|✔|
-
+| Control | AG-HPX300 | AG-HPX500 | AJ-HPX2700 | AJ-HPX3100 | Generic |
+| :------ | :-------: | :-------: | :--------: | :--------: | :-----: |
+| OSD | ✔ | ✔ | ✔ | ✔ | ✔ |
+| Gain (M / R / B) | ✔ | ✔ | ✔ | ✔ | ✔ |
+| Pedestal (M / R / B) | ✔ | ✔ | ✔ | ✔ | ✔ |
+| Gamma (M / R / B) | | | ✔ | ✔ | ✔ |
+| Black gamma | | | ✔ | ✔ | ✔ |
+| Saturation | | | ✔ | ✔ | ✔ |
+| White clip | | | ✔ | ✔ | ✔ |
+| Knee | | | ✔ | ✔ | ✔ |
+| Matrix | | | ✔ | ✔ | ✔ |
+| Detail | | | ✔ | ✔ | ✔ |
+| ND filters | | RO | | | ✔ |
+| AWB | ✔ | ✔ | ✔ | ✔ | ✔ |
+| Iris | ✔ | ✔ | ✔ | ✔ | ✔ |
+| Shutter | ✔ | ✔ | ✔ | ✔ | ✔ |
 
 ## Workflow
 
-The camera is controlled over a serial link and requires a CY-CIO or CY-RIO interface.
+Connect the camera to a CY-CIO or CY-RIO using the [CY-CBL-6P-PAN-10P](/docs/resources/cable-catalog#cy-cbl-6p-pan-10p) cable.
 
-The appropriate cable is [CY-CBL-6P-PAN-10P](/docs/resources/cable-catalog#cy-cbl-6p-pan-10p).
-
-<img src="/img/Integrations/Panasonic/Panasonic-P2serial-connect.png" width="900" />
-
+![Panasonic P2 serial connection diagram](/img/Integrations/Panasonic/Panasonic-P2serial-connect.png)
 
 ## Setup
 
 Add a camera on your RCP or RIO:
 
-  * Select **Panasonic** brand
-  * Select **Serial** model
-  * Select your CI0 or RIO port to which the camera is plugged
+1. Select **Panasonic** as the brand.
+2. Select **Serial** as the model.
+3. Select the CI0 or RIO port the camera is connected to.
 
-<img src="/img/Integrations/Panasonic/P2-config-setup.png" width="200" />
+![P2 serial config setup](/img/Integrations/Panasonic/P2-config-setup.png)

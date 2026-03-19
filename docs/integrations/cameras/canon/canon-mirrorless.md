@@ -7,61 +7,54 @@ keywords: [Canon mirrorless, R5, USB, RIO, remote control]
 slug: /integrations/cameras/canon/canon-mirrorless
 ---
 
-<img src="/img/Integrations/Canon/canon-R5.png" width="300"/>
+Cyanview controls the Canon R5 over USB, connected either directly to an RCP or remotely through a RIO/NIO for full IP-based control.
 
-Supported model: R5
+![Canon R5 mirrorless camera](/img/Integrations/Canon/canon-R5.png)
+
+**Supported model:** R5
 
 :::note
-The R5-C is not suitable for video applications. Unlike the R5, it features a new video processing pipeline that differs from the picture mode and cannot be controlled via a USB connection. As a result, the R5-C can only be managed in picture mode, making it non practical for video use.
+The R5-C is not suitable for video applications. It has a different video processing pipeline that cannot be controlled via USB. Only picture mode is accessible, making it impractical for live video use.
 :::
-
 
 ## Controls
 
-|Control|R5
-:-----|:-----|
-**Exposure** (Iris, Gain, Shutter)|✔
-**White balance** (R/B and Color temp)|✔
-**Scene file** : <a href="/docs/reference/manuals/rcp/ui/scene">save/recall</a>|✔
-
+| Control | R5 |
+| :--- | :--- |
+| **Exposure** (iris, gain, shutter) | ✔ |
+| **White balance** (R/B and color temp) | ✔ |
+| **Scene file** ([save/recall](/docs/reference/manuals/rcp/ui/scene)) | ✔ |
 
 ## Wiring
 
-You can plug it either:
-* on RCP : mainly for testing or if the camera/RCP is not too far
-* on RIO/NIO : for all other cases, allow you to control it remotely from anywhere over IP
+You need a USB-A (RCP/RIO/NIO) to USB-C (camera) cable.
 
-You will need a USB cable USB-A (RCP/RIO/NIO) to USB-C (camera)
+Connect the camera:
+- **To the RCP** — for testing or when camera and RCP are in the same location. Use any USB-A port on the back of the RCP (not the top port — use the one next to the RJ45).
+- **To a RIO/NIO** — for all other cases, giving you remote control over IP from anywhere. Use any USB-A port on the RIO/NIO.
 
-### RCP
+### RCP wiring
 
-<img src="/img/Integrations/Canon/canon-DSLR-RCP.png"/>
+![Canon R5 connected to RCP](/img/Integrations/Canon/canon-DSLR-RCP.png)
 
-On the RCP, use any of the USB-A port on the back of the RCP (not the one on top, use the one next to RJ45).
-Then plug the USB-C side inside the camera.
+### RIO/NIO wiring
 
-### RIO/NIO
-
-<img src="/img/Integrations/Canon/canon-DSLR-RIO.png"/>
-
-On the RIO/NIO, use any of the USB-A port.
-Then plug the USB-C side inside the camera.
+![Canon R5 connected to RIO/NIO](/img/Integrations/Canon/canon-DSLR-RIO.png)
 
 ## Configuration
 
-* Click on the `+` in the camera block, a new panel will appear on the right
-* In `General` Configure a Number and a Name
-* Select `Canon` for the brand and `DSLR` as the model.
+1. Click `+` in the camera block — a new panel appears on the right.
+2. Under `General`, set a **Number** and a **Name**.
+3. Select brand `Canon` and model `DSLR`.
 
-Your settings should look like:
+Your settings should look like this:
 
-<img src="/img/Integrations/Canon/Canon-DSLR-setup.png" width="200"/>
+![Canon DSLR setup view](/img/Integrations/Canon/Canon-DSLR-setup.png)
 
-And your camera block:
+Your camera block:
 
-<img src="/img/Integrations/Canon/Canon-DSLR-block.png" width="200"/>
-
+![Canon DSLR connected block](/img/Integrations/Canon/Canon-DSLR-block.png)
 
 :::note
-Interface should show `SN:*` meaning it will automatically connect to the first camera connected.
+The interface shows `SN:*`, meaning it automatically connects to the first camera plugged in.
 :::

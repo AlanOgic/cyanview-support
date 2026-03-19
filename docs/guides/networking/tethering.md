@@ -7,85 +7,62 @@ keywords: [tethering, USB, smartphone, internet sharing, field]
 slug: /guides/networking/tethering
 ---
 
-## Overview
+![Tethering overview — Apple, Android, mobile modem, and RCP](/img/diagrams/tethering-apple-android-mobile-modem-rcp-overview@2x-8.png)
 
-<img alt="tethering-apple-android-mobile-modem-rcp-overview" src="/img/diagrams/tethering-apple-android-mobile-modem-rcp-overview@2x-8.png" width="600" />
+You can give your Cyanview device 4G or Wi-Fi internet access by connecting it to a smartphone via USB. Both iOS and Android are supported.
 
-Cyanview devices can be granted 4G or WIFI Internet access via USB connection to mobile device.
+## Tethering with an Apple device
 
-## Tethering with Apple mobile
+### Enable personal hotspot on iOS
 
-### Enable sharing connection on your IOS device.
+1. Go to **Settings > Cellular > Personal Hotspot** (or **Settings > Personal Hotspot**).
+2. Enable **Allow Others to Join** — the slider must be green.
 
-- Go to Settings > Cellular > Personal Hotspot or Settings > Personal Hotspot.
-- Tap the slider next to Allow Others to Join (must be "1" and Green).
+### Connect your iOS device
 
-### Plug your IOS device on the USB port of your Cyanview device.
+Plug your iPhone or iPad into the USB port of your Cyanview device:
 
-- If it's a RIO or NIO, any port is OK.
-- If it's a RCY-GWY, use ports at the back (not the front one)
+- **RIO or NIO** — any USB port works.
+- **RCY-GWY** — use the ports at the back, not the front.
 
-<img alt="RCP-USB-back-port" src="/img/productGfx/RCP/RCP-USB-back-port@2x-8.png" width="300" />
+![RCP back USB port](/img/productGfx/RCP/RCP-USB-back-port@2x-8.png)
 
-- You will be asked to trust this device and to enter your IOS code. 
+Your iOS device will prompt you to trust the connected device and enter your passcode:
 
-  confirmation screen.
+![iOS trust confirmation screen](/img/3Parties/apple/IOS-trust.png)
 
-  <img alt="apple-IOS-trust" src="/img/3Parties/apple/IOS-trust.png" width="300" />
+![iOS password prompt](/img/3Parties/apple/IOS-pwd.png)
 
-  Password required.
+![iOS sharing active](/img/3Parties/apple/IOS-sharing-KO.png)
 
-  <img alt="apple-IOS-password" src="/img/3Parties/apple/IOS-pwd.png" width="300" />
-  
-  Sharing is OK.
+Once trusted, toggle **Allow Others to Join** off and back on to activate sharing.
 
-  <img alt="apple-IOS-sharing-KO" src="/img/3Parties/apple/IOS-sharing-KO.png" width="300" />
+:::warning
+If the blue dot does not appear in the top-left corner of your iPhone screen, internet is not being shared. Toggle **Allow Others to Join** off and on while the device remains plugged in. If the dot still does not appear, check your cable and repeat the trust procedure.
+:::
 
+![iOS sharing active — blue dot visible](/img/3Parties/apple/IOS-sharing-OK.png)
 
-- Then disable/enable your sharing to make activate it (now that it's trusted).
+## Tethering with an Android device
 
+### Connect your Android device
 
-*Note:*
- 
-If the "blue dot" at the top left corner is not present, your device is not sharing internet.
+Plug your Android phone into the USB port of your Cyanview device:
 
-<img alt="apple-IOS-sharing-KO" src="/img/3Parties/apple/IOS-sharing-OK.png" width="300" />
+- **RIO or NIO** — any USB port works.
+- **RCY-GWY** — use the ports at the back, not the front.
 
-To fix this, keep your device plugged and disable/enable the IOS sharing ("Allow Others to Join").
+![RCP back USB port](/img/productGfx/RCP/RCP-USB-back-port@2x-8.png)
 
-If the blue dot is not appearing, repeat the procedure and double check your wiring.
+### Enable USB tethering on Android
 
-## Tethering with Android mobile
+1. Open **Settings**.
+2. Search for **USB tethering** and enable it.
 
-#### Plug your Android device on the USB port of your Cyanview device.
-
-- If it's a RIO or NIO, any port is OK.
-- If it's a RCY-GWY, use ports at the back (not the front one)
-
-<img alt="RCP-USB-back-port" src="/img/productGfx/RCP/RCP-USB-back-port@2x-8.png" width="300" />
-
-### Enable sharing connexion on android device.
-
-- Go to "Settings"
-- Search for "USB tethering" and enable it
-
-<img alt="Android-sharing-ok" src="/img/3Parties/android/Android-sharing-OK.png" width="300" />
+![Android USB tethering enabled](/img/3Parties/android/Android-sharing-OK.png)
 
 ## Verification
 
-The connection status can be controlled in the *connectivity check* of the RCP admin page.
+Check the connection status in the **Connectivity check** section of the RCP admin page.
 
-<img alt="RCP-connection-status" src="/img/productGfx/RCP/cyanview-support-RCP-remote-connection-status.png" width="400" />
-
-
-
-
-
-
-
-
-
-
-
-
-
+![RCP remote connection status](/img/productGfx/RCP/cyanview-support-RCP-remote-connection-status.png)

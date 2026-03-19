@@ -7,112 +7,102 @@ keywords: [Grass Valley, AMPP, cloud production, remote]
 slug: /integrations/broadcast-systems/grass-valley-ampp
 ---
 
-# GV AMPP
-
-The goal is to describe how to integrate GV AMPP as a tally input
+This guide explains how to integrate GV AMPP as a tally input for Cyanview devices. The GV AMPP Tally Service app bridges your GV AMPP cloud environment to your RCP or NIO/RIO over TSL.
 
 ## Wiring
 
-You will need:
-* A Cyanview compatible device (RCP, NIO or RIO)
-* A computer or VM running the `GV AMPP Tally Service` app
+You need:
+- A Cyanview compatible device (RCP, NIO, or RIO)
+- A computer or VM running the `GV AMPP Tally Service` app
 
-The app will connects to:
-* the GV using an API key
-* RCP/NIO/RIO using TSL
+The app connects to:
+- GV AMPP using an API key
+- Your RCP/NIO/RIO using TSL
 
 ### RCP wiring
 
-You simply need to put the RCP and the GV AMPP app on the same LAN network.
+Place the RCP and the GV AMPP app on the same LAN. This feeds tally input from the GV cloud directly to your RCP and routes it to all supported cameras.
 
-This will allow you to feed tally input from GV cloud in your RCP directly and route it to all supported cams.
-
-<img src="/img/Integrations/GrassValley/GVAMPP-wiring1.png" width="600"/>
+![GV AMPP to RCP wiring diagram](/img/Integrations/GrassValley/GVAMPP-wiring1.png)
 
 ### NIO wiring
 
-You simply need to put the NIO and the GV AMPP app on the same LAN network.
+Place the NIO and the GV AMPP app on the same LAN. This lets you output GPIO signals from GV AMPP using the NIO's 16 built-in GPIOs.
 
-This allows you to output GPIO from GV AMPP using the NIO 16 built-in GPIO's.
-
-<img src="/img/Integrations/GrassValley/GVAMPP-wiring2.png" width="600"/>
+![GV AMPP to NIO wiring diagram](/img/Integrations/GrassValley/GVAMPP-wiring2.png)
 
 ## Setup
 
 ### RCP/NIO setup
 
-Navigate to your <a src="/docs/reference/manuals/rcp/web-ui">RCP/NIO Configuration UI</a>.
+Open your [RCP/NIO Configuration UI](/docs/reference/manuals/rcp/web-ui).
 
-If your GV AMPP app is not in the range `10.192.0.0/16`, check <a href="/docs/guides/networking/ip-configuration">this guide</a> to ensure your RCP/NIO can communicate with your computer.
+If your GV AMPP app is not in the `10.192.0.0/16` range, follow the [IP configuration guide](/docs/guides/networking/ip-configuration) to ensure your RCP/NIO can reach the app.
 
-<img src="/img/Integrations/TSL/TSL-block.png" width="450" />
+![TSL block in configuration UI](/img/Integrations/TSL/TSL-block.png)
 
-Change the TSL parameters to:
+Set the TSL parameters as shown:
 
-<img src="/img/Integrations/GrassValley/GVAMPP-setup-TSL.png" width="300"/>
+![GV AMPP TSL settings](/img/Integrations/GrassValley/GVAMPP-setup-TSL.png)
 
-More info <a href="/docs/guides/tally/tally#tsl">here</a>
+See the [tally configuration guide](/docs/guides/tally/tally#tsl) for more details on TSL settings.
 
 ### GV AMPP app setup
 
 #### Configuration tab
 
-Setup platform:
-* Enter the URL of your GV AMPP server
-* Enter your API key (pixelated here)
-* Click on `CONNECT`, `Status` should go to `**ONLINE**`
+**Platform setup:**
+1. Enter your GV AMPP server URL.
+2. Enter your API key.
+3. Click **CONNECT** — the status should change to **ONLINE**.
 
+**TSL client setup** (the RCP/NIO acts as TSL server):
+1. Enter the IP address of your RCP/NIO.
+2. Enter the TSL port (`8901` by default).
+3. Click **CONNECT**.
 
-Setup TSL client (the RCP/NIO will act as a TSL server):
-* Enter the IP address of your RCP/NIO (here `10.1.10.173` is the IP of my NIO)
-* Enter the port of the NIO TSL (`8901` by default, adapt if you changed it)
-* Click on `CONNECT`
-
-
-<img src="/img/Integrations/GrassValley/GVAMPP-app1.png" width="600"/>
+![GV AMPP app configuration tab](/img/Integrations/GrassValley/GVAMPP-app1.png)
 
 #### Status tab
 
-The goal here is to link your GV AMPP virtual cams with matching TSL IDs
+Link your GV AMPP virtual cameras to matching TSL IDs.
 
-In this setup:
-* I have 4 cams configured (no limitation)
-* GV AMPP cloud ID : `5-TEE`, `5-GREEN`, `17-TEE` and `17-GREEN` (can be anything)
-* TSL ID : `1`, `2`, `3`, `4` (important, should match your RCP/NIO camera number)
+In this example:
+- 4 cameras are configured
+- GV AMPP cloud IDs: `5-TEE`, `5-GREEN`, `17-TEE`, `17-GREEN`
+- TSL IDs: `1`, `2`, `3`, `4` — these must match your RCP/NIO camera numbers
 
-<img src="/img/Integrations/GrassValley/GVAMPP-app2.png" width="600"/>
+![GV AMPP app status tab](/img/Integrations/GrassValley/GVAMPP-app2.png)
 
-And because my TSL IDs in GV AMPP are 1, 2, 3 and 4, I have to ensure my RCP/NIO cams IDs are matching:
+Because the TSL IDs are 1–4, your RCP/NIO camera numbers must match:
 
-<img src="/img/Integrations/GrassValley/GVAMPP-RCP-setup.png" width="600"/>
+![GV AMPP RCP camera setup](/img/Integrations/GrassValley/GVAMPP-RCP-setup.png)
 
-What's important is `GV AMPP TSL ID` and `RCP/NIO camera number`. On your RCP/NIO, you can change names, camera model, etc.
+The critical mapping is between the **GV AMPP TSL ID** and the **RCP/NIO camera number**. Camera names and models are flexible.
 
 :::note
-Here on my NIO configuration I used `not controlled` cams, but if I change the model to Sony FX9 or Panasonic UE150, the tally input (from GV AMPP) would be forwarded to any camera we can control.
+The example above uses `not controlled` cameras. If you change the model to Sony FX9 or Panasonic UE150, the tally signal from GV AMPP will be forwarded to the connected camera.
 :::
 
-### NIO : TSL input, GPO output
+### NIO: TSL input, GPO output
 
-Navigate to your <a src="/docs/reference/manuals/rcp/web-ui">RCP/NIO Configuration UI</a>.
+Open your [RCP/NIO Configuration UI](/docs/reference/manuals/rcp/web-ui).
 
-In the GPIO tab, you find the 4 cams we created above (with matching IDs).
+In the **GPIO** tab, you see the cameras you created (with matching IDs).
 
-To configure GPO:
-* Select on top/left `Red Tally` (or `Green Tally`)
-* On each camera (line), click on the GPO (column) where you want to output the tally
-* You can also toggle `L/H` on each GPO depending on if you want it low or high when in tally
+To configure GPO output:
+1. Select **Red Tally** or **Green Tally** in the top-left.
+2. On each camera row, click the GPO column where you want to output the tally.
+3. Toggle `L/H` on each GPO to set whether it goes low or high when in tally.
 
-<img src="/img/Integrations/GrassValley/GVAMPP-GPO.png" width="600"/>
+![GV AMPP GPO configuration](/img/Integrations/GrassValley/GVAMPP-GPO.png)
 
-And in the configuration, it should look like this:
+The final configuration looks like this:
 
-<img src="/img/Integrations/GrassValley/GVAMPP-NIO-status.png" width="600"/>
+![GV AMPP NIO status](/img/Integrations/GrassValley/GVAMPP-NIO-status.png)
 
+## Going further
 
-### Going further
-
-Check:
-* Various Tally setup : <a src="/docs/guides/tally/tally">Tally configuration</a>
-* Remote prod : <a src="/docs/guides/networking/remi">REMI</a>
-* Use case on remote prod golf : <a src="/blog-draft/2022/10/24/GVAMPP-REMI">blog</a>
+- [Tally configuration](/docs/guides/tally/tally) — various tally setup options
+- [REMI guide](/docs/guides/networking/remi) — remote production networking
+- [REMI networking guide](/docs/guides/networking/remi) — remote production setup

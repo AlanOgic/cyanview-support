@@ -7,44 +7,47 @@ keywords: [BirdDog, PTZ, NDI, IP control, remote]
 slug: /integrations/cameras/other/birddog-ptz
 ---
 
-<img src="/img/Integrations/Birddog/birddog.png" width="900" />
+![BirdDog PTZ camera lineup](/img/Integrations/Birddog/birddog.png)
+
+Cyanview controls BirdDog PTZ cameras over IP, giving you access to pan, tilt, zoom, and paint controls from the RCP.
 
 ## Compatibility
 
-Support for IP cameras:
-* Birddog P100
-* Birddog P200
-* Birddog P400
-* Birddog P4K
-* Birddog X1
-* Birddog X4
-* Birddog X5
+Supported IP camera models:
+- BirdDog P100
+- BirdDog P200
+- BirdDog P400
+- BirdDog P4K
+- BirdDog X1
+- BirdDog X4
+- BirdDog X5
 
 ## Controls
+
 <div class="feature_table">
 
-|Control|P100|P200|P400|P4K|X1|X4|X5
-|:-------|:----:|:----:|:----:|:---:|:---:|:---:|:---:|
-|OSD|✔|✔|✔|✔||||
-|Shutter + auto|✔|✔|✔|✔|✔|✔|✔|
-|Iris + auto|✔|✔|✔|✔|✔|✔|✔|
-|Focus + auto|✔|✔|✔|✔|✔|✔|✔|
-|Zoom|✔|✔|✔|✔|✔|✔|✔|
-|Pan/Tilt/Presets|✔|✔|✔|✔|✔|✔|✔|
-|ATW / AWB|✔|✔|✔|✔||||
-|Gains (M / R / B)|✔|✔|✔|✔|✔|✔|✔|
-|Master gamma|✔|✔|✔|✔||||
-|Saturation|✔|✔|✔|✔|✔|✔|✔|
-|Detail|✔|✔|✔|✔|✔|✔|✔|
-|Master black|✔||✔|✔||||
-|D-Zoom ||✔|||||
-|Multimatrix||✔|||||
-|Denoise ||✔|✔|✔||||
-|Matrix |||✔|✔|✔|✔||
-|Auto brightness|||✔|✔||||
+| Control | P100 | P200 | P400 | P4K | X1 | X4 | X5 |
+|:--------|:----:|:----:|:----:|:---:|:--:|:--:|:--:|
+| OSD | ✔ | ✔ | ✔ | ✔ | | | |
+| Shutter + auto | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| Iris + auto | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| Focus + auto | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| Zoom | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| Pan/Tilt/Presets | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| ATW / AWB | ✔ | ✔ | ✔ | ✔ | | | |
+| Gains (M / R / B) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| Master gamma | ✔ | ✔ | ✔ | ✔ | | | |
+| Saturation | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| Detail | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| Master black | ✔ | | ✔ | ✔ | | | |
+| D-Zoom | | ✔ | | | | | |
+| Multimatrix | | ✔ | | | | | |
+| Denoise | | ✔ | ✔ | ✔ | | | |
+| Matrix | | | ✔ | ✔ | ✔ | ✔ | |
+| Auto brightness | | | ✔ | ✔ | | | |
 
 </div>
 
 ## Setup
 
-You can follow the generic guide <a href="/docs/integrations/generic/ptz">here</a>
+Follow the [generic PTZ setup guide](/docs/integrations/generic/ptz).

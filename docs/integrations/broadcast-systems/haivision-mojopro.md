@@ -7,31 +7,26 @@ keywords: [Haivision, MojoPro, cellular, bonding, mobile, 4G]
 slug: /integrations/broadcast-systems/haivision-mojopro
 ---
 
-## Overview
+The [Haivision MoJoPro](https://www.haivision.com/products/mojopro-mobile-journalism/) app for iOS and Android enables live video transmission from smartphones. The Cyanview RCP controls a range of camera parameters over the StreamHub connection, making it ideal for news gathering or unattended PoV camera workflows.
 
-The **[Haivision MoJoPro](https://www.haivision.com/products/mojopro-mobile-journalism/)** mobile application for Apple and Android enables live video transmission from smartphones.
+![Haivision MoJoPro workflow diagram](/img/Integrations/Haivision/Haivision-MoJoPro.png)
 
-The Cyanview RCP can control a range of parameters over the Streamhub connection. This functionality is ideal for news gathering or unattended PoV camera workflows, allowing operators to adjust settings remotely.
+## Supported controls
 
-<img class="diagram" alt="Haivision MoJoPro" src="/img/Integrations/Haivision/Haivision-MoJoPro.png" width="80%" />
-
-## Supported Control
-
-| Function            | Notes                                                            |
-| :------------------ | :--------------------------------------------------------------- |
-| Gain                | Manual (ISO) and AUTO                                            |
-| Exposure            | Manual or AUTO shutter                                           |
-| White balance       | Variable color temperature in K                                  |
-| Focus               | Manual and AUTO focus                                            |
-| Zoom                |                                                                  |
-
+| Function | Notes |
+| :--- | :--- |
+| Gain | Manual (ISO) and AUTO |
+| Exposure | Manual or AUTO shutter |
+| White balance | Variable color temperature in K |
+| Focus | Manual and AUTO |
+| Zoom | |
 
 ## Configuration
 
-<img alt="Haivision MoJoPro Camera" src="/img/Integrations/Haivision/Haivision-Mojopro-camera.png" width="30%" />
+![Haivision MoJoPro camera settings](/img/Integrations/Haivision/Haivision-Mojopro-camera.png)
 
-- When adding a camera, select the model **Haivision - MoJoPro**.
-- Enter the IP address of the StreamHub (not the phone) in the IP Address field. Make sure the RCP is assigned an IP address within the same network range as the StreamHub.
-- In the Port field, enter `8896`. This is the REST API port used by the StreamHub.
-- Set the input number of the StreamHub to which the MoJoPro is connected (1 to 16) inthe MoJoPro app the Login field
-- Enter the `api_key` from StreamHub into the Password field in MoJoPro. You can find the API key in the StreamHub web interface by navigating to **Admin > Rest API doc** (look in the top right corner). For detailed instructions, see the [StreamHub User Guide](https://doc.haivision.com/StreamHub/latest/user-menu).
+1. When adding a camera, select the model **Haivision - MoJoPro**.
+2. In the **IP Address** field, enter the IP address of the StreamHub — not the phone. Ensure the RCP is on the same network subnet as the StreamHub.
+3. In the **Port** field, enter `8896` — this is the StreamHub REST API port.
+4. In the **Login** field, enter the StreamHub input number (1–16) to which the MoJoPro is connected.
+5. In the **Password** field, enter the `api_key` from StreamHub. Find the API key in the StreamHub web interface under **Admin > Rest API doc** (top-right corner). See the [StreamHub User Guide](https://doc.haivision.com/StreamHub/latest/user-menu) for details.
