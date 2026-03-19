@@ -175,11 +175,10 @@ Check your device's current license in the web interface:
 ### Applying a new license
 
 To apply a purchased license:
-1. Obtain the license file from Cyanview
+1. Obtain the license update from Cyanview
 2. Open the device's web UI
-3. Navigate to **System > License**
-4. Upload the license file
-5. Restart the device if prompted
+3. Navigate to **System > License** to verify
+4. Restart the device if still not updated
 
 Contact [Cyanview support](mailto:support@cyanview.com) for license purchases or upgrade questions.
 
