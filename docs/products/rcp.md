@@ -11,6 +11,8 @@ slug: /products/rcp
 
 The RCP gives you full camera paint control from a tablet, computer, or touchscreen. Whether you are shading two cameras in a studio or managing 128 across a global REMI production, the RCP scales to your needs.
 
+![Cyanview RCP-J Remote Control Panel](/img/productGfx/RCP/rcp-3d-illustration.png)
+
 ## Key features
 
 - **Camera paint control** — Iris, gain, shutter, color matrix, black level, knee, gamma, and detail

@@ -1,4 +1,4 @@
-import React, {useEffect, useCallback, useRef} from 'react';
+import React, {useEffect} from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 
@@ -78,13 +78,6 @@ const IconMail = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
     <polyline points="22,6 12,13 2,6" />
-  </svg>
-);
-
-const IconSearch = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="11" cy="11" r="8" />
-    <line x1="21" y1="21" x2="16.65" y2="16.65" />
   </svg>
 );
 
@@ -208,48 +201,6 @@ const products = [
 ];
 
 /* ───────────────────────────────────────────
-   Hero Search Component
-   ─────────────────────────────────────────── */
-
-function HeroSearch() {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const isMac = typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.userAgent);
-
-  const triggerSearch = useCallback(() => {
-    const searchButton = document.querySelector(
-      '.navbar__search-button, .DocSearch-Button, [class*="searchBar"] button, [class*="searchBar"] input'
-    ) as HTMLElement;
-    if (searchButton) {
-      inputRef.current?.blur();
-      searchButton.click();
-      return;
-    }
-    document.dispatchEvent(new KeyboardEvent('keydown', {key: 'k', ctrlKey: !isMac, metaKey: isMac}));
-  }, [isMac]);
-
-  const handleSubmit = useCallback((e: React.FormEvent) => {
-    e.preventDefault();
-    triggerSearch();
-  }, [triggerSearch]);
-
-  return (
-    <form className="sp-hero__search" onSubmit={handleSubmit} role="search">
-      <span className="sp-hero__search-icon"><IconSearch /></span>
-      <input
-        ref={inputRef}
-        type="search"
-        className="sp-hero__search-input"
-        placeholder="Search documentation..."
-        aria-label="Search documentation"
-        onClick={triggerSearch}
-        readOnly
-      />
-      <kbd className="sp-hero__search-kbd">{isMac ? '\u2318 K' : 'Ctrl K'}</kbd>
-    </form>
-  );
-}
-
-/* ───────────────────────────────────────────
    Scroll Reveal Hook
    ─────────────────────────────────────────── */
 
@@ -353,19 +304,25 @@ export default function Home(): React.JSX.Element {
     >
       {/* ── Hero ── */}
       <header className="sp-hero">
-        <div className="sp-hero__bg" />
         <div className="sp-hero__grid-lines" />
-
-        <div className="sp-hero__inner">
-          <p className="sp-hero__eyebrow">Cyanview Support Center</p>
-          <h1 className="sp-hero__title">
-            How can we <span className="sp-hero__title-accent">help you</span>?
-          </h1>
-          <p className="sp-hero__subtitle">
-            Find answers, download firmware, troubleshoot issues,
-            or connect with our support team.
-          </p>
-          <HeroSearch />
+        <div className="sp-hero__layout">
+          <div className="sp-hero__illustration">
+            <img
+              src="/img/new/RCP_WH.png"
+              alt="Cyanview RCP-J Remote Control Panel"
+              className="sp-hero__product-img"
+            />
+          </div>
+          <div className="sp-hero__inner">
+            <p className="sp-hero__eyebrow">Cyanview Support Center</p>
+            <h1 className="sp-hero__title">
+              How can we <span className="sp-hero__title-accent">help you</span>?
+            </h1>
+            <p className="sp-hero__subtitle">
+              Find answers, download firmware, troubleshoot issues,
+              or connect with our support team.
+            </p>
+          </div>
         </div>
       </header>
 
