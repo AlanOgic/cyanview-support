@@ -11,7 +11,7 @@ Pronounce [rɪəʊ lɪv]. The RIO +LAN combines the serial ports, display, and b
 
 Unlike the CI0 (a slave device), the RIO +LAN operates independently: unplug the RCP and the camera and lens remain controlled. The RCP–RIO +LAN link is also more robust on unreliable networks like WiFi, and configuration works differently — you configure on the RIO web UI and then import into the RCP.
 
-![RIO +LAN device](/img/Manual/RIO/rio-live.jpeg)
+![RIO +LAN device](/img/Manual/RIO/rio-live.png)
 
 ## Power supply
 

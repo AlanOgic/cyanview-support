@@ -1212,3 +1212,73 @@ html:not(.js-loaded) .reveal {
     animation: none !important;
   }
 }
+
+/* ============================================
+   Scrub Video Component
+   ============================================ */
+
+.scrub-video {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  margin: 1.5rem 0;
+  background: #0a0a0a;
+}
+
+.scrub-video:active {
+  cursor: grabbing;
+}
+
+.scrub-video__player {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.scrub-video__track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  transition: height 0.2s ease;
+}
+
+.scrub-video:hover .scrub-video__track,
+.scrub-video:active .scrub-video__track {
+  height: 6px;
+}
+
+.scrub-video__fill {
+  height: 100%;
+  background: var(--cy-accent, #3b82f6);
+  border-radius: 0 3px 3px 0;
+  transition: width 0.05s linear;
+}
+
+.scrub-video__hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  background: rgba(0, 0, 0, 0.35);
+  animation: scrub-hint-pulse 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes scrub-hint-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
