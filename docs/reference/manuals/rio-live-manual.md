@@ -9,9 +9,9 @@ slug: /reference/manuals/rio-live-manual
 
 Pronounce [rɪəʊ lɪv]. The RIO +LAN combines the serial ports, display, and buttons of a CI0 with the full protocol stack and web UI of an RCP. It is a standalone device for lens control, USB cameras (mirrorless, etc.), WiFi LAN control, and Polecam setups — linkable to an RCP for remote shading.
 
-Unlike the CI0 (a slave device), the RIO +LAN operates independently: unplug the RCP and the camera and lens remain controlled. The RCP–RIO +LAN link is also more robust on unreliable networks like WiFi, and configuration works differently — you configure on the RIO web UI and then import into the RCP.
-
 ![RIO +LAN device](/img/Manual/RIO/rio-live.png)
+
+Unlike the CI0 (a slave device), the RIO +LAN operates independently: unplug the RCP and the camera and lens remain controlled. The RCP–RIO +LAN link is also more robust on unreliable networks like WiFi, and configuration works differently — you configure on the RIO web UI and then import into the RCP.
 
 ## Power supply
 
