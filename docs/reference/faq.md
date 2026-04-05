@@ -62,17 +62,10 @@ Use the discovery page as a quick sanity check whenever you add or move a device
 
 ## What is the RCP dashboard?
 
-The dashboard is an extended monitoring page for the RCP. Access it at:
+The RCP provides two dashboard interfaces:
 
-```
-http://[RCP-IP-or-hostname]:5000
-```
-
-From the dashboard you can:
-
-- Check RCP health — memory usage, temperature, and more
-- Run a ping to test network reachability
-- Use the built-in MQTT client interface
+- **Multi-cam dashboard** — monitor and control all your cameras from a single web app at `http://[device-ip]:4000`. See the [Multi-cam dashboard manual](/docs/reference/manuals/rcp/multi-cam-dashboard) for setup and usage.
+- **RCP status dashboard** — an extended monitoring page at `http://[device-ip]:5000` where you can check RCP health (memory, temperature), run network pings, and use the built-in MQTT client.
 
 ## Can I connect an external tally light to the CI0?
 

@@ -11,6 +11,8 @@ slug: /products/nio
 
 The NIO is a network-based I/O device that gives you 16 GPIO channels for tally and control signals. Send tally over Ethernet, WiFi, or 4G — no dedicated cabling required.
 
+![NIO — Network I/O](/img/productGfx/nio.jpg)
+
 ## Key features
 
 - **16 GPIO channels** — Flexible tally input and output

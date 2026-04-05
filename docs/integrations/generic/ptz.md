@@ -74,7 +74,7 @@ For a full list of parameters, check whether your model has a dedicated integrat
 
 ## Wiring
 
-Compatible Cyanview devices: RCP, RIO, RIO Live.
+Compatible Cyanview devices: RCP, RIO +WAN, RIO +LAN.
 
 If your RCP/RIO does not have an IP address in the same range as the camera, add one in the LAN section by following the [IP configuration guide](/docs/guides/networking/ip-configuration).
 

@@ -53,7 +53,7 @@ Quick reference for broadcast and camera control terms used throughout the Cyanv
 | **RCP** | Remote Control Panel. Cyanview's software-based camera paint controller. Runs on tablets, computers, or touchscreens. |
 | **RIO** | Remote I/O. Cyanview's hardware gateway for camera and lens connections. Maintains autonomous control even when network drops. |
 | **RIO +WAN** | RIO with full license. Supports LAN and WAN connectivity, Cyanview cloud, and REMI remote production. |
-| **RIO +LAN** | RIO with LAN-only license (formerly RIO +LAN). Local production companion for 1-2 cameras, no cloud or REMI. |
+| **RIO +LAN** | RIO with LAN-only license (formerly RIO Live). Local production companion for 1-2 cameras, no cloud or REMI. |
 | **CI0** | Camera Interface Zero. Cyanview's compact serial-to-IP converter. Stateless — loses control if network drops. |
 | **CI0BM** | CI0 with integrated Blackmagic SDI control board (RSBM). |
 | **VP4** | Video Processor 4. Cyanview's 4-channel video processor for color correction and CCU control. |

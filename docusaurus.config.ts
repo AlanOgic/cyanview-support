@@ -142,6 +142,7 @@ const config: Config = {
           {from: '/docs/Accessories/CableCatalog', to: '/docs/resources/cable-catalog'},
           {from: '/docs/DrawIOSymbols', to: '/docs/resources/draw-io-symbols'},
           {from: '/docs/my-first-cyanview', to: '/docs/getting-started/my-first-cyanview'},
+          {from: '/docs/Manuals/multi-cam-dashboard', to: '/docs/reference/manuals/rcp/multi-cam-dashboard'},
         ],
       },
     ],

@@ -39,13 +39,13 @@ Required cables:
 | Device | Use case |
 |--------|----------|
 | CI0 | Local (LAN) |
-| RIO Live | Local (LAN) with resilient lens control |
-| RIO | Remote control (internet), multi-camera |
+| RIO +LAN | Local (LAN) with resilient lens control |
+| RIO +WAN | Remote control (internet), multi-camera, cloud |
 
 :::note
 * **CI0** acts as a serial/IP converter. If the link between RCP and CI0 is broken or unstable, the lens loses control and the iris closes or resets.
-* **RIO Live** runs all protocols onboard. If the link to the RCP drops, the lens remains controlled by the RIO Live.
-* **RIO** offers the same resilience as RIO Live, with added multi-camera support and cloud connectivity.
+* **RIO +LAN** runs all protocols onboard. If the link to the RCP drops, the lens remains controlled by the RIO +LAN.
+* **RIO +WAN** offers the same resilience as RIO +LAN, with added multi-camera support and cloud connectivity.
 :::
 
 ## Controls

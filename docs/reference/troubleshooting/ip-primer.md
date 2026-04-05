@@ -95,7 +95,7 @@ A typical internet connection includes IP, mask, gateway, and DNS. Example:
 - **Default gateway**: `192.168.1.1` (your home router)
 - **DNS servers**: addresses of servers that resolve domain names
 
-In practice, this configuration appears in production when controlling a camera over cellular on a RIO. The gateway is the exit point for any traffic outside your local subnet. Without it, the device can only communicate locally. Without DNS, the device cannot reach services like `remi.cyanview.com` or `support.cyanview.com`.
+In practice, this configuration appears in production when controlling a camera over cellular on a RIO +WAN. The gateway is the exit point for any traffic outside your local subnet. Without it, the device can only communicate locally. Without DNS, the device cannot reach services like `remi.cyanview.com` or `support.cyanview.com`.
 
 Use Google's public DNS servers (`8.8.8.8` and `8.8.4.4`) if you have internet access but no local DNS server.
 

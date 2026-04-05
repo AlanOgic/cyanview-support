@@ -11,6 +11,8 @@ slug: /products/ci0
 
 The CI0 is a compact serial-to-IP converter that connects cameras directly to your RCP. It is the most affordable way to add serial cameras to your Cyanview system.
 
+![CI0 — Camera Interface](/img/productGfx/ci0.png)
+
 ## Key features
 
 - **Compact form factor** — Small enough to mount directly on a camera rig

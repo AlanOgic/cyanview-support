@@ -230,6 +230,7 @@ const sidebars: SidebarsConfig = {
                 'reference/manuals/rcp/controls',
               ],
             },
+            'reference/manuals/rcp/multi-cam-dashboard',
             'reference/manuals/ci0/ci0-manual',
             'reference/manuals/rio-manual',
             'reference/manuals/rio-live-manual',

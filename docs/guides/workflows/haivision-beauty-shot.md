@@ -7,17 +7,17 @@ keywords: [Haivision, beauty shot, automated, fixed camera]
 slug: /guides/workflows/haivision-beauty-shot
 ---
 
-This guide walks through a Panasonic Varicam beauty shot setup using the Haivision DataBridge to tunnel REMI between RIO and RCP.
+This guide walks through a Panasonic Varicam beauty shot setup using the Haivision DataBridge to tunnel REMI between RIO +WAN and RCP.
 
 ![Haivision Aviwest Cyanview RCP RIO Panasonic Varicam](/img/Integrations/Haivision/Haivision-Panasonic-Varicam.jpeg)
 
 ## Wiring
 
-The RIO connects to:
+The RIO +WAN connects to:
 - The Haivision DataBridge using the onboard Ethernet port
-- The Panasonic Varicam using a USB-Ethernet dongle on the RIO USB port (the RIO has only one onboard RJ45 port)
+- The Panasonic Varicam using a USB-Ethernet dongle on the RIO +WAN USB port (the RIO has only one onboard RJ45 port)
 
-RIO and RCP communicate via [REMI](/docs/guides/networking/remi) tunneled through the [Haivision DataBridge](/docs/integrations/broadcast-systems/haivision-data-bridge).
+RIO +WAN and RCP communicate via [REMI](/docs/guides/networking/remi) tunneled through the [Haivision DataBridge](/docs/integrations/broadcast-systems/haivision-data-bridge).
 
 ![Haivision Panasonic Varicam wiring diagram](/img/Workflows/Haivision-Panasonic-Varicam-wiring.png)
 
@@ -26,17 +26,17 @@ RIO and RCP communicate via [REMI](/docs/guides/networking/remi) tunneled throug
 Before starting, confirm:
 - Your encoder and decoder are properly set up.
 - The `Data Hot Spot` licence is activated on your decoder.
-- You have the LAN port and LAN IP of your encoder (for the RIO static WAN configuration).
+- You have the LAN port and LAN IP of your encoder (for the RIO +WAN static WAN configuration).
 - You have the LAN port and LAN IP of your decoder (for the RCP static WAN configuration).
 - Your Panasonic Varicam IP is `10.193.1.2` with netmask `255.255.0.0`.
 
 Follow the [Haivision integration guide](/docs/integrations/broadcast-systems/haivision-data-bridge) for full encoder/decoder setup.
 
-### RIO, camera, and encoder side
+### RIO +WAN, camera, and encoder side
 
-First, configure a static LAN IP on the RIO to communicate with the camera.
+First, configure a static LAN IP on the RIO +WAN to communicate with the camera.
 
-In the RIO web UI, click `IP Connections`:
+In the RIO +WAN web UI, click `IP Connections`:
 
 ![RIO IP connections block](/img/Workflows/Haivision-RIO-IP-block.png)
 
@@ -45,7 +45,7 @@ Add a new static IP: `10.193.1.1/16`:
 ![RIO static LAN IP setup](/img/Workflows/Haivision-RIO-static-LAN.png)
 
 :::note
-In this example, the RIO shows two connections:
+In this example, the RIO +WAN shows two connections:
 - `LAN1` — the onboard RJ45 port
 - `USBLAN_8cae4ce9c681` — the USB-Ethernet dongle
 
@@ -64,14 +64,14 @@ Your camera block should look like this:
 ![RIO Varicam camera block](/img/Workflows/Haivision-RIO-cam-block.png)
 
 :::note
-Make sure the Varicam is connected to the USB-Ethernet dongle on the RIO. In this example, the `10.193.1.1/16` static IP was configured on the USB dongle — not on `LAN1`.
+Make sure the Varicam is connected to the USB-Ethernet dongle on the RIO +WAN. In this example, the `10.193.1.1/16` static IP was configured on the USB dongle — not on `LAN1`.
 :::
 
-Now configure REMI. In the web UI, open the REMI tab and add a new tag (here `flypackNY`):
+Now configure REMI on the RIO +WAN. In the web UI, open the REMI tab and add a new tag (here `flypackNY`):
 
 ![RIO REMI tag setup](/img/Workflows/Haivision-RIO-remi.png)
 
-Finally, connect the RIO to the Haivision DataBridge. In the WAN section, configure `LAN1` as a static interface:
+Finally, connect the RIO +WAN to the Haivision DataBridge. In the WAN section, configure `LAN1` as a static interface:
 - `Interface`: `LAN1`
 - `Mode`: Static
 - `IP Address`: `192.168.10.2`
@@ -94,19 +94,19 @@ First, connect the RCP to the Haivision DataBridge. In the WAN section, configur
 
 ![Haivision RCP static WAN setup](/img/Integrations/Haivision/Haivision-RCP-WAN.png)
 
-Next, add the same REMI tag as the RIO (here `flypackNY`):
+Next, add the same REMI tag as the RIO +WAN (here `flypackNY`):
 
 ![RCP REMI tag setup](/img/Workflows/Haivision-RIO-remi.png)
 
 :::note
-RIO and RCP can each have multiple tags — they link whenever they share at least one. The cloud icon in the top-right may appear red here, indicating the RCP is not connected to the REMI cloud server. That's expected: with a direct DataBridge tunnel between RCP and RIO, the cloud server isn't needed.
+RIO +WAN and RCP can each have multiple tags — they link whenever they share at least one. The cloud icon in the top-right may appear red here, indicating the RCP is not connected to the REMI cloud server. That's expected: with a direct DataBridge tunnel between RCP and RIO +WAN, the cloud server isn't needed.
 :::
 
-After adding the tag, your RIO appears in the REMI list with the camera below it:
+After adding the tag, your RIO +WAN appears in the REMI list with the camera below it:
 
 ![RCP REMI device list](/img/Workflows/Haivision-RCP-remi.png)
 
-Check the box next to your camera to import it from the RIO to the RCP.
+Check the box next to your camera to import it from the RIO +WAN to the RCP.
 
 Back in the `Configuration` tab, you should see your imported camera:
 
@@ -117,11 +117,11 @@ If the camera appears red in your configuration, one of two things is wrong:
 - The DataBridge is down (encoder or decoder offline or disconnected)
 - The camera is disconnected (e.g., changing battery)
 
-To distinguish between the two, check the RIO/RCP link status in the REMI tab — it should be green if the DataBridge is healthy.
+To distinguish between the two, check the RIO +WAN/RCP link status in the REMI tab — it should be green if the DataBridge is healthy.
 :::
 
 ### Tips
 
-- Once you've imported your camera from the RIO to the RCP, you can freely rename or renumber it on either side.
-- You can update the camera on the RIO (name, number, model, etc.) — the link persists until you explicitly remove the camera on one side.
-- Once the DataBridge is active and the static WAN IPs are set, you can access the RIO web UI directly from the RCP web UI. This lets you link RIO and RCP first, then configure the camera remotely in a second step. See the [REMI guide](/docs/guides/networking/remi#step-3-access-the-remote-web-ui) for details.
+- Once you've imported your camera from the RIO +WAN to the RCP, you can freely rename or renumber it on either side.
+- You can update the camera on the RIO +WAN (name, number, model, etc.) — the link persists until you explicitly remove the camera on one side.
+- Once the DataBridge is active and the static WAN IPs are set, you can access the RIO +WAN web UI directly from the RCP web UI. This lets you link RIO +WAN and RCP first, then configure the camera remotely in a second step. See the [REMI guide](/docs/guides/networking/remi#step-3-access-the-remote-web-ui) for details.

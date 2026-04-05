@@ -39,7 +39,7 @@ Path: `MENU > LENS`
 
 ![Lens control and enable settings](/img/Manual/RCP/Lens/F2.BMP)
 
-This page applies only to external lenses (e.g., a Canon PL lens on an FX9 controlled via RIO + LAN):
+This page applies only to external lenses (e.g., a Canon PL lens on an FX9 controlled via RIO +LAN):
 - Control is exclusive — if the RIO takes control, the cameraman loses it.
 - **Iris** — usually enabled, as it is the primary RCP use case.
 - **Zoom** — usually disabled to let the cameraman zoom. Enable for robotic or beauty shot applications.
