@@ -295,7 +295,7 @@ const config: Config = {
       maxHeadingLevel: 4,
     },
     zoom: {
-      selector: '.markdown img',
+      selector: '.markdown img:not(.products-grid img)',
       background: {
         light: 'rgb(255, 255, 255)',
         dark: 'rgb(50, 50, 50)',

@@ -9,6 +9,8 @@ slug: /products/vp4
 
 The VP4 is a 4-channel video processor for real-time color correction and CCU control in multi-camera setups. It processes up to four video feeds simultaneously at broadcast-grade quality and integrates with your RCP for unified control.
 
+![VP4 — Video Processor](/img/productGfx/VP4/vp4-hero.png)
+
 ## Key features
 
 - **4 video channels** — Process four camera feeds simultaneously

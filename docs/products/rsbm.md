@@ -11,6 +11,8 @@ slug: /products/rsbm
 
 The RSBM is an SDI control injection board designed for Blackmagic cameras. It enables full camera control over the SDI connection, giving you paint, iris, and shutter control on Blackmagic cameras that support SDI camera control protocol.
 
+![RSBM — SDI Control Board](/img/productGfx/RSBM/bm-wh.jpg)
+
 ## Key features
 
 - **SDI control injection** — Send camera control commands over the SDI feed

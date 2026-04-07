@@ -15,7 +15,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Products',
-      link: {type: 'generated-index', title: 'Cyanview products', slug: '/products'},
+      link: {type: 'doc', id: 'products/index'},
       items: [
         'products/rcp',
         'products/rio',

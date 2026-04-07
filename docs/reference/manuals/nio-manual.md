@@ -9,7 +9,7 @@ slug: /reference/manuals/nio-manual
 
 The NIO provides 16 GPIO over ethernet. Add multiple NIO units to your setup if you need more GPIO capacity.
 
-![NIO device](/img/Manual/NIO/NIO.png)
+![NIO device](/img/Manual/NIO/nio-fac-wh.png)
 
 ## Wiring
 
