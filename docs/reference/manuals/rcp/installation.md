@@ -48,6 +48,14 @@ The DC power connector is a [Switchcraft 762K](http://www.switchcraft.com/Produc
 
 ![Switchcraft 762K pinout](/img/3Parties/Switchraft-762K-pinout@2x-8.png)
 
+## Networking the RCP
+
+The RCP Ethernet port is **10/100 Mbit/s** (Fast Ethernet). It also provides **PoE (802.3af)** power over the RJ45 connection.
+
+:::warning
+If the RCP does not link up when connected to a switch or media converter, verify that the device supports **10/100 Mbit/s**. Some equipment only supports **1 Gbit/s** and will not establish a link with a 10/100 port. This is especially common with certain media converters.
+:::
+
 ## RCP configuration
 
 Configure and manage your RCP through the **[Configuration Web UI](/docs/reference/manuals/rcp/web-ui)**.
@@ -57,6 +65,30 @@ Configure and manage your RCP through the **[Configuration Web UI](/docs/referen
 Keep your RCP on the latest firmware. See the [update guide](/docs/reference/product-update) for instructions.
 
 ## Troubleshooting
+
+### RCP not detected on the network
+
+1. If the touchscreen stays on the **Connecting...** screen, this typically indicates a configuration issue rather than a network problem. A common cause is the RCP entry being removed from the Controllers section in the Web UI. See [Configuration Web UI: Controllers](/docs/reference/manuals/rcp/web-ui#configuration) and add the RCP entry back (or reset the configuration to restore the default controller entries).
+
+   ![RCP entry in Controllers section](/img/Configuration/configuration-tab/rcp-entry-in-controllers.png)
+
+2. If the touchscreen displays the camera list and live values after booting, internal networking is working via the factory `10.192.0.0/16` network. You should be able to ping the RCP factory IP (`10.192.X.Y`, derived from the serial number) from a computer with a static IP in the same range. See [IP primer](/docs/reference/troubleshooting/ip-primer#default-ip-configuration-of-cyanview-devices-except-ci0).
+
+   If you cannot ping the RCP in this scenario, the Ethernet interface to the internal switch may be damaged. Contact support for an RMA — see [RMA procedure](/docs/reference/rma-procedure).
+
+   As a temporary workaround, plug a USB-Ethernet dongle into the RCP. It will be configured as **DHCP** by default, so on a DHCP-enabled network you can find its IP address in your DHCP server leases. See [USB dongles](/docs/guides/networking/ip-configuration#usb-dongles).
+
+### Test mode (hardware check)
+
+Use this procedure to enter the hardware check menu and verify each physical button and encoder:
+
+1. Press **LOCK** to open the **POWER** menu (or navigate to **MENU > SYSTEM > POWER**).
+2. Press **SCREEN OFF**. The panel switches off, with only the **LOCK** button remaining lit.
+3. Press and hold **MENU**, then press **LOCK**. The hardware check menu opens.
+
+In this menu you can test all encoders, buttons, and the touchscreen.
+
+To exit, press the **LOCK** button and release it after the beep stops.
 
 ### Force upgrade
 

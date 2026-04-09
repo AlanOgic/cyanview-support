@@ -114,8 +114,12 @@ Hold the iris joystick shaft and press the PREVIEW button together to open the c
 Available settings:
 
 - **Joystick limits** — Clear limits, toggle ON/OFF (when ON the joystick is constrained to the defined range; when OFF it can go beyond with the spring), set MAX, set MIN.
-- **Black 1X / 2X** — At 2X the range is halved, giving higher precision. Toggled on each press.
+- ~~**Black 1X / 2X**~~ — This setting has moved to the RCP main screen. See [RCP Settings: Sensitivity](/docs/reference/manuals/rcp/ui/settings#sensitivity).
+- **Black Joystick sensitivity** — Sets the sensitivity of the black ring: x1, x2, or x4. Higher values halve the range for finer precision.
 - **Iris / ND / Shutter / Variable Gain** — Function assigned to the joystick lever. Default is Iris. For cameras with continuous ND filters, assign ND to control exposure with the joystick. Gain or ISO can be assigned if continuously variable.
+- **Joystick mode** — Relative or Absolute.
+  - **Relative** (default): Joystick movements produce a change proportional to the movement. The camera setting value is not directly linked to the physical joystick position.
+  - **Absolute**: The joystick position maps directly to the camera setting value. Better suited for single-camera workflows — switching between cameras and moving the joystick produces a jump.
 - **Cam Lock** — Locks the joystick to a specific camera. Select the camera on the RCP, then press **Cam Lock**. The camera number and a lock icon appear on the main screen.
 - **Gear icon** — Opens the technical menu.
 
@@ -137,3 +141,19 @@ To force the joystick into bootloader mode for a firmware update:
 When one RCP controls multiple cameras, the joystick operates on a relative basis to avoid sudden jumps. At the end of its range it can be pushed further with a spring effect for continuous adjustment, or repositioned by holding PREVIEW for a "free" mode. The main exposure and master black encoders provide quick multi-camera adjustments without the joystick.
 
 Using **Cam Lock** keeps the joystick locked to one camera while the upper RCP section switches between others. This "split-camera" mode is useful when one camera needs constant iris access while you shade other cameras.
+
+## Troubleshooting
+
+### Joystick does not power on
+
+If the joystick shows no signs of life (screen off, buttons unlit), this may indicate a hardware failure or a firmware issue. In rare cases, an automatic firmware update may fail and prevent a correct restart.
+
+To distinguish between hardware and firmware problems:
+
+1. Open the RCP.
+2. With the unit fully powered off, press the blue switch on the PCB.
+
+![Iris joystick hardware bootloader switch on PCB](/img/Manual/IJ/ij_hw_bootloader.jpg)
+
+3. While holding the switch, connect power and keep the switch pressed for 2 more seconds.
+4. Within 1 minute the joystick should power up. If it does not, this most likely indicates a hardware failure. Submit an [RMA request](/docs/reference/rma-procedure) in that case.

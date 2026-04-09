@@ -190,3 +190,17 @@ Install `arp-scan` via Homebrew on Mac (`brew install arp-scan`) or your Linux p
 ### All devices must be on the same network
 
 IP communication is bidirectional — both devices must have a valid IP address, matching subnet mask, and be on the same network. A common mistake is configuring a camera on the `10.192.0.0/16` network with a `/24` mask, placing it on a different subnet than the RCP. TCP communication will fail entirely. UDP communication may partially work — the camera may receive and respond to paint changes, but the RCP will receive nothing back.
+
+## FAQ
+
+### How do I change my computer IP address?
+
+To initially connect to a Cyanview device, your computer must use an IP address in the factory range `10.192.0.0/16`. This lets you reach the RCP or RIO configuration interface and add the IP address you want to assign to the device. After that, return your computer to its usual network settings and access the device using the new IP.
+
+**Windows:**
+- [How to assign a static IP address in Windows 10 or 11](https://www.howtogeek.com/19249/how-to-assign-a-static-ip-address-in-windows)
+- [Video: How to change your IP address in Windows 10/11](https://www.youtube.com/watch?v=VmgZ7xelq18)
+- [How to change the IP address on Windows 8.1](https://www.youtube.com/watch?v=FLWVezlELOA)
+
+**Mac:**
+- [Change TCP/IP settings on Mac](https://support.apple.com/en-gb/guide/mac-help/mh14129/mac)

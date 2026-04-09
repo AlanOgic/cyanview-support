@@ -7,6 +7,16 @@ keywords: [RCP, web UI, configuration, cameras, accessories]
 slug: /reference/manuals/rcp/web-ui
 ---
 
+:::warning Web UI not showing all data
+If the Web UI seems unresponsive, does not show camera configuration parameters, or displays errors in red at the bottom of the page, the browser may be showing a cached frontend that is not connected to the RCP backend.
+
+Do a hard refresh / cache reload:
+- **Chrome / Edge**: hold **Shift** and click the **Reload** icon, or press `Ctrl+F5` / `Ctrl+Shift+R` (Windows/Linux) or `Cmd+Shift+R` (Mac).
+- **Firefox**: press `Ctrl+F5` / `Ctrl+Shift+R` (Windows/Linux) or `Cmd+Shift+R` (Mac).
+
+If it still does not work, clear the cache for this site and reload the page.
+:::
+
 The **Configuration Web UI** is where you perform most RCP configuration and management. The Cyanview GWY also uses this interface.
 
 To open the UI, see [Access RCP Configuration Web UI](/docs/guides/networking/ip-configuration#find-your-devices-ip) in the **IP configuration** manual.
@@ -35,7 +45,15 @@ To add and configure a supported device, click the **+** button in the correspon
   <source src="/img/productGfx/config/cyanview-Serial-camera-configuration-web-gui-Add-CI0-RCP.mp4"/>
 </video>
 
-- **Controllers** — add multiple controllers for different operators. The number of controllers is limited by your licence.
+- **Controllers** — controller configuration depends on your setup:
+  - With the **CY-GWY**, this section lets you configure multiple operators (each can have one or more RCPs).
+  - On a **standalone RCP** (without CY-GWY), use this section to add other controllers linked to the RCP, such as a Stream Deck, USB PTZ joystick, or zoom/focus controllers.
+
+  :::warning
+  The **RCP** entry associates the physical panel (buttons, switches, touchscreen) with the main controlling application. Do not delete this entry — if removed, the touchscreen will stay on the **Connecting...** display. To fix this, re-select the RCP entry from the drop-down list.
+
+  ![RCP entry in Controllers section](/img/Configuration/configuration-tab/rcp-entry-in-controllers.png)
+  :::
 
 - **Components** — configure and manage video processors, routers, and switchers.
 

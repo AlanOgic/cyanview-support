@@ -1,40 +1,78 @@
 ---
 id: arri-cap
-title: "ARRI CAP integration"
-sidebar_label: "ARRI CAP"
-description: "Integrate ARRI Alexa cameras using the Camera Access Protocol (CAP) with Cyanview for IP-based remote paint and exposure control."
-keywords: [ARRI, CAP, Camera Access Protocol, Alexa, IP, remote, Cyanview]
+title: "ARRI CAP and Multicam integration"
+sidebar_label: "ARRI CAP & Multicam"
+description: "Integrate ARRI Alexa cameras using CAP and Multicam (Alexa 35 Live) with Cyanview for IP-based remote paint, exposure, and live production control."
+keywords: [ARRI, CAP, Multicam, Camera Access Protocol, Alexa, Alexa 35 Live, IP, remote, Cyanview]
 slug: /integrations/cameras/arri/arri-cap
 ---
 
-Control your ARRI Alexa cameras over IP using the Camera Access Protocol (CAP). This integration provides remote exposure, white balance, black balance, recording, and paint control from a Cyanview RCP.
+Control your ARRI Alexa cameras over IP using CAP (Camera Access Protocol) or Multicam mode for the Alexa 35 Live. This integration provides remote exposure, white balance, black balance, recording, and full paint control from a Cyanview RCP.
 
 ## Compatible models
 
+- ARRI Alexa 35 Live
+- ARRI Alexa 35
 - ARRI Alexa Mini
 - ARRI Alexa Mini LF
-- ARRI Alexa 35
 
 For the ARRI Amira, use the [ARRI SSCP integration](/docs/integrations/cameras/arri/arri-sscp) instead.
 
+:::note
+Alexa 35 Live software is still evolving. Keep camera software and RCP/RIO versions up to date.
+:::
+
 ## Available controls
 
-| Control | ARRI CAP |
-|:--------|:--------:|
-| **Exposure** (iris, ISO, shutter, ND filter) | ✔ |
-| **White balance** (R/B and color temp) | ✔ |
-| **Black balance** (R/B) | ✔ |
-| **REC** (start/stop and status) | ✔ |
-| **Other** (multi matrix, black gamma, knee, test/bars) | ✔ |
-| **Scene files** ([save/recall](/docs/reference/manuals/rcp/ui/scene)) | ✔ |
+The Alexa 35 Live can operate in **Multicam** mode (requires the Live option — hardware or software). When Multicam is active, all controls listed below are available.
+
+| Control | Notes | CAP | Multicam |
+|:--------|:------|:---:|:--------:|
+| **Iris** | T-stop | ✔ | ✔ |
+| **ND** | ND filter | ✔ | ✔ |
+| **Shutter** | Shutter time/angle | ✔ | ✔ |
+| **Gain / EI** | EI ISO list from camera | ✔ | ✔ |
+| **Gain mode** | Normal / Enhanced sensitivity | ✔ | ✔ |
+| **White balance** | Color temperature and tint | ✔ | ✔ |
+| **White gain** | White M+RGB | | ✔ |
+| **Auto white** | One-shot AWB | ✔ | ✔ |
+| **Black level** | Pedestal M+RGB | | ✔ |
+| **Black gamma** | M+RGB | | ✔ |
+| **Knee** | Knee point and slope | | ✔ |
+| **Cinema knee**\* | | | ✔ |
+| **Saturation** | Part of CDL | ✔ | ✔ |
+| **Color correction (multimatrix)** | 6 segments of HSL correction | | ✔ |
+| **Lift + CDL**\* | Lift, power, slope, offset — M+RGB | | ✔ |
+| **Audio gain** | 4 channels | ✔ | ✔ |
+| **Bars / Pattern** | Bars, black, RP198 | ✔ | ✔ |
+| **Tally** | Red only | ✔ | ✔ |
+| **Timecode** | Display recording or playback timecode | ✔ | ✔ |
+| **Record** | | ✔ | ✔ |
+| **Playback control** | Play, pause, speed, clip skip | ✔ | ✔ |
+| **Playback status** | Current clip, total clips | ✔ | ✔ |
+| **Look files**\* | List/add/install/delete/rename/load/save | ✔ | ✔ |
+| **Textures**\* | List/load/delete/upload | ✔ | ✔ |
+| **Lens tables**\* | List/upload/install/delete/load/unload | ✔ | ✔ |
+
+\* Available in the dashboard only.
 
 <img src="/img/Integrations/ARRI/RCP-alexa35/RCP-alexa35.gif" alt="ARRI Alexa 35 paint control on RCP" />
 
-## Wiring
+## Workflows
 
-Connect the camera and RCP over IP using a standard Ethernet connection:
+### Alexa 35 Live (Multicam)
+
+<img src="/img/Integrations/ARRI/arri-ccu.png" width="800" alt="ARRI Alexa 35 Live Multicam workflow" />
+
+When using the Live Production System **LPS-1**, the RCP communicates with the CCU over IP. Use the CCU IP address in the Cyanview configuration (not the camera head IP), and select model **Multicam**.
+
+When the Alexa 35 is used with the Live software option only (without the hardware package), the RCP connects directly to the camera head over IP. In this case as well, select **Multicam**.
+
+### Standard CAP workflow
 
 <img src="/img/Integrations/camera/ARRI/arri-wiring.png" width="800" alt="ARRI CAP Ethernet wiring diagram" />
+
+Without the Live system, compatible cameras are controlled through standard CAP commands. Select model **CAP** and connect the RCP directly to the camera over IP.
 
 ## Setup
 
@@ -82,6 +120,8 @@ Unlocking a look is optional but limits your control:
 - **With an unlocked look** — you get full paint access including R/B gains, blacks, and all shading parameters
 
 If you already have an unlocked look, skip this step.
+
+For Multicam mode, also enable the Multicam menus/options on the camera and ensure a compatible look is loaded for paint controls.
 :::
 
 ### Configure the RCP
@@ -90,14 +130,30 @@ Add and configure the camera in the [RCP web UI](/docs/reference/manuals/rcp/web
 
 1. Click **+** in the camera block. A new panel appears on the right.
 2. In **General**, set a number and a name for the camera.
-3. Select **ARRI** as the brand and **CAP** as the model.
-4. Enter the **IP** of your camera.
+3. Select **ARRI** as the brand and the model according to your workflow:
+   - **Multicam** for Alexa 35 Live workflows
+   - **CAP** for standard CAP workflows
+4. Enter the target **IP**:
+   - CCU IP for LPS-1 workflows
+   - Camera IP for standard CAP workflows
 
 <img src="/img/Integrations/camera/ARRI/arri-cap-setup.png" width="300" alt="ARRI CAP RCP configuration" />
 
 When the connection succeeds, the camera block turns green:
 
 <img src="/img/Integrations/camera/ARRI/arri-cap-block.png" width="300" alt="ARRI CAP connected status" />
+
+:::tip
+If cforce motors or a servo lens are connected directly to the camera, do not enable external lens control on the RCP — otherwise camera-driven iris control is replaced.
+:::
+
+## Dashboard controls
+
+<img src="/img/Integrations/ARRI/arri-dashboard-controls.png" width="300" alt="ARRI Multicam dashboard controls" />
+
+Some controls in the table above are marked as *dashboard-only*. These are not available from the RCP UI and must be operated from the dashboard on a second screen.
+
+For details, see the [Multi-Cam Dashboard guide](/docs/reference/manuals/rcp/multi-cam-dashboard).
 
 ## Going further
 
@@ -134,6 +190,10 @@ Follow these steps in order:
 6. Configure the ARRI/CAP camera on the RCP
 
 At this point, the motor should blink red/green as if disconnected. Move the iris knob on the RCP so the camera takes control of the motor.
+
+If another remote or the camera takes over iris control, you must resend the iris control request (part of initialization). Do this from the RCP: **SCENES > S.FILES > ACTIONS > Sync Camera**.
+
+<img src="/img/Manual/RCP/Scenes/RCP-menu-scene-quick-actions.BMP" width="300" alt="RCP Sync Camera menu" />
 
 ### Camera block stays red
 

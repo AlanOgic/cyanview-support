@@ -18,6 +18,10 @@ Cyanview controls Canon cinema cameras using the Remote A protocol over a 2.1 mm
 - C300 Mk I and Mk II
 - C500 Mk I
 - C700
+- XF200
+- XF205
+- XF300
+- XF305
 - XF705
 
 :::tip

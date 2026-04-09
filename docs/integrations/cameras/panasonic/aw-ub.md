@@ -44,8 +44,8 @@ The camera connects over IP using the same protocol as Panasonic controllers. Re
 
 ## Configuration
 
-:::warning
-Use the credentials assigned by **EasyIP SetupTool** — not the login and password configured directly on the camera, which are for Lumix Tether.
+:::info
+IP control does not require credentials by default.
 :::
 
-Set the camera credentials using either **EasyIP SetupTool Plus** or **Media Production Suite**, then enter those same credentials in the RCP configuration.
+If you have configured authentication on the camera, use the credentials assigned by **EasyIP SetupTool Plus** or **Media Production Suite** — not the login and password configured directly on the camera, which are for Lumix Tether.

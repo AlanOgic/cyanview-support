@@ -14,15 +14,18 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Products',
+      label: 'Products & licensing',
       link: {type: 'doc', id: 'products/index'},
       items: [
+        'products/which-product',
         'products/rcp',
         'products/rio',
         'products/ci0',
         'products/vp4',
         'products/nio',
         'products/rsbm',
+        'guides/licensing',
+        'products/system-examples',
       ],
     },
     {
@@ -59,7 +62,6 @@ const sidebars: SidebarsConfig = {
             'guides/preview/preview',
           ],
         },
-        'guides/licensing',
         'guides/remote-support',
         {
           type: 'category',
@@ -238,6 +240,7 @@ const sidebars: SidebarsConfig = {
             'reference/manuals/nio-manual',
             'reference/manuals/tally-light-manual',
             'reference/manuals/iris-joystick',
+            'reference/manuals/cyan-camera',
           ],
         },
         {

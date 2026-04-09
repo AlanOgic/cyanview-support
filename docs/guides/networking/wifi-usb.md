@@ -30,12 +30,15 @@ Look for dongles using one of these supported drivers:
 - TRENDnet TEW-808UBM
 - ZYXEL NWD6602
 
-**RTL8811CU, RTL8821CU** (AC600 and AC650 adapters):
+**RTL8811, RTL8812, RTL8821** (AC600 and AC650 adapters):
 - UGREEN AC650
 - Many unbranded devices (usually list the IC)
 
 **RTL8192EU** (N300 adapters):
 - TP-Link TL-WN823N
+
+**RTL8822CU** (WiFi 5):
+- D-Link AC13U
 
 ## Setup
 

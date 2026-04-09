@@ -41,6 +41,7 @@ Supported models:
 - C500 Mk2
 - [XF605](/docs/integrations/cameras/canon/canon-xf605)
 - C70 — requires a firmware update
+- C50 — requires DC Coupler DR-E6P for power
 
 ## Remote-A 2.5mm TRS
 

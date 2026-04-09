@@ -15,7 +15,7 @@ Cyanview controls Canon CR-N and CR-X PTZ cameras over IP using the XC protocol.
 - CR-N300
 - CR-N500
 - CR-N700
-- CR-X300 — uses the CR-N300 protocol
+- CR-X300
 
 :::note
 The CR-X500 is not an IP camera and cannot be controlled using the XC protocol. It has partial RS-422 support, but demand is very low and no cable is provided for this model.
@@ -29,18 +29,23 @@ The CR-X500 is not an IP camera and cannot be controlled using the XC protocol. 
 
 The RCP controls nearly every camera setting. The XC protocol covers all parameters visible in the camera web interface.
 
-| Control | CR-N300 | CR-N500 | CR-N700 |
-| :--- | :--- | :--- | :--- |
-| **Exposure** (iris, gain, shutter, ND filter) — manual and auto | ✔ | ✔ | ✔ |
-| **White balance** (R/B and color temp) | ✔ | ✔ | ✔ |
-| **Black balance** (R/B, master black, black gamma) | ✔ | ✔ | ✔ |
-| **Other color settings** (detail, knee, saturation, gamma, color space, denoise) | ✔ | ✔ | ✔ |
-| **OETF and color space selection** | ✔ | ✔ | ✔ |
-| **Red and green tally** | ✔ | ✔ | ✔ |
-| **OSD/Menu** | ✔ | ✔ | ✔ |
-| **Pan/tilt** ([from RCP touchscreen](/docs/reference/manuals/rcp/ui/scene) or [USB joystick](/docs/integrations/accessories/anxinshi-ptz-usb-joystick)) | ✔ | ✔ | ✔ |
-| **Lens** ([zoom, focus](/docs/reference/manuals/rcp/ui/scene)) | ✔ | ✔ | ✔ |
-| **Scene files** ([save/recall](/docs/reference/manuals/rcp/ui/scene)) | ✔ | ✔ | ✔ |
+| Control | CR-N300 | CR-X300 | CR-N500 | CR-N700 |
+| :--- | :--- | :--- | :--- | :--- |
+| **Exposure** (iris, gain, shutter, ND filter) — manual and auto | ✔ | ✔ | ✔ | ✔ |
+| **White balance** (R/B and color temp) | ✔ | ✔ | ✔ | ✔ |
+| **Black balance** (R/B, master black, black gamma) | ✔ | ✔ | ✔ | ✔ |
+| **Other color settings** (detail, knee, saturation, gamma, color space, denoise) | ✔ | ✔ | ✔ | ✔ |
+| **OETF and color space selection** | ✔ | ✔ | ✔ | ✔ |
+| **Red and green tally** | ✔ | ✔ | ✔ | ✔ |
+| **OSD/Menu** | ✔ | ✔ | ✔ | ✔ |
+| **Pan/tilt** ([from RCP touchscreen](/docs/reference/manuals/rcp/ui/scene) or [USB joystick](/docs/integrations/accessories/anxinshi-ptz-usb-joystick)) | ✔ | ✔ | ✔ | ✔ |
+| **Lens** ([zoom, focus](/docs/reference/manuals/rcp/ui/scene)) | ✔ | ✔ | ✔ | ✔ |
+| **Scene files** ([save/recall](/docs/reference/manuals/rcp/ui/scene)) | ✔ | ✔ | ✔ | ✔ |
+| **Outdoor** (wiper, washer) | | ✔ | | |
+
+:::note
+Outdoor features (wiper, washer) are available in the `CUSTOM 1` menu: **CAMERA > CUSTOM > CUSTOM 1**.
+:::
 
 ## Camera configuration
 

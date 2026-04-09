@@ -123,3 +123,7 @@ An incompatible dongle can crash the FX6 and prevent it from powering off. Betwe
 :::
 
 Most USB-C Ethernet dongles use newer chipsets and will not work. Try older USB-A dongles (with a USB-A to USB-C adapter if needed) for better compatibility.
+
+:::tip Get the right dongle
+Dongle manufacturers change chipsets without changing the product reference, and online retailers sell multiple versions under a single listing. To ensure FX6 compatibility, Cyanview manufactures its own USB-Ethernet dongle. Contact us for a quote.
+:::

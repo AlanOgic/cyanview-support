@@ -110,6 +110,10 @@ Adapter cable for CIS and Camera Corps cameras. Provides power and control via a
 
 ### CY-CBL-6P-SBUS-01
 
+### DIY cable
+
+The connector is difficult to find. Build your own cable with a 2.54mm pitch socket header and a [CY-CBL-6P-FAN](/docs/resources/cable-catalog#cy-cbl-6p-fan) cable.
+
 ![CY-CBL-6P-SBUS DJI SBUS cable pinout](/img/productGfx/cables/CY-CBL-6P-SBUS.svg)
 
 ## Dreamchip cables
@@ -120,9 +124,9 @@ Adapter cable for all Dreamchip mini cameras. Provides power and control.
 
 ![CY-CBL-DREAMCHIP-01 Dreamchip camera cable pinout](/img/productGfx/cables/CY-CBL-DREAMCHIP-01.svg)
 
-### CY-CBL-DREAMCHIP-02 (SSM500)
+### CY-CBL-DREAMCHIP-02 (SSM500 and Atom Two)
 
-Adapter cable for Dreamchip cameras using the Dreamchip DCT-Powercable 350-00011v. Provides RS485 control.
+Adapter cable for Dreamchip SSM500 and Atom Two cameras using the Dreamchip DCT-Powercable 350-00011v. Provides RS485 control.
 
 ![CY-CBL-DREAMCHIP-02 Dreamchip SSM500 cable pinout](/img/productGfx/cables/CY-CBL-DREAMCHIP-02.svg)
 

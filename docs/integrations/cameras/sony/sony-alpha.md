@@ -51,6 +51,10 @@ You can control these cameras directly from the **RCP** or through a **RIO** (lo
 Most paint settings are managed through the camera's Picture Profile. Both these settings and remote control capabilities were introduced in later firmware releases for most models. Update your camera firmware before use.
 :::
 
+:::info
+Keep your RCP firmware up to date as well. Sony refreshes their SDK regularly (typically around 4 times per year), and compatibility can depend on it.
+:::
+
 | Control | Notes | ILCE-9M2, ILCE-7RM4A, ILCE-7RM4, ILCE-7C | Others |
 |:--------|:------|:-----------------------------------------:|:------:|
 | **Iris** | Manual and Auto | ✔ | ✔ |
@@ -87,6 +91,12 @@ The configuration block should look like this:
 When the connection is established, the block turns green:
 
 ![Sony Alpha connection block showing green status](/img/Integrations/Sony/Alpha/A7CR/sony-alpha-block.png)
+
+Some models (e.g. A7S III) display a menu option that must be accepted to allow USB control. Look for **PC Remote Function** or similar.
+
+**Set the Picture Profile:** Most image settings (e.g. black level) are part of the camera's **Picture Profile** and must be configured manually on the camera. The menu path varies by model. A typical path is:
+
+`MENU > (Exposure/Color) > [Color/Tone] > [Picture Profile]` — select the profile you want to edit.
 
 On the camera display:
 - `-PC-` appears in white when the USB cable is connected.

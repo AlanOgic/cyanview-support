@@ -67,8 +67,7 @@ When connected successfully, the block turns green:
 ![B4 lens block — green](/img/Integrations/Lens/B4-block.png)
 
 :::tip
-If you only need iris control and want zoom/focus handled by the cameraman:
-1. On the RCP, press `Lens` to open the lens menu.
-2. Press `Lens` again to reach the second page (`Lens2`).
-3. Press `Z/F En` to disable zoom/focus control — only `Iris En` should be highlighted.
+If you only need iris control and want zoom/focus handled by the cameraman, go to **MENU > LENS > LENS** on the RCP and toggle the Iris / Zoom / Focus switches to enable or disable each control.
+
+![RCP lens control menu showing axis toggles](/img/Manual/RCP/RCP-menu-lens-1_1_2.BMP)
 :::

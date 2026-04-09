@@ -27,12 +27,14 @@ Cyanview controls the Bolin R9 PTZ camera over IP, giving you remote paint and P
   - **Pan/tilt** — status, speed/position control
   - **Zoom/Focus** — status, speed/position control
   - **PTZ Presets**
-
-:::note
-Additional features including auto modes, record, and tally will be available in an upcoming software update.
-:::
+- **Camera**
+  - **Auto** — Focus, Shutter, Gain
+  - **Menu**[^MENU] — OSD
+  - **Tally**[^TALLY]
 
 [^WB]: Red and blue gains are only available when the camera WB Mode is set to **User**.
+[^MENU]: The OSD is available on SDI#1.
+[^TALLY]: Tally requires **SYSTEM > TALLY MODE > ON** in the camera menu.
 
 ## Configuration
 

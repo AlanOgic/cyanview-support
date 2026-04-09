@@ -24,6 +24,10 @@ Connect the camera's **Remote connector** to the **CI0** or **RIO** using a [CY-
 The RIO can draw power from the camera through this cable.
 
 :::warning
+Some cameras require a software update for remote control. Early versions of the PXW-Z450, for example, need a firmware update before they can be controlled remotely.
+:::
+
+:::warning
 On some camcorders, using cable **CY-CBL-6P-SONY-8-02** can cause a boot loop:
 
 1. The camera starts and powers the RIO.
