@@ -1,0 +1,144 @@
+---
+id: download-licences
+title: Download licenses
+description: "Enter a device ID to download the corresponding license files."
+keywords: [license, download, s3, json, sig]
+slug: /restricted/troubleshooting/download-licences
+---
+
+# Download licenses
+
+import React, {useCallback, useMemo, useState} from 'react';
+
+export const DownloadLicences = () => {
+  const [value, setValue] = useState('');
+  const [error, setError] = useState('');
+  const [urls, setUrls] = useState([]);
+  const [submitting, setSubmitting] = useState(false);
+
+  const BASE = 'https://s3.eu-west-3.amazonaws.com/v1.licence.cyanview.com/perm';
+
+  const buildUrls = useCallback((id) => {
+    const safe = id.trim();
+    if (!safe) return [];
+    return [
+      `${BASE}/${safe}.json`,
+      `${BASE}/${safe}.sig`,
+    ];
+  }, []);
+
+  const buildForcedUrl = useCallback((url, filename) => {
+    const disp = encodeURIComponent(`attachment; filename="${filename}"`);
+    const type = encodeURIComponent('application/octet-stream');
+    const sep = url.includes('?') ? '&' : '?';
+    return `${url}${sep}response-content-disposition=${disp}&response-content-type=${type}`;
+  }, []);
+
+  const canSubmit = useMemo(() => value.trim().length > 0, [value]);
+
+  const forceDownload = useCallback(async (url, filename) => {
+    const res = await fetch(url, {mode: 'cors'});
+    if (!res.ok) throw new Error(`Failed to download ${filename} (HTTP ${res.status})`);
+    const blob = await res.blob();
+    const objectUrl = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = objectUrl;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(objectUrl), 0);
+  }, []);
+
+  const triggerDownloads = useCallback(async (targets, idToken) => {
+    const names = [`${idToken}.json`, `${idToken}.sig`];
+    try {
+      for (let i = 0; i < targets.length; i += 1) {
+        await forceDownload(targets[i], names[i]);
+      }
+    } catch (e) {
+      names.forEach((name, i) => {
+        const forced = buildForcedUrl(targets[i], name);
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = forced;
+        document.body.appendChild(iframe);
+        setTimeout(() => iframe.remove(), 60_000);
+      });
+      throw e;
+    }
+  }, [forceDownload, buildForcedUrl]);
+
+  const onSubmit = useCallback((e) => {
+    e.preventDefault();
+    setError('');
+    const token = value.trim();
+    if (!/^[\w.-]{1,128}$/.test(token)) {
+      setError('Invalid characters. Use letters, digits, dots, underscores, or hyphens.');
+      setUrls([]);
+      return;
+    }
+    const next = buildUrls(token);
+    if (next.length !== 2) {
+      setError('Invalid ID.');
+      setUrls([]);
+      return;
+    }
+    setSubmitting(true);
+    setUrls(next);
+    triggerDownloads(next, token)
+      .catch((err) => setError('CORS unavailable — using direct fallback. ' + (err?.message || '')))
+      .finally(() => setSubmitting(false));
+  }, [buildUrls, triggerDownloads, value]);
+
+  return (
+    <div className="container margin-vert--lg">
+      <p>
+        Enter your <strong>ID</strong> and click <strong>Submit</strong> to download the license files.
+      </p>
+
+      <form onSubmit={onSubmit} style={{maxWidth: 520}}>
+        <div style={{display: 'flex', gap: 8}}>
+          <input
+            type="text"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            placeholder="Enter your ID"
+            aria-label="ID"
+            style={{flex: 1, padding: '8px 10px'}}
+          />
+          <button type="submit" className="button button--primary" disabled={!canSubmit || submitting}>
+            {submitting ? 'Please wait...' : 'Submit'}
+          </button>
+        </div>
+        {error && (
+          <div style={{color: 'var(--ifm-color-danger)', marginTop: 8}}>{error}</div>
+        )}
+      </form>
+
+      {urls.length > 0 && (
+        <section style={{marginTop: 24}}>
+          <h3>Generated links</h3>
+          <ul>
+            {urls.map((u, i) => {
+              const idToken = value.trim();
+              const name = i === 0 ? `${idToken}.json` : `${idToken}.sig`;
+              const forced = buildForcedUrl(u, name);
+              const display = u.split('?')[0];
+              return (
+                <li key={u}>
+                  <a href={forced} target="_blank" rel="noopener">{display}</a>
+                </li>
+              );
+            })}
+          </ul>
+          <button type="button" className="button button--secondary" onClick={() => triggerDownloads(urls, value.trim())}>
+            Download again
+          </button>
+        </section>
+      )}
+    </div>
+  );
+};
+
+<DownloadLicences />
