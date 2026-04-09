@@ -92,6 +92,10 @@ The example below uses a Panasonic AW-UE150, but the setup is the same for all P
 4. Select the model (`AW-UE150`).
 5. Enter the IP address of your PTZ.
 
+A typical setup connects multiple cameras to a single RCP on an IP network:
+
+![Panasonic PTZ network diagram](/img/Integrations/Panasonic/Panasonic-PTZ-connect.png)
+
 When connected successfully, the block turns green:
 
 ![Panasonic PTZ block — green](/img/Integrations/Panasonic/panasonic-ptz-block.png)

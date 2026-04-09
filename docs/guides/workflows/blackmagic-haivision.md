@@ -7,6 +7,8 @@ keywords: [Blackmagic, Haivision, REMI, remote production]
 slug: /guides/workflows/blackmagic-haivision
 ---
 
+![Blackmagic backpack tracking shot](/img/Workflows/Blackmagic-backpack-track.jpeg)
+
 This guide covers remote control of a wireless Blackmagic URSA G2, used here during an event produced by [AVEO](https://aveo-groupe.fr/), [APR](https://www.apr.org/) and [LENI](https://www.leni.fr/) (France). You'll learn how to configure camera control over SDI, set up the Haivision DataBridge tunnel for REMI, and route tally from an ATEM to the remote camera.
 
 Topics covered:

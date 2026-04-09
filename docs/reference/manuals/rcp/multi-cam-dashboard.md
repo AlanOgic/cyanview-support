@@ -20,11 +20,17 @@ Starting with release `26.2.1rc1`, the Multi-cam dashboard is disabled by defaul
 2. Go to **Admin**.
 3. Click **Enable**.
 
+![Enable the dashboard in Admin](/img/Manual/CC/enable.png)
+
 The status changes to **Running**.
+
+![Dashboard enabled status](/img/Manual/CC/enabled.png)
 
 ### Access the dashboard
 
 Open `http://[device-ip]:4000` in your browser, or click the **Multi-cam dashboard** link in the RCP navigation bar.
+
+![Multi-cam dashboard menu link](/img/Manual/CC/menulink.png)
 
 Example URLs:
 
@@ -38,9 +44,14 @@ A standalone desktop app is planned for a future release.
 ## Add cameras
 
 1. Open **Settings → Scene settings**.
+
+![Dashboard settings](/img/Manual/CC/settings.png)
+
 2. Find your camera in the **Discovered cameras** list.
 3. Click the **+** button next to the camera name.
 4. The camera appears on your dashboard.
+
+![Add a camera to the dashboard](/img/Manual/CC/camera_add.png)
 
 ## Organize cameras
 
@@ -58,6 +69,8 @@ Reorder cameras to match your physical setup:
 - Delete a scene by clicking **−** on its tab.
 - Change the layout in **Settings → Scene settings → Scene design**.
 
+![Scene tabs and camera grid](/img/Manual/CC/scenes.png)
+
 ## Control cameras
 
 ### Quick controls
@@ -67,6 +80,8 @@ Click any camera card to open a quick control panel for fast adjustments.
 - Switch between list and grid view.
 - Resize the panel by dragging its left edge.
 - Close the panel by clicking outside it or pressing **X**.
+
+![Quick control panel](/img/Manual/CC/quick_control.png)
 
 ### Full camera control
 
@@ -81,6 +96,8 @@ Click a camera name to access all available controls:
 | **Output** | SDI settings, test patterns |
 | **Format** | Resolution, frame rate, codec |
 
+![Full camera control panel](/img/Manual/CC/full_control.png)
+
 ## Camera groups
 
 Group cameras for batch organization:
@@ -94,6 +111,8 @@ To delete a group:
 
 1. Click the **edit** toggle.
 2. Click **Delete** on the group tag.
+
+![Camera groups](/img/Manual/CC/groups.png)
 
 ## Custom templates
 
@@ -110,6 +129,14 @@ Control templates come in two versions: **quick** and **full**. Quick templates 
 :::
 
 ### Apply a template
+
+| Dashboard template | Apply to all |
+|---|---|
+| ![Dashboard template editor](/img/Manual/CC/dashboard_template.png) | ![Apply dashboard template](/img/Manual/CC/dashboard_template_apply.png) |
+
+| Control template | Apply to camera |
+|---|---|
+| ![Control template editor](/img/Manual/CC/control_template.png) | ![Apply control template](/img/Manual/CC/control_template_apply.png) |
 
 - **Single camera** — open the camera, then select **Apply template**.
 - **All cameras** — go to **Dashboard templates** and click **Apply to all**.

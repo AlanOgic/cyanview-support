@@ -7,6 +7,8 @@ keywords: [Panasonic EVA1, AU-EVA1, cinema, paint control]
 slug: /integrations/cameras/panasonic/eva1
 ---
 
+![AU-EVA1 configuration setup](/img/Integrations/camera/panasonic/cyanview-support-integration-panasonic-camcorder-AU-EVA1-configuration-setup.jpg)
+
 The Panasonic AU-EVA1 provides remote control and multiple direct-access functions over serial protocol. A typical setup uses a CI0 IP-to-serial interface to control the camera over IP from an RCP.
 
 ![AU-EVA1 configuration overview](/img/Integrations/camera/panasonic/cyanview-support-integration-panasonic-camcorder-AU-EVA1-configuration-overview.png)

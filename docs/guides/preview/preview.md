@@ -43,7 +43,7 @@ The [CY-CBL-JACK-GPIO8 GPIO dongle](/docs/reference/manuals/rcp/gpio-dongle) plu
 
 The CY-NIO is a multi-purpose IP box that provides 16 GPIO over the network. It is detected automatically by the RCP and works the same way as the GPIO dongle.
 
-[![CY-NIO IP GPIO box](/img/productGfx/NIO/nio-fac-wh.png)](/img/productGfx/NIO/nio-fac-wh.png)
+[![CY-NIO IP GPIO box](/img/productGfx/NIO/NIO.png)](/img/productGfx/NIO/NIO.png)
 
 ## Configure preview with one camera
 

@@ -109,7 +109,7 @@ The five blue buttons at the top recall scene files 1 through 5. Scene files mus
 
 Hold the iris joystick shaft and press the PREVIEW button together to open the configuration screen.
 
-![Iris joystick configuration screen](/img/Manual/IJ/ij_config_screen.jpg)
+![Iris joystick configuration screen](/img/Manual/IJ/ij_config_screen.jpeg)
 
 Available settings:
 

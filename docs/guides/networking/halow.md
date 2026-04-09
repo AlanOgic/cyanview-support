@@ -242,3 +242,73 @@ Downloads:
 - [Halow-U v1.3](/files/AlfaNetworksFirmwareV1.3/matrixpro_v1.3_aui_ahuc7292u_squashfs_sysupgrade.bin)
 
 If the web page shows OpenWRT instead of the Alfa Networks interface, the firmware can still be updated, but we do not have screenshots of that procedure at this time.
+
+<!--
+## Workflow
+
+![HaLow wiring overview](/img/Configuration/RFUHF/RFUHF-wiring.png)
+
+## Examples of topologies
+
+### Wireless FX3
+
+![RF topology — wireless FX3](/img/Configuration/RFUHF/RF-topology-FX3.png)
+
+Gear needed:
+
+- 1 x RCP
+- 1 x RIO (or RIO +LAN)
+- 1 x Tube-AH
+- 1 x Halow-U
+- 1 x FX3
+- 1 x USB-C to USB-A (with data)
+
+Wiring:
+
+- RIO is powered through D-TAP
+- RIO powers the Halow-U through USB
+- RIO communicates with FX3 through USB
+
+More info on FX3 setup [here](/docs/integrations/cameras/sony/sony-alpha).
+
+### Wireless FX6
+
+![RF topology — wireless FX6](/img/Configuration/RFUHF/RF-topology-FX6.png)
+
+Gear needed:
+
+- 1 x RCP
+- 1 x RIO (or RIO +LAN)
+- 1 x Tube-AH
+- 1 x Halow-U
+- 1 x FX6
+- 1 x USB-C Ethernet dongle (compatible with FX6)
+
+Wiring:
+
+- RIO is powered through D-TAP
+- RIO powers the Halow-U through USB
+- FX6 has a USB-C Ethernet
+- RIO uses its onboard Ethernet to connect to the FX6 Ethernet dongle
+- FX6 IP is in the range `10.192.0.0/16` so RIO can talk directly to it
+
+More info on FX6 setup [here](/docs/integrations/cameras/sony/sony-fx6).
+
+### Mesh
+
+![RF topology — mesh network](/img/Configuration/RFUHF/RF-topology-mesh.png)
+
+Typical use case:
+
+- Long distance where point-to-multipoint does not reach
+- Obstacles obstructing one or more nodes (a building, etc.)
+
+Setup:
+
+- Same as above (IP setup, RF setup)
+- Set all nodes to `MESH Node` mode instead of AP/Station
+
+## Wireless Best Practices
+
+![HaLow outdoor test](/img/Configuration/halow/test-out.png)
+-->
