@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 
 /* ───────────────────────────────────────────
-   SVG Icon Components — crisp 24×24 strokes
+   SVG Icon Components - crisp 24×24 strokes
    ─────────────────────────────────────────── */
 
 const IconBook = () => (
@@ -300,7 +300,7 @@ export default function Home(): React.JSX.Element {
   return (
     <Layout
       title="Support Center"
-      description="Cyanview Support Center — Knowledge base, user guides, downloads, troubleshooting, and more for broadcast professionals."
+      description="Cyanview Support Center - Knowledge base, user guides, downloads, troubleshooting, and more for broadcast professionals."
     >
       {/* ── Hero ── */}
       <header className="sp-hero">
@@ -363,6 +363,34 @@ export default function Home(): React.JSX.Element {
               </Link>
             ))}
           </div>
+        </section>
+
+        {/* ── See it live ── */}
+        <section className="sp-section">
+          <div className="sp-section__header reveal" style={{'--reveal-delay': '0.55s'} as React.CSSProperties}>
+            <h2 className="sp-section__title">See it live</h2>
+            <p className="sp-section__subtitle">Real deployments, real broadcasts</p>
+          </div>
+          <Link to="/docs/products/system-examples" className="sp-live reveal" style={{'--reveal-delay': '0.6s'} as React.CSSProperties}>
+            <div className="sp-live__video">
+              <div className="sp-live__placeholder">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" />
+                </svg>
+              </div>
+            </div>
+            <div className="sp-live__content">
+              <h3 className="sp-live__title">Olympic figure skating - wireless on-ice camera</h3>
+              <p className="sp-live__desc">
+                A cameraman skates backwards on Olympic ice with a RIO +WAN and 4G dongle -
+                local controls at hand, remote shading from the control room. Fully wireless.
+              </p>
+              <span className="sp-live__cta">
+                View all system examples <IconArrowRight />
+              </span>
+              <span className="sp-live__credit">Video courtesy of NBC New York</span>
+            </div>
+          </Link>
         </section>
 
         {/* ── Contact strip ── */}

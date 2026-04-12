@@ -1,0 +1,158 @@
+Marque,Modèle,Surnom,Réf. Constructeur,Type de Port,Protocole,Câble Cyanview,Notes Importantes,Notes Utiles
+AJA,RovoCam,,AJA RovoCam,VISCA Serial (via cable),VISCA,CY-CBL-6P-AJA-01,Set camera ID in AJA RovoCam app before configuring. Camera powered by CI0/RIO through single cable. Can chain multiple cameras on single port with unique IDs.,Compact camera. Create VISCA bus and link camera to bus by ID.
+BirdDog,P100,,BirdDog P100,Ethernet,IP,,,Compact PTZ with OSD support and extensive paint controls.
+BirdDog,P200,,BirdDog P200,Ethernet,IP,,,PTZ with additional controls like multimatrix.
+BirdDog,P400,,BirdDog P400,Ethernet,IP,,,Professional PTZ.
+BirdDog,P4K,,BirdDog P4K,Ethernet,IP,,,4K PTZ.
+BirdDog,X1,,BirdDog X1,Ethernet,IP,,Limited paint controls compared to P series.,Compact X series PTZ.
+BirdDog,X4,,BirdDog X4,Ethernet,IP,,Limited paint controls.,X series PTZ.
+BirdDog,X5,,BirdDog X5,Ethernet,IP,,Limited paint controls.,Latest X series PTZ.
+Blackmagic,ATEM,Blackmagic ATEM Control,Blackmagic (via ATEM),Ethernet (via ATEM),IP (through ATEM),,Bidirectional to ATEM but unidirectional to cameras. Use caution with large setups - ATEM can be sensitive to connection count and command volume.,Control routed through ATEM switcher. Works alongside ATEM panels.
+Blackmagic,Cinema Camera 6K,,Cinema Camera 6K,"Ethernet, SDI",IP or SDI,,,6K cinema camera.
+Blackmagic,Focus Handle,BM Focus Handle,Blackmagic Focus Handle,USB,USB,USB-C to USB-C or USB-C to USB-A cable,Connect via USB to RIO/NIO/RCP. Can loop through zoom handle.,Provides focus input for any lens. Familiar control interface.
+Blackmagic,IP,Blackmagic IP Control,Blackmagic (IP/REST API),Ethernet,IP (REST API),,Requires latest firmware on both camera and Cyanview equipment. IP tally partially supported (URSA G2 Broadcast and PYXIS only). Enable Web media manager (HTTP) in camera settings.,Direct Ethernet connection. Bidirectional feedback. Some cameras require USB-C to Ethernet adapter (Belkin recommended).
+Blackmagic,Micro Studio 4K,,Micro Studio 4K,SDI,SDI,,SDI control only - no IP control available.,Compact studio camera with SDI control.
+Blackmagic,Micro Studio Camera 4K G2,Micro Studio 4K G2,Micro Studio Camera 4K G2,"Ethernet, SDI",IP or SDI,,,Compact studio camera.
+Blackmagic,PYXIS 6K,,PYXIS 6K,Ethernet,IP,,IP only - no SDI control. IP tally support (requires RCP/RIO 25.12.1-rc2 or later).,Compact cinema camera.
+Blackmagic,Pocket Cinema (HDMI via Microconverter),Pocket Cinema HDMI,Pocket Cinema,HDMI + SDI (via Microconverter),SDI (via Blackmagic Microconverter),,Use Blackmagic Microconverter to convert HDMI to SDI and pass return SDI over HDMI data link.,Workaround for HDMI-only cameras using SDI converter.
+Blackmagic,SDI,Blackmagic SDI Control,Blackmagic (SDI control),SDI (with RSBM or CI0BM),SDI,,Unidirectional control - no camera feedback. Values displayed on RCP may drift from actual camera state.,Control metadata embedded in SDI program feed. Supports multi-camera control via camera numbering.
+Blackmagic,Studio Camera 4K Plus,,Studio Camera 4K Plus,"Ethernet, SDI",IP or SDI,,,Studio camera.
+Blackmagic,Studio Camera 4K Plus G2,,Studio Camera 4K Plus G2,"Ethernet, SDI",IP or SDI,,,Updated generation studio camera.
+Blackmagic,Studio Camera 4K Pro,,Studio Camera 4K Pro,"Ethernet, SDI",IP or SDI,,,Professional studio camera.
+Blackmagic,Studio Camera 4K Pro G2,,Studio Camera 4K Pro G2,"Ethernet, SDI",IP or SDI,,,Updated professional studio camera.
+Blackmagic,Studio Camera 6K Pro,,Studio Camera 6K Pro,"Ethernet, SDI",IP or SDI,,,High-res studio camera.
+Blackmagic,URSA Cine 12K LF,,URSA Cine 12K LF,"Ethernet, SDI",IP or SDI,,Tally over SDI/ATEM only.,Large format cinema camera.
+Blackmagic,URSA Cine 17K 65,,URSA Cine 17K 65,"Ethernet, SDI",IP or SDI,,Tally over SDI/ATEM only (not IP). Updated gain commands require 2024 firmware.,High-end cinema camera supporting IP and SDI control.
+Blackmagic,URSA Cine Immersive,,URSA Cine Immersive,"Ethernet, SDI",IP or SDI,,Tally over SDI/ATEM only.,Immersive cinema camera.
+Blackmagic,URSA G2 Broadcast,,URSA G2 Broadcast,"Ethernet, SDI",IP or SDI,,IP tally support (requires RCP/RIO 25.12.1-rc2 or later). SDI tally always available.,Broadcast camera with dual control options.
+Blackmagic,URSA Mini 12K,,URSA Mini 12K,SDI,SDI,,SDI control only.,Cinema camera with SDI control.
+Blackmagic,URSA Mini Pro 12K,,URSA Mini Pro 12K,SDI,SDI,,,Professional version of URSA Mini.
+Blackmagic,Zoom Handle,BM Zoom Handle,Blackmagic Zoom Handle,USB,USB,USB-C to USB-C cable,Connect zoom cam port via USB-C to USB-C. Can daisy-chain focus handle using zoom loop port. LED turns steady white when paired correctly.,Provides zoom input for any Cyanview-controlled lens. Buttons map to video return switching.
+Bolin,R9,,Bolin R9,Ethernet,IP,,"Red and blue gains only available when camera WB Mode set to User. Future updates will add auto modes, record, and tally.",PTZ camera with basic paint and full PTZ control. Use Anxinshi joystick for convenient PTZ control.
+Canon,C100,,C100,Remote A (2.5mm TRS),Remote A,CY-CBL-6P-LANC-03,Unidirectional control - no camera feedback. Set iris increment to 1/3 stop with fine increment on. Set remote terminal to RC-V100.,Older cinema camera with serial control. Requires careful menu configuration for value sync.
+Canon,C200,,C200,Remote A (2.5mm TRS),Remote A,CY-CBL-6P-LANC-03,Unidirectional control - no camera feedback.,Cinema camera with Remote A protocol support.
+Canon,C300 Mk I,C300 Mk1,C300 Mark I,Remote A (2.5mm TRS),Remote A,CY-CBL-6P-LANC-03,Unidirectional control.,Original C300 with older protocol.
+Canon,C300 Mk II,C300 Mk2,C300 Mark II,Remote A (2.5mm TRS),Remote A,CY-CBL-6P-LANC-03,Unidirectional control.,Mid-generation C300 with Remote A support.
+Canon,C300 Mk III,C300 Mk3,C300 Mark III,Ethernet,XC,,,Professional cinema camera with XC support.
+Canon,C400,,C400,Ethernet,XC,,,High-end cinema camera.
+Canon,C500 Mk I,C500 Mk1,C500 Mark I,Remote A (2.5mm TRS),Remote A,CY-CBL-6P-LANC-03,Unidirectional control.,Professional cinema camera with Remote A protocol.
+Canon,C500 Mk II,C500 Mk2,C500 Mark II,Ethernet,XC,,,Professional cinema camera with updated features.
+Canon,C70,,C70,Ethernet,XC,,Requires firmware update to support XC protocol.,Cinema camera with IP control via XC protocol.
+Canon,C700,,C700,Remote A (2.5mm TRS),Remote A,CY-CBL-6P-LANC-03,Unidirectional control.,High-end cinema camera with Remote A support.
+Canon,C80,,C80,Ethernet,XC,,,Latest generation cinema camera.
+Canon,CR-N100,,CR-N100,Ethernet,XC,,Uses CR-N300 protocol despite different model number.,Entry-level PTZ option.
+Canon,CR-N300,,CR-N300,Ethernet,XC,,"Set Shooting Mode to Manual and disable all Auto modes. All parameters you want to control must be set to Manual, not Auto.",Professional PTZ with extensive paint and shading controls.
+Canon,CR-N500,,CR-N500,Ethernet,XC,,Set Shooting Mode to Manual. Different lens from CR-N300 - select correct model.,Higher-end PTZ with same protocol as CR-N300.
+Canon,CR-N700,,CR-N700,Ethernet,XC,,,Premium PTZ model with extensive capabilities.
+Canon,CR-X300,,CR-X300,Ethernet,XC,,Uses CR-N300 protocol despite X series naming.,Compact PTZ model.
+Canon,R5 (DSLR),Canon R5 Mirrorless,Canon R5,USB,USB,USB-A to USB-C cable,"R5-C not suitable for video applications - different video pipeline cannot be controlled. Use USB-A port on back of RCP, not top port.",Only mirrorless Canon supported. Connect to RCP or RIO for local or remote control.
+Canon,XF605,,XF605,Ethernet,XC,,Enable XC Protocol in Network Settings with manual IP configuration. Select No Auth for authentication method.,Professional camcorder with extensive control. Use XF605-specific config page for correct lens ranges.
+Canon,XF705,,XF705,Remote A (2.5mm TRS),Remote A,CY-CBL-6P-LANC-03,Unidirectional control.,Professional camcorder with older Remote A protocol.
+Dreamchip,AtomOne,,AtomOne,Serial (RS-422),Serial,CY-CBL-DREAMCHIP-01,Keep firmware updated (critical for 2024-2025 releases). Can use different baud rates - check camera settings. Cameras don't auto-save; use SAVE command for power-up defaults or custom settings.,Extensive paint controls including multi-matrix. Supports motor control for zoom/focus/iris. Manual focus needs Tilta motors on non-motorized lenses.
+Dreamchip,AtomOne 4K,,AtomOne 4K,Serial (RS-422),Serial,CY-CBL-DREAMCHIP-01,,4K version.
+Dreamchip,AtomOne Mini,,AtomOne Mini,Serial (RS-422),Serial,CY-CBL-DREAMCHIP-01,Keep firmware updated.,Compact version with same protocol.
+Dreamchip,AtomOne Mini Zoom,,AtomOne Mini Zoom,Serial (RS-422),Serial,CY-CBL-DREAMCHIP-01,,Compact version with built-in zoom.
+Dreamchip,AtomTwo,,AtomTwo,Serial (RS-422),Serial,CY-CBL-DREAMCHIP-01,Released 2025. Keep firmware updated for full compatibility.,Latest generation Dreamchip camera.
+Dreamchip,SSM500,Dreamchip SSM500 Slow Motion,AtomOne SSM500,Ethernet,IP,,Keep firmware and Cyanview equipment updated. SAVE command required to persist power-up defaults. Video format and genlock changes require reboot.,Slow-motion sports camera with IP control. Replay and trigger via Stream Deck/Shuttle Pro or EVS integration.
+Dreamchip,SSM501,,AtomOne SSM501,Ethernet,IP,,"Released 2025. Integration not yet fully complete. Recording, playback, and lens control via camera not yet available.",Updated slow-motion camera.
+Dreamchip,SSM502,,AtomOne SSM502,Ethernet,IP,,Released 2025. Integration not fully complete.,Updated slow-motion camera.
+Generic,IP Camera,IP Protocol Camera,Various,Ethernet,IP,,RCP must have IP address on same subnet as camera.,Framework for connecting IP-based cameras. Direct Ethernet connection to RCP.
+Generic,PTZ Camera,Generic PTZ,"Various (BirdDog, Canon, Panasonic, Sony, Z Cam)",Ethernet,IP,,See specific PTZ camera integration guides for full control support.,Framework for PTZ control. Full pan/tilt/zoom/focus and paint control available.
+Generic,Serial Camera,Serial Protocol Camera,Various,"Serial (8-pin, LANC, VISCA, RS-422, etc.)",Serial,CI0 or RIO required,CI0 required for serial control. PoE power available for CI0.,Framework for connecting any serial protocol camera. Refer to specific camera integration guide.
+Ikegami,HDK-73,,HDK-73,RS-422 (8-pin PRC05-PB8M),ICPP,CY-CBL-6P-FAN + custom connector,,Broadcast camera.
+Ikegami,HDK-79EX,,HDK-79EX,RS-422 (8-pin PRC05-PB8M),ICPP,CY-CBL-6P-FAN + custom 8-pin PRC05-PB8M connector,Configure camera for RS422 with U4(38400) command mode. Connector expensive and hard to source - not sold by Cyanview.,Broadcast camera with full paint control.
+Ikegami,HDK-79GX,,HDK-79GX,RS-422 (8-pin PRC05-PB8M),ICPP,CY-CBL-6P-FAN + custom connector,,Broadcast camera.
+Ikegami,HDK-97,,HDK-97,RS-422 (8-pin PRC05-PB8M),ICPP,CY-CBL-6P-FAN + custom connector,,Broadcast camera.
+Ikegami,HDK-99,,HDK-99,RS-422 (8-pin PRC05-PB8M),ICPP,CY-CBL-6P-FAN + custom connector,,Broadcast camera.
+JVC,Camcorder,JVC Professional Camcorder,JVC Professional Camcorder,"Ethernet, Wi-Fi (with compatible USB dongle)",IP,,Requires USB dongle (check manual for compatibility). Configure static IP address. Set motorized lens to AUTO for remote control.,Professional camcorder with basic paint controls. Suitable for multi-camera setups with RCP or RIO remote control.
+Marshall,CV225,,CV225,RS-485 (via breakout cable or Hirose),VISCA,CY-CBL-6P-PFAN or CY-CBL-6P-FAN,Has filtering on color gains for smoother control but slower reaction. No direct master black control from protocol (accessible via OSD only).,Bullet camera. Select Marshall Generic model for auto-detection.
+Marshall,CV226,,CV226,RS-485,VISCA,CY-CBL-6P-PFAN,Digital zoom available through OSD menus only.,Use CV225 model if CV226 not in list.
+Marshall,CV350,,CV350,RS-485 (12-pin Hirose),VISCA,CY-CBL-6P-MARSHALL-01,"Full lens control: zoom, focus, iris.",Block camera with full lens control.
+Marshall,CV500,,CV500,RS-485,Pelco RS-485,,Old model. OSD menu navigation only - no paint controls possible.,"Select CV500 model specifically, not Generic."
+Marshall,CV502,,CV502,RS-485 (push-lock connectors),VISCA,CY-CBL-6P-FAN,OSD menu automatically hides when direct commands sent. Has filtering on color gains.,Compact camera.
+Marshall,CV503,,CV503,RS-485 (12-pin Hirose),VISCA,CY-CBL-6P-MARSHALL-01,Color gains have no filtering for more reactive control but need moderate changes. Digital zoom directly available.,Use CV503 model for CV506 if not in list.
+Panasonic,AG-CX350,CX350,AG-CX350,"Ethernet, Wi-Fi",IP,,Keep firmware updated to latest version 7.20-00. Create camera login/password for authentication.,Professional camcorder with extensive paint controls. ND control by increments only - cannot be recalled from scene files.
+Panasonic,AG-HPX300,,AG-HPX300,Serial (10-pin Hirose),Serial (Panasonic Native),CY-CBL-6P-PAN-10P,,Older P2 broadcast camera. Limited control set.
+Panasonic,AG-HPX500,,AG-HPX500,Serial (10-pin Hirose),Serial (Panasonic Native),CY-CBL-6P-PAN-10P,ND filters are read-only.,P2 broadcast camera.
+Panasonic,AJ-HPX2700,,AJ-HPX2700,Serial (10-pin Hirose),Serial (Panasonic Native),CY-CBL-6P-PAN-10P,,P2 HD camera with extended paint controls.
+Panasonic,AJ-HPX3100,,AJ-HPX3100,Serial (10-pin Hirose),Serial (Panasonic Native),CY-CBL-6P-PAN-10P,,P2 HD camera with full paint control.
+Panasonic,AJ-PX270,,AJ-PX270,Ethernet,IP,,ND display-only. Menu navigation requires CHAR enabled on SDI output. Auto-iris activates on power-on for some models.,P2HD broadcast camera over IP. Some controls locked under control mode.
+Panasonic,AJ-PX380,,AJ-PX380,Ethernet,IP,,,P2HD broadcast camera.
+Panasonic,AJ-PX5000,,AJ-PX5000,Ethernet,IP,,,P2HD broadcast camera.
+Panasonic,AJ-PX5100,,AJ-PX5100,Ethernet,IP,,Auto-iris activates on startup. Must manually switch to manual mode.,P2HD broadcast camera.
+Panasonic,AJ-PX800,,AJ-PX800,Ethernet,IP,,,P2HD broadcast camera.
+Panasonic,AK-HC3900,,AK-HC3900,Ethernet,IP,,Not yet tested.,Studio camera.
+Panasonic,AK-PLV100GSJ,,AK-PLV100GSJ,Ethernet,IP,,Confirmed working with RCP (primary test camera).,Studio camera.
+Panasonic,AK-UC3300,,AK-UC3300,Ethernet,IP,,,Studio camera.
+Panasonic,AK-UC4000,,AK-UC4000,Ethernet,IP,,Can control directly to camera head or through CCU.,Studio camera with extensive paint control. Direct IP connection or CCU routing.
+Panasonic,AK-UCX100,,AK-UCX100,Ethernet,IP,,,Studio camera.
+Panasonic,AU-EVA1,EVA1,AU-EVA1,USB-Ethernet (USB 3.0 adapter),IP,,"Firmware 3.00-00-0.00 or later required. Requires specific USB 3.0 to Ethernet adapters (UGREEN SKU 20256, Plugable, BUFFALO LUA4-U3-AGT). Set DHCP off, camera IP to 192.168.0.1. Create guest account with password auguest.",Cinema camera. Red and Blue gains not supported by protocol. Some controls like iris and digital zoom not available on all models.
+Panasonic,AW-HE120,,AW-HE120,Ethernet,IP (Panasonic Native),,Can be slow with multiple RCPs controlling same camera. Configure on one RCP and use REMI to share.,Professional studio PTZ.
+Panasonic,AW-HE130,,AW-HE130,Ethernet,IP (Panasonic Native),,,Latest HE series PTZ.
+Panasonic,AW-HE40,,AW-HE40,Ethernet,IP (Panasonic Native),,,Entry-level studio PTZ.
+Panasonic,AW-HE42,,AW-HE42,Ethernet,IP (Panasonic Native),,,Studio PTZ.
+Panasonic,AW-HE50,,AW-HE50,Ethernet,IP (Panasonic Native),,,Studio PTZ.
+Panasonic,AW-HE60,,AW-HE60,Ethernet,IP (Panasonic Native),,,Studio PTZ.
+Panasonic,AW-HE70,,AW-HE70,Ethernet,IP (Panasonic Native),,,Studio PTZ.
+Panasonic,AW-UB10,,AW-UB10,Ethernet,IP,,"Use EasyIP SetupTool credentials, not camera menu credentials. Red tally only; green not visibly displayed.",Box camera with extensive controls including multi-matrix.
+Panasonic,AW-UB50,,AW-UB50,Ethernet,IP,,Use EasyIP SetupTool credentials.,Box camera variant with same protocol.
+Panasonic,AW-UE100,,AW-UE100,Ethernet,IP (Panasonic Native),,,Mid-range UE PTZ. AW-UR100 uses this protocol.
+Panasonic,AW-UE150,,AW-UE150,Ethernet,IP (Panasonic Native),,,Professional UE PTZ with extensive controls.
+Panasonic,AW-UE160,,AW-UE160,Ethernet,IP (Panasonic Native),,,Latest UE series PTZ.
+Panasonic,AW-UE70,,AW-UE70,Ethernet,IP (Panasonic Native),,,UE series PTZ.
+Panasonic,BS1H,,BS1H,Ethernet,IP,,Uses same protocol as BGH1.,Box camera variant with same control set.
+Panasonic,DC-BGH1,BGH1,DC-BGH1,Ethernet,IP,,Pairs with only one controller at a time (LUMIXTether or RCP). Must reset camera network settings to switch controllers. Password auto-assigned to abcDE12345.,Box camera for multi-camera production. Manual focus shows no values but responds to encoder (suitable for static positions only).
+Panasonic,DC-GH5S,GH5S,DC-GH5S,USB,USB (Panasonic Native),,Select PC (Tether) when camera prompts USB mode. Set Dual Native ISO to AUTO for full ISO range.,Mirrorless camera. A-B/G-M settings mapped to R/B controls (not standard red/blue gains).
+Panasonic,DC-GH7,GH7,DC-GH7,USB,USB (Panasonic Native),,,"Updated mirrorless with additional controls including saturation, hue, detail, and knee."
+Panasonic,VariCam,Varicam,VariCam,Ethernet,IP,,Set credentials to guest/p2guest. Assign static IP address.,Cinema camera with full paint control over IP.
+Proton,Proton 4K,,PROTON 4K,Serial,Serial,,,4K micro camera.
+Proton,Proton 4K FLEX,,PROTON 4K FLEX,Serial,Serial,,,4K flexible micro camera.
+Proton,Proton CAM,,PROTON CAM,Serial (no specific cable needed),Serial,,Camera plugs directly into CI0 serial port - CI0 provides both data and power.,Micro camera with comprehensive paint controls.
+Proton,Proton FLEX,,PROTON FLEX,Serial,Serial,,,Micro camera.
+Proton,Proton HFR,,PROTON HFR,Serial,Serial,,,High frame rate micro camera.
+Proton,Proton PIO-E (IP interface),,PROTON PIO-E,Ethernet,IP (via PIO-E),,PoE camera interface for IP control. Compatible with Proton cameras only.,Allows Proton cameras to be controlled over Ethernet instead of serial.
+Proton,Proton RAIN,,PROTON RAIN,Serial,Serial,,,Micro camera.
+Proton,Proton ZOOM,,PROTON ZOOM,Serial,Serial,,Iris control only on ZOOM model. Gain can be set to ISO.,Micro camera with zoom lens.
+RED,Komodo,,RED Komodo,Ethernet,IP,,"Connect camera and RCP/RIO to same network. If different subnets, follow IP configuration guide.",Cinema camera with full paint and exposure control. Tally (red only) supported.
+RED,V-Raptor,,RED V-Raptor,Ethernet,IP,,,Cinema camera - uses Komodo protocol selection in RCP.
+Sony,Alpha 1,,ILCE-1,USB,USB (Sony SDK),,"Requires RIO version 25.10.1beta2 or later for newer models. Keep camera firmware updated. Use USB data cable, not power-only cable.",Supports extensive paint controls. Update both camera firmware and RCP/RIO to compatible versions. Multiple devices cannot control simultaneously.
+Sony,Alpha 1 II,,ILCE-1M2,USB,USB (Sony SDK),,Requires RIO version 25.10.1beta2 or later.,Full paint control support with latest firmware.
+Sony,Alpha 6700,,ILCE-6700,USB,USB (Sony SDK),,,APS-C format mirrorless with paint support.
+Sony,Alpha 7 IV,,ILCE-7M4,USB,USB (Sony SDK),,,Supports limited paint controls.
+Sony,Alpha 7C,,ILCE-7C,USB,USB (Sony SDK),,,Compact mirrorless with basic paint control support.
+Sony,Alpha 7C II,,ILCE-7CM2,USB,USB (Sony SDK),,,Updated version with extended controls.
+Sony,Alpha 7CR,,ILCE-7CR,USB,USB (Sony SDK),,,Supports basic to extensive paint controls.
+Sony,Alpha 7R IV,,ILCE-7RM4,USB,USB (Sony SDK),,,Baseline model for control support.
+Sony,Alpha 7R V,,ILCE-7RM5,USB,USB (Sony SDK),,,Supports limited black balance and black gamma controls.
+Sony,Alpha 7S III,,ILCE-7SM3,USB,USB (Sony SDK),,,Supports extensive paint controls.
+Sony,Alpha 9 II,,ILCE-9M2,USB,USB (Sony SDK),,,Supports extensive paint controls. Subset of controls available compared to other models.
+Sony,Alpha 9 III,,ILCE-9M3,USB,USB (Sony SDK),,,Full paint control support.
+Sony,BRC-H800,,BRC-H800,Ethernet,VISCA IP,,,Budget PTZ option with basic matrix control.
+Sony,BRC-H900,,BRC-H900,Ethernet,VISCA IP,,,PTZ camera without ND filter control.
+Sony,BRC-X1000,,BRC-X1000,Ethernet,VISCA IP,,,"Professional PTZ with full paint, PTZ, and focus control."
+Sony,BRC-X400,,BRC-X400,Ethernet,VISCA IP,,,Compact PTZ camera with extensive controls.
+Sony,Burano (CNS-Bridge),Burano Broadcast,Sony Burano,Ethernet,CNS-Bridge,,Only one protocol can be active at a time. Enable CNS mode to Bridge in camera menu.,"Broadcast paint protocol with black, R/B gains, detail, multi-matrix, and tally support."
+Sony,Burano (SDK),Burano Sony SDK,Sony Burano,Ethernet,Burano (Sony SDK),,Only one protocol can be active at a time. Enabling CNS-Bridge disables SDK functions. Set username/password under Network Settings.,"SDK protocol uses Sony Monitor & Control app protocol. Provides exposure, white balance, recording controls."
+Sony,"CBM (FX9, Z280)",,Sony CBM compatible cameras,"Ethernet, Wi-Fi",CBM (Sony Protocol),,"Camera login must be set to admin, password to Abcdef123. Camera Remote Control must be enabled in Network settings.",CBM protocol provides unrestricted ND and 1dB gain control. No black balance or multi-matrix controls available.
+Sony,FCB-7520,,FCB-7520,Serial (6-pin),VISCA,CY-CBL-6P-FAN,CI0 powers and controls camera through single cable. Set up VISCA bus in RCP configuration.,Compact block camera module suitable for robotic applications.
+Sony,FCB-8230,,FCB-8230,Serial (6-pin),VISCA,CY-CBL-6P-FAN,,Block camera with similar feature set to FCB-7520.
+Sony,FCB-8530,,FCB-8530,Serial (6-pin),VISCA,CY-CBL-6P-FAN,,Enhanced block camera model.
+Sony,FCB-8550,,FCB-8550,Serial (6-pin),VISCA,CY-CBL-6P-FAN,,High-end block camera.
+Sony,FCB-H11,,FCB-H11,Serial (6-pin),VISCA,CY-CBL-6P-FAN,,Latest generation block camera.
+Sony,FR7,FR7 PTZ Cinema,Sony FR7,Ethernet,IP (s700 protocol),,Firmware 1.10 or later required. RCP firmware 23.8.1 or later required. Disable Brute Force Attack Protection in camera settings.,Full PTZ cinema camera with comprehensive paint controls. Disable paint controls in S-Log/CineEI mode. Pan/tilt can be controlled via RCP touchscreen or USB joystick.
+Sony,FX2,,ILME-FX2,USB,USB (Sony SDK),,Requires RIO version 25.10.1beta2 or later.,Professional handheld cinema camera.
+Sony,FX3,FX3A variant,ILME-FX3,USB,USB (Sony SDK),,FX3A requires RIO version 25.10.1beta2 or later. Update FX3 firmware to version 3.00 or later.,Lightweight cinema camera suitable for gimbals. Works well on steadicams.
+Sony,FX30,,ILME-FX30,USB,USB (Sony SDK),,,Compact cinema camera with 4K capability.
+Sony,FX6,,Sony FX6,"Ethernet (USB-Ethernet dongle), LANC",IP or LANC,,Requires firmware v4 or higher and RCP/RIO 24.1+. USB-Ethernet dongle must use ASIX AX88179 chipset (not AX88179A/B) or older Realtek RTL8153. Incompatible dongle can crash camera. No further firmware releases beyond 2026 update; no new paint controls expected.,"Assign variable ND to iris joystick for smooth control. LANC adds tally and menu navigation to IP control. Limited paint control available (white balance, iris, variable ND, gain, shutter, record only)."
+Sony,FX9,,Sony FX9,"Ethernet, Wi-Fi",IP (FX9 or CBM),,XDCA-FX9 extension unit required for direct Ethernet connection without RIO. WB button must be set to Preset for color temperature and master black access. CNS mode must be set to Bridge.,"FX9 mode combines S700 and CBM protocols for maximum control but disables variable ND and fine gain. CBM mode gives 1dB gain steps and variable ND but fewer paint parameters. Choose CBM for S-Log, FX9 for broadcast workflows."
+Sony,HXR-NX800,,HXR-NX800,Ethernet,IP (Sony SDK),,Requires RCP/RIO firmware 25.10.1Beta2 or later.,Professional camcorder with limited control set.
+Sony,"LANC (FS5, FS7, Z90, etc.)",Sony LANC cameras,Sony LANC equipped camcorders,LANC (3.5mm miniature jack),LANC,CY-CBL-6P-LANC-03,Unidirectional control only - no camera feedback to RCP. Map dial to gain on camera for gain control. Connect to CI0/RIO port 2 only (port 1 not compatible).,Basic camera control via key presses. Suitable for menu navigation and tally on cameras like FX6. Slow control protocol.
+Sony,Legacy 8-pin,PMW Series,PMW cameras,8-pin Remote Connector,Serial (Sony Protocol),CY-CBL-6P-SONY-8-03 or CY-CBL-6P-SONY-8-01,CY-CBL-6P-SONY-8-02 can cause boot loops on some camcorders. Use CY-CBL-6P-SONY-8-03 and external power supply or D-Tap for RIO power. Toggle Tally Red in RCP menu to test communication.,Full paint control over standard Sony serial protocol. RIO can draw power from camera through cable with correct cable type.
+Sony,PXW-Z200,,PXW-Z200,Ethernet,IP (Sony SDK),,Requires RCP/RIO firmware 25.10.1Beta2 or later. Set camera manual switch to Manual position. Enable Camera Remote Control in Network settings.,Professional camcorder. Control limited to exposure parameters in current beta.
+Sony,PXW-Z300,,PXW-Z300,Ethernet,IP (Sony SDK),,Requires RCP/RIO firmware 25.10.1Beta2 or later.,Professional broadcast camcorder.
+Sony,RX0 Mark II,,DSC-RX0M2,USB,USB (Sony SDK),,,Ultra-compact point-and-shoot style camera.
+Sony,Venice 1,Venice,Sony Venice,"Ethernet, 8-pin Remote",IP (Venice IP) or Serial (Venice Serial),CY-CBL-6P-SONY-8P-03 for serial control,"Venice IP: RCP paint mode disabled, ND presets only. Venice Serial: requires 8-pin port, full broadcast paint control. Enable RM/RCP Paint Con in camera settings for serial.","Choose IP for S-Log workflows, Serial for RCP paint mode. Scene file save/recall available in both modes. Replay feature requires activating Clips mode."
+Sony,Venice 2,,Sony Venice 2,"Ethernet, 8-pin Remote",IP (Venice IP) or Serial (Venice Serial),CY-CBL-6P-SONY-8P-03 for serial control,,Second generation Venice with same control options as Venice 1.
+Sony,ZV-E1,,ZV-E1,USB,USB (Sony SDK),,,Content creation focused mirrorless.
+Sony,ZV-E10 II,,ZV-E10M2,USB,USB (Sony SDK),,,Content creation camera with extended capabilities.
+Z CAM,P2-R1,Z CAM P2R1,P2-R1,Ethernet,IP,,Default IP 10.98.32.1. WB control requires camera in Manual WB mode. SDR gamma only accessible when OETF set to Gamma.,Cinema PTZ camera with paint and lens controls. Use Anxinshi joystick for convenient PTZ control.

@@ -7,12 +7,14 @@ keywords: [system examples, use cases, broadcast, cinema, REMI, multi-camera, pr
 slug: /products/system-examples
 ---
 
+import EmbedPlayer from '@site/src/components/EmbedPlayer';
+
 <!--
 OSP codes applied:
-LEDE: Start with what the reader gains — concrete setups they can quote or replicate
+LEDE: Start with what the reader gains - concrete setups they can quote or replicate
 FRONT: Each scenario states the production type and challenge before the solution
 WHOM: System integrators, rental houses, broadcast engineers evaluating Cyanview
-WIIFM: "What you need" box per scenario — directly quotable for proposals
+WIIFM: "What you need" box per scenario - directly quotable for proposals
 SPFIC: Real deployments with specific camera counts, lens models, transport types
 EXMPL: Each scenario grounded in a documented production
 ACTIV: Active voice throughout
@@ -25,11 +27,55 @@ FACT: Camera counts, latency numbers, and transport details from real production
 
 # System examples
 
-Each example below is based on a documented deployment. Use them as starting points for your own system design — adjust camera counts, transport, and accessories to match your production.
+Each example below is based on a documented deployment. Use them as starting points for your own system design - adjust camera counts, transport, and accessories to match your production.
 
 :::tip Not sure where to start?
 Use the [product selector](/docs/products/which-product) to find the right hardware for your cameras, then come back here to see how it fits into a complete system.
 :::
+
+---
+
+## Olympic figure skating - wireless on-ice camera
+
+**Scenario:** A camera operator skates backwards on the ice during Olympic figure skating, following the athletes with a custom camera rig. A RIO +WAN with a 4G USB dongle rides on the rig. Blackmagic zoom and focus demands (BM handles) connect to the RIO via USB, giving the operator direct lens control at hand while the vision engineer in the control room shades the picture remotely - all over 4G, fully wireless.
+
+<EmbedPlayer
+  src="https://nbcnewyork.com/portableplayer/?CID=1:2:6465497&videoID=2488229443819&origin=nbcnewyork.com&fullWidth=y"
+  credit="Video courtesy of NBC New York - &quot;The skating camera guy at the Olympics gets emotional too&quot;"
+  creditUrl="https://www.nbcnewyork.com/video/news/sports/olympic-figure-skating-cameraman-2/6465497/"
+/>
+
+**Challenges:**
+- Operator is skating on the ice - zero cabling possible, fully wireless mandatory
+- High-contrast lighting shifts between spotlights and arena floods during performances
+- Vision engineer must shade in real time from the control room while the operator focuses on framing and skating
+- Operator needs instant local adjustments (iris, gain) without waiting for the control room
+
+### Equipment list
+
+| Component | Quantity | Role |
+|:----------|:--------:|:-----|
+| RIO +WAN | 1 | Camera control on the rig, 4G gateway |
+| [BM handles](/docs/integrations/cameras/blackmagic/bm-handles) | 1 set | Zoom and focus demands - operator lens control via USB on the RIO |
+| 4G USB dongle | 1 | Wireless link from RIO to Cyanview cloud |
+| RCP | 1 | Remote shading panel in the control room |
+
+### How it connects
+
+```
+On the ice (camera rig):
+  Camera → RIO +WAN (serial) → 4G dongle → Cyanview cloud
+  BM handles (USB) → RIO → zoom + focus control
+
+Control room:
+  Cyanview cloud → RCP (shading + paint)
+
+Dual control:
+  Operator on ice: zoom & focus via BM handles on the RIO
+  Vision engineer: iris, gain, white balance via RCP in control room
+```
+
+**Key detail:** The [BM handles](/docs/integrations/cameras/blackmagic/bm-handles) plug into the RIO via USB, giving the skating operator zoom and focus control right at hand. The vision engineer handles iris, gain, and white balance remotely via the RCP over 4G. Both work simultaneously without conflict. If the 4G link drops, the operator keeps full local lens control on the ice.
 
 ---
 
@@ -70,7 +116,7 @@ GoPro:
   GoPro → HDMI-to-SDI → VP4 → RCP
 ```
 
-**Key detail:** The 4G link added about 60 ms latency — fast enough for real-time shading. Camera control uses minimal bandwidth, so even peak-hour cellular in central Paris was stable.
+**Key detail:** The 4G link added about 60 ms latency - fast enough for real-time shading. Camera control uses minimal bandwidth, so even peak-hour cellular in central Paris was stable.
 
 [Full fashion show workflow guide &rarr;](/docs/guides/workflows/fashion-show)
 
@@ -78,12 +124,12 @@ GoPro:
 
 ## Remote production (REMI)
 
-**Scenario:** Cameras on location, production control at a remote facility. The RCP and RIO communicate over the internet through the Cyanview cloud — no VPN, no firewall configuration.
+**Scenario:** Cameras on location, production control at a remote facility. The RCP and RIO communicate over the internet through the Cyanview cloud - no VPN, no firewall configuration.
 
 **Challenges:**
 - Unpredictable internet quality between site and studio
 - Camera control must survive network interruptions
-- Zero-config networking — both sides make outbound connections only
+- Zero-config networking - both sides make outbound connections only
 
 ### Equipment list
 
@@ -105,7 +151,7 @@ Remote studio:
   Video transport → Decoder → Monitoring
 ```
 
-**Key detail:** The RIO +WAN maintains autonomous camera and lens control locally. If the internet link drops, the camera operator on-site keeps full control. When the link recovers, the remote RCP reconnects automatically — no manual intervention.
+**Key detail:** The RIO +WAN maintains autonomous camera and lens control locally. If the internet link drops, the camera operator on-site keeps full control. When the link recovers, the remote RCP reconnects automatically - no manual intervention.
 
 Both RCP and RIO make outgoing connections to the Cyanview cloud, so neither side needs open firewall ports.
 
@@ -118,7 +164,7 @@ Both RCP and RIO make outgoing connections to the Cyanview cloud, so neither sid
 **Scenario:** Blackmagic URSA G2 controlled remotely over a Haivision DataBridge tunnel. SDI camera control with tally from an ATEM.
 
 **Challenges:**
-- Blackmagic cameras use SDI-embedded control — needs injection into the return feed
+- Blackmagic cameras use SDI-embedded control - needs injection into the return feed
 - Wireless video transport must also carry the camera control tunnel
 - Tally must reach the camera at the remote end
 
@@ -157,11 +203,11 @@ If your URSA G2 or Studio Camera G2 has IP control enabled, you can skip the RSB
 
 ## Cinema gimbal setup
 
-**Scenario:** Sony mirrorless camera on a gimbal, controlled over 4G. The camera operator handles framing, the vision engineer handles paint — from anywhere.
+**Scenario:** Sony mirrorless camera on a gimbal, controlled over 4G. The camera operator handles framing, the vision engineer handles paint - from anywhere.
 
 **Challenges:**
 - USB camera control (mirrorless cameras)
-- Gimbal restricts cabling — minimal connections to the camera rig
+- Gimbal restricts cabling - minimal connections to the camera rig
 - 4G link for fully wireless operation
 
 ### Equipment list
@@ -186,7 +232,7 @@ Optional color matching:
   SDI from RF receiver → VP4 → RCP
 ```
 
-**Key detail:** The RIO handles camera control over USB while the video takes a separate RF path. Splitting control and video keeps gimbal wiring minimal — one USB cable to the camera, one 4G dongle on the RIO.
+**Key detail:** The RIO handles camera control over USB while the video takes a separate RF path. Splitting control and video keeps gimbal wiring minimal - one USB cable to the camera, one 4G dongle on the RIO.
 
 [Full gimbal workflow guide &rarr;](/docs/guides/workflows/sony-mirrorless-gimbal)
 
@@ -233,8 +279,9 @@ Control room:
 
 | Scenario | Cameras | Transport | Key products | Remote? |
 |:---------|:-------:|:----------|:-------------|:-------:|
-| Multi-camera live event | 2–128 | LAN, fiber, 4G | RCP + RIO | Optional |
-| REMI remote production | 1–128 | Internet (cloud) | RCP + RIO +WAN | Yes |
+| Olympic on-ice camera | 1 | 4G (wireless) | RCP + RIO +WAN | Yes |
+| Multi-camera live event | 2-128 | LAN, fiber, 4G | RCP + RIO | Optional |
+| REMI remote production | 1-128 | Internet (cloud) | RCP + RIO +WAN | Yes |
 | Wireless Blackmagic | 1+ | Haivision DataBridge | RCP + RIO + ATEM | Yes |
 | Cinema gimbal | 1 | 4G + RF video | RCP + RIO +WAN | Yes |
 | Beauty shot | 1 | Haivision DataBridge | RCP + RIO +WAN | Yes |

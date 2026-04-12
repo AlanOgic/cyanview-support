@@ -216,6 +216,8 @@ const config: Config = {
             {label: 'VP4 — Video Processor', to: '/docs/products/vp4'},
             {label: 'NIO — Network I/O', to: '/docs/products/nio'},
             {label: 'RSBM — SDI Control Board', to: '/docs/products/rsbm'},
+            {type: 'html', value: '<hr style="margin: 4px 0;">'},
+            {label: 'See it live', to: '/docs/products/system-examples'},
           ],
         },
         {
