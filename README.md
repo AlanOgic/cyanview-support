@@ -24,6 +24,19 @@ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
+## AI Chat Widget
+
+A floating AI assistant is embedded on every page (bottom-right). It uses
+[deep-chat-react](https://github.com/OvidijusParsiunas/deep-chat) and streams
+answers from the Cyanview RAG backend at
+`https://cyanview.cloud/api/search/stream` (clorag).
+
+- **Component**: `src/theme/Root.tsx` + `src/theme/ChatWidget.tsx`
+- **Styles**: `src/theme/ChatWidget.module.css`
+- **Transport**: SSE (`text/event-stream`) with `text`/`sources`/`error` events
+- **CORS**: clorag must allow `https://support.cyanview.cloud` and
+  `http://localhost:3000` for local dev
+
 ## Deployment
 
 Using SSH:

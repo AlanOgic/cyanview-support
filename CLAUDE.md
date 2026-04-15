@@ -13,8 +13,11 @@ Docusaurus v3 documentation and support portal for **Cyanview** — remote camer
 
 ```
 src/
-  pages/index.tsx    ← Support portal homepage (entry page with service cards)
-  css/custom.css     ← Full design system: tokens, navbar, sidebar, docs, footer, homepage
+  pages/index.tsx         ← Support portal homepage (entry page with service cards)
+  css/custom.css          ← Full design system: tokens, navbar, sidebar, docs, footer, homepage
+  theme/Root.tsx          ← Docusaurus root swizzle, mounts AI chat widget (client-only)
+  theme/ChatWidget.tsx    ← Floating bubble + deep-chat-react, streams clorag SSE
+  theme/ChatWidget.module.css
 docs/
   getting-started/   ← Quickstart, IP config
   guides/            ← Networking, tally, preview, workflows, advanced
@@ -48,6 +51,26 @@ npm run typecheck # TypeScript check
 - `docusaurus-plugin-image-zoom` — click-to-zoom on doc images
 - `@docusaurus/plugin-client-redirects` — legacy URL redirects from old site
 - `@easyops-cn/docusaurus-search-local` — offline-capable local search
+
+## AI Chat Widget
+
+Floating support assistant on every page, wired to the Cyanview RAG backend
+(clorag) at `POST https://cyanview.cloud/api/search/stream`.
+
+- **Stack**: `deep-chat-react` inside a Docusaurus `Root` swizzle, rendered
+  client-side only via `<BrowserOnly>` (web components do not SSR)
+- **API contract**: `{query, source: "both", limit: 10}` → SSE stream of
+  `{type: "session"|"text"|"sources"|"done"|"error", ...}` events
+- **System prompt**: owned by clorag
+  (`base.identity` + `base.product_reference` + `synthesis.web_layer` layers
+  in `src/clorag/web/search/synthesis.py`) — do not duplicate in the widget
+- **CORS**: `clorag/src/clorag/web/app.py` must list
+  `https://support.cyanview.cloud` and `http://localhost:3000` in
+  `allow_origins`. When adding a new origin, redeploy clorag
+- **Disclaimer**: small-font footer "AI-generated answers may contain errors.
+  Always verify critical information." lives at the bottom of the chat panel
+- **Sources**: clorag may return entries with `url: null` (e.g. gmail cases) —
+  the widget filters these out before rendering the markdown source list
 
 ## Important Notes
 
