@@ -141,6 +141,8 @@ const config: Config = {
           {from: '/docs/Maintenance/ReleaseNotes', to: '/docs/reference/release-notes'},
           {from: '/docs/Accessories/CableCatalog', to: '/docs/resources/cable-catalog'},
           {from: '/docs/DrawIOSymbols', to: '/docs/resources/draw-io-symbols'},
+          {from: '/docs/integrations/accessories/cmotion-cgate', to: '/docs/integrations/lenses/cmotion-cgate'},
+          {from: '/docs/integrations/cameras/other/lansee', to: '/docs/integrations/broadcast-systems/lansee'},
           {from: '/docs/my-first-cyanview', to: '/docs/getting-started/my-first-cyanview'},
           {from: '/docs/Manuals/multi-cam-dashboard', to: '/docs/reference/manuals/rcp/multi-cam-dashboard'},
         ],
@@ -208,6 +210,7 @@ const config: Config = {
         {
           type: 'dropdown',
           label: 'Products',
+          to: '/docs/products',
           position: 'left',
           items: [
             {label: 'RCP — Remote Control Panel', to: '/docs/products/rcp'},

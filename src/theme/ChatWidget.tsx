@@ -56,7 +56,7 @@ async function handleChat(
     const response = await fetch(API_URL, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({query, source: 'both', limit: 10}),
+      body: JSON.stringify({query, source: 'both', limit: 10, mode: 'chat'}),
     });
 
     if (!response.ok || !response.body) {
