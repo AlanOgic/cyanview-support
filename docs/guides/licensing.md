@@ -57,8 +57,8 @@ The standard RCP provides full camera control via touchscreen and rotary knobs. 
 
 The RCP-J adds **five quick-access scene buttons** and an **integrated iris joystick**:
 
-- **Buttons 1–5** instantly load scene files without menu navigation
-- Buttons are **camera-locked**—each button loads the scene for the currently selected camera
+- **Buttons 1–5** instantly load scene files 1–5 without menu navigation (load only, no save)
+- Buttons follow the joystick module's **camera lock**—when the joystick is locked to a specific camera, the scene buttons load scenes for that camera, which may differ from the camera currently selected on the RCP
 - **Joystick** provides tactile iris control
 
 **Choose RCP-J when:** You need instant access to pre-configured looks during live production.

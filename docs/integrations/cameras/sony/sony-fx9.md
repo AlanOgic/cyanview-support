@@ -2,8 +2,8 @@
 id: sony-fx9
 title: "Sony FX9 integration"
 sidebar_label: "Sony FX9"
-description: "Control the Sony FX9 with Cyanview over IP or serial. Optional XDCA-FX9 extension unit enables direct Ethernet connection."
-keywords: [Sony FX9, XDCA, cinema camera, IP, serial, paint control, Cyanview]
+description: "Control the Sony FX9 with Cyanview over IP (Ethernet or Wi-Fi). Optional XDCA-FX9 extension unit enables direct Ethernet connection."
+keywords: [Sony FX9, XDCA, cinema camera, IP, paint control, Cyanview]
 slug: /integrations/cameras/sony/sony-fx9
 ---
 
@@ -68,7 +68,7 @@ See the [CBM integration guide](/docs/integrations/cameras/sony/sony-cbm) for de
 Set the **WB button** on the left side of the camera to `Preset`. Without this, color temperature and master black controls are unavailable.
 
 :::info
-This is a known Sony firmware behavior — the WB physical switch state affects master black accessibility even though the two features are unrelated.
+The reason for this coupling between the WB switch and master black control is unknown — it appears to be a quirk of the camera's behavior.
 :::
 
 ### Enable remote control

@@ -50,16 +50,16 @@ Quick reference for broadcast and camera control terms used throughout the Cyanv
 
 | Term | Definition |
 |---|---|
-| **RCP** | Remote Control Panel. Cyanview's software-based camera paint controller. Runs on tablets, computers, or touchscreens. |
+| **RCP** | Remote Control Panel. Cyanview's hardware camera control panel with touchscreen and physical encoders. Powered via PoE (802.3af) or 12V DC; configured through its web UI. |
 | **RIO** | Remote I/O. Cyanview's hardware gateway for camera and lens connections. Maintains autonomous control even when network drops. |
 | **RIO +WAN** | RIO with full license. Supports LAN and WAN connectivity, Cyanview cloud, and REMI remote production. |
-| **RIO +LAN** | RIO with LAN-only license (formerly RIO Live). Local production companion for 1-2 cameras, no cloud or REMI. |
+| **RIO +LAN** | RIO with LAN-only license (formerly RIO Live). Local production companion limited to two cameras; REMI access only on the local network, no cloud/WAN access. |
 | **CI0** | Camera Interface Zero. Cyanview's compact serial-to-IP converter. Stateless — loses control if network drops. |
 | **CI0BM** | CI0 with integrated Blackmagic SDI control board (RSBM). |
 | **VP4** | Video Processor 4. Cyanview's 4-channel video processor for color correction and CCU control. |
 | **NIO** | Network I/O. Cyanview's network-based GPIO device for tally and control signals over Ethernet, WiFi, or 4G. |
 | **RSBM** | SDI control injection board for Blackmagic cameras. Used with CI0 or RIO. |
-| **PoE** | Power over Ethernet. All Cyanview devices support IEEE 802.3af PoE, allowing power delivery over the same Ethernet cable used for data. |
+| **PoE** | Power over Ethernet. The RCP (802.3af) and CI0 (PoE+, 802.3af/at) can be powered over Ethernet. The RIO is **not** PoE — it requires 12V DC power. |
 
 ## Networking
 

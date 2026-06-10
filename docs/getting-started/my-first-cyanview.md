@@ -97,13 +97,13 @@ The process is the same on both devices. On the RCP you set IP addresses; on the
 
 ### Configure with a CI0
 
-The CI0 is a serial-only bridge — it converts Ethernet data from the RCP into serial signals for connected cameras. Unlike the RIO, it has no screen and no web interface.
+The CI0 is a serial-only bridge — it converts Ethernet data from the RCP into serial signals for connected cameras. Unlike the RIO, it has no web interface — only a small LCD status screen.
 
 :::info CI0 vs RIO
 The RIO combines a web interface, autonomous processing, and built-in serial ports. The CI0 is a lightweight alternative when you only need serial connectivity.
 :::
 
-Because the CI0 has no interface, you configure it from the RCP:
+Because the CI0 has no web interface, you configure it from the RCP:
 
 1. Add a camera on the RCP following the steps above
 2. When selecting the connection type, choose the CI0 serial port
@@ -122,7 +122,7 @@ Use [REMI](/docs/guides/networking/remi) to import cameras from a RIO into your 
    ![RIO in REMI menu](/img/Configuration/REMI/remi-remi-imported.png)
 
 4. Enable **Remote Control** for the cameras you want to import — or check it at the top level to import all of them
-5. Open the RCP **Configuration** menu — imported cameras display a "Cyan Imported" label
+5. Open the RCP **Configuration** menu — imported cameras display an "Imported" label
 
    ![Imported cameras](/img/Configuration/REMI/remi-configuration-imported.png)
 

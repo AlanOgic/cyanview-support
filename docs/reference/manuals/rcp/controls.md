@@ -141,7 +141,7 @@ Press **AUTO** to toggle auto exposure for the active mode.
 
 ### Screen navigation
 
-Swipe left or right on the touchscreen to move between RCP screens.
+Tap the touch-sensitive left or right edges of the touchscreen, or press the two white left/right arrow buttons above the screen, to move between RCP screens.
 
 :::note
 Values shown as `--` indicate functions not supported by the current camera model.

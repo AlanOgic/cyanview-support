@@ -2,14 +2,14 @@
 id: wifi-nano-ap
 title: "WiFi Nano AP setup"
 sidebar_label: "WiFi Nano AP"
-description: "Configure a Nano AP WiFi access point for direct wireless connections between Cyanview devices and cameras."
+description: "Configure a TP-Link Nano Router in Client mode to bridge Cyanview devices and cameras onto an existing WiFi network."
 keywords: [WiFi, Nano AP, access point, direct connection]
 slug: /guides/networking/wifi-nano-ap
 ---
 
 ![TP-Link wiring diagram](/img/Configuration/TPLink-wiring.png)
 
-Use a TP-Link Nano Router as a Wi-Fi access point to provide wireless connectivity to your Cyanview device. This covers several use cases:
+Use a TP-Link Nano Router in Client mode as a bridge that connects your Cyanview device's Ethernet port to an existing Wi-Fi access point. This covers several use cases:
 
 - **CI0** — control a camera over Wi-Fi (Blackmagic, etc.) `schema 1`
 - **RIO** — access the internet over Wi-Fi

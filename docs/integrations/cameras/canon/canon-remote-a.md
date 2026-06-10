@@ -7,7 +7,7 @@ keywords: [Canon, Remote A, serial, camera control, protocol]
 slug: /integrations/cameras/canon/canon-remote-a
 ---
 
-Cyanview controls Canon cinema cameras using the Remote A protocol over a 2.1 mm jack serial connection. This covers older CXX models that do not support XC over IP.
+Cyanview controls Canon cinema cameras using the Remote A protocol over a 2.5 mm TRS jack serial connection. This covers older CXX models that do not support XC over IP.
 
 ![Canon C200 cinema camera](/img/Integrations/Canon/canon-C200.png)
 

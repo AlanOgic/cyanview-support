@@ -78,7 +78,7 @@ Sony Alpha cameras have no built-in tally. You can add tally output through a RI
 ## Setup
 
 1. Update your Sony Alpha camera to the latest firmware.
-2. Update your RCP and RIO to the latest version — minimum `24.2.1`.
+2. Update your RCP and RIO to the latest version (`23.8.1` or later for FX3 control; `25.10.1beta2` or later for the FX2, FX3A, and newer camcorders).
 3. Connect the camera to the RIO or RCP using a USB data cable.
 4. Open the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui) and add the camera:
    - Select **Sony** as the brand.

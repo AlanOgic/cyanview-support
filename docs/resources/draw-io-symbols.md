@@ -2,8 +2,8 @@
 id: draw-io-symbols
 title: "Draw.io symbols library"
 sidebar_label: "Draw.io symbols"
-description: "Download Cyanview device symbols for Draw.io and Excalidraw diagrams. Create professional system architecture drawings."
-keywords: [Draw.io, symbols, diagrams, architecture, Excalidraw]
+description: "Download Cyanview device symbols for Draw.io diagrams. Create professional system architecture drawings."
+keywords: [Draw.io, symbols, diagrams, architecture]
 slug: /resources/draw-io-symbols
 ---
 

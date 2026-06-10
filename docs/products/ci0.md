@@ -31,7 +31,7 @@ The CI0 is a compact serial-to-IP converter that connects cameras directly to yo
 
 The CI0 is a **stateless** device. If the network connection between the CI0 and the RCP drops, the CI0 loses camera control until the connection is restored. For mission-critical applications or lens motor control, use a [RIO](/docs/products/rio) instead.
 
-The CI0 does **not** have a USB port. For USB-controlled cameras (Sony Alpha, Canon R5), you need a [RIO](/docs/products/rio).
+The CI0 does **not** have a USB port. For USB-controlled cameras (Sony Alpha, Canon R5), connect the camera directly to a USB port on the RCP, or use a [RIO](/docs/products/rio) when the camera is remote from the panel.
 
 ## When to use the CI0
 

@@ -10,7 +10,7 @@ slug: /integrations/broadcast-systems/evs-hm
 The RCP integrates with EVS as a Hypermotion camera, allowing it to perform protocol conversion and abstract camera origins from the EVS system.
 
 :::note
-This guide assumes you already have a compatible slow-motion camera (Atom SSM500, Phantom, etc.) configured on your RCP. For extended EVS configuration details, refer to the [EVS documentation](https://download-area.evs.com/en/download-area-version/3499).
+This guide assumes you already have a compatible slow-motion camera (Atom SSM500, Phantom, etc.) configured on your RCP. For extended EVS configuration details, refer to the [EVS documentation](https://download.evs.com/).
 :::
 
 ## Configuration

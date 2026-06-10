@@ -2,7 +2,7 @@
 id: firmware-download
 title: "Firmware download"
 sidebar_label: "Firmware download"
-description: "Download the latest firmware for your Cyanview devices. RCP, RIO, CI0, VP4, and NIO update files."
+description: "Download the latest firmware for your Cyanview devices. RCP, RIO, NIO, and VP4 update files."
 keywords: [firmware, download, update, latest version]
 slug: /reference/firmware-download
 ---

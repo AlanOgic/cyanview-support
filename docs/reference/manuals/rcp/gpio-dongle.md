@@ -34,7 +34,7 @@ Always connect the GND of multiple devices together when using a common GND for 
 
 ### Simple 2 GPIO version
 
-A simpler version providing only 2 GPIO is available. This version only supports port 1, and port 2 must be disabled — plug a single cable into port 1 only (the port closer to the edge of the RCP). This gives one pin for touchdown and one for tally on each RCP at low cost.
+A simpler version providing only 2 GPIO can be built following the pinout below. This version only supports port 1, and port 2 must be disabled — plug a single cable into port 1 only (the port closer to the edge of the RCP). This gives one pin for touchdown and one for tally on each RCP at low cost.
 
 [![CY-CBL-JACK-GPIO2 simple 2-GPIO version pinout diagram](/img/productGfx/cables/CY-CBL-JACK-GPIO2.svg)](/img/productGfx/cables/CY-CBL-JACK-GPIO2.svg)
 

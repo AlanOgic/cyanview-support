@@ -14,7 +14,7 @@ The VP4 is a 4-channel video processor for real-time color correction and CCU co
 ## Key features
 
 - **4 video channels** — Process four camera feeds simultaneously
-- **Real-time color correction** — Adjust color, contrast, and exposure on the fly
+- **Real-time color correction** — 12-vector multimatrix secondary correction plus CCU-style controls such as detail, coring, and black
 - **Multi-format support** — Works with a range of video input formats
 - **CCU control** — Full camera control unit functionality from your RCP
 
@@ -23,7 +23,7 @@ The VP4 is a 4-channel video processor for real-time color correction and CCU co
 Use the VP4 when you need video-level color correction and processing — typically with camcorders or cameras that require external video processing.
 
 :::info
-The VP4 is designed to work alongside an RCP. Configure your RCP before connecting the VP4.
+The VP4 is typically operated from an RCP, and can also run standalone using its own web UI. The RCP autodetects the VP4 on the network — no specific connection order is required.
 :::
 
 ## Get started

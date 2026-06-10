@@ -89,7 +89,7 @@ If the Tilta motors are not responding:
 * Verify the iris range is correctly set in the RCP configuration.
 
 :::warning
-If you use a Tilta motor on a motorized lens that is also natively controllable (such as the Canon 18-80 mm), disengage the Tilta motors before powering up the system.
+If you use a Tilta motor on a motorized lens that is not natively controllable (such as the Canon 18-80 mm), disengage the Tilta motors before powering up the system.
 
 If you do not:
 1. The camera starts.

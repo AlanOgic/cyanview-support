@@ -13,7 +13,7 @@ Get your Cyanview system running in four steps: wire, discover, configure, and c
 
 ## Step 1: Wire your devices
 
-Connect your Cyanview devices to power and network. Every device connects via Ethernet and supports PoE (Power over Ethernet).
+Connect your Cyanview devices to power and network. Every device connects via Ethernet. The RCP (PoE 802.3af) and CI0 (PoE+) can be powered over Ethernet; the RIO and VP4 require an external 12V DC power supply.
 
 ![Wiring overview](/img/quickstart.png)
 
@@ -34,7 +34,7 @@ Once you can access the web interface, follow the [web UI configuration guide](/
 This applies to all versions of **RCP**, **RIO**, and **NIO**.
 
 :::note
-To connect a RIO or NIO to an RCP, you must use [REMI](/docs/guides/networking/remi). You cannot add a camera connected to a RIO directly into the RCP without REMI.
+To connect a RIO to an RCP, you must use [REMI](/docs/guides/networking/remi). You cannot add a camera connected to a RIO directly into the RCP without REMI. NIOs do not use REMI — they are discovered automatically when on the same switch as the RCP.
 :::
 
 ## Step 4: Update your firmware
@@ -42,6 +42,10 @@ To connect a RIO or NIO to an RCP, you must use [REMI](/docs/guides/networking/r
 ![Update your kit](/img/quickstart-setup.png)
 
 Before you start, update all devices to the latest firmware for the best experience. Follow the [update guide](/docs/reference/product-update).
+
+:::warning
+Updating the firmware wipes the device configuration. Save your configuration from the admin page before updating, and reload it afterwards.
+:::
 
 ## Connect your first camera
 
@@ -57,7 +61,7 @@ You need:
 
 Follow the [serial camera guide](/docs/integrations/generic/serial-camera).
 
-### IP cameras (PTZ, Sony FX9, Canon C300)
+### IP cameras (PTZ, Sony FX9, Canon C300 Mk3)
 
 ![IP camera setup](/img/quickstart-ethernet.png)
 

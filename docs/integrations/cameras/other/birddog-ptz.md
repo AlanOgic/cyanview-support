@@ -2,8 +2,8 @@
 id: birddog-ptz
 title: "BirdDog PTZ integration"
 sidebar_label: "BirdDog PTZ"
-description: "Control BirdDog PTZ cameras with Cyanview over NDI or IP for pan, tilt, zoom, and paint control."
-keywords: [BirdDog, PTZ, NDI, IP control, remote]
+description: "Control BirdDog PTZ cameras with Cyanview over IP for pan, tilt, zoom, and paint control."
+keywords: [BirdDog, PTZ, IP control, remote]
 slug: /integrations/cameras/other/birddog-ptz
 ---
 

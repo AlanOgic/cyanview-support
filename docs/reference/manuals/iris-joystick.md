@@ -37,10 +37,8 @@ After assignment, the main screen appears after a short delay.
 
 Calibration stores sensor values for specific mechanical positions. You need to set these positions:
 
-- `I max open` — Joystick forced UP (spring compressed)
 - `I open` — Joystick UP (without forcing the spring)
 - `I close` — Joystick DOWN (without forcing the spring)
-- `I max close` — Joystick forced DOWN (spring compressed)
 - `Black max` — Black ring turned clockwise to its mechanical stop
 - `Black min` — Black ring turned counter-clockwise to its mechanical stop
 - `J pressed` — Joystick shaft pressed
@@ -115,7 +113,6 @@ Available settings:
 
 - **Joystick limits** — Clear limits, toggle ON/OFF (when ON the joystick is constrained to the defined range; when OFF it can go beyond with the spring), set MAX, set MIN.
 - ~~**Black 1X / 2X**~~ — This setting has moved to the RCP main screen. See [RCP Settings: Sensitivity](/docs/reference/manuals/rcp/ui/settings#sensitivity).
-- **Black Joystick sensitivity** — Sets the sensitivity of the black ring: x1, x2, or x4. Higher values halve the range for finer precision.
 - **Iris / ND / Shutter / Variable Gain** — Function assigned to the joystick lever. Default is Iris. For cameras with continuous ND filters, assign ND to control exposure with the joystick. Gain or ISO can be assigned if continuously variable.
 - **Joystick mode** — Relative or Absolute.
   - **Relative** (default): Joystick movements produce a change proportional to the movement. The camera setting value is not directly linked to the physical joystick position.

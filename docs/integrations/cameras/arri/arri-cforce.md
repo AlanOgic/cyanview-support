@@ -9,6 +9,10 @@ slug: /integrations/cameras/arri/arri-cforce
 
 Control ARRI cforce lens motors directly from a Cyanview RCP through a RIO. This integration provides precision iris, zoom, and focus control over a CAN bus connection with a USB dongle.
 
+:::note
+This direct CAN control integration is unofficial and available as-is, without official support. It uses a USB CAN dongle to send low-level data directly to the motors and does not support typical LBUS features, so it is not expected to be compatible with other devices on the LBUS. For an officially supported setup that works alongside other LBUS controllers, use the [cmotion cGate integration](/docs/integrations/lenses/cmotion-cgate).
+:::
+
 ## Compatible models
 
 - ARRI cforce mini
@@ -63,7 +67,7 @@ To adjust the iris range, torque, or direction for each motor:
 | **Zoom** | `zoom:TORQUE:DIRECTION` | TORQUE = 1–4, DIRECTION = left or right |
 | **Focus** | `focus:TORQUE:DIRECTION` | TORQUE = 1–4, DIRECTION = left or right |
 
-If you configure only one motor (for example, iris), the other motors retain their defaults.
+If you configure only the iris, default zoom and default focus are still applied.
 
 **Examples:**
 
@@ -71,7 +75,7 @@ If you configure only one motor (for example, iris), the other motors retain the
 |:---------------------|:-------|
 | `1.6:32:iris:2:left` | Iris from 1.6 to 32, torque 2, direction left |
 | `2:32:iris:2:right` | Iris from 2 to 32, torque 2, direction right |
-| `1.6:32:iris:2:left,zoom:4:right` | Iris (torque 2, left) + zoom (torque 4, right). Focus uses defaults. |
+| `1.6:32:iris:2:left,zoom:4:right` | Iris (torque 2, left) + zoom (torque 4, right). Focus is not controlled. |
 | `1.6:32:iris:2:left,zoom:4:right,focus:2:left` | All three motors configured |
 
 <img src="/img/Integrations/ARRI/cforce/ARRI-cforce-setup.png" width="400" alt="ARRI cforce advanced configuration" />

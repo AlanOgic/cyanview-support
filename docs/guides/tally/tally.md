@@ -122,8 +122,8 @@ Example setup:
 
 With this configuration:
 - The input of the selected camera links to `output 8` whenever you change camera on the RCP.
-- A red tally output goes to the active camera when any of the three cameras goes live.
-- A green tally output goes to the active camera when any of the three cameras enters preview.
+- A red tally output is sent to whichever of the three cameras goes live.
+- A green tally output is sent to whichever of the three cameras enters preview.
 
 ![Pro-Bel/VSM setup configuration](/img/Integrations/VSM/Probel-setup.png)
 

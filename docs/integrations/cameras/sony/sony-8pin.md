@@ -13,9 +13,9 @@ Connect Sony cameras with an 8-pin remote connector to a **CI0** (local) or **RI
 
 ![Sony shoulder camcorder 8-pin remote connector detail](/img/Integrations/camera/Sony/Sony-PMW/SONY-Shoulder-Camcorder-Remote-Connector@2x-8.png)
 
-![Sony PMW connected via RIO to an RCP](/img/Integrations/camera/Sony/Sony-PMW/SONY-PMW-XXX-RCP-CI0@2x-8.png)
+![Sony PMW connected via CI0 to an RCP](/img/Integrations/camera/Sony/Sony-PMW/SONY-PMW-XXX-RCP-CI0@2x-8.png)
 
-![Sony PMW connected via CI0 to an RCP over internet](/img/Integrations/camera/Sony/Sony-PMW/Sony-PMW-XXX-RCP-RIO-Internet@2x-8.png)
+![Sony PMW connected via RIO to an RCP over internet](/img/Integrations/camera/Sony/Sony-PMW/Sony-PMW-XXX-RCP-RIO-Internet@2x-8.png)
 
 ## Connection
 

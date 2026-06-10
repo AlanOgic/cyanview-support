@@ -2,8 +2,8 @@
 id: anxinshi-ptz-usb-joystick
 title: "PTZ USB joystick integration"
 sidebar_label: "PTZ USB joystick"
-description: "Use a USB joystick for PTZ camera control with Cyanview. Configure speed curves and axis mapping for precise control."
-keywords: [PTZ, USB joystick, Anxinshi, speed curves, control]
+description: "Use the Anxinshi USB joystick for PTZ camera control with the Cyanview RCP, including saving and recalling PTZ positions."
+keywords: [PTZ, USB joystick, Anxinshi, positions, control]
 slug: /integrations/accessories/anxinshi-ptz-usb-joystick
 ---
 

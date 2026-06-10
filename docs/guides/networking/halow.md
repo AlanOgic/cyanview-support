@@ -34,14 +34,14 @@ You can use the radios in two modes:
 |:------|:------|
 | ![Alfa Tube-AH outdoor PoE radio](/img/Configuration/RFUHF/alfa-tubeah.jpg) | ![Alfa Halow-U compact USB radio](/img/Configuration/RFUHF/alfa-halowu.jpg) |
 | **Connectivity:** passive PoE Ethernet RJ45 (12–36V DC) | **Connectivity:** USB-C |
-| Use as access point or as a node on a camera | Plug directly into a RIO. Some cameras also support a direct connection. Can also serve as an intermediate mesh node powered by a USB battery. |
+| Use as access point or as a node on a camera | Plug directly into a RIO. Very few cameras also support a direct connection. Can also serve as an intermediate mesh node powered by a USB battery. |
 | **Antenna:** Type-N | **Antenna:** female SMA |
 | **Size:** ~30 cm × 4 cm | **Size:** ~9 cm × 5 cm × 2 cm |
 
 ## Where to buy
 
 - **USA**: [Rokland](https://store.rokland.com/pages/alfa-halow-u-tube-ah-802-11ah-support-page) — ships with old firmware, update before use.
-- **Europe**: VARIA System — [Tube-AH](https://en.varia-store.com/product/alfa-network-tube-ah-eu-384957-access-point/) and [Halow-U](https://www.varia-store.com/en/produkt/863568-802-11ah-halow-usb-adaptersupport-ap-amp-client-mode.html) with ~2-month lead time.
+- **Europe**: VARIA System — [Tube-AH](https://en.varia-store.com/product/alfa-network-tube-ah-eu-384957-access-point/) and [Halow-U](https://www.varia-store.com/product/alfa-network-halow-u-eu-375132-adapter/) with ~2-month lead time.
 - **Australia**: RFShop — [Tube-AH](https://rfshop.com.au/product/halow_outdoor_ap_cpe_poe/) and [Halow-U](https://en.varia-store.com/product/alfa-network-halow-u-eu-375132-adapter/).
 - **Bulk orders**: Contact [Alfa Networks](https://contact.alfa.com.tw/) directly. Expect 3-week lead time, higher shipping, and import taxes.
 - **Limited stock**: Cyanview keeps a small stock of units with 868 MHz antennas for Europe to help clients evaluate the solution quickly. We do not intend to become an official reseller and do not offer demos or product support.

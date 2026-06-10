@@ -15,8 +15,7 @@ Control your ARRI Alexa cameras over IP using CAP (Camera Access Protocol) or Mu
 - ARRI Alexa 35
 - ARRI Alexa Mini
 - ARRI Alexa Mini LF
-
-For the ARRI Amira, use the [ARRI SSCP integration](/docs/integrations/cameras/arri/arri-sscp) instead.
+- ARRI Amira — additional controls are available with the [ARRI SSCP integration](/docs/integrations/cameras/arri/arri-sscp)
 
 :::note
 Alexa 35 Live software is still evolving. Keep camera software and RCP/RIO versions up to date.
@@ -115,7 +114,7 @@ To access full paint controls (R/B gains, blacks, and more), you need an unlocke
 3. Select the duplicated look as the active look
 
 :::info
-Unlocking a look is optional but limits your control:
+Unlocking a look is optional, but keeping it locked limits your control:
 - **With a locked look** — you can only adjust exposure (iris, ISO, shutter, ND filter) and white balance (color temp and tint)
 - **With an unlocked look** — you get full paint access including R/B gains, blacks, and all shading parameters
 

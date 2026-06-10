@@ -15,7 +15,7 @@ Welcome to the Cyanview documentation. Whether you are setting up your first RCP
 
 ### PTZ or IP cameras
 
-Control Panasonic PTZ, Sony FX9, Canon C300, or any IP-connected camera directly from your RCP — no additional hardware needed.
+Control Panasonic PTZ, Canon C300 Mk3, or any IP-connected camera directly from your RCP — no additional hardware needed. The Sony FX9 also works over Ethernet, but requires the Sony XDCA extension (or a RIO).
 
 1. [Connect your IP camera](/docs/integrations/generic/ip-camera)
 2. [Set up tally](/docs/guides/tally/tally)
@@ -49,7 +49,7 @@ Use the [VP4](/docs/products/vp4) for multi-camera color correction and CCU cont
 |---|---|
 | [Products](/docs/products) | Feature overviews for RCP, RIO, CI0, VP4, NIO, and RSBM |
 | [Guides](/docs/guides/networking/ip-configuration) | Networking, tally, preview, and workflow guides |
-| [Integrations](/docs/integrations) | Camera-specific setup guides for 30+ manufacturers |
+| [Integrations](/docs/integrations) | Camera-specific setup guides for 15+ manufacturers |
 | [Reference](/docs/reference/manuals/rcp/installation) | Device manuals, troubleshooting, and FAQ |
 | [Resources](/docs/resources/cable-catalog) | Cable catalog, diagram symbols, and glossary |
 

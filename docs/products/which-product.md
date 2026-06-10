@@ -39,7 +39,7 @@ Your cameras connect directly to the network. The RCP controls them over IP — 
 **You need:**
 - 1 x RCP (choose [license tier](/docs/guides/licensing) based on camera count)
 
-**Examples:** Panasonic PTZ (AW-UE series), Sony FR7, Canon CR-N series, any VISCA-over-IP camera.
+**Examples:** Panasonic PTZ (AW-UE series), Sony FR7, Canon CR-N series, Canon C70 (Canon XC protocol over Ethernet), any VISCA-over-IP camera.
 
 [Set up your IP cameras &rarr;](/docs/integrations/generic/ip-camera)
 
@@ -55,7 +55,7 @@ Your cameras use serial protocols. You need a gateway to convert serial commands
 |:---------|:---:|:---:|
 | Budget is the priority? | **Yes** | Higher cost |
 | Network is stable and local? | **Yes** | Works too |
-| Need lens motor control? | No | **Yes** |
+| Need lens motor control? | Yes (serial ports) | **Yes** (keeps control if network drops) |
 | Need USB camera support? | No | **Yes** |
 | Network may drop during production? | Loses control | **Keeps controlling** |
 | Need REMI (remote production)? | No | **Yes** (with +WAN) |
@@ -76,7 +76,7 @@ Blackmagic cameras support two control paths — choose based on your model and 
 
 **IP control (recommended for newer cameras)**
 
-Newer models (URSA G2, Studio Camera G2, Cinema Camera 6K) support IP camera control over Ethernet. This is the simplest path — no additional hardware beyond a gateway.
+Newer models (URSA G2, Studio Camera G2, Cinema Camera 6K) support IP camera control over Ethernet. This is the simplest path — no gateway hardware needed (a RIO is optional for autonomous control and lens support).
 
 - 1 x RCP + direct Ethernet connection, or
 - 1 x RCP + 1 x RIO per camera (for autonomous control and lens support)
@@ -102,12 +102,13 @@ Blackmagic regularly adds IP control to existing models through firmware updates
 
 ---
 
-### USB cameras (Sony Alpha, Canon R5, Canon C70)
+### USB cameras (Sony Alpha, Canon R5)
 
-Mirrorless and cinema cameras with USB control need a RIO — the CI0 has no USB port.
+USB-controlled cameras plug directly into the RCP's USB ports when local. Add one RIO per camera when the camera is away from the RCP (gimbal, remote position, REMI). The CI0 has no USB port.
 
 **You need:**
-- 1 x RCP + 1 x [RIO](/docs/products/rio) per camera
+- 1 x RCP (camera connects directly via USB when next to the panel)
+- 1 x [RIO](/docs/products/rio) per camera that is remote from the RCP
 
 [Sony Alpha guide &rarr;](/docs/integrations/cameras/sony/sony-alpha) | [Canon mirrorless guide &rarr;](/docs/integrations/cameras/canon/canon-mirrorless)
 
@@ -130,7 +131,7 @@ If your production uses a video switcher and you want on-camera tally lights, ad
 
 **You need a NIO when:**
 - You want wireless tally (no dedicated tally cables)
-- Your switcher supports GPIO or NDI tally
+- Your switcher sends tally via GPIO, TSL, or a direct integration (ATEM, vMix, Tricaster) and you need GPIO outputs to the cameras
 - You are running a REMI setup with remote tally
 
 [Tally configuration guide &rarr;](/docs/guides/tally/tally)

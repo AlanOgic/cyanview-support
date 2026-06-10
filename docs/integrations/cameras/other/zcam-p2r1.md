@@ -2,7 +2,7 @@
 id: zcam-p2r1
 title: "Z CAM integration"
 sidebar_label: "Z CAM"
-description: "Integrate Z CAM cameras with Cyanview for remote paint and camera control in cinema production."
+description: "Integrate the Z CAM P2-R1 PTZ camera with Cyanview for remote paint, PTZ, and camera control."
 keywords: [Z CAM, cinema, remote control, IP]
 slug: /integrations/cameras/other/zcam-p2r1
 ---

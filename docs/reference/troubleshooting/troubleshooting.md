@@ -66,9 +66,8 @@ Netgear 4G modems (such as the Nighthawk MR1100) can respond to ARP requests int
 
 **Solution:**
 
-1. Use the Netgear modem only for internet access — remove it from the production network.
-2. Reboot all network devices to clear ARP tables.
-3. Alternatively, replace the Netgear router with another brand.
+1. Use the Netgear modem only for internet access — remove it from the production network. This is the only solution: Proxy ARP cannot be disabled on Nighthawk routers that use a basic configuration interface.
+2. After removing the router, reboot network devices to clear stale ARP tables.
 
 ## CI0 status 'X'
 

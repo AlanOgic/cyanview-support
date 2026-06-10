@@ -92,8 +92,10 @@ Dual control:
 
 | Component | Quantity | Role |
 |:----------|:--------:|:-----|
-| RCP (OCTO or MSU) | 12 | One per camera for dedicated shading |
-| RIO +WAN | 12 | Camera and lens control, 4G for mobile cameras |
+| RCP (DUO) | 11 | One per camera for dedicated shading |
+| RCP (MSU) | 1 | Master panel — imports all 12 cameras for ATEM tally routing |
+| RIO +LAN | 9 | Camera and lens control for fixed cameras (fiber) |
+| RIO +WAN | 3 | Camera and lens control over 4G for mobile cameras |
 | Sony FX9 | 12 | Main cameras |
 | B4/cine lenses | 12 | Canon Cine-Servo, Fujinon Cabrio, Canon CN-E |
 | VP4 | 1 | Color correction for GoPro beauty shots |
@@ -104,10 +106,10 @@ Dual control:
 
 ```
 Fixed cameras (×9):
-  FX9 → RIO (serial/lens) → Fiber (Ereca CAM RACER) → RCP
+  FX9 → RIO +LAN (camera via Ethernet/XDCA or Wi-Fi, lens on serial port) → Fiber (Ereca CAM RACER) → RCP
 
 Mobile cameras (×3):
-  FX9 → RIO (serial/lens) → 4G USB dongle → Cloud → RCP
+  FX9 → RIO +WAN (camera via Ethernet/XDCA or Wi-Fi, lens on serial port) → 4G USB dongle → Cloud → RCP
 
 Tally:
   ATEM → RCP (one master imports all 12) → RIO → camera tally
@@ -245,7 +247,7 @@ Optional color matching:
 **Challenges:**
 - Remote camera with no local operator
 - Reliable shading over a WAN link
-- Panasonic cameras require USB-Ethernet adapter for RIO connectivity
+- The RIO's single Ethernet port is taken by the DataBridge link — a USB-Ethernet adapter is needed for the camera connection
 
 ### Equipment list
 
