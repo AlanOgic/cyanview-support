@@ -11,8 +11,10 @@ const config: Config = {
     v4: true,
   },
 
-  // TEST MODE — do not index
-  noIndex: true,
+  // TEST MODE — indexing is blocked by the nginx proxy header
+  // (X-Robots-Tag: noindex, nofollow). Keep noIndex false here so the
+  // sitemap plugin generates sitemap.xml, which the CLORAG crawler requires.
+  noIndex: false,
   url: 'https://support.cyanview.cloud',
   baseUrl: '/',
 
