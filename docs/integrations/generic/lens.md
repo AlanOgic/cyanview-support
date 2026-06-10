@@ -61,7 +61,7 @@ The image above shows a Canon 17-120 mm, which is normally controllable via the 
 | Non-motorized / prime lens | Tilta motors with [CY-CBL-TILTA-SERIAL](/docs/resources/cable-catalog#cy-cbl-tilta-serial) |
 
 :::warning
-For lens control, use a RIO with LAN rather than a CI0.
+For lens control, use a RIO +LAN or RIO +WAN rather than a CI0.
 
 A CI0 acts as a serial/IP converter — if the Ethernet link drops, the lens loses control and the iris closes. A RIO runs all protocols onboard and continues controlling the lens independently, even without an active RCP connection. It also supports handles and USB accessories.
 :::

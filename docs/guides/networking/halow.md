@@ -257,7 +257,7 @@ If the web page shows OpenWRT instead of the Alfa Networks interface, the firmwa
 Gear needed:
 
 - 1 x RCP
-- 1 x RIO (or RIO +LAN)
+- 1 x RIO
 - 1 x Tube-AH
 - 1 x Halow-U
 - 1 x FX3
@@ -278,7 +278,7 @@ More info on FX3 setup [here](/docs/integrations/cameras/sony/sony-alpha).
 Gear needed:
 
 - 1 x RCP
-- 1 x RIO (or RIO +LAN)
+- 1 x RIO
 - 1 x Tube-AH
 - 1 x Halow-U
 - 1 x FX6

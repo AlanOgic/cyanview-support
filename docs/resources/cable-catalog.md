@@ -118,21 +118,21 @@ The connector is difficult to find. Build your own cable with a 2.54mm pitch soc
 
 ## Dreamchip cables
 
-### CY-CBL-DREAMCHIP-01 (default)
+### CY-CBL-DREAMCHIP-03 (default)
 
 Adapter cable for all Dreamchip mini cameras. Provides power and control.
 
-![CY-CBL-DREAMCHIP-01 Dreamchip camera cable pinout](/img/productGfx/cables/CY-CBL-DREAMCHIP-01.svg)
+:::note
+The Dreamchip cable exists in two revisions: `CY-CBL-DREAMCHIP-01` and `CY-CBL-DREAMCHIP-03`. Both are compatible, but only `CY-CBL-DREAMCHIP-03` is currently sold.
+:::
+
+![CY-CBL-DREAMCHIP-03 Dreamchip camera cable pinout](/img/productGfx/cables/CY-CBL-DREAMCHIP-01.svg)
 
 ### CY-CBL-DREAMCHIP-02 (SSM500 and Atom Two)
 
 Adapter cable for Dreamchip SSM500 and Atom Two cameras using the Dreamchip DCT-Powercable 350-00011v. Provides RS485 control.
 
 ![CY-CBL-DREAMCHIP-02 Dreamchip SSM500 cable pinout](/img/productGfx/cables/CY-CBL-DREAMCHIP-02.svg)
-
-### CY-CBL-DREAMCHIP-03 (with PT-Head)
-
-Same pinout as `CY-CBL-DREAMCHIP-01` but slightly longer and more flexible. Use this cable when pairing a Dreamchip camera with a PT-Head.
 
 ## Fujinon cables
 
@@ -203,9 +203,13 @@ LANC adapter with control pass-through for Sony LANC cameras. Features dual LANC
 
 ### CY-CBL-6P-MARS-02 (current)
 
-Adapter cable for newer Marshall mini cameras with a 12-pin Hirose connector. Replaces CY-CBL-6P-MARS-01i with the same pinout but thinner and longer for use on small PT heads.
+Adapter cable for newer Marshall mini cameras with a 12-pin Hirose connector. Provides power and control.
 
-![CY-CBL-MARSHALL-01 Marshall camera cable pinout](/img/productGfx/cables/CY-CBL-MARSHALL-01.svg)
+:::note
+The Marshall cable exists in two revisions: `CY-CBL-6P-MARS-01` and `CY-CBL-6P-MARS-02`. Both are compatible, but only `CY-CBL-6P-MARS-02` is currently sold.
+:::
+
+![CY-CBL-6P-MARS-02 Marshall camera cable pinout](/img/productGfx/cables/CY-CBL-MARSHALL-01.svg)
 
 ### CY-CBL-6P-PFAN (older Marshall)
 
@@ -228,7 +232,11 @@ Adapter cable providing control over older Panasonic P2 cameras.
 Adapter cable for Sony professional cameras and camcorders through the 8-pin remote interface, with power.
 
 :::note
-The suffix number (`-01`, `-02`, etc.) refers to the production batch and may vary depending on when you order.
+The Sony cable exists in three revisions: `CY-CBL-6P-SONY-8-01`, `CY-CBL-6P-SONY-8-02`, and `CY-CBL-6P-SONY-8-03`. All are compatible, but only `CY-CBL-6P-SONY-8-03` is currently sold.
+:::
+
+:::warning
+The cable you receive when ordering `CY-CBL-SONY-8P-03` is labelled `CY-CBL-6P-SONY-8-03`.
 :::
 
 ![CY-CBL-6P-SONY-8-2 Sony 8-pin remote cable with power pinout](/img/productGfx/cables/CY-CBL-6P-SONY-8-2.svg)

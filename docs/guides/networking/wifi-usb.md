@@ -9,7 +9,7 @@ slug: /guides/networking/wifi-usb
 
 ![Wi-Fi USB dongle overview diagram showing connection modes](/img/Configuration/wifi/wifi-overview.png)
 
-This guide covers adding Wi-Fi connectivity to Cyanview RIO/RIO +LAN and RCP devices.
+This guide covers adding Wi-Fi connectivity to Cyanview RIO and RCP devices.
 
 **Use cases:**
 - Internet access — the RCP or RIO connects to your venue access point.

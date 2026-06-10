@@ -129,7 +129,7 @@ Change a setting (e.g., gain) and repeat to store to slot 2:
 
 `Current` updates to reflect the newly loaded slot.
 
-![Scene files page showing slot 2 loaded](/img/Manual/RCP/Scenes/RCP_Scene_File_slot2_loaded.bmp)
+![Scene files page showing slot 2 loaded](/img/Manual/RCP/Scenes/RCP_Scene_File_slot2_loaded.BMP)
 
 ### Copying scene files
 

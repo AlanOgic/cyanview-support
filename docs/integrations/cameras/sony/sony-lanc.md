@@ -35,7 +35,7 @@ LANC control is unidirectional — it sends key presses only and is relatively s
 
 ## Wiring
 
-Connect a LANC camera to **port 2** of the **CI0/RIO +LAN** (local) or **RIO** (remote) using a **[CY-CBL-6P-LANC-03](/docs/resources/cable-catalog#cy-cbl-6p-lanc-03)** cable.
+Connect a LANC camera to **port 2** of the **CI0/RIO +LAN** (local) or **RIO +WAN** (local or remote) using a **[CY-CBL-6P-LANC-03](/docs/resources/cable-catalog#cy-cbl-6p-lanc-03)** cable.
 
 ![Sony LANC wiring with CI0 and RCP](/img/Integrations/camera/Sony/Sony-Lanc/Sony-Lanc-CI0@2x-8.png)
 

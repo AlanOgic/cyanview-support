@@ -10,7 +10,7 @@ slug: /guides/workflows/fashion-show
 This guide covers the technical details from the [PlaniPresse Paris Fashion Week use case](https://www.cyanview.com/how-planipresse-uses-large-sensor-cameras-with-lens-control-for-fashion-shows/) — 12 Sony FX9 cameras, mixed wired and 4G links, PL lenses, and full tally integration.
 
 Paris Fashion Week, summer 2022:
-- 9 fixed FX9 cameras with 9 wired RIOs for PL lens control
+- 9 fixed FX9 cameras with 9 wired RIO +LAN units for PL lens control
 - 3 mobile FX9 cameras with 3 RIOs over 4G for camera and lens control
 - 12 RCPs, one per camera
 - Tally integration

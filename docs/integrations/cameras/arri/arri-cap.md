@@ -155,6 +155,10 @@ Some controls in the table above are marked as *dashboard-only*. These are not a
 
 For details, see the [Multi-Cam Dashboard guide](/docs/reference/manuals/rcp/multi-cam-dashboard).
 
+ARRI Dashboard setup:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NebfzqL9sDA?si=qjESNJmCixqDV3O5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Going further
 
 ### External lens control with a RIO

@@ -48,7 +48,7 @@ Assign **variable ND** to the **iris joystick** for smooth, precise control. Iri
 ![Sony Burano Wi-Fi wiring diagram](/img/Integrations/Sony/Sony-Burano/Burano-wiring-wifi.png)
 
 :::info
-For non-Sony lenses, add a RIO/RIO +LAN with a cable:
+For non-Sony lenses, add a RIO with a cable:
 - [Canon/Fuji motorized lenses](/docs/integrations/lenses/cine-lens)
 - [Tilta motors](/docs/integrations/lenses/tilta)
 - ARRI C-Force

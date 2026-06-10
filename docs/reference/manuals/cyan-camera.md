@@ -28,6 +28,15 @@ The right side of the screen provides direct camera controls:
 
 Pinch-to-zoom is also supported.
 
+The bottom of the screen provides additional app controls:
+
+- **Main settings**
+- **Stream settings**
+- **Stream start/stop**
+- **HDMI out start/stop**
+- **3D LUT settings**
+- **Format picker**
+
 ![CyanCamera main controls overlay](/img/Manual/CyanCamera/main_controls.png)
 
 ## RCP-supported controls
@@ -84,12 +93,26 @@ To configure and start a stream:
 
 ### Server examples
 
-These examples require [FFmpeg](https://ffmpeg.org/) installed on the receiving machine.
+These examples require [FFmpeg](https://ffmpeg.org/) installed on the receiving machine, unless noted otherwise.
 
 **SRT server with preview:**
 
 ```bash
 srt-live-transmit "srt://0.0.0.0:9000?mode=listener" "udp://127.0.0.1:5000" & ffplay -i "udp://127.0.0.1:5000"
+```
+
+**SRT server with HDR preview** (requires [mpv](https://mpv.io/)):
+
+```bash
+mpv 'srt://0.0.0.0:9000?mode=listener' \
+  --hwdec=videotoolbox \
+  --vo=gpu-next \
+  --target-colorspace-hint=yes \
+  --loop-file=inf \
+  --keep-open=always \
+  --idle=yes \
+  --demuxer-thread=yes \
+  --network-timeout=0
 ```
 
 **RTP server with preview:**

@@ -16,7 +16,7 @@ This is an advanced procedure. Proceed at your own risk. The only two cases wher
 - You have a conflict with another device on the network.
 - Security reasons.
 
-If you work with VLANs, you probably need the [RIO +LAN](/docs/reference/manuals/rio-live-manual) instead of the CI0 to handle networking properly. The CI0 is a "smart" serial-to-IP converter and cannot handle complex networking configurations.
+If you work with VLANs, you probably need the [RIO +LAN](/docs/reference/manuals/rio-manual) instead of the CI0 to handle networking properly. The CI0 is a "smart" serial-to-IP converter and cannot handle complex networking configurations.
 
 For complex network architectures, see the [IP configuration guide](/docs/guides/networking/ip-configuration).
 :::

@@ -70,6 +70,7 @@ Once inside a sub-menu or leaf:
         - GPIO
         - INFO
         - POWER
+        - SYS CTL
         - SETTINGS
 
 ### Menu overviews
@@ -526,11 +527,17 @@ Click a screenshot to jump to its documentation page where available.
         <td/>
         <td><img src="/img/Manual/RCP/RCP-menu-system-4_2_7.BMP" alt="RCP system info 2"/></td>
     </tr>
-    <tr><td>MENU ></td><td>SYSTEM ></td><td>POWER</td></tr>
+    <tr><td>MENU ></td><td>SYSTEM ></td><td><a href="/docs/reference/manuals/rcp/ui/power-management">POWER</a></td></tr>
     <tr>
         <td/>
         <td/>
-        <td><img src="/img/Manual/RCP/RCP-menu-system-5_1_7.BMP" alt="RCP system power"/></td>
+        <td><a href="/docs/reference/manuals/rcp/ui/power-management"><img src="/img/Manual/RCP/RCP-menu-system-5_1_7.BMP" alt="RCP system power"/></a></td>
+    </tr>
+    <tr><td>MENU ></td><td>SYSTEM ></td><td><a href="/docs/reference/manuals/rcp/ui/power-management">SYS CTL</a></td></tr>
+    <tr>
+        <td/>
+        <td/>
+        <td><a href="/docs/reference/manuals/rcp/ui/power-management"><img src="/img/Manual/RCP/RCP-menu-system-6_1_7.BMP" alt="RCP system control"/></a></td>
     </tr>
     <tr><td>MENU ></td><td>SYSTEM ></td><td>SETTINGS</td></tr>
     <tr>

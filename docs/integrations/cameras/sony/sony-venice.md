@@ -77,13 +77,13 @@ Works through a simple Ethernet switch or fiber such as Ereca CAM Racer.
 ![Sony Venice Serial LAN wiring diagram](/img/Integrations/Sony/Sony-Venice/Sony-Venice-8P-LAN-wiring.png)
 
 - RCP powered by PoE or 12V PSU.
-- CI0 or RIO/RIO +LAN powered by the camera through the cable (no D-TAP required).
-- Cable: CY-CBL-6P-SONY-8P-03 (controls camera and powers CI0/RIO).
+- CI0 or RIO powered by the camera through the cable (no D-TAP required).
+- Cable: [CY-CBL-SONY-8P-03](/docs/resources/cable-catalog#cy-cbl-sony-8p-03) (controls camera and powers CI0/RIO).
 
 :::note
 Works through a simple Ethernet switch or fiber such as Ereca CAM Racer.
 
-Some prefer to keep the CI0/RIO +LAN on the camera side, with Ethernet running between the RCP and CI0/RIO +LAN. Others prefer the CI0/RIO +LAN on the RCP side with serial running through Ereca (cleaner camera side, but you lose the flexibility of the RIO +LAN for external motor/lens control).
+Some prefer to keep the CI0/RIO on the camera side, with Ethernet running between the RCP and CI0/RIO. Others prefer the CI0/RIO on the RCP side with serial running through Ereca (cleaner camera side, but you lose the flexibility of the RIO for external motor/lens control).
 :::
 
 ### Sony Venice IP (wireless)
@@ -105,7 +105,7 @@ This handles telemetry only — video transport requires a separate RF solution.
 
 - RCP powered by PoE or 12V PSU, connected to internet.
 - RIO powered by D-TAP.
-- RIO connected to camera via cable CY-CBL-6P-SONY-8P-03.
+- RIO connected to camera via cable [CY-CBL-SONY-8P-03](/docs/resources/cable-catalog#cy-cbl-sony-8p-03).
 - RCP communicates with RIO over internet (4G, RF, Wi-Fi, etc.).
 
 :::note

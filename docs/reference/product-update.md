@@ -41,6 +41,10 @@ By default, only stable releases appear. To see beta versions, click **Show dev 
 
 ### System update from the web interface
 
+:::warning Keep the update tab active
+Keep the update tab open and visible in the foreground until the update completes. Some browsers unload inactive tabs, and an unloaded tab can make the update fail.
+:::
+
 1. Download the latest system update from the [Firmware download](/docs/reference/firmware-download) page.
 2. Open the update UI:
    - [Find your device IP](/docs/guides/networking/ip-configuration#find-your-devices-ip).

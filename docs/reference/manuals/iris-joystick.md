@@ -131,16 +131,22 @@ During loading, press the gear icon to access the technical menu. From the main 
 
 This menu provides calibration, RCP assignment, device information (IP address, MAC address, firmware version, error codes), and a reboot button.
 
-To force the joystick into bootloader mode for a firmware update:
-1. Press and hold Scene 1 and Scene 2 buttons.
-2. Press **Reboot** in the technical menu.
-3. After 3 seconds, release Scene 1 and Scene 2.
+The **Reboot** button reboots the iris joystick. You can also force the joystick into bootloader mode to update the internal firmware to the latest available version. See [Force bootloader](#force-bootloader).
 
 ### Multi-camera operations
 
 When one RCP controls multiple cameras, the joystick operates on a relative basis to avoid sudden jumps. At the end of its range it can be pushed further with a spring effect for continuous adjustment, or repositioned by holding PREVIEW for a "free" mode. The main exposure and master black encoders provide quick multi-camera adjustments without the joystick.
 
 Using **Cam Lock** keeps the joystick locked to one camera while the upper RCP section switches between others. This "split-camera" mode is useful when one camera needs constant iris access while you shade other cameras.
+
+## Force bootloader
+
+To force the joystick into bootloader mode, open the [technical menu](#technical-menus), then use one of the following methods:
+
+<img alt="Iris joystick force bootloader menu" src="/img/Manual/IJ/ij_force_bootloader.jpg" width="400" />
+
+- Press **Bootloader** if it is present in the menu.
+- Hold the **Scene File 1** and **Scene File 2** buttons, then press **Reboot**. Keep holding both Scene File buttons for two more seconds.
 
 ## Troubleshooting
 

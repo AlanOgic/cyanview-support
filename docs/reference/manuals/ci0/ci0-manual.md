@@ -205,7 +205,7 @@ You can force a CI0 firmware update. Make sure an RCP, GWY, or RIO is on the sam
 4. Within 1 minute, the CI0 should return to normal and display `>-<`.
 
 <video poster="/img/productGfx/CI0/cyanview-support-manual-force-firmware-update.jpg" muted controls>
-    <source src="/img/productGfx/CI0/cyanview-support-manual-force-firmware-update.mp44"/>
+    <source src="/img/productGfx/CI0/cyanview-support-manual-force-firmware-update.mp4"/>
 </video>
 
 ### Power supply issues

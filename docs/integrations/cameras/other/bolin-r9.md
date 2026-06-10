@@ -40,7 +40,7 @@ Cyanview controls the Bolin R9 PTZ camera over IP, giving you remote paint and P
 
 Configure the camera using the [Generic PTZ guide](/docs/integrations/generic/ptz).
 
-Bolin provides a discovery tool to help set up the camera. Make sure the camera IP address is reachable by the RCP — see the [IP configuration page](/docs/guides/networking/ip-configuration?_highlight=ip#lan-configuration) for details.
+Bolin provides a discovery tool to help set up the camera. Make sure the camera IP address is reachable by the RCP — see the [IP configuration page](/docs/guides/networking/ip-configuration#lan-configuration) for details.
 
 ## Workflow
 

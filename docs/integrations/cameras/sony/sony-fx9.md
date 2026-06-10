@@ -18,7 +18,7 @@ The Sony FX9 gives you full remote paint control from your Cyanview RCP — iris
 <img src="/img/Integrations/camera/Sony/Sony-FX9/FX9-ethernet.png" width="900" alt="FX9 Ethernet wiring diagram" />
 
 :::note
-To control your FX9 over Ethernet directly (without a RIO +WAN or RIO +LAN), you need the **Sony XDCA-FX9** extension unit.
+To control your FX9 over Ethernet directly (without a RIO), you need the **Sony XDCA-FX9** extension unit.
 :::
 
 ### Wi-Fi connection

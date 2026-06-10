@@ -18,10 +18,10 @@ Cyanview controls the AJA RovoCam over a VISCA serial bus, giving you remote pai
 Required cable: [CY-CBL-6P-AJA-01](/docs/resources/cable-catalog#cy-cbl-6p-aja-01)
 
 :::note
-- Compatible with CI0, RIO, and RIO+LAN.
-- The camera is powered by the CI0/RIO/RIO+LAN (data + power over a single cable).
-- For wireless control, use a RIO or RIO+LAN.
-- One camera per CI0/RIO/RIO+LAN port, or chain multiple cameras on a single port — each camera has a unique ID.
+- Compatible with CI0 and RIO.
+- The camera is powered by the CI0/RIO (data + power over a single cable).
+- For wireless control, use a RIO.
+- One camera per CI0/RIO port, or chain multiple cameras on a single port — each camera has a unique ID.
 :::
 
 ## Camera control

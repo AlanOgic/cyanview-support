@@ -16,3 +16,13 @@ See the [product update guide](/docs/reference/product-update) for step-by-step 
 Identify your device by serial number before downloading.
 
 PLACEHOLDER_STABLE_RELEASES
+
+## RCP-J joystick after update or downgrade
+
+:::note
+After a system update, the RCP-J joystick may stay on **Waiting for connection**. This happens when the update changes the internal network compared to the previous version.
+
+To recover the connection, force the joystick bootloader — see [Iris joystick — Force bootloader](/docs/reference/manuals/iris-joystick#force-bootloader).
+
+Apply the same procedure after downgrading an RCP-J to a version older than **26.4.1**.
+:::

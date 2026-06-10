@@ -64,7 +64,7 @@ To add and configure a supported device, click the **+** button in the correspon
 The **GPIO** section gives you an overview of all I/O available on connected devices and lets you set their values directly.
 
 <video poster="/img/productGfx/config/WebUI/cyanview-support-manual-configuration-web-ui-gui-gpio-status-io@2x-8.png" muted controls>
-  <source src="/img/productGfx/config/WebUI/cy-UI-GPIO.mp4"/>
+  <source src="/img/productGfx/config/WebUI/cyanview-support-manual-configuration-web-ui-gui-gpio-status-io.mp4"/>
 </video>
 
 For Tally configuration, refer to [Tally configuration](/docs/guides/tally/tally/) in the **RCP manual**.

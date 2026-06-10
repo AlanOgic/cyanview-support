@@ -12,7 +12,17 @@ slug: /restricted/troubleshooting/tally-box-pcb-replacement
 
 This document explains step by step how to replace the PCB in a tally box.
 
-This replacement is straightforward and only requires a Phillips screwdriver (PH0).
+This replacement is straightforward and only requires a Phillips screwdriver (PH0) and a small pair of cutting pliers.
+
+:::note Selector length
+In some cases, the selectors are too long and you must shorten them before the enclosure can close correctly.
+
+Use the old PCB as a length reference after removing it in step 3.
+
+Do not cut the selectors too short: remove only the excess length, and keep enough material for the mechanical sliders to operate reliably.
+
+![Selectors to shorten](/img/restricted/troubleshooting/tally/tallybox_selector_length.jpg)
+:::
 
 ## Replacement procedure
 

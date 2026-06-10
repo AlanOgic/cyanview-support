@@ -46,7 +46,7 @@ If your network requires explicit firewall rules:
 
 ### RIO +LAN workflow
 
-<img src="/img/Configuration/REMI/remi-rio-live.png" width="600" alt="RIO +LAN REMI wiring diagram" />
+<img src="/img/Configuration/REMI/remi-rio-lan.png" width="600" alt="RIO +LAN REMI wiring diagram" />
 
 Use a RIO +LAN for:
 - Lens control on a local network
@@ -55,7 +55,7 @@ Use a RIO +LAN for:
 - Polecam setups
 
 :::note
-The RIO +LAN works like a CI0 but supports all protocols (serial, USB, IP — like an RCP). It is limited to 1–2 cameras and LAN-only control (no cloud).
+The RIO +LAN works like a CI0 but supports all protocols (serial, USB, IP — like an RCP). It is limited to 2 cameras and LAN-only control (no cloud).
 :::
 
 ### RIO +WAN workflow

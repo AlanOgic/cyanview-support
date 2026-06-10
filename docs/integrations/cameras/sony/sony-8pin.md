@@ -19,7 +19,7 @@ Connect Sony cameras with an 8-pin remote connector to a **CI0** (local) or **RI
 
 ## Connection
 
-Connect the camera's **Remote connector** to the **CI0** or **RIO** using a [CY-CBL-6P-SONY-8-03](/docs/resources/cable-catalog#cy-cbl-sony-8p-03) cable.
+Connect the camera's **Remote connector** to the **CI0** or **RIO** using a [CY-CBL-SONY-8P-03](/docs/resources/cable-catalog#cy-cbl-sony-8p-03) cable.
 
 The RIO can draw power from the camera through this cable.
 
@@ -28,7 +28,7 @@ Some cameras require a software update for remote control. Early versions of the
 :::
 
 :::warning
-On some camcorders, using cable **CY-CBL-6P-SONY-8-02** can cause a boot loop:
+On some camcorders, using cable **CY-CBL-6P-SONY-8** can cause a boot loop:
 
 1. The camera starts and powers the RIO.
 2. The RIO begins controlling the camera.
@@ -41,7 +41,7 @@ Use an external power supply or a D-Tap cable from an external battery to ensure
 
 ## Setup
 
-1. Connect the camera to the CI0 or RIO with a [CY-CBL-6P-SONY-8-01](/docs/resources/cable-catalog#cy-cbl-sony-8p-03) cable.
+1. Connect the camera to the CI0 or RIO with a [CY-CBL-SONY-8P-03](/docs/resources/cable-catalog#cy-cbl-sony-8p-03) cable.
 2. Power on the camera.
 3. Add the camera in the [RCP Configuration UI](/docs/reference/manuals/rcp/web-ui):
    - Select **Sony** brand.

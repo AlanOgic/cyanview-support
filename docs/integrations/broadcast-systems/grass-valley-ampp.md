@@ -105,4 +105,3 @@ The final configuration looks like this:
 
 - [Tally configuration](/docs/guides/tally/tally) — various tally setup options
 - [REMI guide](/docs/guides/networking/remi) — remote production networking
-- [REMI networking guide](/docs/guides/networking/remi) — remote production setup

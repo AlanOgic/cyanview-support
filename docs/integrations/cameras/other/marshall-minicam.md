@@ -54,11 +54,11 @@ If your camera has this kind of connector on the back, then you need the cable <
 
 <img src="/img/Integrations/Marshall/marshall-connector1.jpg" width="300"/>
 
-If your camera has this kind of connector on the back, then you need the cable <a href="/docs/resources/cable-catalog#cy-cbl-6p-mars-01-new">cy-cbl-6p-mars-01</a>.
+If your camera has this kind of connector on the back, then you need the cable <a href="/docs/resources/cable-catalog#cy-cbl-6p-mars-02-current">CY-CBL-6P-MARS-02</a>.
 
 <img src="/img/Integrations/Marshall/marshall-connector2.png" width="300"/>
 
-More info <a href="/docs/Integrations/Marshall/MarshallMinicam#cables">below</a>
+More info <a href="#cables">below</a>
 
 ## Supported cameras
 
@@ -182,7 +182,7 @@ Cyanview provides cables to connect the camera in 2 different ways:
 
 | Cable Reference       | Description                                                                                    |
 | :-------------------- | :--------------------------------------------------------------------------------------------- |
-| CY-CBL-6P-MARSHALL-01 | Power and RS485 adapter cable for Marshall 12-pin Hirose cameras                               |
+| CY-CBL-6P-MARS-02     | Power and RS485 adapter cable for Marshall 12-pin Hirose cameras                               |
 | CY-CBL-6P-PFAN        | 5.5x2.1mm DC Power plug and RS485/RS522/RS232 fanout adapter cable for Marshall Breakout Cable |
 | CY-CBL-6P-FAN         | Power and RS485/RS522/RS232 fanout adapter cable for Marshall Breakout Cable                   |
 
@@ -196,12 +196,12 @@ Newer Marshall cameras are equipped with a 12-pin Hirose connector for power and
 
 <img alt="cyanview-support-integration-marshall-mini-camera-cv503-back" src="/img/Integrations/camera/marshall/cyanview-support-integration-marshall-mini-camera-cv503-back.png" width="160" />
 
-**Cable P/N: CY-CBL-6P-MARSHALL-01**
+**Cable P/N: CY-CBL-6P-MARS-02**
 
-<img alt="cyanview-support-integration-marshall-mini-camera-serial-cable-CY-CBL-6P-MARSHALL-01" src="/img/Integrations/camera/marshall/cyanview-support-integration-marshall-mini-camera-serial-cable-CY-CBL-6P-MARSHALL-01.png" width="500" />
+<img alt="cyanview-support-integration-marshall-mini-camera-serial-cable-CY-CBL-6P-MARS-02" src="/img/Integrations/camera/marshall/cyanview-support-integration-marshall-mini-camera-serial-cable-CY-CBL-6P-MARSHALL-01.png" width="500" />
 
 <a href="/img/productGfx/cables/CY-CBL-MARSHALL-01.svg" target="_blank">
-<img class="w-full" alt="cyanview-support-integration-marshall-mini-camera-serial-cable-CY-CBL-6P-MARSHALL-01" src="/img/productGfx/cables/CY-CBL-MARSHALL-01.svg" />
+<img class="w-full" alt="cyanview-support-integration-marshall-mini-camera-serial-cable-CY-CBL-6P-MARS-02" src="/img/productGfx/cables/CY-CBL-MARSHALL-01.svg" />
 </a>
 
 ### Connection using the Marshall Breakout Cable

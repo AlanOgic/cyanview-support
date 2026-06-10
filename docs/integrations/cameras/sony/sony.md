@@ -54,7 +54,7 @@ If your lens is not motorized, you can add:
 ![Sony Alpha connected to RIO and RCP locally](/img/Integrations/camera/Sony/Sony-DSLR/SONY-DSLR-RIO-RCP-Local@2x-8.png)
 ![Sony Alpha connected to RIO over 4G](/img/Integrations/camera/Sony/Sony-DSLR/SONY-DSLR-RIO-4G@2x-8.png)
 
-- [Sony Alpha](/docs/integrations/cameras/sony/sony-alpha) — controlled over USB, or over IP using RIO/RIO+LAN
+- [Sony Alpha](/docs/integrations/cameras/sony/sony-alpha) — controlled over USB, or over IP using RIO
 
 :::tip
 Alpha series cameras work well on gimbals as a lightweight steadicam replacement.

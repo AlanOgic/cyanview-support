@@ -21,7 +21,7 @@ Internal documentation for Cyanview hardware procedures and partner integrations
 
 ## Troubleshooting
 
-- [Recover gateway BIOS](/docs/restricted/troubleshooting/gateway-bios) — recover gateways that no longer boot
+- [CY-GWY maintenance](/docs/restricted/troubleshooting/gateway-bios) — disassembly, BIOS recovery, VGA patch, and battery replacement
 - [Iris joystick kit assembly](/docs/restricted/troubleshooting/iris-joystick-update) — assembly instructions for the iris joystick kit
 - [RCP known hardware issues](/docs/restricted/troubleshooting/rcp-hardware-issues) — power supply and startup screen issues on early RCPs
 - [RCP stuck on startup screen](/docs/restricted/troubleshooting/rcp-network) — fix for RCPs stuck on the startup screen

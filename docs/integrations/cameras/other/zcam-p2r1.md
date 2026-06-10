@@ -42,7 +42,7 @@ Cyanview controls Z CAM cameras over IP, giving you remote paint, PTZ, and recor
 
 Configure the camera using the [Generic PTZ guide](/docs/integrations/generic/ptz).
 
-By default, the Z CAM uses IP address `10.98.32.1`. Make sure this address is reachable by the RCP — see the [IP configuration page](/docs/guides/networking/ip-configuration?_highlight=ip#lan-configuration) for details.
+By default, the Z CAM uses IP address `10.98.32.1`. Make sure this address is reachable by the RCP — see the [IP configuration page](/docs/guides/networking/ip-configuration#lan-configuration) for details.
 
 ## Workflow
 

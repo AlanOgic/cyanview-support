@@ -10,7 +10,7 @@ slug: /restricted/configuration/deltec
 
 This guide explains how to integrate a Deltec serial joystick.
 
-Compatible with RCP, RIO, RIO +LAN, NIO.
+Compatible with RCP, RIO, NIO.
 
 ## Configuration
 

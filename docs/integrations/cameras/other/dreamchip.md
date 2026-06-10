@@ -59,7 +59,7 @@ software from Dreamchip is a good way to discover the capabilities of these came
 
 #### Cables Required
 
-- [**CY-CBL-DREAMCHIP-01**](/docs/resources/cable-catalog#cy-cbl-dreamchip-01-default) - CI0 / RIO adapter cable
+- [**CY-CBL-DREAMCHIP-03**](/docs/resources/cable-catalog#cy-cbl-dreamchip-03-default) - CI0 / RIO adapter cable
 -  [**CY-CBL-6P-EXT-***](/docs/resources/cable-catalog#cy-cbl-6p-ext50-cy-cbl-6p-ext100-cy-cbl-6p-ext300-cy-cbl-6p-ext500) - CI0 / RIO extension cable (Where * = length) 
 
 ## Configuration
