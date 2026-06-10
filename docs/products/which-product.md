@@ -39,7 +39,7 @@ Your cameras connect directly to the network. The RCP controls them over IP — 
 **You need:**
 - 1 x RCP (choose [license tier](/docs/guides/licensing) based on camera count)
 
-**Examples:** Panasonic PTZ (AW-UE series), Sony FR7, Canon CR-N series, Canon C70 (Canon XC protocol over Ethernet), any VISCA-over-IP camera.
+**Examples:** Panasonic PTZ (AW-UE series), Sony FR7, Canon CR-N series, Canon C*XX* cine cameras (C70, C80, C90 — over Ethernet), any VISCA-over-IP camera.
 
 [Set up your IP cameras &rarr;](/docs/integrations/generic/ip-camera)
 

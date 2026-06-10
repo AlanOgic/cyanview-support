@@ -182,7 +182,7 @@ This issue applies when you use an L-Bus motor for iris control alongside CAP:
 
 <img src="/img/Integrations/ARRI/ARRI-CAP-LBUS.png" alt="ARRI CAP with LBUS motor setup" />
 
-Verify that the WCU (Wireless Compact Unit) is not claiming priority over iris. If you are unsure, split the bus into two: iris controlled by the camera, and focus/zoom by the WCU.
+Verify that the WCU (Wireless Compact Unit) is not claiming priority over iris.
 
 Follow these steps in order:
 1. Power on the camera

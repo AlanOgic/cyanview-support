@@ -98,9 +98,7 @@ Some models (e.g. A7S III) display a menu option that must be accepted to allow 
 
 `MENU > (Exposure/Color) > [Color/Tone] > [Picture Profile]` — select the profile you want to edit.
 
-On the camera display:
-- `-PC-` appears in white when the USB cable is connected.
-- `-PC-` turns orange when the camera is under active remote control.
+On the camera display, `-PC-` appears when the USB connection is active.
 
 :::tip
 If `-PC-` never appears, the USB cable is likely power-only. Replace it with a USB data cable.

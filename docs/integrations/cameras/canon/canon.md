@@ -29,7 +29,7 @@ All Canon PTZ cameras except the CR-X500 are controlled over IP using the XC pro
 
 ## IP control: cine cameras
 
-The Cyanview RCP controls all Canon cameras that support the XC protocol.
+The Cyanview RCP controls all Canon cine cameras whose model name starts with **C** followed by two characters (C*XX* — e.g. C50, C70, C80, C90).
 
 ![Canon XC protocol wiring diagram for Cyanview RCP](/img/Integrations/Canon/XC/XC-wiring.png)
 

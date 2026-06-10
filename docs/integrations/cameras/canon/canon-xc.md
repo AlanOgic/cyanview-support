@@ -1,15 +1,17 @@
 ---
 id: canon-xc
-title: "Canon XC series"
-sidebar_label: "Canon XC"
-description: "Connect Canon XC series camcorders to Cyanview for remote camera control over IP."
-keywords: [Canon XC, camcorder, IP control, remote]
+title: "Canon cine cameras (CXX)"
+sidebar_label: "Canon cine (XC)"
+description: "Connect Canon cine cameras (C70, C80, C90, C300, C400, C500) to Cyanview for remote camera control over IP."
+keywords: [Canon, cine camera, CXX, IP control, remote]
 slug: /integrations/cameras/canon/canon-xc
 ---
 
 Cyanview controls Canon cinema cameras over Ethernet using the XC protocol — a bidirectional IP connection that gives you full paint, lens, and scene file control.
 
 ## Supported models
+
+Cyanview supports all Canon cine camera models whose name starts with **C** followed by two characters (C*XX* — e.g. C50, C70, C80, C90), including:
 
 - C70
 - C80
@@ -19,7 +21,7 @@ Cyanview controls Canon cinema cameras over Ethernet using the XC protocol — a
 - [XF605](/docs/integrations/cameras/canon/canon-xf605)
 
 :::note
-For older models not listed here, use the Remote A protocol (2.1 mm jack). See [Canon Remote A](/docs/integrations/cameras/canon/canon-remote-a).
+For older models not listed here, use the Remote A protocol (2.5 mm TRS jack). See [Canon Remote A](/docs/integrations/cameras/canon/canon-remote-a).
 :::
 
 ## Wiring
