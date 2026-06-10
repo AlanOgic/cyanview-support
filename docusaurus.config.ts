@@ -145,6 +145,8 @@ const config: Config = {
           {from: '/docs/integrations/cameras/other/lansee', to: '/docs/integrations/broadcast-systems/lansee'},
           {from: '/docs/my-first-cyanview', to: '/docs/getting-started/my-first-cyanview'},
           {from: '/docs/Manuals/multi-cam-dashboard', to: '/docs/reference/manuals/rcp/multi-cam-dashboard'},
+          // RIO +LAN manual merged into the RIO manual (upstream refactoring, 2026-04-28)
+          {from: '/docs/reference/manuals/rio-live-manual', to: '/docs/reference/manuals/rio-manual'},
         ],
       },
     ],
