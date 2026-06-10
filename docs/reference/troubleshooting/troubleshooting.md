@@ -45,7 +45,7 @@ For Cisco or Netgear networks, check the specific sections below.
 ### Cisco Portfast
 
 :::warning
-Cisco **Portfast** is mandatory for Cyanview devices. Without it, devices may fail to communicate after a switch port comes up.
+On Cisco managed switches, enabling **Portfast** is strongly recommended for Cyanview devices. Without it, spanning tree keeps the port blocked for up to 30 seconds after link-up, and devices may fail to communicate when a switch port comes up.
 :::
 
 Enable Portfast on all switch ports connected to Cyanview devices. See the [Cisco Portfast configuration guide](https://www.grandmetric.com/knowledge-base/design_and_configure/how-to-configure-spanning-tree-portfast-cisco-ios/) for instructions.

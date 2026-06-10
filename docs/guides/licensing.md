@@ -169,7 +169,7 @@ If you need reliable camera control in locations with unstable network connectio
 
 Check your device's current license in the web interface:
 1. Open the device's web UI
-2. Navigate to **System** or **About**
+2. Open the **Admin** tab
 3. View the license tier and camera limit
 
 ### Applying a new license
@@ -177,7 +177,7 @@ Check your device's current license in the web interface:
 To apply a purchased license:
 1. Obtain the license update from Cyanview
 2. Open the device's web UI
-3. Navigate to **System > License** to verify
+3. Check the **Admin** tab to verify the new tier
 4. Restart the device if still not updated
 
 Contact [Cyanview support](mailto:support@cyanview.com) for license purchases or upgrade questions.
