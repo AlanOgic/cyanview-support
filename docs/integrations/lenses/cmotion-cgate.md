@@ -1,10 +1,10 @@
 ---
 id: cmotion-cgate
 title: "cmotion cGate integration"
-sidebar_label: "cmotion Cgate"
-description: "Connect cmotion Cgate wireless lens controllers with Cyanview for remote focus and iris control on cinema setups."
-keywords: [cmotion, Cgate, wireless, lens control, cinema]
-slug: /integrations/accessories/cmotion-cgate
+sidebar_label: "cmotion cGate"
+description: "Connect a cmotion cGate wireless lens controller to Cyanview for remote iris, zoom, and focus control on cinema rigs."
+keywords: [cmotion, cGate, wireless lens control, iris, zoom, focus, cinema]
+slug: /integrations/lenses/cmotion-cgate
 ---
 
 The cmotion cGate connects to Cyanview for iris, zoom, and focus motor control. The cGate must run **firmware v2.0.0 or above** for Cyanview compatibility.
@@ -22,7 +22,7 @@ The cmotion cGate connects to Cyanview for iris, zoom, and focus motor control. 
 - Connect up to 3 motors to the cGate.
 - Power the cGate and motors through the LBUS.
 
-Optional: add Blackmagic handles so iris is controlled from the RCP and zoom/focus from the handles.
+Optional: add Blackmagic handles to control iris from the RCP and zoom/focus from the handles.
 
 ## Setup
 
@@ -31,7 +31,7 @@ On an existing camera, scroll to the `Lens — External control override` sectio
 2. [Toggle Advanced Mode](/docs/guides/advanced/serial-camera#toggle-advanced-mode).
 3. In `Advanced`, enter the cGate IP address. The `Interface` field updates to show the IP when the address is accepted.
 
-Make sure the cGate IP is reachable from the RCP — see the [IP configuration guide](/docs/guides/networking/ip-configuration?_highlight=ip#lan-configuration).
+Make sure the cGate IP is reachable from the RCP — see the [IP configuration guide](/docs/guides/networking/ip-configuration#lan-configuration).
 
 When correctly configured, the `lens` block turns green:
 
@@ -96,7 +96,7 @@ Motor direction is set in the RCP controller, not on the motor itself. This lets
 
 Run motor calibration from the RCP via `MENU > LENS > LENS > ACTION`, then click `Calibrate`.
 
-Use a powerful enough power supply — calibrating all motors simultaneously requires significant current.
+Calibrating all motors at once draws significant current, so use a power supply rated for it.
 
 ![cGate motor calibration animation in RCP menu](/img/Integrations/ARRI/cforce/RCP-UI/calibration.gif)
 
