@@ -122,21 +122,21 @@ const featuredServices: ServiceItem[] = [
     title: 'Knowledge Base',
     description: 'Technical articles, product documentation, and in-depth guides for the Cyanview ecosystem.',
     link: '/docs/getting-started',
-    color: '#3b82f6',
+    color: '#003366',
   },
   {
     icon: <IconCompass />,
     title: 'User Guides',
     description: 'Step-by-step manuals for RCP, RIO, CI0, VP4, NIO, and all Cyanview products.',
     link: '/docs/reference/manuals/rcp/installation',
-    color: '#06b6d4',
+    color: '#0077b6',
   },
   {
     icon: <IconDownload />,
     title: 'Downloads',
     description: 'Firmware updates, software releases, and configuration files for your devices.',
     link: '/docs/reference/firmware-download',
-    color: '#8b5cf6',
+    color: '#00a8e8',
   },
 ];
 
@@ -146,14 +146,14 @@ const quickLinks: ServiceItem[] = [
     title: 'Troubleshoot',
     description: 'Diagnostic tools and common fixes',
     link: '/docs/reference/troubleshooting/troubleshooting',
-    color: '#f59e0b',
+    color: '#006faf',
   },
   {
     icon: <IconRefresh />,
     title: 'RMA',
     description: 'Product return or exchange requests',
     link: '/docs/reference/rma-procedure',
-    color: '#ef4444',
+    color: '#004080',
   },
   {
     icon: <IconUsers />,
@@ -161,7 +161,7 @@ const quickLinks: ServiceItem[] = [
     description: 'Community discussions and tips',
     link: 'https://discourse.cyanview.com',
     external: true,
-    color: '#0ea5e9',
+    color: '#0088cc',
   },
   {
     icon: <IconSliders />,
@@ -170,7 +170,7 @@ const quickLinks: ServiceItem[] = [
     link: 'https://cyanview.cloud/configurator',
     external: true,
     badge: 'Beta',
-    color: '#f97316',
+    color: '#0077b6',
   },
   {
     icon: <IconBot />,
@@ -179,7 +179,7 @@ const quickLinks: ServiceItem[] = [
     link: 'https://cyanview.cloud',
     external: true,
     badge: 'Beta',
-    color: '#10b981',
+    color: '#00a8e8',
   },
   {
     icon: <IconMail />,
@@ -187,7 +187,7 @@ const quickLinks: ServiceItem[] = [
     description: 'Sales, partnerships, or questions',
     link: 'https://www.cyanview.com/contact',
     external: true,
-    color: '#6366f1',
+    color: '#003366',
   },
 ];
 
@@ -363,34 +363,6 @@ export default function Home(): React.JSX.Element {
               </Link>
             ))}
           </div>
-        </section>
-
-        {/* ── See it live ── */}
-        <section className="sp-section">
-          <div className="sp-section__header reveal" style={{'--reveal-delay': '0.55s'} as React.CSSProperties}>
-            <h2 className="sp-section__title">See it live</h2>
-            <p className="sp-section__subtitle">Real deployments, real broadcasts</p>
-          </div>
-          <Link to="/docs/products/system-examples" className="sp-live reveal" style={{'--reveal-delay': '0.6s'} as React.CSSProperties}>
-            <div className="sp-live__video">
-              <div className="sp-live__placeholder">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" />
-                </svg>
-              </div>
-            </div>
-            <div className="sp-live__content">
-              <h3 className="sp-live__title">Olympic figure skating - wireless on-ice camera</h3>
-              <p className="sp-live__desc">
-                A cameraman skates backwards on Olympic ice with a RIO +WAN and 4G dongle -
-                local controls at hand, remote shading from the control room. Fully wireless.
-              </p>
-              <span className="sp-live__cta">
-                View all system examples <IconArrowRight />
-              </span>
-              <span className="sp-live__credit">Video courtesy of NBC New York</span>
-            </div>
-          </Link>
         </section>
 
         {/* ── Contact strip ── */}
