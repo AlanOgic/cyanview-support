@@ -145,7 +145,8 @@ const quickLinks: ServiceItem[] = [
     icon: <IconTool />,
     title: 'Troubleshoot',
     description: 'Diagnostic tools and common fixes',
-    link: '/docs/reference/troubleshooting/troubleshooting',
+    link: 'https://cyanview.cloud/troubleshooter/',
+    external: true,
     color: '#006faf',
   },
   {
