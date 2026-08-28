@@ -1,15 +1,19 @@
 # Map officielle ↔ fork — racine `/docs/`
 
-- **Officielle** : support.cyanview.com — `~/ddev/instructions/docs/` (read-only), état `origin/master` (799b76b 2026-06-02)
+- **Officielle** : support.cyanview.com — `~/ddev/instructions/docs/` (read-only), état `origin/master` (e775e47 2026-08-25)
 - **Fork** : support.cyanview.cloud — `~/ddev/cyanview-support/docs/`
 - Baseline de synchro : `0c35b23` (2026-03-17, date du fork 2026-03-18)
+- Dernière synchro portée : `e775e47` (2026-08-25) — voir « Journal de synchro » en fin de fichier
 - ⚠ = page modifiée en amont depuis la baseline (à porter)
+- ✔ = contenu amont fusionné dans une page fork existante (pas de page 1:1)
 
-Pages officielle : 145 · pages fork : 153 · mappées : 143 · sans équivalent fork : 3 · pages propres au fork : 17
+Pages officielle : 146 · pages fork : 153 · couvertes par le fork : 145 · sans équivalent fork : 1 · pages propres au fork : 16
 
 Pages amont **sans équivalent fork** (à créer ou décider de ne pas porter) :
-- `Manuals/RCP/RCPUI/RCPUIPowerManagement.md` — **nouvelle page amont du 06/05** (menus POWER + SYS CTL)
-- `how-to-guides/remi-remi-workflow.md` et `how-to-guides/remi-multiple-rcp-workflow.md` — guides REMI non repris (couverts en partie par `guides/networking/remi.md`)
+- `how-to-guides/remi-multiple-rcp-workflow.md` — ébauche de 12 lignes en amont (aucun contenu réel), non reprise
+
+Fichiers amont **non publiés** (à ignorer) :
+- `how-to-guides/remi-remi-tag` — 268 lignes de contenu réel mais **sans extension `.md`** : Docusaurus ne le rend pas, il est absent du sitemap amont. C'est le monolithe d'origine, scindé depuis en `remi-lan-workflow.md` + `remi-wan-workflow.md`. Bug d'édition en amont, rien à porter.
 
 ## Officielle → Fork
 
@@ -116,7 +120,7 @@ Pages amont **sans équivalent fork** (à créer ou décider de ne pas porter) :
 | Manuals/RCP/RCPUI/RCPGeneral.md | reference/manuals/rcp/ui/general.md (slug:/reference/manuals/rcp/ui/general) |  |
 | Manuals/RCP/RCPUI/RCPUIAssignables.md | reference/manuals/rcp/ui/assignables.md (slug:/reference/manuals/rcp/ui/assignables) | ⚠ |
 | Manuals/RCP/RCPUI/RCPUILens.md | reference/manuals/rcp/ui/lens.md (slug:/reference/manuals/rcp/ui/lens) | ⚠ |
-| Manuals/RCP/RCPUI/RCPUIPowerManagement.md | **— absent —** | ⚠ |
+| Manuals/RCP/RCPUI/RCPUIPowerManagement.md | reference/manuals/rcp/ui/power-management.md (slug:/reference/manuals/rcp/ui/power-management) |  |
 | Manuals/RCP/RCPUI/RCPUIScene.md | reference/manuals/rcp/ui/scene.md (slug:/reference/manuals/rcp/ui/scene) | ⚠ |
 | Manuals/RCP/RCPUI/RCPUISettings.md | reference/manuals/rcp/ui/settings.md (slug:/reference/manuals/rcp/ui/settings) |  |
 | Manuals/RCP/rcp-emberplus.md | reference/manuals/rcp/emberplus.md (slug:/reference/manuals/rcp/emberplus) | ⚠ |
@@ -132,8 +136,9 @@ Pages amont **sans équivalent fork** (à créer ou décider de ne pas porter) :
 | Workflows/LensVideoReturn.md | guides/workflows/lens-video-return.md (slug:/guides/workflows/lens-video-return) | ⚠ |
 | Workflows/SonyMirrorlessGimbal.md | guides/workflows/sony-mirrorless-gimbal.md (slug:/guides/workflows/sony-mirrorless-gimbal) | ⚠ |
 | how-to-guides/ip-cameras.md | integrations/generic/ip-camera.md (slug:/integrations/generic/ip-camera) |  |
+| how-to-guides/remi-lan-workflow.md | guides/networking/remi.md (slug:/guides/networking/remi) | ✔ |
 | how-to-guides/remi-multiple-rcp-workflow.md | **— absent —** |  |
-| how-to-guides/remi-remi-workflow.md | **— absent —** |  |
+| how-to-guides/remi-wan-workflow.md | guides/networking/remi.md (slug:/guides/networking/remi) | ✔ |
 | how-to-guides/serial-cameras.md | guides/advanced/serial-camera.md (slug:/guides/advanced/serial-camera) |  |
 | how-to-guides/setup-streamdeck.md | integrations/accessories/elgato-stream-deck.md (slug:/integrations/accessories/elgato-stream-deck) |  |
 | how-to-guides/tally-cy-light.md | guides/tally/tally.md (slug:/guides/tally/tally) |  |
@@ -177,6 +182,36 @@ Pages amont **sans équivalent fork** (à créer ou décider de ne pas porter) :
 - products/system-examples.md
 - products/vp4.md
 - products/which-product.md
-- reference/manuals/rio-live-manual.md ⚠ (supprimé en amont le 28/04 — fusionné dans `RIOManual.md` lors du refactoring RIO LAN/WAN ; à fusionner dans `rio-manual.md` côté fork aussi)
 - resources/glossary.md
 - restricted/index.md
+
+## Journal de synchro
+
+### `799b76b` → `e775e47` (2026-08-28)
+
+Seul changement de contenu en amont : la branche `Egans` fusionnée, qui ajoute une section « how-to guides » consacrée au tag REMI. Le reste du diff amont ne touche que la CI, `yarn.lock`, `sidebars.js` et `src/css/custom.css`.
+
+| Amont | Action fork |
+|---|---|
+| `how-to-guides/remi-lan-workflow.md` (nouveau, 96 l) | Fusionné dans `guides/networking/remi.md` |
+| `how-to-guides/remi-wan-workflow.md` (nouveau, 137 l) | Fusionné dans `guides/networking/remi.md` |
+| `how-to-guides/remi-remi-tag` (nouveau, 268 l, sans extension) | Ignoré — non publié en amont, superseded par les deux pages ci-dessus |
+| `how-to-guides/remi-remi-workflow.md` (supprimé) | Rien à faire — jamais porté |
+
+Sections ajoutées à `guides/networking/remi.md` (le fork avait déjà consolidé le reste : cloud, DNS/port 7887, schémas de câblage, configuration en 4 étapes) :
+- Exemple RIO +WAN concret (FX3 en USB + dongle 4G)
+- Topologie « Multi-site RCP over WAN »
+- Topologie « RIO fronting IP cameras over WAN » (le RIO isole les caméras IP de la latence WAN)
+- « Manual IP mode » — le tag REMI est un paquet broadcast, bloqué par certains réseaux (mesh IP), d'où l'ajout manuel par IP
+- « Troubleshooting » — icône cloud rouge (contrôle de connectivité page Admin) et sélection du serveur EU/US
+
+7 images copiées depuis l'amont :
+- `static/img/Configuration/Quick_Start/` : `RIO_Advanced_REMI.png`, `RIO_REMI_Manual_IP.png`, `RIO_REMI_Manual_IP2.png`
+- `static/img/Configuration/REMI/` : `RCP_WAN.png`, `RCP_WAN_LAN.png`, `Remote_Connectivity_check.png`, `US_Server_REMI.png`
+
+Le système de tags amont (`tags/*`, 38 pages générées dans le sitemap, 27 fichiers avec frontmatter `tags:`, commit `22cab4b` « experiment with tags ») n'est pas repris : le fork utilise `keywords`.
+
+### Corrections d'entrées périmées
+
+- `Manuals/RCP/RCPUI/RCPUIPowerManagement.md` n'était plus « absent » : `reference/manuals/rcp/ui/power-management.md` a été créé dans `74ad418`.
+- `reference/manuals/rio-live-manual.md` n'est plus une page propre au fork : supprimée et fusionnée dans `rio-manual.md` dans `74ad418` (redirection en place dans `docusaurus.config.ts`).

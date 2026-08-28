@@ -149,6 +149,9 @@ const config: Config = {
           {from: '/docs/Manuals/multi-cam-dashboard', to: '/docs/reference/manuals/rcp/multi-cam-dashboard'},
           // RIO +LAN manual merged into the RIO manual (upstream refactoring, 2026-04-28)
           {from: '/docs/reference/manuals/rio-live-manual', to: '/docs/reference/manuals/rio-manual'},
+          // Upstream REMI how-to guides, merged into the consolidated REMI page (2026-08-28)
+          {from: '/docs/how-to-guides/remi-lan-workflow', to: '/docs/guides/networking/remi'},
+          {from: '/docs/how-to-guides/remi-wan-workflow', to: '/docs/guides/networking/remi'},
         ],
       },
     ],

@@ -3,7 +3,7 @@ id: remi
 title: "REMI remote production"
 sidebar_label: "REMI"
 description: "Set up REMI remote production with Cyanview. Control cameras from anywhere over the internet using RIO +WAN gateways and the Cyanview cloud."
-keywords: [REMI, remote production, cloud, RIO +WAN, internet, camera control, Cyanview]
+keywords: [REMI, remote production, cloud, RIO +WAN, internet, camera control, REMI tag, manual IP, broadcast, connectivity check, Cyanview]
 slug: /guides/networking/remi
 ---
 
@@ -67,6 +67,8 @@ Use a RIO +WAN for:
 - Gimbals and Steadicam setups
 - Any remote production scenario
 
+**Example:** connect a Sony FX3 to the RIO over USB and a 4G dongle to the RIO. The RIO reaches the RCP over the cellular link, and the FX3 is shaded wirelessly from any location.
+
 :::note
 The RIO +WAN supports unlimited cameras and includes cloud access for control from any location.
 :::
@@ -78,6 +80,20 @@ The RIO +WAN supports unlimited cameras and includes cloud access for control fr
 Use RCP-to-RCP sharing for:
 - Controlling the same camera from multiple locations (LAN — from the truck and another desk)
 - Controlling cameras across different venues (WAN — over the internet)
+
+### Multi-site RCP over WAN
+
+<img src="/img/Configuration/REMI/RCP_WAN.png" width="600" alt="Several RCPs in a central MCR controlling remote sites over WAN" />
+
+Use this when several RCPs sit in a central MCR and you need to reach cameras — or other RCPs — at remote sites. The REMI tag links them across the WAN.
+
+### RIO fronting IP cameras over WAN
+
+<img src="/img/Configuration/REMI/RCP_WAN_LAN.png" width="600" alt="RCP connecting over WAN to a RIO that controls IP cameras on its own LAN" />
+
+Use this when several IP cameras sit at a remote location while the RCPs stay in a local MCR. The RCPs connect to the RIO over the WAN, and the RIO talks to the cameras on its own LAN.
+
+Control traffic stays between the RIO and the cameras on the local link, so WAN latency never reaches them.
 
 ## Configuration
 
@@ -117,6 +133,24 @@ The icons indicate:
 - **Ethernet icon** — Device is reachable on the local network
 
 You also see the list of cameras exported by each device.
+
+### Manual IP mode (when broadcast is blocked)
+
+REMI discovers devices by broadcasting the tag across the local network. Some networks drop broadcast traffic — wireless IP mesh is the common case, where the radios block it — so devices that share a tag never find each other. When that happens, add the remote device by its IP address instead.
+
+1. Click the three dots on the **REMI** settings:
+
+<img src="/img/Configuration/Quick_Start/RIO_Advanced_REMI.png" width="368" alt="Three-dot menu on the REMI settings panel" />
+
+2. Click **Advanced Mode**. A **Manual IP** section appears:
+
+<img src="/img/Configuration/Quick_Start/RIO_REMI_Manual_IP.png" width="368" alt="Manual IP section shown in REMI advanced mode" />
+
+3. Enter the RIO's IP address and click **+**:
+
+<img src="/img/Configuration/Quick_Start/RIO_REMI_Manual_IP2.png" width="368" alt="RIO IP address added to the REMI manual IP list" />
+
+Once the address is listed, import cameras exactly as described below.
 
 ### Step 3: Access the remote web UI
 
@@ -166,3 +200,21 @@ Available values:
 - `exporter` — Export cameras only (default on RIO)
 - `importer` — Import cameras only
 - `both` — Export and import cameras (default on RCP)
+
+## Troubleshooting
+
+### The cloud icon is red
+
+A red cloud icon in the **REMI** tab means the device has no connection to the Cyanview cloud. Check the device's internet connection, then open the **Admin** page and scroll down to the connectivity check:
+
+<img src="/img/Configuration/REMI/Remote_Connectivity_check.png" width="600" alt="Connectivity check on the Admin page" />
+
+Every check must be green before REMI over the internet will work.
+
+### The device is online but no REMI devices appear
+
+Check which cloud server the device is using — if you operate in the US, you need to change it.
+
+Open the **REMI** tab, activate the advanced menu (three dots, top right), and select the server:
+
+<img src="/img/Configuration/REMI/US_Server_REMI.png" width="383" alt="Cloud server selection in the REMI advanced menu" />
