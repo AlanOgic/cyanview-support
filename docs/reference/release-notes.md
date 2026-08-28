@@ -9,149 +9,178 @@ slug: /reference/release-notes
 
 ## Release 26.4.1 (stable release)
 
-OS, camera control and dashboard improvements
+OS, camera control and dashboard improvements.
 
-Compatible devices: cy-rcp, cy-rio-rev2, cy-nio-rev2, cy-rio-air, cy-vp4
+**Compatible devices:** cy-rcp, cy-rio-rev2, cy-nio-rev2, cy-rio-air, cy-vp4
 
-### Summary
+### Cameras
 
-- Canon CR-X300: model added with support of outdoor features like wiper/washer
+- ARRI: improved camera support
 - ARRI Live: improvements on iris control and black level
-- IOI: fix iris not fully opening
-- Iris joystick: improvements in iris control, increased precision on black control
-- Iris joystick: added a first release of an absolute control mode
-- SBUS: fix parity bug
-- Antelope: Various fixes and improvements
-- Shared mixer: Fixed bug when the mixer reconnects
-- Wireless: Added drivers for D-Link AC13U
-- Operating System: Fixed an issue that could cause unexpected reboots (system update required)
-- Sony 700: improved support for extender
-- Panasonic P2: support newer SHA2 auth method
-- Canon CRN-700: added iris close command
-- Canon C-50: added support
-- Arri: improved camera support
-- Joystick: fixed a bug that sometime cause a display shift
-- Joystick: fixed a bug with the camera lock function
+- ARRI Alexa 35: added, with initial support for Multicam Live
+- ATEM: fixed gain on old cameras
+- Antelope: various fixes and improvements
+- Bolin R9-420N: support added and finalised
+- Canon C50: added support
+- Canon CR-N700: added iris close command
+- Canon CR-N700: maximum iris value adjusted
+- Canon CR-X300: model added, with support for outdoor features like wiper/washer
+- Canon XC: color gain status mapping fixed, so the status now reports correctly
+- IOI: fixed iris not fully opening
+- KOKUSAI DK-H700: model added
+- Panasonic AW-UB10: shutter and gain behavior corrected (2 dB steps), AWB removed, multimatrix and gain stability improved
+- Panasonic P2: support for the newer SHA2 auth method
+- Panasonic PTZ: added shutter for psf formats
+- Proton: fixed zoom speed, and added timecode enable on the custom/custom1 page
+- RED and Sony 700: minor improvements to both integrations
+- Sony: initial beta support for FX3A and FX2
+- Sony 700: improved support for the extender
+- Sony Alpha (A7S, FX3) USB cameras: crash fixed
+- Sony PXW-Z300: added, with improved support for PXW-Z200
+- Vision Research: black clip behavior adjusted
+- Z CAM P2-R1: integration updated to match the latest camera firmware
+
+### Lenses, motors and heads
+
+- cMotion: beta support for cGate
+- cGate: fixed timeouts on slower connections such as wireless
+- Bradley Bus: control multiple Micro L heads
+
+### Control surfaces
+
 - RCP: various improvements
+- RCP GUI: tabs labeled with device serials for easier identification
+- Iris joystick: improvements in iris control, increased precision on black control
+- Iris joystick: first release of an absolute control mode
+- Iris joystick: small improvements, shutter direction now matches Sony
+- Iris joystick: isolated from the network for more stability
+- Joystick: fixed a bug that sometimes caused a display shift
+- Joystick: fixed a bug with the camera lock function
+- Dashboard: general improvements, plus custom views for ARRI
+
+### Video and color processing
+
 - VP4: fixed issue with the DHCP configuration
 - VP4: fixed issue with the color corrector width
-- ARRI Multicam Live on Alexa35: initial support added
-- Dashboard update, general improvements and added custom views for ARRI
-- Sony PXW-Z300 added, other improvements for PXW-Z200
-- Small improvements on the iris joystick, shutter direction now similar to Sony
-- Bradley Bus to control multiple MicroL heads
-- Canon max iris value adjusted for CR-N700
-- Bolin R9-420N finalised
-- Bolin R9-420N added
+- Lawo: added support for V__Link4 and V__Remote4 color correctors
+
+### Routers, switchers and tally
+
+- Blackmagic IP: tally support added for URSA Broadcast G2 and PYXIS
+- Shared mixer: fixed bug when the mixer reconnects
+- Joystick override mode (fallback input) added for router integrations (ProBel SW-P-08, ATEM, and others)
 - Joystick override mode now covers shared routers
-- Tally support added for Blackmagic IP for Ursa Broadcast G2 and Pyxis
-- Arri Alexa35 added, with support of Multicam
-- Atem: fixed gain on old cameras
-- Panasonic PTZ: add shutter for psf formats
-- Joystick override mode (fallback input) for router integrations (ProBel SW-P-08, ATEM, etc.)
-- ZCAM P2-R1: updated integration to match latest camera firmware
-- Minor improvements to RED and Sony 700 integrations
-- Added support for Lawo V__Link4 and V__Remote4 color correctors
-- Improved Ember+ provider in the RCP; behavior now documented on the Support website
-- Virtual GPIO now available over Ember+; configuration documented on Support
-- KOKUSAI DK-H700 model added
-- Panasonic AW-UB10: shutter and gain behavior corrected (2 dB steps), AWB removed, multimatrix/gain stability improved
-- Fix ordering or the USB devices (Tilta, serial ports)
-- Canon XC: color gain status now reports correctly
-- Sony Alpha (A7S, FX3) USB cameras: crash fixed
+
+### Protocols, OS and networking
+
+- Ember+: improved provider in the RCP, with the behavior now documented on this site
+- Ember+: virtual GPIO now available, with the configuration documented on this site
+- SBUS: fixed parity bug
 - MojoPro: option to connect with insecure SSL if needed
-- RCP GUI: tabs labeled with device serials for easier identification
-- Canon XC: color gain status mapping fixed
-- Vision Research: black clip behavior adjusted
-- cGate: fixed timeouts when using slower connections like wireless
-- Proton: fixed zoom speed and added timecode enable in the custom/custom1 page
-- Operating System: Upgrade Linux kernel and core libraries
-- Operating System: Improved performances for Cyanview applications
-- Operating System: Added missing Wireless drivers
-- Iris Joystick: Isolate the joystick from the network for more stability
-- Sony: Initial beta support for FX3A and FX2
-- Sony: Improved support for PXW-Z200
-- cMotion: Beta support for cGate
+- USB: fixed the ordering of USB devices (Tilta, serial ports)
+- Wireless: added drivers for D-Link AC13U
+- Operating system: fixed an issue that could cause unexpected reboots (system update required)
+- Operating system: upgraded the Linux kernel and core libraries
+- Operating system: improved performance for Cyanview applications
+- Operating system: added missing wireless drivers
 
 ## Release 25.9.5 (stable release)
 
-Features and bugfixes
+Features and bugfixes.
 
-Compatible devices: All Cyanview devices
+**Compatible devices:** all Cyanview devices
 
-### Summary
+### Cameras
 
-- VP4: New GUI
-- VP4: Added support for HDR
-- VP4: Added support for Input/Output VPID
-- VP4: Improved the Genlock detection
-- VP4: Fixed issue that was reverting the genlock to the default value
-- Sony700: Added new features: Optical Level; ALAC; 5600K; etc
-- Sony FR7: Fixed the checklink and stability improvements
-- Sony DSLR: Fixed issues with Iris commands on some lenses
-- Sony DSLR: Improved the check link. Recover on network errors
-- Sony DSLR: Added support for zoom and focus
-- Sony DSLR: Added support for ASPC
-- Sony Z200: Fixed a critical bug. Now works with a limited control. Use FX6 model
-- Canon CRN700: Various improvements
-- Canon C300: Fixed the OSD commands
-- Canon XC: Fixed OSD output and added ISO
-- Canon XC: Use continuous auto focus
-- Canon XC: Fixed the Iris range
-- Panasonic PTZ: Added authentification
-- Panasonic: Added support for PX5100
-- RED: Various improvements for Iris / Zoom / Focus
-- RED: Add a command to control the camera power
-- RED: Fixed variable ND
-- Proton: Adapted ZOOM speed
-- Proton: Improved control
-- BlackMagic ATEM Camera Control: Fixed issue with bi-directionnal status and adjust Iris range
-- BlackMagic Pyxis: Improved control
-- BlackMagic IP: Fixed issue with checklink, introduced in 25.5.1rc3
-- BlackMagic IP: Fixed some bugs with the lens control
-- BlackMagic IP: Added ND filters
-- IO Industries: Handle firmware variant for V8KSDI
-- Dreamchip: Implemented the load_factory function
-- Dreamchip: Various bug fixes for SSM501
-- Probel: Added support for extended commands
-- Marshall: Various fixes
-- Marshall: Added multimatrix on CV503 and CV504
-- Birdog: Initial support for X1 / X4 / X5
-- Antelope: Improved control
-- ZCam: Initial support for ZCam P2
-- Aja ColorBox: Added dynamic 1DLUT support
-- Imagine SNP: Fixed the control sensitivity
-- TSL 5.0: Fixed RED and GREEN at same time
-- B4 Lens: Added tally for Sony and Fuji lenses
-- Tilta: Support for Nucleus-M II
-- RCP: Added new assignable functions
-- RCP: Reviewed the way the assignables buttons are displayed
-- RCP: Display the active group name when a group is activated
-- RCP: Settings are now saved to a network share (full system update required)
-- RCP: Refactor AUTO button behavior. AUTO function can now be selected
-- RCP: Added an option to display the GREEN values on the main screen
-- RCP: New screen on the camera tree: AUDIO and STATUS
-- Elgato Streamdeck: Fixed bug in the Switcher for the XL model (requires a full system update)
-- IrisJoystick: Improved the smoothness of the iris control
-- IrisJoystick: Fixed issue with the forced state
-- Camera Companion: Lot of improvements and new features
+- Antelope: improved control
+- BirdDog: initial support for X1, X4 and X5
+- Blackmagic ATEM camera control: fixed bidirectional status, and adjusted the iris range
+- Blackmagic PYXIS: improved control
+- Blackmagic IP: fixed issue with checklink introduced in 25.5.1rc3
+- Blackmagic IP: fixed some bugs with the lens control
+- Blackmagic IP: added ND filters
+- Canon CR-N700: various improvements
+- Canon C300: fixed the OSD commands
+- Canon XC: fixed OSD output and added ISO
+- Canon XC: use continuous auto focus
+- Canon XC: fixed the iris range
+- Dreamchip: implemented the load_factory function
+- Dreamchip: various bug fixes for SSM501
+- IO Industries: handle the firmware variant for V8KSDI
+- Marshall: various fixes
+- Marshall: added multimatrix on CV503 and CV504
+- Panasonic: added support for PX5100
+- Panasonic PTZ: added authentication
+- Proton: adapted zoom speed
+- Proton: improved control
+- RED: various improvements for iris, zoom and focus
+- RED: added a command to control camera power
+- RED: fixed variable ND
+- Sony 700: added new features — optical level, ALAC, 5600K and others
+- Sony FR7: fixed the checklink, plus stability improvements
+- Sony DSLR: fixed issues with iris commands on some lenses
+- Sony DSLR: improved the check link, which now recovers on network errors
+- Sony DSLR: added support for zoom and focus
+- Sony DSLR: added support for APS-C
+- Sony Z200: fixed a critical bug — now works with limited control, using the FX6 model
+- Z CAM: initial support for Z CAM P2
+
+### Lenses, motors and heads
+
+- B4 lens: added tally for Sony and Fujinon lenses
+- Tilta: support for Nucleus-M II
+
+### Control surfaces
+
+- RCP: added new assignable functions
+- RCP: reviewed the way assignable buttons are displayed
+- RCP: display the active group name when a group is activated
+- RCP: settings are now saved to a network share (full system update required)
+- RCP: refactored AUTO button behavior, so the AUTO function can now be selected
+- RCP: added an option to display the GREEN values on the main screen
+- RCP: new screens on the camera tree — AUDIO and STATUS
+- Iris joystick: improved the smoothness of the iris control
+- Iris joystick: fixed issue with the forced state
+- Elgato Stream Deck: fixed bug in the switcher for the XL model (requires a full system update)
+- Camera Companion: many improvements and new features
+
+### Video and color processing
+
+- VP4: new GUI
+- VP4: added support for HDR
+- VP4: added support for input and output VPID
+- VP4: improved the genlock detection
+- VP4: fixed issue that reverted the genlock to the default value
+- AJA ColorBox: added dynamic 1D LUT support
+
+### Routers, switchers and tally
+
+- ProBel: added support for extended commands
+- Imagine SNP: fixed the control sensitivity
+- TSL 5.0: fixed RED and GREEN showing at the same time
 
 ## Release 25.4.1 (stable release)
 
-Features and bugfixes
+Features and bugfixes.
 
-Compatible devices: All Cyanview devices
+**Compatible devices:** all Cyanview devices
 
-### Summary
+### Cameras
 
-- Panasonic AWUB10 / AWUB50: Initial support
-- FOR.A 1616: Added support
-- Lumix GH7/GH5S: Fixed some bugs and improvements (require a full system update)
-- RED: support of the new Nikon mount, support of external ND module
-- Mojopro: In line with the 2025 March release from Haivision
-- Varicam: Record status and minor improvements
-- Dreamchip: Fixed issues with R/B and Color temp
-- BlackMagic Videohub: added monitoring outputs
+- Dreamchip: fixed issues with R/B and color temperature
+- Lumix GH7 and GH5S: bug fixes and improvements (requires a full system update)
+- Panasonic AW-UB10 and AW-UB50: initial support
+- RED: support for the new Nikon mount and the external ND module
+- Varicam: record status and minor improvements
+
+### Routers, switchers and tally
+
+- FOR.A 1616: added support
+- Blackmagic Videohub: added monitoring outputs
+
+### Protocols, OS and networking
+
+- MojoPro: in line with the March 2025 release from Haivision
 
 ## Complete changelog
 

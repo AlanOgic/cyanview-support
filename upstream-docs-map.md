@@ -6,6 +6,7 @@
 - Dernière synchro portée : `e775e47` (2026-08-25) — voir « Journal de synchro » en fin de fichier
 - ⚠ = page modifiée en amont depuis la baseline (à porter)
 - ✔ = contenu amont fusionné dans une page fork existante (pas de page 1:1)
+- ✂ = page volontairement divergente : le fork en est propriétaire, ne pas resynchroniser depuis l'amont
 
 Pages officielle : 146 · pages fork : 153 · couvertes par le fork : 145 · sans équivalent fork : 1 · pages propres au fork : 16
 
@@ -107,7 +108,7 @@ Fichiers amont **non publiés** (à ignorer) :
 | Integrations/arri/arri-cforce.md | integrations/cameras/arri/arri-cforce.md (slug:/integrations/cameras/arri/arri-cforce) |  |
 | Integrations/arri/arri-sscp.md | integrations/cameras/arri/arri-sscp.md (slug:/integrations/cameras/arri/arri-sscp) |  |
 | Integrations/cmotion/cmotionCgate.md | integrations/lenses/cmotion-cgate.md (slug:/integrations/lenses/cmotion-cgate) | ⚠ |
-| Maintenance/ReleaseNotes.md | reference/release-notes.md (slug:/reference/release-notes) |  |
+| Maintenance/ReleaseNotes.md | reference/release-notes.md (slug:/reference/release-notes) | ✂ |
 | Manuals/CI0/CI0Manual.md | reference/manuals/ci0/ci0-manual.md (slug:/reference/manuals/ci0/ci0-manual) | ⚠ |
 | Manuals/IJ/IrisJoystick.md | reference/manuals/iris-joystick.md (slug:/reference/manuals/iris-joystick) | ⚠ |
 | Manuals/NIOManual.md | reference/manuals/nio-manual.md (slug:/reference/manuals/nio-manual) |  |
@@ -215,3 +216,23 @@ Le système de tags amont (`tags/*`, 38 pages générées dans le sitemap, 27 fi
 
 - `Manuals/RCP/RCPUI/RCPUIPowerManagement.md` n'était plus « absent » : `reference/manuals/rcp/ui/power-management.md` a été créé dans `74ad418`.
 - `reference/manuals/rio-live-manual.md` n'est plus une page propre au fork : supprimée et fusionnée dans `rio-manual.md` dans `74ad418` (redirection en place dans `docusaurus.config.ts`).
+
+## Page volontairement divergente : `reference/release-notes.md`
+
+En amont, `Maintenance/ReleaseNotes.md` n'est **pas** une page rédigée : son contenu commité est le littéral `DO NOT EDIT...`, et les notes réelles sont injectées au build par `scripts/build_releases.sh` (voir `scripts/releases.conf`). Il n'y a donc pas de source rédactionnelle à suivre en amont.
+
+**Décision (2026-08-28)** : la page release notes du fork suit les conventions du fork, pas la sortie brute du générateur amont. Le fork en est propriétaire.
+
+Restructuration appliquée aux trois releases (26.4.1, 25.9.5, 25.4.1) :
+
+- La liste plate sous `### Summary` est remplacée par des sections thématiques : *Cameras*, *Lenses, motors and heads*, *Control surfaces*, *Video and color processing*, *Routers, switchers and tally*, *Protocols, OS and networking*. La page génère maintenant une vraie table des matières.
+- Entrées en doublon fusionnées (4 fusions, aucune information perdue) :
+  - « Bolin R9-420N finalised » + « Bolin R9-420N added »
+  - « Canon XC: color gain status now reports correctly » + « Canon XC: color gain status mapping fixed »
+  - « ARRI Multicam Live on Alexa35: initial support added » + « Arri Alexa35 added, with support of Multicam »
+  - « Sony PXW-Z300 added, other improvements for PXW-Z200 » + « Sony: Improved support for PXW-Z200 »
+- Noms de produits alignés sur les conventions du fork : ARRI, Blackmagic, PYXIS, URSA, Z CAM, BirdDog, ProBel, AJA, MojoPro, Stream Deck, Canon CR-N700, Canon C50, Panasonic AW-UB10/AW-UB50, Fujinon, Micro L, Alexa 35, APS-C.
+- Coquilles amont corrigées : « ordering or the USB devices » → « of », « sometime cause » → « sometimes caused », « authentification » → « authentication », « bi-directionnal » → « bidirectional », « at same time » → « at the same time ».
+- Casse phrase appliquée aux puces, conformément au reste du fork.
+
+**Conséquence** : à chaque nouvelle release, coller le texte brut du générateur puis le repasser dans cette structure. Ne pas écraser la page par un copier-coller brut.
