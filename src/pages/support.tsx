@@ -114,6 +114,8 @@ interface ServiceItem {
   color: string;
   external?: boolean;
   badge?: string;
+  /** Open in a small centred browser window instead of a new tab. */
+  popup?: boolean;
 }
 
 const featuredServices: ServiceItem[] = [
@@ -147,6 +149,7 @@ const quickLinks: ServiceItem[] = [
     description: 'Diagnostic tools and common fixes',
     link: 'https://cyanview.cloud/troubleshooter/',
     external: true,
+    popup: true,
     badge: 'Beta',
     color: '#006faf',
   },
@@ -171,6 +174,7 @@ const quickLinks: ServiceItem[] = [
     description: 'Build your ideal product setup',
     link: 'https://cyanview.cloud/configurator',
     external: true,
+    popup: true,
     badge: 'Beta',
     color: '#0077b6',
   },
@@ -231,6 +235,71 @@ function useScrollReveal() {
 }
 
 /* ───────────────────────────────────────────
+   Popup Window Helper
+   ─────────────────────────────────────────── */
+
+/*
+ * The hosted tools on cyanview.cloud send `X-Frame-Options: SAMEORIGIN`, and this
+ * site is served from support.cyanview.cloud, so they cannot be embedded in an
+ * in-page iframe modal. A sized browser window is the only option that works
+ * without changing the headers on cyanview.cloud.
+ */
+const POPUP_WIDTH = 1024;
+const POPUP_HEIGHT = 800;
+const POPUP_SCREEN_MARGIN = 48;
+
+/** Stable window name so repeat clicks reuse one popup instead of stacking them. */
+function popupName(title: string): string {
+  return `cyanview-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+}
+
+/** Returns false when the browser blocked the popup, so the caller can fall back. */
+function openInPopup(url: string, name: string): boolean {
+  if (typeof window === 'undefined') return false;
+
+  const availWidth = window.screen?.availWidth ?? window.outerWidth;
+  const availHeight = window.screen?.availHeight ?? window.outerHeight;
+  const width = Math.min(POPUP_WIDTH, availWidth - POPUP_SCREEN_MARGIN);
+  const height = Math.min(POPUP_HEIGHT, availHeight - POPUP_SCREEN_MARGIN);
+
+  // screenLeft/screenTop keep the popup on the monitor holding the opener window.
+  const originLeft = window.screenLeft ?? window.screenX;
+  const originTop = window.screenTop ?? window.screenY;
+  // Math.max keeps the popup on the opener's monitor when that window is
+  // smaller than the popup, instead of offsetting it off the top/left edge.
+  const left = Math.round(originLeft + Math.max(0, (window.outerWidth - width) / 2));
+  const top = Math.round(originTop + Math.max(0, (window.outerHeight - height) / 2));
+
+  const features = [
+    'popup=yes',
+    `width=${width}`,
+    `height=${height}`,
+    `left=${left}`,
+    `top=${top}`,
+    'resizable=yes',
+    'scrollbars=yes',
+  ].join(',');
+
+  const opened = window.open(url, name, features);
+  if (!opened) return false;
+  opened.focus();
+  return true;
+}
+
+/**
+ * Opens the card in a popup window. Modified and non-primary clicks keep their
+ * native behaviour, and a blocked popup falls through to the anchor's own
+ * target="_blank", so the link never becomes a dead end.
+ */
+function handlePopupClick(event: React.MouseEvent, svc: ServiceItem) {
+  if (event.button !== 0) return;
+  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  if (openInPopup(svc.link, popupName(svc.title))) {
+    event.preventDefault();
+  }
+}
+
+/* ───────────────────────────────────────────
    Card Components
    ─────────────────────────────────────────── */
 
@@ -238,7 +307,12 @@ function FeaturedCard({svc, index}: {svc: ServiceItem; index: number}) {
   const isExternal = svc.external;
   const CardTag = isExternal ? 'a' : Link;
   const extraProps = isExternal
-    ? {href: svc.link, target: '_blank', rel: 'noopener noreferrer'}
+    ? {
+        href: svc.link,
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        ...(svc.popup && {onClick: (e: React.MouseEvent) => handlePopupClick(e, svc)}),
+      }
     : {to: svc.link};
 
   return (
@@ -268,7 +342,12 @@ function QuickLinkCard({svc, index}: {svc: ServiceItem; index: number}) {
   const isExternal = svc.external;
   const CardTag = isExternal ? 'a' : Link;
   const extraProps = isExternal
-    ? {href: svc.link, target: '_blank', rel: 'noopener noreferrer'}
+    ? {
+        href: svc.link,
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        ...(svc.popup && {onClick: (e: React.MouseEvent) => handlePopupClick(e, svc)}),
+      }
     : {to: svc.link};
 
   return (
