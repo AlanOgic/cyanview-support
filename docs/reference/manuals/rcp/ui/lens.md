@@ -40,10 +40,10 @@ Path: `MENU > LENS`
 ![Lens control and enable settings](/img/Manual/RCP/Lens/F2.BMP)
 
 This page applies only to external lenses (e.g., a Canon PL lens on an FX9 controlled via a RIO):
-- Control is exclusive — if the RIO takes control, the cameraman loses it.
+- Control is exclusive — if the RIO takes control, the camera operator loses it.
 - **Iris** — usually enabled, as it is the primary RCP use case.
-- **Zoom** — usually disabled to let the cameraman zoom. Enable for robotic or beauty shot applications.
-- **Focus** — usually disabled to let the cameraman focus. Enable for robotic or beauty shot applications.
+- **Zoom** — usually disabled to let the camera operator zoom. Enable for robotic or beauty shot applications.
+- **Focus** — usually disabled to let the camera operator focus. Enable for robotic or beauty shot applications.
 
 ![Lens communication status showing connected lens model](/img/Manual/RCP/Lens/F3.BMP)
 

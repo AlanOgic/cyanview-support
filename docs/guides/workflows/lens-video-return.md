@@ -9,7 +9,7 @@ slug: /guides/workflows/lens-video-return
 
 Fujinon and Canon lenses have buttons (RET1, etc.) that you can map to router or switcher commands on the RCP. This lets the camera operator switch their video return source from the lens handle — for example, toggling between a LOG signal, the program feed, or the main camera output — without touching anything at the CCU.
 
-The result: one clean output signal from the camera, and one video return path from the switcher. The lens buttons control which source appears on the cameraman's display.
+The result: one clean output signal from the camera, and one video return path from the switcher. The lens buttons control which source appears on the camera operator's display.
 
 ![Cyanview RCP RIO FX9 Canon Cine Servo 25-250 mm](/img/Workflows/LensVideoReturn-FX9-Canon-25-250.jpeg)
 
@@ -111,7 +111,7 @@ In this example:
 
 You can create a `not controlled` camera entry named `PGM` and link it to input 21 to label it — but it's optional.
 
-Output 1 is the video return signal going to the Ereca, back to the cameraman's display. You can create a named monitor and link it to output 1 for labeling, but that's also optional.
+Output 1 is the video return signal going to the Ereca, back to the camera operator's display. You can create a named monitor and link it to output 1 for labeling, but that's also optional.
 
 Both inputs (11 and 21) must be in your configured range, or you won't be able to use them later.
 :::

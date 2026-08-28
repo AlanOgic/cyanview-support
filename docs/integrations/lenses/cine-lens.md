@@ -54,7 +54,7 @@ Required cables:
 * Zoom
 * Focus
 
-By default, the RCP controls iris and leaves zoom and focus to the cameraman. For robotic applications, the RCP can also control zoom and focus.
+By default, the RCP controls iris and leaves zoom and focus to the camera operator. For robotic applications, the RCP can also control zoom and focus.
 
 :::tip
 To restrict control to iris only:
