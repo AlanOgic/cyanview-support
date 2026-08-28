@@ -18,7 +18,7 @@ The CI0 interface is used to control serial cameras over IP networks from your R
 
 * **PoE Network Switch**: both CI0 and RCP are PoE compatible and the easiest way to get started is to use a PoE switch. Inexpensive models from Netgear, Ubiquity, TPC Link, etc. are perfectly fine. Without a PoE switch, 12V power supplies with locking plugs can be ordered separately (they are not included in the default package). Regular DC 12V power adapters can also be used.
 
-* **Camera Cable**: we provide various cables to connect any of the supported cameras to your CI0. All pinouts are published if you prefer to make your own cables: [CI0 cable pinouts](/docs/resources/cable-catalog)
+* **Camera Cable**: Cyanview supplies cables to connect any supported camera to your CI0. All pinouts are published if you prefer to make your own: [CI0 cable pinouts](/docs/resources/cable-catalog)
 
 * **Computer**: required to access the web configuration of the RCP.
 
@@ -89,7 +89,7 @@ Refer to the **RCP Manual**.
 
 ## Software update
 
-We deliver product updates continuously so it is a good idea to get your system up to date at this point. For this, connect the switch to an internet access, a modem, or a 4G access point.
+Cyanview publishes updates continuously, so bring your system up to date now. Connect the switch to an internet source: a modem, a router, or a 4G access point.
 
 <img alt="cyanview-support-camera-configuration-RCP-software-update-network" src="/img/diagrams/cyanview-support-camera-configuration-RCP-software-update-network.png" width="700" />
 

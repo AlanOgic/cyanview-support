@@ -91,7 +91,7 @@ Refer to the **RCP Manual**.
 
 ## Software update
 
-We deliver product updates continuously so it is a good idea to get your system up to date at this point. For this, connect the switch to an internet access, a modem, or a 4G access point.
+Cyanview publishes updates continuously, so bring your system up to date now. Connect the switch to an internet source: a modem, a router, or a 4G access point.
 
 <img alt="cyanview-support-camera-configuration-RCP-software-update-network" src="/img/diagrams/cyanview-support-camera-configuration-RCP-software-update-network.png" width="700" />
 
