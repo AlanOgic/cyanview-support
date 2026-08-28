@@ -34,17 +34,17 @@ Key parameters:
 - **name** — visible in the dropdown list (any name you choose)
 - **protocol** — must be `fletcher`
 
-<img src="/img/restricted/configuration/deltec/deltec-joystick.png" width="300"/>
+<img src="/img/restricted/configuration/deltec/deltec-joystick.png" alt="Deltec joystick block in the configuration" width="300"/>
 
-<img src="/img/restricted/configuration/deltec/deltect-joystick-setup.png" width="300"/>
+<img src="/img/restricted/configuration/deltec/deltect-joystick-setup.png" alt="Deltec joystick settings with the fletcher protocol selected" width="300"/>
 
 ### USB serial setup
 
 You should not need to change anything here. If you followed the guide, everything is set up automatically.
 
-<img src="/img/restricted/configuration/deltec/deltec-serial.png" width="300"/>
+<img src="/img/restricted/configuration/deltec/deltec-serial.png" alt="Deltec serial block in the configuration" width="300"/>
 
-<img src="/img/restricted/configuration/deltec/deltec-serial-setup.png" width="300"/>
+<img src="/img/restricted/configuration/deltec/deltec-serial-setup.png" alt="Deltec serial settings, configured automatically" width="300"/>
 
 ## Going further
 

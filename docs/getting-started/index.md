@@ -2,7 +2,7 @@
 id: index
 title: Getting started with Cyanview
 sidebar_label: Overview
-description: "Get up and running with Cyanview remote camera control. Find manuals, configuration guides, integration docs, and troubleshooting for RCP, RIO, CI0, VP4, and NIO."
+description: "Get started with Cyanview remote camera control: manuals, configuration guides, integration docs, and troubleshooting for RCP, RIO, CI0, VP4 and NIO."
 keywords: [cyanview, getting started, remote camera control, broadcast, RCP, RIO, CI0]
 slug: /getting-started
 ---

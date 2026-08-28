@@ -31,20 +31,20 @@ Follow the [generic color corrector guide](/docs/integrations/generic/color-corr
 
 You should have a CC block:
 
-<img src="/img/Configuration/restricted/CCFollow/vpro-block.png" width="400"/>
+<img src="/img/Configuration/restricted/CCFollow/vpro-block.png" alt="Lawo V__Pro8 colour corrector block in the device app" width="400"/>
 
 Create at least one camera to control your master channel (here channel 1):
 
-<img src="/img/Configuration/restricted/CCFollow/vpro-ch1.png" width="400"/>
+<img src="/img/Configuration/restricted/CCFollow/vpro-ch1.png" alt="Camera created to control the master channel, channel 1" width="400"/>
 
 Navigate to the advanced configuration by appending `/dev/app.html` to your RCP URL (for example, `http://10.192.18.4/dev/app.html`).
 
 Find your CC block (here the name entered is `Vpro8`):
 
-<img src="/img/Configuration/restricted/CCFollow/vpro-devapp.png" width="400"/>
+<img src="/img/Configuration/restricted/CCFollow/vpro-devapp.png" alt="Colour corrector block named Vpro8 in the device app" width="400"/>
 
 Inside the block, click on the slave input (here `input 2`). In the right panel, set the `follow_input` value to your master channel (here `1`):
 
-<img src="/img/Configuration/restricted/CCFollow/vpro-ch2-follow-ch1.png" width="400"/>
+<img src="/img/Configuration/restricted/CCFollow/vpro-ch2-follow-ch1.png" alt="Slave input 2 with follow_input set to master channel 1" width="400"/>
 
 You now have one camera on the RCP (named `VPro-CH1`) that controls both `input 1` and `input 2` (which follows `input 1`).

@@ -90,8 +90,8 @@ The following options use serial links. They are presented for reference only â€
 
 ### RIO serial bridge for RF modems
 
-Cyanview developed a serial bridge for specialty and RF vendors. The connection status of the camera is not consistent or reliable, but it has been useful for setups using RF modems on licensed frequencies such as Satel modems. This feature currently uses the development interface â€” a guide is available [here](#).
+Cyanview developed a serial bridge for specialty and RF vendors. The connection status of the camera is not consistent or reliable, but it has been useful for setups using RF modems on licensed frequencies such as Satel modems. This feature currently uses the development interface.
 
 ### Serial data for mini-cameras
 
-For Marshall, Dreamchip, and Proton mini cameras, it is possible to route the serial data from a CI0 or USB dongle to the camera over RF. The RCP uses bidirectional data, but these cameras support a unidirectional link from the camera's advanced menu (3-dot icon in the camera properties). Untick the bidirectional link option. Alternatively, use the delay option to keep a bidirectional link but add the RF system's round-trip delay in milliseconds.
+For Marshall, Dreamchip, and Proton mini cameras, you can route the serial data from a CI0 or USB dongle to the camera over RF. The RCP uses bidirectional data, but these cameras support a unidirectional link from the camera's advanced menu (3-dot icon in the camera properties). Untick the bidirectional link option. Alternatively, use the delay option to keep a bidirectional link but add the RF system's round-trip delay in milliseconds.

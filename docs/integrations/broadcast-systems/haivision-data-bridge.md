@@ -153,4 +153,4 @@ Help on using **ping** is in the [IP primer](/docs/reference/troubleshooting/ip-
 3. **Ping the transmitter:** `ping 192.168.9.1` — If no reply, check DataBridge setup or your computer's gateway setting.
 4. **Ping the RIO:** `ping 192.168.9.2` — If no reply, check RIO WAN settings.
 
-Work through each step in order to identify where the connection breaks down.
+Work through each step to find where the connection breaks down.

@@ -17,7 +17,7 @@ Reference documents:
 
 Assign a unique IP to the JL Cooper JOG in the range of your RCP or gateway (default: `10.192.0.0` with `255.255.0.0` mask, or another IP you have assigned).
 
-<img src="/img/restricted/configuration/JLCooperJOG/step1.png" />
+<img src="/img/restricted/configuration/JLCooperJOG/step1.png" alt="JL Cooper JOG network settings with a unique IP assigned" />
 
 Click **OK** to validate the changes.
 
@@ -29,20 +29,20 @@ Configure the remote with the following settings:
 - Port: **10001**
 - Remote Host: your Cyanview device IP
 
-<img src="/img/restricted/configuration/JLCooperJOG/step2.png" />
+<img src="/img/restricted/configuration/JLCooperJOG/step2.png" alt="JL Cooper JOG remote host set to the Cyanview device IP" />
 
 Click **OK** to validate the changes.
 
 Apply the settings:
 
-<img src="/img/restricted/configuration/JLCooperJOG/step3.png" />
+<img src="/img/restricted/configuration/JLCooperJOG/step3.png" alt="Applying the JL Cooper JOG settings" />
 
 ## Other setup verification
 
 Verify the following sections:
 
-<img src="/img/restricted/configuration/JLCooperJOG/step4.png" />
-<img src="/img/restricted/configuration/JLCooperJOG/step5.png" />
+<img src="/img/restricted/configuration/JLCooperJOG/step4.png" alt="JL Cooper JOG configuration sections to verify" />
+<img src="/img/restricted/configuration/JLCooperJOG/step5.png" alt="Further JL Cooper JOG configuration sections to verify" />
 
 :::warning
 The XPort used by JL Cooper might need a firmware update to work with modern web browsers.

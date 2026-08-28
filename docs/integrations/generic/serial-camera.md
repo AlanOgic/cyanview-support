@@ -93,7 +93,7 @@ We deliver product updates continuously so it is a good idea to get your system 
 
 <img alt="cyanview-support-camera-configuration-RCP-software-update-network" src="/img/diagrams/cyanview-support-camera-configuration-RCP-software-update-network.png" width="700" />
 
-Once the RCP has internet access, it will list the available releases in the `Admin` tab of the web interface. Clicking on `Download Latest` will refresh the list. Simply click `Select and start` on the latest release to activate it: the release name indicates the release date: `20(year).11(month).1(number)`. The update takes roughly 30 seconds and will automatically upgrade your configuration.
+Once the RCP has internet access, it will list the available releases in the `Admin` tab of the web interface. Clicking on `Download Latest` will refresh the list. Click `Select and start` on the latest release to activate it: the release name indicates the release date: `20(year).11(month).1(number)`. The update takes roughly 30 seconds and will automatically upgrade your configuration.
 
 <img alt="cyanview-support-camera-configuration-RCP-Web-GUI-release-list" src="/img/productGfx/config/cyanview-support-camera-configuration-RCP-Web-GUI-release-list.png" width="600" />
 

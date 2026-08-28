@@ -12,7 +12,7 @@ slug: /resources/draw-io-symbols
 ## Setup
 
 1. Open the [Draw.io app](https://app.diagrams.net/).
-2. Download the library file — right-click [this link](https://s3.eu-west-3.amazonaws.com/cy-binaries.cyanview.com/cy-symbols.xml) and select `Save Link As`.
+2. Download the library file — right-click [the cy-symbols.xml library](https://s3.eu-west-3.amazonaws.com/cy-binaries.cyanview.com/cy-symbols.xml) and select `Save Link As`.
 3. In Draw.io, go to `File > Open Library from > Device...` and select the downloaded file.
 
 After a few seconds, the library appears in the left panel:

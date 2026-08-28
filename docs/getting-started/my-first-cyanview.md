@@ -2,7 +2,7 @@
 id: my-first-cyanview
 title: My first Cyanview
 sidebar_label: My first Cyanview
-description: "Set up your Cyanview system from unboxing to first camera control. Find device IPs, access the web UI, and configure serial or IP cameras with RCP, RIO, and CI0."
+description: "Set up your Cyanview system from unboxing to first camera control: find device IPs, reach the web UI, and configure serial or IP cameras."
 keywords: [cyanview, first setup, unboxing, IP address, web UI, RCP, RIO, CI0, camera configuration]
 slug: /getting-started/my-first-cyanview
 ---

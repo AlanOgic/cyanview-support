@@ -18,7 +18,7 @@ The RF bridge is only available on broadcast devices (RCP and RIO). Check your l
 
 Here is a RFD900A module:
 
-<img src="/img/restricted/configuration/RFBridge/RFD900A.png" width="100"/>
+<img src="/img/restricted/configuration/RFBridge/RFD900A.png" alt="RFD900A radio module" width="100"/>
 
 ## RF modules
 
@@ -45,7 +45,7 @@ The link works over any serial connection, but:
 
 In this example, only the RF link is used to control the camera:
 
-<img src="/img/restricted/configuration/RFBridge/RFBridge-wiring1.png" width="800"/>
+<img src="/img/restricted/configuration/RFBridge/RFBridge-wiring1.png" alt="Wiring with the RF link alone controlling the camera" width="800"/>
 
 This works in pairs — you need one RF bridge per camera.
 
@@ -53,7 +53,7 @@ This works in pairs — you need one RF bridge per camera.
 
 In this example, RF and 4G are combined to control the camera:
 
-<img src="/img/restricted/configuration/RFBridge/RFBridge-wiring2.png" width="800"/>
+<img src="/img/restricted/configuration/RFBridge/RFBridge-wiring2.png" alt="Wiring combining the RF link and 4G to control the camera" width="800"/>
 
 This creates a bonding between the two links:
 
@@ -64,7 +64,7 @@ This creates a bonding between the two links:
 
 In this example, RF and 4G are combined as above, but a NIO is used as a hop. This can help when the RF module needs to be outside in the stadium (NIO) while the RCP stays in the truck.
 
-<img src="/img/restricted/configuration/RFBridge/RFBridge-wiring3.png" width="800"/>
+<img src="/img/restricted/configuration/RFBridge/RFBridge-wiring3.png" alt="Wiring with RF and 4G combined, using a NIO as a hop" width="800"/>
 
 In this case:
 
@@ -111,7 +111,7 @@ If the RFD900 LEDs are not steady green at this point, check the configuration:
 
 | RIO | NIO | RCP |
 |:---:|:---:|:---:|
-| <img src="/img/restricted/configuration/RFBridge/RFBridge-RIO-cam-block.png" height="200"/> | <img src="/img/restricted/configuration/RFBridge/RFBridge-NIO-cam-block.png" height="200"/> | <img src="/img/restricted/configuration/RFBridge/RFBridge-RCP-cam-block.png" height="200"/> |
+| <img src="/img/restricted/configuration/RFBridge/RFBridge-RIO-cam-block.png" alt="RF Bridge camera block on the RIO" height="200"/> | <img src="/img/restricted/configuration/RFBridge/RFBridge-NIO-cam-block.png" alt="RF Bridge camera block on the NIO" height="200"/> | <img src="/img/restricted/configuration/RFBridge/RFBridge-RCP-cam-block.png" alt="Imported camera block on the RCP" height="200"/> |
 
 All three devices share the same REMI tag:
 
@@ -131,11 +131,11 @@ Search for the `UsbSerial` block:
 2. In the right panel, set **speed** to `57600` (default baud rate of the RFD900A — adjust if you changed it).
 3. Click **OK** (text turns black).
 
-<img src="/img/restricted/configuration/RFBridge/RFBridge-RIO-USB.png" width="400"/>
+<img src="/img/restricted/configuration/RFBridge/RFBridge-RIO-USB.png" alt="UsbSerial block configured on the RIO" width="400"/>
 
 Select the `UsbSerial` block, then click the **new RF Bridge (camera)** button in the right panel:
 
-<img src="/img/restricted/configuration/RFBridge/RFBridge-RIO-Bridge.png" width="400"/>
+<img src="/img/restricted/configuration/RFBridge/RFBridge-RIO-Bridge.png" alt="New RF Bridge (camera) button in the RIO right panel" width="400"/>
 
 The RF bridge is now:
 
@@ -147,7 +147,7 @@ The RF bridge is now:
 `rf_bonding` means the bonding between RF and cloud is active on this link.
 :::
 
-<img src="/img/restricted/configuration/RFBridge/RFBridge-RIO-cam.png" width="400"/>
+<img src="/img/restricted/configuration/RFBridge/RFBridge-RIO-cam.png" alt="RF Bridge camera configuration on the RIO" width="400"/>
 
 If `rf_id 1` is not present (order matters):
 
@@ -167,7 +167,7 @@ Configure the RF bridge as you did on the RIO:
 
 Then click **new RF Bridge (rcp)**:
 
-<img src="/img/restricted/configuration/RFBridge/RFBridge-NIO-USB.png" width="400"/>
+<img src="/img/restricted/configuration/RFBridge/RFBridge-NIO-USB.png" alt="New RF Bridge (rcp) button on the NIO" width="400"/>
 
 If `rf_id` is not present:
 
@@ -183,13 +183,13 @@ If your RIO/NIO are connected to the internet/cloud/REMI, set up the bonding:
 4. Click on it.
 5. Click **connect**.
 
-<img src="/img/restricted/configuration/RFBridge/RFBridge-NIO-bonding.png" width="400"/>
+<img src="/img/restricted/configuration/RFBridge/RFBridge-NIO-bonding.png" alt="NIO bonding configuration with the connect button" width="400"/>
 
 :::warning
 This is only important if you use 4G + RF. If only RF is in use, `rf_bonding` is not needed. However, if you have RF + 4G and the bonding is not configured properly, you may experience issues with tally, menus, and other features.
 :::
 
-<img src="/img/restricted/configuration/RFBridge/RFBridge-NIO-cam.png" width="400"/>
+<img src="/img/restricted/configuration/RFBridge/RFBridge-NIO-cam.png" alt="RF Bridge camera configuration on the NIO" width="400"/>
 
 :::info
 Ensure `rf_id` matches between your RIO and your NIO.
@@ -199,7 +199,7 @@ Ensure `rf_id` matches between your RIO and your NIO.
 
 Nothing special is needed on the RCP since the camera is imported using standard REMI:
 
-<img src="/img/restricted/configuration/RFBridge/RFBridge-RCP-cam-block.png" height="200"/>
+<img src="/img/restricted/configuration/RFBridge/RFBridge-RCP-cam-block.png" alt="Imported camera block on the RCP" height="200"/>
 
 :::info
 If your RCP has the USB/RF module and you are not using a NIO in between, apply the NIO guide to your RCP.

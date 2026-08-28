@@ -2,7 +2,7 @@
 id: blackmagic-camera-control
 title: "Blackmagic camera control"
 sidebar_label: "Blackmagic overview"
-description: "Control Blackmagic cameras with Cyanview over IP, SDI, or ATEM. Full paint, exposure, gamma, and saturation control across URSA, Studio, Pocket, and PYXIS models."
+description: "Control Blackmagic cameras with Cyanview over IP, SDI or ATEM: paint, exposure, gamma and saturation on URSA, Studio, Pocket and PYXIS."
 keywords: [Blackmagic, SDI control, RSBM, CI0BM, IP, ATEM, paint, URSA, Studio Camera, Cyanview]
 slug: /integrations/cameras/blackmagic/blackmagic-camera-control
 ---
@@ -24,10 +24,10 @@ Blackmagic cameras support three control paths:
 
 ## Supported models
 
-#### IP only
+### IP only
 - Blackmagic PYXIS 6K
 
-#### IP and SDI
+### IP and SDI
 - URSA Cine 17K 65, URSA Cine 12K LF, URSA Cine Immersive
 - Cinema Camera 6K
 - URSA G2 Broadcast
@@ -35,11 +35,11 @@ Blackmagic cameras support three control paths:
 - Studio Camera 4K Plus, 4K Pro, 6K Pro
 - Studio Camera 4K Plus G2, 4K Pro G2
 
-#### SDI only
+### SDI only
 - Micro Studio 4K
 - URSA Mini 12K, URSA Mini Pro 12K
 
-#### HDMI via Microconverter
+### HDMI via Microconverter
 Pocket Cinema cameras use HDMI, not SDI. To control them, use a Blackmagic Microconverter to convert HDMI to SDI. The converter also passes the return SDI signal back to the camera over the HDMI data link.
 
 :::info Firmware requirements

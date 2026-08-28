@@ -49,7 +49,7 @@ And your RCP:
 ![RCP firmware version 24.7.1](/img/Workflows/RCP-24.7.1.png)
 
 :::info
-You can update through the admin page (online, via internet) or download offline update files [here](/docs/reference/firmware-download).
+You can update from the admin page over the internet, or download the [offline update files](/docs/reference/firmware-download).
 
 - Online update: click on a new version — the RIO/RCP downloads and installs it automatically.
 - Offline update: download the file to your computer, then drag and drop it onto your device's webpage.

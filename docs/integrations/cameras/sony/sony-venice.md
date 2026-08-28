@@ -72,7 +72,7 @@ You can use the RCP alone for local (LAN) IP control, or add a CI0 for serial. F
 Works through a simple Ethernet switch or fiber such as Ereca CAM Racer.
 :::
 
-### Sony Venice Serial (LAN)
+### Sony Venice serial (LAN)
 
 ![Sony Venice Serial LAN wiring diagram](/img/Integrations/Sony/Sony-Venice/Sony-Venice-8P-LAN-wiring.png)
 
@@ -99,7 +99,7 @@ Some prefer to keep the CI0/RIO on the camera side, with Ethernet running betwee
 This handles telemetry only — video transport requires a separate RF solution.
 :::
 
-### Sony Venice Serial (wireless)
+### Sony Venice serial (wireless)
 
 ![Sony Venice Serial wireless wiring diagram](/img/Integrations/Sony/Sony-Venice/Sony-Venice-8P-wireless.png)
 

@@ -269,7 +269,7 @@ Wiring:
 - RIO powers the Halow-U through USB
 - RIO communicates with FX3 through USB
 
-More info on FX3 setup [here](/docs/integrations/cameras/sony/sony-alpha).
+See the [Sony Alpha integration guide](/docs/integrations/cameras/sony/sony-alpha) for FX3 setup.
 
 ### Wireless FX6
 
@@ -292,7 +292,7 @@ Wiring:
 - RIO uses its onboard Ethernet to connect to the FX6 Ethernet dongle
 - FX6 IP is in the range `10.192.0.0/16` so RIO can talk directly to it
 
-More info on FX6 setup [here](/docs/integrations/cameras/sony/sony-fx6).
+See the [Sony FX6 integration guide](/docs/integrations/cameras/sony/sony-fx6) for FX6 setup.
 
 ### Mesh
 
@@ -308,7 +308,7 @@ Setup:
 - Same as above (IP setup, RF setup)
 - Set all nodes to `MESH Node` mode instead of AP/Station
 
-## Wireless Best Practices
+## Wireless best practices
 
 ![HaLow outdoor test](/img/Configuration/halow/test-out.png)
 -->

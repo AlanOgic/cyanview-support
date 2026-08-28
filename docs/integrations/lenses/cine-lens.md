@@ -16,7 +16,7 @@ When you adjust iris, zoom, or focus on the RCP, the command goes to the lens. W
 
 ## Lens compatibility
 
-Any motorized Canon (12P digital) or Fujinon (12P or 20P digital) lens is supported, as well as any lens using cmotion motorization.
+Cyanview supports any motorized Canon (12P digital) or Fujinon (12P or 20P digital) lens, and any lens using cmotion motorization.
 
 For non-motorized or prime lenses, you can drive external motors instead:
 * [Generic lens motor guide](/docs/integrations/generic/lens)

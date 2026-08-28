@@ -27,7 +27,7 @@ Marshall miniature camera range enable remote control of OSD menus and multiple 
 
 ## Wiring IP
 
-<img src="/img/Integrations/Marshall/marshall-wiring-IP.png"/>
+<img src="/img/Integrations/Marshall/marshall-wiring-IP.png" alt="Wiring diagram for Marshall IP cameras"/>
 
 If your camera is IP, then the control is through Ethernet.
 
@@ -39,7 +39,7 @@ Nothing else, and one RCP can control multiple cameras.
 
 ## Wiring Serial cameras
 
-<img src="/img/Integrations/Marshall/marshall-wiring-serial.png"/>
+<img src="/img/Integrations/Marshall/marshall-wiring-serial.png" alt="Wiring diagram for Marshall serial cameras"/>
 
 If your camera is not IP, you can control it through serial port.
 
@@ -52,11 +52,11 @@ And the correct cable, you have 2 different connectors:
 
 If your camera has this kind of connector on the back, then you need the cable <a href="/docs/resources/cable-catalog#cy-cbl-6p-pfan">cy-cbl-6p-pfan</a>.
 
-<img src="/img/Integrations/Marshall/marshall-connector1.jpg" width="300"/>
+<img src="/img/Integrations/Marshall/marshall-connector1.jpg" alt="Marshall camera rear connector that takes the cy-cbl-6p-pfan cable" width="300"/>
 
 If your camera has this kind of connector on the back, then you need the cable <a href="/docs/resources/cable-catalog#cy-cbl-6p-mars-02-current">CY-CBL-6P-MARS-02</a>.
 
-<img src="/img/Integrations/Marshall/marshall-connector2.png" width="300"/>
+<img src="/img/Integrations/Marshall/marshall-connector2.png" alt="Marshall camera rear connector that takes the CY-CBL-6P-MARS-02 cable" width="300"/>
 
 More info <a href="#cables">below</a>
 
@@ -165,7 +165,7 @@ The camera configuration should be adjusted from the OSD menus with the followin
 
 - Both ports from CI0 or RIO can be chosen as they both support RS485.
 
-- It is possible to directly plug a USB RS485 dongle to the RCP.
+- You can plug a USB RS485 dongle directly into the RCP.
 
 ### Configuration in unidirectional mode
 
@@ -204,7 +204,7 @@ Newer Marshall cameras are equipped with a 12-pin Hirose connector for power and
 <img class="w-full" alt="cyanview-support-integration-marshall-mini-camera-serial-cable-CY-CBL-6P-MARS-02" src="/img/productGfx/cables/CY-CBL-MARSHALL-01.svg" />
 </a>
 
-### Connection using the Marshall Breakout Cable
+### Connection using the Marshall breakout cable
 
 <img alt="cyanview-support-integration-marshall-mini-camera-cv225-ci0" src="/img/Integrations/camera/marshall/cyanview-support-integration-marshall-mini-camera-cv225-ci0.png" width="300" />
 
@@ -245,7 +245,7 @@ VISCA allows up to 8 cameras to be connected to an RS485 bus. When a VISCA bus i
 
 ## Troubleshooting
 
-### 1. The Camera Is Not Detected
+### 1. The camera is not detected
 
 - **Verify camera communication settings**: Ensure the baud rate is set to _9600_ and the camera ID is _1_, unless you are using a VISCA control bus with multiple cameras.
 - **Check the cable and pinout**: If you made your own cable, refer to our [cable diagram](/docs/resources/cable-catalog#marshall-cables) to confirm the wiring is correct.

@@ -26,7 +26,7 @@ If you are not confident that you have the required skills or tools, send the pr
 
 Remove the 7 screws holding the cover.
 
-When reassembling the GWY, tighten the screws gently — overtightening easily damages the threads.
+When reassembling the GWY, tighten the screws gently — overtightening damages the threads.
 
 ![GWY disassembly](/img/restricted/troubleshooting/gwy-maintenance-disassembly.jpg)
 

@@ -116,7 +116,7 @@ Cyanview devices such as the RCP and RIO ship with a **factory static IP** on th
 
 **DHCP is enabled by default.** If a DHCP server is present (such as a typical router), the device automatically receives an IP address for internet access. This enables out-of-the-box cloud connectivity for REMI production and remote support without any manual configuration.
 
-The factory static IP in the `10.192.0.0/16` range **cannot be removed**, but it does not interfere with other settings. To use a different static IP for your network, simply **add a new IP address**. Tick the **Persistent** box to ensure it survives reboots and resets.
+The factory static IP in the `10.192.0.0/16` range **cannot be removed**, but it does not interfere with other settings. To use a different static IP for your network, **add a new IP address**. Tick the **Persistent** box to ensure it survives reboots and resets.
 
 ## Troubleshooting
 

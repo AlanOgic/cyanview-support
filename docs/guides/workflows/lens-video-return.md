@@ -113,7 +113,7 @@ You can create a `not controlled` camera entry named `PGM` and link it to input 
 
 Output 1 is the video return signal going to the Ereca, back to the camera operator's display. You can create a named monitor and link it to output 1 for labeling, but that's also optional.
 
-Both inputs (11 and 21) must be in your configured range, or you won't be able to use them later.
+Both inputs (11 and 21) must be in your configured range, or you cannot use them later.
 :::
 
 Now navigate to `/dev/app.html`, find your router/switcher, and click it:

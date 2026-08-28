@@ -8,7 +8,7 @@ slug: /restricted/configuration/rio-air
 
 # RIO Air
 
-<img src="/img/restricted/configuration/RIOAir/RIO-Air-pinout.png" width="800"/>
+<img src="/img/restricted/configuration/RIOAir/RIO-Air-pinout.png" alt="RIO Air connector pinout" width="800"/>
 
 - **ttyS0** (internal use — do not use): J4
 - **ttyS1** (serial port 1): J5 and J6 (different connectors, same port)
@@ -68,7 +68,7 @@ Wiring:
 
 ## USB
 
-<img src="/img/restricted/configuration/RIOAir/nanopi-pinout.png" width="800"/>
+<img src="/img/restricted/configuration/RIOAir/nanopi-pinout.png" alt="NanoPi USB header pinout used by the RIO Air" width="800"/>
 
 - 1 x USB port (if you selected the USB and Ethernet version)
 - 2 x USB pads to solder (on both versions)

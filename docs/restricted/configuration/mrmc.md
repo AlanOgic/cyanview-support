@@ -50,7 +50,7 @@ First select the MRMC application in the list. Some buttons like **Pan Dir** are
 - Hold **SAVE** and press a number key to save the current position.
 - Hold a number key for 5 seconds to clear the preset position.
 
-<img src="/img/restricted/configuration/MRMC/Presets@2x.png" />
+<img src="/img/restricted/configuration/MRMC/Presets@2x.png" alt="MRMC preset keys on the control surface" />
 
 ### Settings mode
 
@@ -65,4 +65,4 @@ You can use settings mode with or without the Stream Deck:
 - Hold **RESET** for 5 seconds to revert all **PANEL** functions to default.
 - **TRIGGER** sends the signal to the trigger port.
 
-<img src="/img/restricted/configuration/MRMC/Settings@2x.png" />
+<img src="/img/restricted/configuration/MRMC/Settings@2x.png" alt="MRMC settings screen showing the TRIGGER assignment" />

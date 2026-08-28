@@ -91,12 +91,12 @@ No screws need to be removed. Do not apply excessive force when tightening.
 
 First, loosen the lock screw:
 
-<img src="/img/restricted/troubleshooting/IJ/IJ-shaft-friction-lock.png"/>
+<img src="/img/restricted/troubleshooting/IJ/IJ-shaft-friction-lock.png" alt="Iris joystick shaft friction lock screw"/>
 
 Then adjust the friction with this screw until the desired friction is reached:
 
-<img src="/img/restricted/troubleshooting/IJ/IJ-shaft-friction-setup.png"/>
+<img src="/img/restricted/troubleshooting/IJ/IJ-shaft-friction-setup.png" alt="Iris joystick shaft friction adjustment screw"/>
 
 Finally, tighten the lock screw to secure the setting:
 
-<img src="/img/restricted/troubleshooting/IJ/IJ-shaft-friction-lock.png"/>
+<img src="/img/restricted/troubleshooting/IJ/IJ-shaft-friction-lock.png" alt="Iris joystick shaft friction lock screw"/>
