@@ -23,3 +23,6 @@ yarn-error.log*
 
 # Runtime logs (MCP server stdio, etc.)
 /logs
+
+# Local Claude Code project instructions (kept out of the repo)
+CLAUDE.md
