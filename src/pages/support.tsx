@@ -147,6 +147,7 @@ const quickLinks: ServiceItem[] = [
     description: 'Diagnostic tools and common fixes',
     link: 'https://cyanview.cloud/troubleshooter/',
     external: true,
+    badge: 'Beta',
     color: '#006faf',
   },
   {
