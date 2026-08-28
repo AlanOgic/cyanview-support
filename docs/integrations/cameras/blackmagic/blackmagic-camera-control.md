@@ -9,7 +9,7 @@ slug: /integrations/cameras/blackmagic/blackmagic-camera-control
 
 Cyanview gives you full remote paint control of Blackmagic cameras — iris, gain, shutter, white balance, black balance, gamma, saturation, and more. You can connect over IP (REST API), SDI (using the [RSBM](/docs/products/rsbm) or [CI0BM](/docs/products/ci0)), or through an ATEM switcher.
 
-![Blackmagic Ursa](/img/Integrations/Blackmagic/ursa-2.png)
+![Blackmagic URSA camera](/img/Integrations/Blackmagic/ursa-2.png)
 ![Blackmagic Microstudio](/img/Integrations/Blackmagic/BM-microstudio-G2-2.png)
 
 ## Control methods

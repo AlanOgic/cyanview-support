@@ -1,9 +1,9 @@
 ---
 id: wifi
-title: "WiFi configuration guide"
-sidebar_label: "WiFi"
-description: "Configure WiFi connections for Cyanview devices. Connect to existing networks or create direct wireless links to cameras."
-keywords: [WiFi, wireless, configuration, network]
+title: "Wi-Fi configuration guide"
+sidebar_label: "Wi-Fi"
+description: "Configure Wi-Fi connections for Cyanview devices. Connect to existing networks or create direct wireless links to cameras."
+keywords: [Wi-Fi, wireless, configuration, network]
 slug: /guides/networking/wifi
 ---
 

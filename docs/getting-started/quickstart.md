@@ -81,7 +81,7 @@ For full camera and lens control with autonomous operation:
 4. [Import the camera into your RCP via REMI](/docs/guides/networking/remi)
 
 :::tip
-If your camera only has WiFi (such as the FX9 without XDCA), you can use a [WiFi dongle](/docs/guides/networking/wifi-usb) with the RIO.
+If your camera only has Wi-Fi (such as the FX9 without XDCA), you can use a [Wi-Fi dongle](/docs/guides/networking/wifi-usb) with the RIO.
 :::
 
 ## Integrate with production equipment

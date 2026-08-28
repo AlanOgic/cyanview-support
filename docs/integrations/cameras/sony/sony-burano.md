@@ -49,7 +49,7 @@ Assign **variable ND** to the **iris joystick** for smooth, precise control. Iri
 
 :::info
 For non-Sony lenses, add a RIO with a cable:
-- [Canon/Fuji motorized lenses](/docs/integrations/lenses/cine-lens)
+- [Canon/Fujinon motorized lenses](/docs/integrations/lenses/cine-lens)
 - [Tilta motors](/docs/integrations/lenses/tilta)
 - ARRI C-Force
 :::

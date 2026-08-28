@@ -85,7 +85,7 @@ CI0 models differ in the number and type of ports:
 
 - **CY-CI0** — Standard two ports.
 - **CY-CI03P** — A third port for camera head management.
-- **CY-CI0BM** — Two ports with a BlackMagic SDI control extension (see the BM serial camera integration manual).
+- **CY-CI0BM** — Two ports with a Blackmagic SDI control extension (see the BM serial camera integration manual).
 
 #### Supported protocols
 
@@ -132,11 +132,11 @@ The CI0 is designed to be plug-and-play. IP addresses are fixed based on the ser
 - TCP 1883.
 - Random port for serial communication.
 
-### WiFi
+### Wi-Fi
 
 ![CI0 WiFi setup with TPLink nano router](/img/Configuration/CI0WiFi.png)
 
-Use a TP-Link nano router to control your camera over WiFi. Follow the [WiFi setup guide](/docs/guides/networking/wifi).
+Use a TP-Link nano router to control your camera over Wi-Fi. Follow the [Wi-Fi setup guide](/docs/guides/networking/wifi).
 
 ### Power connection
 

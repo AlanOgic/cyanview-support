@@ -127,7 +127,7 @@ Cameras without built-in paint control need external video processing for color 
 
 ## Do I need tally?
 
-If your production uses a video switcher and you want on-camera tally lights, add a [NIO](/docs/products/nio). The NIO provides 16 GPIO channels for tally signals over Ethernet, WiFi, or 4G.
+If your production uses a video switcher and you want on-camera tally lights, add a [NIO](/docs/products/nio). The NIO provides 16 GPIO channels for tally signals over Ethernet, Wi-Fi, or 4G.
 
 **You need a NIO when:**
 - You want wireless tally (no dedicated tally cables)

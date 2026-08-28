@@ -2,8 +2,8 @@
 id: wireless
 title: "Wireless networking guide"
 sidebar_label: "Wireless"
-description: "Configure wireless networking for Cyanview devices. WiFi, cellular, and HaLow options for cable-free camera control."
-keywords: [wireless, WiFi, cellular, HaLow, networking]
+description: "Configure wireless networking for Cyanview devices. Wi-Fi, cellular, and HaLow options for cable-free camera control."
+keywords: [wireless, Wi-Fi, cellular, HaLow, networking]
 slug: /guides/networking/wireless
 ---
 

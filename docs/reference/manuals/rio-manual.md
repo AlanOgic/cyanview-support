@@ -16,7 +16,7 @@ Use it for:
 
 - Lens control
 - USB cameras, such as mirrorless cameras
-- WiFi LAN control
+- Wi-Fi LAN control
 - Polecam, gimbal, and remote camera workflows
 
 ![RIO device](/img/Manual/RIO/rio.jpeg)

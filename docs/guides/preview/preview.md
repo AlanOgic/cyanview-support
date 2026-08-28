@@ -61,7 +61,7 @@ When one RCP controls several cameras, you need one GPIO per camera. Triggering 
 - A router panel or external push button generates a GPI that the RCP receives to select a different camera.
 - Both simultaneously — external buttons update both the router and the RCP, while the RCP also drives the router when you change cameras locally.
 
-By default, the RCP generates pulses, so you can switch the router from the RCP buttons, a Streamdeck, or the web GUI switcher tab.
+By default, the RCP generates pulses, so you can switch the router from the RCP buttons, a Stream Deck, or the web GUI switcher tab.
 
 ### Configure the GPIO mapping
 
@@ -112,5 +112,5 @@ The RCP exposes several preview-related options under `MENU > Settings` on the L
 |---|---|
 | **Follow router selection** | The RCP changes camera automatically when a GPI or router switches the input. Disable this to temporarily lock the RCP to one camera. |
 | **Auto preview on camera change** | When you use the arrow keys to change camera, a preview pulse is generated (or the router switches) automatically. Disable to require a manual preview button press after each camera change. |
-| **Disable Prev/Next keys** | Disables the arrow keys so all three keys act as the preview button. Useful when one RCP is dedicated to one camera, or when an external panel or Streamdeck handles camera selection. |
+| **Disable Prev/Next keys** | Disables the arrow keys so all three keys act as the preview button. Useful when one RCP is dedicated to one camera, or when an external panel or Stream Deck handles camera selection. |
 | **Access all cameras** | Lets an RCP restricted to a camera subset temporarily access all cameras. *This feature is not yet integrated in the GUI and will be available in a future release.* |

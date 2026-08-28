@@ -163,7 +163,7 @@ ARRI Dashboard setup:
 ### External lens control with a RIO
 
 Control the iris through the **Lens** block on the RCP:
-- For a Fuji or Canon motorized lens, follow the [cine lens integration guide](/docs/integrations/lenses/cine-lens)
+- For a Fujinon or Canon motorized lens, follow the [cine lens integration guide](/docs/integrations/lenses/cine-lens)
 - For a non-motorized lens, integrate [Tilta motors](/docs/integrations/lenses/tilta)
 
 ### Extend shading control beyond CAP

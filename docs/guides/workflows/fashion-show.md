@@ -24,7 +24,7 @@ The two main camera choices at Fashion Week are the Sony Venice and Sony FX9. Th
 
 This guide covers:
 - Controlling your FX9s
-- Integrating any lens (Fuji, Canon, motorized or prime)
+- Integrating any lens (Fujinon, Canon, motorized or prime)
 - Using any link type: IP/SDI, fiber, RF/4G
 
 ## Set up the cameras
@@ -91,7 +91,7 @@ Create a new camera:
 
 When the lens is controllable by the camera protocol, iris goes through that channel. For all other cases, control the lens directly through a separate RIO port.
 
-#### B4 lenses (Fuji and Canon)
+#### B4 lenses (Fujinon and Canon)
 
 Select the camera you created:
 - Go to the lens section

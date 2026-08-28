@@ -34,7 +34,7 @@ Connect up to three cforce motors on a CAN bus chain to your RIO via a USB dongl
 - Plug the USB dongle into any USB port on the RIO
 
 **Optional additions:**
-- Link the RCP to the RIO over Ethernet, WiFi, 4G, or other network connection
+- Link the RCP to the RIO over Ethernet, Wi-Fi, 4G, or other network connection
 - Add Blackmagic handles for physical zoom/focus control while iris remains on the RCP
 
 ## Setup

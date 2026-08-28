@@ -28,7 +28,7 @@ Cyanview controls JVC professional camcorders over IP, giving you remote access 
 
 ## Connection
 
-This camera is controlled over IP (ethernet or WiFi) and requires a compatible dongle — check your camera manual. A single RCP can control multiple cameras. You can also pair a RIO on the camera side with an RCP for remote control over internet or 4G.
+This camera is controlled over IP (Ethernet or Wi-Fi) and requires a compatible dongle — check your camera manual. A single RCP can control multiple cameras. You can also pair a RIO on the camera side with an RCP for remote control over internet or 4G.
 
 ## Setup
 

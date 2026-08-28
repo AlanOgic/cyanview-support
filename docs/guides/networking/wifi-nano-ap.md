@@ -1,9 +1,9 @@
 ---
 id: wifi-nano-ap
-title: "WiFi Nano AP setup"
-sidebar_label: "WiFi Nano AP"
-description: "Configure a TP-Link Nano Router in Client mode to bridge Cyanview devices and cameras onto an existing WiFi network."
-keywords: [WiFi, Nano AP, access point, direct connection]
+title: "Wi-Fi Nano AP setup"
+sidebar_label: "Wi-Fi Nano AP"
+description: "Configure a TP-Link Nano Router in Client mode to bridge Cyanview devices and cameras onto an existing Wi-Fi network."
+keywords: [Wi-Fi, Nano AP, access point, direct connection]
 slug: /guides/networking/wifi-nano-ap
 ---
 

@@ -1,9 +1,9 @@
 ---
 id: wifi-usb
-title: "WiFi USB dongle guide"
-sidebar_label: "WiFi USB dongle"
-description: "Use USB WiFi dongles with Cyanview devices for wireless camera connections. Ideal for cameras with WiFi-only connectivity."
-keywords: [WiFi, USB dongle, wireless, camera connection]
+title: "Wi-Fi USB dongle guide"
+sidebar_label: "Wi-Fi USB dongle"
+description: "Use USB Wi-Fi dongles with Cyanview devices for wireless camera connections. Ideal for cameras with Wi-Fi-only connectivity."
+keywords: [Wi-Fi, USB dongle, wireless, camera connection]
 slug: /guides/networking/wifi-usb
 ---
 
@@ -37,7 +37,7 @@ Look for dongles using one of these supported drivers:
 **RTL8192EU** (N300 adapters):
 - TP-Link TL-WN823N
 
-**RTL8822CU** (WiFi 5):
+**RTL8822CU** (Wi-Fi 5):
 - D-Link AC13U
 
 ## Setup

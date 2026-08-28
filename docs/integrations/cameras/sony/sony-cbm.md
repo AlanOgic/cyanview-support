@@ -9,7 +9,7 @@ slug: /integrations/cameras/sony/sony-cbm
 
 ![Sony FX6 camera](/img/Integrations/camera/Sony/FX6.jpg)
 
-Control Sony CBM-compatible cameras over WiFi or wired Ethernet using your Cyanview RCP. Any camera that supports the Sony CBM protocol works with this integration.
+Control Sony CBM-compatible cameras over Wi-Fi or wired Ethernet using your Cyanview RCP. Any camera that supports the Sony CBM protocol works with this integration.
 
 **Compatible models:**
 - FX9
@@ -41,7 +41,7 @@ Set your camera login to `admin` and password to `Abcdef123`.
 
 Navigate to `Menu > Network > ST Mode Settings` and set:
 - `Camera Remote Control` — `Enable`
-- `Connected Network` — enter your WiFi SSID, password, and IP settings (static or DHCP)
+- `Connected Network` — enter your Wi-Fi SSID, password, and IP settings (static or DHCP)
 
 ![FX9 network ST Mode settings menu](/img/Integrations/camera/Sony/Sony-FX9/FX9-menu-network-STmode.jpg)
 

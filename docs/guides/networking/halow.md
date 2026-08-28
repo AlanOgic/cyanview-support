@@ -1,8 +1,8 @@
 ---
 id: halow
-title: "WiFi HaLow guide"
+title: "Wi-Fi HaLow guide"
 sidebar_label: "HaLow"
-description: "Set up WiFi HaLow (802.11ah) for long-range, low-power wireless camera control with Cyanview devices."
+description: "Set up Wi-Fi HaLow (802.11ah) for long-range, low-power wireless camera control with Cyanview devices."
 keywords: [HaLow, 802.11ah, long range, wireless, low power]
 slug: /guides/networking/halow
 ---
