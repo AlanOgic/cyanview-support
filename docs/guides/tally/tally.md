@@ -7,7 +7,7 @@ keywords: [tally, GPIO, NIO, tally lights, broadcast]
 slug: /guides/tally/tally
 ---
 
-Tally information is distributed to cameras via the RCP and other Cyanview devices, based on data received from the video switcher. You typically ingest tally using the TSL protocol or through direct integration with a supported switcher. The RCP then relays tally to cameras through the control protocol or to an external tally light.
+The RCP and other Cyanview devices distribute tally to your cameras, using data they take from the video switcher. You typically ingest tally using the TSL protocol or through direct integration with a supported switcher. The RCP then relays tally to cameras through the control protocol or to an external tally light.
 
 Tally data follows the same routing as camera control signals — whether transmitted locally between RCPs or distributed remotely via the REMI cloud through a RIO. Any device in the system can ingest tally data, and that information is automatically shared across all connected devices, locally and remotely.
 

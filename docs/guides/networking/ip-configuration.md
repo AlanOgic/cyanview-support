@@ -7,7 +7,7 @@ keywords: [IP, network, LAN, WAN, configuration]
 slug: /guides/networking/ip-configuration
 ---
 
-All Cyanview device communication relies on IP networking.
+Every Cyanview device talks over IP, so getting the addressing right is the first thing to settle on any job. This guide shows you how to find a device on the network, set its address, and route between a production LAN and the internet.
 
 ![IP configuration connections requirement diagram](/img/diagrams/IP-Configuration-Basics-connections-requirement@2x-8.png)
 

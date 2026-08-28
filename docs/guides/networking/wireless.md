@@ -7,7 +7,9 @@ keywords: [wireless, Wi-Fi, cellular, HaLow, networking]
 slug: /guides/networking/wireless
 ---
 
-Cyanview does not manufacture wireless solutions, but integrates with several existing options. The right choice depends on your production conditions, required reliability, and budget. Wireless is inherently complex — Cyanview does not provide RF expertise or support for these third-party solutions. What follows is a list of options used by clients, with pros and cons based on field feedback and integration guidelines.
+Cyanview integrates with several third-party wireless systems, and this guide collects the options clients actually use in the field, with the pros and cons of each. The right choice depends on your production conditions, the reliability you need, and your budget.
+
+Cyanview does not manufacture these systems and cannot provide RF expertise or support for them — wireless is a specialised field, and the vendor is the right first call when a link misbehaves.
 
 Cyanview's control architecture is IP-based, so all options below are IP technologies.
 

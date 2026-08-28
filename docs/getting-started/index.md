@@ -9,7 +9,7 @@ slug: /getting-started
 
 # Getting started with Cyanview
 
-Welcome to the Cyanview documentation. Whether you are setting up your first RCP or integrating a complex multi-camera REMI workflow, you will find everything you need here.
+Whether you are setting up your first RCP or building a multi-camera REMI workflow, the documentation you need is here.
 
 ## Choose your setup path
 

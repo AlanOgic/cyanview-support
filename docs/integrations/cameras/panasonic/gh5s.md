@@ -3,7 +3,7 @@ id: gh5s
 title: "Panasonic GH5S integration"
 sidebar_label: "Panasonic GH5S"
 description: "Control the Panasonic GH5S and GH7 mirrorless cameras with Cyanview through a USB connection."
-keywords: [Panasonic GH5S, mirrorless, USB control]
+keywords: [Panasonic GH5S, Panasonic GH7, Lumix, mirrorless, USB control, paint control]
 slug: /integrations/cameras/panasonic/gh5s
 ---
 

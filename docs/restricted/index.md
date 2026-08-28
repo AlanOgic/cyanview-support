@@ -1,6 +1,7 @@
 ---
 title: "Restricted documentation"
 description: "Internal documentation for Cyanview hardware procedures and partner integrations."
+keywords: [restricted, internal, hardware procedures, partner integrations]
 slug: /restricted
 ---
 

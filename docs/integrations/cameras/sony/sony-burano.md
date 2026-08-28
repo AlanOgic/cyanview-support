@@ -3,7 +3,7 @@ id: sony-burano
 title: "Sony Burano integration"
 sidebar_label: "Sony Burano"
 description: "Connect and control the Sony Burano cinema camera with Cyanview. Full paint and lens control for high-end production."
-keywords: [Sony Burano, cinema camera, paint control]
+keywords: [Sony Burano, cinema camera, large sensor, paint control, B4 lens, PL lens]
 slug: /integrations/cameras/sony/sony-burano
 ---
 

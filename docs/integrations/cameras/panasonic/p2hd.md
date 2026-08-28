@@ -3,7 +3,7 @@ id: p2hd
 title: "Panasonic P2HD cameras"
 sidebar_label: "Panasonic P2HD"
 description: "Integrate Panasonic P2HD broadcast cameras with Cyanview for full remote paint and camera control."
-keywords: [Panasonic P2HD, broadcast, paint control]
+keywords: [Panasonic P2HD, P2, camcorder, broadcast, paint control, IP control, tally]
 slug: /integrations/cameras/panasonic/p2hd
 ---
 

@@ -24,7 +24,7 @@ CTA: Clear next steps
 
 # Licensing guide
 
-Choose the right license for your workflow—start with what you need today and upgrade as your production grows. All licenses are one-time purchases with no subscriptions.
+Choose the right license for your workflow — start with what you need today and upgrade as your production grows. All licenses are one-time purchases with no subscriptions.
 
 ## Overview
 
@@ -58,7 +58,7 @@ The standard RCP provides full camera control via touchscreen and rotary knobs. 
 The RCP-J adds **five quick-access scene buttons** and an **integrated iris joystick**:
 
 - **Buttons 1–5** instantly load scene files 1–5 without menu navigation (load only, no save)
-- Buttons follow the joystick module's **camera lock**—when the joystick is locked to a specific camera, the scene buttons load scenes for that camera, which may differ from the camera currently selected on the RCP
+- Buttons follow the joystick module's **camera lock** — when the joystick is locked to a specific camera, the scene buttons load scenes for that camera, which may differ from the camera currently selected on the RCP
 - **Joystick** provides tactile iris control
 
 **Choose RCP-J when:** You need instant access to pre-configured looks during live production.
@@ -86,7 +86,7 @@ All tiers include:
 
 ### Upgrading your RCP license
 
-You can upgrade to a higher tier at any time. Upgrades are applied via license file—no hardware changes required.
+You can upgrade to a higher tier at any time. Upgrades are applied via license file — no hardware changes required.
 
 Contact [Cyanview support](mailto:support@cyanview.com) for upgrade options.
 
@@ -108,7 +108,7 @@ Control up to **2 cameras** on **local networks only**.
 **Includes:**
 - Up to 2 cameras
 - Full protocol support for all connected cameras
-- Standalone operation—continues controlling cameras even if RCP connection drops
+- Standalone operation — continues controlling cameras even if RCP connection drops
 - Local web UI access for configuration
 
 **Limitations:**
@@ -122,7 +122,7 @@ Control cameras **locally and remotely** via cloud.
 
 **Includes everything in +LAN, plus:**
 - Cloud connectivity for remote production
-- REMI support—connect RCP and RIO +WAN over the internet
+- REMI support — connect RCP and RIO +WAN over the internet
 - Remote web UI access from anywhere
 - Works over cellular (4G/5G), bonded connections, and public internet
 
@@ -132,7 +132,7 @@ Control cameras **locally and remotely** via cloud.
 - **Free** of ongoing charges (no subscription)
 
 :::info How cloud connectivity works
-The Cyanview cloud acts as a rendezvous server—both RCP and RIO +WAN make outgoing connections, so no firewall configuration is required. Devices find each other using shared REMI tags.
+The Cyanview cloud acts as a rendezvous server — both RCP and RIO +WAN make outgoing connections, so no firewall configuration is required. Devices find each other using shared REMI tags.
 
 See the [REMI configuration guide](/docs/guides/networking/remi) for setup instructions.
 :::
@@ -144,7 +144,7 @@ You can upgrade a RIO +LAN license to +WAN at any time:
 2. Apply the license through the RIO web interface
 3. Configure REMI tags to enable cloud connectivity
 
-The upgrade is a one-time purchase—no hardware changes required.
+The upgrade is a one-time purchase — no hardware changes required.
 
 ---
 
@@ -153,9 +153,9 @@ The upgrade is a one-time purchase—no hardware changes required.
 The CI0 (Camera Interface) is a serial-to-IP converter that connects cameras to the network. It operates as a **slave device** controlled by an RCP or RIO.
 
 **Key points:**
-- **No separate license**—included with hardware purchase
-- **LAN only**—requires network connection to RCP or RIO
-- **No standalone operation**—stops controlling cameras if connection to RCP/RIO drops
+- **No separate license** — included with hardware purchase
+- **LAN only** — requires network connection to RCP or RIO
+- **No standalone operation** — stops controlling cameras if connection to RCP/RIO drops
 
 :::note CI0 vs RIO for remote deployments
 If you need reliable camera control in locations with unstable network connections, use a RIO instead of CI0. The RIO maintains local control even when the network link fails; the CI0 cannot.
@@ -191,5 +191,5 @@ Contact [Cyanview support](mailto:support@cyanview.com) for license purchases or
 | **Do I need a subscription?** | No. All licenses are one-time purchases. |
 | **Is cloud access included?** | Yes, with RCP and RIO +WAN licenses. Free and unlimited. |
 | **Can I upgrade later?** | Yes. RCP can upgrade to higher camera tiers. RIO +LAN can upgrade to +WAN. |
-| **What about CI0?** | No license needed—included with the hardware. |
+| **What about CI0?** | No license needed — included with the hardware. |
 | **Can multiple RCPs share cameras?** | Yes. Multiple RCPs can operate on the same system. |
