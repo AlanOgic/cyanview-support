@@ -23,7 +23,7 @@ You can give your Cyanview device 4G or Wi-Fi internet access by connecting it t
 Plug your iPhone or iPad into the USB port of your Cyanview device:
 
 - **RIO or NIO** — any USB port works.
-- **RCY-GWY** — use the ports at the back, not the front.
+- **RCP** — use the ports at the back, not the front.
 
 ![RCP back USB port](/img/productGfx/RCP/RCP-USB-back-port@2x-8.png)
 
@@ -50,7 +50,7 @@ If the blue dot does not appear in the top-left corner of your iPhone screen, in
 Plug your Android phone into the USB port of your Cyanview device:
 
 - **RIO or NIO** — any USB port works.
-- **RCY-GWY** — use the ports at the back, not the front.
+- **RCP** — use the ports at the back, not the front.
 
 ![RCP back USB port](/img/productGfx/RCP/RCP-USB-back-port@2x-8.png)
 

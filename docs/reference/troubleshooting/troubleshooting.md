@@ -22,7 +22,7 @@ If the device screen stays blank, follow these steps in order:
 3. **If switching power does not help**, contact **support@cyanview.com** or return the device via the [RMA procedure](/docs/reference/rma-procedure).
 
 4. **If the network port shows activity but the screen stays off**, check your network configuration and verify the device is reachable:
-   - **RCP, GWY** — try accessing the configuration page (see [IP configuration](/docs/guides/networking/ip-configuration)).
+   - **RCP** — try accessing the configuration page (see [IP configuration](/docs/guides/networking/ip-configuration)).
    - **CI0, RIO, NIO** — check whether the device appears on the RCP discovery page.
 
 5. **If the device is not accessible**, try a firmware recovery:
@@ -31,7 +31,6 @@ If the device screen stays blank, follow these steps in order:
 |:-------|:---------------|:----------|
 | CI0 | Whole device | [Force a firmware update](/docs/reference/manuals/ci0/ci0-manual#force-a-firmware-update) |
 | RIO | Port management | Same procedure as CI0 — see [Force a firmware update](/docs/reference/manuals/ci0/ci0-manual#force-a-firmware-update) |
-| GWY | N/A | N/A |
 | NIO | N/A | N/A |
 
 6. **If none of the above resolves the issue**, contact **support@cyanview.com** or return the device via the [RMA procedure](/docs/reference/rma-procedure).

@@ -2,7 +2,7 @@
 id: faq
 title: "Frequently asked questions"
 sidebar_label: "FAQ"
-description: "Answers to common questions about Cyanview products. Camera compatibility, networking, tally, licensing, and troubleshooting."
+description: "Answers to common questions about Cyanview products. CI0 power, IP addressing, device discovery, mixed camera protocols, and tally."
 keywords: [FAQ, questions, answers, help, common issues]
 slug: /reference/faq
 ---
@@ -25,11 +25,11 @@ There is no limit. You can connect as many CI0 units as your setup requires.
 
 No. Only **one** RCP can control a given CI0 and its connected cameras. Once you add a CI0 to an RCP configuration, it becomes unavailable to all other RCPs until you remove it from that configuration.
 
-If you need a single camera accessible from multiple RCPs, use the CY-GWY multi-operator workflow or the upcoming distributed architecture for remote production.
+If you need a single camera accessible from several RCPs, set up a [REMI remote production](/docs/guides/networking/remi) link. RCP-to-RCP sharing covers both a second desk on the same LAN and another site over the WAN.
 
 ## Can I set my own IP addresses?
 
-Yes, from release 21 onward. The RCP, GWY, and RIO each support multiple IP addresses, and you can change the default route for internet access. Common use cases include:
+Yes. The RCP and RIO each support multiple IP addresses, and you can change the default route for internet access. Common use cases include:
 
 - Reaching a range of IP cameras (typically PTZ)
 - Connecting to a technical network
@@ -60,12 +60,12 @@ The **Discovery** page in the RCP interface lists all discovered devices, making
 Use the discovery page as a quick sanity check whenever you add or move a device on the network.
 :::
 
-## What is the RCP dashboard?
+## Which dashboards does the RCP provide?
 
-The RCP provides two dashboard interfaces:
+Two, each with its own job:
 
 - **Multi-cam dashboard** — monitor and control all your cameras from a single web app at `http://[device-ip]:4000`. See the [Multi-cam dashboard manual](/docs/reference/manuals/rcp/multi-cam-dashboard) for setup and usage.
-- **RCP status dashboard** — an extended monitoring page at `http://[device-ip]:5000` where you can check RCP health (memory, temperature), run network pings, and use the built-in MQTT client.
+- **RCP Dashboard** — an extended monitoring page at `http://[device-ip]:5000` where you can check RCP health (memory, temperature), run network pings, and use the built-in MQTT client.
 
 ## Can I connect an external tally light to the CI0?
 
