@@ -11,6 +11,10 @@ slug: /getting-started
 
 Whether you are setting up your first RCP or building a multi-camera REMI workflow, the documentation you need is here.
 
+:::tip New to Cyanview?
+Start with [Set up your first Cyanview system](/docs/getting-started/my-first-cyanview). It walks you from unboxing to your first controlled camera in five steps.
+:::
+
 ## Choose your setup path
 
 ### PTZ or IP cameras

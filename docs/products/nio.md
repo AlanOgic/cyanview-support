@@ -28,4 +28,4 @@ Use the NIO when you need tally or GPIO control over a network connection, espec
 
 - [NIO manual](/docs/reference/manuals/nio-manual)
 - [Tally configuration](/docs/guides/tally/tally)
-- [Quick start guide](/docs/getting-started/quickstart)
+- [Set up your first system](/docs/getting-started/my-first-cyanview)

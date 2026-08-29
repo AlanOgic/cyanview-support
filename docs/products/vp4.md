@@ -29,4 +29,4 @@ The VP4 is typically operated from an RCP, and can also run standalone using its
 ## Get started
 
 - [VP4 manual](/docs/reference/manuals/vp4-manual)
-- [Quick start guide](/docs/getting-started/quickstart)
+- [Set up your first system](/docs/getting-started/my-first-cyanview)

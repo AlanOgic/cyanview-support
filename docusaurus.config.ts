@@ -128,7 +128,7 @@ const config: Config = {
         redirects: [
           // Legacy redirects from old site
           {from: '/docs/overview', to: '/docs/getting-started'},
-          {from: '/docs/quickstart', to: '/docs/getting-started/quickstart'},
+          {from: '/docs/quickstart', to: '/docs/getting-started/my-first-cyanview'},
           {from: '/docs/Manuals/RIOManual', to: '/docs/products/rio'},
           {from: '/docs/Manuals/RIOLiveManual', to: '/docs/products/rio'},
           {from: '/docs/Manuals/VP4Manual', to: '/docs/products/vp4'},
@@ -146,6 +146,9 @@ const config: Config = {
           {from: '/docs/integrations/accessories/cmotion-cgate', to: '/docs/integrations/lenses/cmotion-cgate'},
           {from: '/docs/integrations/cameras/other/lansee', to: '/docs/integrations/broadcast-systems/lansee'},
           {from: '/docs/my-first-cyanview', to: '/docs/getting-started/my-first-cyanview'},
+          // Quick start merged into "My first Cyanview" (2026-08-29): the two
+          // pages covered the same path from unboxing to a first camera.
+          {from: '/docs/getting-started/quickstart', to: '/docs/getting-started/my-first-cyanview'},
           {from: '/docs/Manuals/multi-cam-dashboard', to: '/docs/reference/manuals/rcp/multi-cam-dashboard'},
           // RIO +LAN manual merged into the RIO manual (upstream refactoring, 2026-04-28)
           {from: '/docs/reference/manuals/rio-live-manual', to: '/docs/reference/manuals/rio-manual'},

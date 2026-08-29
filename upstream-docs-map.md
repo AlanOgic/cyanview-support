@@ -145,7 +145,7 @@ Fichiers amont **non publiés** (à ignorer) :
 | how-to-guides/tally-cy-light.md | guides/tally/tally.md (slug:/guides/tally/tally) |  |
 | how-to-guides/tally-gpio-dongle.md | reference/manuals/rcp/gpio-dongle.md (slug:/reference/manuals/rcp/gpio-dongle) |  |
 | how-to-guides/tally-nio.md | guides/tally/tally.md (slug:/guides/tally/tally) |  |
-| my-first-cyanview.md | getting-started/my-first-cyanview.md (slug:/getting-started/my-first-cyanview) | ⚠ |
+| my-first-cyanview.md | getting-started/my-first-cyanview.md (slug:/getting-started/my-first-cyanview) | ⚠ réécrite ; la page fork-only getting-started/quickstart.md y a été fusionnée le 2026-08-29 |
 | overview.md (slug:/) | getting-started/index.md (slug:/getting-started) |  |
 | restricted/configuration/CCFollow.md | restricted/configuration/cc-follow.md (slug:/restricted/configuration/cc-follow) | ⚠ |
 | restricted/configuration/CI0Advanced.md | restricted/configuration/ci0-advanced.md (slug:/restricted/configuration/ci0-advanced) | ⚠ |
@@ -170,7 +170,6 @@ Fichiers amont **non publiés** (à ignorer) :
 ## Pages propres au fork (sans équivalent officielle)
 
 - getting-started/ip-configuration.md
-- getting-started/quickstart.md
 - guides/licensing.md
 - integrations/cameras/other/index.md
 - integrations/index.md

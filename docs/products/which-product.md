@@ -174,5 +174,5 @@ The Cyanview cloud acts as a rendezvous point between your RCP and remote RIO +W
 
 - [Compare RCP license tiers &rarr;](/docs/guides/licensing#step-2-choose-rcp-license-tier)
 - [Browse camera integrations &rarr;](/docs/integrations)
-- [Get started with your first setup &rarr;](/docs/getting-started/quickstart)
+- [Get started with your first setup &rarr;](/docs/getting-started/my-first-cyanview)
 - Contact **sales@cyanview.com** for a tailored quote

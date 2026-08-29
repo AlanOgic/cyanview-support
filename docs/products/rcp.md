@@ -49,4 +49,4 @@ For serial cameras, pair the RCP with a [CI0](/docs/products/ci0) or [RIO](/docs
 - [Installation guide](/docs/reference/manuals/rcp/installation)
 - [RCP user interface](/docs/reference/manuals/rcp/ui)
 - [Web UI configuration](/docs/reference/manuals/rcp/web-ui)
-- [Quick start guide](/docs/getting-started/quickstart)
+- [Set up your first system](/docs/getting-started/my-first-cyanview)

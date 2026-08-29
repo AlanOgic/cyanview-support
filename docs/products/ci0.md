@@ -48,4 +48,4 @@ The CI0 does **not** have a USB port. For USB-controlled cameras (Sony Alpha, Ca
 
 - [CI0 manual](/docs/reference/manuals/ci0/ci0-manual)
 - [Serial camera guide](/docs/integrations/generic/serial-camera)
-- [Quick start guide](/docs/getting-started/quickstart)
+- [Set up your first system](/docs/getting-started/my-first-cyanview)
