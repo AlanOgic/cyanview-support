@@ -145,7 +145,7 @@ View the TC from the camera and trigger REC from the RCP.
 ![RCP record screen](/img/Integrations/RED/RCP/F40.BMP)
 
 :::note
-Select a group and toggle it using the Group button to trigger REC on all cameras within that group. This applies only to cameras configured on the RCP — typically people use a RCP with all cameras (unlimited/broadcast version) as an MSU for this REC control.
+Select a group and toggle it using the Group button to trigger REC on all cameras within that group. This applies only to cameras configured on the RCP — typically people use a RCP with all cameras (MSU/broadcast version) for this REC control.
 :::
 
 The next tab shows a list of all cameras with their TC and REC status:

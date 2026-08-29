@@ -70,7 +70,7 @@ Use a RIO +WAN for:
 **Example:** connect a Sony FX3 to the RIO over USB and a 4G dongle to the RIO. The RIO reaches the RCP over the cellular link, and the FX3 is shaded wirelessly from any location.
 
 :::note
-The RIO +WAN supports unlimited cameras and includes cloud access for control from any location.
+The RIO +WAN supports up to 128 cameras and includes cloud access for control from any location.
 :::
 
 ### RCP-to-RCP workflow

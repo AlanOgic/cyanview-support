@@ -27,7 +27,7 @@ The RIO runs the camera configuration by itself: if the link to the RCP is unplu
 
 The hardware is the same for RIO +LAN and RIO +WAN — the license defines the available REMI features.
 
-- **RIO +WAN** — unlimited cameras, REMI access through the cloud.
+- **RIO +WAN** — up to 128 cameras, REMI access through the cloud.
 - **RIO +LAN** (formerly RIO Live) — limited to two cameras, REMI access only on the local network.
 
 :::tip

@@ -166,7 +166,7 @@ The Cyanview cloud acts as a rendezvous point between your RCP and remote RIO +W
 | 4 Blackmagic cameras + ATEM | QUATTRO | — | — | — | — | Optional | ATEM handles SDI control |
 | 1 Sony Alpha on gimbal, remote | DUO | — | 1 | +WAN | — | — | USB via RIO |
 | 4 camcorders, color correction | QUATTRO | — | — | — | 1 | Optional | VP4 for video processing |
-| 128 cameras, large broadcast | MSU | Mix | Mix | +WAN | Optional | Recommended | Scale to any size |
+| 128 cameras, large broadcast | MSU | Mix | Mix | +WAN | Optional | Recommended | The system maximum |
 
 ---
 

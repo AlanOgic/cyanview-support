@@ -74,7 +74,7 @@ License tiers determine how many cameras you can control simultaneously from a s
 | **DUO** | 2 |
 | **QUATTRO** | 4 |
 | **OCTO** | 8 |
-| **MSU** | Unlimited |
+| **MSU** | 128 |
 
 **DUO note:** Choose DUO for workflows where each camera has its own dedicated RCP.
 
@@ -99,7 +99,7 @@ The RIO (Remote I/O) brings camera control to remote locations. RIO licensing de
 | License | Cameras | LAN | WAN/Cloud |
 |:--------|:-------:|:---:|:---------:|
 | **+LAN** | 1–2 | ✔ | — |
-| **+WAN** | Unlimited | ✔ | ✔ |
+| **+WAN** | 1–128 | ✔ | ✔ |
 
 ### RIO +LAN
 

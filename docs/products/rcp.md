@@ -2,14 +2,14 @@
 id: rcp
 title: "RCP — Remote Control Panel"
 sidebar_label: RCP
-description: "Hardware remote control panel for broadcast cameras. Control paint, iris, gain, and shutter on 2 cameras up to unlimited, from one tactile surface."
+description: "Hardware remote control panel for broadcast cameras. Control paint, iris, gain, and shutter on 2 to 128 cameras, from one tactile surface."
 keywords: [RCP, remote control panel, camera paint, iris, shading, broadcast, CCU]
 slug: /products/rcp
 ---
 
 # RCP — Remote Control Panel
 
-The RCP is a dedicated hardware panel that gives you full, tactile camera paint control. Whether you shade two cameras in a studio or manage an unlimited number across a global REMI production, you work from the same panel.
+The RCP is a dedicated hardware panel that gives you full, tactile camera paint control. Whether you shade two cameras in a studio or manage 128 across a global REMI production, you work from the same panel.
 
 ![Cyanview RCP and RCP-J Remote Control Panels](/img/productGfx/RCP/rcp-both.png)
 
@@ -36,7 +36,7 @@ The RCP is a dedicated hardware panel that gives you full, tactile camera paint 
 | **DUO** | 2 | Small setups, interviews |
 | **QUATTRO** | 4 | Studio productions |
 | **OCTO** | 8 | Multi-camera events |
-| **MSU** | Unlimited | Large broadcast operations |
+| **MSU** | 128 | Large broadcast operations |
 
 ## When to use the RCP
 
