@@ -165,6 +165,11 @@ const config: Config = {
         highlightSearchTermsOnTargetPage: true,
         docsRouteBasePath: '/docs',
         searchBarShortcutHint: true,
+        // Every page carries <meta name="robots" content="noindex">, which this
+        // plugin honours by default — it emptied the local index completely
+        // (2670 documents to 0). The directive is aimed at search engines, not
+        // at this site's own search box, so opt out of it here.
+        forceIgnoreNoIndex: true,
       },
     ],
   ],
