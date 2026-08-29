@@ -19,7 +19,7 @@ For full power details, see the [CI0 manual](/docs/reference/manuals/ci0/ci0-man
 
 ## How many CI0s can one RCP control?
 
-There is no limit. You can connect as many CI0 units as your setup requires.
+Up to 128.
 
 ## In a multi-RCP, multi-CI0 network, can any CI0 be controlled from any RCP?
 
