@@ -39,16 +39,26 @@ answers from the Cyanview RAG backend at
 
 ## Deployment
 
-Using SSH:
+The site runs at https://support.cyanview.cloud, behind the host nginx on
+`cyanview.cloud`, which proxies to the `cyanview-support` container on
+`127.0.0.1:8088`. The container mounts `/opt/cyanview-support/build` read-only
+as its docroot, so deploying is a build plus an rsync:
 
 ```bash
-USE_SSH=true yarn deploy
+npm run build
+rsync -azP --delete build/ root@cyanview.cloud:/opt/cyanview-support/build/
 ```
 
-Not using SSH:
+nginx picks the new files up immediately. No image rebuild, no restart.
+
+**Do not rebuild the image on the server.** `static/**` is git-lfs tracked and
+git-lfs is not installed on that host, so `docker compose up -d --build` there
+would bake LFS pointer files in place of every image on the site. Always build
+locally, where LFS resolves, and ship the result.
+
+After deploying, check that the new build is really live - the container served
+a stale baked-in image for seven weeks before this was found:
 
 ```bash
-GIT_USER=<Your GitHub username> yarn deploy
+curl -sSI https://support.cyanview.cloud/ | grep last-modified
 ```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.

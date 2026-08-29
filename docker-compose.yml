@@ -4,4 +4,11 @@ services:
     container_name: cyanview-support
     ports:
       - "127.0.0.1:8088:80"
+    volumes:
+      # Serve the rsynced build directly, so a deploy is just:
+      #   npm run build && rsync -azP --delete build/ root@cyanview.cloud:/opt/cyanview-support/build/
+      # Rebuilding the image on the server is not an option: static/** is
+      # git-lfs tracked and git-lfs is not installed there, so a source build
+      # would bake LFS pointer files in place of every image.
+      - ./build:/usr/share/nginx/html:ro
     restart: unless-stopped
