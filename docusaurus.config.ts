@@ -186,6 +186,29 @@ const config: Config = {
           lastmod: 'date',
           changefreq: 'weekly',
           priority: 0.5,
+          // Every page now carries <meta name="robots" content="noindex">, and
+          // the sitemap plugin drops noindex routes by default — which left no
+          // sitemap.xml at all. The CLORAG crawler reads that file to build the
+          // support chat index, so build the item list from the routes instead
+          // of from the default (filtered) one. Nothing is leaked by doing so:
+          // robots.txt disallows everything and nginx sends X-Robots-Tag, so no
+          // search engine reads this file.
+          createSitemapItems: async ({routes, siteConfig}) => {
+            const leafRoutes = (rs: typeof routes): typeof routes =>
+              rs.flatMap((route) =>
+                route.routes ? leafRoutes(route.routes) : [route],
+              );
+            const base = siteConfig.url.replace(/\/$/, '');
+            return leafRoutes(routes)
+              .filter((route) => !route.path.includes('*'))
+              .map((route) => ({
+                // trailingSlash is unset site-wide, so emit paths as-is and keep
+                // the URLs byte-identical to what the plugin produced before.
+                url: base + route.path,
+                changefreq: 'weekly' as const,
+                priority: 0.5,
+              }));
+          },
         },
       } satisfies Preset.Options,
     ],
@@ -200,7 +223,12 @@ const config: Config = {
       {property: 'og:site_name', content: 'Cyanview Support'},
       {name: 'twitter:card', content: 'summary_large_image'},
       {name: 'twitter:site', content: '@cyanview'},
-      {name: 'robots', content: 'index, follow'},
+      // Must match the nginx X-Robots-Tag header. A page that serves
+      // "noindex" over HTTP and "index, follow" in its own <head> is asking a
+      // crawler to resolve a contradiction, and not every crawler resolves it
+      // the restrictive way. This tag does not affect sitemap.xml generation,
+      // which is what `noIndex: false` above is protecting.
+      {name: 'robots', content: 'noindex, nofollow'},
       {name: 'geo.region', content: 'BE'},
       {name: 'geo.placename', content: 'Brussels'},
     ],
