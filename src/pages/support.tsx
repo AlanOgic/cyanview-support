@@ -197,13 +197,66 @@ const quickLinks: ServiceItem[] = [
   },
 ];
 
+/*
+ * Thumbnails live in /img/productGfx/thumbs/ and are 440px-wide WebP cut down
+ * from the full-size product shots, which run to several MB each. Intrinsic
+ * width/height are declared so the row reserves its space before they load.
+ */
 const products = [
-  {name: 'RCP', desc: 'Remote Control Panel', to: '/docs/products/rcp'},
-  {name: 'RIO', desc: 'Remote I/O Gateway', to: '/docs/products/rio'},
-  {name: 'CI0', desc: 'Camera Interface', to: '/docs/products/ci0'},
-  {name: 'VP4', desc: 'Video Processor', to: '/docs/products/vp4'},
-  {name: 'NIO', desc: 'Network I/O', to: '/docs/products/nio'},
-  {name: 'RSBM', desc: 'SDI Control Board', to: '/docs/products/rsbm'},
+  {
+    name: 'RCP',
+    desc: 'Remote Control Panel',
+    to: '/docs/products/rcp',
+    img: '/img/productGfx/thumbs/rcp.webp',
+    w: 440,
+    h: 330,
+    alt: 'Cyanview RCP and RCP-J remote control panels',
+  },
+  {
+    name: 'RIO',
+    desc: 'Remote I/O Gateway',
+    to: '/docs/products/rio',
+    img: '/img/productGfx/thumbs/rio.webp',
+    w: 440,
+    h: 249,
+    alt: 'Cyanview RIO remote I/O gateway',
+  },
+  {
+    name: 'CI0',
+    desc: 'Camera Interface',
+    to: '/docs/products/ci0',
+    img: '/img/productGfx/thumbs/ci0.webp',
+    w: 440,
+    h: 274,
+    alt: 'Cyanview CI0 camera interface',
+  },
+  {
+    name: 'VP4',
+    desc: 'Video Processor',
+    to: '/docs/products/vp4',
+    img: '/img/productGfx/thumbs/vp4.webp',
+    w: 440,
+    h: 273,
+    alt: 'Cyanview VP4 video processor',
+  },
+  {
+    name: 'NIO',
+    desc: 'Network I/O',
+    to: '/docs/products/nio',
+    img: '/img/productGfx/thumbs/nio.webp',
+    w: 440,
+    h: 274,
+    alt: 'Cyanview NIO network I/O module',
+  },
+  {
+    name: 'RSBM',
+    desc: 'SDI Control Board',
+    to: '/docs/products/rsbm',
+    img: '/img/productGfx/thumbs/rsbm.webp',
+    w: 440,
+    h: 343,
+    alt: 'Cyanview RSBM SDI control board',
+  },
 ];
 
 /* ───────────────────────────────────────────
@@ -439,6 +492,16 @@ export default function Home(): React.JSX.Element {
           <div className="sp-products__grid">
             {products.map((p) => (
               <Link key={p.name} className="sp-products__item" to={p.to}>
+                <span className="sp-products__thumb">
+                  <img
+                    src={p.img}
+                    alt={p.alt}
+                    width={p.w}
+                    height={p.h}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </span>
                 <span className="sp-products__name">{p.name}</span>
                 <span className="sp-products__desc">{p.desc}</span>
               </Link>
