@@ -206,4 +206,43 @@ A NIO does not use REMI. It is discovered automatically when it shares a switch 
 
 **Control color correctors.** Pair a standalone color corrector with a camera head, or drive it on its own. See the [color corrector guide](/docs/integrations/generic/color-corrector).
 
-Still stuck? Read the [FAQ](/docs/reference/faq), work through the [troubleshooting guide](/docs/reference/troubleshooting/troubleshooting), or email **support@cyanview.com**.
+## Common questions
+
+Questions that come up during a first setup. For product-level questions — how many CI0s one RCP drives, mixing camera protocols, building a tally light — see the [main FAQ](/docs/reference/faq).
+
+### Do I have to change my computer's IP address?
+
+Often not. Cyanview devices have DHCP enabled by default, so on a network with a router the device picks up an address there alongside its factory `10.192.x.y` one. If that network also supports mDNS (Bonjour), open `http://cy-rcp-18-4.local` and you are done.
+
+Change your computer's address only when neither route works. The [IP primer](/docs/reference/troubleshooting/ip-primer#how-do-i-change-my-computer-ip-address) covers Windows, macOS and Linux.
+
+### The web interface does not load. What should I check?
+
+In this order:
+
+1. The device and your computer share a subnet **and** a mask. A `/24` mask on a `10.192.0.0/16` network is the classic mistake — the two ends look close but never meet.
+2. You used the **IP Address** or **DHCP Address** from the info screen, not the **Firmware IP Address**.
+3. `ping` reaches the device. See [checking connectivity](/docs/reference/troubleshooting/ip-primer#checking-connectivity-using-ping).
+4. On a Cisco managed switch, **Portfast** is enabled on that port. Without it, spanning tree blocks the port for up to 30 seconds after link-up, which is long enough to look like a dead device.
+
+More in the [troubleshooting guide](/docs/reference/troubleshooting/troubleshooting#network-issues).
+
+### Should I update the firmware before or after configuring my cameras?
+
+Before. An application update restores your configuration, but a system update does not — it writes a `Snapshot @ SWUPDATE` backup that you then restore by hand. Updating an empty device costs you nothing.
+
+### Do I need a CI0 or a RIO?
+
+A CI0 when all you need is serial connectivity to one or two cameras, driven from the RCP. A RIO when you want its own web interface, USB or IP cameras, lens motor control, or camera control that keeps running if the link to the RCP drops. Full comparison: [which product do I need](/docs/products/which-product).
+
+### Can I skip step 3 and stay on DHCP?
+
+For internet access, yes — DHCP is on by default. Add a LAN IP when the device has to reach gear on a specific subnet, such as IP cameras or a router, without renumbering that gear. The **Diagnostics** tab lists every address the device currently holds.
+
+### Why does the camera icon stay red?
+
+Check the wiring and the port assignment first, then confirm the camera and the RCP sit on the same subnet. Full checks in [verify the connection](#verify-the-connection) above, and in the [troubleshooting guide](/docs/reference/troubleshooting/troubleshooting).
+
+---
+
+Still stuck? Email **support@cyanview.com**.
