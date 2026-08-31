@@ -201,6 +201,7 @@ const quickLinks: ServiceItem[] = [
  * Thumbnails live in /img/productGfx/thumbs/ and are 440px-wide WebP cut down
  * from the full-size product shots, which run to several MB each. Intrinsic
  * width/height are declared so the row reserves its space before they load.
+ * The strip leads the page, so they load eagerly.
  */
 const products = [
   {
@@ -449,9 +450,7 @@ export default function Home(): React.JSX.Element {
           </div>
           <div className="sp-hero__inner">
             <p className="sp-hero__eyebrow">Cyanview Support Center</p>
-            <h1 className="sp-hero__title">
-              How can we <span className="sp-hero__title-accent">help you</span>?
-            </h1>
+            <h1 className="sp-hero__title">How can we help you?</h1>
             <p className="sp-hero__subtitle">
               Find answers, download firmware, troubleshoot issues,
               or connect with our support team.
@@ -461,6 +460,29 @@ export default function Home(): React.JSX.Element {
       </header>
 
       <main className="sp-main">
+        {/* ── Products Strip ── */}
+        <section className="sp-products reveal" style={{'--reveal-delay': '0.05s'} as React.CSSProperties}>
+          <h3 className="sp-products__title">Products</h3>
+          <div className="sp-products__grid">
+            {products.map((p) => (
+              <Link key={p.name} className="sp-products__item" to={p.to}>
+                <span className="sp-products__thumb">
+                  <img
+                    src={p.img}
+                    alt={p.alt}
+                    width={p.w}
+                    height={p.h}
+                    loading="eager"
+                    decoding="async"
+                  />
+                </span>
+                <span className="sp-products__name">{p.name}</span>
+                <span className="sp-products__desc">{p.desc}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* ── Featured Services ── */}
         <section className="sp-section">
           <div className="sp-section__header reveal">
@@ -482,29 +504,6 @@ export default function Home(): React.JSX.Element {
           <div className="sp-quick-grid">
             {quickLinks.map((svc, i) => (
               <QuickLinkCard key={svc.title} svc={svc} index={i} />
-            ))}
-          </div>
-        </section>
-
-        {/* ── Products Strip ── */}
-        <section className="sp-products reveal" style={{'--reveal-delay': '0.5s'} as React.CSSProperties}>
-          <h3 className="sp-products__title">Products</h3>
-          <div className="sp-products__grid">
-            {products.map((p) => (
-              <Link key={p.name} className="sp-products__item" to={p.to}>
-                <span className="sp-products__thumb">
-                  <img
-                    src={p.img}
-                    alt={p.alt}
-                    width={p.w}
-                    height={p.h}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </span>
-                <span className="sp-products__name">{p.name}</span>
-                <span className="sp-products__desc">{p.desc}</span>
-              </Link>
             ))}
           </div>
         </section>
