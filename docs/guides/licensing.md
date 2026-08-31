@@ -108,13 +108,13 @@ Control up to **2 cameras** on **local networks only**.
 **Includes:**
 - Up to 2 cameras
 - Full protocol support for all connected cameras
+- REMI on the local network — an RCP on the same LAN imports cameras from the RIO
 - Standalone operation — continues controlling cameras even if RCP connection drops
 - Local web UI access for configuration
 
 **Limitations:**
 - No cloud connectivity
-- Cannot participate in REMI (remote production) workflows
-- RCP must be on the same local network
+- No REMI over the internet — the RCP must be on the same local network
 
 ### RIO +WAN
 
@@ -128,7 +128,7 @@ Control cameras **locally and remotely** via cloud.
 
 **Cloud access is:**
 - **Included** with the +WAN license
-- **Unlimited** usage (no data caps or time limits)
+- **Uncapped** — no data limit, no time limit
 - **Free** of ongoing charges (no subscription)
 
 :::info How cloud connectivity works
@@ -189,7 +189,7 @@ Contact [Cyanview support](mailto:support@cyanview.com) for license purchases or
 | Question | Answer |
 |:---------|:-------|
 | **Do I need a subscription?** | No. All licenses are one-time purchases. |
-| **Is cloud access included?** | Yes, with RCP and RIO +WAN licenses. Free and unlimited. |
+| **Is cloud access included?** | Yes, with RCP and RIO +WAN licenses. Free, with no data caps and no time limits. |
 | **Can I upgrade later?** | Yes. RCP can upgrade to higher camera tiers. RIO +LAN can upgrade to +WAN. |
 | **What about CI0?** | No license needed — included with the hardware. |
 | **Can multiple RCPs share cameras?** | Yes. Multiple RCPs can operate on the same system. |

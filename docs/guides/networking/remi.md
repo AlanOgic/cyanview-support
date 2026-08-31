@@ -28,7 +28,7 @@ The same principle applies when importing cameras from a RIO +WAN or RIO +LAN in
 
 ## Cloud connectivity
 
-Cloud REMI is available on **RCP** and **RIO +WAN** devices. It is included, unlimited, and free of charge.
+Cloud REMI is available on **RCP** and **RIO +WAN** devices. It is included at no charge, with no data caps and no time limits.
 
 The Cyanview cloud acts as a rendezvous server — all devices open outgoing connections, so you do not need to configure firewalls or port forwarding.
 
